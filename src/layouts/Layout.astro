@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  theme?: 'green' | 'blue';
+}
+
+const { title, theme = 'green' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- Header Sticky -->
+    <div class="top-bar">
+      <span>LOTE ZERO</span>
+      <span id="countdown">Carregando...</span>
+    </div>
+
+    <!-- Navegação -->
+    <header style="background: var(--color-surface); padding: 1rem; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; justify-content: center; align-items: center; gap: 2rem; border-bottom: 1px solid rgba(255,255,255,0.05);">
+      <div style="font-weight: 700; font-size: 1.125rem; color: var(--color-text);">NUTRIÇÃO <span style="color: var(--color-primary)">AVANÇADA</span></div>
+      <nav style="display: flex; gap: 1.5rem; font-size: 0.875rem; font-weight: 500; color: var(--color-text-light);">
+        <a href="#cronograma" style="transition: color 0.2s;">A Imersão</a>
+        <a href="#conteudo" style="transition: color 0.2s;">Conteúdo</a>
+        <a href="#faq" style="transition: color 0.2s;">Time</a>
+      </nav>
+      <a href="#preco" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.75rem; box-shadow: none;">GARANTIR VAGA</a>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <script>
+      // Countdown Logic
+      function updateCountdown() {
+        const target = new Date('2025-07-26T09:00:00').getTime();
+        const now = new Date().getTime();
+        const diff = target - now;
+
+        if (diff < 0) return;
+
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const el = document.getElementById('countdown');
+        if (el) el.textContent = `Vendas iniciam em: ${d}d ${h}h ${m}m ${s}s`;
+      }
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  header nav a:hover {
+    color: var(--color-primary);
+  }
+</style>

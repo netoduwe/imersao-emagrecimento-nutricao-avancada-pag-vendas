@@ -1,0 +1,242 @@
+---
+/**
+ * ProgressBar.astro
+ * Barra de progresso premium de lotes da Imersão.
+ * 
+ * Props:
+ *   variant: 'hero' | 'pricing' (default: 'pricing')
+ */
+const { variant = 'pricing' } = Astro.props;
+const isHero = variant === 'hero';
+---
+
+<div class={`lote-tracker ${isHero ? 'lote-tracker--hero' : 'lote-tracker--pricing'}`} data-lote-tracker>
+  <div class="lote-tracker__inner">
+    <div class="lote-tracker__top">
+      <div class="lote-tracker__badge-wrap">
+        <span class="lote-tracker__fire">🔥</span>
+        <span class="lote-tracker__badge" data-lote-badge>LOTE ZERO</span>
+      </div>
+      <div class="lote-tracker__price-wrap">
+        <span class="lote-tracker__price-label">por apenas</span>
+        <span class="lote-tracker__price" data-lote-price>R$ 19,90</span>
+      </div>
+    </div>
+
+    <div class="lote-tracker__bar-outer">
+      <div class="lote-tracker__bar-fill" data-lote-fill style="width: 0%">
+        <div class="lote-tracker__bar-glow"></div>
+      </div>
+    </div>
+
+    <div class="lote-tracker__bottom">
+      <span class="lote-tracker__pct" data-lote-pct>0% vendidos</span>
+      <span class="lote-tracker__remaining" data-lote-remaining>100 restantes</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .lote-tracker {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .lote-tracker--hero {
+    margin-top: 1.5rem;
+  }
+
+  .lote-tracker--pricing {
+    margin-bottom: 2.5rem;
+  }
+
+  .lote-tracker__inner {
+    background: var(--color-surface);
+    border: 1px solid rgba(var(--color-primary-rgb, 37, 99, 235), 0.2);
+    border-radius: 16px;
+    padding: 1.25rem 1.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .lote-tracker__inner:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Top row */
+  .lote-tracker__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.875rem;
+  }
+
+  .lote-tracker__badge-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .lote-tracker__fire {
+    font-size: 1.125rem;
+    animation: pulse-fire 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse-fire {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  .lote-tracker__badge {
+    background: var(--color-primary);
+    color: white;
+    padding: 0.3rem 0.875rem;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .lote-tracker__price-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+  }
+
+  .lote-tracker__price-label {
+    font-size: 0.6rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+
+  .lote-tracker__price {
+    font-size: 1.375rem;
+    font-weight: 900;
+    color: var(--color-text);
+    line-height: 1;
+  }
+
+  /* Progress bar */
+  .lote-tracker__bar-outer {
+    width: 100%;
+    height: 10px;
+    background: rgba(128,128,128,0.1);
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .lote-tracker__bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-primary) 60%, var(--color-primary-hover) 100%);
+    border-radius: 100px;
+    transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    min-width: 8px;
+  }
+
+  .lote-tracker__bar-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    animation: shimmer 2.5s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(200%); }
+  }
+
+  /* Bottom row */
+  .lote-tracker__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.625rem;
+  }
+
+  .lote-tracker__pct {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+  }
+
+  .lote-tracker__remaining {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #EF4444;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+</style>
+
+<script>
+  const SUPABASE_URL = 'https://qjkezuofhunqzbchlhru.supabase.co';
+  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqa2V6dW9maHVucXpiY2hsaHJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAxMzUwNTUsImV4cCI6MjA4NTcxMTA1NX0.wN1mTQtm80Qmla48jpBis9v-erf6xDa6OJgnxbDPe0I';
+
+  async function fetchProgress() {
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_imersao_progress`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_ANON,
+          'Authorization': `Bearer ${SUPABASE_ANON}`,
+          'Content-Type': 'application/json'
+        },
+        body: '{}'
+      });
+      const data = await res.json();
+      if (data) updateAllTrackers(data);
+    } catch (err) {
+      console.error('Erro ao buscar progresso:', err);
+    }
+  }
+
+  function updateAllTrackers(data: any) {
+    const trackers = document.querySelectorAll('[data-lote-tracker]');
+    trackers.forEach(tracker => {
+      const badge = tracker.querySelector('[data-lote-badge]');
+      const price = tracker.querySelector('[data-lote-price]');
+      const fill = tracker.querySelector('[data-lote-fill]') as HTMLElement;
+      const pct = tracker.querySelector('[data-lote-pct]');
+      const remaining = tracker.querySelector('[data-lote-remaining]');
+
+      if (!badge || !data.lote_nome) return;
+
+      const percent = Math.min(data.percentual, 100);
+      const restantes = data.max_ingressos - data.vendidos;
+
+      badge.textContent = data.lote_nome.toUpperCase();
+      price!.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
+      fill.style.width = `${Math.max(percent, 2)}%`;
+      pct!.textContent = `${percent}% vendidos`;
+
+      if (restantes <= 10) {
+        remaining!.textContent = `⚠️ Últimos ${restantes} ingressos!`;
+      } else if (restantes <= 30) {
+        remaining!.textContent = `🔥 Apenas ${restantes} restantes`;
+      } else {
+        remaining!.textContent = `${restantes} restantes`;
+        (remaining as HTMLElement).style.color = '#888';
+      }
+    });
+  }
+
+  fetchProgress();
+  setInterval(fetchProgress, 30000);
+</script>

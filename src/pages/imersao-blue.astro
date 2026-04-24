@@ -1,0 +1,493 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProgressBar from '../components/ProgressBar.astro';
+import FormModal from '../components/FormModal.astro';
+import '../styles/theme-blue.css';
+---
+
+<Layout title="Imersão Nutrição Avançada no Emagrecimento | Edição 4 (VIP)" theme="blue">
+  <section class="hero container text-center">
+    <div class="hero-date">
+      <span>📅</span> 26 de julho | 9h às 18h
+    </div>
+
+    <div style="position: relative; z-index: 1;">
+      <h1 class="hero-title" style="text-transform: uppercase; font-weight: 900; line-height: 0.9; margin-bottom: 0.5rem; letter-spacing: -0.05em;">
+        <span style="color: rgba(37, 99, 235, 0.08); font-size: clamp(8rem, 15vw, 12rem); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); z-index: -1; pointer-events: none;">N.A</span>
+        <span style="color: #FFFFFF; font-size: clamp(2.5rem, 5vw, 4rem); display: block;">Um dia inteiro de <span style="color: var(--color-primary);">Imersão</span></span>
+        <span style="color: #FFFFFF; font-size: clamp(1.5rem, 3vw, 2.5rem); display: block; font-weight: 400; opacity: 0.9; margin-top: 0.5rem;">em Atualização no tratamento do <span style="color: var(--color-primary); text-shadow: 0 0 30px rgba(37,99,235,0.4);">sobrepeso e obesidade</span></span>
+      </h1>
+      <p style="font-size: 0.875rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-text-light); font-weight: 600; margin-bottom: 3rem;">
+        &mdash; NUTRIÇÃO AVANÇADA &mdash;
+      </p>
+    </div>
+
+    <p class="hero-subtitle">
+      Domine as evidências mais atuais do emagrecimento por apenas R$39.90
+    </p>
+
+    <a href="#preco" class="btn" style="font-size: 1rem; padding: 1.2rem 3rem;">
+      COMPRAR INGRESSO LOTE ATUAL
+    </a>
+
+    <ProgressBar variant="hero" />
+
+    <div class="hero-spoiler" style="margin: var(--space-lg) auto 0;">
+      <b>Spoiler:</b> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <b>prática clínica</b> e como ir <b>além do déficit calórico</b> quando o assunto é emagrecimento.
+    </div>
+  </section>
+
+  <!-- LEAD / DORES SECTION -->
+  <section class="lead-section container" style="padding: var(--space-xl) 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center;">
+    <div class="carousel-container" style="position: relative; width: 100%; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.4); background: transparent; aspect-ratio: 4/5; border: 1px solid rgba(255,255,255,0.05);">
+      <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition: opacity 0.8s ease-in-out; opacity: 1;">
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2022/07/3.jpg" alt="Atendimento" style="width: 100%; height: 100%; object-fit: contain;" />
+      </div>
+      <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition: opacity 0.8s ease-in-out; opacity: 0;">
+        <img src="/images/noticia.jpg" alt="Notícia sobre obesidade" style="width: 100%; height: 100%; object-fit: contain;" />
+      </div>
+    </div>
+    <div>
+      <h2 style="font-size: 2rem; margin-bottom: var(--space-md);">Você se sente seguro para transformar vidas?</h2>
+      <p style="color: var(--color-text-light); margin-bottom: var(--space-md); font-size: 1.125rem;">
+        Com certeza você já atendeu um paciente <b>com sobrepeso que desejava emagrecer</b> e talvez tenha tido dificuldades como:
+      </p>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #ff4d4d;">❌</span> <span>Não conseguiu fazer o paciente aderir...</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #ff4d4d;">❌</span> <span>Teve insegurança para conduzir a consulta...</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #ff4d4d;">❌</span> <span>Não soube calcular o cardápio...</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #ff4d4d;">❌</span> <span>Não soube como ir <b>além das calorias...</b></span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #ff4d4d;">❌</span> <span>Se sentiu <b>desatualizado</b> cientificamente...</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #ff4d4d;">❌</span> <span>Não soube <b>periodizar</b> seu acompanhamento...</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #ff4d4d;">❌</span> <span>Faltaram ferramentas de prática clínica...</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- BIO NEY SECTION -->
+  <section class="bio-section container" style="padding: var(--space-xl) 0; display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-xl); align-items: flex-start;">
+    <div style="position: sticky; top: 100px;">
+      <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" style="width: 100%; border-radius: var(--radius-lg); background: var(--color-surface); padding: 1rem; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.3);" />
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <h3 style="font-size: 1.5rem; color: var(--color-primary);">Ney Felipe (@neyfelipef)</h3>
+      </div>
+    </div>
+    <div>
+      <h2 style="font-size: 2.25rem; margin-bottom: var(--space-md);">Por isso você vai aprender com a Experiência de quem está no "campo de batalha" há 18 anos.</h2>
+      <div style="color: var(--color-text-light); line-height: 1.7; display: flex; flex-direction: column; gap: 1.5rem;">
+        <p>Nutricionista pioneiro da Nutrição Funcional Esportiva no Brasil, tem como missão ajudar nutricionistas a viverem de consultório praticando uma <b>Nutrição que vai além das calorias.</b></p>
+        <p><b>Começou sua carreira em 2006</b>, uma época que quase ninguém sabia o que um nutricionista fazia.</p>
+        <p>Há mais de 18 anos na área já atendeu milhares de pacientes e nos últimos 4 anos formou mais de <b>3 mil Nutricionistas em seus treinamentos e Formações.</b></p>
+        <p><b>Fundador da Nutrição Avançada</b>, Escritor com 2 obras publicadas, professor em instituições renomadas como Uniguaçu, Palestrante e Mentor de Nutricionistas Avançados.</p>
+        
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>Nutricionista há 18 anos (2006)</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>Mestre em Biologia Molecular (2011)</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>Doutorando em Saúde Pública (2024)</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>Fundador da Nutrição Avançada (2009)</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>Criador da <b>Formação Nutrição Avançada</b></span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>Mais de 3 mil alunos</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>2 livros publicados e 5 e-books</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRASE SECTION -->
+  <section style="background: var(--color-surface); padding: var(--space-lg) 0; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="container text-center">
+      <blockquote class="text-serif italic" style="font-size: 1.5rem; color: var(--color-text); line-height: 1.6; max-width: 900px; margin: 0 auto;">
+        "Embora o déficit calórico seja a condition <i>sine qua non</i> para emagrecer, <b style="color: var(--color-primary);">a nutrição não se resume a uma simples calculoterapia.</b> É importante considerar a qualidade dos alimentos e o contexto calórico." — <b style="color: #FFF;">Ney Felipe.</b>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS SECTION -->
+  <section class="container" style="padding: var(--space-xl) 0;">
+    <h2 class="text-center" style="margin-bottom: var(--space-xl);">Resultados de quem já esteve lá</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md);">
+      <!-- Depo 1 -->
+      <div style="background: var(--color-surface); padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.2); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-02.png" alt="Nair" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem; border: 2px solid var(--color-primary);" />
+        <h4 style="margin-bottom: 0.5rem; color: #FFF;">NAIR CRISTINA</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: 1rem;">Nutricionista há 4 anos</p>
+        <p class="italic" style="color: var(--color-text-light); line-height: 1.5;">"Me sinto muito mais segura nas abordagens, eu pego um paciente e sei o que fazer com ele em todas as fases com segurança"</p>
+      </div>
+      <!-- Depo 2 -->
+      <div style="background: var(--color-surface); padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.2); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-04.png" alt="Melissa" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem; border: 2px solid var(--color-primary);" />
+        <h4 style="margin-bottom: 0.5rem; color: #FFF;">MELISSA PINHEIRO</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: 1rem;">Nutricionista há 10 anos</p>
+        <p class="italic" style="color: var(--color-text-light); line-height: 1.5;">"Nos primeiros atendimentos após o curso pude me notar menos 'calculadora' e mais nutricionista, dando um novo significado e brilho nas minhas consultas."</p>
+      </div>
+      <!-- Depo 3 -->
+      <div style="background: var(--color-surface); padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.2); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-03.png" alt="Nathalia" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem; border: 2px solid var(--color-primary);" />
+        <h4 style="margin-bottom: 0.5rem; color: #FFF;">NATHALIA PANTALEÃO</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: 1rem;">Nutricionista há 3 anos</p>
+        <p class="italic" style="color: var(--color-text-light); line-height: 1.5;">"Tinha uma dificuldade para trabalhar com emagrecimento porque os pacientes não retornavam, eu aplicava tudo que tinha aprendido na faculdade, mas isso não gerava resultados. Hoje meus pacientes indicam meu trabalho."</p>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: var(--space-xl);">
+      <p style="font-size: 1.125rem; color: var(--color-text-light); max-width: 800px; margin: 0 auto 2rem;">
+        Você não precisa ser um Nutricionista experiente... você não precisa gastar anos pesquisando... tudo que você precisa fazer agora é garantir seu ingresso antes de virar o lote.
+      </p>
+      <a href="#preco" class="btn">SIM! QUERO MEU INGRESSO</a>
+    </div>
+  </section>
+
+  <!-- PROFESSORES / TIME SECTION -->
+  <section id="time" class="container" style="padding: var(--space-xl) 0; text-align: center;">
+    <h3 style="color: var(--color-primary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; margin-bottom: 1rem;">APRENDA COM GRANDES</h3>
+    <h2 style="font-size: 3rem; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+      E quem estará no <span class="text-serif italic" style="color: var(--color-primary); font-weight: 400;">palco virtual</span> da melhor imersão do Brasil?
+    </h2>
+    <p style="color: var(--color-text-light); font-size: 1.125rem; margin-bottom: var(--space-xl);">Autoridades que construíram resultados onde outros viam apenas caos.</p>
+    
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: left;">
+      <!-- Ney -->
+      <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column;">
+        <img src="/images/ney-clinica-otimizado.webp" alt="Ney Felipe" style="width: 100%; height: 250px; object-fit: cover; background: #e0e0e0;" />
+        <div style="padding: 1.5rem;">
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.25rem; color: #FFF;">NEY FELIPE</h4>
+          <p style="color: var(--color-primary); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">NUTRICIONISTA E MESTRE EM BIOL. MOLECULAR</p>
+          <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.5;">Fundador da Nutrição Avançada com mais de 18 anos de experiência clínica no campo de batalha.</p>
+        </div>
+      </div>
+      <!-- Cássia -->
+      <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column;">
+        <img src="/images/cassia.webp" alt="Cássia Helena" style="width: 100%; height: 250px; object-fit: cover; background: #e0e0e0;" />
+        <div style="padding: 1.5rem;">
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.25rem; color: #FFF;">CÁSSIA HELENA</h4>
+          <p style="color: var(--color-primary); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">FORMADA EM PSICOLOGIA E NUTRIÇÃO</p>
+          <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.5;">Tema: Estratégias de Adesão Comportamental.</p>
+        </div>
+      </div>
+      <!-- Jéssica -->
+      <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column;">
+        <img src="/images/jessica.webp" alt="Jéssica Wszolek" style="width: 100%; height: 250px; object-fit: cover; background: #e0e0e0;" />
+        <div style="padding: 1.5rem;">
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.25rem; color: #FFF;">JÉSSICA WSZOLEK</h4>
+          <p style="color: var(--color-primary); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">PROFESSORA CONVIDADA</p>
+          <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.5;">Tema: Manejo dietético no uso dos análogos de GLP-1.</p>
+        </div>
+      </div>
+      <!-- Em Breve -->
+      <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column;">
+        <div style="width: 100%; height: 250px; background: var(--color-surface); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #E0E0E0; font-family: var(--font-serif);">?</div>
+        <div style="padding: 1.5rem;">
+          <h4 style="font-size: 1.25rem; margin-bottom: 0.25rem; color: #FFF;">EM BREVE</h4>
+          <p style="color: var(--color-primary); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">ESTUDO DE CASO REAL</p>
+          <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.5;">Análise profunda de um paciente real, do diagnóstico à estratégia nutricional final.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRONOGRAMA SECTION -->
+  <section id="cronograma" style="background: var(--color-bg); padding: var(--space-xl) 0; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom: var(--space-xl); color: #FFF;">Cronograma do Evento</h2>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+        <div style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+          <div style="background: var(--color-primary); color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-weight: 800; box-shadow: 0 0 15px rgba(37,99,235,0.3);">9H</div>
+          <b style="color: #FFF;">Início</b>
+        </div>
+        <div style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+          <div style="background: var(--color-primary); color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-weight: 800; box-shadow: 0 0 15px rgba(37,99,235,0.3);">12H</div>
+          <b style="color: #FFF;">Almoço</b>
+        </div>
+        <div style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+          <div style="background: var(--color-primary); color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-weight: 800; box-shadow: 0 0 15px rgba(37,99,235,0.3);">13H30</div>
+          <b style="color: #FFF;">Retorno</b>
+        </div>
+        <div style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
+          <div style="background: var(--color-primary); color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-weight: 800; box-shadow: 0 0 15px rgba(37,99,235,0.3);">17H30</div>
+          <b style="color: #FFF;">Encerramento*</b>
+        </div>
+      </div>
+      <p style="margin-top: 2rem; font-size: 0.875rem; color: var(--color-text-light); text-align: center;">
+        *Considere encerrar mais tarde, caso os participantes peçam para nos aprofundarmos em algum ponto.
+      </p>
+    </div>
+  </section>
+  <!-- CONTEÚDO PROGRAMÁTICO -->
+  <section id="conteudo" class="container" style="padding: var(--space-xl) 0;">
+    <h2 class="text-center" style="margin-bottom: var(--space-xl);">Isso é <b>Parte</b> do que você vai aprender na Imersão</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+      <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: var(--color-text-light); padding: 2rem; border-radius: var(--radius-lg);">
+        <h3 style="color: var(--color-primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.5rem;">🆕</span> Conteúdo Atualizado
+        </h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+          <li>• O que temos de mais atual na Ciência sobre Emagrecimento</li>
+          <li>• Nutrição Funcional no Emagrecimento</li>
+          <li>• Um novo olhar sobre a obesidade e inflamação</li>
+          <li>• Canetas Emagrecedoras</li>
+        </ul>
+      </div>
+      <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: var(--color-text-light); padding: 2rem; border-radius: var(--radius-lg);">
+        <h3 style="color: var(--color-primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.5rem;">🔬</span> Conteúdo Técnico
+        </h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+          <li>• Epigenética, Nutrigenética, Saúde Intestinal e Obesidade</li>
+          <li>• Tecido adiposo e inflamação</li>
+          <li>• Aspectos neuroendócrinos da obesidade</li>
+          <li>• Mitocôndrias e Obesidade</li>
+          <li>• Fisiologia Gustativa</li>
+        </ul>
+      </div>
+      <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: var(--color-text-light); padding: 2rem; border-radius: var(--radius-lg);">
+        <h3 style="color: var(--color-primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.5rem;">🛠️</span> Estratégias Práticas
+        </h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+          <li>• Discussão de caso clínico e estratégias de intervenção</li>
+          <li>• Adesão e progressão dietética</li>
+          <li>• Como se diferenciar em um mercado competitivo</li>
+          <li>• Anamnese & Recordatório Alimentar</li>
+          <li>• Avaliação física e exames laboratoriais</li>
+        </ul>
+      </div>
+      <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: var(--color-text-light); padding: 2rem; border-radius: var(--radius-lg);">
+        <h3 style="color: var(--color-primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.5rem;">🎓</span> Experiência Clínica
+        </h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+          <li>• Estratégias nutricionais para o emagrecimento</li>
+          <li>• Como conduzir sua consulta do jeito certo</li>
+          <li>• O método de atendimento da Nutrição Avançada</li>
+          <li>• Prescrição Dietética</li>
+          <li>• Suplementação</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVO SECTION -->
+  <section style="background: var(--color-bg); padding: var(--space-xl) 0; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom: var(--space-xl); color: #FFF;">A escolha para avançar de nível é toda sua:</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl);">
+        <!-- Lado Negativo -->
+        <div style="background: rgba(197, 48, 48, 0.05); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(197, 48, 48, 0.2);">
+          <h3 style="color: #FC8181; margin-bottom: 1.5rem;">❌ Sem essa Imersão você vai...</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem; color: var(--color-text-light);">
+            <li style="display: flex; gap: 0.75rem;"><span>🚩</span> <span>Continuar um Nutricionista calculadora que só sabe repetir "Tem que fazer Déficit"</span></li>
+            <li style="display: flex; gap: 0.75rem;"><span>🚩</span> <span>Ser apenas mais um Nutricionista da fila.</span></li>
+            <li style="display: flex; gap: 0.75rem;"><span>🚩</span> <span>Basear sua prática em achismos e diquinhas de instagram.</span></li>
+          </ul>
+        </div>
+        <!-- Lado Positivo -->
+        <div style="background: rgba(37, 99, 235, 0.05); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(37, 99, 235, 0.3);">
+          <h3 style="color: var(--color-primary); margin-bottom: 1.5rem;">✅ Com a Imersão você vai...</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem; color: #FFF;">
+            <li style="display: flex; gap: 0.75rem;"><span>💎</span> <span>Começar a ir além de discursos reducionistas e enxergar uma Nutrição Além das Calorias.</span></li>
+            <li style="display: flex; gap: 0.75rem;"><span>💎</span> <span><b>Ser o último Nutricionista da vida do seu paciente.</b></span></li>
+            <li style="display: flex; gap: 0.75rem;"><span>💎</span> <span>Ter segurança e referências científicas robustas para basear sua prática clínica.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- DISCURSO RASO SECTION -->
+  <section class="container" style="padding: var(--space-xl) 0; display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/chega.jpg" alt="Chega" style="max-width: 500px; width: 100%; border-radius: var(--radius-lg); margin-bottom: var(--space-xl); box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
+    <h2 style="font-size: 2.5rem; margin-bottom: var(--space-md); color: #FFF;">CANSOU DE OUVIR DISCURSOS RASOS SOBRE EMAGRECIMENTO?</h2>
+    <p style="font-size: 1.5rem; color: var(--color-primary); font-weight: 700; margin-bottom: var(--space-lg);">"Para emagrecer basta fazer déficit Calórico"</p>
+    <div style="max-width: 800px; color: var(--color-text-light); line-height: 1.8; font-size: 1.125rem;">
+      <p style="margin-bottom: 1.5rem;">Nutricionistas ainda repetem a ideia simplista de que emagrecer é apenas "fechar a boca e comer menos". Isso ignora a complexidade do processo de emagrecimento.</p>
+      <p style="margin-bottom: 1.5rem;"><b>O verdadeiro desafio não é o que fazer, mas como fazer.</b></p>
+      <p>Nutrição vai além do cálculo de calorias, requer compreensão profunda do processo e estratégias eficazes. É hora de adotar uma nova abordagem, enxergar além do déficit calórico e ajudar os pacientes a se conectarem com a alimentação.</p>
+    </div>
+  </section>
+
+  <!-- PREÇOS SECTION -->
+  <section id="preco" style="background: var(--color-bg); padding: var(--space-xl) 0; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom: 2rem; color: #FFF;">Escolha seu Ingresso</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-xl); align-items: stretch;">
+        <!-- Ingresso Normal -->
+        <div style="background: var(--color-surface); padding: 3rem; border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.4); display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,0.05);">
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #FFF;">Ingresso Normal</h3>
+          <p style="color: var(--color-text-light); margin-bottom: 2rem;">Experiência ao vivo</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; margin-bottom: 3rem; color: var(--color-text-light);">
+            <li style="display: flex; gap: 0.5rem;"><span>✅</span> <span>Um dia de Imersão</span></li>
+            <li style="display: flex; gap: 0.5rem;"><span>✅</span> <span>8h de Conteúdo</span></li>
+            <li style="display: flex; gap: 0.5rem;"><span>✅</span> <span>Grupo do Evento</span></li>
+            <li style="display: flex; gap: 0.5rem;"><span>✅</span> <span>Materiais Exclusivos</span></li>
+            <li style="display: flex; gap: 0.5rem;"><span>🎁</span> <span>Mini Curso Fundamentos Emagrecimento</span></li>
+          </ul>
+          <div style="margin-bottom: 1.5rem; width: 100%;">
+            <ProgressBar />
+          </div>
+          <div style="margin-bottom: 1.5rem;">
+            <span style="text-decoration: line-through; color: #666; font-size: 1.125rem;">De R$97,00</span>
+            <div style="font-size: 2.5rem; font-weight: 800; color: #FFF;">R$ 19,90</div>
+          </div>
+          <a href="#" class="btn" style="width: 100%;" data-form="normal">COMPRAR AGORA</a>
+        </div>
+
+        <!-- Ingresso VIP -->
+        <div style="background: var(--color-surface); padding: 3rem; border-radius: var(--radius-lg); box-shadow: 0 10px 40px rgba(37, 99, 235, 0.2); display: flex; flex-direction: column; border: 2px solid var(--color-primary); position: relative;">
+          <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--color-primary); color: white; padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 700; box-shadow: 0 0 20px rgba(37,99,235,0.4);">MAIS VANTAGENS</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #FFF;">Ingresso VIP</h3>
+          <p style="color: var(--color-primary); font-weight: 700; margin-bottom: 2rem;">50% DE DESCONTO</p>
+          <style>
+            .benefit summary {
+              display: flex;
+              gap: 0.5rem;
+              cursor: pointer;
+              list-style: none;
+              align-items: center;
+              transition: color 0.2s;
+              color: var(--color-text-light);
+            }
+            .benefit summary::-webkit-details-marker { display: none; }
+            .benefit summary:hover { color: var(--color-primary); }
+            .benefit summary small {
+              color: var(--color-primary);
+              font-size: 0.75rem;
+              font-weight: 600;
+              opacity: 0.8;
+            }
+            .benefit-desc {
+              margin-top: 0.5rem;
+              margin-bottom: 0.5rem;
+              margin-left: 1.75rem;
+              font-size: 0.8rem;
+              color: var(--color-text-light);
+              line-height: 1.4;
+              background: rgba(37, 99, 235, 0.05);
+              padding: 0.5rem 0.75rem;
+              border-radius: 4px;
+              border-left: 2px solid var(--color-primary);
+            }
+          </style>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; margin-bottom: 3rem;">
+            <li>
+              <details class="benefit">
+                <summary><span>🚀</span> <span><b>Tudo do básico +</b> <small>ver o que é</small></span></summary>
+                <div class="benefit-desc">Evento ao vivo, grupo do evento, materiais complementares extras numa plataforma de conteúdos.</div>
+              </details>
+            </li>
+            <li>
+              <details class="benefit">
+                <summary><span>🎁</span> <span><b>Gravação do evento</b> <small>ver benefício</small></span></summary>
+                <div class="benefit-desc">Você pode ver e rever quantas vezes desejar, sem depender apenas das anotações que fará durante a transmissão ao vivo.</div>
+              </details>
+            </li>
+            <li>
+              <details class="benefit">
+                <summary><span>🎁</span> <span><b>Certificado de 8h</b> <small>ver benefício</small></span></summary>
+                <div class="benefit-desc">Para você contabilizar horas na faculdade ou para mostrar para os pacientes que está em constante evolução!</div>
+              </details>
+            </li>
+            <li>
+              <details class="benefit">
+                <summary><span>🎁</span> <span><b>E-book Tópicos Avançados</b> <small>(R$ 99)</small></span></summary>
+                <div class="benefit-desc">Conecta teoria e prática com Nutricosméticos, Crononutrição e Biogênese Mitocondrial, com estratégias de prescrição e referências científicas.</div>
+              </details>
+            </li>
+            <li>
+              <details class="benefit">
+                <summary><span>🎁</span> <span><b>Ebook "Me Formei, e agora?"</b> <small>(R$ 59)</small></span></summary>
+                <div class="benefit-desc">Respostas para as dúvidas mais frequentes de recém-formados: retorno na consulta, precificação, sublocação de sala, fidelização e muito mais.</div>
+              </details>
+            </li>
+            <li>
+              <details class="benefit">
+                <summary><span>🎁</span> <span><b>Ebook Desaprendendo a Dieta</b> <small>(R$ 39)</small></span></summary>
+                <div class="benefit-desc">A Cartilha que envio para meus pacientes combatendo os principais mitos e dando autonomia. Isso é educação Nutricional verdadeira.</div>
+              </details>
+            </li>
+            <li>
+              <details class="benefit">
+                <summary><span>🎁</span> <span><b>Ressaca do Evento (Extra)</b> <small>ver benefício</small></span></summary>
+                <div class="benefit-desc">Na quarta-feira pós evento faremos um encontro extra no zoom para recapitular o conteúdo e tirar dúvidas em uma sala fechada.</div>
+              </details>
+            </li>
+            <li>
+              <details class="benefit">
+                <summary><span>💰</span> <span><b>Cashback integral</b> <small>ver como funciona</small></span></summary>
+                <div class="benefit-desc">O valor investido nesse ingresso é revertido em forma de cashback (desconto) ao se inscrever na Formação Nutrição Avançada ou na Pós Graduação.</div>
+              </details>
+            </li>
+          </ul>
+          <div style="margin-bottom: 1.5rem;">
+            <span style="text-decoration: line-through; color: #666; font-size: 1.125rem;">De R$297,00</span>
+            <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-text-light);">POR 12x DE:</div>
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary);">R$ 15,20</div>
+            <div style="font-size: 1rem; color: var(--color-text-light);">ou R$ 147 à vista</div>
+          </div>
+          <a href="#" class="btn" style="width: 100%; box-shadow: 0 10px 20px rgba(37,99,235,0.3);" data-form="vip">COMPRAR INGRESSO VIP</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="container" style="padding: var(--space-xl) 0;">
+    <h2 class="text-center" style="margin-bottom: var(--space-xl); color: #FFF;">Perguntas Frequentes</h2>
+    <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem;">
+      <details style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: #FFF; padding: 1.5rem; border-radius: var(--radius-md); cursor: pointer;">
+        <summary style="font-weight: 700; font-size: 1.125rem;">É ao vivo? Qual a duração?</summary>
+        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">A Imersão vai acontecer ao vivo no dia 26 de julho das 9h às 18h. Caso deseje adquirir a gravação basta avançar para próxima página (checkout) e selecionar a opção no momento da compra.</p>
+      </details>
+      <details style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: #FFF; padding: 1.5rem; border-radius: var(--radius-md); cursor: pointer;">
+        <summary style="font-weight: 700; font-size: 1.125rem;">Fica Gravado?</summary>
+        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">Sim, mas o ingresso do evento ao vivo não dá acesso às gravações. Você poderá adquirir separadamente as gravações do evento na próxima página (checkout).</p>
+      </details>
+      <details style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: #FFF; padding: 1.5rem; border-radius: var(--radius-md); cursor: pointer;">
+        <summary style="font-weight: 700; font-size: 1.125rem;">Sou estudante, vale a pena?</summary>
+        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">Com certeza, na faculdade você não vai aprender isso. Se você deseja sair da faculdade sabendo quais diretrizes deve seguir na prática clínica, essa imersão é para você.</p>
+      </details>
+      <details style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: #FFF; padding: 1.5rem; border-radius: var(--radius-md); cursor: pointer;">
+        <summary style="font-weight: 700; font-size: 1.125rem;">Vai vender algo na imersão?</summary>
+        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">O nosso foco é te entregar um conteúdo que vale 10x mais o valor do ingresso. Mas precisamos fazer um alinhamento: esse preço baixo é porque a Formação Nutrição Avançada patrocina o evento e vamos abrir vagas com uma condição especial.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1A1A1A; color: rgba(255,255,255,0.6); padding: var(--space-xl) 0 var(--space-lg); text-align: center;">
+    <div class="container">
+      <h3 style="color: white; margin-bottom: 1rem;">Suporte no WhatsApp</h3>
+      <p style="margin-bottom: 2rem;">Minha equipe está à disposição para tirar suas dúvidas pelo nosso canal de atendimento via Whatsapp.</p>
+      <a href="https://wa.me/554799557669" class="btn" style="background: #25D366; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);">FALAR COM ATENDENTE</a>
+      
+      <div style="margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.75rem; line-height: 1.6;">
+        <p style="margin-bottom: 1rem;">Ney Felipe Fernandes | © Copyright 2025</p>
+        <p style="margin-bottom: 1rem;">CNPJ: 38.560.882/0001-12 | cursos@nutrineyfelipe.com</p>
+        <p style="max-width: 900px; margin: 0 auto;">Este site não é afiliado ao Facebook, (meta) ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e mostrar todas as provas do produto e usamos resultados reais.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    
+    if(slides.length > 0) {
+      setInterval(() => {
+        slides[currentSlide].style.opacity = '0';
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].style.opacity = '1';
+      }, 3500);
+    }
+  </script>
+  <FormModal />
+</Layout>
