@@ -10,66 +10,70 @@ interface Props {
 const { variant = 'green' } = Astro.props;
 ---
 
-<section class="hero-ultimate-fidelity">
-  <div class="container hero-grid-fidelity">
-    <!-- LEFT COLUMN -->
-    <div class="hero-text-side">
-      <div class="badge-v4">
-        <span class="icon">📅</span> 16 de Maio | 9h às 18h
-      </div>
-
-      <h1 class="headline-v4">
-        Um dia inteiro de <span class="serif-italic">Imersão</span><br/>
-        em <span class="highlight-line">atualização</span> no tratamento<br/>
-        do <span class="green-text">sobrepeso e obesidade</span>
-      </h1>
-
-      <p class="subhead-v4">
-        Domine as evidências mais atuais do emagrecimento e aplique na <span class="bold-green">prática clínica</span> com segurança.
-      </p>
-
-      <div class="conversion-block-v4">
-        <div class="cta-wrap-v4">
-          <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" />
+<div class="hero-master-container">
+  <!-- HERO SECTION WITH BACKGROUND -->
+  <section class="hero-ultimate-fidelity">
+    <div class="container hero-grid-fidelity">
+      <!-- LEFT COLUMN -->
+      <div class="hero-text-side">
+        <div class="badge-v4">
+          <span class="icon">📅</span> 16 de Maio | 9h às 18h
         </div>
 
-        <div class="price-wrap-v4">
-          <PriceCard />
+        <h1 class="headline-v4">
+          Um dia inteiro de <span class="serif-italic">Imersão</span><br/>
+          em <span class="highlight-line">atualização</span> no tratamento<br/>
+          do <span class="green-text">sobrepeso e obesidade</span>
+        </h1>
+
+        <p class="subhead-v4">
+          Domine as evidências mais atuais do emagrecimento e aplique na <span class="bold-green">prática clínica</span> com segurança.
+        </p>
+
+        <div class="conversion-block-v4">
+          <div class="cta-wrap-v4">
+            <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" />
+          </div>
+
+          <div class="price-wrap-v4">
+            <PriceCard />
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN (FLOATING CARDS) -->
+      <div class="hero-visual-side">
+        <div class="image-stack">
+          <!-- Positioned to the right of the expert's face -->
+          <div class="floating-list-card">
+            <div class="list-item">
+              <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+              <div class="li-text">
+                <strong>Atualizações baseadas</strong>
+                <span>em ciência de verdade</span>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
+              <div class="li-text">
+                <strong>Protocolos aplicáveis</strong>
+                <span>na prática clínica</span>
+              </div>
+            </div>
+            <div class="list-item">
+              <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+              <div class="li-text">
+                <strong>Resultados reais</strong>
+                <span>para seus pacientes</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- RIGHT COLUMN (ONLY FLOATING CARDS NOW) -->
-    <div class="hero-visual-side">
-      <div class="image-stack">
-        <!-- The background image now contains Ney, so we only need the floating cards -->
-        <div class="floating-list-card">
-          <div class="list-item">
-            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-            <div class="li-text">
-              <strong>Atualizações baseadas</strong>
-              <span>em ciência de verdade</span>
-            </div>
-          </div>
-          <div class="list-item">
-            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
-            <div class="li-text">
-              <strong>Protocolos aplicáveis</strong>
-              <span>na prática clínica</span>
-            </div>
-          </div>
-          <div class="list-item">
-            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
-            <div class="li-text">
-              <strong>Resultados reais</strong>
-              <span>para seus pacientes</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  <!-- BOTTOM BAR (OUTSIDE BACKGROUND SECTION) -->
   <div class="hero-bottom-bar-v4">
     <div class="container footer-grid-v4">
       <div class="f-item">
@@ -100,22 +104,25 @@ const { variant = 'green' } = Astro.props;
        <p><strong>Spoiler:</strong> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <strong>prática clínica</strong> e como ir <strong>além do déficit calórico</strong> quando o assunto é emagrecimento.</p>
     </div>
   </div>
-</section>
+</div>
 
 <style>
+  .hero-master-container {
+    background: #F7F8F6;
+  }
+
   .hero-ultimate-fidelity {
-    background-color: #F7F8F6;
     background-image: url('/images/background-pagina-verde-hero.png');
     background-size: cover;
-    background-position: center right;
+    background-position: top right;
     background-repeat: no-repeat;
     padding-top: 80px;
+    padding-bottom: 60px;
     position: relative;
     overflow: hidden;
-    min-height: 850px;
+    min-height: 700px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
   }
 
   .hero-grid-fidelity {
@@ -123,8 +130,6 @@ const { variant = 'green' } = Astro.props;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 2rem;
     align-items: center;
-    padding-bottom: 40px;
-    flex-grow: 1;
   }
 
   .hero-text-side {
@@ -204,8 +209,8 @@ const { variant = 'green' } = Astro.props;
   .price-wrap-v4 { width: 100%; max-width: 440px; }
 
   /* Visual Side */
-  .hero-visual-side { position: relative; height: 100%; }
-  .image-stack { position: relative; height: 100%; display: flex; align-items: center; justify-content: flex-end; }
+  .hero-visual-side { position: relative; }
+  .image-stack { position: relative; display: flex; justify-content: flex-end; }
 
   .floating-list-card {
     background: white;
@@ -218,7 +223,7 @@ const { variant = 'green' } = Astro.props;
     width: 280px;
     z-index: 10;
     border: 1px solid #F9FAFB;
-    margin-right: -40px;
+    margin-top: 100px; /* Push it down so it doesn't cover face */
   }
 
   .list-item { display: flex; align-items: center; gap: 12px; }
@@ -242,8 +247,8 @@ const { variant = 'green' } = Astro.props;
   .hero-bottom-bar-v4 {
     background: #FFFFFF;
     border-top: 1px solid #F3F4F6;
+    border-bottom: 1px solid #F3F4F6;
     padding: 32px 0;
-    width: 100%;
   }
 
   .footer-grid-v4 {
@@ -265,7 +270,7 @@ const { variant = 'green' } = Astro.props;
     max-width: 900px;
     background: rgba(22, 163, 74, 0.04);
     border-radius: 16px;
-    padding: 20px 24px;
+    padding: 24px;
     display: flex;
     gap: 16px;
     align-items: center;
@@ -276,7 +281,7 @@ const { variant = 'green' } = Astro.props;
 
   @media (max-width: 1024px) {
     .hero-ultimate-fidelity { 
-      background-image: none; /* User said expert image is NOT needed on mobile */
+      background-image: none;
       min-height: auto;
       padding-bottom: 40px;
     }
