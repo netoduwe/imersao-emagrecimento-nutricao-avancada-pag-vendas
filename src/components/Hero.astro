@@ -11,231 +11,281 @@ const { variant = 'green' } = Astro.props;
 const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png";
 ---
 
-<section class="hero-reborn">
-  <div class="container hero-wrapper">
-    <!-- COLUNA ESQUERDA (TEXTO) -->
-    <div class="hero-content-column">
-      <div class="date-badge-pill">
-        <span>📅 16 de Maio | 9h às 18h</span>
+<section class="hero-ultimate-fidelity">
+  <div class="container hero-grid-fidelity">
+    <!-- LEFT COLUMN -->
+    <div class="hero-text-side">
+      <div class="badge-v4">
+        <span class="icon">📅</span> 16 de Maio | 9h às 18h
       </div>
 
-      <h1 class="headline-reborn">
-        Um dia inteiro de<br/>
-        <span class="playfair-green">Imersão</span> em<br/>
-        <span class="highlight-stroke">atualização</span> no tratamento do<br/>
-        <span class="green-bold">sobrepeso e obesidade</span>
+      <h1 class="headline-v4">
+        Um dia inteiro de <span class="serif-italic">Imersão</span><br/>
+        em <span class="highlight-line">atualização</span> no tratamento<br/>
+        do <span class="green-text">sobrepeso e obesidade</span>
       </h1>
 
-      <p class="subhead-reborn">
-        Domine as evidências mais atuais do emagrecimento e aplique na prática clínica com segurança.
+      <p class="subhead-v4">
+        Domine as evidências mais atuais do emagrecimento e aplique na <span class="bold-green">prática clínica</span> com segurança.
       </p>
 
-      <div class="cta-section">
+      <div class="cta-wrap-v4">
         <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" />
       </div>
 
-      <div class="price-section">
+      <div class="price-wrap-v4">
         <PriceCard />
       </div>
     </div>
 
-    <!-- COLUNA DIREITA (IMAGEM) -->
-    <div class="hero-visual-column">
-      <div class="ney-visual-container">
-         <div class="gradient-aura-v2"></div>
-         <img src={neyImage} alt="Ney Felipe" class="ney-image-main" />
-         
-         <div class="floating-benefit-card-premium">
-            <div class="fb-icon">🔬</div>
-            <div class="fb-text">
-              <strong>Ciência na Prática</strong>
-              <span>Protocolos baseados em evidências</span>
+    <!-- RIGHT COLUMN -->
+    <div class="hero-visual-side">
+      <div class="image-stack">
+        <div class="bg-glow"></div>
+        <img src={neyImage} alt="Ney Felipe" class="ney-photo" />
+        
+        <!-- Floating Benefits Card (3 items like Image 10) -->
+        <div class="floating-list-card">
+          <div class="list-item">
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+            <div class="li-text">
+              <strong>Atualizações baseadas</strong>
+              <span>em ciência de verdade</span>
             </div>
-         </div>
+          </div>
+          <div class="list-item">
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
+            <div class="li-text">
+              <strong>Protocolos aplicáveis</strong>
+              <span>na prática clínica</span>
+            </div>
+          </div>
+          <div class="list-item">
+            <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+            <div class="li-text">
+              <strong>Resultados reais</strong>
+              <span>para seus pacientes</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="hero-footer-bar">
-    <div class="container benefits-footer-grid">
-      <BenefitsGrid />
+  <!-- FOOTER BAR (WITH DIVIDERS) -->
+  <div class="hero-bottom-bar-v4">
+    <div class="container footer-grid-v4">
+      <div class="f-item">
+        <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+        <div class="f-text"><strong>UM DIA INTENSO</strong><span>de muito conteúdo</span></div>
+      </div>
+      <div class="f-sep"></div>
+      <div class="f-item">
+        <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+        <div class="f-text"><strong>FOCO TOTAL</strong><span>em prática clínica</span></div>
+      </div>
+      <div class="f-sep"></div>
+      <div class="f-item">
+        <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+        <div class="f-text"><strong>NETWORKING</strong><span>com quem faz acontecer</span></div>
+      </div>
+      <div class="f-sep"></div>
+      <div class="f-item">
+        <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+        <div class="f-text"><strong>CERTIFICADO</strong><span>de participação</span></div>
+      </div>
     </div>
   </div>
 
   <div class="container">
-    <div class="hero-spoiler-final">
-       <div class="s-icon">🛡️</div>
+    <div class="spoiler-v4">
+       <div class="s-icon">
+         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 12L11 14L15 10" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+       </div>
        <p><strong>Spoiler:</strong> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <strong>prática clínica</strong> e como ir <strong>além do déficit calórico</strong> quando o assunto é emagrecimento.</p>
     </div>
   </div>
 </section>
 
 <style>
-  .hero-reborn {
+  .hero-ultimate-fidelity {
     background-color: #F7F8F6;
-    background-image: linear-gradient(to bottom, rgba(22, 163, 74, 0.08), transparent 40%);
-    padding: 48px 0 0;
+    background-image: linear-gradient(to bottom, rgba(22, 163, 74, 0.05), transparent 40%);
+    padding-top: 60px;
     position: relative;
     overflow: hidden;
   }
 
-  .hero-wrapper {
-    display: flex;
-    flex-direction: column;
+  .hero-grid-fidelity {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
     align-items: center;
-    text-align: center;
+    padding-bottom: 40px;
   }
 
-  .hero-content-column {
-    display: flex;
-    flex-direction: column;
+  .badge-v4 {
+    display: inline-flex;
     align-items: center;
-    width: 100%;
-    max-width: 480px;
-    z-index: 10;
-  }
-
-  .date-badge-pill {
-    background: rgba(22, 163, 74, 0.1);
+    gap: 8px;
+    background: #f0fdf4;
     color: #16A34A;
-    padding: 8px 16px;
-    border-radius: 999px;
+    padding: 6px 14px;
+    border-radius: 8px;
     font-size: 13px;
     font-weight: 700;
     margin-bottom: 24px;
-    border: 1px solid rgba(22, 163, 74, 0.1);
+    border: 1px solid #dcfce7;
   }
 
-  .headline-reborn {
-    font-size: clamp(28px, 8vw, 36px);
-    line-height: 1.1;
+  .headline-v4 {
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.05;
     font-weight: 800;
     color: #111827;
     margin-bottom: 20px;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
   }
 
-  .playfair-green {
+  .serif-italic {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    color: #16A34A;
     font-weight: 400;
+    color: #16A34A;
   }
 
-  .highlight-stroke {
+  .highlight-line {
     position: relative;
     display: inline-block;
   }
   
-  .highlight-stroke::after {
+  .highlight-line::after {
     content: '';
     position: absolute;
-    bottom: 4px;
+    bottom: 8px;
     left: 0;
     width: 100%;
-    height: 8px;
-    background: rgba(22, 163, 74, 0.15);
+    height: 6px;
+    background: rgba(22, 163, 74, 0.1);
     z-index: -1;
   }
 
-  .green-bold { color: #16A34A; }
+  .green-text { color: #16A34A; }
 
-  .subhead-reborn {
+  .subhead-v4 {
     color: #4B5563;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     margin-bottom: 32px;
+    max-width: 540px;
   }
 
-  .cta-section { width: 100%; margin-bottom: 24px; }
-  .price-section { width: 100%; margin-bottom: 40px; }
+  .bold-green { color: #16A34A; font-weight: 700; }
 
-  .hero-visual-column {
-    width: 100%;
-    position: relative;
-    margin-top: 20px;
-  }
+  .cta-wrap-v4 { margin-bottom: 20px; }
+  .price-wrap-v4 { margin-bottom: 0; }
 
-  .ney-visual-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
+  /* Visual Side */
+  .hero-visual-side { position: relative; }
+  .image-stack { position: relative; display: flex; justify-content: center; }
 
-  .ney-image-main {
+  .ney-photo {
     width: 100%;
-    max-width: 500px;
-    height: auto;
-    object-fit: contain;
-    mask-image: linear-gradient(to top, transparent 0%, black 20%);
+    max-width: 520px;
     z-index: 5;
+    mask-image: linear-gradient(to top, transparent 0%, black 20%);
   }
 
-  .gradient-aura-v2 {
+  .bg-glow {
     position: absolute;
-    bottom: 20%;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: 150%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(22, 163, 74, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    width: 130%;
+    height: 130%;
+    background: radial-gradient(circle, rgba(22, 163, 74, 0.08) 0%, transparent 70%);
     z-index: 1;
   }
 
-  .floating-benefit-card-premium {
+  .floating-list-card {
     position: absolute;
-    right: 5%;
-    bottom: 30%;
+    right: -20px;
+    bottom: 100px;
     background: white;
-    padding: 12px 16px;
-    border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 280px;
+    z-index: 10;
+    border: 1px solid #F9FAFB;
+  }
+
+  .list-item { display: flex; align-items: center; gap: 12px; }
+  .li-icon {
+    width: 32px;
+    height: 32px;
+    background: #f0fdf4;
+    color: #16A34A;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    z-index: 10;
-    border: 1px solid #F3F4F6;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
-  .fb-icon { font-size: 20px; }
-  .fb-text { display: flex; flex-direction: column; text-align: left; }
-  .fb-text strong { font-size: 12px; color: #111827; }
-  .fb-text span { font-size: 10px; color: #6B7280; }
+  .li-text { display: flex; flex-direction: column; }
+  .li-text strong { font-size: 13px; color: #111827; line-height: 1.2; }
+  .li-text span { font-size: 11px; color: #6B7280; }
 
-  .hero-footer-bar {
-    background: white;
+  /* Bottom Bar */
+  .hero-bottom-bar-v4 {
+    background: #FFFFFF;
     border-top: 1px solid #F3F4F6;
-    padding: 24px 0;
-    margin-top: -20px;
-    position: relative;
-    z-index: 10;
+    padding: 32px 0;
+    margin-top: 20px;
   }
 
-  .hero-spoiler-final {
-    margin: 32px auto;
+  .footer-grid-v4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .f-item { display: flex; align-items: center; gap: 12px; }
+  .f-icon { color: #16A34A; opacity: 0.8; }
+  .f-text { display: flex; flex-direction: column; }
+  .f-text strong { font-size: 13px; font-weight: 800; color: #111827; letter-spacing: 0.02em; }
+  .f-text span { font-size: 11px; color: #6B7280; }
+  .f-sep { width: 1px; height: 32px; background: #E5E7EB; }
+
+  /* Spoiler */
+  .spoiler-v4 {
+    margin: 40px auto;
+    max-width: 900px;
     background: rgba(22, 163, 74, 0.04);
-    border: 1px solid rgba(22, 163, 74, 0.08);
     border-radius: 16px;
-    padding: 20px;
+    padding: 20px 24px;
     display: flex;
     gap: 16px;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    border: 1px solid rgba(22, 163, 74, 0.08);
   }
 
-  .hero-spoiler-final p { font-size: 14px; color: #374151; line-height: 1.6; margin: 0; }
+  .spoiler-v4 p { font-size: 14px; line-height: 1.6; color: #4B5563; margin: 0; }
 
-  @media (min-width: 1024px) {
-    .hero-reborn { padding-top: 80px; }
-    .hero-wrapper {
-      flex-direction: row;
-      justify-content: space-between;
-      text-align: left;
-      gap: 60px;
-    }
-    .hero-content-column { align-items: flex-start; max-width: 600px; }
-    .headline-reborn { font-size: 56px; }
-    .hero-visual-column { margin-top: 0; }
+  @media (max-width: 1024px) {
+    .hero-grid-fidelity { grid-template-columns: 1fr; text-align: center; gap: 4rem; }
+    .hero-text-side { display: flex; flex-direction: column; align-items: center; }
+    .subhead-v4 { margin-left: auto; margin-right: auto; }
+    .floating-list-card { position: relative; right: auto; bottom: auto; margin: 2rem auto 0; width: 100%; max-width: 320px; }
+    .footer-grid-v4 { flex-direction: column; gap: 2rem; }
+    .f-sep { display: none; }
+    .spoiler-v4 { flex-direction: column; text-align: center; }
   }
 </style>
