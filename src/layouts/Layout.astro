@@ -28,7 +28,7 @@ const { title, theme = 'green' } = Astro.props;
     <!-- Header Sticky -->
     <div class="top-bar">
       <span>LOTE ZERO</span>
-      <span id="countdown">Carregando...</span>
+      <span id="countdown"></span>
     </div>
 
     <!-- Navegação -->
@@ -51,19 +51,24 @@ const { title, theme = 'green' } = Astro.props;
     <script>
       // Countdown Logic
       function updateCountdown() {
-        const target = new Date('2025-07-26T09:00:00').getTime();
+        const target = new Date('2026-05-16T09:00:00').getTime();
         const now = new Date().getTime();
         const diff = target - now;
 
-        if (diff < 0) return;
+        const el = document.getElementById('countdown');
+        if (!el) return;
+
+        if (diff < 0) {
+          el.textContent = "VENDAS ABERTAS";
+          return;
+        }
 
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-        const el = document.getElementById('countdown');
-        if (el) el.textContent = `Vendas iniciam em: ${d}d ${h}h ${m}m ${s}s`;
+        el.textContent = `Vendas iniciam em: ${d}d ${h}h ${m}m ${s}s`;
       }
       setInterval(updateCountdown, 1000);
       updateCountdown();
