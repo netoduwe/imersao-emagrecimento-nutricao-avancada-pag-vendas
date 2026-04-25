@@ -4,24 +4,27 @@
  * Barra de progresso premium de lotes da Imersão.
  * 
  * Props:
- *   variant: 'hero' | 'pricing' (default: 'pricing')
+ *   variant: 'hero' | 'pricing' | 'minimal' (default: 'pricing')
  */
 const { variant = 'pricing' } = Astro.props;
 const isHero = variant === 'hero';
+const isMinimal = variant === 'minimal';
 ---
 
-<div class={`lote-tracker ${isHero ? 'lote-tracker--hero' : 'lote-tracker--pricing'}`} data-lote-tracker>
+<div class={`lote-tracker ${isHero ? 'lote-tracker--hero' : ''} ${isMinimal ? 'lote-tracker--minimal' : 'lote-tracker--pricing'}`} data-lote-tracker>
   <div class="lote-tracker__inner">
-    <div class="lote-tracker__top">
-      <div class="lote-tracker__badge-wrap">
-        <span class="lote-tracker__fire">🔥</span>
-        <span class="lote-tracker__badge" data-lote-badge>LOTE ZERO</span>
+    {!isMinimal && (
+      <div class="lote-tracker__top">
+        <div class="lote-tracker__badge-wrap">
+          <span class="lote-tracker__fire">🔥</span>
+          <span class="lote-tracker__badge" data-lote-badge>LOTE ZERO</span>
+        </div>
+        <div class="lote-tracker__price-wrap">
+          <span class="lote-tracker__price-label">por apenas</span>
+          <span class="lote-tracker__price" data-lote-price>R$ 19,90</span>
+        </div>
       </div>
-      <div class="lote-tracker__price-wrap">
-        <span class="lote-tracker__price-label">por apenas</span>
-        <span class="lote-tracker__price" data-lote-price>R$ 19,90</span>
-      </div>
-    </div>
+    )}
 
     <div class="lote-tracker__bar-outer">
       <div class="lote-tracker__bar-fill" data-lote-fill style="width: 0%">
@@ -49,6 +52,13 @@ const isHero = variant === 'hero';
 
   .lote-tracker--pricing {
     margin-bottom: 2.5rem;
+  }
+
+  .lote-tracker--minimal .lote-tracker__inner {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
   }
 
   .lote-tracker__inner {
@@ -125,16 +135,20 @@ const isHero = variant === 'hero';
   /* Progress bar */
   .lote-tracker__bar-outer {
     width: 100%;
-    height: 10px;
-    background: rgba(128,128,128,0.1);
+    height: 8px;
+    background: rgba(0,0,0,0.05);
     border-radius: 100px;
     overflow: hidden;
     position: relative;
   }
 
+  .lote-tracker--minimal .lote-tracker__bar-outer {
+    height: 10px;
+  }
+
   .lote-tracker__bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--color-secondary) 0%, var(--color-primary) 60%, var(--color-primary-hover) 100%);
+    background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
     border-radius: 100px;
     transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
@@ -150,7 +164,7 @@ const isHero = variant === 'hero';
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.3) 50%,
       transparent 100%
     );
     animation: shimmer 2.5s ease-in-out infinite;
@@ -170,33 +184,24 @@ const isHero = variant === 'hero';
     gap: 8px;
   }
 
-  .lote-tracker__pct {
-    font-size: 0.75rem;
+  .lote-tracker__pct, .lote-tracker__remaining {
+    font-size: 0.85rem;
     font-weight: 600;
-    color: var(--color-text-light);
+    color: #4b5563;
     white-space: nowrap;
   }
 
-  .lote-tracker__remaining {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #EF4444;
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    white-space: nowrap;
+  .lote-tracker--minimal .lote-tracker__remaining {
+    color: #9ca3af;
+    font-weight: 500;
   }
 
   @media (max-width: 480px) {
     .lote-tracker__inner {
       padding: 1rem;
     }
-    .lote-tracker__price {
-      font-size: 1.125rem;
-    }
-    .lote-tracker__badge {
-      padding: 0.25rem 0.6rem;
-      font-size: 0.65rem;
+    .lote-tracker--minimal .lote-tracker__inner {
+      padding: 0;
     }
   }
 </style>
@@ -232,23 +237,22 @@ const isHero = variant === 'hero';
       const pct = tracker.querySelector('[data-lote-pct]');
       const remaining = tracker.querySelector('[data-lote-remaining]');
 
-      if (!badge || !data.lote_nome) return;
-
       const percent = Math.min(data.percentual, 100);
       const restantes = data.max_ingressos - data.vendidos;
 
-      badge.textContent = data.lote_nome.toUpperCase();
-      price!.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
-      fill.style.width = `${Math.max(percent, 2)}%`;
-      pct!.textContent = `${percent}% vendidos`;
+      if (badge && data.lote_nome) badge.textContent = data.lote_nome.toUpperCase();
+      if (price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
+      if (fill) fill.style.width = `${Math.max(percent, 2)}%`;
+      if (pct) pct.textContent = `${percent}% vendidos`;
 
-      if (restantes <= 10) {
-        remaining!.textContent = `⚠️ Últimos ${restantes}!`;
-      } else if (restantes <= 30) {
-        remaining!.textContent = `🔥 Apenas ${restantes}`;
-      } else {
-        remaining!.textContent = `${restantes} restantes`;
-        (remaining as HTMLElement).style.color = '#888';
+      if (remaining) {
+        if (restantes <= 10) {
+          remaining.textContent = `⚠️ Últimos ${restantes}!`;
+        } else if (restantes <= 30) {
+          remaining.textContent = `🔥 Apenas ${restantes}`;
+        } else {
+          remaining.textContent = `${restantes} restantes`;
+        }
       }
     });
   }
