@@ -79,7 +79,7 @@ a {
 
 /* Hero Section */
 .hero {
-  padding: var(--space-xl) 0 var(--space-lg);
+  padding: var(--space-xl) var(--space-sm) var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,7 +116,7 @@ a {
   font-size: 1.125rem;
   color: var(--color-text-light);
   max-width: 700px;
-  margin: 0 auto var(--space-lg);
+  margin: 0 auto var(--space-md);
 }
 
 .hero-alert {
@@ -138,4 +138,63 @@ a {
   max-width: 800px;
   color: var(--color-text-light);
   line-height: 1.6;
+}
+
+/* Responsive Grid Utilities */
+.grid-1 { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+.grid-2 { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+.grid-3 { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+.grid-4 { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+.grid-bio { display: grid; grid-template-columns: 1fr; gap: var(--space-md); align-items: flex-start; }
+
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); gap: var(--space-md); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .grid-bio { grid-template-columns: 1fr 1.2fr; gap: var(--space-xl); align-items: flex-start; }
+}
+
+@media (min-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Responsive Utilities */
+.desktop-only { display: flex; }
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.bio-image-container {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .bio-image-container {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 4rem;
+    --space-lg: 2.5rem;
+    --space-md: 1.5rem;
+  }
+  
+  .desktop-only {
+    display: none !important;
+  }
+
+  .btn-shiny {
+    padding: 0.5rem 3.5rem 0.5rem 1.5rem !important;
+  }
+  
+  .btn-shiny:hover {
+    padding: 0.5rem 1.5rem 0.5rem 3.5rem !important;
+  }
 }

@@ -8,7 +8,7 @@ import '../styles/theme-blue.css';
 <Layout title="Imersão Nutrição Avançada no Emagrecimento | Edição 4 (VIP)" theme="blue">
   <section class="hero container text-center">
     <div class="hero-date">
-      <span>📅</span> 26 de julho | 9h às 18h
+      <span>📅</span> 16 de Maio | 9h às 18h
     </div>
 
     <div style="position: relative; z-index: 1;">
@@ -23,11 +23,14 @@ import '../styles/theme-blue.css';
     </div>
 
     <p class="hero-subtitle">
-      Domine as evidências mais atuais do emagrecimento por apenas R$39.90
+      Domine as evidências mais atuais do emagrecimento por apenas R$19,90
     </p>
 
-    <a href="#preco" class="btn" style="font-size: 1rem; padding: 1.2rem 3rem;">
-      COMPRAR INGRESSO LOTE ATUAL
+    <a href="#preco" class="btn-shiny">
+      <span class="btn-text">COMPRAR INGRESSO LOTE ATUAL</span>
+      <div class="btn-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+      </div>
     </a>
 
     <ProgressBar variant="hero" />
@@ -38,7 +41,7 @@ import '../styles/theme-blue.css';
   </section>
 
   <!-- LEAD / DORES SECTION -->
-  <section class="lead-section container" style="padding: var(--space-xl) 0; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl); align-items: center;">
+  <section class="lead-section container grid-2" style="padding: var(--space-xl) var(--space-sm);">
     <div class="carousel-container" style="position: relative; width: 100%; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.4); background: transparent; aspect-ratio: 4/5; border: 1px solid rgba(255,255,255,0.05);">
       <div class="carousel-slide" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; transition: opacity 0.8s ease-in-out; opacity: 1;">
         <img src="https://nutrineyfelipe.com/wp-content/uploads/2022/07/3.jpg" alt="Atendimento" style="width: 100%; height: 100%; object-fit: contain;" />
@@ -78,8 +81,8 @@ import '../styles/theme-blue.css';
     </div>
   </section>
   <!-- BIO NEY SECTION -->
-  <section class="bio-section container" style="padding: var(--space-xl) 0; display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-xl); align-items: flex-start;">
-    <div style="position: sticky; top: 100px;">
+  <section class="bio-section container grid-bio" style="padding: var(--space-xl) var(--space-sm);">
+    <div class="bio-image-container">
       <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" style="width: 100%; border-radius: var(--radius-lg); background: var(--color-surface); padding: 1rem; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.3);" />
       <div style="margin-top: 1.5rem; text-align: center;">
         <h3 style="font-size: 1.5rem; color: var(--color-primary);">Ney Felipe (@neyfelipef)</h3>
@@ -107,7 +110,7 @@ import '../styles/theme-blue.css';
   </section>
 
   <!-- FRASE SECTION -->
-  <section style="background: var(--color-surface); padding: var(--space-lg) 0; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+  <section style="background: var(--color-surface); padding: var(--space-lg) var(--space-sm); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
     <div class="container text-center">
       <blockquote class="text-serif italic" style="font-size: 1.5rem; color: var(--color-text); line-height: 1.6; max-width: 900px; margin: 0 auto;">
         "Embora o déficit calórico seja a condition <i>sine qua non</i> para emagrecer, <b style="color: var(--color-primary);">a nutrição não se resume a uma simples calculoterapia.</b> É importante considerar a qualidade dos alimentos e o contexto calórico." — <b style="color: #FFF;">Ney Felipe.</b>
@@ -116,9 +119,9 @@ import '../styles/theme-blue.css';
   </section>
 
   <!-- DEPOIMENTOS SECTION -->
-  <section class="container" style="padding: var(--space-xl) 0;">
+  <section class="container" style="padding: var(--space-xl) var(--space-sm);">
     <h2 class="text-center" style="margin-bottom: var(--space-xl);">Resultados de quem já esteve lá</h2>
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-md);">
+    <div class="grid-3">
       <!-- Depo 1 -->
       <div style="background: var(--color-surface); padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.2); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
         <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-02.png" alt="Nair" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem; border: 2px solid var(--color-primary);" />
@@ -145,19 +148,24 @@ import '../styles/theme-blue.css';
       <p style="font-size: 1.125rem; color: var(--color-text-light); max-width: 800px; margin: 0 auto 2rem;">
         Você não precisa ser um Nutricionista experiente... você não precisa gastar anos pesquisando... tudo que você precisa fazer agora é garantir seu ingresso antes de virar o lote.
       </p>
-      <a href="#preco" class="btn">SIM! QUERO MEU INGRESSO</a>
+      <a href="#preco" class="btn-shiny">
+        <span class="btn-text">SIM! QUERO MEU INGRESSO</span>
+        <div class="btn-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </div>
+      </a>
     </div>
   </section>
 
   <!-- PROFESSORES / TIME SECTION -->
-  <section id="time" class="container" style="padding: var(--space-xl) 0; text-align: center;">
+  <section id="time" class="container" style="padding: var(--space-xl) var(--space-sm); text-align: center;">
     <h3 style="color: var(--color-primary); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; margin-bottom: 1rem;">APRENDA COM GRANDES</h3>
     <h2 style="font-size: 3rem; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
       E quem estará no <span class="text-serif italic" style="color: var(--color-primary); font-weight: 400;">palco virtual</span> da melhor imersão do Brasil?
     </h2>
     <p style="color: var(--color-text-light); font-size: 1.125rem; margin-bottom: var(--space-xl);">Autoridades que construíram resultados onde outros viam apenas caos.</p>
     
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; text-align: left;">
+    <div class="grid-4" style="text-align: left;">
       <!-- Ney -->
       <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column;">
         <img src="/images/ney-clinica-otimizado.webp" alt="Ney Felipe" style="width: 100%; height: 250px; object-fit: cover; background: #e0e0e0;" />
@@ -198,10 +206,10 @@ import '../styles/theme-blue.css';
   </section>
 
   <!-- CRONOGRAMA SECTION -->
-  <section id="cronograma" style="background: var(--color-bg); padding: var(--space-xl) 0; border-top: 1px solid rgba(255,255,255,0.05);">
+  <section id="cronograma" style="background: var(--color-bg); padding: var(--space-xl) var(--space-sm); border-top: 1px solid rgba(255,255,255,0.05);">
     <div class="container">
       <h2 class="text-center" style="margin-bottom: var(--space-xl); color: #FFF;">Cronograma do Evento</h2>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+      <div class="grid-4">
         <div style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
           <div style="background: var(--color-primary); color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-weight: 800; box-shadow: 0 0 15px rgba(37,99,235,0.3);">9H</div>
           <b style="color: #FFF;">Início</b>
@@ -225,9 +233,9 @@ import '../styles/theme-blue.css';
     </div>
   </section>
   <!-- CONTEÚDO PROGRAMÁTICO -->
-  <section id="conteudo" class="container" style="padding: var(--space-xl) 0;">
+  <section id="conteudo" class="container" style="padding: var(--space-xl) var(--space-sm);">
     <h2 class="text-center" style="margin-bottom: var(--space-xl);">Isso é <b>Parte</b> do que você vai aprender na Imersão</h2>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+    <div class="grid-2">
       <div style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: var(--color-text-light); padding: 2rem; border-radius: var(--radius-lg);">
         <h3 style="color: var(--color-primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
           <span style="font-size: 1.5rem;">🆕</span> Conteúdo Atualizado
@@ -279,10 +287,10 @@ import '../styles/theme-blue.css';
   </section>
 
   <!-- COMPARATIVO SECTION -->
-  <section style="background: var(--color-bg); padding: var(--space-xl) 0; border-top: 1px solid rgba(255,255,255,0.05);">
+  <section style="background: var(--color-bg); padding: var(--space-xl) var(--space-sm); border-top: 1px solid rgba(255,255,255,0.05);">
     <div class="container">
       <h2 class="text-center" style="margin-bottom: var(--space-xl); color: #FFF;">A escolha para avançar de nível é toda sua:</h2>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xl);">
+      <div class="grid-2">
         <!-- Lado Negativo -->
         <div style="background: rgba(197, 48, 48, 0.05); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(197, 48, 48, 0.2);">
           <h3 style="color: #FC8181; margin-bottom: 1.5rem;">❌ Sem essa Imersão você vai...</h3>
@@ -305,7 +313,7 @@ import '../styles/theme-blue.css';
     </div>
   </section>
   <!-- DISCURSO RASO SECTION -->
-  <section class="container" style="padding: var(--space-xl) 0; display: flex; flex-direction: column; align-items: center; text-align: center;">
+  <section class="container" style="padding: var(--space-xl) var(--space-sm); display: flex; flex-direction: column; align-items: center; text-align: center;">
     <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/chega.jpg" alt="Chega" style="max-width: 500px; width: 100%; border-radius: var(--radius-lg); margin-bottom: var(--space-xl); box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
     <h2 style="font-size: 2.5rem; margin-bottom: var(--space-md); color: #FFF;">CANSOU DE OUVIR DISCURSOS RASOS SOBRE EMAGRECIMENTO?</h2>
     <p style="font-size: 1.5rem; color: var(--color-primary); font-weight: 700; margin-bottom: var(--space-lg);">"Para emagrecer basta fazer déficit Calórico"</p>
@@ -317,10 +325,10 @@ import '../styles/theme-blue.css';
   </section>
 
   <!-- PREÇOS SECTION -->
-  <section id="preco" style="background: var(--color-bg); padding: var(--space-xl) 0; border-top: 1px solid rgba(255,255,255,0.05);">
+  <section id="preco" style="background: var(--color-bg); padding: var(--space-xl) var(--space-sm); border-top: 1px solid rgba(255,255,255,0.05);">
     <div class="container">
       <h2 class="text-center" style="margin-bottom: 2rem; color: #FFF;">Escolha seu Ingresso</h2>
-      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: var(--space-xl); align-items: stretch;">
+      <div class="grid-bio">
         <!-- Ingresso Normal -->
         <div style="background: var(--color-surface); padding: 3rem; border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.4); display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,0.05);">
           <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #FFF;">Ingresso Normal</h3>
@@ -339,7 +347,12 @@ import '../styles/theme-blue.css';
             <span style="text-decoration: line-through; color: #666; font-size: 1.125rem;">De R$97,00</span>
             <div style="font-size: 2.5rem; font-weight: 800; color: #FFF;">R$ 19,90</div>
           </div>
-          <a href="#" class="btn" style="width: 100%;" data-form="normal">COMPRAR AGORA</a>
+          <a href="#" class="btn-shiny" style="width: 100%;" data-form="normal">
+            <span class="btn-text">COMPRAR AGORA</span>
+            <div class="btn-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </a>
         </div>
 
         <!-- Ingresso VIP -->
@@ -434,19 +447,24 @@ import '../styles/theme-blue.css';
             <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary);">R$ 15,20</div>
             <div style="font-size: 1rem; color: var(--color-text-light);">ou R$ 147 à vista</div>
           </div>
-          <a href="#" class="btn" style="width: 100%; box-shadow: 0 10px 20px rgba(37,99,235,0.3);" data-form="vip">COMPRAR INGRESSO VIP</a>
+          <a href="#" class="btn-shiny" style="width: 100%; box-shadow: 0 10px 20px rgba(37,99,235,0.3);" data-form="vip">
+            <span class="btn-text">COMPRAR INGRESSO VIP</span>
+            <div class="btn-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ SECTION -->
-  <section id="faq" class="container" style="padding: var(--space-xl) 0;">
+  <section id="faq" class="container" style="padding: var(--space-xl) var(--space-sm);">
     <h2 class="text-center" style="margin-bottom: var(--space-xl); color: #FFF;">Perguntas Frequentes</h2>
     <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem;">
       <details style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: #FFF; padding: 1.5rem; border-radius: var(--radius-md); cursor: pointer;">
         <summary style="font-weight: 700; font-size: 1.125rem;">É ao vivo? Qual a duração?</summary>
-        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">A Imersão vai acontecer ao vivo no dia 26 de julho das 9h às 18h. Caso deseje adquirir a gravação basta avançar para próxima página (checkout) e selecionar a opção no momento da compra.</p>
+        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">A Imersão vai acontecer ao vivo no dia 16 de Maio das 9h às 18h. Caso deseje adquirir a gravação basta avançar para próxima página (checkout) e selecionar a opção no momento da compra.</p>
       </details>
       <details style="background: var(--color-surface); border: 1px solid rgba(255,255,255,0.05); color: #FFF; padding: 1.5rem; border-radius: var(--radius-md); cursor: pointer;">
         <summary style="font-weight: 700; font-size: 1.125rem;">Fica Gravado?</summary>
@@ -464,7 +482,7 @@ import '../styles/theme-blue.css';
   </section>
 
   <!-- FOOTER -->
-  <footer style="background: #1A1A1A; color: rgba(255,255,255,0.6); padding: var(--space-xl) 0 var(--space-lg); text-align: center;">
+  <footer style="background: #1A1A1A; color: rgba(255,255,255,0.6); padding: var(--space-xl) var(--space-sm) var(--space-lg); text-align: center;">
     <div class="container">
       <h3 style="color: white; margin-bottom: 1rem;">Suporte no WhatsApp</h3>
       <p style="margin-bottom: 2rem;">Minha equipe está à disposição para tirar suas dúvidas pelo nosso canal de atendimento via Whatsapp.</p>
