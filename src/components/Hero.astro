@@ -8,7 +8,6 @@ interface Props {
 }
 
 const { variant = 'green' } = Astro.props;
-const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png";
 ---
 
 <section class="hero-ultimate-fidelity">
@@ -29,7 +28,6 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
         Domine as evidências mais atuais do emagrecimento e aplique na <span class="bold-green">prática clínica</span> com segurança.
       </p>
 
-      <!-- CTA and PRICE CARD WRAPPER FOR PERFECT ALIGNMENT -->
       <div class="conversion-block-v4">
         <div class="cta-wrap-v4">
           <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" />
@@ -41,12 +39,10 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
       </div>
     </div>
 
-    <!-- RIGHT COLUMN -->
+    <!-- RIGHT COLUMN (ONLY FLOATING CARDS NOW) -->
     <div class="hero-visual-side">
       <div class="image-stack">
-        <div class="bg-glow"></div>
-        <img src={neyImage} alt="Ney Felipe" class="ney-photo" />
-        
+        <!-- The background image now contains Ney, so we only need the floating cards -->
         <div class="floating-list-card">
           <div class="list-item">
             <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
@@ -109,13 +105,17 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
 <style>
   .hero-ultimate-fidelity {
     background-color: #F7F8F6;
-    background-image: url('/images/background-pagina-imersao.png');
+    background-image: url('/images/background-pagina-verde-hero.png');
     background-size: cover;
-    background-position: center;
+    background-position: center right;
     background-repeat: no-repeat;
-    padding-top: 60px;
+    padding-top: 80px;
     position: relative;
     overflow: hidden;
+    min-height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .hero-grid-fidelity {
@@ -124,12 +124,13 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
     gap: 2rem;
     align-items: center;
     padding-bottom: 40px;
+    flex-grow: 1;
   }
 
   .hero-text-side {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* FORCE LEFT ALIGNMENT */
+    align-items: flex-start;
     text-align: left;
   }
 
@@ -189,6 +190,8 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
     max-width: 540px;
   }
 
+  .bold-green { color: #16A34A; font-weight: 700; }
+
   .conversion-block-v4 {
     display: flex;
     flex-direction: column;
@@ -201,31 +204,10 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
   .price-wrap-v4 { width: 100%; max-width: 440px; }
 
   /* Visual Side */
-  .hero-visual-side { position: relative; }
-  .image-stack { position: relative; display: flex; justify-content: center; }
-
-  .ney-photo {
-    width: 100%;
-    max-width: 520px;
-    z-index: 5;
-    mask-image: linear-gradient(to top, transparent 0%, black 20%);
-  }
-
-  .bg-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 130%;
-    height: 130%;
-    background: radial-gradient(circle, rgba(22, 163, 74, 0.08) 0%, transparent 70%);
-    z-index: 1;
-  }
+  .hero-visual-side { position: relative; height: 100%; }
+  .image-stack { position: relative; height: 100%; display: flex; align-items: center; justify-content: flex-end; }
 
   .floating-list-card {
-    position: absolute;
-    right: -20px;
-    bottom: 100px;
     background: white;
     border-radius: 20px;
     padding: 24px;
@@ -236,6 +218,7 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
     width: 280px;
     z-index: 10;
     border: 1px solid #F9FAFB;
+    margin-right: -40px;
   }
 
   .list-item { display: flex; align-items: center; gap: 12px; }
@@ -260,7 +243,7 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
     background: #FFFFFF;
     border-top: 1px solid #F3F4F6;
     padding: 32px 0;
-    margin-top: 20px;
+    width: 100%;
   }
 
   .footer-grid-v4 {
@@ -292,12 +275,16 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
   .spoiler-v4 p { font-size: 14px; line-height: 1.6; color: #4B5563; margin: 0; }
 
   @media (max-width: 1024px) {
+    .hero-ultimate-fidelity { 
+      background-image: none; /* User said expert image is NOT needed on mobile */
+      min-height: auto;
+      padding-bottom: 40px;
+    }
     .hero-grid-fidelity { grid-template-columns: 1fr; text-align: center; gap: 2.5rem; }
     .hero-visual-side { display: none; }
     .hero-text-side { align-items: center; text-align: center; }
     .conversion-block-v4 { align-items: center; }
     .subhead-v4 { margin-left: auto; margin-right: auto; }
-    .floating-list-card { position: relative; right: auto; bottom: auto; margin: 2rem auto 0; width: 100%; max-width: 320px; }
     .footer-grid-v4 { flex-direction: column; gap: 2rem; }
     .f-sep { display: none; }
     .spoiler-v4 { flex-direction: column; text-align: center; }
