@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ProgressBar from '../components/ProgressBar.astro';
 import FormModal from '../components/FormModal.astro';
+import Schedule from '../components/Schedule.astro';
 import '../styles/theme-green.css';
 ---
 
@@ -200,33 +201,7 @@ import '../styles/theme-green.css';
     </div>
   </section>
 
-  <!-- CRONOGRAMA SECTION -->
-  <section id="cronograma" style="background: #DAFFD3; padding: var(--space-xl) var(--space-sm);">
-    <div class="container">
-      <h2 class="text-center" style="margin-bottom: var(--space-xl);">Cronograma do Evento</h2>
-      <div class="grid-4">
-        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); text-align: center;">
-          <div style="background: #565656; color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem;">9H</div>
-          <b>Início</b>
-        </div>
-        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); text-align: center;">
-          <div style="background: #565656; color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem;">12H</div>
-          <b>Almoço</b>
-        </div>
-        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); text-align: center;">
-          <div style="background: #565656; color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem;">13H30</div>
-          <b>Retorno</b>
-        </div>
-        <div style="background: white; padding: 1.5rem; border-radius: var(--radius-md); text-align: center;">
-          <div style="background: #565656; color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem;">17H30</div>
-          <b>Encerramento*</b>
-        </div>
-      </div>
-      <p style="margin-top: 2rem; font-size: 0.875rem; color: var(--color-text-light); text-align: center;">
-        *Considere encerrar mais tarde, caso os participantes peçam para nos aprofundarmos em algum ponto.
-      </p>
-    </div>
-  </section>
+  <Schedule variant="green" />
   <!-- CONTEÚDO PROGRAMÁTICO -->
   <section id="conteudo" class="container" style="padding: var(--space-xl) var(--space-sm);">
     <h2 class="text-center" style="margin-bottom: var(--space-xl);">Isso é <b>Parte</b> do que você vai aprender na Imersão</h2>

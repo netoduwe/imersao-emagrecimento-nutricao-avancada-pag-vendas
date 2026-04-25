@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ProgressBar from '../components/ProgressBar.astro';
 import FormModal from '../components/FormModal.astro';
+import Schedule from '../components/Schedule.astro';
 import '../styles/theme-blue.css';
 ---
 
@@ -205,33 +206,7 @@ import '../styles/theme-blue.css';
     </div>
   </section>
 
-  <!-- CRONOGRAMA SECTION -->
-  <section id="cronograma" style="background: var(--color-bg); padding: var(--space-xl) var(--space-sm); border-top: 1px solid rgba(255,255,255,0.05);">
-    <div class="container">
-      <h2 class="text-center" style="margin-bottom: var(--space-xl); color: #FFF;">Cronograma do Evento</h2>
-      <div class="grid-4">
-        <div style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
-          <div style="background: var(--color-primary); color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-weight: 800; box-shadow: 0 0 15px rgba(37,99,235,0.3);">9H</div>
-          <b style="color: #FFF;">Início</b>
-        </div>
-        <div style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
-          <div style="background: var(--color-primary); color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-weight: 800; box-shadow: 0 0 15px rgba(37,99,235,0.3);">12H</div>
-          <b style="color: #FFF;">Almoço</b>
-        </div>
-        <div style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
-          <div style="background: var(--color-primary); color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-weight: 800; box-shadow: 0 0 15px rgba(37,99,235,0.3);">13H30</div>
-          <b style="color: #FFF;">Retorno</b>
-        </div>
-        <div style="background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-md); text-align: center; border: 1px solid rgba(255,255,255,0.05);">
-          <div style="background: var(--color-primary); color: white; padding: 0.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; font-weight: 800; box-shadow: 0 0 15px rgba(37,99,235,0.3);">17H30</div>
-          <b style="color: #FFF;">Encerramento*</b>
-        </div>
-      </div>
-      <p style="margin-top: 2rem; font-size: 0.875rem; color: var(--color-text-light); text-align: center;">
-        *Considere encerrar mais tarde, caso os participantes peçam para nos aprofundarmos em algum ponto.
-      </p>
-    </div>
-  </section>
+  <Schedule variant="blue" />
   <!-- CONTEÚDO PROGRAMÁTICO -->
   <section id="conteudo" class="container" style="padding: var(--space-xl) var(--space-sm);">
     <h2 class="text-center" style="margin-bottom: var(--space-xl);">Isso é <b>Parte</b> do que você vai aprender na Imersão</h2>
