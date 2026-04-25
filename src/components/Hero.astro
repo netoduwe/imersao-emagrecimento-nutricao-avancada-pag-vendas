@@ -8,127 +8,117 @@ interface Props {
 const { variant = 'green' } = Astro.props;
 
 const primaryColor = variant === 'green' ? '#1AA824' : '#2563EB';
+const secondaryColor = variant === 'green' ? '#dcfce7' : 'rgba(37, 99, 235, 0.2)';
 const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png";
 ---
 
-<section class={`hero-premium ${variant}`}>
-  <div class="container hero-grid">
-    <div class="hero-content">
-      <div class="date-badge">
+<section class={`hero-ultimate ${variant}`}>
+  <div class="container hero-container">
+    <div class="hero-left">
+      <div class="badge-date">
         <span class="icon">📅</span> 16 de Maio | 9h às 18h
       </div>
 
-      <h1 class="hero-title">
-        Um dia inteiro de <span class="italic">Imersão</span> em <span class="underline">atualização</span> no tratamento do <span class="accent">sobrepeso e obesidade</span>
+      <h1 class="hero-title-main">
+        Um dia inteiro de <span class="playfair-italic">Imersão</span> em <span class="highlight-stroke">atualização</span> no tratamento do <span class="color-accent">sobrepeso e obesidade</span>
       </h1>
 
-      <p class="hero-subtitle">
-        Domine as evidências mais atuais do emagrecimento e aplique na <strong>prática clínica</strong> com segurança.
+      <p class="hero-description">
+        Domine as evidências mais atuais do emagrecimento e aplique na <span class="bold-highlight">prática clínica</span> com segurança.
       </p>
 
-      <div class="hero-actions">
-        <a href="#preco" class="btn-shiny">
-          <span class="btn-text">COMPRAR INGRESSO LOTE ATUAL</span>
-          <div class="btn-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+      <div class="hero-cta-box">
+        <a href="#preco" class="btn-premium-action">
+          <span class="text">COMPRAR INGRESSO LOTE ATUAL</span>
+          <div class="circle-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </div>
         </a>
       </div>
 
-      <div class="pricing-card">
-        <div class="card-header">
-          <span class="lote-badge">🔥 LOTE ZERO</span>
-          <div class="price">
-            <span class="label">POR APENAS</span>
-            <span class="value">R$ 19,90</span>
+      <div class="lote-card-premium">
+        <div class="lote-card-content">
+          <div class="lote-label">🔥 LOTE ZERO</div>
+          <div class="lote-price">
+            <span class="small-label">POR APENAS</span>
+            <span class="large-price">R$ 19,90</span>
           </div>
         </div>
-        <ProgressBar variant="hero" />
+        <div class="lote-progress">
+          <ProgressBar variant="hero" />
+        </div>
+        <div class="lote-stats">
+          <span>3% vendidos</span>
+          <span>97 restantes</span>
+        </div>
       </div>
     </div>
 
-    <div class="hero-visual">
-      <div class="image-wrapper">
-        <div class="blob"></div>
-        <img src={neyImage} alt="Ney Felipe" class="ney-img" />
-      </div>
-
-      <div class="floating-features">
-        <div class="feature-card">
-          <div class="f-icon green">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+    <div class="hero-right">
+      <div class="ney-visual-wrapper">
+        <div class="gradient-aura"></div>
+        <div class="floating-benefit-cards">
+          <div class="benefit-card">
+            <div class="b-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+            <p>Atualizações baseadas em ciência de verdade</p>
           </div>
-          <p>Atualizações baseadas em ciência de verdade</p>
-        </div>
-        <div class="feature-card">
-          <div class="f-icon green">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <div class="benefit-card">
+            <div class="b-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
+            <p>Protocolos aplicáveis na prática clínica</p>
           </div>
-          <p>Protocolos aplicáveis na prática clínica</p>
-        </div>
-        <div class="feature-card">
-          <div class="f-icon green">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          <div class="benefit-card">
+            <div class="b-card-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+            <p>Resultados reais para seus pacientes</p>
           </div>
-          <p>Resultados reais para seus pacientes</p>
         </div>
+        <img src={neyImage} alt="Ney Felipe" class="ney-hero-img" />
       </div>
     </div>
   </div>
 
-  <div class="hero-footer-bar">
-    <div class="container bar-grid">
-      <div class="bar-item">
-        <div class="bar-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-        </div>
-        <div class="bar-text">
-          <strong>UM DIA INTENSO</strong>
-          <span>de muito conteúdo</span>
-        </div>
+  <div class="hero-bottom-bar">
+    <div class="container bottom-bar-grid">
+      <div class="bottom-item">
+        <div class="bottom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+        <div class="bottom-text"><strong>UM DIA INTENSO</strong><span>de muito conteúdo</span></div>
       </div>
-      <div class="bar-divider"></div>
-      <div class="bar-item">
-        <div class="bar-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
-        </div>
-        <div class="bar-text">
-          <strong>FOCO TOTAL</strong>
-          <span>em prática clínica</span>
-        </div>
+      <div class="bottom-sep"></div>
+      <div class="bottom-item">
+        <div class="bottom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+        <div class="bottom-text"><strong>FOCO TOTAL</strong><span>em prática clínica</span></div>
       </div>
-      <div class="bar-divider"></div>
-      <div class="bar-item">
-        <div class="bar-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-        </div>
-        <div class="bar-text">
-          <strong>NETWORKING</strong>
-          <span>com quem faz acontecer</span>
-        </div>
+      <div class="bottom-sep"></div>
+      <div class="bottom-item">
+        <div class="bottom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+        <div class="bottom-text"><strong>NETWORKING</strong><span>com quem faz acontecer</span></div>
       </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero-spoiler-final">
+       <div class="spoiler-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="var(--primaryColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M9 12L11 14L15 10" stroke="var(--primaryColor)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+       </div>
+       <p><strong>Spoiler:</strong> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <strong>prática clínica</strong> e como ir <strong>além do déficit calórico</strong> quando o assunto é emagrecimento.</p>
     </div>
   </div>
 </section>
 
-<style define:vars={{ primaryColor }}>
-  .hero-premium {
+<style define:vars={{ primaryColor, secondaryColor }}>
+  .hero-ultimate {
     padding-top: 4rem;
     position: relative;
     overflow: hidden;
   }
 
-  .hero-premium.blue {
-    background: #030712;
-    color: #ffffff;
-  }
-  
-  .hero-premium.green {
-    background: #ffffff;
-    color: #1a1a1a;
-  }
+  .hero-ultimate.green { background: #FFFFFF; color: #1a1a1a; }
+  .hero-ultimate.blue { background: #030712; color: #ffffff; }
 
-  .hero-grid {
+  .hero-container {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     gap: 4rem;
@@ -137,193 +127,227 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
     z-index: 10;
   }
 
-  .date-badge {
+  .badge-date {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    background: rgba(var(--primary-rgb), 0.05);
+    gap: 0.6rem;
+    background: #f0fdf4;
     padding: 0.5rem 1.25rem;
-    border-radius: 99px;
+    border-radius: 8px;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--primaryColor);
     margin-bottom: 2rem;
-    border: 1px solid rgba(var(--primary-rgb), 0.1);
+    border: 1px solid #dcfce7;
   }
 
-  .hero-premium.green .date-badge {
-      background: #f0fdf4;
-      border: 1px solid #dcfce7;
+  .hero-ultimate.blue .badge-date {
+    background: rgba(37, 99, 235, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
   }
 
-  .hero-title {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
+  .hero-title-main {
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.05;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
+    color: #111827;
   }
+  
+  .hero-ultimate.blue .hero-title-main { color: #fff; }
 
-  .hero-title .italic {
-    font-family: var(--font-serif);
+  .playfair-italic {
+    font-family: 'Playfair Display', serif;
     font-style: italic;
     font-weight: 400;
   }
 
-  .hero-title .underline {
+  .highlight-stroke {
     position: relative;
     display: inline-block;
+    z-index: 1;
   }
   
-  .hero-title .underline::after {
+  .highlight-stroke::after {
     content: '';
     position: absolute;
     bottom: 8px;
     left: 0;
     width: 100%;
-    height: 4px;
-    background: var(--primaryColor);
-    opacity: 0.3;
+    height: 8px;
+    background: var(--secondaryColor);
     z-index: -1;
   }
 
-  .hero-title .accent {
-    color: var(--primaryColor);
-  }
+  .color-accent { color: var(--primaryColor); }
 
-  .hero-subtitle {
+  .hero-description {
     font-size: 1.25rem;
-    color: var(--color-text-light);
-    max-width: 600px;
+    color: #4B5563;
+    max-width: 580px;
     margin-bottom: 2.5rem;
     line-height: 1.6;
   }
+  
+  .hero-ultimate.blue .hero-description { color: #D1D5DB; }
 
-  .hero-actions {
-    margin-bottom: 3rem;
+  .bold-highlight {
+    color: var(--primaryColor);
+    font-weight: 700;
   }
 
-  /* Pricing Card */
-  .pricing-card {
+  .hero-cta-box {
+    margin-bottom: 3.5rem;
+  }
+
+  .btn-premium-action {
+    display: inline-flex;
+    align-items: center;
+    background: #15803d;
+    color: white;
+    padding: 1rem 1.5rem 1rem 2.5rem;
+    border-radius: 99px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.125rem;
+    box-shadow: 0 10px 25px rgba(21, 128, 61, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .hero-ultimate.blue .btn-premium-action {
+    background: #1D4ED8;
+    box-shadow: 0 10px 25px rgba(29, 78, 216, 0.2);
+  }
+
+  .btn-premium-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(21, 128, 61, 0.3);
+  }
+
+  .circle-icon {
+    width: 36px;
+    height: 36px;
     background: white;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    border-radius: 16px;
-    padding: 1.5rem 2rem;
-    max-width: 450px;
+    color: var(--primaryColor);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.5rem;
   }
 
-  .hero-premium.blue .pricing-card {
+  /* Lote Card */
+  .lote-card-premium {
+    background: #FFFFFF;
+    border: 1px solid #F3F4F6;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+    border-radius: 24px;
+    padding: 2rem;
+    max-width: 480px;
+  }
+
+  .hero-ultimate.blue .lote-card-premium {
     background: #111827;
     border-color: rgba(255,255,255,0.05);
   }
 
-  .card-header {
+  .lote-card-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
-  .lote-badge {
+  .lote-label {
     background: var(--primaryColor);
     color: white;
-    font-size: 0.75rem;
-    font-weight: 800;
-    padding: 0.4rem 0.8rem;
+    padding: 0.5rem 1rem;
     border-radius: 99px;
-  }
-
-  .price {
-    text-align: right;
-  }
-
-  .price .label {
-    display: block;
-    font-size: 0.65rem;
-    color: var(--color-text-light);
-    font-weight: 700;
-  }
-
-  .price .value {
-    font-size: 1.75rem;
+    font-size: 0.8rem;
     font-weight: 800;
   }
 
-  /* Visual Column */
-  .hero-visual {
-    position: relative;
+  .lote-price { text-align: right; }
+  .small-label { display: block; font-size: 0.7rem; color: #9CA3AF; font-weight: 700; margin-bottom: 0.25rem; }
+  .large-price { font-size: 2rem; font-weight: 800; color: #111827; }
+  .hero-ultimate.blue .large-price { color: #fff; }
+
+  .lote-stats {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #9CA3AF;
   }
 
-  .image-wrapper {
+  /* Visual side */
+  .hero-right {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .ney-visual-wrapper {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
+    margin: 0 auto;
   }
 
-  .blob {
+  .ney-hero-img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 5;
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  }
+
+  .gradient-aura {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, var(--primaryColor) 0%, transparent 70%);
-    opacity: 0.1;
-    z-index: -1;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.1) 0%, transparent 70%);
+    z-index: 1;
   }
 
-  .ney-img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  }
-
-  .floating-features {
+  .floating-benefit-cards {
     position: absolute;
-    bottom: 10%;
-    right: -10%;
+    right: -20px;
+    bottom: 80px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    z-index: 20;
+    z-index: 10;
   }
 
-  .feature-card {
+  .benefit-card {
     background: white;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-radius: 12px;
-    padding: 0.75rem 1.25rem;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06);
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    max-width: 280px;
-    animation: floating 3s ease-in-out infinite;
+    gap: 1rem;
+    width: 320px;
+    border: 1px solid #F9FAFB;
   }
 
-  .hero-premium.blue .feature-card {
+  .hero-ultimate.blue .benefit-card {
     background: #111827;
-    border-color: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.05);
     color: #fff;
   }
 
-  .feature-card:nth-child(2) { animation-delay: 0.5s; }
-  .feature-card:nth-child(3) { animation-delay: 1s; }
-
-  @keyframes floating {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  .f-icon {
+  .b-card-icon {
     width: 32px;
     height: 32px;
-    background: rgba(var(--primary-rgb), 0.1);
+    background: #f0fdf4;
     color: var(--primaryColor);
     border-radius: 8px;
     display: flex;
@@ -332,108 +356,79 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
     flex-shrink: 0;
   }
 
-  .feature-card p {
+  .hero-ultimate.blue .b-card-icon { background: rgba(37, 99, 235, 0.1); }
+
+  .benefit-card p {
     font-size: 0.85rem;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.4;
+    color: #374151;
     margin: 0;
   }
+  
+  .hero-ultimate.blue .benefit-card p { color: #E5E7EB; }
 
-  /* Footer Bar */
-  .hero-footer-bar {
-    margin-top: 4rem;
-    background: rgba(var(--primary-rgb), 0.02);
-    border-top: 1px solid rgba(var(--primary-rgb), 0.05);
+  /* Bottom Bar */
+  .hero-bottom-bar {
+    margin-top: 5rem;
+    background: #F9FAFB;
+    border-top: 1px solid #F3F4F6;
     padding: 2.5rem 0;
   }
 
-  .hero-premium.blue .hero-footer-bar {
+  .hero-ultimate.blue .hero-bottom-bar {
     background: rgba(255,255,255,0.02);
+    border-color: rgba(255,255,255,0.05);
   }
 
-  .bar-grid {
+  .bottom-bar-grid {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 4rem;
   }
 
-  .bar-item {
+  .bottom-item { display: flex; align-items: center; gap: 1rem; }
+  .bottom-icon { color: var(--primaryColor); opacity: 0.8; }
+  .bottom-text { display: flex; flex-direction: column; }
+  .bottom-text strong { font-size: 1rem; letter-spacing: 0.05em; color: #111827; }
+  .hero-ultimate.blue .bottom-text strong { color: #fff; }
+  .bottom-text span { font-size: 0.8rem; color: #6B7280; }
+  .bottom-sep { width: 1px; height: 40px; background: #E5E7EB; }
+  .hero-ultimate.blue .bottom-sep { background: rgba(255,255,255,0.1); }
+
+  /* Spoiler Section */
+  .hero-spoiler-final {
+    margin: 3rem auto 0;
+    max-width: 900px;
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem 2rem;
+    background: #f0fdf4;
+    border-radius: 16px;
+    border: 1px solid #dcfce7;
   }
 
-  .bar-icon {
-    color: var(--primaryColor);
-    opacity: 0.7;
+  .hero-ultimate.blue .hero-spoiler-final {
+    background: rgba(37, 99, 235, 0.05);
+    border-color: rgba(37, 99, 235, 0.1);
   }
 
-  .bar-text {
-    display: flex;
-    flex-direction: column;
-  }
+  .spoiler-icon { flex-shrink: 0; margin-top: 0.25rem; }
+  .hero-spoiler-final p { font-size: 1rem; line-height: 1.6; color: #4B5563; margin: 0; }
+  .hero-ultimate.blue .hero-spoiler-final p { color: #D1D5DB; }
 
-  .bar-text strong {
-    font-size: 0.875rem;
-    letter-spacing: 0.05em;
-  }
-
-  .bar-text span {
-    font-size: 0.75rem;
-    color: var(--color-text-light);
-  }
-
-  .bar-divider {
-    width: 1px;
-    height: 40px;
-    background: rgba(var(--primary-rgb), 0.1);
-  }
-
-  /* Responsive Mobile */
   @media (max-width: 1024px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-      gap: 3rem;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hero-subtitle {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .pricing-card {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero-visual {
-      order: -1;
-    }
-
-    .floating-features {
-      right: 0;
-      bottom: -20px;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .bar-grid {
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .bar-divider {
-      display: none;
-    }
+    .hero-container { grid-template-columns: 1fr; text-align: center; gap: 5rem; }
+    .hero-left { display: flex; flex-direction: column; align-items: center; }
+    .hero-description { margin-left: auto; margin-right: auto; }
+    .lote-card-premium { margin-left: auto; margin-right: auto; }
+    .hero-right { order: -1; }
+    .floating-benefit-cards { position: relative; right: auto; bottom: auto; margin-top: 2rem; align-items: center; width: 100%; }
+    .benefit-card { width: 100%; max-width: 360px; }
+    .bottom-bar-grid { flex-direction: column; gap: 2.5rem; }
+    .bottom-sep { display: none; }
+    .hero-spoiler-final { flex-direction: column; align-items: center; text-align: center; }
   }
 </style>
