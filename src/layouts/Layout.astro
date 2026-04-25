@@ -68,7 +68,7 @@ const { title, theme = 'green' } = Astro.props;
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-        el.textContent = `Vendas iniciam em: ${d}d ${h}h ${m}m ${s}s`;
+        el.textContent = `O evento começa em: ${d}d ${h}h ${m}m ${s}s`;
       }
       setInterval(updateCountdown, 1000);
       updateCountdown();
