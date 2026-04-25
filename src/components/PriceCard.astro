@@ -39,6 +39,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
+    gap: 12px;
   }
 
   .pc-badge {
@@ -48,10 +49,13 @@
     border-radius: 99px;
     font-size: 12px;
     font-weight: 800;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .pc-price {
     text-align: right;
+    min-width: 0;
   }
 
   .pc-label {
@@ -66,6 +70,7 @@
     font-size: 24px;
     font-weight: 800;
     color: #111827;
+    white-space: nowrap;
   }
 
   .pc-progress-wrap {
@@ -94,10 +99,20 @@
     font-size: 12px;
     font-weight: 600;
     color: #6B7280;
+    flex-wrap: wrap;
   }
 
   .pc-dot {
     opacity: 0.5;
+  }
+
+  @media (max-width: 480px) {
+    .pc-value {
+      font-size: 20px;
+    }
+    .pc-top {
+      gap: 8px;
+    }
   }
 </style>
 
