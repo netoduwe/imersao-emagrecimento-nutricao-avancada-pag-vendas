@@ -51,17 +51,17 @@ const { variant = 'green' } = Astro.props;
     <div class="container footer-grid-v4">
       <div class="f-item">
         <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
-        <div class="f-text"><strong>UM DIA INTENSO</strong><span>de muito conteúdo</span></div>
+        <div class="f-text"><strong>UM DIA INTENSO</strong><span>de conteúdo</span></div>
       </div>
       <div class="f-sep"></div>
       <div class="f-item">
         <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
-        <div class="f-text"><strong>FOCO TOTAL</strong><span>em prática clínica</span></div>
+        <div class="f-text"><strong>FOCO TOTAL</strong><span>em clínica</span></div>
       </div>
       <div class="f-sep"></div>
       <div class="f-item">
         <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-        <div class="f-text"><strong>NETWORKING</strong><span>com quem faz acontecer</span></div>
+        <div class="f-text"><strong>NETWORKING</strong><span>experiência</span></div>
       </div>
       <div class="f-sep desktop-only"></div>
       <div class="f-item desktop-only">
@@ -183,41 +183,7 @@ const { variant = 'green' } = Astro.props;
 
   /* Visual Side */
   .hero-visual-side { position: relative; }
-  .image-stack { position: relative; display: flex; justify-content: flex-end; }
-
-  .floating-list-card {
-    position: absolute;
-    right: 20px;
-    bottom: 40px;
-    background: white;
-    border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 280px;
-    z-index: 10;
-    border: 1px solid #F9FAFB;
-  }
-
-  .list-item { display: flex; align-items: center; gap: 12px; }
-  .li-icon {
-    width: 32px;
-    height: 32px;
-    background: #f0fdf4;
-    color: #16A34A;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .li-text { display: flex; flex-direction: column; }
-  .li-text strong { font-size: 13px; color: #111827; line-height: 1.2; }
-  .li-text span { font-size: 11px; color: #6B7280; }
-
+  
   /* Bottom Bar */
   .hero-bottom-bar-v4 {
     background: #FFFFFF;
@@ -266,10 +232,20 @@ const { variant = 'green' } = Astro.props;
     .hero-text-side { align-items: center; text-align: center; }
     .conversion-block-v4 { align-items: center; gap: 12px; }
     .subhead-v4 { margin-bottom: 20px; }
-    .footer-grid-v4 { flex-direction: column; gap: 1.5rem; }
+    
+    .hero-bottom-bar-v4 { padding: 16px 0; }
+    .footer-grid-v4 { 
+      flex-direction: row; 
+      justify-content: center; 
+      gap: 12px; 
+      overflow-x: auto; 
+      padding: 0 10px;
+    }
+    .f-item { flex-direction: column; text-align: center; gap: 4px; min-width: 80px; }
+    .f-text strong { font-size: 10px; }
+    .f-text span { font-size: 9px; }
     .f-sep { display: none; }
     .spoiler-v4 { flex-direction: column; text-align: center; margin-top: 20px; padding: 16px; }
     .desktop-only { display: none !important; }
-    .hero-bottom-bar-v4 { padding: 20px 0; }
   }
 </style>

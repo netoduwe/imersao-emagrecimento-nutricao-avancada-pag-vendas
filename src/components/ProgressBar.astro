@@ -60,23 +60,20 @@ const isHero = variant === 'hero';
     transition: all 0.3s ease;
   }
 
-  .lote-tracker__inner:hover {
-    border-color: var(--color-primary);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-  }
-
   /* Top row */
   .lote-tracker__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.875rem;
+    gap: 12px;
   }
 
   .lote-tracker__badge-wrap {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex-shrink: 0;
   }
 
   .lote-tracker__fire {
@@ -96,8 +93,9 @@ const isHero = variant === 'hero';
     border-radius: 100px;
     font-size: 0.7rem;
     font-weight: 800;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    white-space: nowrap;
   }
 
   .lote-tracker__price-wrap {
@@ -105,6 +103,7 @@ const isHero = variant === 'hero';
     flex-direction: column;
     align-items: flex-end;
     gap: 0;
+    min-width: 0;
   }
 
   .lote-tracker__price-label {
@@ -120,6 +119,7 @@ const isHero = variant === 'hero';
     font-weight: 900;
     color: var(--color-text);
     line-height: 1;
+    white-space: nowrap;
   }
 
   /* Progress bar */
@@ -167,12 +167,14 @@ const isHero = variant === 'hero';
     justify-content: space-between;
     align-items: center;
     margin-top: 0.625rem;
+    gap: 8px;
   }
 
   .lote-tracker__pct {
     font-size: 0.75rem;
     font-weight: 600;
     color: var(--color-text-light);
+    white-space: nowrap;
   }
 
   .lote-tracker__remaining {
@@ -182,6 +184,20 @@ const isHero = variant === 'hero';
     display: flex;
     align-items: center;
     gap: 0.25rem;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    .lote-tracker__inner {
+      padding: 1rem;
+    }
+    .lote-tracker__price {
+      font-size: 1.125rem;
+    }
+    .lote-tracker__badge {
+      padding: 0.25rem 0.6rem;
+      font-size: 0.65rem;
+    }
   }
 </style>
 
@@ -227,9 +243,9 @@ const isHero = variant === 'hero';
       pct!.textContent = `${percent}% vendidos`;
 
       if (restantes <= 10) {
-        remaining!.textContent = `⚠️ Últimos ${restantes} ingressos!`;
+        remaining!.textContent = `⚠️ Últimos ${restantes}!`;
       } else if (restantes <= 30) {
-        remaining!.textContent = `🔥 Apenas ${restantes} restantes`;
+        remaining!.textContent = `🔥 Apenas ${restantes}`;
       } else {
         remaining!.textContent = `${restantes} restantes`;
         (remaining as HTMLElement).style.color = '#888';
