@@ -7,7 +7,7 @@ interface Props {
 const { text, href } = Astro.props;
 ---
 
-<a href={href} class="cta-button-v3">
+<a href={href} class="cta-button-v3 btn-shiny-premium">
   <span class="cta-text">{text}</span>
   <div class="cta-icon-circle">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -21,29 +21,44 @@ const { text, href } = Astro.props;
   .cta-button-v3 {
     display: inline-flex;
     align-items: center;
-    background: #16A34A;
-    color: white;
-    padding: 0 16px 0 32px;
-    height: 56px;
-    border-radius: 999px;
+    justify-content: space-between;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    box-shadow: 0 10px 30px rgba(22, 163, 74, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: 100%;
     max-width: 400px;
-    justify-content: space-between;
+    height: 56px;
+    border-radius: 999px;
+    padding: 0 10px 0 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-shiny-premium {
+    background: linear-gradient(325deg, #0f6e14 0%, #22c55e 55%, #0f6e14 90%);
+    background-size: 280% auto;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 10px 30px rgba(22, 163, 74, 0.3), 
+                inset 4px 4px 8px rgba(100, 255, 150, 0.3), 
+                inset -4px -4px 8px rgba(10, 80, 20, 0.2);
   }
 
   .cta-button-v3:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(22, 163, 74, 0.3);
+    background-position: right top;
+    transform: scale(1.02) translateY(-2px);
+    box-shadow: 0 15px 40px rgba(22, 163, 74, 0.4);
+  }
+
+  .cta-text {
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.02em;
   }
 
   .cta-icon-circle {
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     background: white;
     color: #16A34A;
     border-radius: 50%;
@@ -51,5 +66,13 @@ const { text, href } = Astro.props;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
+
+  .cta-button-v3:hover .cta-icon-circle {
+    transform: rotate(45deg);
+    background: #f0fdf4;
   }
 </style>
