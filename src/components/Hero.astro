@@ -63,11 +63,6 @@ const { variant = 'green' } = Astro.props;
         <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
         <div class="f-text"><strong>NETWORKING</strong><span>experiência</span></div>
       </div>
-      <div class="f-sep desktop-only"></div>
-      <div class="f-item desktop-only">
-        <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
-        <div class="f-text"><strong>CERTIFICADO</strong><span>de participação</span></div>
-      </div>
     </div>
   </div>
 
@@ -196,6 +191,8 @@ const { variant = 'green' } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .f-item { display: flex; align-items: center; gap: 12px; }
@@ -246,6 +243,5 @@ const { variant = 'green' } = Astro.props;
     .f-text span { font-size: 9px; }
     .f-sep { display: none; }
     .spoiler-v4 { flex-direction: column; text-align: center; margin-top: 20px; padding: 16px; }
-    .desktop-only { display: none !important; }
   }
 </style>
