@@ -15,6 +15,7 @@
 - O texto do countdown foi ajustado para **"O evento começa em:"** (antes estava "Vendas iniciam em", o que era um erro pois as vendas já estão abertas).
 - **UI Mobile:** O cabeçalho (Header) foi ocultado em dispositivos móveis (`max-width: 768px`) para reduzir a poluição visual, mantendo apenas a `top-bar` com o contador.
 - **Cronograma Premium:** Implementado o novo componente `Schedule.astro` com design inspirado em Linear/Stripe, incluindo Timeline horizontal, glassmorphism sutil e ícones minimalistas.
+- **Hero Premium:** Redesenhada a seção principal com layout em 2 colunas, foto do Ney Felipe, cards flutuantes de benefícios e barra de destaques inferior (removido item de certificado conforme solicitado).
 
 ## Estrutura Chave
 - `src/layouts/Layout.astro`: Onde fica a TopBar, o script do cronômetro global e a chamada do Chatbase.
