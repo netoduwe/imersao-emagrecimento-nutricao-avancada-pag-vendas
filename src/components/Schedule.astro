@@ -4,43 +4,39 @@ interface Props {
 }
 
 const { variant = 'green' } = Astro.props;
+const accentColor = variant === 'green' ? '#16A34A' : '#2563EB';
 
-const scheduleItems = [
-  { time: '09:00', label: 'Início', icon: 'clock' },
-  { time: '12:00', label: 'Almoço', icon: 'utensils' },
-  { time: '13:30', label: 'Retorno', icon: 'rotate-cw' },
-  { time: '17:30', label: 'Encerramento*', icon: 'flag' }
+const timeline = [
+  { time: "09:00", label: "Início", icon: "🚀" },
+  { time: "12:00", label: "Almoço", icon: "🍴" },
+  { time: "13:30", label: "Retorno", icon: "📚" },
+  { time: "17:30", label: "Encerramento*", icon: "✨" }
 ];
-
-const primaryColor = variant === 'green' ? '#1AA824' : '#2563EB';
 ---
 
-<section class={`schedule-section ${variant}`}>
+<section id="cronograma" class={`schedule-section ${variant}`}>
   <div class="container">
-    <div class="schedule-header">
-      <span class="badge">PROGRAMAÇÃO</span>
-      <h2>CRONOGRAMA DO <span class="accent">EVENTO</span></h2>
-      <p>Um dia inteiro de imersão para transformar conhecimento em resultados.</p>
+    <div class="section-header">
+      <h2 class="section-title">Cronograma da Imersão</h2>
+      <p class="section-subtitle">Uma jornada completa de atualização e prática clínica</p>
     </div>
 
-    <div class="timeline-container">
-      <div class="timeline-line"></div>
-      
-      <div class="schedule-grid">
-        {scheduleItems.map((item) => (
-          <div class="schedule-item">
-            <div class="timeline-node-wrapper">
-              <div class="node"></div>
-              <div class="connector"></div>
+    <div class="timeline-container-v4">
+      <!-- Horizontal Line -->
+      <div class="timeline-main-line"></div>
+
+      <div class="timeline-items-grid">
+        {timeline.map((item) => (
+          <div class="timeline-item-v4">
+            <!-- Node -->
+            <div class="node-wrapper">
+              <div class="timeline-node"></div>
+              <div class="dotted-connector"></div>
             </div>
-            
-            <div class="schedule-card">
-              <div class="card-icon">
-                {item.icon === 'clock' && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>}
-                {item.icon === 'utensils' && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>}
-                {item.icon === 'rotate-cw' && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"></path><polyline points="21 3 21 8 16 8"></polyline></svg>}
-                {item.icon === 'flag' && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>}
-              </div>
+
+            <!-- Card -->
+            <div class="schedule-card-v4">
+              <div class="card-icon">{item.icon}</div>
               <div class="card-time">{item.time}</div>
               <div class="card-divider"></div>
               <div class="card-label">{item.label}</div>
@@ -50,257 +46,184 @@ const primaryColor = variant === 'green' ? '#1AA824' : '#2563EB';
       </div>
     </div>
 
-    <div class="schedule-footer">
-      <div class="info-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-      </div>
+    <div class="footer-note">
+      <span class="info-icon">ℹ️</span>
       <p>*Considere encerrar mais tarde, caso os participantes peçam para nos aprofundarmos em algum ponto.</p>
     </div>
   </div>
 </section>
 
-<style define:vars={{ primaryColor }}>
+<style define:vars={{ accentColor }}>
   .schedule-section {
-    padding: 8rem 0;
+    padding: 100px 0;
+    background-color: #030712; /* Dark background to make glassmorphism pop like the reference */
+    color: white;
     overflow: hidden;
   }
 
-  .schedule-section.blue {
-    background: #030712;
-    color: #ffffff;
-  }
-  
   .schedule-section.green {
-    background: #f8f9fa;
-    color: #1a1a1a;
+    background-color: #F9FAFB;
+    color: #111827;
   }
 
-  .schedule-header {
+  .section-header {
     text-align: center;
-    margin-bottom: 6rem;
+    margin-bottom: 80px;
   }
 
-  .badge {
-    display: inline-block;
-    padding: 0.5rem 1.25rem;
-    background: rgba(var(--primary-rgb), 0.1);
-    color: var(--primaryColor);
-    border-radius: 99px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(var(--primary-rgb), 0.2);
-  }
-
-  .schedule-section.blue .badge {
-    background: rgba(37, 99, 235, 0.1);
-    border: 1px solid rgba(37, 99, 235, 0.2);
-  }
-
-  h2 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+  .section-title {
+    font-size: 32px;
     font-weight: 800;
-    margin-bottom: 1rem;
-    letter-spacing: -0.02em;
+    margin-bottom: 12px;
   }
 
-  .accent {
-    color: var(--primaryColor);
+  .section-subtitle {
+    font-size: 16px;
+    color: #9CA3AF;
   }
 
-  .schedule-header p {
-    color: var(--color-text-light);
-    font-size: 1.125rem;
-    opacity: 0.8;
-  }
-
-  .timeline-container {
+  .timeline-container-v4 {
     position: relative;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem 0;
+    padding-top: 40px;
+    margin-bottom: 60px;
   }
 
-  .timeline-line {
+  /* Horizontal Line */
+  .timeline-main-line {
     position: absolute;
-    top: 2.5rem;
-    left: 0;
-    right: 0;
+    top: 40px;
+    left: 10%;
+    right: 10%;
     height: 1px;
     background: rgba(255, 255, 255, 0.1);
     z-index: 1;
   }
 
-  .schedule-section.green .timeline-line {
-    background: rgba(0, 0, 0, 0.1);
+  .schedule-section.green .timeline-main-line {
+    background: rgba(0, 0, 0, 0.05);
   }
 
-  .schedule-grid {
+  .timeline-items-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
     position: relative;
     z-index: 2;
   }
 
-  .schedule-item {
+  .timeline-item-v4 {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .timeline-node-wrapper {
+  /* Node and Connector */
+  .node-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-bottom: 30px;
   }
 
-  .node {
-    width: 12px;
-    height: 12px;
-    background: var(--primaryColor);
+  .timeline-node {
+    width: 14px;
+    height: 14px;
+    background: var(--accentColor);
     border-radius: 50%;
-    box-shadow: 0 0 15px var(--primaryColor);
-    z-index: 3;
+    box-shadow: 0 0 15px var(--accentColor);
+  }
+
+  .dotted-connector {
+    width: 1px;
+    height: 40px;
+    border-left: 1px dotted rgba(255, 255, 255, 0.3);
+    margin-top: 4px;
+  }
+
+  .schedule-section.green .dotted-connector {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Schedule Card */
+  .schedule-card-v4 {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 24px;
+    width: 180px;
+    text-align: center;
     transition: transform 0.3s ease;
   }
 
-  .connector {
-    width: 1px;
-    height: 2.5rem;
-    border-left: 1px dotted rgba(255, 255, 255, 0.3);
-  }
-
-  .schedule-section.green .connector {
-    border-left: 1px dotted rgba(0, 0, 0, 0.2);
-  }
-
-  .schedule-card {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(4px);
-    border-radius: 12px;
-    padding: 2.5rem 1.5rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s ease;
-  }
-
-  .schedule-section.green .schedule-card {
-    background: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+  .schedule-section.green .schedule-card-v4 {
+    background: white;
+    border-color: #F3F4F6;
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
   }
 
-  .schedule-card:hover {
+  .schedule-card-v4:hover {
     transform: translateY(-5px);
-    border-color: rgba(var(--primary-rgb), 0.3);
-    background: rgba(255, 255, 255, 0.04);
   }
 
   .card-icon {
-    color: var(--primaryColor);
-    margin-bottom: 1.5rem;
-    opacity: 0.9;
+    font-size: 20px;
+    margin-bottom: 12px;
+    opacity: 0.8;
   }
 
   .card-time {
-    font-size: 2rem;
+    font-size: 24px;
     font-weight: 800;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
   }
 
   .card-divider {
-    width: 20px;
+    width: 30px;
     height: 2px;
-    background: var(--primaryColor);
-    margin-bottom: 0.75rem;
-    opacity: 0.8;
+    background: var(--accentColor);
+    margin: 0 auto 12px;
+    border-radius: 99px;
   }
 
   .card-label {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.5);
-    letter-spacing: 0.02em;
+    font-size: 14px;
+    font-weight: 600;
+    color: #9CA3AF;
   }
 
   .schedule-section.green .card-label {
-    color: #666;
+    color: #6B7280;
   }
 
-  .schedule-footer {
-    margin-top: 4rem;
+  /* Footer Note */
+  .footer-note {
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0.875rem;
+    align-items: center;
+    gap: 8px;
+    color: #6B7280;
+    font-size: 13px;
+    margin-top: 40px;
   }
 
-  .schedule-section.green .schedule-footer {
-    color: #888;
-  }
+  .info-icon { font-size: 16px; opacity: 0.6; }
 
-  .info-icon {
-    color: var(--primaryColor);
-    opacity: 0.8;
-  }
-
-  /* Responsive Mobile */
   @media (max-width: 768px) {
-    .schedule-grid {
+    .timeline-main-line { display: none; }
+    .timeline-items-grid {
       grid-template-columns: 1fr;
-      gap: 3rem;
+      gap: 30px;
     }
-
-    .timeline-line {
-      left: 2rem;
-      right: auto;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      height: 100%;
-    }
-
-    .schedule-item {
+    .timeline-item-v4 {
       flex-direction: row;
+      gap: 20px;
       align-items: flex-start;
-      gap: 1.5rem;
+      padding-left: 20px;
     }
-
-    .timeline-node-wrapper {
-      margin-bottom: 0;
-      height: 100%;
-    }
-
-    .connector {
-      width: 2.5rem;
-      height: 1px;
-      border-left: none;
-      border-top: 1px dotted rgba(255, 255, 255, 0.3);
-      display: none; /* Hide connector on mobile simplified view */
-    }
-
-    .schedule-card {
-      padding: 1.5rem;
-      text-align: left;
-      align-items: flex-start;
-    }
-
-    .card-divider {
-      margin-left: 0;
-    }
-    
-    .schedule-header h2 {
-        font-size: 2.5rem;
-    }
+    .node-wrapper { margin-bottom: 0; }
+    .dotted-connector { height: 100px; }
+    .schedule-card-v4 { width: 100%; text-align: left; }
+    .card-divider { margin: 0 0 12px 0; }
   }
 </style>

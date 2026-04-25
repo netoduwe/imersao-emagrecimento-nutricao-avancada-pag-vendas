@@ -13,60 +13,59 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
 
 <section class="hero-reborn">
   <div class="container hero-wrapper">
-    <!-- 1. BADGE DATA -->
-    <div class="date-badge-pill">
-      <span>📅 16 de Maio | 9h às 18h</span>
-    </div>
-
-    <!-- 2. HEADLINE -->
-    <h1 class="headline-reborn">
-      Um dia inteiro de<br/>
-      <span class="playfair-green">Imersão</span> em<br/>
-      atualização no tratamento do<br/>
-      <span class="green-bold">sobrepeso e obesidade</span>
-    </h1>
-
-    <!-- 3. SUBHEAD -->
-    <p class="subhead-reborn">
-      Domine as evidências mais atuais do emagrecimento e aplique na prática clínica com segurança.
-    </p>
-
-    <!-- 4. IMAGEM (NEY) -->
-    <div class="ney-visual-container">
-       <div class="gradient-aura-v2"></div>
-       <img src={neyImage} alt="Ney Felipe" class="ney-image-main" />
-       
-       <!-- Floating Benefits inside the visual for desktop feel but mobile centered -->
-       <div class="floating-cards-reborn desktop-only">
-          <div class="f-card-v3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            <span>Atualizações baseadas em ciência</span>
-          </div>
-       </div>
-    </div>
-
-    <!-- 5. CTA PRINCIPAL -->
-    <div class="cta-section">
-      <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" />
-    </div>
-
-    <!-- 6. CARD DE PREÇO -->
-    <div class="price-section">
-      <PriceCard />
-    </div>
-
-    <!-- 7. BENEFÍCIOS GRID -->
-    <BenefitsGrid />
-
-    <!-- 8. PROVA / SPOILER -->
-    <div class="spoiler-card-v3">
-      <div class="s-icon">
-         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 12L11 14L15 10" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+    <!-- COLUNA ESQUERDA (TEXTO) -->
+    <div class="hero-content-column">
+      <div class="date-badge-pill">
+        <span>📅 16 de Maio | 9h às 18h</span>
       </div>
-      <p><strong>Spoiler:</strong> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <strong>prática clínica</strong> e como ir <strong>além do déficit calórico</strong> quando o assunto é emagrecimento.</p>
+
+      <h1 class="headline-reborn">
+        Um dia inteiro de<br/>
+        <span class="playfair-green">Imersão</span> em<br/>
+        <span class="highlight-stroke">atualização</span> no tratamento do<br/>
+        <span class="green-bold">sobrepeso e obesidade</span>
+      </h1>
+
+      <p class="subhead-reborn">
+        Domine as evidências mais atuais do emagrecimento e aplique na prática clínica com segurança.
+      </p>
+
+      <div class="cta-section">
+        <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" />
+      </div>
+
+      <div class="price-section">
+        <PriceCard />
+      </div>
+    </div>
+
+    <!-- COLUNA DIREITA (IMAGEM) -->
+    <div class="hero-visual-column">
+      <div class="ney-visual-container">
+         <div class="gradient-aura-v2"></div>
+         <img src={neyImage} alt="Ney Felipe" class="ney-image-main" />
+         
+         <div class="floating-benefit-card-premium">
+            <div class="fb-icon">🔬</div>
+            <div class="fb-text">
+              <strong>Ciência na Prática</strong>
+              <span>Protocolos baseados em evidências</span>
+            </div>
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-footer-bar">
+    <div class="container benefits-footer-grid">
+      <BenefitsGrid />
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="hero-spoiler-final">
+       <div class="s-icon">🛡️</div>
+       <p><strong>Spoiler:</strong> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <strong>prática clínica</strong> e como ir <strong>além do déficit calórico</strong> quando o assunto é emagrecimento.</p>
     </div>
   </div>
 </section>
@@ -75,37 +74,45 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
   .hero-reborn {
     background-color: #F7F8F6;
     background-image: linear-gradient(to bottom, rgba(22, 163, 74, 0.08), transparent 40%);
-    padding: 32px 0 40px;
-    text-align: center;
+    padding: 48px 0 0;
     position: relative;
     overflow: hidden;
   }
 
   .hero-wrapper {
-    max-width: 480px;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+
+  .hero-content-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 480px;
+    z-index: 10;
   }
 
   .date-badge-pill {
-    background: rgba(22, 163, 74, 0.12);
+    background: rgba(22, 163, 74, 0.1);
     color: #16A34A;
-    padding: 6px 16px;
+    padding: 8px 16px;
     border-radius: 999px;
     font-size: 13px;
     font-weight: 700;
     margin-bottom: 24px;
+    border: 1px solid rgba(22, 163, 74, 0.1);
   }
 
   .headline-reborn {
-    font-size: 30px;
-    line-height: 1.15;
-    font-weight: 700;
+    font-size: clamp(28px, 8vw, 36px);
+    line-height: 1.1;
+    font-weight: 800;
     color: #111827;
-    margin-bottom: 16px;
-    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    letter-spacing: -0.03em;
   }
 
   .playfair-green {
@@ -115,92 +122,120 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
     font-weight: 400;
   }
 
-  .green-bold {
-    color: #16A34A;
+  .highlight-stroke {
+    position: relative;
+    display: inline-block;
   }
+  
+  .highlight-stroke::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(22, 163, 74, 0.15);
+    z-index: -1;
+  }
+
+  .green-bold { color: #16A34A; }
 
   .subhead-reborn {
     color: #4B5563;
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.6;
     margin-bottom: 32px;
-    padding: 0 16px;
+  }
+
+  .cta-section { width: 100%; margin-bottom: 24px; }
+  .price-section { width: 100%; margin-bottom: 40px; }
+
+  .hero-visual-column {
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
   }
 
   .ney-visual-container {
     position: relative;
     width: 100%;
-    margin-bottom: 32px;
+    display: flex;
+    justify-content: center;
   }
 
   .ney-image-main {
     width: 100%;
-    max-height: 380px;
+    max-width: 500px;
+    height: auto;
     object-fit: contain;
-    mask-image: linear-gradient(to top, transparent 5%, black 25%);
-    position: relative;
-    z-index: 2;
+    mask-image: linear-gradient(to top, transparent 0%, black 20%);
+    z-index: 5;
   }
 
   .gradient-aura-v2 {
     position: absolute;
-    bottom: 0;
+    bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
-    width: 120%;
+    width: 150%;
     height: 100%;
     background: radial-gradient(circle, rgba(22, 163, 74, 0.1) 0%, transparent 70%);
     z-index: 1;
   }
 
-  .cta-section {
-    width: 100%;
-    padding: 0 16px;
-    margin-bottom: 24px;
-  }
-
-  .price-section {
-    width: 100%;
-    padding: 0 16px;
-    margin-bottom: 32px;
-  }
-
-  .spoiler-card-v3 {
-    margin-top: 32px;
-    background: rgba(22, 163, 74, 0.05);
-    border-radius: 12px;
-    padding: 16px;
+  .floating-benefit-card-premium {
+    position: absolute;
+    right: 5%;
+    bottom: 30%;
+    background: white;
+    padding: 12px 16px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     display: flex;
+    align-items: center;
     gap: 12px;
+    z-index: 10;
+    border: 1px solid #F3F4F6;
+  }
+
+  .fb-icon { font-size: 20px; }
+  .fb-text { display: flex; flex-direction: column; text-align: left; }
+  .fb-text strong { font-size: 12px; color: #111827; }
+  .fb-text span { font-size: 10px; color: #6B7280; }
+
+  .hero-footer-bar {
+    background: white;
+    border-top: 1px solid #F3F4F6;
+    padding: 24px 0;
+    margin-top: -20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .hero-spoiler-final {
+    margin: 32px auto;
+    background: rgba(22, 163, 74, 0.04);
+    border: 1px solid rgba(22, 163, 74, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
     text-align: left;
-    width: calc(100% - 32px);
   }
 
-  .s-icon { flex-shrink: 0; }
-  .spoiler-card-v3 p {
-    font-size: 13px;
-    line-height: 1.5;
-    color: #4B5563;
-    margin: 0;
-  }
+  .hero-spoiler-final p { font-size: 14px; color: #374151; line-height: 1.6; margin: 0; }
 
-  /* Desktop Adjustments */
   @media (min-width: 1024px) {
+    .hero-reborn { padding-top: 80px; }
     .hero-wrapper {
-      max-width: 1200px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      flex-direction: row;
+      justify-content: space-between;
       text-align: left;
-      align-items: center;
-      gap: 4rem;
+      gap: 60px;
     }
-    
-    .date-badge-pill { align-self: flex-start; }
+    .hero-content-column { align-items: flex-start; max-width: 600px; }
     .headline-reborn { font-size: 56px; }
-    .subhead-reborn { padding: 0; margin-left: 0; }
-    .cta-section, .price-section { padding: 0; }
-    
-    .ney-visual-container { order: 2; margin-bottom: 0; }
-    .hero-left-col { order: 1; }
+    .hero-visual-column { margin-top: 0; }
   }
 </style>
