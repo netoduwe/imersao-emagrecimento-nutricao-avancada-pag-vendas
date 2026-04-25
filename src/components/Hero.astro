@@ -29,12 +29,15 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
         Domine as evidências mais atuais do emagrecimento e aplique na <span class="bold-green">prática clínica</span> com segurança.
       </p>
 
-      <div class="cta-wrap-v4">
-        <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" />
-      </div>
+      <!-- CTA and PRICE CARD WRAPPER FOR PERFECT ALIGNMENT -->
+      <div class="conversion-block-v4">
+        <div class="cta-wrap-v4">
+          <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" />
+        </div>
 
-      <div class="price-wrap-v4">
-        <PriceCard />
+        <div class="price-wrap-v4">
+          <PriceCard />
+        </div>
       </div>
     </div>
 
@@ -44,7 +47,6 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
         <div class="bg-glow"></div>
         <img src={neyImage} alt="Ney Felipe" class="ney-photo" />
         
-        <!-- Floating Benefits Card (3 items like Image 10) -->
         <div class="floating-list-card">
           <div class="list-item">
             <div class="li-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
@@ -72,7 +74,6 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
     </div>
   </div>
 
-  <!-- FOOTER BAR (WITH DIVIDERS) -->
   <div class="hero-bottom-bar-v4">
     <div class="container footer-grid-v4">
       <div class="f-item">
@@ -99,12 +100,7 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
 
   <div class="container">
     <div class="spoiler-v4">
-       <div class="s-icon">
-         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9 12L11 14L15 10" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-       </div>
+       <div class="s-icon">🛡️</div>
        <p><strong>Spoiler:</strong> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <strong>prática clínica</strong> e como ir <strong>além do déficit calórico</strong> quando o assunto é emagrecimento.</p>
     </div>
   </div>
@@ -125,6 +121,13 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
     gap: 2rem;
     align-items: center;
     padding-bottom: 40px;
+  }
+
+  .hero-text-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* FORCE LEFT ALIGNMENT */
+    text-align: left;
   }
 
   .badge-v4 {
@@ -183,10 +186,16 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
     max-width: 540px;
   }
 
-  .bold-green { color: #16A34A; font-weight: 700; }
+  .conversion-block-v4 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
 
-  .cta-wrap-v4 { margin-bottom: 20px; }
-  .price-wrap-v4 { margin-bottom: 0; }
+  .cta-wrap-v4 { width: 100%; max-width: 440px; }
+  .price-wrap-v4 { width: 100%; max-width: 440px; }
 
   /* Visual Side */
   .hero-visual-side { position: relative; }
@@ -281,7 +290,8 @@ const neyImage = "https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-feli
 
   @media (max-width: 1024px) {
     .hero-grid-fidelity { grid-template-columns: 1fr; text-align: center; gap: 4rem; }
-    .hero-text-side { display: flex; flex-direction: column; align-items: center; }
+    .hero-text-side { align-items: center; text-align: center; }
+    .conversion-block-v4 { align-items: center; }
     .subhead-v4 { margin-left: auto; margin-right: auto; }
     .floating-list-card { position: relative; right: auto; bottom: auto; margin: 2rem auto 0; width: 100%; max-width: 320px; }
     .footer-grid-v4 { flex-direction: column; gap: 2rem; }
