@@ -1,0 +1,55 @@
+---
+interface Props {
+  text: string;
+  href: string;
+}
+
+const { text, href } = Astro.props;
+---
+
+<a href={href} class="cta-button-v3">
+  <span class="cta-text">{text}</span>
+  <div class="cta-icon-circle">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="7" y1="17" x2="17" y2="7"></line>
+      <polyline points="7 7 17 7 17 17"></polyline>
+    </svg>
+  </div>
+</a>
+
+<style>
+  .cta-button-v3 {
+    display: inline-flex;
+    align-items: center;
+    background: #16A34A;
+    color: white;
+    padding: 0 16px 0 32px;
+    height: 56px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 10px 30px rgba(22, 163, 74, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    max-width: 400px;
+    justify-content: space-between;
+  }
+
+  .cta-button-v3:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(22, 163, 74, 0.3);
+  }
+
+  .cta-icon-circle {
+    width: 36px;
+    height: 36px;
+    background: white;
+    color: #16A34A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+</style>

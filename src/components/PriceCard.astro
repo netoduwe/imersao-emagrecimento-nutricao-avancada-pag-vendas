@@ -1,0 +1,145 @@
+---
+---
+
+<div class="price-card-v3" data-price-card>
+  <div class="pc-top">
+    <div class="pc-badge">🔥 LOTE ZERO</div>
+    <div class="pc-price">
+      <span class="pc-label">POR APENAS</span>
+      <span class="pc-value" data-pc-price>R$ 19,90</span>
+    </div>
+  </div>
+  
+  <div class="pc-progress-wrap">
+    <div class="pc-bar-bg">
+      <div class="pc-bar-fill" data-pc-fill style="width: 3%"></div>
+    </div>
+  </div>
+
+  <div class="pc-footer">
+    <span data-pc-pct>3% vendidos</span>
+    <span class="pc-dot">•</span>
+    <span data-pc-remaining>97 restantes</span>
+  </div>
+</div>
+
+<style>
+  .price-card-v3 {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+    border: 1px solid #F3F4F6;
+  }
+
+  .pc-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .pc-badge {
+    background: #16A34A;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .pc-price {
+    text-align: right;
+  }
+
+  .pc-label {
+    display: block;
+    font-size: 10px;
+    color: #6B7280;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  .pc-value {
+    font-size: 24px;
+    font-weight: 800;
+    color: #111827;
+  }
+
+  .pc-progress-wrap {
+    margin-bottom: 8px;
+  }
+
+  .pc-bar-bg {
+    width: 100%;
+    height: 8px;
+    background: #E5E7EB;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .pc-bar-fill {
+    height: 100%;
+    background: #16A34A;
+    border-radius: 99px;
+    transition: width 1s ease-out;
+  }
+
+  .pc-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6B7280;
+  }
+
+  .pc-dot {
+    opacity: 0.5;
+  }
+</style>
+
+<script>
+  const SUPABASE_URL = 'https://qjkezuofhunqzbchlhru.supabase.co';
+  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqa2V6dW9maHVucXpiY2hsaHJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAxMzUwNTUsImV4cCI6MjA4NTcxMTA1NX0.wN1mTQtm80Qmla48jpBis9v-erf6xDa6OJgnxbDPe0I';
+
+  async function fetchProgress() {
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_imersao_progress`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_ANON,
+          'Authorization': `Bearer ${SUPABASE_ANON}`,
+          'Content-Type': 'application/json'
+        },
+        body: '{}'
+      });
+      const data = await res.json();
+      if (data) {
+        const cards = document.querySelectorAll('[data-price-card]');
+        cards.forEach(card => {
+           const fill = card.querySelector('[data-pc-fill]') as HTMLElement;
+           const pct = card.querySelector('[data-pc-pct]');
+           const rem = card.querySelector('[data-pc-remaining]');
+           const price = card.querySelector('[data-pc-price]');
+
+           const percent = Math.min(data.percentual, 100);
+           const restantes = data.max_ingressos - data.vendidos;
+
+           if(fill) fill.style.width = `${Math.max(percent, 3)}%`;
+           if(pct) pct.textContent = `${percent}% vendidos`;
+           if(rem) rem.textContent = `${restantes} restantes`;
+           if(price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
+        });
+      }
+    } catch (err) {
+      console.error('Erro ao buscar progresso:', err);
+    }
+  }
+
+  fetchProgress();
+  setInterval(fetchProgress, 30000);
+</script>
