@@ -2,44 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import ProgressBar from '../components/ProgressBar.astro';
 import FormModal from '../components/FormModal.astro';
+import Hero from '../components/Hero.astro';
 import Schedule from '../components/Schedule.astro';
 import '../styles/theme-blue.css';
 ---
 
 <Layout title="Imersão Nutrição Avançada no Emagrecimento | Edição 4 (VIP)" theme="blue">
-  <section class="hero container text-center">
-    <div class="hero-date">
-      <span>📅</span> 16 de Maio | 9h às 18h
-    </div>
+  <Hero variant="blue" />
 
-    <div style="position: relative; z-index: 1;">
-      <h1 class="hero-title" style="text-transform: uppercase; font-weight: 900; line-height: 0.9; margin-bottom: 0.5rem; letter-spacing: -0.05em;">
-        <span style="color: rgba(37, 99, 235, 0.08); font-size: clamp(8rem, 15vw, 12rem); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -60%); z-index: -1; pointer-events: none;">N.A</span>
-        <span style="color: #FFFFFF; font-size: clamp(2.5rem, 5vw, 4rem); display: block;">Um dia inteiro de <span style="color: var(--color-primary);">Imersão</span></span>
-        <span style="color: #FFFFFF; font-size: clamp(1.5rem, 3vw, 2.5rem); display: block; font-weight: 400; opacity: 0.9; margin-top: 0.5rem;">em Atualização no tratamento do <span style="color: var(--color-primary); text-shadow: 0 0 30px rgba(37,99,235,0.4);">sobrepeso e obesidade</span></span>
-      </h1>
-      <p style="font-size: 0.875rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--color-text-light); font-weight: 600; margin-bottom: 3rem;">
-        &mdash; NUTRIÇÃO AVANÇADA &mdash;
+  <div class="container text-center" style="margin-top: 2rem;">
+    <div class="hero-spoiler" style="margin: 0 auto; display: flex; gap: 0.75rem; align-items: flex-start; text-align: left; background: rgba(var(--primary-rgb), 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(var(--primary-rgb), 0.1);">
+      <span style="color: var(--color-primary); font-size: 1.5rem;">🛡️</span>
+      <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-light);">
+        <strong>Spoiler:</strong> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <strong>prática clínica</strong> e como ir <strong>além do déficit calórico</strong> quando o assunto é emagrecimento.
       </p>
     </div>
-
-    <p class="hero-subtitle">
-      Domine as evidências mais atuais do emagrecimento por apenas R$19,90
-    </p>
-
-    <a href="#preco" class="btn-shiny">
-      <span class="btn-text">COMPRAR INGRESSO LOTE ATUAL</span>
-      <div class="btn-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-      </div>
-    </a>
-
-    <ProgressBar variant="hero" />
-
-    <div class="hero-spoiler" style="margin: var(--space-lg) auto 0;">
-      <b>Spoiler:</b> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <b>prática clínica</b> e como ir <b>além do déficit calórico</b> quando o assunto é emagrecimento.
-    </div>
-  </section>
+  </div>
 
   <!-- LEAD / DORES SECTION -->
   <section class="lead-section container grid-2" style="padding: var(--space-xl) var(--space-sm);">
