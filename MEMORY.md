@@ -1,6 +1,10 @@
 # Memória do Projeto: Imersão Nutrição Avançada (Vendas Astro)
 
-**Última Atualização:** 25/04/2026
+**Última Atualização:** 26/04/2026
+
+## Configurações de Rastreamento
+- **Meta Pixel:** ID `2794166034202244` instalado no `Layout.astro` em 26/04/2026.
+
 
 ## Melhorias de CRO (Conversion Rate Optimization) - 25/04/2026
 - **Oferta VIP:** Bônus foram "abertos" (removido details/summary). Valores em R$ de cada e-book agora estão expostos para aumentar percepção de valor imediata.
@@ -33,5 +37,5 @@
 - **News Carousel:** Implementado carrossel interativo usando Swiper.js na seção de notícias. Isso resolve o problema de leitura das notícias, permitindo que o usuário pause e navegue entre os slides.
 - **Hero Footer (Segunda Dobra):** Removido o item "CERTIFICADO" completamente (Desktop e Mobile) para simplificar a oferta. No mobile, os 3 itens restantes ficam lado a lado para melhor aproveitamento de tela.
 - **Correção TopBar:** Removida a duplicação do texto "O evento começa em:" no banner de urgência.
-- **PriceCard & ProgressBar Fix:** Ajustado o layout de ambos os componentes de escassez (Hero e Seção de Preços) para evitar compressão/encavalamento de elementos em telas de celulares pequenos.
+- **PriceCard & ProgressBar Fix:** Ajustado o layout de ambos os componentes de escassez. Na seção de preços, a barra agora é ultra-minimalista, posicionada abaixo do botão de compra, sem exibir o preço interno ou nome do lote, focando apenas no progresso e ingressos restantes.
 - **Schedule (Cronograma):** Implementado grid 2x2 no mobile para reduzir a altura da seção e evitar a necessidade de "2 scrolls" para passar pela informação.
