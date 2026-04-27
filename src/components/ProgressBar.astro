@@ -237,29 +237,13 @@ const isMinimal = variant === 'minimal';
       const pct = tracker.querySelector('[data-lote-pct]');
       const remaining = tracker.querySelector('[data-lote-remaining]');
 
-      // --- MALANDRAGEM: Escassez Individualizada (Per User) ---
-      const STORAGE_KEY = 'imersao_urgency_pb';
-      let userPct = parseFloat(localStorage.getItem(STORAGE_KEY) || '0');
-
-      if (userPct === 0) {
-        // Primeira visita: começa entre 68% e 74%
-        userPct = 68 + Math.random() * 6;
-      } else {
-        // Retorno/refresh: aumenta entre 1.5% e 4%
-        userPct += 1.5 + Math.random() * 2.5;
-      }
-
-      // Nunca passa de 99%
-      userPct = Math.min(userPct, 99);
-      localStorage.setItem(STORAGE_KEY, userPct.toString());
-
-      const displayPct = Math.floor(userPct);
+      const percent = Math.min(data.percentual, 100);
 
       if (badge && data.lote_nome) badge.textContent = data.lote_nome.toUpperCase();
       if (price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
-      if (fill) fill.style.width = `${displayPct}%`;
+      if (fill) fill.style.width = `${Math.max(percent, 5)}%`;
       
-      if (pct) pct.textContent = `${displayPct}% dos ingressos vendidos`;
+      if (pct) pct.textContent = `${Math.floor(percent)}% dos ingressos vendidos`;
 
       if (remaining) {
         remaining.textContent = `virada de lote`;

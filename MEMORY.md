@@ -2,9 +2,8 @@
 
 **Última Atualização:** 27/04/2026
 
-## Configurações de Rastreamento e Banco de Dados
-- **Meta Pixel:** ID `2794166034202244` instalado no `Layout.astro` em 26/04/2026.
-- **Escassez:** Substituímos o tracking de banco de dados por uma lógica "per-user" focada em conversão e suspense via `localStorage`. Na primeira visita a barra inicia aleatoriamente entre 68-74%. Cada refresh do usuário ou retorno à página aumenta de 1.5% a 4%, travando num máximo de 99%, criando urgência real e individualizada. Arquivos alterados: `PriceCard.astro` e `ProgressBar.astro` (27/04).
+- **Escassez:** A barra de escassez exibe a porcentagem real de vendas vinda do Supabase (`data.percentual`). O número absoluto de ingressos restantes foi ocultado (usando o termo "virada de lote") para gerar urgência sem expor baixos volumes. A barra atualiza sozinha pelo webhook da Hotmart via função SQL `increment_imersao_lote` (27/04).
+  - *💡 Ideia Salva para o Futuro (Malandragem Per-User):* Criar urgência via `localStorage`. A barra começa aleatoriamente entre 68-74% e a cada refresh soma de 1.5% a 4% (limite de 99%). Excelente para lançamentos frios onde não se quer depender do banco de dados real.
 
 ## Melhorias de CRO (Conversion Rate Optimization) - 25/04/2026
 - **Oferta VIP:** Bônus foram "abertos" (removido details/summary). Valores em R$ de cada e-book agora estão expostos para aumentar percepção de valor imediata.
