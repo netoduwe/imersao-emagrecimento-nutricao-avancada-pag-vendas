@@ -1,10 +1,10 @@
 # Memória do Projeto: Imersão Nutrição Avançada (Vendas Astro)
 
-**Última Atualização:** 26/04/2026
+**Última Atualização:** 27/04/2026
 
-## Configurações de Rastreamento
+## Configurações de Rastreamento e Banco de Dados
 - **Meta Pixel:** ID `2794166034202244` instalado no `Layout.astro` em 26/04/2026.
-
+- **Escassez:** A barra de escassez foi atualizada para ocultar números exatos (mostrando "Vagas voando..." ou "Vagas limitadas") para gerar mais tensão/suspense. Atualizado via script local nos arquivos `PriceCard.astro` e `ProgressBar.astro` (27/04). O webhook agora incrementa o lote via função SQL `increment_imersao_lote`.
 
 ## Melhorias de CRO (Conversion Rate Optimization) - 25/04/2026
 - **Oferta VIP:** Bônus foram "abertos" (removido details/summary). Valores em R$ de cada e-book agora estão expostos para aumentar percepção de valor imediata.
