@@ -143,9 +143,9 @@
            const percent = Math.min(data.percentual, 100);
            const restantes = data.max_ingressos - data.vendidos;
 
-           if(fill) fill.style.width = `${Math.max(percent, 3)}%`;
-           if(pct) pct.textContent = `${percent}% vendidos`;
-           if(rem) rem.textContent = `${restantes} restantes`;
+           if(fill) fill.style.width = `${Math.max(percent, 5)}%`;
+           if(pct) pct.textContent = `🔥 Vagas voando...`;
+           if(rem) rem.textContent = percent >= 80 ? `⚠️ Quase esgotado!` : `Vagas limitadas`;
            if(price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
         });
       }

@@ -242,16 +242,18 @@ const isMinimal = variant === 'minimal';
 
       if (badge && data.lote_nome) badge.textContent = data.lote_nome.toUpperCase();
       if (price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
-      if (fill) fill.style.width = `${Math.max(percent, 2)}%`;
-      if (pct) pct.textContent = `${percent}% vendidos`;
+      if (fill) fill.style.width = `${Math.max(percent, 5)}%`;
+      
+      // Removidos os números exatos para gerar suspense
+      if (pct) pct.textContent = `🔥 Vagas voando...`;
 
       if (remaining) {
-        if (restantes <= 10) {
-          remaining.textContent = `⚠️ Últimos ${restantes}!`;
-        } else if (restantes <= 30) {
-          remaining.textContent = `🔥 Apenas ${restantes}`;
+        if (percent >= 90) {
+          remaining.textContent = `⚠️ Quase esgotado!`;
+        } else if (percent >= 70) {
+          remaining.textContent = `⏳ Lote virando...`;
         } else {
-          remaining.textContent = `${restantes} restantes`;
+          remaining.textContent = `Vagas limitadas`;
         }
       }
     });
