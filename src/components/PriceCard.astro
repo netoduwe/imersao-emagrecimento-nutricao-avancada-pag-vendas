@@ -141,9 +141,23 @@
            const price = card.querySelector('[data-pc-price]');
 
            const percent = Math.min(data.percentual, 100);
-           const restantes = data.max_ingressos - data.vendidos;
+           
+           // Lógica de aceleração (Fake Scarcity Visual)
+           // 0 a 10% reais -> 50% a 75% da barra (Pulo rápido no início)
+           // 11% a 50% reais -> 75% a 90% da barra (Mais lento)
+           // 51% a 100% reais -> 90% a 100% da barra (Super lento no fim)
+           let visualPercent = percent;
+           if (percent <= 10) {
+             visualPercent = 50 + (percent * 2.5);
+           } else if (percent <= 50) {
+             visualPercent = 75 + ((percent - 10) * 0.375);
+           } else {
+             visualPercent = 90 + ((percent - 50) * 0.2);
+           }
 
-           if(fill) fill.style.width = `${Math.max(percent, 5)}%`;
+           if(fill) fill.style.width = `${Math.max(visualPercent, 5)}%`;
+           
+           // Sem números exatos
            if(pct) pct.textContent = `🔥 Vagas voando...`;
            if(rem) rem.textContent = percent >= 80 ? `⚠️ Quase esgotado!` : `Vagas limitadas`;
            if(price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;

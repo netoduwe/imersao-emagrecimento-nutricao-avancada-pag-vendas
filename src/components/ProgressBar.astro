@@ -238,11 +238,20 @@ const isMinimal = variant === 'minimal';
       const remaining = tracker.querySelector('[data-lote-remaining]');
 
       const percent = Math.min(data.percentual, 100);
-      const restantes = data.max_ingressos - data.vendidos;
+      
+      // Lógica de aceleração visual
+      let visualPercent = percent;
+      if (percent <= 10) {
+        visualPercent = 50 + (percent * 2.5);
+      } else if (percent <= 50) {
+        visualPercent = 75 + ((percent - 10) * 0.375);
+      } else {
+        visualPercent = 90 + ((percent - 50) * 0.2);
+      }
 
       if (badge && data.lote_nome) badge.textContent = data.lote_nome.toUpperCase();
       if (price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
-      if (fill) fill.style.width = `${Math.max(percent, 5)}%`;
+      if (fill) fill.style.width = `${Math.max(visualPercent, 5)}%`;
       
       // Removidos os números exatos para gerar suspense
       if (pct) pct.textContent = `🔥 Vagas voando...`;
