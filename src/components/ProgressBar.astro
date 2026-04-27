@@ -253,17 +253,10 @@ const isMinimal = variant === 'minimal';
       if (price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
       if (fill) fill.style.width = `${Math.max(visualPercent, 5)}%`;
       
-      // Removidos os números exatos para gerar suspense
-      if (pct) pct.textContent = `🔥 Vagas voando...`;
+      if (pct) pct.textContent = `${Math.floor(visualPercent)}% dos ingressos vendidos`;
 
       if (remaining) {
-        if (percent >= 90) {
-          remaining.textContent = `⚠️ Quase esgotado!`;
-        } else if (percent >= 70) {
-          remaining.textContent = `⏳ Lote virando...`;
-        } else {
-          remaining.textContent = `Vagas limitadas`;
-        }
+        remaining.textContent = `virada de lote`;
       }
     });
   }
