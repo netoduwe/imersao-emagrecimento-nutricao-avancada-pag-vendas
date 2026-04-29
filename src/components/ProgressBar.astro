@@ -237,11 +237,12 @@ const isMinimal = variant === 'minimal';
       const pct = tracker.querySelector('[data-lote-pct]');
       const remaining = tracker.querySelector('[data-lote-remaining]');
 
-      const percent = Math.min(data.percentual, 100);
+      const percent = data.percentual;
+      const visualPercent = Math.min(percent, 100);
 
       if (badge && data.lote_nome) badge.textContent = data.lote_nome.toUpperCase();
       if (price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
-      if (fill) fill.style.width = `${Math.max(percent, 5)}%`;
+      if (fill) fill.style.width = `${Math.max(visualPercent, 5)}%`;
       
       if (pct) pct.textContent = `${Math.floor(percent)}% dos ingressos vendidos`;
 

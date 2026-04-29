@@ -135,9 +135,10 @@
            const rem = card.querySelector('[data-pc-remaining]');
            const price = card.querySelector('[data-pc-price]');
 
-           const percent = Math.min(data.percentual, 100);
+           const percent = data.percentual;
+           const visualPercent = Math.min(percent, 100);
 
-           if(fill) fill.style.width = `${Math.max(percent, 5)}%`;
+           if(fill) fill.style.width = `${Math.max(visualPercent, 5)}%`;
            if(pct) pct.textContent = `${Math.floor(percent)}% dos ingressos vendidos`;
            if(rem) rem.textContent = `virada de lote`;
            if(price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;

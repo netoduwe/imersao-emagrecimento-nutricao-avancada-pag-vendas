@@ -1,9 +1,8 @@
 # Memória do Projeto: Imersão Nutrição Avançada (Vendas Astro)
 
-**Última Atualização:** 28/04/2026
+**Última Atualização:** 29/04/2026
 
-- **Credenciais:** Corrigidas as informações da Cássia Helena. Removida a formação em Psicologia (que estava incorreta) e adicionado o Mestrado em Nutrição em ambas as páginas (`imersao.astro` e `imersao-blue.astro`).
-- **Escassez:** A barra de escassez exibe a porcentagem real de vendas vinda do Supabase (`data.percentual`). O número absoluto de ingressos restantes foi ocultado (usando o termo "virada de lote") para gerar urgência sem expor baixos volumes. A barra atualiza sozinha pelo webhook da Hotmart via função SQL `increment_imersao_lote` (27/04).
+- **Escassez:** A barra de escassez exibe a porcentagem real de vendas vinda do Supabase (`data.percentual`). Removida a trava de 100% no texto, permitindo exibir valores como 105%, 110%, etc (overbooking/demanda extra). A largura visual da barra continua limitada a 100% para integridade do layout. O número absoluto de ingressos restantes continua oculto como "virada de lote" (29/04).
   - *💡 Ideia Salva para o Futuro (Malandragem Per-User):* Criar urgência via `localStorage`. A barra começa aleatoriamente entre 68-74% e a cada refresh soma de 1.5% a 4% (limite de 99%). Excelente para lançamentos frios onde não se quer depender do banco de dados real.
 
 ## Melhorias de CRO (Conversion Rate Optimization) - 25/04/2026
