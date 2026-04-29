@@ -22,7 +22,7 @@
 ## Regras de Negócio e Contexto Atual
 - **Data do Evento:** 16/05/2026 (das 9h às 18h).
 - **Status das Vendas:** ABERTAS.
-- **TopBar:** Configurada para mostrar o evento como "LOTE ZERO". Se a data do evento (16/05/2026) chegar, o script do `Layout.astro` mudará automaticamente para "VENDAS ABERTAS" (ou encerradas, dependendo do direcionamento futuro).
+- **TopBar:** Configurada para mostrar o evento como **LOTE 01** (atualizado de LOTE ZERO em 29/04/2026). Se a data do evento (16/05/2026) chegar, o script do `Layout.astro` mudará automaticamente para "VENDAS ABERTAS" (ou encerradas, dependendo do direcionamento futuro).
 - O texto do countdown foi ajustado para **"O evento começa em:"** (antes estava "Vendas iniciam em", o que era um erro pois as vendas já estão abertas).
 - **UI Mobile:** O cabeçalho (Header) foi ocultado em dispositivos móveis (`max-width: 768px`) para reduzir a poluição visual, mantendo apenas a `top-bar` com o contador.
 - **Cronograma Premium:** Implementado o novo componente `Schedule.astro` com design inspirado em Linear/Stripe, incluindo Timeline horizontal, glassmorphism sutil e ícones minimalistas.
