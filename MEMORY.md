@@ -1,6 +1,16 @@
 # Memória do Projeto: Imersão Nutrição Avançada (Vendas Astro)
 
-**Última Atualização:** 29/04/2026
+**Última Atualização:** 03/05/2026
+
+## Variações de Headline para Teste A/B — 03/05/2026
+- Criadas 4 novas rotas para split test. Página original `/imersao` **intocada**.
+- `/v1` — Foco em **Canetas Emagrecedoras / GLP-1 / Mounjaro** (`src/pages/v1.astro`)
+- `/v2` — Foco em **Curso ao vivo de Emagrecimento** (`src/pages/v2.astro`)
+- `/v3` — Foco em **Além das Calorias / Novo Método** (`src/pages/v3.astro`)
+- `/v4` — **Enxuta**: estrutura Promessa → Resumo rápido (horário, formato, conteúdo) → Preço (`src/pages/v4.astro`)
+- Todas usam os mesmos componentes: `ProgressBar`, `FormModal`, `Schedule`, `Layout`
+- Todas têm: urgência no Hero, countdown via TopBar (Layout), ProgressBar de vagas, âncora de preço R$19,90
+- Build OK: 7 páginas geradas sem erros
 
 - **Escassez:** A barra de escassez exibe a porcentagem real de vendas vinda do Supabase (`data.percentual`). 
   - **Dinamismo de Cores:** Implementada troca de cor baseada no preenchimento: Verde (<70%), Laranja (70-90%) e Vermelho (>90%) para aumentar o gatilho de urgência visual.

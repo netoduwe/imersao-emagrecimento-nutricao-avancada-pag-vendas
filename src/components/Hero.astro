@@ -17,7 +17,13 @@ const { variant = 'green' } = Astro.props;
       <!-- LEFT COLUMN -->
       <div class="hero-text-side">
         <div class="badge-v4">
-          <span class="icon">📅</span> 16 de Maio | 9h às 18h
+          <span class="icon">📅</span> 16 de Maio · 9h às 18h
+        </div>
+        <div class="badge-zoom">
+          <span class="badge-zoom-live">● AO VIVO</span>
+          <span class="badge-zoom-sep">·</span>
+          <span class="badge-zoom-label">Online via</span>
+          <span class="zoom-text-logo">zoom</span>
         </div>
 
         <h1 class="headline-v4">
@@ -119,6 +125,49 @@ const { variant = 'green' } = Astro.props;
     font-weight: 700;
     margin-bottom: 24px;
     border: 1px solid #dcfce7;
+  }
+
+  .badge-zoom {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e0f2fe;
+    color: #2563EB;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    border: 1px solid #bfdbfe;
+  }
+
+  .badge-zoom-live {
+    color: #DC2626;
+    font-weight: 800;
+    animation: pulse-live 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-live {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  .badge-zoom-sep {
+    color: #93c5fd;
+    font-size: 10px;
+  }
+
+  .badge-zoom-label {
+    color: #3B82F6;
+    font-weight: 600;
+  }
+
+  .zoom-text-logo {
+    color: #2D8CFF;
+    font-weight: 900;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: lowercase;
   }
 
   .headline-v4 {

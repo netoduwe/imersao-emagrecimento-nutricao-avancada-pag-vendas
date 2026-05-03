@@ -1,0 +1,400 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProgressBar from '../components/ProgressBar.astro';
+import FormModal from '../components/FormModal.astro';
+import Schedule from '../components/Schedule.astro';
+import '../styles/theme-green.css';
+---
+
+<Layout title="Canetas Emagrecedoras e GLP-1 para Nutricionistas | Imersão 16/05" theme="green">
+
+  <!-- HERO V1 — CANETAS / GLP-1 -->
+  <section class="hero-v1">
+    <div class="container hero-v1-grid">
+      <div class="hero-v1-text">
+
+        <div class="badge-event">
+          <span>📅</span> 16 de Maio · 9h às 18h
+        </div>
+        <div class="badge-live">
+          <span class="live-dot">●</span> AO VIVO
+          <span class="sep">·</span>
+          <span>Online via</span>
+          <strong class="zoom-logo">zoom</strong>
+        </div>
+
+        <h1 class="hero-v1-h1">
+          Seu paciente chegou<br/>
+          com <span class="accent-caneta">Mounjaro.</span><br/>
+          <span class="linha2">Você sabe o que fazer?</span>
+        </h1>
+
+        <p class="hero-v1-sub">
+          A imersão que vai te preparar para o <strong>manejo clínico dos análogos GLP-1</strong> e do emagrecimento moderno — com protocolos práticos que você aplica na consulta seguinte.
+        </p>
+
+        <div class="urgency-strip">
+          ⚠️ <strong>Últimos ingressos disponíveis</strong> — evento em 16 de Maio
+        </div>
+
+        <div class="cta-block-v1">
+          <a href="#preco" class="btn-v1">
+            <span>QUERO MEU INGRESSO — R$ 19,90</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <span class="price-anchor">Por menos do que um café ☕</span>
+        </div>
+
+        <div class="progress-hero-wrap">
+          <ProgressBar variant="minimal" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DORES SECTION -->
+  <section class="container dores-v1" style="padding: var(--space-xl) var(--space-sm);">
+    <h2 class="text-center" style="margin-bottom: var(--space-xl);">Você se sente seguro para transformar vidas?</h2>
+    <div class="grid-2">
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;"><span style="color: #ff4d4d;">❌</span> <span>Paciente usa Mounjaro e você não sabe ajustar a dieta...</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;"><span style="color: #ff4d4d;">❌</span> <span>Não conseguiu fazer o paciente aderir ao plano...</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;"><span style="color: #ff4d4d;">❌</span> <span>Teve insegurança para conduzir a consulta...</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;"><span style="color: #ff4d4d;">❌</span> <span>Não soube como ir <b>além das calorias...</b></span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;"><span style="color: #ff4d4d;">❌</span> <span>Se sentiu <b>desatualizado</b> sobre GLP-1 e obesidade...</span></li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;"><span style="color: #ff4d4d;">❌</span> <span>Faltaram ferramentas de prática clínica...</span></li>
+      </ul>
+      <div style="background: #f0fdf4; border-radius: var(--radius-lg); padding: 2rem; border: 1px solid #dcfce7;">
+        <h3 style="color: var(--color-primary); margin-bottom: 1rem;">🧬 O que você vai dominar na imersão:</h3>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.875rem;">
+          <li>✅ Manejo dietético no uso dos análogos de GLP-1</li>
+          <li>✅ Canetas emagrecedoras: o que prescrever junto</li>
+          <li>✅ Estratégias para além do déficit calórico</li>
+          <li>✅ Epigenética, inflamação e obesidade</li>
+          <li>✅ Caso clínico real: do diagnóstico à estratégia final</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIO NEY -->
+  <section class="bio-section container grid-bio" style="padding: var(--space-xl) var(--space-sm);">
+    <div class="bio-image-container">
+      <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" style="width: 100%; border-radius: var(--radius-lg); background: white; padding: 1rem; border: 1px solid rgba(0,0,0,0.05);" />
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <h3 style="font-size: 1.5rem; color: var(--color-primary);">Ney Felipe (@neyfelipef)</h3>
+      </div>
+    </div>
+    <div>
+      <h2 style="font-size: 2.25rem; margin-bottom: var(--space-md);">Aprenda com 18 anos de campo de batalha clínico.</h2>
+      <div style="color: var(--color-text-light); line-height: 1.7; display: flex; flex-direction: column; gap: 1.5rem;">
+        <p>Nutricionista pioneiro da Nutrição Funcional Esportiva no Brasil, fundador da Nutrição Avançada e um dos primeiros a abordar o manejo nutricional dos análogos GLP-1 na prática clínica.</p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>Nutricionista há 18 anos (2006)</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>Mestre em Biologia Molecular (2011)</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>Doutorando em Saúde Pública (2024)</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>Mais de 3 mil alunos formados</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: var(--color-primary);">✅</span> <span>2 livros publicados e 5 e-books</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="container" style="padding: var(--space-xl) var(--space-sm);">
+    <h2 class="text-center" style="margin-bottom: var(--space-xl);">Resultados de quem já esteve lá</h2>
+    <div class="grid-3">
+      <div style="background: white; padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center;">
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-02.png" alt="Nair" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem;" />
+        <h4 style="margin-bottom: 0.5rem;">NAIR CRISTINA</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: 1rem;">Nutricionista há 4 anos</p>
+        <p class="italic">"Me sinto muito mais segura nas abordagens, eu pego um paciente e sei o que fazer com ele em todas as fases com segurança"</p>
+      </div>
+      <div style="background: white; padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center;">
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-04.png" alt="Melissa" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem;" />
+        <h4 style="margin-bottom: 0.5rem;">MELISSA PINHEIRO</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: 1rem;">Nutricionista há 10 anos</p>
+        <p class="italic">"Nos primeiros atendimentos após o curso pude me notar menos 'calculadora' e mais nutricionista, dando um novo significado e brilho nas minhas consultas."</p>
+      </div>
+      <div style="background: white; padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center;">
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-03.png" alt="Nathalia" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem;" />
+        <h4 style="margin-bottom: 0.5rem;">NATHALIA PANTALEÃO</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: 1rem;">Nutricionista há 3 anos</p>
+        <p class="italic">"Hoje meus pacientes indicam meu trabalho."</p>
+      </div>
+    </div>
+  </section>
+
+  <Schedule variant="green" />
+
+  <!-- PREÇOS -->
+  <section id="preco" style="background: var(--color-bg); padding: var(--space-xl) var(--space-sm); border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom: 0.5rem;">Escolha seu Ingresso</h2>
+      <p class="text-center" style="color: var(--color-text-light); margin-bottom: 2rem; font-size: 1.125rem;">Evento: 16 de Maio · 9h às 18h · Online via Zoom</p>
+      <div class="grid-bio">
+        <!-- Ingresso Normal -->
+        <div style="background: white; padding: 3rem; border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.05);">
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Ingresso Normal</h3>
+          <p style="color: var(--color-text-light); margin-bottom: 2rem;">Experiência ao vivo</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; margin-bottom: 3rem;">
+            <li style="display: flex; gap: 0.5rem;">✅ <span>Um dia de Imersão</span></li>
+            <li style="display: flex; gap: 0.5rem;">✅ <span>8h de Conteúdo</span></li>
+            <li style="display: flex; gap: 0.5rem;">✅ <span>Grupo do Evento</span></li>
+            <li style="display: flex; gap: 0.5rem;">✅ <span>Materiais Exclusivos</span></li>
+            <li style="display: flex; gap: 0.5rem;">🎁 <span>Mini Curso Fundamentos Emagrecimento</span></li>
+          </ul>
+          <div style="margin-bottom: 1.5rem;">
+            <span style="text-decoration: line-through; color: #999; font-size: 1.125rem;">De R$97,00</span>
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-text);">R$ 19,90</div>
+          </div>
+          <a href="#" class="btn-shiny" style="width: 100%;" data-form="normal">
+            <span class="btn-text">COMPRAR AGORA</span>
+            <div class="btn-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+          </a>
+          <div style="margin-top: 1.5rem; width: 100%;"><ProgressBar variant="minimal" /></div>
+          <div style="display: flex; flex-direction: column; align-items: center; margin-top: 1rem; opacity: 0.8;">
+            <span style="font-size: 0.65rem; color: var(--color-text-light); margin-bottom: 0.25rem;">COMPRA 100% SEGURA</span>
+            <div style="display: flex; gap: 0.25rem;">
+              <span style="background: #E8F5E9; color: #1AA824; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 4px;">PIX</span>
+              <span style="background: #F0F4F8; color: #0A6591; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 4px;">VISA</span>
+              <span style="background: #FFF5F5; color: #E53E3E; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 4px;">MASTER</span>
+              <span style="background: #1A1A1A; color: #FFFFFF; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 4px;">BOLETO</span>
+            </div>
+          </div>
+        </div>
+        <!-- Ingresso VIP -->
+        <div style="background: white; padding: 3rem; border-radius: var(--radius-lg); box-shadow: 0 10px 40px rgba(26, 168, 36, 0.1); display: flex; flex-direction: column; border: 2px solid var(--color-primary); position: relative;">
+          <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--color-primary); color: white; padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 700;">MAIS VANTAGENS</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Ingresso VIP</h3>
+          <p style="color: var(--color-primary); font-weight: 700; margin-bottom: 2rem;">50% DE DESCONTO</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; margin-bottom: 3rem;">
+            <li style="display: flex; gap: 0.5rem; align-items: center;">🚀 <span><b>Tudo do básico +</b> gravação por 1 ano + certificado 8h</span></li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">🎁 <span>E-book Tópicos Avançados <small style="color:#999;">(R$99)</small></span></li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">🎁 <span>E-book "Me Formei, e agora?" <small style="color:#999;">(R$59)</small></span></li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">🎁 <span>E-book Desaprendendo a Dieta <small style="color:#999;">(R$39)</small></span></li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">🎓 <span>Ressaca do Evento (encontro extra Zoom)</span></li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">💰 <span><b>Cashback integral</b> na Formação ou Pós</span></li>
+          </ul>
+          <div style="margin-bottom: 1.5rem;">
+            <span style="text-decoration: line-through; color: #999; font-size: 1.125rem;">De R$297,00</span>
+            <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-text-light);">POR 12x DE:</div>
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary);">R$ 15,20</div>
+            <div style="font-size: 1rem; color: var(--color-text-light);">ou R$ 147 à vista</div>
+          </div>
+          <a href="#" class="btn-shiny" style="width: 100%;" data-form="vip">
+            <span class="btn-text">COMPRAR INGRESSO VIP</span>
+            <div class="btn-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+          </a>
+          <div style="margin-top: 1.5rem; width: 100%;"><ProgressBar variant="minimal" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container" style="padding: var(--space-xl) var(--space-sm);">
+    <h2 class="text-center" style="margin-bottom: var(--space-xl);">Perguntas Frequentes</h2>
+    <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem;">
+      <details style="background: white; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(0,0,0,0.05); cursor: pointer;">
+        <summary style="font-weight: 700; font-size: 1.125rem;">É ao vivo? Qual a duração?</summary>
+        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">A Imersão vai acontecer ao vivo no dia 16 de Maio das 9h às 18h. Caso deseje adquirir a gravação basta avançar para próxima página (checkout) e selecionar a opção no momento da compra.</p>
+      </details>
+      <details style="background: white; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(0,0,0,0.05); cursor: pointer;">
+        <summary style="font-weight: 700; font-size: 1.125rem;">Fica Gravado?</summary>
+        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">Sim, mas o ingresso do evento ao vivo não dá acesso às gravações. Você poderá adquirir separadamente as gravações do evento na próxima página (checkout).</p>
+      </details>
+      <details style="background: white; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(0,0,0,0.05); cursor: pointer;">
+        <summary style="font-weight: 700; font-size: 1.125rem;">Sou estudante, vale a pena?</summary>
+        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">Com certeza, na faculdade você não vai aprender isso. Se você deseja sair da faculdade sabendo quais diretrizes deve seguir na prática clínica, essa imersão é para você.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1A1A1A; color: rgba(255,255,255,0.6); padding: var(--space-xl) var(--space-sm) var(--space-lg); text-align: center;">
+    <div class="container">
+      <h3 style="color: white; margin-bottom: 1rem;">Suporte no WhatsApp</h3>
+      <p style="margin-bottom: 2rem;">Minha equipe está à disposição para tirar suas dúvidas pelo nosso canal de atendimento via Whatsapp.</p>
+      <a href="https://wa.me/554799557669" class="btn" style="background: #25D366; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);">FALAR COM ATENDENTE</a>
+      <div style="margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.75rem; line-height: 1.6;">
+        <p style="margin-bottom: 1rem;">Ney Felipe Fernandes | © Copyright 2025</p>
+        <p style="margin-bottom: 1rem;">CNPJ: 38.560.882/0001-12 | cursos@nutrineyfelipe.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <FormModal />
+</Layout>
+
+<style>
+  .hero-v1 {
+    background-image: url('/images/background-pagina-verde-hero.png');
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding: 80px 0 60px;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-v1-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hero-v1-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .badge-event {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f0fdf4;
+    color: #16A34A;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    border: 1px solid #dcfce7;
+  }
+
+  .badge-live {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #e0f2fe;
+    color: #2563EB;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    border: 1px solid #bfdbfe;
+  }
+
+  .live-dot {
+    color: #DC2626;
+    font-weight: 800;
+    animation: pulse-live 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-live {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .sep { color: #93c5fd; font-size: 10px; }
+  .zoom-logo { color: #2D8CFF; font-weight: 900; font-size: 15px; }
+
+  .hero-v1-h1 {
+    font-size: clamp(30px, 4.5vw, 54px);
+    line-height: 1.08;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 20px;
+    letter-spacing: -0.04em;
+  }
+
+  .accent-caneta {
+    color: #16A34A;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .linha2 { display: block; }
+
+  .hero-v1-sub {
+    font-size: 18px;
+    color: #4B5563;
+    line-height: 1.65;
+    margin-bottom: 20px;
+    max-width: 520px;
+  }
+
+  .urgency-strip {
+    background: #FEF3C7;
+    border: 1px solid #FCD34D;
+    color: #92400E;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .cta-block-v1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .btn-v1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #16A34A 0%, #15803d 100%);
+    color: white;
+    font-weight: 800;
+    font-size: 15px;
+    padding: 18px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    width: 100%;
+    box-shadow: 0 8px 24px rgba(22, 163, 74, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-v1:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(22, 163, 74, 0.45);
+  }
+
+  .price-anchor {
+    font-size: 13px;
+    color: #6B7280;
+    font-style: italic;
+  }
+
+  .progress-hero-wrap {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  @media (max-width: 1024px) {
+    .hero-v1 {
+      background-image: none;
+      min-height: auto;
+      padding: 40px 0 20px;
+    }
+    .hero-v1-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-v1-text {
+      align-items: center;
+      text-align: center;
+    }
+    .urgency-strip, .cta-block-v1, .progress-hero-wrap {
+      align-items: center;
+    }
+    .cta-block-v1 {
+      align-items: center;
+    }
+  }
+</style>

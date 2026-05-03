@@ -1,0 +1,288 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProgressBar from '../components/ProgressBar.astro';
+import FormModal from '../components/FormModal.astro';
+import '../styles/theme-green.css';
+---
+
+<Layout title="Imersão Emagrecimento para Nutricionistas | 16 de Maio — R$19,90" theme="green">
+
+  <!-- HERO V4 — ENXUTA / DIRETA -->
+  <section class="hero-v4">
+    <div class="container hero-v4-inner">
+      <div class="badge-row">
+        <span class="badge-green">📅 16 de Maio · 9h às 18h</span>
+        <span class="badge-blue"><span class="live-dot">●</span> AO VIVO · Online via <strong class="zoom">zoom</strong></span>
+      </div>
+
+      <h1 class="h1-v4">
+        A Imersão de <span class="serif-green">Emagrecimento</span><br/>
+        que vai atualizar sua prática clínica<br/>
+        <span class="h1-sub">em um único dia</span>
+      </h1>
+
+      <p class="sub-v4">
+        Ciência atual, protocolos práticos e manejo das canetas emagrecedoras — <strong>por R$19,90</strong>.
+      </p>
+
+      <div class="urgency-v4">
+        🔥 <strong>Últimos ingressos</strong> · Evento encerra em 16 de Maio
+      </div>
+
+      <div class="cta-hero-v4">
+        <a href="#preco" class="btn-hero-v4">
+          GARANTIR INGRESSO POR R$ 19,90
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <span class="anchor">Por menos do que um café ☕</span>
+      </div>
+      <div class="progress-hero"><ProgressBar variant="minimal" /></div>
+    </div>
+  </section>
+
+  <!-- BLOCO INTERMEDIÁRIO: PROMESSA + RESUMO -->
+  <section class="resumo-section">
+    <div class="container">
+      <h2 class="resumo-title">O que é essa Imersão?</h2>
+      <p class="resumo-desc">
+        Um dia inteiro de atualização científica e prática clínica — ao vivo, via Zoom — focado em <strong>emagrecimento, sobrepeso e obesidade</strong>. Você vai aprender do jeito que a faculdade não ensinou.
+      </p>
+
+      <!-- Destaques rápidos -->
+      <div class="resumo-grid">
+        <div class="resumo-card">
+          <div class="resumo-icon">📅</div>
+          <div>
+            <strong>Quando</strong>
+            <span>16 de Maio · 9h às 18h</span>
+          </div>
+        </div>
+        <div class="resumo-card">
+          <div class="resumo-icon">💻</div>
+          <div>
+            <strong>Formato</strong>
+            <span>100% ao vivo via Zoom</span>
+          </div>
+        </div>
+        <div class="resumo-card">
+          <div class="resumo-icon">⏱️</div>
+          <div>
+            <strong>Duração</strong>
+            <span>8 horas de conteúdo intenso</span>
+          </div>
+        </div>
+        <div class="resumo-card">
+          <div class="resumo-icon">🎓</div>
+          <div>
+            <strong>Para quem</strong>
+            <span>Nutricionistas e estudantes</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conteúdos em destaque -->
+      <div class="conteudo-grid">
+        <div class="conteudo-item">
+          <span>🧬</span>
+          <span>Canetas Emagrecedoras & GLP-1</span>
+        </div>
+        <div class="conteudo-item">
+          <span>🔬</span>
+          <span>Nutrição além do déficit calórico</span>
+        </div>
+        <div class="conteudo-item">
+          <span>🧠</span>
+          <span>Aspectos neuroendócrinos da obesidade</span>
+        </div>
+        <div class="conteudo-item">
+          <span>🛠️</span>
+          <span>Estratégias de adesão comportamental</span>
+        </div>
+        <div class="conteudo-item">
+          <span>📊</span>
+          <span>Caso clínico real: do diagnóstico à estratégia</span>
+        </div>
+        <div class="conteudo-item">
+          <span>💊</span>
+          <span>Suplementação e prescrição dietética</span>
+        </div>
+      </div>
+
+      <!-- Professores -->
+      <div class="prof-strip">
+        <span class="prof-label">COM QUEM VOCÊ VAI APRENDER:</span>
+        <div class="prof-names">
+          <span>Ney Felipe · Mestre em Biologia Molecular · 18 anos de clínica</span>
+          <span class="prof-sep">·</span>
+          <span>Cássia Helena · Especialista em Adesão Comportamental</span>
+          <span class="prof-sep">·</span>
+          <span>Jéssica Wszolek · Manejo dos análogos GLP-1</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS rápidos -->
+  <section style="background:white;padding:var(--space-lg) var(--space-sm);border-top:1px solid rgba(0,0,0,0.05);">
+    <div class="container">
+      <h3 class="text-center" style="margin-bottom:var(--space-lg);">Quem participou, aprovou:</h3>
+      <div class="depo-mini-grid">
+        <blockquote class="depo-mini">"Me sinto muito mais segura nas abordagens..." — <strong>Nair Cristina</strong></blockquote>
+        <blockquote class="depo-mini">"Menos calculadora, mais nutricionista." — <strong>Melissa Pinheiro</strong></blockquote>
+        <blockquote class="depo-mini">"Hoje meus pacientes indicam meu trabalho." — <strong>Nathalia Pantaleão</strong></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREÇOS -->
+  <section id="preco" style="background:var(--color-bg);padding:var(--space-xl) var(--space-sm);">
+    <div class="container">
+      <div class="preco-urgency">
+        ⚠️ <strong>Atenção:</strong> Últimos ingressos — evento em <strong>16 de Maio</strong>. Após essa data, não haverá reposição.
+      </div>
+
+      <h2 class="text-center" style="margin-bottom:0.5rem;">Escolha seu Ingresso</h2>
+      <p class="text-center" style="color:var(--color-text-light);margin-bottom:2rem;font-size:1.125rem;">16 de Maio · 9h às 18h · Online via Zoom</p>
+
+      <div class="grid-bio">
+        <!-- Normal -->
+        <div style="background:white;padding:3rem;border-radius:var(--radius-lg);display:flex;flex-direction:column;border:1px solid rgba(0,0,0,0.05);box-shadow:0 4px 20px rgba(0,0,0,0.03);">
+          <h3 style="font-size:1.5rem;margin-bottom:0.5rem;">Ingresso Normal</h3>
+          <p style="color:var(--color-text-light);margin-bottom:2rem;">Experiência ao vivo</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:1rem;flex-grow:1;margin-bottom:3rem;">
+            <li>✅ Um dia de Imersão ao vivo</li>
+            <li>✅ 8h de Conteúdo</li>
+            <li>✅ Grupo do Evento + Materiais</li>
+            <li>🎁 Mini Curso Fundamentos Emagrecimento</li>
+          </ul>
+          <div style="margin-bottom:1.5rem;">
+            <span style="text-decoration:line-through;color:#999;">De R$97,00</span>
+            <div style="font-size:2.5rem;font-weight:800;color:var(--color-text);">R$ 19,90</div>
+          </div>
+          <a href="#" class="btn-shiny" style="width:100%;" data-form="normal">
+            <span class="btn-text">COMPRAR AGORA</span>
+            <div class="btn-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </a>
+          <div style="margin-top:1.5rem;"><ProgressBar variant="minimal" /></div>
+          <div style="display:flex;flex-direction:column;align-items:center;margin-top:1rem;opacity:0.8;">
+            <span style="font-size:0.65rem;color:var(--color-text-light);margin-bottom:0.25rem;">COMPRA 100% SEGURA</span>
+            <div style="display:flex;gap:0.25rem;">
+              <span style="background:#E8F5E9;color:#1AA824;font-size:0.65rem;font-weight:800;padding:2px 6px;border-radius:4px;">PIX</span>
+              <span style="background:#F0F4F8;color:#0A6591;font-size:0.65rem;font-weight:800;padding:2px 6px;border-radius:4px;">VISA</span>
+              <span style="background:#FFF5F5;color:#E53E3E;font-size:0.65rem;font-weight:800;padding:2px 6px;border-radius:4px;">MASTER</span>
+              <span style="background:#1A1A1A;color:#FFFFFF;font-size:0.65rem;font-weight:800;padding:2px 6px;border-radius:4px;">BOLETO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIP -->
+        <div style="background:white;padding:3rem;border-radius:var(--radius-lg);display:flex;flex-direction:column;border:2px solid var(--color-primary);position:relative;box-shadow:0 10px 40px rgba(26,168,36,0.1);">
+          <div style="position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--color-primary);color:white;padding:0.5rem 1.5rem;border-radius:var(--radius-full);font-size:0.875rem;font-weight:700;">MAIS VANTAGENS</div>
+          <h3 style="font-size:1.5rem;margin-bottom:0.5rem;">Ingresso VIP</h3>
+          <p style="color:var(--color-primary);font-weight:700;margin-bottom:2rem;">50% DE DESCONTO</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:1rem;flex-grow:1;margin-bottom:3rem;">
+            <li>🚀 Tudo do básico + gravação por 1 ano + certificado 8h</li>
+            <li>🎁 E-book Tópicos Avançados <small style="color:#999;">(R$99)</small></li>
+            <li>🎁 E-book "Me Formei, e agora?" <small style="color:#999;">(R$59)</small></li>
+            <li>🎁 E-book Desaprendendo a Dieta <small style="color:#999;">(R$39)</small></li>
+            <li>🎓 Ressaca do Evento (encontro extra Zoom)</li>
+            <li>💰 Cashback integral na Formação ou Pós</li>
+          </ul>
+          <div style="margin-bottom:1.5rem;">
+            <span style="text-decoration:line-through;color:#999;">De R$297,00</span>
+            <div style="font-size:0.875rem;color:var(--color-text-light);">POR 12x DE:</div>
+            <div style="font-size:2.5rem;font-weight:800;color:var(--color-primary);">R$ 15,20</div>
+            <div style="font-size:1rem;color:var(--color-text-light);">ou R$ 147 à vista</div>
+          </div>
+          <a href="#" class="btn-shiny" style="width:100%;" data-form="vip">
+            <span class="btn-text">COMPRAR INGRESSO VIP</span>
+            <div class="btn-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </a>
+          <div style="margin-top:1.5rem;"><ProgressBar variant="minimal" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#1A1A1A;color:rgba(255,255,255,0.6);padding:var(--space-xl) var(--space-sm) var(--space-lg);text-align:center;">
+    <div class="container">
+      <h3 style="color:white;margin-bottom:1rem;">Suporte no WhatsApp</h3>
+      <a href="https://wa.me/554799557669" class="btn" style="background:#25D366;box-shadow:0 4px 14px rgba(37,211,102,0.4);">FALAR COM ATENDENTE</a>
+      <div style="margin-top:4rem;border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;font-size:0.75rem;">
+        <p>Ney Felipe Fernandes | © Copyright 2025 | CNPJ: 38.560.882/0001-12 | cursos@nutrineyfelipe.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <FormModal />
+</Layout>
+
+<style>
+  .hero-v4 {
+    background-image: url('/images/background-pagina-verde-hero.png');
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding: 80px 0 60px;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+  }
+  .hero-v4-inner { max-width: 680px; display:flex; flex-direction:column; align-items:flex-start; }
+  .badge-row { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px; }
+  .badge-green { background:#f0fdf4;color:#16A34A;border:1px solid #dcfce7;padding:6px 14px;border-radius:8px;font-size:13px;font-weight:700; }
+  .badge-blue { background:#e0f2fe;color:#2563EB;border:1px solid #bfdbfe;padding:6px 14px;border-radius:8px;font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:6px; }
+  .live-dot { color:#DC2626;animation:pulse-live 2s ease-in-out infinite; }
+  @keyframes pulse-live { 0%,100%{opacity:1}50%{opacity:0.4} }
+  .zoom { color:#2D8CFF;font-size:15px; }
+  .h1-v4 { font-size:clamp(28px,4vw,52px);line-height:1.1;font-weight:800;color:#111827;margin-bottom:20px;letter-spacing:-0.04em; }
+  .serif-green { font-family:'Playfair Display',serif;font-style:italic;font-weight:400;color:#16A34A; }
+  .h1-sub { font-size:0.8em;color:#16A34A; }
+  .sub-v4 { font-size:18px;color:#4B5563;line-height:1.65;margin-bottom:20px;max-width:560px; }
+  .urgency-v4 { background:#FEF3C7;border:1px solid #FCD34D;color:#92400E;border-radius:8px;padding:10px 16px;font-size:14px;margin-bottom:24px;width:100%;max-width:560px; }
+  .cta-hero-v4 { display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:20px;width:100%;max-width:500px; }
+  .btn-hero-v4 { display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#16A34A,#15803d);color:white;font-weight:800;font-size:15px;padding:18px 28px;border-radius:12px;text-decoration:none;width:100%;box-shadow:0 8px 24px rgba(22,163,74,0.35);transition:transform 0.2s,box-shadow 0.2s;letter-spacing:0.02em; }
+  .btn-hero-v4:hover { transform:translateY(-2px);box-shadow:0 12px 32px rgba(22,163,74,0.45); }
+  .anchor { font-size:13px;color:#6B7280;font-style:italic; }
+  .progress-hero { width:100%;max-width:500px; }
+
+  /* BLOCO INTERMEDIÁRIO */
+  .resumo-section { background:#F7F8F6;padding:var(--space-xl) var(--space-sm); }
+  .resumo-title { font-size:2rem;margin-bottom:1rem;text-align:center; }
+  .resumo-desc { text-align:center;color:var(--color-text-light);font-size:1.125rem;line-height:1.7;max-width:700px;margin:0 auto 2.5rem; }
+
+  .resumo-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem; }
+  .resumo-card { background:white;border-radius:var(--radius-md);padding:1.25rem;display:flex;align-items:center;gap:1rem;border:1px solid rgba(0,0,0,0.05);box-shadow:0 2px 8px rgba(0,0,0,0.03); }
+  .resumo-icon { font-size:1.75rem;flex-shrink:0; }
+  .resumo-card strong { display:block;font-size:0.8rem;color:#111827;font-weight:800;text-transform:uppercase;letter-spacing:0.02em; }
+  .resumo-card span { font-size:0.875rem;color:var(--color-text-light); }
+
+  .conteudo-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-bottom:2rem; }
+  .conteudo-item { background:white;border-radius:var(--radius-md);padding:1rem 1.25rem;display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;font-weight:600;border:1px solid rgba(0,0,0,0.05); }
+
+  .prof-strip { background:white;border-radius:var(--radius-md);padding:1.25rem 1.5rem;border:1px solid rgba(0,0,0,0.05);text-align:center; }
+  .prof-label { display:block;font-size:0.7rem;font-weight:800;letter-spacing:0.05em;color:var(--color-primary);margin-bottom:0.5rem;text-transform:uppercase; }
+  .prof-names { font-size:0.875rem;color:var(--color-text-light); }
+  .prof-sep { margin:0 0.5rem;color:#D1D5DB; }
+
+  .depo-mini-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:1rem; }
+  .depo-mini { background:#F7F8F6;border-radius:var(--radius-md);padding:1.25rem;font-style:italic;font-size:0.9rem;color:var(--color-text-light);border-left:3px solid var(--color-primary);margin:0; }
+
+  .preco-urgency { background:#FEF2F2;border:1px solid #FECACA;color:#991B1B;border-radius:10px;padding:14px 20px;font-size:14px;margin-bottom:2rem;text-align:center; }
+
+  @media (max-width:1024px) {
+    .hero-v4 { background-image:none;min-height:auto;padding:40px 0 20px; }
+    .hero-v4-inner { align-items:center;text-align:center; }
+    .cta-hero-v4 { align-items:center; }
+    .resumo-grid { grid-template-columns:repeat(2,1fr); }
+    .conteudo-grid { grid-template-columns:repeat(2,1fr); }
+    .depo-mini-grid { grid-template-columns:1fr; }
+    .prof-names { display:flex;flex-direction:column;gap:0.25rem; }
+    .prof-sep { display:none; }
+  }
+
+  @media (max-width:640px) {
+    .resumo-grid { grid-template-columns:1fr; }
+    .conteudo-grid { grid-template-columns:1fr; }
+  }
+</style>
