@@ -40,22 +40,48 @@ import '../styles/theme-green.css';
 
       <div class="result-offer">
         <p class="offer-label">🎯 A imersão certa para você:</p>
-        <h3 class="offer-title">Imersão em Emagrecimento<br/>— 4ª Edição</h3>
+        <h3 class="offer-title">Imersão em Emagrecimento — 4ª Edição</h3>
         <div class="offer-meta">📅 16 de Maio · 9h às 18h · Online via Zoom</div>
 
         <div class="urgency-box">
           ⚠️ <strong>Últimos ingressos</strong> — evento em 16 de Maio
         </div>
 
-        <div class="offer-price">
-          <span class="price-from">De R$97,00</span>
-          <div class="price-main">R$ 19,90</div>
-          <span class="price-note">Por menos do que um café ☕</span>
+        <!-- INGRESSO NORMAL -->
+        <div class="ticket-card">
+          <div class="ticket-header">
+            <div>
+              <h4 class="ticket-name">Ingresso Normal</h4>
+              <p class="ticket-desc">Experiência ao vivo · 8h de conteúdo · Materiais</p>
+            </div>
+            <div class="ticket-price-wrap">
+              <span class="ticket-from">De R$97</span>
+              <div class="ticket-price">R$ 19,90</div>
+            </div>
+          </div>
+          <a href="https://pay.hotmart.com/Y105539078H?off=rzzgx17r&checkoutMode=10" class="btn-normal" target="_blank" rel="noopener">
+            COMPRAR INGRESSO NORMAL →
+          </a>
         </div>
 
-        <a href="https://institutodenutricaoavancada.com/imersao/#preco" class="btn-result">
-          QUERO MEU INGRESSO AGORA →
-        </a>
+        <!-- INGRESSO VIP -->
+        <div class="ticket-card ticket-vip">
+          <div class="ticket-vip-badge">⭐ MAIS VANTAGENS</div>
+          <div class="ticket-header">
+            <div>
+              <h4 class="ticket-name">Ingresso VIP</h4>
+              <p class="ticket-desc">Gravação por 1 ano · Certificado · 3 E-books · Ressaca do evento · Cashback</p>
+            </div>
+            <div class="ticket-price-wrap">
+              <span class="ticket-from">De R$297</span>
+              <div class="ticket-price vip-price">R$ 147</div>
+              <span class="ticket-parcel">ou 12x de R$15,20</span>
+            </div>
+          </div>
+          <a href="https://pay.hotmart.com/W93818806I?off=l3p9qwc8&checkoutMode=10" class="btn-vip" target="_blank" rel="noopener">
+            COMPRAR INGRESSO VIP →
+          </a>
+        </div>
 
         <div class="result-trust">
           <span>🔒 Compra 100% segura</span>
@@ -399,29 +425,95 @@ import '../styles/theme-green.css';
     margin-bottom: 24px;
   }
 
-  .offer-price { text-align: center; margin-bottom: 24px; }
-  .price-from { text-decoration: line-through; color: #9CA3AF; font-size: 14px; }
-  .price-main { font-size: 48px; font-weight: 900; color: #111827; line-height: 1.1; }
-  .price-note { font-size: 13px; color: #6B7280; font-style: italic; }
+  /* TICKET CARDS */
+  .ticket-card {
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    position: relative;
+  }
 
-  .btn-result {
+  .ticket-vip {
+    background: #f0fdf4;
+    border: 2px solid #16A34A;
+  }
+
+  .ticket-vip-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #16A34A;
+    color: white;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 14px;
+    border-radius: 99px;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+  }
+
+  .ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .ticket-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+
+  .ticket-desc {
+    font-size: 12px;
+    color: #6B7280;
+    line-height: 1.5;
+  }
+
+  .ticket-price-wrap { text-align: right; flex-shrink: 0; }
+  .ticket-from { display: block; font-size: 11px; text-decoration: line-through; color: #9CA3AF; }
+  .ticket-price { font-size: 22px; font-weight: 900; color: #111827; line-height: 1.1; }
+  .vip-price { color: #16A34A; }
+  .ticket-parcel { display: block; font-size: 11px; color: #6B7280; }
+
+  .btn-normal {
+    display: block;
+    width: 100%;
+    background: #111827;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    transition: background 0.2s;
+    letter-spacing: 0.02em;
+  }
+  .btn-normal:hover { background: #1F2937; }
+
+  .btn-vip {
     display: block;
     width: 100%;
     background: linear-gradient(135deg, #16A34A, #15803d);
     color: white;
     font-weight: 800;
-    font-size: 16px;
-    padding: 20px;
-    border-radius: 14px;
+    font-size: 14px;
+    padding: 14px;
+    border-radius: 10px;
     text-decoration: none;
     text-align: center;
-    box-shadow: 0 8px 24px rgba(22,163,74,0.3);
+    box-shadow: 0 6px 18px rgba(22,163,74,0.3);
     transition: transform 0.2s, box-shadow 0.2s;
-    margin-bottom: 16px;
     letter-spacing: 0.02em;
   }
-
-  .btn-result:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(22,163,74,0.4); }
+  .btn-vip:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(22,163,74,0.4); }
 
   .result-trust {
     display: flex;
@@ -430,6 +522,7 @@ import '../styles/theme-green.css';
     gap: 8px;
     font-size: 12px;
     color: #9CA3AF;
+    margin-top: 16px;
   }
 
   @media (max-width: 480px) {
