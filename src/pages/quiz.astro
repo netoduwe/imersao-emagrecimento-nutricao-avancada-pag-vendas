@@ -253,7 +253,7 @@ function showResult() {
 }
 </script>
 
-<style>
+<style is:global>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'Inter', -apple-system, sans-serif;
@@ -328,6 +328,8 @@ body {
 /* OPTIONS — Clean Apple-level */
 .opts { display: flex; flex-direction: column; gap: 12px; }
 .opt {
+  appearance: none; -webkit-appearance: none;
+  width: 100%; margin: 0; outline: none; font-family: inherit;
   background: #FFFFFF;
   border: 1px solid #E5E7EB;
   border-radius: 12px;
