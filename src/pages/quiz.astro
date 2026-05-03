@@ -1,0 +1,439 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/theme-green.css';
+---
+
+<Layout title="Teste: Qual Nutricionista você é? | Imersão Emagrecimento" theme="green">
+<div class="quiz-wrapper" id="quiz-app">
+
+  <!-- INTRO -->
+  <div class="quiz-screen active" id="screen-intro">
+    <div class="quiz-card intro-card">
+      <div class="intro-badge">🧪 DIAGNÓSTICO CLÍNICO</div>
+      <h1 class="intro-title">Você está pronto para atender o paciente de emagrecimento de 2025?</h1>
+      <p class="intro-sub">4 perguntas rápidas revelam seu nível de atualização clínica — e o que fazer com isso.</p>
+      <button class="btn-quiz-start" onclick="startQuiz()">FAZER O DIAGNÓSTICO AGORA →</button>
+      <span class="intro-note">⏱️ Leva menos de 60 segundos</span>
+    </div>
+  </div>
+
+  <!-- QUIZ -->
+  <div class="quiz-screen" id="screen-quiz">
+    <div class="quiz-card">
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+      </div>
+      <div class="q-counter" id="q-counter">Pergunta 1 de 4</div>
+      <div class="q-text" id="q-text"></div>
+      <div class="q-options" id="q-options"></div>
+    </div>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="quiz-screen" id="screen-result">
+    <div class="quiz-card result-card">
+      <div class="result-badge" id="result-badge"></div>
+      <h2 class="result-title" id="result-title"></h2>
+      <p class="result-desc" id="result-desc"></p>
+
+      <div class="result-divider"></div>
+
+      <div class="result-offer">
+        <p class="offer-label">🎯 A imersão certa para você:</p>
+        <h3 class="offer-title">Imersão em Emagrecimento<br/>— 4ª Edição</h3>
+        <div class="offer-meta">📅 16 de Maio · 9h às 18h · Online via Zoom</div>
+
+        <div class="urgency-box">
+          ⚠️ <strong>Últimos ingressos</strong> — evento em 16 de Maio
+        </div>
+
+        <div class="offer-price">
+          <span class="price-from">De R$97,00</span>
+          <div class="price-main">R$ 19,90</div>
+          <span class="price-note">Por menos do que um café ☕</span>
+        </div>
+
+        <a href="https://institutodenutricaoavancada.com/imersao/#preco" class="btn-result">
+          QUERO MEU INGRESSO AGORA →
+        </a>
+
+        <div class="result-trust">
+          <span>🔒 Compra 100% segura</span>
+          <span>·</span>
+          <span>PIX · Cartão · Boleto</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</Layout>
+
+<script is:inline>
+  const questions = [
+    {
+      text: "Quando um paciente chega com Mounjaro ou Ozempic receitado pelo médico, como você se sente?",
+      options: [
+        { text: "Preparado — sei exatamente o que ajustar na dieta", score: 3 },
+        { text: "Tenho alguma base, mas ainda tenho dúvidas", score: 2 },
+        { text: "Honestamente, não sei muito bem o que fazer", score: 1 },
+        { text: "Meus pacientes ainda não usam esse tipo de medicação", score: 1 }
+      ]
+    },
+    {
+      text: "Você consegue explicar clinicamente por que o emagrecimento travou — mesmo com déficit calórico sendo seguido?",
+      options: [
+        { text: "Sim, com segurança e embasamento científico", score: 3 },
+        { text: "Às vezes consigo, mas me falta profundidade", score: 2 },
+        { text: "Não tenho essa resposta ainda", score: 1 }
+      ]
+    },
+    {
+      text: "Qual é o seu maior desafio hoje com pacientes de emagrecimento?",
+      options: [
+        { text: "Fazer o paciente aderir ao plano", score: 2 },
+        { text: "Ter segurança clínica para casos mais complexos", score: 1 },
+        { text: "Me manter atualizado com a ciência mais recente", score: 1 },
+        { text: "Me diferenciar e cobrar mais pelo meu trabalho", score: 2 }
+      ]
+    },
+    {
+      text: "Há quanto tempo você atua como nutricionista?",
+      options: [
+        { text: "Ainda sou estudante", score: 1 },
+        { text: "Menos de 3 anos", score: 2 },
+        { text: "Entre 3 e 10 anos", score: 2 },
+        { text: "Mais de 10 anos", score: 3 }
+      ]
+    }
+  ];
+
+  const results = [
+    {
+      min: 4, max: 6,
+      badge: "🌱 NUTRICIONISTA EM CONSTRUÇÃO",
+      title: "Você está no momento exato para dar o próximo salto.",
+      desc: "Sua formação ainda está se consolidando — e isso é uma vantagem. Você pode aprender já com o raciocínio clínico certo, sem precisar desaprender anos de prática ultrapassada. A Imersão vai te dar a base que a faculdade não deu."
+    },
+    {
+      min: 7, max: 9,
+      badge: "⚡ NUTRICIONISTA EM TRANSIÇÃO",
+      title: "Você tem fundamentos. Faltam as peças para fechar o quebra-cabeça.",
+      desc: "Você já atende, já tem experiência — mas sente que algo falta quando o caso fica complexo. Especialmente com as canetas emagrecedoras e a obesidade multifatorial. A Imersão vai preencher essas lacunas com ciência e prática clínica real."
+    },
+    {
+      min: 10, max: 12,
+      badge: "🚀 NUTRICIONISTA AVANÇADO",
+      title: "Você já tem base sólida. A Imersão vai te colocar na vanguarda.",
+      desc: "Profissionais no seu nível são raros — e por isso a atualização constante é o que os separa dos demais. O mercado está mudando rápido: GLP-1, obesidade sistêmica, epigenética. A Imersão traz o que há de mais atual para quem já chegou longe."
+    }
+  ];
+
+  let current = 0;
+  let totalScore = 0;
+
+  function startQuiz() {
+    showScreen('screen-quiz');
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const q = questions[current];
+    const pct = (current / questions.length) * 100;
+    document.getElementById('progress-bar').style.width = pct + '%';
+    document.getElementById('q-counter').textContent = `Pergunta ${current + 1} de ${questions.length}`;
+
+    const qText = document.getElementById('q-text');
+    qText.style.opacity = '0';
+    qText.textContent = q.text;
+    setTimeout(() => { qText.style.opacity = '1'; }, 50);
+
+    const opts = document.getElementById('q-options');
+    opts.innerHTML = '';
+    q.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'opt-btn';
+      btn.textContent = opt.text;
+      btn.style.animationDelay = (i * 80) + 'ms';
+      btn.onclick = () => selectOption(opt.score, btn);
+      opts.appendChild(btn);
+    });
+  }
+
+  function selectOption(score, btn) {
+    document.querySelectorAll('.opt-btn').forEach(b => b.disabled = true);
+    btn.classList.add('selected');
+    totalScore += score;
+    setTimeout(() => {
+      current++;
+      if (current < questions.length) {
+        renderQuestion();
+      } else {
+        showResult();
+      }
+    }, 400);
+  }
+
+  function showResult() {
+    document.getElementById('progress-bar').style.width = '100%';
+    const r = results.find(r => totalScore >= r.min && totalScore <= r.max) || results[1];
+    document.getElementById('result-badge').textContent = r.badge;
+    document.getElementById('result-title').textContent = r.title;
+    document.getElementById('result-desc').textContent = r.desc;
+    setTimeout(() => showScreen('screen-result'), 300);
+  }
+
+  function showScreen(id) {
+    document.querySelectorAll('.quiz-screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+<style>
+  .quiz-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0fdf4 0%, #F7F8F6 60%, #e0f2fe 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+  }
+
+  .quiz-screen { display: none; width: 100%; max-width: 640px; margin: 0 auto; }
+  .quiz-screen.active { display: block; animation: fadeUp 0.4s ease; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .quiz-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.04);
+  }
+
+  /* INTRO */
+  .intro-badge {
+    display: inline-block;
+    background: #f0fdf4;
+    color: #16A34A;
+    border: 1px solid #dcfce7;
+    padding: 6px 14px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+  }
+
+  .intro-title {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+
+  .intro-sub {
+    font-size: 17px;
+    color: #4B5563;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .btn-quiz-start {
+    width: 100%;
+    background: linear-gradient(135deg, #16A34A, #15803d);
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(22,163,74,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.02em;
+    margin-bottom: 12px;
+  }
+
+  .btn-quiz-start:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(22,163,74,0.4); }
+
+  .intro-note { display: block; text-align: center; font-size: 13px; color: #9CA3AF; }
+
+  /* PROGRESS */
+  .progress-wrap {
+    width: 100%;
+    height: 6px;
+    background: #F3F4F6;
+    border-radius: 99px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #22c55e, #16A34A);
+    border-radius: 99px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .q-counter {
+    font-size: 12px;
+    font-weight: 700;
+    color: #16A34A;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+
+  .q-text {
+    font-size: clamp(18px, 3vw, 22px);
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.4;
+    margin-bottom: 28px;
+    transition: opacity 0.3s;
+  }
+
+  .q-options { display: flex; flex-direction: column; gap: 12px; }
+
+  .opt-btn {
+    background: #F9FAFB;
+    border: 2px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s;
+    animation: slideIn 0.3s ease both;
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .opt-btn:hover:not(:disabled) {
+    border-color: #16A34A;
+    background: #f0fdf4;
+    color: #15803d;
+    transform: translateX(4px);
+  }
+
+  .opt-btn.selected {
+    border-color: #16A34A;
+    background: #16A34A;
+    color: white;
+  }
+
+  .opt-btn:disabled { cursor: default; }
+
+  /* RESULT */
+  .result-badge {
+    display: inline-block;
+    background: #f0fdf4;
+    color: #16A34A;
+    border: 1px solid #dcfce7;
+    padding: 8px 16px;
+    border-radius: 99px;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  .result-title {
+    font-size: clamp(20px, 3.5vw, 26px);
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+
+  .result-desc {
+    font-size: 16px;
+    color: #4B5563;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .result-divider {
+    height: 1px;
+    background: #F3F4F6;
+    margin: 32px 0;
+  }
+
+  .offer-label { font-size: 13px; font-weight: 700; color: #6B7280; margin-bottom: 8px; }
+
+  .offer-title {
+    font-size: clamp(20px, 3vw, 24px);
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .offer-meta {
+    font-size: 14px;
+    color: #16A34A;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .urgency-box {
+    background: #FEF3C7;
+    border: 1px solid #FCD34D;
+    color: #92400E;
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .offer-price { text-align: center; margin-bottom: 24px; }
+  .price-from { text-decoration: line-through; color: #9CA3AF; font-size: 14px; }
+  .price-main { font-size: 48px; font-weight: 900; color: #111827; line-height: 1.1; }
+  .price-note { font-size: 13px; color: #6B7280; font-style: italic; }
+
+  .btn-result {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #16A34A, #15803d);
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(22,163,74,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-result:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(22,163,74,0.4); }
+
+  .result-trust {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #9CA3AF;
+  }
+
+  @media (max-width: 480px) {
+    .quiz-card { padding: 28px 20px; }
+    .price-main { font-size: 40px; }
+  }
+</style>
