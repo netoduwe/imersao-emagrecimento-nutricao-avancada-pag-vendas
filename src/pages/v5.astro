@@ -1,0 +1,471 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Diagnóstico Clínico | Imersão Emagrecimento 2026" theme="green">
+
+<div id="v5-funnel">
+
+  <!-- HERO (Screen 1) -->
+  <div class="screen active" id="s-intro">
+    <div class="container hero-v5">
+      <div class="hero-content">
+        <div class="chip">🧪 AVALIAÇÃO CLÍNICA GRATUITA</div>
+        <h1>Você está atualizado para o paciente de emagrecimento de 2026?</h1>
+        <p>As canetas emagrecedoras e a modulação epigenética mudaram o jogo. O que funcionava em 2023 já não serve para os casos complexos de hoje. <br/><br/><strong>Responda 4 perguntas rápidas</strong> para descobrir seu nível atual de conhecimento e identificar seus maiores gaps clínicos.</p>
+        <button id="btn-start" onclick="start()">
+          <span>INICIAR DIAGNÓSTICO AGORA</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <small>⏱ Leva menos de 60 segundos</small>
+      </div>
+      <div class="hero-image">
+        <!-- Reusing Ney's image from other variations for authority -->
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" class="ney-hero-img" />
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <!-- QUIZ -->
+  <div class="screen" id="s-quiz">
+    <div class="card quiz-card">
+      <div class="steps" id="steps"></div>
+      <div class="q-num" id="q-num">1 / 4</div>
+      <div class="q-text" id="q-text"></div>
+      <div class="opts" id="opts"></div>
+    </div>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="screen" id="s-result">
+    <!-- DIAGNÓSTICO -->
+    <div class="card result-header" id="r-header">
+      <div class="r-badge" id="r-badge"></div>
+      <h2 id="r-title"></h2>
+      <p id="r-desc"></p>
+    </div>
+
+    <!-- AUTORIDADE NEY -->
+    <div class="card authority-card">
+      <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" class="ney-img"/>
+      <div class="authority-text">
+        <div class="chip chip-green">👨‍🔬 QUEM VAI TE ENSINAR</div>
+        <h3>Ney Felipe — 18 anos no campo de batalha clínico</h3>
+        <p>Nutricionista pioneiro da Nutrição Funcional no Brasil. Mestre em Biologia Molecular, Doutorando em Saúde Pública e fundador da Nutrição Avançada. Já formou mais de <strong>3.000 nutricionistas</strong> na prática clínica real.</p>
+        <div class="creds">
+          <span>✅ 18 anos de clínica</span>
+          <span>✅ Mestre em Biologia Molecular</span>
+          <span>✅ 3.000+ alunos formados</span>
+          <span>✅ 2 livros publicados</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BENEFÍCIOS -->
+    <div class="card benefits-card">
+      <div class="chip">📚 O QUE VOCÊ VAI APRENDER</div>
+      <h3>Em 1 dia ao vivo você vai dominar:</h3>
+      <div class="benefits-grid">
+        <div class="benefit-item"><span>🧬</span><span>Canetas emagrecedoras (GLP-1) — manejo clínico completo</span></div>
+        <div class="benefit-item"><span>🔬</span><span>Emagrecimento além do déficit calórico</span></div>
+        <div class="benefit-item"><span>🧠</span><span>Aspectos neuroendócrinos da obesidade</span></div>
+        <div class="benefit-item"><span>🦠</span><span>Epigenética, inflamação e tecido adiposo</span></div>
+        <div class="benefit-item"><span>🛠️</span><span>Estratégias de adesão comportamental</span></div>
+        <div class="benefit-item"><span>📊</span><span>Caso clínico real: do diagnóstico à prescrição</span></div>
+      </div>
+      <div class="event-meta">
+        <span>📅 16 de Maio</span>
+        <span>⏰ 9h às 18h</span>
+        <span>💻 Online via Zoom</span>
+        <span>⚡ Ao vivo</span>
+      </div>
+    </div>
+
+    <!-- OFERTA -->
+    <div class="card offer-card">
+      <div class="urgency-bar">⚠️ <strong>Últimos ingressos</strong> — Evento em 16 de Maio</div>
+      <h3 class="offer-title">O seu plano de atualização está pronto!</h3>
+      <p class="offer-sub">Escolha a melhor opção de ingresso para você:</p>
+
+      <a href="https://pay.hotmart.com/Y105539078H?off=rzzgx17r&checkoutMode=10" class="ticket-link" target="_blank">
+        <div class="t-left">
+          <div class="t-radio"></div>
+          <div class="t-info">
+            <span class="t-name">Ingresso Normal</span>
+            <span class="t-desc">Ao vivo · 8h de conteúdo · Grupo de alunos + Materiais de apoio</span>
+          </div>
+        </div>
+        <div class="t-right">
+          <del>De R$ 97,00</del>
+          <span class="t-price-label">por</span>
+          <div class="t-price">R$ 19,90</div>
+          <span class="t-term">à vista</span>
+        </div>
+      </a>
+
+      <a href="https://pay.hotmart.com/W93818806I?off=l3p9qwc8&checkoutMode=10" class="ticket-link ticket-vip" target="_blank">
+        <div class="vip-badge-pill">⭐ MAIS POPULAR ⭐</div>
+        <div class="t-left">
+          <div class="t-radio"></div>
+          <div class="t-info">
+            <span class="t-name">Ingresso VIP</span>
+            <span class="t-desc">Tudo do normal + Gravação por 1 ano + 3 E-books bônus + Encontro extra (Ressaca)</span>
+          </div>
+        </div>
+        <div class="t-right">
+          <del>De R$ 297,00</del>
+          <span class="t-price-label">por</span>
+          <div class="t-price vip-price">R$ 147</div>
+          <span class="t-term">à vista</span>
+        </div>
+      </a>
+
+      <div class="trust">🔒 Compra 100% segura &nbsp;·&nbsp; PIX · Cartão · Boleto</div>
+    </div>
+  </div>
+
+</div>
+</Layout>
+
+<script is:inline>
+const Q = [
+  {
+    q: "Sobre o manejo nutricional de pacientes em uso de Mounjaro, Ozempic ou Wegovy:",
+    opts: [
+      { t: "Domino as rotas metabólicas para mitigar a perda de massa magra e o reganho pós-uso.", s: 3 },
+      { t: "Ajusto os macros, mas o manejo da saciedade medicamentosa me gera insegurança.", s: 2 },
+      { t: "Trato como um paciente comum com déficit calórico, não mudo muita coisa.", s: 1 },
+      { t: "Ainda não atendo pacientes que usam essas medicações.", s: 1 }
+    ]
+  },
+  {
+    q: "Quando você monta uma prescrição para emagrecimento, qual é o seu nível de profundidade?",
+    opts: [
+      { t: "Vou além das calorias: prescrevo compostos bioativos focados em modulação epigenética.", s: 3 },
+      { t: "Incluo alimentos funcionais básicos, mas não tenho domínio das 3 classes principais.", s: 2 },
+      { t: "Foco 100% no déficit calórico e macronutrientes. Se a conta fechar, emagrece.", s: 1 }
+    ]
+  },
+  {
+    q: "O paciente estagnou o peso mesmo seguindo a dieta à risca. Qual é a sua conduta clínica?",
+    opts: [
+      { t: "Avalio o tecido adiposo como órgão endócrino e investigo a cascata inflamatória celular.", s: 3 },
+      { t: "Sinto que me falta profundidade bioquímica avançada para destravar esse platô.", s: 2 },
+      { t: "Tento reduzir ainda mais as calorias ou peço para aumentar o cárdio na academia.", s: 1 },
+      { t: "Desconfio que o paciente está mentindo ou beliscando muito fora da dieta.", s: 1 }
+    ]
+  },
+  {
+    q: "Como você lida com a adesão comportamental em casos crônicos de obesidade sistêmica?",
+    opts: [
+      { t: "Tenho ferramentas clínicas validadas para rastrear e modular o eixo intestino-cérebro.", s: 3 },
+      { t: "Tento ser empático e motivar, mas muitos acabam desistindo ou sumindo do consultório.", s: 2 },
+      { t: "Faço a minha parte entregando o plano perfeito. A adesão é responsabilidade do paciente.", s: 1 }
+    ]
+  }
+];
+
+const R = [
+  { min:4, max:6, badge:"🌱 NUTRICIONISTA EM CONSTRUÇÃO", title:"Você está no momento exato para dar o próximo salto.", desc:"Você pode aprender já com o raciocínio clínico certo, sem precisar desaprender anos de prática ultrapassada. A Imersão vai te dar a base que a faculdade não deu — com quem atende há 18 anos." },
+  { min:7, max:9, badge:"⚡ NUTRICIONISTA EM TRANSIÇÃO", title:"Você tem fundamentos. Faltam as peças para fechar o quebra-cabeça.", desc:"Você já atende, tem experiência — mas sente que algo falta quando o caso fica complexo. A Imersão vai preencher essas lacunas com a ciência mais atual e prática clínica real." },
+  { min:10, max:12, badge:"🚀 NUTRICIONISTA AVANÇADO", title:"Você já tem base sólida. A Imersão vai te colocar na vanguarda.", desc:"Profissionais no seu nível se separam dos demais pela atualização constante. GLP-1, obesidade sistêmica, epigenética — a Imersão traz o que há de mais atual para quem já chegou longe." }
+];
+
+let cur = 0, score = 0;
+
+// Web Audio
+function snd(type) {
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const g = ctx.createGain();
+    g.connect(ctx.destination);
+    if (type === 'click') {
+      const o = ctx.createOscillator();
+      o.connect(g); o.type = 'sine'; o.frequency.value = 880;
+      g.gain.setValueAtTime(0.15, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+      o.start(); o.stop(ctx.currentTime + 0.12);
+    } else if (type === 'win') {
+      [523, 659, 784, 1047].forEach((f, i) => {
+        const o = ctx.createOscillator();
+        o.connect(g); o.type = 'sine'; o.frequency.value = f;
+        const t = ctx.currentTime + i * 0.12;
+        g.gain.setValueAtTime(0.18, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.2);
+        o.start(t); o.stop(t + 0.2);
+      });
+    }
+  } catch(e) {}
+}
+
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => { s.classList.remove('active'); s.classList.add('exiting'); });
+  setTimeout(() => {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('exiting'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 280);
+}
+
+function start() { snd('click'); show('s-quiz'); renderQ(); }
+
+function renderQ() {
+  const q = Q[cur];
+  // steps
+  const steps = document.getElementById('steps');
+  steps.innerHTML = Q.map((_,i) => `<div class="step ${i < cur ? 'done' : i === cur ? 'active' : ''}"></div>`).join('');
+  document.getElementById('q-num').textContent = `${cur + 1} / ${Q.length}`;
+  const qEl = document.getElementById('q-text');
+  qEl.style.opacity = '0'; qEl.textContent = q.q;
+  setTimeout(() => { qEl.style.opacity = '1'; }, 50);
+  const opts = document.getElementById('opts');
+  opts.innerHTML = '';
+  q.opts.forEach((o, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'opt';
+    btn.innerHTML = `<div class="radio-circle"></div><span class="opt-label">${o.t}</span>`;
+    btn.style.animationDelay = (i * 50) + 'ms';
+    btn.onclick = () => pick(o.s, btn);
+    opts.appendChild(btn);
+  });
+}
+
+function pick(s, btn) {
+  snd('click');
+  document.querySelectorAll('.opt').forEach(b => { b.disabled = true; b.classList.add('disabled'); });
+  btn.classList.add('chosen');
+  score += s;
+  setTimeout(() => {
+    cur++;
+    if (cur < Q.length) renderQ();
+    else { snd('win'); setTimeout(() => showResult(), 400); }
+  }, 500);
+}
+
+function showResult() {
+  const r = R.find(r => score >= r.min && score <= r.max) || R[1];
+  document.getElementById('r-badge').textContent = r.badge;
+  document.getElementById('r-title').textContent = r.title;
+  document.getElementById('r-desc').textContent = r.desc;
+  show('s-result');
+}
+</script>
+
+<style is:global>
+#v5-funnel { padding: 40px 16px 80px; max-width: 1000px; margin: 0 auto; min-height: 80vh; display: flex; align-items: center; justify-content: center; }
+
+/* HERO V5 */
+.hero-v5 {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+  background: white;
+  border-radius: 32px;
+  padding: 48px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.hero-content h1 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900; color: #111827;
+  line-height: 1.15; letter-spacing: -.03em;
+  margin-bottom: 20px;
+}
+.hero-content p {
+  font-size: 17px; color: #4B5563; line-height: 1.6; margin-bottom: 32px;
+}
+.ney-hero-img {
+  width: 100%; height: auto; border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+  .hero-v5 { grid-template-columns: 1fr; padding: 24px; }
+  .ney-hero-img { display: none; }
+  #v5-funnel { padding: 20px 16px 60px; max-width: 640px; }
+}
+
+/* SCREENS */
+.screen { display: none; width: 100%; max-width: 640px; margin: 0 auto; }
+#s-intro { max-width: 100%; }
+.screen.active { display: block; animation: fadeUp .35s cubic-bezier(.22,.68,0,1.2); }
+.screen.exiting { animation: fadeDown .28s ease forwards; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(24px) scale(.98); } to { opacity:1; transform:none; } }
+@keyframes fadeDown { to { opacity:0; transform:translateY(-16px); } }
+
+/* CARDS */
+.card {
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  padding: 36px 32px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.05);
+  border: 1px solid rgba(255,255,255,.8);
+  margin-bottom: 16px;
+}
+
+/* CHIP */
+.chip {
+  display: inline-block;
+  background: #f0fdf4; color: #16A34A;
+  border: 1px solid #dcfce7;
+  padding: 5px 14px; border-radius: 99px;
+  font-size: 11px; font-weight: 800;
+  letter-spacing: .06em; margin-bottom: 20px;
+}
+.chip-green { background: #f0fdf4; color: #16A34A; border-color: #dcfce7; }
+
+/* INTRO */
+.intro-card h1 {
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: 900; color: #111827;
+  line-height: 1.2; letter-spacing: -.03em;
+  margin-bottom: 14px;
+}
+.intro-card p { font-size: 17px; color: #4B5563; line-height: 1.6; margin-bottom: 32px; }
+#btn-start {
+  width: 100%;
+  background: linear-gradient(135deg, #16A34A, #15803d);
+  color: white; border: none; cursor: pointer;
+  font-size: 16px; font-weight: 800;
+  padding: 20px 28px; border-radius: 16px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  box-shadow: 0 8px 32px rgba(22,163,74,.35), 0 2px 8px rgba(22,163,74,.2);
+  transition: transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .18s;
+  letter-spacing: .03em; margin-bottom: 14px;
+}
+#btn-start:hover { transform: scale(1.02) translateY(-2px); box-shadow: 0 14px 40px rgba(22,163,74,.4); }
+#btn-start:active { transform: scale(.98); }
+.intro-card small { display: block; text-align: center; font-size: 13px; color: #9CA3AF; }
+
+/* STEPS */
+.steps { display: flex; gap: 8px; margin-bottom: 20px; }
+.step { flex: 1; height: 5px; border-radius: 99px; background: #E5E7EB; transition: background .3s, transform .3s; }
+.step.done { background: #16A34A; }
+.step.active { background: #16A34A; opacity: .5; transform: scaleX(.8); }
+
+.q-num { font-size: 12px; font-weight: 700; color: #16A34A; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 18px; }
+
+.q-text { font-size: clamp(17px, 3.5vw, 21px); font-weight: 700; color: #111827; line-height: 1.4; margin-bottom: 28px; transition: opacity .25s; }
+
+/* OPTIONS — Clean Apple-level */
+.opts { display: flex; flex-direction: column; gap: 12px; }
+.opt {
+  appearance: none; -webkit-appearance: none;
+  width: 100%; margin: 0; outline: none; font-family: inherit;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex; align-items: center; gap: 14px;
+  cursor: pointer; text-align: left;
+  transition: all .2s ease;
+  animation: optIn .3s ease both;
+}
+@keyframes optIn { from { opacity:0; transform:translateX(-8px); } to { opacity:1; transform:none; } }
+.radio-circle {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1.5px solid #D1D5DB;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s ease;
+}
+.opt-label { font-size: 15px; font-weight: 500; color: #374151; line-height: 1.3; }
+
+.opt:hover:not(:disabled) {
+  border-color: #A7F3D0;
+  background: #F9FAFB;
+}
+.opt.chosen {
+  border-color: #16A34A; background: #f0fdf4;
+}
+.opt.chosen .radio-circle {
+  border-color: #16A34A;
+}
+.opt.chosen .radio-circle::after {
+  content: '';
+  width: 12px; height: 12px;
+  background: #16A34A;
+  border-radius: 50%;
+}
+.opt.chosen .opt-label {
+  color: #111827; font-weight: 600;
+}
+.opt.disabled:not(.chosen) { opacity: .5; }
+
+/* RESULT */
+.result-header { text-align: center; }
+.r-badge { display: inline-block; background: #f0fdf4; color: #16A34A; border: 1.5px solid #dcfce7; padding: 8px 18px; border-radius: 99px; font-size: 13px; font-weight: 800; margin-bottom: 20px; }
+.result-header h2 { font-size: clamp(19px, 4vw, 24px); font-weight: 800; color: #111827; line-height: 1.3; margin-bottom: 14px; letter-spacing: -.02em; }
+.result-header p { font-size: 16px; color: #4B5563; line-height: 1.7; }
+
+/* AUTHORITY */
+.authority-card { display: flex; gap: 24px; align-items: flex-start; }
+.ney-img { width: 90px; height: 110px; object-fit: cover; border-radius: 16px; flex-shrink: 0; background: #f0fdf4; }
+.authority-text h3 { font-size: 17px; font-weight: 800; color: #111827; margin-bottom: 10px; line-height: 1.3; }
+.authority-text p { font-size: 14px; color: #4B5563; line-height: 1.65; margin-bottom: 14px; }
+.creds { display: flex; flex-wrap: wrap; gap: 8px; }
+.creds span { font-size: 12px; font-weight: 600; color: #16A34A; background: #f0fdf4; padding: 4px 10px; border-radius: 99px; border: 1px solid #dcfce7; }
+
+/* BENEFITS */
+.benefits-card h3 { font-size: 18px; font-weight: 800; color: #111827; margin-bottom: 20px; }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+.benefit-item { display: flex; gap: 10px; align-items: flex-start; background: #F9FAFB; border-radius: 12px; padding: 12px; border: 1px solid #F3F4F6; }
+.benefit-item span:first-child { font-size: 18px; flex-shrink: 0; }
+.benefit-item span:last-child { font-size: 13px; font-weight: 600; color: #374151; line-height: 1.4; }
+.event-meta { display: flex; flex-wrap: wrap; gap: 10px; }
+.event-meta span { font-size: 13px; font-weight: 700; color: #16A34A; background: #f0fdf4; padding: 6px 12px; border-radius: 99px; border: 1px solid #dcfce7; }
+
+/* OFFER */
+.urgency-bar { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 24px; }
+.offer-title { font-size: 22px; font-weight: 800; color: #111827; margin-bottom: 6px; text-align: center; }
+.offer-sub { font-size: 14px; color: #6B7280; text-align: center; margin-bottom: 24px; }
+
+.ticket-link {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px;
+  padding: 16px; margin-bottom: 12px; text-decoration: none; color: inherit;
+  transition: all .2s ease;
+  position: relative;
+}
+.ticket-link:hover { border-color: #16A34A; box-shadow: 0 4px 12px rgba(22,163,74,.08); }
+
+.ticket-vip { border: 2px solid #16A34A; margin-top: 24px; }
+.vip-badge-pill {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: #16A34A; color: white;
+  font-size: 11px; font-weight: 800; padding: 4px 14px; border-radius: 99px;
+  white-space: nowrap; letter-spacing: 0.05em;
+}
+
+.t-left { display: flex; align-items: flex-start; gap: 12px; flex: 1; }
+.t-radio {
+  width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #D1D5DB;
+  flex-shrink: 0; margin-top: 2px;
+}
+.t-info { display: flex; flex-direction: column; gap: 4px; }
+.t-name { font-size: 15px; font-weight: 700; color: #111827; }
+.t-desc { font-size: 12px; color: #6B7280; line-height: 1.4; padding-right: 8px; }
+
+.t-right {
+  display: flex; flex-direction: column; align-items: flex-end;
+  text-align: right; flex-shrink: 0;
+  background: #F9FAFB; padding: 10px 14px; border-radius: 10px;
+}
+.t-right del { font-size: 11px; color: #9CA3AF; margin-bottom: 2px; }
+.t-price-label { font-size: 10px; color: #6B7280; margin-bottom: -2px; }
+.t-price { font-size: 22px; font-weight: 800; color: #111827; line-height: 1; margin: 2px 0; }
+.vip-price { color: #16A34A; }
+.t-term { font-size: 10px; color: #6B7280; }
+
+.trust { text-align: center; font-size: 12px; color: #9CA3AF; margin-top: 16px; }
+
+@media (max-width: 480px) {
+  .card { padding: 24px 20px; }
+  .authority-card { flex-direction: column; }
+  .ney-img { width: 72px; height: 90px; }
+  .benefits-grid { grid-template-columns: 1fr; }
+}
+</style>
