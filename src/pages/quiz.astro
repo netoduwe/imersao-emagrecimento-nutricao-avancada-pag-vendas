@@ -18,7 +18,7 @@
   <div class="screen active" id="s-intro">
     <div class="card intro-card">
       <div class="chip">🧪 DIAGNÓSTICO CLÍNICO</div>
-      <h1>Você está atualizado para o paciente de emagrecimento de 2025?</h1>
+      <h1>Você está atualizado para o paciente de emagrecimento de 2026?</h1>
       <p>4 perguntas revelam seu nível clínico — e o que fazer agora.</p>
       <button id="btn-start" onclick="start()">
         <span>INICIAR DIAGNÓSTICO</span>
@@ -131,38 +131,37 @@
 <script is:inline>
 const Q = [
   {
-    q: "Quando um paciente chega com Mounjaro ou Ozempic receitado, como você se sente?",
+    q: "Sobre o manejo nutricional de pacientes em uso de Mounjaro, Ozempic ou Wegovy:",
     opts: [
-      { t: "Preparado — sei ajustar a dieta", s: 3 },
-      { t: "Tenho base, mas ainda tenho dúvidas", s: 2 },
-      { t: "Não sei muito bem o que fazer", s: 1 },
-      { t: "Meus pacientes ainda não usam isso", s: 1 }
+      { t: "Domino as rotas metabólicas para mitigar a perda de massa magra e o reganho pós-uso.", s: 3 },
+      { t: "Ajusto os macros, mas o manejo da saciedade medicamentosa me gera insegurança.", s: 2 },
+      { t: "Trato como um paciente comum com déficit calórico, não mudo muita coisa.", s: 1 },
+      { t: "Ainda não atendo pacientes que usam essas medicações.", s: 1 }
     ]
   },
   {
-    q: "Você explica clinicamente por que o emagrecimento travou mesmo com déficit calórico sendo seguido?",
+    q: "Quando você monta uma prescrição para emagrecimento, qual é o seu nível de profundidade?",
     opts: [
-      { t: "Sim, com segurança e embasamento", s: 3 },
-      { t: "Às vezes, mas me falta profundidade", s: 2 },
-      { t: "Não tenho essa resposta ainda", s: 1 }
+      { t: "Vou além das calorias: prescrevo compostos bioativos focados em modulação epigenética.", s: 3 },
+      { t: "Incluo alimentos funcionais básicos, mas não tenho domínio das 3 classes principais.", s: 2 },
+      { t: "Foco 100% no déficit calórico e macronutrientes. Se a conta fechar, emagrece.", s: 1 }
     ]
   },
   {
-    q: "Qual é seu maior desafio com pacientes de emagrecimento?",
+    q: "O paciente estagnou o peso mesmo seguindo a dieta à risca. Qual é a sua conduta clínica?",
     opts: [
-      { t: "Fazer o paciente aderir ao plano", s: 2 },
-      { t: "Segurança clínica em casos complexos", s: 1 },
-      { t: "Me manter atualizado com a ciência", s: 1 },
-      { t: "Me diferenciar e cobrar mais", s: 2 }
+      { t: "Avalio o tecido adiposo como órgão endócrino e investigo a cascata inflamatória celular.", s: 3 },
+      { t: "Sinto que me falta profundidade bioquímica avançada para destravar esse platô.", s: 2 },
+      { t: "Tento reduzir ainda mais as calorias ou peço para aumentar o cárdio na academia.", s: 1 },
+      { t: "Desconfio que o paciente está mentindo ou beliscando muito fora da dieta.", s: 1 }
     ]
   },
   {
-    q: "Há quanto tempo você é nutricionista?",
+    q: "Como você lida com a adesão comportamental em casos crônicos de obesidade sistêmica?",
     opts: [
-      { t: "Ainda sou estudante", s: 1 },
-      { t: "Menos de 3 anos", s: 2 },
-      { t: "Entre 3 e 10 anos", s: 2 },
-      { t: "Mais de 10 anos", s: 3 }
+      { t: "Tenho ferramentas clínicas validadas para rastrear e modular o eixo intestino-cérebro.", s: 3 },
+      { t: "Tento ser empático e motivar, mas muitos acabam desistindo ou sumindo do consultório.", s: 2 },
+      { t: "Faço a minha parte entregando o plano perfeito. A adesão é responsabilidade do paciente.", s: 1 }
     ]
   }
 ];
