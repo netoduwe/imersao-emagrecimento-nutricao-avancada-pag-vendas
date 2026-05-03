@@ -86,36 +86,40 @@
     <!-- OFERTA -->
     <div class="card offer-card">
       <div class="urgency-bar">⚠️ <strong>Últimos ingressos</strong> — Evento em 16 de Maio</div>
-      <h3 class="offer-title">Escolha seu ingresso</h3>
+      <h3 class="offer-title">O seu plano de atualização está pronto!</h3>
+      <p class="offer-sub">Escolha a melhor opção de ingresso para você:</p>
 
-      <div class="ticket normal-ticket">
-        <div class="ticket-info">
-          <div class="ticket-name">Ingresso Normal</div>
-          <div class="ticket-perks">Ao vivo · 8h · Grupo · Materiais + Mini Curso</div>
+      <a href="https://pay.hotmart.com/Y105539078H?off=rzzgx17r&checkoutMode=10" class="ticket-link" target="_blank">
+        <div class="t-left">
+          <div class="t-radio"></div>
+          <div class="t-info">
+            <span class="t-name">Ingresso Normal</span>
+            <span class="t-desc">Ao vivo · 8h de conteúdo · Grupo de alunos + Materiais de apoio</span>
+          </div>
         </div>
-        <div class="ticket-price-col">
-          <del>R$97</del>
-          <div class="ticket-price">R$19,90</div>
+        <div class="t-right">
+          <del>De R$ 97,00</del>
+          <span class="t-price-label">por</span>
+          <div class="t-price">R$ 19,90</div>
+          <span class="t-term">à vista</span>
         </div>
-      </div>
-      <a href="https://pay.hotmart.com/Y105539078H?off=rzzgx17r&checkoutMode=10" class="btn-buy btn-normal" target="_blank">
-        COMPRAR NORMAL — R$19,90 →
       </a>
 
-      <div class="ticket vip-ticket">
-        <div class="vip-badge-pill">⭐ MAIS COMPLETO</div>
-        <div class="ticket-info">
-          <div class="ticket-name">Ingresso VIP</div>
-          <div class="ticket-perks">Tudo do normal + Gravação 1 ano · Certificado · 3 E-books · Ressaca do Evento · Cashback</div>
+      <a href="https://pay.hotmart.com/W93818806I?off=l3p9qwc8&checkoutMode=10" class="ticket-link ticket-vip" target="_blank">
+        <div class="vip-badge-pill">⭐ MAIS POPULAR ⭐</div>
+        <div class="t-left">
+          <div class="t-radio"></div>
+          <div class="t-info">
+            <span class="t-name">Ingresso VIP</span>
+            <span class="t-desc">Tudo do normal + Gravação por 1 ano + 3 E-books bônus + Encontro extra (Ressaca)</span>
+          </div>
         </div>
-        <div class="ticket-price-col">
-          <del>R$297</del>
-          <div class="ticket-price vip-price">R$147</div>
-          <small>ou 12x R$15,20</small>
+        <div class="t-right">
+          <del>De R$ 297,00</del>
+          <span class="t-price-label">por</span>
+          <div class="t-price vip-price">R$ 147</div>
+          <span class="t-term">à vista</span>
         </div>
-      </div>
-      <a href="https://pay.hotmart.com/W93818806I?off=l3p9qwc8&checkoutMode=10" class="btn-buy btn-vip" target="_blank">
-        COMPRAR VIP — R$147 →
       </a>
 
       <div class="trust">🔒 Compra 100% segura &nbsp;·&nbsp; PIX · Cartão · Boleto</div>
@@ -129,36 +133,36 @@ const Q = [
   {
     q: "Quando um paciente chega com Mounjaro ou Ozempic receitado, como você se sente?",
     opts: [
-      { t: "😎  Preparado — sei ajustar a dieta", s: 3 },
-      { t: "🤔  Tenho base, mas ainda tenho dúvidas", s: 2 },
-      { t: "😬  Não sei muito bem o que fazer", s: 1 },
-      { t: "🙅  Meus pacientes ainda não usam isso", s: 1 }
+      { t: "Preparado — sei ajustar a dieta", s: 3 },
+      { t: "Tenho base, mas ainda tenho dúvidas", s: 2 },
+      { t: "Não sei muito bem o que fazer", s: 1 },
+      { t: "Meus pacientes ainda não usam isso", s: 1 }
     ]
   },
   {
     q: "Você explica clinicamente por que o emagrecimento travou mesmo com déficit calórico sendo seguido?",
     opts: [
-      { t: "✅  Sim, com segurança e embasamento", s: 3 },
-      { t: "📖  Às vezes, mas me falta profundidade", s: 2 },
-      { t: "❌  Não tenho essa resposta ainda", s: 1 }
+      { t: "Sim, com segurança e embasamento", s: 3 },
+      { t: "Às vezes, mas me falta profundidade", s: 2 },
+      { t: "Não tenho essa resposta ainda", s: 1 }
     ]
   },
   {
     q: "Qual é seu maior desafio com pacientes de emagrecimento?",
     opts: [
-      { t: "🤝  Fazer o paciente aderir ao plano", s: 2 },
-      { t: "🔬  Segurança clínica em casos complexos", s: 1 },
-      { t: "📡  Me manter atualizado com a ciência", s: 1 },
-      { t: "💰  Me diferenciar e cobrar mais", s: 2 }
+      { t: "Fazer o paciente aderir ao plano", s: 2 },
+      { t: "Segurança clínica em casos complexos", s: 1 },
+      { t: "Me manter atualizado com a ciência", s: 1 },
+      { t: "Me diferenciar e cobrar mais", s: 2 }
     ]
   },
   {
     q: "Há quanto tempo você é nutricionista?",
     opts: [
-      { t: "🎓  Ainda sou estudante", s: 1 },
-      { t: "🌱  Menos de 3 anos", s: 2 },
-      { t: "⚡  Entre 3 e 10 anos", s: 2 },
-      { t: "🏆  Mais de 10 anos", s: 3 }
+      { t: "Ainda sou estudante", s: 1 },
+      { t: "Menos de 3 anos", s: 2 },
+      { t: "Entre 3 e 10 anos", s: 2 },
+      { t: "Mais de 10 anos", s: 3 }
     ]
   }
 ];
@@ -221,8 +225,8 @@ function renderQ() {
   q.opts.forEach((o, i) => {
     const btn = document.createElement('button');
     btn.className = 'opt';
-    btn.innerHTML = `<span class="opt-emoji">${o.t.split(' ')[0]}</span><span class="opt-label">${o.t.split(' ').slice(1).join(' ')}</span>`;
-    btn.style.animationDelay = (i * 70) + 'ms';
+    btn.innerHTML = `<div class="radio-circle"></div><span class="opt-label">${o.t}</span>`;
+    btn.style.animationDelay = (i * 50) + 'ms';
     btn.onclick = () => pick(o.s, btn);
     opts.appendChild(btn);
   });
@@ -321,35 +325,48 @@ body {
 
 .q-text { font-size: clamp(17px, 3.5vw, 21px); font-weight: 700; color: #111827; line-height: 1.4; margin-bottom: 28px; transition: opacity .25s; }
 
-/* OPTIONS — Apple-level */
+/* OPTIONS — Clean Apple-level */
 .opts { display: flex; flex-direction: column; gap: 12px; }
 .opt {
-  background: #FAFAFA;
-  border: 2px solid #E5E7EB;
-  border-radius: 16px;
-  padding: 18px 20px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 16px 20px;
   display: flex; align-items: center; gap: 14px;
   cursor: pointer; text-align: left;
-  transition: all .2s cubic-bezier(.34,1.56,.64,1);
-  animation: optIn .3s cubic-bezier(.34,1.56,.64,1) both;
+  transition: all .2s ease;
+  animation: optIn .3s ease both;
 }
-@keyframes optIn { from { opacity:0; transform:translateX(-12px) scale(.96); } to { opacity:1; transform:none; } }
-.opt-emoji { font-size: 22px; flex-shrink: 0; }
-.opt-label { font-size: 15px; font-weight: 600; color: #1F2937; line-height: 1.3; }
+@keyframes optIn { from { opacity:0; transform:translateX(-8px); } to { opacity:1; transform:none; } }
+.radio-circle {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1.5px solid #D1D5DB;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s ease;
+}
+.opt-label { font-size: 15px; font-weight: 500; color: #374151; line-height: 1.3; }
+
 .opt:hover:not(:disabled) {
-  border-color: #16A34A; background: #f0fdf4;
-  transform: scale(1.02) translateX(4px);
-  box-shadow: 0 4px 20px rgba(22,163,74,.15);
+  border-color: #A7F3D0;
+  background: #F9FAFB;
 }
-.opt:active:not(:disabled) { transform: scale(.97); }
 .opt.chosen {
-  border-color: #16A34A; background: #16A34A;
-  transform: scale(1.02);
-  box-shadow: 0 6px 24px rgba(22,163,74,.35);
+  border-color: #16A34A; background: #f0fdf4;
 }
-.opt.chosen .opt-label { color: white; }
-.opt.chosen .opt-emoji { filter: brightness(0) invert(1); }
-.opt.disabled:not(.chosen) { opacity: .45; }
+.opt.chosen .radio-circle {
+  border-color: #16A34A;
+}
+.opt.chosen .radio-circle::after {
+  content: '';
+  width: 12px; height: 12px;
+  background: #16A34A;
+  border-radius: 50%;
+}
+.opt.chosen .opt-label {
+  color: #111827; font-weight: 600;
+}
+.opt.disabled:not(.chosen) { opacity: .5; }
 
 /* RESULT */
 .result-header { text-align: center; }
@@ -376,32 +393,45 @@ body {
 
 /* OFFER */
 .urgency-bar { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 24px; }
-.offer-title { font-size: 20px; font-weight: 800; color: #111827; margin-bottom: 16px; }
+.offer-title { font-size: 22px; font-weight: 800; color: #111827; margin-bottom: 6px; text-align: center; }
+.offer-sub { font-size: 14px; color: #6B7280; text-align: center; margin-bottom: 24px; }
 
-.ticket { background: #F9FAFB; border: 1.5px solid #E5E7EB; border-radius: 16px; padding: 20px; margin-bottom: 12px; position: relative; }
-.vip-ticket { background: #f0fdf4; border-color: #16A34A; margin-top: 20px; }
-.vip-badge-pill { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #16A34A; color: white; font-size: 11px; font-weight: 800; padding: 4px 14px; border-radius: 99px; white-space: nowrap; }
-
-.ticket-info .ticket-name { font-size: 16px; font-weight: 800; color: #111827; margin-bottom: 4px; }
-.ticket-info .ticket-perks { font-size: 12px; color: #6B7280; line-height: 1.5; }
-.ticket-price-col { margin-top: 12px; }
-.ticket-price-col del { font-size: 12px; color: #9CA3AF; }
-.ticket-price { font-size: 28px; font-weight: 900; color: #111827; line-height: 1; }
-.vip-price { color: #16A34A; }
-.ticket-price-col small { font-size: 12px; color: #6B7280; }
-
-.btn-buy {
-  display: flex; align-items: center; justify-content: center;
-  width: 100%; padding: 18px; border-radius: 14px;
-  font-size: 15px; font-weight: 800; letter-spacing: .03em;
-  text-decoration: none; margin-bottom: 8px;
-  transition: transform .18s cubic-bezier(.34,1.56,.64,1), box-shadow .18s;
+.ticket-link {
+  display: flex; justify-content: space-between; align-items: center;
+  background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px;
+  padding: 16px; margin-bottom: 12px; text-decoration: none; color: inherit;
+  transition: all .2s ease;
+  position: relative;
 }
-.btn-normal { background: #1F2937; color: white; box-shadow: 0 4px 16px rgba(0,0,0,.2); }
-.btn-normal:hover { transform: scale(1.02) translateY(-1px); box-shadow: 0 8px 24px rgba(0,0,0,.25); }
-.btn-vip { background: linear-gradient(135deg,#16A34A,#15803d); color: white; box-shadow: 0 6px 24px rgba(22,163,74,.35); }
-.btn-vip:hover { transform: scale(1.02) translateY(-2px); box-shadow: 0 12px 32px rgba(22,163,74,.45); }
-.btn-buy:active { transform: scale(.97); }
+.ticket-link:hover { border-color: #16A34A; box-shadow: 0 4px 12px rgba(22,163,74,.08); }
+
+.ticket-vip { border: 2px solid #16A34A; margin-top: 24px; }
+.vip-badge-pill {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: #16A34A; color: white;
+  font-size: 11px; font-weight: 800; padding: 4px 14px; border-radius: 99px;
+  white-space: nowrap; letter-spacing: 0.05em;
+}
+
+.t-left { display: flex; align-items: flex-start; gap: 12px; flex: 1; }
+.t-radio {
+  width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #D1D5DB;
+  flex-shrink: 0; margin-top: 2px;
+}
+.t-info { display: flex; flex-direction: column; gap: 4px; }
+.t-name { font-size: 15px; font-weight: 700; color: #111827; }
+.t-desc { font-size: 12px; color: #6B7280; line-height: 1.4; padding-right: 8px; }
+
+.t-right {
+  display: flex; flex-direction: column; align-items: flex-end;
+  text-align: right; flex-shrink: 0;
+  background: #F9FAFB; padding: 10px 14px; border-radius: 10px;
+}
+.t-right del { font-size: 11px; color: #9CA3AF; margin-bottom: 2px; }
+.t-price-label { font-size: 10px; color: #6B7280; margin-bottom: -2px; }
+.t-price { font-size: 22px; font-weight: 800; color: #111827; line-height: 1; margin: 2px 0; }
+.vip-price { color: #16A34A; }
+.t-term { font-size: 10px; color: #6B7280; }
 
 .trust { text-align: center; font-size: 12px; color: #9CA3AF; margin-top: 16px; }
 
