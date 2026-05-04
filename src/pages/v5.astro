@@ -1,7 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro';
+// V5 Standalone - Funil Interativo
 ---
-<Layout title="Imersão Emagrecimento 2026 | Conheça em 3 minutos" theme="green">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imersão Emagrecimento 2026 | Conheça em 3 minutos</title>
+  <link rel="icon" href="/favicon.ico" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
 
 <div id="v5">
 
@@ -19,19 +31,19 @@ import Layout from '../layouts/Layout.astro';
   <div class="slide" id="sl-2">
     <div class="slide-inner">
       <div class="chip">📍 O CENÁRIO ATUAL</div>
-      <h2>Seus pacientes chegam pedindo Mounjaro e Ozempic. E você…</h2>
+      <h2>Qual é o seu maior gargalo clínico hoje?</h2>
       <div class="opts" id="opts-2">
         <button class="opt" onclick="pickPain(this, 'a')">
           <div class="radio-circle"></div>
-          <span>Tenho total segurança no manejo clínico com essas drogas.</span>
+          <span>Pacientes que estagnam o peso mesmo em déficit calórico.</span>
         </button>
         <button class="opt" onclick="pickPain(this, 'b')">
           <div class="radio-circle"></div>
-          <span>Ajusto o que posso, mas me falta profundidade.</span>
+          <span>Manejo com canetas (Ozempic/Mounjaro) sem reganho.</span>
         </button>
         <button class="opt" onclick="pickPain(this, 'c')">
           <div class="radio-circle"></div>
-          <span>Honestamente… não sei direito o que fazer nesses casos.</span>
+          <span>Adesão comportamental e inflamação crônica.</span>
         </button>
       </div>
     </div>
@@ -43,7 +55,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="chip" id="s3-chip">💡 A BOA NOTÍCIA</div>
       <h2 id="s3-title"></h2>
       <p id="s3-sub"></p>
-      <button class="btn-next" onclick="next()">ENTENDER O QUE ESTÁ MUDANDO →</button>
+      <button class="btn-next" onclick="next()">COMO RESOLVER ISSO →</button>
     </div>
   </div>
 
@@ -72,12 +84,12 @@ import Layout from '../layouts/Layout.astro';
         <div>
           <div class="chip chip-sm">👨‍🔬 SEU PROFESSOR</div>
           <h2>Ney Felipe</h2>
-          <p>Nutricionista há 18 anos. Mestre em Biologia Molecular, Doutorando em Saúde Pública e fundador da Nutrição Avançada — o maior hub de atualização clínica para nutricionistas do Brasil.</p>
+          <p>Nutricionista há 20 anos. Mestre em Biologia Molecular, Doutorando em Saúde Pública e fundador da Nutrição Avançada — o maior hub de atualização clínica para nutricionistas do Brasil.</p>
           <div class="creds">
-            <span>✅ 18 anos de clínica real</span>
+            <span>✅ 20 anos de clínica real</span>
             <span>✅ Mestre em Biologia Molecular</span>
             <span>✅ +3.000 profissionais formados</span>
-            <span>✅ 2 livros publicados</span>
+            <span>✅ 5 livros publicados</span>
           </div>
         </div>
       </div>
@@ -104,7 +116,19 @@ import Layout from '../layouts/Layout.astro';
   <!-- S7: OFERTA -->
   <div class="slide" id="sl-7">
     <div class="slide-inner offer-screen">
-      <div class="urgency-bar">⚠️ <strong>Últimas vagas disponíveis</strong> — Evento em 16 de Maio</div>
+      
+      <div class="urgency-strip">
+        🔥 LOTE 01 | Faltam: <span id="countdown">00d 00h 00m 00s</span>
+      </div>
+
+      <div class="progress-wrap-offer">
+        <div class="progress-labels">
+          <span id="sb-pct">Calculando ingressos...</span>
+          <span>🚨</span>
+        </div>
+        <div class="progress-bg"><div class="progress-fill" id="sb-fill"></div></div>
+      </div>
+
       <div class="chip">💰 SEU INVESTIMENTO</div>
       <h2>O quanto você acha que vale 8h ao vivo com o Ney?</h2>
       <div class="price-reveal">
@@ -113,12 +137,13 @@ import Layout from '../layouts/Layout.astro';
         <div class="reveal-item active">👇 Hoje, por apenas:</div>
       </div>
 
+      <!-- NORMAL -->
       <a href="https://pay.hotmart.com/Y105539078H?off=rzzgx17r&checkoutMode=10" class="ticket-link" target="_blank">
         <div class="t-left">
           <div class="t-radio"></div>
           <div class="t-info">
             <span class="t-name">Ingresso Normal</span>
-            <span class="t-desc">Ao vivo · 8h de conteúdo · Grupo de alunos + Materiais de apoio</span>
+            <span class="t-desc">Ao vivo · 8h de conteúdo · Grupo de alunos + Materiais</span>
           </div>
         </div>
         <div class="t-right">
@@ -129,28 +154,43 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </a>
 
-      <a href="https://pay.hotmart.com/W93818806I?off=l3p9qwc8&checkoutMode=10" class="ticket-link ticket-vip" target="_blank">
+      <!-- VIP -->
+      <div class="ticket-link ticket-vip" onclick="toggleVip()">
         <div class="vip-badge-pill">⭐ MAIS POPULAR ⭐</div>
-        <div class="t-left">
-          <div class="t-radio"></div>
-          <div class="t-info">
-            <span class="t-name">Ingresso VIP</span>
-            <span class="t-desc">Tudo do normal + Gravação 1 ano + 3 E-books bônus + Encontro extra (Ressaca)</span>
+        <div class="t-main">
+          <div class="t-left">
+            <div class="t-radio t-radio-vip"></div>
+            <div class="t-info">
+              <span class="t-name">Ingresso VIP</span>
+              <span class="t-desc">Tudo do normal + Bônus Premium <br/><span class="click-more">(Clique para ver o que inclui ▾)</span></span>
+            </div>
+          </div>
+          <div class="t-right">
+            <del>De R$ 297,00</del>
+            <span class="t-price-label">por</span>
+            <div class="t-price vip-price">R$ 147</div>
+            <span class="t-term">ou 12x R$15,20</span>
           </div>
         </div>
-        <div class="t-right">
-          <del>De R$ 297,00</del>
-          <span class="t-price-label">por</span>
-          <div class="t-price vip-price">R$ 147</div>
-          <span class="t-term">ou 12x R$15,20</span>
+        
+        <!-- Accordion VIP Details -->
+        <div class="vip-details" id="vip-details">
+          <ul>
+            <li>✅ Acesso à <strong>Gravação por 1 Ano</strong></li>
+            <li>✅ <strong>Encontro Extra (Ressaca):</strong> Tira dúvidas ao vivo pós-evento</li>
+            <li>✅ E-book: <strong>Alimentos Funcionais (R$97)</strong></li>
+            <li>✅ E-book: <strong>Nutrição em Estética (R$67)</strong></li>
+            <li>✅ E-book: <strong>Lâminas de Fisiologia (R$67)</strong></li>
+          </ul>
+          <a href="https://pay.hotmart.com/W93818806I?off=l3p9qwc8&checkoutMode=10" class="btn-checkout-vip" target="_blank">GARANTIR INGRESSO VIP AGORA</a>
         </div>
-      </a>
+      </div>
 
       <div class="trust">🔒 Compra 100% segura &nbsp;·&nbsp; PIX · Cartão · Boleto</div>
     </div>
   </div>
 
-  <!-- PROGRESS -->
+  <!-- PROGRESS SLIDER BAR -->
   <div class="progress-bar-wrap" id="progress-wrap">
     <div class="progress-bar-fill" id="prog-fill"></div>
   </div>
@@ -191,16 +231,16 @@ function pickPain(btn, answer) {
   painAnswer = answer;
   document.querySelectorAll('#opts-2 .opt').forEach(b => { b.disabled = true; b.classList.add('disabled'); });
   btn.classList.add('chosen');
-  // Set personalized message for S3
+  
   const titles = {
-    a: 'Ótimo! E você quer continuar na vanguarda.',
-    b: 'Faz sentido. A lacuna é real — e dá pra fechar.',
-    c: 'Honestidade é o primeiro passo. E a solução está mais acessível do que você imagina.'
+    a: 'O tecido adiposo não obedece apenas à matemática.',
+    b: 'O mercado está cheio de pacientes assim. E poucos sabem lidar.',
+    c: 'O plano perfeito não funciona se o cérebro do paciente estiver inflamado.'
   };
   const subs = {
-    a: 'Mesmo quem já tem base encontra na Imersão o que a literatura ainda não sistematizou. A ciência de 2026 é diferente.',
-    b: 'É exatamente por isso que a Imersão existe: preencher as lacunas clínicas que a graduação não cobriu e a prática sozinha não resolve.',
-    c: 'Em 1 dia ao vivo, você sai com o raciocínio clínico que 90% dos nutricionistas não têm. E o investimento é simbólico.'
+    a: 'Quando o déficit calórico para de funcionar, é porque o corpo está agindo como um órgão endócrino inflamado. Cortar mais calorias só piora.',
+    b: 'A graduação não te preparou para os análogos de GLP-1. O nutricionista que dominar as rotas metabólicas para evitar reganho vai liderar o mercado.',
+    c: 'Adesão não é força de vontade, é neuroendocrinologia. Modular o eixo intestino-cérebro é o que destrava resultados definitivos.'
   };
   document.getElementById('s3-title').textContent = titles[answer];
   document.getElementById('s3-sub').textContent = subs[answer];
@@ -219,6 +259,11 @@ function next() {
     next.classList.add('active');
     updateProgress();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // If it's the last slide, start loading supabase data
+    if (cur === TOTAL) {
+      fetchProgress();
+    }
   }, 300);
 }
 
@@ -228,20 +273,73 @@ function updateProgress() {
   const wrap = document.getElementById('progress-wrap');
   wrap.style.opacity = (cur > 1 && cur < TOTAL) ? '1' : '0';
 }
-
 updateProgress();
+
+function toggleVip() {
+  const el = document.getElementById('vip-details');
+  if(el.style.display === 'block') {
+    el.style.display = 'none';
+  } else {
+    el.style.display = 'block';
+  }
+}
+
+// Countdown Logic
+function updateCountdown() {
+  const target = new Date('2026-05-16T09:00:00').getTime();
+  const now = new Date().getTime();
+  const diff = target - now;
+  const el = document.getElementById('countdown');
+  if (!el) return;
+  if (diff < 0) { el.textContent = "VENDAS ABERTAS"; return; }
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const s = Math.floor((diff % (1000 * 60)) / 1000);
+  el.textContent = `${d}d ${h}h ${m}m ${s}s`;
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Supabase Logic
+async function fetchProgress() {
+  const SUPABASE_URL = 'https://qjkezuofhunqzbchlhru.supabase.co';
+  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqa2V6dW9maHVucXpiY2hsaHJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAxMzUwNTUsImV4cCI6MjA4NTcxMTA1NX0.wN1mTQtm80Qmla48jpBis9v-erf6xDa6OJgnxbDPe0I';
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_imersao_progress`, {
+      method: 'POST',
+      headers: { 'apikey': SUPABASE_ANON, 'Authorization': `Bearer ${SUPABASE_ANON}`, 'Content-Type': 'application/json' },
+      body: '{}'
+    });
+    const data = await res.json();
+    if (data) {
+      const pct = document.getElementById('sb-pct');
+      const fill = document.getElementById('sb-fill');
+      if (pct) pct.textContent = `${Math.floor(data.percentual)}% dos ingressos vendidos`;
+      if (fill) fill.style.width = `${Math.min(data.percentual, 100)}%`;
+    }
+  } catch(e) { console.error(e); }
+}
 </script>
 
 <style is:global>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: linear-gradient(160deg, #f0fdf4 0%, #F7F8F6 50%, #e0f2fe 100%);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
 #v5 {
-  min-height: calc(100vh - 120px);
+  min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
-  padding: 32px 16px 80px;
+  padding: 16px;
 }
 
 .slide {
   display: none;
-  width: 100%; max-width: 640px; margin: 0 auto;
+  width: 100%; max-width: 600px; margin: 0 auto;
 }
 .slide.active {
   display: flex; justify-content: center;
@@ -254,9 +352,9 @@ updateProgress();
 
 .slide-inner {
   background: white;
-  border-radius: 24px;
-  padding: 40px 36px;
-  box-shadow: 0 8px 40px rgba(0,0,0,.07);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.06);
   border: 1px solid rgba(0,0,0,.04);
   width: 100%;
 }
@@ -266,33 +364,33 @@ updateProgress();
   display: inline-block;
   background: #f0fdf4; color: #16A34A;
   border: 1px solid #dcfce7;
-  padding: 5px 14px; border-radius: 99px;
+  padding: 5px 12px; border-radius: 99px;
   font-size: 11px; font-weight: 800;
   letter-spacing: .06em; margin-bottom: 20px;
 }
 .chip-sm { font-size: 10px; padding: 4px 10px; }
 
-/* SLIDE 1 */
+/* TYPOGRAPHY */
 .slide-inner h1 {
-  font-size: clamp(28px, 5vw, 42px);
+  font-size: clamp(28px, 6vw, 38px);
   font-weight: 900; color: #111827;
-  line-height: 1.1; letter-spacing: -.03em;
+  line-height: 1.15; letter-spacing: -.03em;
   margin-bottom: 16px;
 }
 .slide-inner h1 em { font-style: italic; color: #16A34A; font-family: 'Playfair Display', serif; }
 .slide-inner h2 {
-  font-size: clamp(18px, 3.5vw, 24px);
+  font-size: clamp(20px, 5vw, 24px);
   font-weight: 800; color: #111827;
   line-height: 1.3; letter-spacing: -.02em;
   margin-bottom: 16px;
 }
-.sub { font-size: 17px; color: #4B5563; line-height: 1.65; margin-bottom: 32px; }
-#s3-sub { font-size: 16px; color: #4B5563; line-height: 1.65; margin-bottom: 28px; }
+.sub { font-size: 16px; color: #4B5563; line-height: 1.6; margin-bottom: 32px; }
+#s3-sub { font-size: 15px; color: #4B5563; line-height: 1.6; margin-bottom: 28px; }
 
 /* BUTTONS */
 .btn-next {
   display: flex; align-items: center; justify-content: center;
-  width: 100%; padding: 20px;
+  width: 100%; padding: 18px;
   background: linear-gradient(135deg, #16A34A, #15803d);
   color: white; border: none; cursor: pointer;
   font-size: 15px; font-weight: 800; letter-spacing: .03em;
@@ -312,16 +410,16 @@ updateProgress();
   appearance: none; -webkit-appearance: none;
   width: 100%; margin: 0; outline: none; font-family: inherit;
   background: #FFFFFF; border: 1px solid #E5E7EB;
-  border-radius: 12px; padding: 16px 20px;
+  border-radius: 12px; padding: 16px;
   display: flex; align-items: center; gap: 14px;
   cursor: pointer; text-align: left;
   transition: all .2s ease;
   animation: optIn .3s ease both;
 }
-.opt span { font-size: 15px; font-weight: 500; color: #374151; line-height: 1.3; }
+.opt span { font-size: 14px; font-weight: 600; color: #374151; line-height: 1.35; }
 @keyframes optIn { from { opacity:0; transform:translateX(-8px); } to { opacity:1; transform:none; } }
 .radio-circle {
-  width: 22px; height: 22px; border-radius: 50%;
+  width: 20px; height: 20px; border-radius: 50%;
   border: 1.5px solid #D1D5DB; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
   transition: all .2s ease;
@@ -330,81 +428,112 @@ updateProgress();
 .opt.chosen { border-color: #16A34A; background: #f0fdf4; }
 .opt.chosen .radio-circle { border-color: #16A34A; }
 .opt.chosen .radio-circle::after {
-  content: ''; width: 12px; height: 12px;
+  content: ''; width: 10px; height: 10px;
   background: #16A34A; border-radius: 50%;
 }
-.opt.chosen span { color: #111827; font-weight: 600; }
+.opt.chosen span { color: #111827; font-weight: 700; }
 .opt.disabled:not(.chosen) { opacity: .5; }
 
 /* TOPICS */
-.topics { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.topics { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; }
 .topic-item {
   display: flex; align-items: flex-start; gap: 12px;
   background: #F9FAFB; border: 1px solid #F3F4F6;
-  border-radius: 12px; padding: 14px 16px;
-  font-size: 15px; font-weight: 600; color: #1F2937;
+  border-radius: 10px; padding: 12px 14px;
+  font-size: 14px; font-weight: 600; color: #1F2937;
   animation: optIn .4s ease var(--d, 0ms) both;
 }
 
 /* AUTHORITY */
-.authority-card { display: flex; gap: 24px; align-items: flex-start; margin-bottom: 28px; }
-.ney-img { width: 100px; height: 120px; object-fit: cover; border-radius: 16px; flex-shrink: 0; }
-.authority-card h2 { font-size: 22px; font-weight: 900; color: #111827; margin-bottom: 10px; }
-.authority-card p { font-size: 14px; color: #4B5563; line-height: 1.65; margin-bottom: 14px; }
-.creds { display: flex; flex-wrap: wrap; gap: 8px; }
-.creds span { font-size: 12px; font-weight: 600; color: #16A34A; background: #f0fdf4; padding: 4px 10px; border-radius: 99px; border: 1px solid #dcfce7; }
+.authority-card { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 28px; }
+.ney-img { width: 90px; height: 110px; object-fit: cover; border-radius: 14px; flex-shrink: 0; }
+.authority-card h2 { font-size: 20px; font-weight: 900; color: #111827; margin-bottom: 8px; }
+.authority-card p { font-size: 13px; color: #4B5563; line-height: 1.5; margin-bottom: 12px; }
+.creds { display: flex; flex-wrap: wrap; gap: 6px; }
+.creds span { font-size: 11px; font-weight: 700; color: #16A34A; background: #f0fdf4; padding: 4px 8px; border-radius: 99px; border: 1px solid #dcfce7; }
 
 /* EVENT */
-.event-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+.event-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
 .ev-card {
   background: #F9FAFB; border: 1px solid #F3F4F6;
-  border-radius: 14px; padding: 16px;
+  border-radius: 12px; padding: 12px;
   display: flex; flex-direction: column; align-items: center;
-  gap: 8px; font-size: 20px; text-align: center;
+  gap: 6px; font-size: 18px; text-align: center;
 }
-.ev-card span { font-size: 13px; font-weight: 700; color: #374151; }
-.event-desc { font-size: 15px; color: #4B5563; line-height: 1.65; margin-bottom: 28px; }
+.ev-card span { font-size: 12px; font-weight: 700; color: #374151; }
+.event-desc { font-size: 14px; color: #4B5563; line-height: 1.6; margin-bottom: 24px; }
 
 /* PRICE REVEAL */
-.price-reveal { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin: 20px 0 24px; }
-.reveal-item { font-size: 20px; font-weight: 700; }
+.price-reveal { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 16px 0 20px; }
+.reveal-item { font-size: 18px; font-weight: 700; }
 .reveal-item del { color: #9CA3AF; }
-.reveal-item.active { color: #16A34A; font-size: 22px; }
+.reveal-item.active { color: #16A34A; font-size: 20px; }
+
+/* URGENCY & SCARCITY */
+.urgency-strip { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; border-radius: 8px; padding: 10px; font-size: 13px; text-align: center; font-weight: 600; margin-bottom: 12px; }
+.progress-wrap-offer { margin-bottom: 24px; }
+.progress-labels { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #4B5563; margin-bottom: 6px; }
+.progress-bg { height: 8px; background: #E5E7EB; border-radius: 99px; overflow: hidden; }
+.progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #ef4444, #dc2626); transition: width 1s ease-out; }
 
 /* TICKET CARDS */
-.urgency-bar { background: #FEF3C7; border: 1px solid #FCD34D; color: #92400E; border-radius: 10px; padding: 12px 16px; font-size: 14px; margin-bottom: 20px; }
-.offer-screen h2 { margin-bottom: 16px; }
-
 .ticket-link {
-  display: flex; justify-content: space-between; align-items: center;
+  display: block;
   background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px;
-  padding: 16px; margin-bottom: 12px; text-decoration: none; color: inherit;
-  transition: all .2s ease; position: relative;
+  padding: 14px; margin-bottom: 12px; text-decoration: none; color: inherit;
+  transition: all .2s ease; position: relative; cursor: pointer;
 }
 .ticket-link:hover { border-color: #16A34A; box-shadow: 0 4px 12px rgba(22,163,74,.1); }
-.ticket-vip { border: 2px solid #16A34A; margin-top: 20px; }
+
+.t-main { display: flex; justify-content: space-between; align-items: center; }
+
+.ticket-vip { border: 2px solid #16A34A; margin-top: 24px; }
 .vip-badge-pill {
-  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
   background: #16A34A; color: white;
-  font-size: 11px; font-weight: 800; padding: 4px 14px; border-radius: 99px;
+  font-size: 10px; font-weight: 800; padding: 4px 12px; border-radius: 99px;
   white-space: nowrap; letter-spacing: 0.05em;
 }
-.t-left { display: flex; align-items: flex-start; gap: 12px; flex: 1; }
-.t-radio { width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid #D1D5DB; flex-shrink: 0; margin-top: 2px; }
-.t-info { display: flex; flex-direction: column; gap: 4px; }
-.t-name { font-size: 15px; font-weight: 700; color: #111827; }
-.t-desc { font-size: 12px; color: #6B7280; line-height: 1.4; padding-right: 8px; }
-.t-right { display: flex; flex-direction: column; align-items: flex-end; text-align: right; flex-shrink: 0; background: #F9FAFB; padding: 10px 14px; border-radius: 10px; }
-.t-right del { font-size: 11px; color: #9CA3AF; margin-bottom: 2px; }
-.t-price-label { font-size: 10px; color: #6B7280; margin-bottom: -2px; }
-.t-price { font-size: 22px; font-weight: 800; color: #111827; line-height: 1; margin: 2px 0; }
+
+.t-left { display: flex; align-items: flex-start; gap: 10px; flex: 1; }
+.t-radio { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid #D1D5DB; flex-shrink: 0; margin-top: 2px; }
+.t-radio-vip { border-color: #16A34A; }
+.t-radio-vip::after { content: ''; display: block; width: 10px; height: 10px; background: #16A34A; border-radius: 50%; margin: 2.5px; }
+
+.t-info { display: flex; flex-direction: column; gap: 2px; }
+.t-name { font-size: 14px; font-weight: 800; color: #111827; }
+.t-desc { font-size: 11px; color: #6B7280; line-height: 1.35; padding-right: 4px; }
+.click-more { color: #16A34A; font-weight: 600; font-size: 10px; margin-top: 4px; display: inline-block; }
+
+.t-right { display: flex; flex-direction: column; align-items: flex-end; text-align: right; flex-shrink: 0; background: #F9FAFB; padding: 8px 12px; border-radius: 8px; }
+.t-right del { font-size: 10px; color: #9CA3AF; margin-bottom: 2px; }
+.t-price-label { font-size: 9px; color: #6B7280; margin-bottom: -2px; }
+.t-price { font-size: 20px; font-weight: 800; color: #111827; line-height: 1; margin: 2px 0; }
 .vip-price { color: #16A34A; }
-.t-term { font-size: 10px; color: #6B7280; }
-.trust { text-align: center; font-size: 12px; color: #9CA3AF; margin-top: 16px; }
+.t-term { font-size: 9px; color: #6B7280; }
+
+.vip-details {
+  display: none;
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px dashed #E5E7EB;
+  animation: optIn .3s ease;
+}
+.vip-details ul { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.vip-details li { font-size: 12px; color: #374151; line-height: 1.4; display: flex; align-items: flex-start; gap: 6px; }
+.vip-details li strong { color: #111827; }
+
+.btn-checkout-vip {
+  display: block; text-align: center; width: 100%;
+  background: #16A34A; color: white;
+  font-size: 13px; font-weight: 800; padding: 12px; border-radius: 8px;
+  text-decoration: none;
+}
+
+.trust { text-align: center; font-size: 11px; color: #9CA3AF; margin-top: 16px; }
 
 /* PROGRESS BAR */
 .progress-bar-wrap {
-  position: fixed; top: 56px; left: 0; right: 0; height: 4px;
+  position: fixed; top: 0; left: 0; right: 0; height: 4px;
   background: #E5E7EB; z-index: 200;
   opacity: 0; transition: opacity .3s;
 }
@@ -412,9 +541,11 @@ updateProgress();
 
 @media (max-width: 480px) {
   .slide-inner { padding: 24px 20px; }
-  .authority-card { flex-direction: column; }
+  .authority-card { flex-direction: column; gap: 16px; }
   .ney-img { width: 80px; height: 100px; }
+  .t-main { flex-direction: row; }
 }
 </style>
 
-</Layout>
+</body>
+</html>
