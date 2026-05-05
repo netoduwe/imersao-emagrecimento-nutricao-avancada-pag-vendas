@@ -309,6 +309,14 @@ function prev() {
   prevSlide.classList.add('active');
   updateProgress();
   window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Reset quiz options when returning to slide 2
+  if (cur === 2) {
+    document.querySelectorAll('#opts-2 .opt').forEach(b => {
+      b.disabled = false;
+      b.classList.remove('disabled', 'chosen');
+    });
+  }
 }
 
 function updateProgress() {

@@ -57,7 +57,17 @@
 - Alterada a headline da `Hero.astro` de "Um dia inteiro de Imersão em atualização no tratamento do sobrepeso e obesidade" para "Um dia inteiro de atualização em emagrecimento por R$19.90" conforme pedido.
 - Ajustado layout da headline para ocupar apenas 2 linhas no desktop (aumento da coluna, redução leve do font-size e remoção de `<br/>`).
 
-## Ajustes no Funil Interativo (v5) - 05/05/2026
-- **Hero v5:** Headline e subheadline simplificadas para focar em "prática clínica de forma atualizada". Removida a seta do botão principal.
-- **Navegação:** Adicionado botão "Voltar" em todas as etapas do funil para melhorar a experiência do usuário.
-- **Oferta VIP:** Removidos e-books "Nutrição em Estética" e "Lâminas de Fisiologia" que não fazem parte do pacote atual. Mantidos: Gravação (1 ano), Encontro Ressaca e E-book Alimentos Funcionais.
+## Ajustes no Funil Interativo (v5) e Hero — 05/05/2026
+- **Hero.astro (página principal):** Headline alterada para "Aprenda um Novo Método de Emagrecimento que vai além das calorias." + sub "Como dominar o manejo de canetas emagrecedoras, compostos bioativos e a prática clínica de forma atualizada."
+- **Hero v5:** Mesmo copy acima aplicado no slide 1 do funil interativo.
+- **Navegação:** Botão "Voltar" em todas as etapas (slides 2-7) com estilo mais visível (fundo cinza, border-radius, hover animado).
+- **Oferta VIP correta (v5 + todas as páginas):** 
+  - 🚀 Tudo do básico + gravação por 1 ano + certificado 8h
+  - 🎁 E-book Tópicos Avançados (R$99)
+  - 🎁 E-book "Me Formei, e agora?" (R$59)
+  - 🎁 E-book Desaprendendo a Dieta (R$39)
+  - 🎓 Ressaca do Evento (encontro extra Zoom)
+  - 💰 Cashback integral na Formação ou Pós
+- **Renomeação:** "Ingresso Normal" → "Ingresso Básico" no v5.
+- **Selo:** Badge "50% DE DESCONTO" no card VIP do v5.
+- **Push:** Commit `5166636` em 05/05/2026 — build OK, push para `main`.
