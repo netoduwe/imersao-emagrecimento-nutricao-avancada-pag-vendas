@@ -55,3 +55,4 @@
 
 ## Alteração de Copy - 05/05/2026
 - Alterada a headline da `Hero.astro` de "Um dia inteiro de Imersão em atualização no tratamento do sobrepeso e obesidade" para "Um dia inteiro de atualização em emagrecimento por R$19.90" conforme pedido.
+- Ajustado layout da headline para ocupar apenas 2 linhas no desktop (aumento da coluna, redução leve do font-size e remoção de `<br/>`).

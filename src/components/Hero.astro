@@ -27,8 +27,7 @@ const { variant = 'green' } = Astro.props;
         </div>
 
         <h1 class="headline-v4">
-          Um dia inteiro de <span class="highlight-line">atualização</span><br/>
-          em <span class="green-text">emagrecimento</span> por R$19.90
+          Um dia inteiro de <span class="highlight-line">atualização</span> em <span class="green-text">emagrecimento</span> por R$19.90
         </h1>
 
         <p class="subhead-v4">
@@ -100,7 +99,7 @@ const { variant = 'green' } = Astro.props;
 
   .hero-grid-fidelity {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 2rem;
     align-items: center;
   }
@@ -170,12 +169,13 @@ const { variant = 'green' } = Astro.props;
   }
 
   .headline-v4 {
-    font-size: clamp(32px, 5vw, 56px);
-    line-height: 1.05;
+    font-size: clamp(32px, 4.8vw, 52px);
+    line-height: 1.1;
     font-weight: 800;
     color: #111827;
     margin-bottom: 20px;
     letter-spacing: -0.04em;
+    max-width: 850px;
   }
 
   .serif-italic {
