@@ -8,9 +8,10 @@
 - `/v2` — Foco em **Curso ao vivo de Emagrecimento** (`src/pages/v2.astro`)
 - `/v3` — Foco em **Além das Calorias / Novo Método** (`src/pages/v3.astro`)
 - `/v4` — **Enxuta**: estrutura Promessa → Resumo rápido (horário, formato, conteúdo) → Preço (`src/pages/v4.astro`)
-- Todas usam os mesmos componentes: `ProgressBar`, `FormModal`, `Schedule`, `Layout`
-- Todas têm: urgência no Hero, countdown via TopBar (Layout), ProgressBar de vagas, âncora de preço R$19,90
-- Build OK: 7 páginas geradas sem erros
+- `/quiz` — Landing page standalone focada APENAS no formulário de gamificação diagnóstica. Ideal para tráfego frio. (`src/pages/quiz.astro`)
+- `/v5` — **Funil Interativo**: Une o layout premium com o mecanismo diagnóstico do Quiz e elevação de consciência de Eugene Schwartz. (`src/pages/v5.astro`)
+- Todas usam componentes em comum ou padronizados.
+- Build OK: Várias páginas estáticas geradas com sucesso.
 
 - **Escassez:** A barra de escassez exibe a porcentagem real de vendas vinda do Supabase (`data.percentual`). 
   - **Dinamismo de Cores:** Implementada troca de cor baseada no preenchimento: Verde (<70%), Laranja (70-90%) e Vermelho (>90%) para aumentar o gatilho de urgência visual.
@@ -51,3 +52,6 @@
 - **Correção TopBar:** Removida a duplicação do texto "O evento começa em:" no banner de urgência.
 - **PriceCard & ProgressBar Fix:** Ajustado o layout de ambos os componentes de escassez. Na seção de preços, a barra agora é ultra-minimalista, posicionada abaixo do botão de compra, sem exibir o preço interno ou nome do lote, focando apenas no progresso e ingressos restantes.
 - **Schedule (Cronograma):** Implementado grid 2x2 no mobile para reduzir a altura da seção e evitar a necessidade de "2 scrolls" para passar pela informação.
+
+## Alteração de Copy - 05/05/2026
+- Alterada a headline da `Hero.astro` de "Um dia inteiro de Imersão em atualização no tratamento do sobrepeso e obesidade" para "Um dia inteiro de atualização em emagrecimento por R$19.90" conforme pedido.
