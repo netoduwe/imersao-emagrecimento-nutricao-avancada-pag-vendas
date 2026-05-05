@@ -56,3 +56,8 @@
 ## Alteração de Copy - 05/05/2026
 - Alterada a headline da `Hero.astro` de "Um dia inteiro de Imersão em atualização no tratamento do sobrepeso e obesidade" para "Um dia inteiro de atualização em emagrecimento por R$19.90" conforme pedido.
 - Ajustado layout da headline para ocupar apenas 2 linhas no desktop (aumento da coluna, redução leve do font-size e remoção de `<br/>`).
+
+## Ajustes no Funil Interativo (v5) - 05/05/2026
+- **Hero v5:** Headline e subheadline simplificadas para focar em "prática clínica de forma atualizada". Removida a seta do botão principal.
+- **Navegação:** Adicionado botão "Voltar" em todas as etapas do funil para melhorar a experiência do usuário.
+- **Oferta VIP:** Removidos e-books "Nutrição em Estética" e "Lâminas de Fisiologia" que não fazem parte do pacote atual. Mantidos: Gravação (1 ano), Encontro Ressaca e E-book Alimentos Funcionais.

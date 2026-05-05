@@ -22,14 +22,15 @@
     <div class="slide-inner">
       <div class="chip">🔥 IMERSÃO 4ª EDIÇÃO</div>
       <h1>Aprenda um Novo Método de Emagrecimento que vai <em>além das calorias</em></h1>
-      <p class="sub">Descubra como dominar o manejo de canetas emagrecedoras, compostos bioativos e neuroendocrinologia em apenas 1 dia de imersão ao vivo.</p>
-      <button class="btn-next" onclick="next()">VER COMO FUNCIONA →</button>
+      <p class="sub">Como dominar o manejo de canetas emagrecedoras, compostos bioativos e a prática clínica de forma atualizada.</p>
+      <button class="btn-next" onclick="next()">VER COMO FUNCIONA</button>
     </div>
   </div>
 
   <!-- S2: O PROBLEMA -->
   <div class="slide" id="sl-2">
     <div class="slide-inner">
+      <button class="btn-back" onclick="prev()">⇠ Voltar</button>
       <div class="chip">📍 O CENÁRIO ATUAL</div>
       <h2>Qual é o seu maior gargalo clínico hoje?</h2>
       <div class="opts" id="opts-2">
@@ -52,6 +53,7 @@
   <!-- S3: AGITAÇÃO -->
   <div class="slide" id="sl-3">
     <div class="slide-inner">
+      <button class="btn-back" onclick="prev()">← Voltar</button>
       <div class="bad-news">
         <div class="chip chip-red">⚠️ A MÁ NOTÍCIA</div>
         <h2 id="s3-bad-title"></h2>
@@ -69,6 +71,7 @@
   <!-- S4: CONTEÚDO -->
   <div class="slide" id="sl-4">
     <div class="slide-inner">
+      <button class="btn-back" onclick="prev()">← Voltar</button>
       <div class="chip">📚 EM 1 DIA AO VIVO, VOCÊ VAI DOMINAR</div>
       <h2>Tópicos que a maioria dos nutricionistas ainda não sabe aplicar na prática:</h2>
       <div class="topics" id="topics">
@@ -86,6 +89,7 @@
   <!-- S5: AUTORIDADE -->
   <div class="slide" id="sl-5">
     <div class="slide-inner">
+      <button class="btn-back" onclick="prev()">← Voltar</button>
       <div class="authority-card">
         <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" class="ney-img"/>
         <div>
@@ -107,6 +111,7 @@
   <!-- S6: EVENTO -->
   <div class="slide" id="sl-6">
     <div class="slide-inner">
+      <button class="btn-back" onclick="prev()">← Voltar</button>
       <div class="chip">📅 O EVENTO</div>
       <h2>Um dia inteiro ao vivo com Ney Felipe</h2>
       <div class="event-grid">
@@ -123,6 +128,7 @@
   <!-- S7: OFERTA -->
   <div class="slide" id="sl-7">
     <div class="slide-inner offer-screen">
+      <button class="btn-back" onclick="prev()">← Voltar</button>
       
       <div class="urgency-strip">
         🔥 LOTE 01 | Faltam: <span id="countdown">00d 00h 00m 00s</span>
@@ -150,7 +156,7 @@
           <div class="t-left">
             <div class="t-radio"></div>
             <div class="t-info">
-              <span class="t-name">Ingresso Normal</span>
+              <span class="t-name">Ingresso Básico</span>
               <span class="t-desc">Ao vivo · 8h de conteúdo · Grupo de alunos + Materiais</span>
             </div>
           </div>
@@ -162,7 +168,7 @@
           </div>
         </div>
         <div class="normal-details">
-          <div class="btn-checkout-normal">GARANTIR INGRESSO NORMAL</div>
+          <div class="btn-checkout-normal">GARANTIR INGRESSO BÁSICO</div>
         </div>
       </a>
 
@@ -174,7 +180,8 @@
             <div class="t-radio t-radio-vip"></div>
             <div class="t-info">
               <span class="t-name">Ingresso VIP</span>
-              <span class="t-desc">Tudo do normal + Bônus Premium <br/><span class="click-more" id="vip-toggle-text">(Clique para recolher ▴)</span></span>
+              <span class="t-discount">50% DE DESCONTO</span>
+              <span class="t-desc">Tudo do básico + Bônus Premium <br/><span class="click-more" id="vip-toggle-text">(Clique para recolher ▴)</span></span>
             </div>
           </div>
           <div class="t-right">
@@ -188,11 +195,12 @@
         <!-- Accordion VIP Details (Aberta por padrão) -->
         <div class="vip-details" id="vip-details">
           <ul>
-            <li>✅ Acesso à <strong>Gravação por 1 Ano</strong></li>
-            <li>✅ <strong>Encontro Extra (Ressaca):</strong> Tira dúvidas ao vivo pós-evento</li>
-            <li>✅ E-book: <strong>Alimentos Funcionais (R$97)</strong></li>
-            <li>✅ E-book: <strong>Nutrição em Estética (R$67)</strong></li>
-            <li>✅ E-book: <strong>Lâminas de Fisiologia (R$67)</strong></li>
+            <li>🚀 Tudo do básico + <strong>gravação por 1 ano</strong> + certificado 8h</li>
+            <li>🎁 E-book <strong>Tópicos Avançados (R$99)</strong></li>
+            <li>🎁 E-book <strong>"Me Formei, e agora?" (R$59)</strong></li>
+            <li>🎁 E-book <strong>Desaprendendo a Dieta (R$39)</strong></li>
+            <li>🎓 <strong>Ressaca do Evento:</strong> Encontro extra via Zoom</li>
+            <li>💰 <strong>Cashback integral</strong> na Formação ou Pós</li>
           </ul>
           <a href="https://pay.hotmart.com/W93818806I?off=l3p9qwc8&checkoutMode=10" class="btn-checkout-vip" target="_blank">GARANTIR INGRESSO VIP AGORA</a>
         </div>
@@ -289,6 +297,18 @@ function next() {
     
     if (cur === TOTAL) fetchProgress();
   }, 300);
+}
+
+function prev() {
+  if (cur <= 1) return;
+  snd('click');
+  const current = document.getElementById('sl-' + cur);
+  current.classList.remove('active');
+  cur--;
+  const prevSlide = document.getElementById('sl-' + cur);
+  prevSlide.classList.add('active');
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function updateProgress() {
@@ -438,6 +458,16 @@ body {
 .btn-reveal { background: linear-gradient(135deg, #1F2937, #374151); box-shadow: 0 6px 24px rgba(0,0,0,.25); }
 .btn-reveal:hover { box-shadow: 0 12px 32px rgba(0,0,0,.3); }
 
+.btn-back {
+  background: #F3F4F6; border: none;
+  color: #4B5563; font-size: 13px; font-weight: 700;
+  cursor: pointer; padding: 6px 12px; margin-bottom: 16px;
+  display: inline-flex; align-items: center; gap: 4px;
+  border-radius: 8px; transition: all .2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.btn-back:hover { background: #E5E7EB; color: #111827; transform: translateX(-2px); }
+
 /* OPTIONS */
 .opts { display: flex; flex-direction: column; gap: 12px; margin-bottom: 0; }
 .opt {
@@ -536,6 +566,7 @@ body {
 
 .t-info { display: flex; flex-direction: column; gap: 2px; }
 .t-name { font-size: 15px; font-weight: 800; color: #111827; }
+.t-discount { font-size: 10px; font-weight: 900; color: #16A34A; background: #f0fdf4; padding: 2px 6px; border-radius: 4px; width: fit-content; margin: 2px 0; border: 1px solid #dcfce7; }
 .t-desc { font-size: 11px; color: #6B7280; line-height: 1.35; padding-right: 4px; }
 .click-more { color: #16A34A; font-weight: 600; font-size: 10px; margin-top: 4px; display: inline-block; }
 
