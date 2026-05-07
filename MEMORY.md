@@ -1,6 +1,10 @@
 # Memória do Projeto: Imersão Nutrição Avançada (Vendas Astro)
 
-**Última Atualização:** 03/05/2026
+**Última Atualização:** 07/05/2026
+
+## Alteração de Preço — 07/05/2026
+- Ajustado o preço de **R$19,90** para **R$24,90** em todas as variações de páginas de venda e componentes (`PriceCard`, `ProgressBar`).
+
 
 ## Variações de Headline para Teste A/B — 03/05/2026
 - Criadas 4 novas rotas para split test. Página original `/imersao` **intocada**.
