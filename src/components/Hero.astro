@@ -5,9 +5,10 @@ import BenefitsGrid from './BenefitsGrid.astro';
 
 interface Props {
   variant?: 'green' | 'blue' | 'red';
+  hidePriceCard?: boolean;
 }
 
-const { variant = 'green' } = Astro.props;
+const { variant = 'green', hidePriceCard = false } = Astro.props;
 ---
 
 <div class="hero-master-container">
@@ -39,9 +40,12 @@ const { variant = 'green' } = Astro.props;
             <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" variant={variant} />
           </div>
 
-          <div class="price-wrap-v4">
-            <PriceCard variant={variant === 'red' ? 'red' : 'green'} />
-          </div>
+          {!hidePriceCard && (
+            <div class="price-wrap-v4">
+              <PriceCard variant={variant === 'red' ? 'red' : 'green'} />
+            </div>
+          )}
+          <slot name="after-cta" />
         </div>
       </div>
 
