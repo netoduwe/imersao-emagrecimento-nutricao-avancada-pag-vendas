@@ -6,9 +6,10 @@ import BenefitsGrid from './BenefitsGrid.astro';
 interface Props {
   variant?: 'green' | 'blue' | 'red';
   hidePriceCard?: boolean;
+  minimal?: boolean;
 }
 
-const { variant = 'green', hidePriceCard = false } = Astro.props;
+const { variant = 'green', hidePriceCard = false, minimal = false } = Astro.props;
 ---
 
 <div class="hero-master-container">
@@ -62,31 +63,35 @@ const { variant = 'green', hidePriceCard = false } = Astro.props;
   </section>
 
   <!-- BOTTOM BAR (OUTSIDE BACKGROUND SECTION) -->
-  <div class="hero-bottom-bar-v4">
-    <div class="container footer-grid-v4">
-      <div class="f-item">
-        <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
-        <div class="f-text"><strong>UM DIA INTENSO</strong><span>de conteúdo</span></div>
-      </div>
-      <div class="f-sep"></div>
-      <div class="f-item">
-        <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
-        <div class="f-text"><strong>FOCO TOTAL</strong><span>em clínica</span></div>
-      </div>
-      <div class="f-sep"></div>
-      <div class="f-item">
-        <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
-        <div class="f-text"><strong>NETWORKING</strong><span>experiência</span></div>
+  {!minimal && (
+    <div class="hero-bottom-bar-v4">
+      <div class="container footer-grid-v4">
+        <div class="f-item">
+          <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+          <div class="f-text"><strong>UM DIA INTENSO</strong><span>de conteúdo</span></div>
+        </div>
+        <div class="f-sep"></div>
+        <div class="f-item">
+          <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+          <div class="f-text"><strong>FOCO TOTAL</strong><span>em clínica</span></div>
+        </div>
+        <div class="f-sep"></div>
+        <div class="f-item">
+          <div class="f-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+          <div class="f-text"><strong>NETWORKING</strong><span>experiência</span></div>
+        </div>
       </div>
     </div>
-  </div>
+  )}
 
-  <div class="container">
-    <div class="spoiler-v4">
-       <div class="s-icon">🛡️</div>
-       <p><strong>Spoiler:</strong> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <strong>prática clínica</strong> e como ir <strong>além do déficit calórico</strong> quando o assunto é emagrecimento.</p>
+  {!minimal && (
+    <div class="container">
+      <div class="spoiler-v4">
+        <div class="s-icon">🛡️</div>
+        <p><strong>Spoiler:</strong> Essa não é apenas uma imersão de teoria, você também vai aprender sobre <strong>prática clínica</strong> e como ir <strong>além do déficit calórico</strong> quando o assunto é emagrecimento.</p>
+      </div>
     </div>
-  </div>
+  )}
 </div>
 
 <style>
@@ -130,6 +135,24 @@ const { variant = 'green', hidePriceCard = false } = Astro.props;
     background: rgba(0,0,0,0.03);
     padding: 8px 16px;
     border-radius: 99px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-info-line {
+      gap: 10px;
+      padding: 6px 12px;
+      width: 100%;
+      justify-content: space-between;
+      white-space: nowrap;
+    }
+    .info-item {
+      font-size: 11px;
+      gap: 4px;
+    }
+    .info-item svg {
+      width: 14px;
+      height: 14px;
+    }
   }
 
   .info-item {
