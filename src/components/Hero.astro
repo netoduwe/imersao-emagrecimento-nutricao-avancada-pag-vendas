@@ -4,7 +4,7 @@ import PriceCard from './PriceCard.astro';
 import BenefitsGrid from './BenefitsGrid.astro';
 
 interface Props {
-  variant?: 'green' | 'blue';
+  variant?: 'green' | 'blue' | 'red';
 }
 
 const { variant = 'green' } = Astro.props;
@@ -36,11 +36,11 @@ const { variant = 'green' } = Astro.props;
 
         <div class="conversion-block-v4">
           <div class="cta-wrap-v4">
-            <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" />
+            <CTAButton text="COMPRAR INGRESSO LOTE ATUAL" href="#preco" variant={variant} />
           </div>
 
           <div class="price-wrap-v4">
-            <PriceCard />
+            <PriceCard variant={variant === 'red' ? 'red' : 'green'} />
           </div>
         </div>
       </div>

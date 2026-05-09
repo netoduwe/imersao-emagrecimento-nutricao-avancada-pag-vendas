@@ -1,9 +1,14 @@
 ---
+interface Props {
+  variant?: 'green' | 'red';
+}
+
+const { variant = 'green' } = Astro.props;
 ---
 
-<div class="price-card-v3" data-price-card>
+<div class="price-card-v3" data-price-card data-variant={variant}>
   <div class="pc-top">
-    <div class="pc-badge">🔥 LOTE 01</div>
+    <div class="pc-badge" style={variant === 'red' ? 'background: #dc2626;' : ''}>🔥 LOTE 01</div>
     <div class="pc-price">
       <span class="pc-label">POR APENAS</span>
       <span class="pc-value" data-pc-price>R$ 24,90</span>
@@ -141,8 +146,10 @@
            if(fill) {
              fill.style.width = `${Math.max(visualPercent, 5)}%`;
              
-             // Troca dinâmica de cor
-             if (visualPercent > 90) {
+             // Troca dinâmica de cor (ou força se for red)
+             if (card.getAttribute('data-variant') === 'red') {
+               fill.style.background = '#dc2626'; // Vermelho forçado
+             } else if (visualPercent > 90) {
                fill.style.background = '#ef4444'; // Vermelho
              } else if (visualPercent > 70) {
                fill.style.background = '#f59e0b'; // Laranja

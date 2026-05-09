@@ -5,13 +5,14 @@
  * 
  * Props:
  *   variant: 'hero' | 'pricing' | 'minimal' (default: 'pricing')
+ *   theme: 'green' | 'red' (default: 'green')
  */
-const { variant = 'pricing' } = Astro.props;
+const { variant = 'pricing', theme = 'green' } = Astro.props;
 const isHero = variant === 'hero';
 const isMinimal = variant === 'minimal';
 ---
 
-<div class={`lote-tracker ${isHero ? 'lote-tracker--hero' : ''} ${isMinimal ? 'lote-tracker--minimal' : 'lote-tracker--pricing'}`} data-lote-tracker>
+<div class={`lote-tracker ${isHero ? 'lote-tracker--hero' : ''} ${isMinimal ? 'lote-tracker--minimal' : 'lote-tracker--pricing'}`} data-lote-tracker data-theme={theme}>
   <div class="lote-tracker__inner">
     {!isMinimal && (
       <div class="lote-tracker__top">
@@ -106,6 +107,10 @@ const isMinimal = variant === 'minimal';
     letter-spacing: 0.04em;
     text-transform: uppercase;
     white-space: nowrap;
+  }
+
+  [data-theme="red"] .lote-tracker__badge {
+    background: #dc2626;
   }
 
   .lote-tracker__price-wrap {
@@ -245,8 +250,10 @@ const isMinimal = variant === 'minimal';
       if (fill) {
         fill.style.width = `${Math.max(visualPercent, 5)}%`;
         
-        // Troca dinâmica de cor
-        if (visualPercent > 90) {
+        // Troca dinâmica de cor (ou força se for red)
+        if (tracker.getAttribute('data-theme') === 'red') {
+          fill.style.background = 'linear-gradient(90deg, #dc2626 0%, #991b1b 100%)';
+        } else if (visualPercent > 90) {
           fill.style.background = 'linear-gradient(90deg, #ef4444 0%, #b91c1c 100%)'; // Vermelho
         } else if (visualPercent > 70) {
           fill.style.background = 'linear-gradient(90deg, #f59e0b 0%, #d97706 100%)'; // Laranja

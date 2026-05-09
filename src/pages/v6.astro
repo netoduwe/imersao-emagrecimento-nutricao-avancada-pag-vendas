@@ -1,0 +1,298 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProgressBar from '../components/ProgressBar.astro';
+import FormModal from '../components/FormModal.astro';
+import Hero from '../components/Hero.astro';
+import Schedule from '../components/Schedule.astro';
+import '../styles/theme-green.css';
+---
+
+<Layout title="ÚLTIMA CHAMADA: Imersão Nutrição Avançada | Edição 4" theme="green">
+  <!-- Top Urgency Banner -->
+  <div class="last-week-banner">
+    ⚠️ <strong>ÚLTIMA SEMANA:</strong> As inscrições para a 4ª Edição encerram em poucos dias. Garanta sua vaga no lote atual!
+  </div>
+
+  <Hero variant="red" />
+
+  <!-- LEAD / DORES SECTION -->
+  <section class="lead-section container grid-2" style="padding: var(--space-xl) var(--space-sm);">
+    <!-- NEWS CAROUSEL (SWIPER) -->
+    <div class="swiper newsSwiper" style="width: 100%; border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: white; aspect-ratio: 4/5;">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://nutrineyfelipe.com/wp-content/uploads/2022/07/3.jpg" alt="Atendimento" style="width: 100%; height: 100%; object-fit: contain;" />
+        </div>
+        <div class="swiper-slide">
+          <img src="/images/noticia.jpg" alt="Notícia sobre obesidade" style="width: 100%; height: 100%; object-fit: contain;" />
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-next" style="color: #dc2626;"></div>
+      <div class="swiper-button-prev" style="color: #dc2626;"></div>
+    </div>
+
+    <div>
+      <h2 style="font-size: 2rem; margin-bottom: var(--space-md);">Você vai deixar essa oportunidade passar de novo?</h2>
+      <p style="color: var(--color-text-light); margin-bottom: var(--space-md); font-size: 1.125rem;">
+        As vagas estão se esgotando rapidamente. Se você atende pacientes com sobrepeso e quer dominar o manejo clínico moderno, <strong>esta é a sua última chance de participar ao vivo.</strong>
+      </p>
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #dc2626;">❌</span> <span>Não conseguiu fazer o paciente aderir...</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #dc2626;">❌</span> <span>Teve insegurança para conduzir a consulta...</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #dc2626;">❌</span> <span>Não soube calcular o cardápio...</span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #dc2626;">❌</span> <span>Não soube como ir <b>além das calorias...</b></span>
+        </li>
+        <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+          <span style="color: #dc2626;">❌</span> <span>Se sentiu <b>desatualizado</b> cientificamente...</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BIO NEY SECTION -->
+  <section class="bio-section container grid-bio" style="padding: var(--space-xl) var(--space-sm);">
+    <div class="bio-image-container">
+      <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" style="width: 100%; border-radius: var(--radius-lg); background: white; padding: 1rem; border: 1px solid rgba(0,0,0,0.05);" />
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <h3 style="font-size: 1.5rem; color: #dc2626;">Ney Felipe (@neyfelipef)</h3>
+      </div>
+    </div>
+    <div>
+      <h2 style="font-size: 2.25rem; margin-bottom: var(--space-md);">Aprenda com quem está no "campo de batalha" há 18 anos.</h2>
+      <div style="color: var(--color-text-light); line-height: 1.7; display: flex; flex-direction: column; gap: 1.5rem;">
+        <p>Nutricionista pioneiro da Nutrição Funcional Esportiva no Brasil, mestre em biologia molecular e um dos maiores nomes da nutrição clínica no país.</p>
+        
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: #dc2626;">✅</span> <span>Nutricionista há 18 anos (2006)</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: #dc2626;">✅</span> <span>Mestre em Biologia Molecular (2011)</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: #dc2626;">✅</span> <span>Doutorando em Saúde Pública (2024)</span></li>
+          <li style="display: flex; gap: 0.5rem; align-items: center;"><span style="color: #dc2626;">✅</span> <span>Mais de 3 mil alunos formados</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FRASE SECTION -->
+  <section style="background: #FFF7D3; padding: var(--space-lg) var(--space-sm);">
+    <div class="container text-center">
+      <blockquote class="text-serif italic" style="font-size: 1.5rem; color: var(--color-text); line-height: 1.6; max-width: 900px; margin: 0 auto;">
+        "A nutrição não se resume a uma simples calculoterapia. É hora de você dominar o manejo metabólico real do seu paciente." — <b>Ney Felipe.</b>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS SECTION -->
+  <section class="container" style="padding: var(--space-xl) var(--space-sm);">
+    <h2 class="text-center" style="margin-bottom: var(--space-xl);">Resultados de quem já esteve lá</h2>
+    <div class="grid-3">
+      <!-- Depo 1 -->
+      <div style="background: white; padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center;">
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-02.png" alt="Nair" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem;" />
+        <h4 style="margin-bottom: 0.5rem;">NAIR CRISTINA</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: 1rem;">Nutricionista há 4 anos</p>
+        <p class="italic">"Me sinto muito mais segura nas abordagens, eu pego um paciente e sei o que fazer com ele em todas as fases com segurança"</p>
+      </div>
+      <!-- Depo 2 -->
+      <div style="background: white; padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center;">
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-04.png" alt="Melissa" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem;" />
+        <h4 style="margin-bottom: 0.5rem;">MELISSA PINHEIRO</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: 1rem;">Nutricionista há 10 anos</p>
+        <p class="italic">"Nos primeiros atendimentos após o curso pude me notar menos 'calculadora' e mais nutricionista."</p>
+      </div>
+      <!-- Depo 3 -->
+      <div style="background: white; padding: var(--space-md); border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.03); text-align: center;">
+        <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-03.png" alt="Nathalia" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 1rem;" />
+        <h4 style="margin-bottom: 0.5rem;">NATHALIA PANTALEÃO</h4>
+        <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: 1rem;">Nutricionista há 3 anos</p>
+        <p class="italic">"Hoje meus pacientes indicam meu trabalho."</p>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: var(--space-xl);">
+      <p style="font-size: 1.125rem; color: var(--color-text-light); max-width: 800px; margin: 0 auto 2rem;">
+        Esta é a <strong>última semana</strong> para garantir o preço promocional de lançamento. Não deixe para a última hora.
+      </p>
+      <a href="#preco" class="btn-shiny">
+        <span class="btn-text">GARANTIR MEU LUGAR AGORA</span>
+        <div class="btn-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <Schedule variant="green" />
+
+  <!-- PREÇOS SECTION -->
+  <section id="preco" style="background: var(--color-bg); padding: var(--space-xl) var(--space-sm); border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container">
+      <h2 class="text-center" style="margin-bottom: 2rem;">Escolha seu Ingresso — ÚLTIMAS VAGAS</h2>
+      <div class="grid-bio">
+        <!-- Ingresso Normal -->
+        <div style="background: white; padding: 3rem; border-radius: var(--radius-lg); box-shadow: 0 4px 20px rgba(0,0,0,0.03); display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.05);">
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Ingresso Normal</h3>
+          <p style="color: var(--color-text-light); margin-bottom: 2rem;">Experiência ao vivo</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; margin-bottom: 3rem;">
+            <li style="display: flex; gap: 0.5rem;"><span>✅</span> <span>Um dia de Imersão</span></li>
+            <li style="display: flex; gap: 0.5rem;"><span>✅</span> <span>8h de Conteúdo</span></li>
+            <li style="display: flex; gap: 0.5rem;"><span>✅</span> <span>Grupo do Evento</span></li>
+            <li style="display: flex; gap: 0.5rem;"><span>✅</span> <span>Materiais Exclusivos</span></li>
+            <li style="display: flex; gap: 0.5rem;"><span>🎁</span> <span>Mini Curso Fundamentos Emagrecimento</span></li>
+          </ul>
+          <div style="margin-bottom: 1.5rem;">
+            <span style="text-decoration: line-through; color: #999; font-size: 1.125rem;">De R$97,00</span>
+            <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-text);">R$ 24,90</div>
+          </div>
+          <a href="#" class="btn-shiny" style="width: 100%;" data-form="normal">
+            <span class="btn-text">COMPRAR AGORA</span>
+            <div class="btn-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </a>
+          <div style="margin-top: 1.5rem; width: 100%;">
+            <ProgressBar variant="minimal" theme="red" />
+          </div>
+        </div>
+
+        <!-- Ingresso VIP -->
+        <div style="background: white; padding: 3rem; border-radius: var(--radius-lg); box-shadow: 0 10px 40px rgba(220, 38, 38, 0.1); display: flex; flex-direction: column; border: 2px solid #dc2626; position: relative;">
+          <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #dc2626; color: white; padding: 0.5rem 1.5rem; border-radius: var(--radius-full); font-size: 0.875rem; font-weight: 700;">MAIS VANTAGENS</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Ingresso VIP</h3>
+          <p style="color: #dc2626; font-weight: 700; margin-bottom: 2rem;">RECOMENDADO</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; flex-grow: 1; margin-bottom: 3rem;">
+            <li style="display: flex; gap: 0.5rem; align-items: center;">🚀 <span><b>Tudo do básico +</b> gravação por 1 ano + certificado 8h</span></li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">🎁 <span>E-book Tópicos Avançados (R$99)</span></li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">🎁 <span>E-book "Me Formei, e agora?" (R$59)</span></li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">🎁 <span>E-book Desaprendendo a Dieta (R$39)</span></li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">🎓 <span>Ressaca do Evento (encontro extra Zoom)</span></li>
+            <li style="display: flex; gap: 0.5rem; align-items: center;">💰 <span><b>Cashback integral</b> na Formação ou Pós</span></li>
+          </ul>
+          <div style="margin-bottom: 1.5rem;">
+            <span style="text-decoration: line-through; color: #999; font-size: 1.125rem;">De R$297,00</span>
+            <div style="font-size: 0.875rem; font-weight: 600; color: var(--color-text-light);">POR 12x DE:</div>
+            <div style="font-size: 2.5rem; font-weight: 800; color: #dc2626;">R$ 15,20</div>
+            <div style="font-size: 1rem; color: var(--color-text-light);">ou R$ 147 à vista</div>
+          </div>
+          <a href="#" class="btn-shiny" style="width: 100%;" data-form="vip">
+            <span class="btn-text">COMPRAR INGRESSO VIP</span>
+            <div class="btn-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </a>
+          <div style="margin-top: 1.5rem; width: 100%;">
+            <ProgressBar variant="minimal" theme="red" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" class="container" style="padding: var(--space-xl) var(--space-sm);">
+    <h2 class="text-center" style="margin-bottom: var(--space-xl);">Perguntas Frequentes</h2>
+    <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem;">
+      <details style="background: white; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(0,0,0,0.05); cursor: pointer;">
+        <summary style="font-weight: 700; font-size: 1.125rem;">É ao vivo? Qual a duração?</summary>
+        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">A Imersão vai acontecer ao vivo no dia 16 de Maio das 9h às 18h. Caso deseje adquirir a gravação basta avançar para próxima página (checkout) e selecionar a opção no momento da compra.</p>
+      </details>
+      <details style="background: white; padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid rgba(0,0,0,0.05); cursor: pointer;">
+        <summary style="font-weight: 700; font-size: 1.125rem;">Fica Gravado?</summary>
+        <p style="margin-top: 1rem; color: var(--color-text-light); line-height: 1.6;">Sim, mas o ingresso do evento ao vivo não dá acesso às gravações. Você poderá adquirir separadamente as gravações do evento na próxima página (checkout).</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1A1A1A; color: rgba(255,255,255,0.6); padding: var(--space-xl) var(--space-sm) var(--space-lg); text-align: center;">
+    <div class="container">
+      <h3 style="color: white; margin-bottom: 1rem;">Suporte no WhatsApp</h3>
+      <p style="margin-bottom: 2rem;">Minha equipe está à disposição para tirar suas dúvidas pelo nosso canal de atendimento via Whatsapp.</p>
+      <a href="https://wa.me/554799557669" class="btn" style="background: #25D366; box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);">FALAR COM ATENDENTE</a>
+      
+      <div style="margin-top: 4rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; font-size: 0.75rem; line-height: 1.6;">
+        <p style="margin-bottom: 1rem;">Ney Felipe Fernandes | © Copyright 2025</p>
+        <p style="margin-bottom: 1rem;">CNPJ: 38.560.882/0001-12 | cursos@nutrineyfelipe.com</p>
+      </div>
+    </div>
+  </footer>
+  
+  <script is:inline>
+    // Initialize Swiper
+    document.addEventListener('DOMContentLoaded', function() {
+      new Swiper(".newsSwiper", {
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    });
+  </script>
+  <FormModal />
+</Layout>
+
+<style>
+  .last-week-banner {
+    background: #dc2626;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-weight: 700;
+  }
+
+  /* RED BUTTON OVERRIDES FOR V6 ONLY */
+  :global(.btn-shiny) {
+    background: linear-gradient(325deg, #991b1b 0%, #ef4444 55%, #991b1b 90%) !important;
+    box-shadow: 0px 0px 20px rgba(239, 68, 68, 0.3), 0px 5px 5px -1px rgba(153, 27, 27, 0.25), inset 4px 4px 8px rgba(252, 165, 165, 0.5), inset -4px -4px 8px rgba(153, 27, 27, 0.35) !important;
+  }
+
+  :global(.btn-shiny .btn-icon) {
+    color: #dc2626 !important;
+  }
+
+  :global(.btn-shiny:hover .btn-icon) {
+    color: #991b1b !important;
+  }
+
+  /* Swiper Custom Styles */
+  .swiper-pagination-bullet-active {
+    background: #dc2626 !important;
+  }
+  
+  .newsSwiper {
+    --swiper-theme-color: #dc2626;
+  }
+
+  @media (max-width: 768px) {
+    .lead-section {
+       padding-top: var(--space-md) !important;
+       padding-bottom: var(--space-md) !important;
+       gap: var(--space-lg);
+    }
+    
+    .newsSwiper {
+      aspect-ratio: 1/1 !important;
+    }
+  }
+</style>

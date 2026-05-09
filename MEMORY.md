@@ -1,6 +1,12 @@
 # Memória do Projeto: Imersão Nutrição Avançada (Vendas Astro)
 
-**Última Atualização:** 07/05/2026
+**Última Atualização:** 09/05/2026
+
+## Variação de Urgência (Última Semana) — 09/05/2026
+- Criada a rota `/v6` (`src/pages/v6.astro`) focada na última semana de vendas.
+- **Identidade Visual:** Botões de conversão e elementos de escassez alterados para **VERMELHO** para maximizar o gatilho de urgência.
+- **Componentes:** Atualizados `Hero.astro`, `CTAButton.astro`, `PriceCard.astro` e `ProgressBar.astro` para suportar o novo `variant="red"`.
+- As outras páginas (index, v1-v5) permanecem com o padrão verde original.
 
 ## Alteração de Preço — 07/05/2026
 - Ajustado o preço de **R$19,90** para **R$24,90** em todas as variações de páginas de venda e componentes (`PriceCard`, `ProgressBar`).
