@@ -6,6 +6,7 @@
 - Criada a rota `/v6` (`src/pages/v6.astro`) focada na última semana de vendas.
 - **Identidade Visual:** Botões de conversão e elementos de escassez alterados para **VERMELHO** para maximizar o gatilho de urgência.
 - **Componentes:** Atualizados `Hero.astro`, `CTAButton.astro`, `PriceCard.astro` e `ProgressBar.astro` para suportar o novo `variant="red"`.
+- **Heavy Urgency (v6):** Implementado contador regressivo gigante (D/H/M/S), barra de topo preta/vermelha, notificações de prova social (toast) e botão flutuante no mobile.
 - As outras páginas (index, v1-v5) permanecem com o padrão verde original.
 
 ## Alteração de Preço — 07/05/2026
