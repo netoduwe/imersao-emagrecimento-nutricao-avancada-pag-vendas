@@ -1,0 +1,415 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/theme-green.css';
+---
+
+<Layout title="Check-in | Imersão Nutrição Avançada">
+  <div class="checkin-container">
+    <div class="checkin-content">
+      <h1 class="checkin-title">Retire seu <br><span class="neon-text">Ingresso</span></h1>
+      <p class="checkin-subtitle">Compartilhe nas suas redes que você estará se atualizando nesse sábado.</p>
+
+      <div id="form-section" class="form-section">
+        <div class="input-group">
+          <label for="userName">Seu Nome</label>
+          <input type="text" id="userName" placeholder="Ex: Ney Felipe" maxlength="25" />
+        </div>
+
+        <div class="input-group">
+          <label for="userPhoto" class="photo-label">
+            <span id="photo-text">📸 Tirar ou Escolher Foto</span>
+            <input type="file" id="userPhoto" accept="image/*" capture="user" />
+          </label>
+          <div id="photo-preview-container" style="display: none; margin-top: 10px; text-align: center;">
+            <img id="photo-preview" src="" alt="Sua Foto" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-primary);" />
+          </div>
+        </div>
+
+        <button id="generate-btn" class="btn-shiny" style="width: 100%; margin-top: 1rem;">
+          <span class="btn-text">GERAR MEU INGRESSO</span>
+        </button>
+      </div>
+
+      <div id="result-section" class="result-section" style="display: none;">
+        <div class="ticket-preview">
+          <canvas id="ticket-canvas" width="1080" height="1920" style="display: none;"></canvas>
+          <img id="ticket-result" src="" alt="Seu Ingresso" style="width: 100%; max-width: 350px; border-radius: 12px; box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);" />
+        </div>
+        
+        <button id="download-btn" class="btn-shiny" style="width: 100%; margin-top: 1.5rem;">
+          <span class="btn-text">⬇️ BAIXAR INGRESSO</span>
+        </button>
+        <button id="back-btn" style="background: transparent; border: none; color: #fff; margin-top: 1rem; cursor: pointer; text-decoration: underline; font-size: 14px; width: 100%;">
+          Fazer outro ingresso
+        </button>
+        
+        <p class="share-hint">Aperte em BAIXAR, depois poste no Instagram e marque <b>@neyfelipef</b></p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .checkin-container {
+    background-color: #050a06;
+    min-height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    color: white;
+  }
+
+  .checkin-content {
+    background: #0a140d;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.05);
+    text-align: center;
+  }
+
+  .checkin-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .neon-text {
+    color: #00ff41;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5), 0 0 20px rgba(0, 255, 65, 0.3);
+  }
+
+  .checkin-subtitle {
+    font-size: 1.1rem;
+    color: #a0aab0;
+    margin-bottom: 2rem;
+    line-height: 1.4;
+  }
+
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .input-group {
+    text-align: left;
+  }
+
+  .input-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #00ff41;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .input-group input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s;
+  }
+
+  .input-group input[type="text"]:focus {
+    border-color: #00ff41;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+  }
+
+  .photo-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 255, 65, 0.1);
+    border: 2px dashed rgba(0, 255, 65, 0.4);
+    padding: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .photo-label:hover {
+    background: rgba(0, 255, 65, 0.2);
+  }
+
+  .photo-label input[type="file"] {
+    display: none;
+  }
+
+  #photo-text {
+    font-size: 1.1rem;
+    color: #00ff41;
+  }
+
+  .ticket-preview {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .share-hint {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #a0aab0;
+  }
+  
+  .share-hint b {
+    color: #00ff41;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const userPhotoInput = document.getElementById('userPhoto');
+    const photoPreviewContainer = document.getElementById('photo-preview-container');
+    const photoPreview = document.getElementById('photo-preview');
+    const photoText = document.getElementById('photo-text');
+    const generateBtn = document.getElementById('generate-btn');
+    const userNameInput = document.getElementById('userName');
+    
+    const formSection = document.getElementById('form-section');
+    const resultSection = document.getElementById('result-section');
+    const ticketCanvas = document.getElementById('ticket-canvas');
+    const ticketResult = document.getElementById('ticket-result');
+    const downloadBtn = document.getElementById('download-btn');
+    const backBtn = document.getElementById('back-btn');
+
+    let uploadedImage = null;
+
+    userPhotoInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          uploadedImage = new Image();
+          uploadedImage.onload = () => {
+            photoPreview.src = event.target.result;
+            photoPreviewContainer.style.display = 'block';
+            photoText.textContent = '📸 Trocar Foto';
+          };
+          uploadedImage.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    generateBtn.addEventListener('click', () => {
+      const name = userNameInput.value.trim();
+      
+      if (!name) {
+        alert('Por favor, insira seu nome.');
+        return;
+      }
+      if (!uploadedImage) {
+        alert('Por favor, tire ou escolha uma foto para o ingresso.');
+        return;
+      }
+
+      generateBtn.querySelector('.btn-text').textContent = 'GERANDO...';
+      generateBtn.style.opacity = '0.7';
+      generateBtn.style.pointerEvents = 'none';
+
+      // Aguarda um pequeno momento para o botão atualizar
+      setTimeout(() => {
+        drawTicket(name, uploadedImage);
+      }, 100);
+    });
+
+    backBtn.addEventListener('click', () => {
+      resultSection.style.display = 'none';
+      formSection.style.display = 'flex';
+      generateBtn.querySelector('.btn-text').textContent = 'GERAR MEU INGRESSO';
+      generateBtn.style.opacity = '1';
+      generateBtn.style.pointerEvents = 'auto';
+    });
+
+    downloadBtn.addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.download = `ingresso-imersao-${userNameInput.value.trim().replace(/\s+/g, '-')}.png`;
+      link.href = ticketResult.src;
+      link.click();
+    });
+
+    function drawTicket(name, img) {
+      const ctx = ticketCanvas.getContext('2d');
+      const width = ticketCanvas.width;
+      const height = ticketCanvas.height;
+
+      // Fundo escuro
+      ctx.fillStyle = '#051208';
+      ctx.fillRect(0, 0, width, height);
+
+      // Efeito de grid de fundo (opcional, mas dá um toque tech)
+      ctx.strokeStyle = 'rgba(0, 255, 65, 0.05)';
+      ctx.lineWidth = 1;
+      for(let i = 0; i < width; i += 40) {
+        ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, height); ctx.stroke();
+      }
+      for(let i = 0; i < height; i += 40) {
+        ctx.beginPath(); ctx.moveTo(0, i); ctx.lineTo(width, i); ctx.stroke();
+      }
+
+      // Desenha o Ingresso Físico (Bordas neon)
+      const marginX = 80;
+      const marginY = 200;
+      const ticketW = width - (marginX * 2);
+      const ticketH = height - (marginY * 2);
+      const radius = 30;
+
+      ctx.save();
+      ctx.shadowColor = '#00ff41';
+      ctx.shadowBlur = 30;
+      ctx.strokeStyle = '#00ff41';
+      ctx.lineWidth = 6;
+      
+      // Forma do ingresso com picote
+      ctx.beginPath();
+      ctx.moveTo(marginX + radius, marginY);
+      
+      // Top line
+      ctx.lineTo(width - marginX - radius, marginY);
+      ctx.arcTo(width - marginX, marginY, width - marginX, marginY + radius, radius);
+      
+      // Right line with cutout
+      ctx.lineTo(width - marginX, height/2 - 40);
+      ctx.arc(width - marginX, height/2, 40, 1.5 * Math.PI, 0.5 * Math.PI, true);
+      ctx.lineTo(width - marginX, height - marginY - radius);
+      ctx.arcTo(width - marginX, height - marginY, width - marginX - radius, height - marginY, radius);
+      
+      // Bottom line
+      for (let i = width - marginX - 20; i > marginX + 20; i -= 40) {
+        ctx.arc(i, height - marginY, 15, 0, Math.PI, true);
+      }
+      
+      ctx.lineTo(marginX + radius, height - marginY);
+      ctx.arcTo(marginX, height - marginY, marginX, height - marginY - radius, radius);
+      
+      // Left line with cutout
+      ctx.lineTo(marginX, height/2 + 40);
+      ctx.arc(marginX, height/2, 40, 0.5 * Math.PI, 1.5 * Math.PI, true);
+      ctx.lineTo(marginX, marginY + radius);
+      ctx.arcTo(marginX, marginY, marginX + radius, marginY, radius);
+      
+      ctx.fillStyle = '#081a0d';
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      // Top Text: PRESENÇA CONFIRMADA
+      ctx.fillStyle = '#00ff41';
+      ctx.font = 'bold 36px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText('PRESENÇA CONFIRMADA', width/2, marginY + 80);
+
+      // Desenha a foto de perfil circular
+      const photoSize = 350;
+      const photoX = width/2;
+      const photoY = marginY + 320;
+      
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(photoX, photoY, photoSize/2, 0, Math.PI * 2, true);
+      ctx.closePath();
+      ctx.clip();
+      
+      // Calcula o crop (cover)
+      const imgAspect = img.width / img.height;
+      let drawW = photoSize;
+      let drawH = photoSize;
+      let drawX = photoX - photoSize/2;
+      let drawY = photoY - photoSize/2;
+
+      if (imgAspect > 1) {
+        drawW = photoSize * imgAspect;
+        drawX = photoX - drawW/2;
+      } else {
+        drawH = photoSize / imgAspect;
+        drawY = photoY - drawH/2;
+      }
+      
+      ctx.drawImage(img, drawX, drawY, drawW, drawH);
+      ctx.restore();
+
+      // Borda neon na foto
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(photoX, photoY, photoSize/2, 0, Math.PI * 2, true);
+      ctx.shadowColor = '#00ff41';
+      ctx.shadowBlur = 20;
+      ctx.strokeStyle = '#00ff41';
+      ctx.lineWidth = 8;
+      ctx.stroke();
+      ctx.restore();
+
+      // Nome do Usuário
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 55px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.fillText(name.toUpperCase(), width/2, photoY + 250);
+
+      // Título do Evento
+      ctx.fillStyle = '#00ff41';
+      ctx.font = 'italic bold 65px "Playfair Display", serif';
+      ctx.fillText('Imersão em', width/2, photoY + 360);
+      ctx.fillText('emagrecimento', width/2, photoY + 440);
+
+      // Linha tracejada
+      ctx.save();
+      ctx.setLineDash([15, 15]);
+      ctx.beginPath();
+      ctx.moveTo(marginX + 20, height - marginY - 320);
+      ctx.lineTo(width - marginX - 20, height - marginY - 320);
+      ctx.strokeStyle = 'rgba(0, 255, 65, 0.5)';
+      ctx.lineWidth = 4;
+      ctx.stroke();
+      ctx.restore();
+
+      // Texto INGRESSO
+      ctx.fillStyle = '#00ff41';
+      ctx.font = '900 70px Inter, sans-serif';
+      ctx.letterSpacing = '5px';
+      ctx.fillText('INGRESSO', width/2, height - marginY - 220);
+
+      // Barcode (Simulação)
+      const bcX = marginX + 100;
+      const bcY = height - marginY - 180;
+      const bcW = width - marginX*2 - 200;
+      const bcH = 100;
+      ctx.fillStyle = '#00ff41';
+      
+      // Random bars
+      Math.seedrandom = function(s) {
+        return function() {
+            s = Math.sin(s) * 10000; return s - Math.floor(s);
+        };
+      };
+      const random = Math.seedrandom(name.length);
+      
+      let currentX = bcX;
+      while(currentX < bcX + bcW) {
+        let barWidth = Math.floor(random() * 8) + 2;
+        if (currentX + barWidth > bcX + bcW) barWidth = bcX + bcW - currentX;
+        ctx.fillRect(currentX, bcY, barWidth, bcH);
+        currentX += barWidth + Math.floor(random() * 10) + 3;
+      }
+
+      // Convert to image
+      ticketResult.src = ticketCanvas.toDataURL('image/png');
+      formSection.style.display = 'none';
+      resultSection.style.display = 'block';
+    }
+  });
+</script>

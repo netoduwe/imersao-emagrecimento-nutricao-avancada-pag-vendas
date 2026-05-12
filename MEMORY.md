@@ -82,3 +82,8 @@
 - **Renomeação:** "Ingresso Normal" → "Ingresso Básico" no v5.
 - **Selo:** Badge "50% DE DESCONTO" no card VIP do v5.
 - **Push:** Commit `5166636` em 05/05/2026 — build OK, push para `main`.
+
+## Página de Check-in Interativa — 12/05/2026
+- **Check-in Virtual:** Criada a rota `/checkin` (`src/pages/checkin.astro`) para gerar um ingresso personalizado estilo neon para compartilhamento.
+- **Funcionalidades:** Upload/Captura de foto de perfil, inserção de nome com limite de caracteres, e geração em client-side utilizando HTML5 Canvas (não requer servidor de imagem).
+- **Identidade Visual:** Fundo escuro (Dark Green), detalhes e textos em verde neon (`#00ff41`), com efeito de brilho e recortes característicos de ingressos físicos. Permite download nativo via blob/data URI.
