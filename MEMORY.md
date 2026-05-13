@@ -1,9 +1,9 @@
 # Memória do Projeto: Imersão Nutrição Avançada (Vendas Astro)
 
-**Última Atualização:** 12/05/2026
+**Última Atualização:** 13/05/2026
 
-## Mudança para LOTE 02 — 12/05/2026
-- Atualizado de **LOTE 01** para **LOTE 02** em todos os componentes (`Layout`, `PriceCard`, `ProgressBar`) e páginas (`v5`).
+## Mudança para LOTE 03 — 13/05/2026
+- Atualizado de **LOTE 02** para **LOTE 03** em todos os componentes (`Layout`, `PriceCard`, `ProgressBar`) e páginas (`v5`).
 
 
 ## Variação de Urgência (Última Semana) — 09/05/2026
