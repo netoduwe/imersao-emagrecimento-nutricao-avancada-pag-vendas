@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import ProgressBar from '../components/ProgressBar.astro';
 import FormModal from '../components/FormModal.astro';
 import Schedule from '../components/Schedule.astro';
+import VideoRecado from '../components/VideoRecado.astro';
 import '../styles/theme-green.css';
 ---
 
@@ -54,7 +55,27 @@ import '../styles/theme-green.css';
       <li>❌ Não soube como ir <b>além das calorias...</b></li>
       <li>❌ Se sentiu <b>desatualizado</b> cientificamente...</li>
       <li>❌ Faltaram ferramentas de prática clínica...</li>
-    </ul>
+    <div class="grid-2" style="margin-top: 3rem;">
+      <div style="background:#f0fdf4;border-radius:var(--radius-lg);padding:2rem;border:1px solid #dcfce7;">
+        <h3 style="color:var(--color-primary);margin-bottom:1rem;">O que você vai aprender:</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:0.875rem;">
+          <li>✅ Manejo Nutricional Além das Calorias</li>
+          <li>✅ Fisiologia da Obesidade e Inflamação</li>
+          <li>✅ Canetas Emagrecedoras (GLP-1) na prática</li>
+          <li>✅ Suplementação no Emagrecimento</li>
+          <li style="margin-top: 1rem; color: var(--color-primary); font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">Adesão Comportamental (Prof. Cássia):</li>
+          <li style="font-size: 0.9rem;">✅ Conduzir o atendimento para reduzir abandono precoce</li>
+          <li style="font-size: 0.9rem;">✅ Ajustar expectativas irreais sem desmotivá-lo</li>
+          <li style="font-size: 0.9rem;">✅ Preparar para autonomia pós medicação</li>
+          <li style="font-size: 0.9rem;">✅ Evitar recaídas após suspensão</li>
+          <li style="font-size: 0.9rem;">✅ Planos que o paciente consegue sustentar</li>
+          <li style="font-size: 0.9rem;">✅ Adesão sem depender de força de vontade</li>
+        </ul>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: center; background: #f8fafc; border-radius: var(--radius-lg); border: 1px solid #e2e8f0; padding: 2rem;">
+        <p style="text-align: center; color: #64748b; font-style: italic;">"A nutrição não se resume a uma simples calculoterapia. É hora de você dominar o manejo metabólico real do seu paciente."</p>
+      </div>
+    </div>
   </section>
 
   <!-- BIO -->
@@ -98,6 +119,8 @@ import '../styles/theme-green.css';
       </div>
     </div>
   </section>
+
+  <VideoRecado />
 
   <Schedule variant="green" />
 

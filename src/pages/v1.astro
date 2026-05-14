@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import ProgressBar from '../components/ProgressBar.astro';
 import FormModal from '../components/FormModal.astro';
 import Schedule from '../components/Schedule.astro';
+import VideoRecado from '../components/VideoRecado.astro';
 import '../styles/theme-green.css';
 ---
 
@@ -71,7 +72,13 @@ import '../styles/theme-green.css';
           <li>✅ Manejo dietético no uso dos análogos de GLP-1</li>
           <li>✅ Canetas emagrecedoras: o que prescrever junto</li>
           <li>✅ Estratégias para além do déficit calórico</li>
-          <li>✅ Epigenética, inflamação e obesidade</li>
+          <li style="margin-top: 1rem; color: var(--color-primary); font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">Adesão Comportamental (Prof. Cássia):</li>
+          <li style="font-size: 0.9rem;">✅ Reduzir abandono precoce do paciente</li>
+          <li style="font-size: 0.9rem;">✅ Ajustar expectativas irreais sem desmotivá-lo</li>
+          <li style="font-size: 0.9rem;">✅ Preparar para autonomia pós medicação</li>
+          <li style="font-size: 0.9rem;">✅ Evitar recaídas após suspensão</li>
+          <li style="font-size: 0.9rem;">✅ Planos que o paciente consegue sustentar</li>
+          <li style="font-size: 0.9rem;">✅ Adesão sem depender de força de vontade</li>
           <li>✅ Caso clínico real: do diagnóstico à estratégia final</li>
         </ul>
       </div>
@@ -125,6 +132,8 @@ import '../styles/theme-green.css';
       </div>
     </div>
   </section>
+
+  <VideoRecado />
 
   <Schedule variant="green" />
 

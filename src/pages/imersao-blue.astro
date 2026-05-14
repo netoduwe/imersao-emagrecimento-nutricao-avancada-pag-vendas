@@ -4,6 +4,7 @@ import ProgressBar from '../components/ProgressBar.astro';
 import FormModal from '../components/FormModal.astro';
 import Hero from '../components/Hero.astro';
 import Schedule from '../components/Schedule.astro';
+import VideoRecado from '../components/VideoRecado.astro';
 import '../styles/theme-blue.css';
 ---
 
@@ -153,7 +154,15 @@ import '../styles/theme-blue.css';
         <div style="padding: 1.5rem;">
           <h4 style="font-size: 1.25rem; margin-bottom: 0.25rem; color: #FFF;">CÁSSIA HELENA</h4>
           <p style="color: var(--color-primary); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem;">NUTRICIONISTA E MESTRE EM NUTRIÇÃO</p>
-          <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.5;">Tema: Estratégias de Adesão Comportamental.</p>
+          <p style="color: var(--color-primary); font-size: 0.75rem; font-weight: 800; margin-bottom: 0.75rem;">CONTEÚDO DA PROF. CÁSSIA:</p>
+          <ul style="list-style: none; padding: 0; font-size: 0.8125rem; color: var(--color-text-light); line-height: 1.4; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li>✅ Conduzir o atendimento para reduzir abandono precoce do paciente</li>
+            <li>✅ Ajustar expectativas irreais do paciente sem desmotivá-lo</li>
+            <li>✅ Preparar o paciente para autonomia pós medicação injetável</li>
+            <li>✅ Evitar recaídas após suspensão da medicação</li>
+            <li>✅ Criar planos que o paciente consegue sustentar</li>
+            <li>✅ Aumentar adesão sem depender de força de vontade do paciente</li>
+          </ul>
         </div>
       </div>
       <!-- Jéssica -->
@@ -176,6 +185,8 @@ import '../styles/theme-blue.css';
       </div>
     </div>
   </section>
+
+  <VideoRecado />
 
   <Schedule variant="blue" />
   <!-- CONTEÚDO PROGRAMÁTICO -->

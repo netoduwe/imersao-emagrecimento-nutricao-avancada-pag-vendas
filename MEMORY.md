@@ -2,8 +2,17 @@
 
 **Última Atualização:** 13/05/2026
 
-## Mudança para LOTE 03 — 13/05/2026
-- Atualizado de **LOTE 02** para **LOTE 03** em todos os componentes (`Layout`, `PriceCard`, `ProgressBar`) e páginas (`v5`).
+## Integração de Vídeos de Convite — 14/05/2026
+- Criado o componente `VideoRecado.astro` para exibir os convites (YouTube Shorts) das Profas. Cássia e Jéssica em formato vertical (9:16).
+- Vídeos integrados nas páginas: `imersao`, `imersao-blue`, `v1`, `v2`, `v3`, `v4`, `v5` (inline) e `v6`.
+- Estilização focada em mobile-first, com cards responsivos e sombra/glassmorphism sutil.
+
+## Atualização de Conteúdo (Prof. Cássia) — 13/05/2026
+- Adicionados os bullet points detalhados do conteúdo da Prof. Cássia Helena em todas as páginas de venda (`imersao`, `v1`, `v2`, `v3`, `v4`, `v5`, `v6`).
+- **Bullets:** Redução de abandono, ajuste de expectativas, autonomia pós medicação, prevenção de recaídas, planos sustentáveis e adesão sem força de vontade.
+
+## Alteração de Preço — 13/05/2026
+- Ajustado o preço de **R$24,90** para **R$29,90** em todas as variações de páginas de venda e componentes.
 
 
 ## Variação de Urgência (Última Semana) — 09/05/2026

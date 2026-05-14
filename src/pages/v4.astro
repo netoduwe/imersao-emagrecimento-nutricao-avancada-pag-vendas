@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import ProgressBar from '../components/ProgressBar.astro';
 import FormModal from '../components/FormModal.astro';
+import VideoRecado from '../components/VideoRecado.astro';
 import '../styles/theme-green.css';
 ---
 
@@ -97,9 +98,19 @@ import '../styles/theme-green.css';
           <span>🧠</span>
           <span>Aspectos neuroendócrinos da obesidade</span>
         </div>
-        <div class="conteudo-item">
-          <span>🛠️</span>
-          <span>Estratégias de adesão comportamental</span>
+        <div class="conteudo-item" style="grid-column: span 1; height: auto; flex-direction: column; align-items: flex-start; gap: 0.5rem; padding: 1.5rem;">
+          <div style="display: flex; gap: 0.75rem; align-items: center; font-weight: 800; color: var(--color-primary);">
+            <span>🛠️</span>
+            <span>Adesão Comportamental (Prof. Cássia)</span>
+          </div>
+          <ul style="list-style: none; padding: 0; font-size: 0.75rem; font-weight: 400; color: var(--color-text-light); line-height: 1.3; display: flex; flex-direction: column; gap: 0.35rem;">
+            <li>✅ Reduzir abandono precoce</li>
+            <li>✅ Ajustar expectativas irreais</li>
+            <li>✅ Autonomia pós medicação</li>
+            <li>✅ Evitar recaídas pós suspensão</li>
+            <li>✅ Planos sustentáveis</li>
+            <li>✅ Adesão sem força de vontade</li>
+          </ul>
         </div>
         <div class="conteudo-item">
           <span>📊</span>
@@ -136,6 +147,8 @@ import '../styles/theme-green.css';
       </div>
     </div>
   </section>
+
+  <VideoRecado />
 
   <!-- PREÇOS -->
   <section id="preco" style="background:var(--color-bg);padding:var(--space-xl) var(--space-sm);">
