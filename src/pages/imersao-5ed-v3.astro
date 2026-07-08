@@ -680,21 +680,55 @@ const PRICE_VIP = 'R$ 147,00';
     --green: #22c55e;
   }
 
-  /* Override basic theme values to force premium dark theme on V3 */
+  /* Override basic theme values to force premium dark theme on V3 and add protective padding bottom */
   :global(body) {
     background-color: var(--bg-dark) !important;
     color: var(--text-white) !important;
     font-family: 'Inter', sans-serif;
+    padding-bottom: 120px !important;
+  }
+  @media (max-width: 1024px) {
+    :global(body) {
+      padding-bottom: 160px !important;
+    }
+  }
+
+  /* Override Layout Header and Urgency Strip for V3 theme (Dark & Red) */
+  :global(.urgency-strip) {
+    background: #000000 !important;
+    border-bottom: 1.5px solid var(--red) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+  }
+  :global(#countdown) {
+    color: var(--red) !important;
   }
   :global(.main-header) {
-    background-color: rgba(11, 12, 10, 0.95) !important;
+    background-color: #0b0c0a !important;
     border-bottom: 1px solid var(--border) !important;
   }
   :global(.main-header .logo) {
     color: #ffffff !important;
   }
+  :global(.main-header .logo .green) {
+    color: var(--red) !important;
+  }
   :global(.main-header .desktop-nav a) {
     color: var(--text-muted) !important;
+  }
+  :global(.main-header .desktop-nav a:hover) {
+    color: var(--red) !important;
+  }
+  :global(.main-header .btn-nav) {
+    background: var(--red) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3) !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+  }
+  :global(.main-header .btn-nav:hover) {
+    background: var(--red-hover) !important;
+    transform: translateY(-1px) !important;
   }
 
   .section-badge {
