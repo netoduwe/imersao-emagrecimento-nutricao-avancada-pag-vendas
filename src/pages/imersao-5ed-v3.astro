@@ -161,7 +161,7 @@ const PRICE_VIP = 'R$ 147,00';
   <section class="section-pergunta">
     <div class="container text-center">
       <h2 class="pergunta-headline">
-        O mercado de nutrição está migrando para tratamentos de alta performance e manejo de novos fármacos, inclusive quem atende apenas emagrecimento básico. Por quê?
+        O mercado de nutrição está migrando para tratamentos de alta performance e manejo de novos fármacos, inclusive quem atende apenas ememagrecimento básico. Por quê?
       </h2>
     </div>
   </section>
@@ -171,7 +171,7 @@ const PRICE_VIP = 'R$ 147,00';
        ══════════════════════════════════════ -->
   <section class="section-timeline">
     <div class="container timeline-grid">
-      <!-- Left side: vertical line and Ney photo -->
+      <!-- Left side: vertical line and Ney photo (STICKY TRIGGER) -->
       <div class="timeline-visual-side">
         <img src="/images/ney-clinica-otimizado.webp" alt="Ney Felipe" class="timeline-speaker-photo" />
         <div class="timeline-line-container">
@@ -219,12 +219,18 @@ const PRICE_VIP = 'R$ 147,00';
   </section>
 
   <!-- ══════════════════════════════════════
-       NOSSOS RESULTADOS (CARDS DE CASOS CLÍNICOS)
+       NOSSOS RESULTADOS (SPLIT SCROLL EFFECT FOR TITLE)
        ══════════════════════════════════════ -->
-  <section class="section-resultados">
+  <section class="section-resultados" id="secao-resultados-anchor">
     <div class="container">
       <div class="section-badge badge-center">CASOS REAIS</div>
-      <h2 class="section-title text-center">Nossos Resultados Clínicos</h2>
+      
+      <!-- Split-Text Scroll Title Container -->
+      <div class="split-title-container" id="split-title-trigger">
+        <span class="split-left" id="split-text-left">Nossos</span>
+        <span class="split-right" id="split-text-right">Resultados</span>
+      </div>
+      
       <p class="section-sub text-center" style="max-width: 600px; margin: 0 auto 40px;">
         Exemplos reais de evolução e sucesso terapêutico no consultório.
       </p>
@@ -267,7 +273,7 @@ const PRICE_VIP = 'R$ 147,00';
   </section>
 
   <!-- ══════════════════════════════════════
-       O QUE VOCÊ VAI APRENDER (7 MÓDULOS)
+       O QUE VOCÊ VAI APRENDER (MÓDULOS DE MASKING/REVEALING)
        ══════════════════════════════════════ -->
   <section class="section-modulos">
     <div class="container">
@@ -530,13 +536,15 @@ const PRICE_VIP = 'R$ 147,00';
      SCRIPTS
      ══════════════════════════════════════ -->
 <script>
-  // FAQ Accordion
+  // FAQ Accordion (Rotate 45 deg added)
   document.querySelectorAll('.faq-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item') as HTMLElement;
       const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
+      // Fechar todos
       document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('active');
         const b = i.querySelector('.faq-btn');
         const a = i.querySelector('.faq-answer') as HTMLElement;
         const ic = i.querySelector('.faq-icon');
@@ -545,12 +553,14 @@ const PRICE_VIP = 'R$ 147,00';
         if (ic) ic.textContent = '+';
       });
 
+      // Abrir o clicado
       if (!isOpen && item) {
+        item.classList.add('active');
         const answer = item.querySelector('.faq-answer') as HTMLElement;
         const icon = item.querySelector('.faq-icon');
         btn.setAttribute('aria-expanded', 'true');
         if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
-        if (icon) icon.textContent = '−';
+        if (icon) icon.textContent = '+'; // Keep "+" because rotate (45deg) transforms it to "x"
       }
     });
   });
@@ -616,6 +626,40 @@ const PRICE_VIP = 'R$ 147,00';
         if (idx > 0) dots[idx]?.classList.remove('active');
       }
     });
+  });
+
+  // SPLIT-TEXT SCROLL EFFECT (Nossos Resultados section)
+  const splitTrigger = document.getElementById('split-title-trigger');
+  const splitLeft = document.getElementById('split-text-left');
+  const splitRight = document.getElementById('split-text-right');
+  
+  window.addEventListener('scroll', () => {
+    if (!splitTrigger) return;
+    const rect = splitTrigger.getBoundingClientRect();
+    const viewHeight = window.innerHeight;
+    
+    // Start splitting when trigger enters the viewport
+    if (rect.top < viewHeight && rect.bottom > 0) {
+      const scrollProgress = (viewHeight - rect.top) / (viewHeight + rect.height);
+      const maxTranslate = 140; // max split distance in pixels
+      const currentTranslate = Math.min(scrollProgress * maxTranslate, maxTranslate);
+      
+      if (splitLeft) splitLeft.style.transform = `translateX(-${currentTranslate}px)`;
+      if (splitRight) splitRight.style.transform = `translateX(${currentTranslate}px)`;
+    }
+  });
+
+  // MASKING / REVEALING OBSERVER (O que você vai aprender modules)
+  const moduleObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  document.querySelectorAll('.modulo-item').forEach(item => {
+    moduleObserver.observe(item);
   });
 </script>
 
@@ -1148,12 +1192,33 @@ const PRICE_VIP = 'R$ 147,00';
   }
 
   /* ══════════════════════════
-     NOSSOS RESULTADOS
+     NOSSOS RESULTADOS & SPLIT EFFECT
   ══════════════════════════ */
   .section-resultados {
-    padding: 80px 0;
+    padding: 100px 0;
     background: #0b0c0a;
     border-bottom: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .split-title-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    font-size: clamp(32px, 4.5vw, 54px);
+    font-weight: 900;
+    color: #ffffff;
+    position: relative;
+    width: 100%;
+    margin-bottom: 24px;
+    white-space: nowrap;
+    will-change: transform;
+  }
+
+  .split-left, .split-right {
+    display: inline-block;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
   }
 
   .resultados-grid {
@@ -1211,7 +1276,7 @@ const PRICE_VIP = 'R$ 147,00';
   }
 
   /* ══════════════════════════
-     O QUE VOCÊ VAI APRENDER (MÓDULOS)
+     O QUE VOCÊ VAI APRENDER (MASKING / REVEALING)
   ══════════════════════════ */
   .section-modulos {
     padding: 80px 0;
@@ -1231,6 +1296,15 @@ const PRICE_VIP = 'R$ 147,00';
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  .modulo-item.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .modulo-header {
@@ -1512,7 +1586,7 @@ const PRICE_VIP = 'R$ 147,00';
   }
 
   /* ══════════════════════════
-     FAQ Sanfona (Accordion)
+     FAQ Sanfona (Accordion + Smooth Rotate Icon)
   ══════════════════════════ */
   .section-faq {
     padding: 80px 0;
@@ -1526,6 +1600,10 @@ const PRICE_VIP = 'R$ 147,00';
     border: 1px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .faq-item.active {
+    border-color: var(--red);
   }
   .faq-btn {
     display: flex;
@@ -1550,6 +1628,11 @@ const PRICE_VIP = 'R$ 147,00';
     font-weight: 300;
     flex-shrink: 0;
     line-height: 1;
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
   }
   .faq-answer {
     max-height: 0;
