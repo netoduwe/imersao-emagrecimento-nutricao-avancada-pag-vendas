@@ -31,10 +31,10 @@ const PRICE_VIP = 'R$ 147,00';
             5ª Edição · Imersão em Emagrecimento
           </div>
           
-          <!-- Date Pill (From print 01 style) -->
+          <!-- Date Pill (From print 01 style with high legibility white text) -->
           <div class="info-bar">
             <div class="info-item">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="calendar-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="calendar-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
               <span>{EVENT_DATE}</span>
             </div>
             <div class="info-sep"></div>
@@ -60,7 +60,7 @@ const PRICE_VIP = 'R$ 147,00';
           Manejo de canetas emagrecedoras, compostos bioativos e prática clínica além do déficit calórico — com Ney Felipe e Jéssica Wszolek.
         </p>
 
-        <!-- Price Box (EXACTLY matching Image 3 reference) -->
+        <!-- Price Box (EXACTLY matching Image 3 reference with 380px size) -->
         <div class="hero-v2-price-container">
           <div class="hero-v2-price-card">
             <!-- Badge overlapping the border -->
@@ -80,7 +80,7 @@ const PRICE_VIP = 'R$ 147,00';
 
         <!-- Guarantee Text -->
         <div class="hero-v2-guarantee">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           Garantia incondicional de 7 dias · Sem burocracia
         </div>
 
@@ -316,21 +316,53 @@ const PRICE_VIP = 'R$ 147,00';
       <div class="section-badge badge-center">PROVAS REAIS</div>
       <h2 class="section-title text-center">Resultados e Avaliação da Última Edição</h2>
       <p class="section-sub text-center" style="max-width: 600px; margin: 0 auto 40px;">
-        Veja a opinião real de quem esteve presente no evento anterior.
+        Veja o feedback oficial coletado ao final do último evento.
       </p>
 
-      <!-- Stat card for Google Forms results -->
+      <!-- Stat card for Google Forms results with modern premium styling -->
       <div class="satisfaction-metrics-block">
         <div class="stat-main-card">
           <div class="stat-percentage">70.1%</div>
           <div class="stat-desc">
             <h3>"Superou muito minhas expectativas"</h3>
-            <p>De acordo com a pesquisa de avaliação geral pós-evento respondida por <strong>174 participantes reais</strong> da última edição.</p>
+            <p>Pesquisa oficial respondida de forma voluntária por <strong>174 participantes</strong> da última edição da Imersão.</p>
+            
+            <div class="stat-chart-container">
+              <div class="stat-bar-item">
+                <span class="bar-label">Superou muito minhas expectativas (70.1%)</span>
+                <div class="bar-track">
+                  <div class="bar-fill-actual" style="width: 70.1%; background: var(--green);"></div>
+                </div>
+              </div>
+              <div class="stat-bar-item">
+                <span class="bar-label">Atendeu minhas expectativas (29.3%)</span>
+                <div class="bar-track">
+                  <div class="bar-fill-actual" style="width: 29.3%; background: #a78bfa;"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="stat-mini-chart">
-            <!-- Representing Google Forms colors -->
-            <div class="stat-chart-bar" style="background: #2563eb; width: 70.1%;" title="Superou: 70.1%"></div>
-            <div class="stat-chart-bar" style="background: #dc2626; width: 29.3%;" title="Atendeu: 29.3%"></div>
+        </div>
+      </div>
+
+      <!-- Real Screenshots from drive (Authentic proof requested by user) -->
+      <div class="real-screenshots-block">
+        <h3 class="section-subtitle-small text-center">Prints reais de quem participou</h3>
+        <div class="screenshots-grid">
+          <div class="screenshot-card">
+            <img src="/images/depoimentos/Screenshot_1.png" alt="Depoimento 1" class="screenshot-img" loading="lazy" />
+          </div>
+          <div class="screenshot-card">
+            <img src="/images/depoimentos/Screenshot_2.png" alt="Depoimento 2" class="screenshot-img" loading="lazy" />
+          </div>
+          <div class="screenshot-card">
+            <img src="/images/depoimentos/Screenshot_3.png" alt="Depoimento 3" class="screenshot-img" loading="lazy" />
+          </div>
+          <div class="screenshot-card">
+            <img src="/images/depoimentos/Screenshot_14.png" alt="Depoimento 4" class="screenshot-img" loading="lazy" />
+          </div>
+          <div class="screenshot-card">
+            <img src="/images/depoimentos/Screenshot_23.png" alt="Depoimento 5" class="screenshot-img" loading="lazy" />
           </div>
         </div>
       </div>
@@ -531,7 +563,7 @@ const PRICE_VIP = 'R$ 147,00';
 
       <!-- Garantia de 7 dias centralizada (CRO: reduz ansiedade perto do preço) -->
       <div class="garantia-global-block">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         <div>
           <strong>Sua compra está protegida pela Garantia de 7 dias</strong>
           <p>Você pode garantir sua vaga agora, assistir à imersão e, se sentir que o conteúdo não é prático ou aplicável à sua realidade, basta nos enviar um e-mail para receber 100% do valor de volta. Sem burocracia.</p>
@@ -771,8 +803,8 @@ const PRICE_VIP = 'R$ 147,00';
      HERO V2 (Reference Style)
   ══════════════════════════ */
   .hero-v2-section {
-    /* No heavy dark-color filters over the background to keep Ney's face clean */
-    background: linear-gradient(to right, rgba(9, 19, 11, 0.95) 0%, rgba(9, 19, 11, 0.85) 45%, rgba(9, 19, 11, 0.1) 100%), url('/images/background-pagina-verde-hero.png');
+    /* Precise fade for background so that Ney's face is 100% clean and well lit */
+    background: linear-gradient(to right, rgba(9, 19, 11, 0.98) 0%, rgba(9, 19, 11, 0.9) 45%, rgba(9, 19, 11, 0.1) 100%), url('/images/background-pagina-verde-hero.png');
     background-size: cover;
     background-position: top right;
     background-repeat: no-repeat;
@@ -786,7 +818,7 @@ const PRICE_VIP = 'R$ 147,00';
 
   .hero-v2-grid {
     display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 48px;
     align-items: center;
   }
@@ -825,13 +857,13 @@ const PRICE_VIP = 'R$ 147,00';
     display: inline-block;
   }
 
-  /* Date Pill (Print 01 Style with borders) */
+  /* Date Pill (Print 01 Style with borders and white text) */
   .info-bar {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     padding: 8px 16px;
     border-radius: 6px;
   }
@@ -841,10 +873,10 @@ const PRICE_VIP = 'R$ 147,00';
     gap: 8px;
     font-size: 12px;
     font-weight: 700;
-    color: var(--text-light);
+    color: #ffffff;
   }
   .info-item svg { color: var(--green); }
-  .info-sep { width: 1px; height: 14px; background: var(--border); }
+  .info-sep { width: 1px; height: 14px; background: rgba(255, 255, 255, 0.15); }
 
   .hero-v2-headline {
     font-size: clamp(30px, 4.2vw, 50px);
@@ -867,14 +899,14 @@ const PRICE_VIP = 'R$ 147,00';
     margin-bottom: 32px;
   }
 
-  /* Price Container Group (Image 3 layout) */
+  /* Price Container Group (Image 3 layout - 380px size) */
   .hero-v2-price-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 18px;
     margin-bottom: 24px;
     width: 100%;
-    max-width: 320px;
+    max-width: 380px;
     position: relative;
   }
 
@@ -883,7 +915,7 @@ const PRICE_VIP = 'R$ 147,00';
     background-color: #051b08;
     border: 1.5px solid var(--green);
     border-radius: 8px;
-    padding: 24px 20px 20px;
+    padding: 24px 24px 20px;
     position: relative;
     text-align: left;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -893,7 +925,7 @@ const PRICE_VIP = 'R$ 147,00';
   .price-card-badge {
     position: absolute;
     top: -14px;
-    left: 16px;
+    left: 20px;
     background-color: #86efac;
     color: #14532d;
     font-size: 11px;
@@ -937,14 +969,14 @@ const PRICE_VIP = 'R$ 147,00';
     color: #022c0a;
     font-weight: 800;
     font-size: 17px;
-    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.35);
+    box-shadow: 0 12px 30px rgba(34, 197, 94, 0.45);
     transition: all 0.3s ease;
     text-decoration: none;
   }
 
   .btn-v2-hero:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(34, 197, 94, 0.5);
+    box-shadow: 0 15px 35px rgba(34, 197, 94, 0.55);
     background: linear-gradient(135deg, #22c55e 0%, #86efac 100%);
   }
 
@@ -1240,23 +1272,23 @@ const PRICE_VIP = 'R$ 147,00';
   ══════════════════════════ */
   .satisfaction-metrics-block {
     max-width: 800px;
-    margin: 0 auto 40px;
+    margin: 0 auto 48px;
   }
 
   .stat-main-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(34, 197, 94, 0.25);
     border-radius: var(--radius);
     padding: 32px;
     display: flex;
     align-items: center;
     gap: 32px;
     position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   }
 
   .stat-percentage {
-    font-size: 64px;
+    font-size: 72px;
     font-weight: 900;
     color: var(--green);
     line-height: 1;
@@ -1264,31 +1296,94 @@ const PRICE_VIP = 'R$ 147,00';
     flex-shrink: 0;
   }
 
+  .stat-desc {
+    flex-grow: 1;
+  }
+
   .stat-desc h3 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 8px;
+    letter-spacing: -0.02em;
   }
 
   .stat-desc p {
     font-size: 14px;
     color: var(--text-light);
     line-height: 1.6;
+    margin-bottom: 20px;
   }
 
-  .stat-mini-chart {
+  .stat-chart-container {
     display: flex;
-    height: 12px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .stat-bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .bar-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+
+  .bar-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 99px;
     overflow: hidden;
-    width: 100%;
-    margin-top: 16px;
-    background: rgba(255,255,255,0.05);
   }
 
-  .stat-chart-bar {
+  .bar-fill-actual {
     height: 100%;
+    border-radius: 99px;
+  }
+
+  /* Real Screenshots Section styling */
+  .real-screenshots-block {
+    margin-bottom: 60px;
+  }
+
+  .section-subtitle-small {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 28px;
+  }
+
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .screenshot-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s;
+  }
+
+  .screenshot-card:hover {
+    transform: scale(1.05);
+  }
+
+  .screenshot-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
   }
 
   /* ══════════════════════════
@@ -1662,6 +1757,7 @@ const PRICE_VIP = 'R$ 147,00';
     .professores-grid { grid-template-columns: 1fr; }
     .pricing-container-grid { grid-template-columns: 1fr; max-width: 500px; }
     .stat-main-card { flex-direction: column; text-align: center; gap: 16px; }
+    .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 768px) {
@@ -1671,5 +1767,6 @@ const PRICE_VIP = 'R$ 147,00';
     .grade-block { grid-template-columns: 48px 24px 1fr; gap: 0 10px; }
     .grade-time { font-size: 12px; }
     .professor-card { flex-direction: column; text-align: center; }
+    .screenshots-grid { grid-template-columns: 1fr; }
   }
 </style>
