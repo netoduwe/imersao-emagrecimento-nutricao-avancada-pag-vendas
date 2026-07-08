@@ -125,6 +125,17 @@
 - **Preços (Básico vs VIP):** Restaurados ambos os ingressos lado a lado no final da página com a ProgressBar de urgência integrada.
 - **Build:** OK · 13 páginas geradas no total.
 
+## Variação de Teste: Imersão 5ª Edição V3 (A/B Test - Dark & Red) — 08/07/2026
+- **Rota:** `/imersao-5ed-v3`
+- **Arquivo:** `src/pages/imersao-5ed-v3.astro`
+- **Tema:** Dark & Red (fundo preto com detalhes e botões em vermelho vivo).
+- **Subheadline Especial:** *"Um dia inteiro destravando o raciocínio clínico que você precisa para atender com segurança e entregar resultados duradouros para seus pacientes."*
+- **Efeitos de Animação e Interação:**
+  - **Sticky Bottom Bar:** Barra fixada ao rodapé que desliza de forma suave (`translateY` via CSS + class toggle em JS) quando o scroll do usuário passa de 450px. Mostra a pílula de compra com preço promocional, porcentagem de escassez e barra de progresso.
+  - **Linha do Tempo Fisiológica Dinâmica:** Conforme o scroll desce na seção de Timeline, a linha vertical esquerda é "preenchida" de vermelho sutilmente e os pontos correspondentes são ativados.
+  - **Provas com Lightbox Modal:** Grid com os 5 depoimentos reais com efeito hover de ampliação e zoom completo e nítido ao clicar.
+- **Build:** OK · 14 páginas geradas no total.
+
 ## Página de Check-in Interativa — 12/05/2026
 - **Check-in Virtual:** Criada a rota `/checkin` (`src/pages/checkin.astro`) para gerar um ingresso personalizado estilo neon para compartilhamento.
 - **Funcionalidades:** Upload/Captura de foto de perfil, inserção de nome com limite de caracteres, e geração em client-side utilizando HTML5 Canvas (não requer servidor de imagem).
