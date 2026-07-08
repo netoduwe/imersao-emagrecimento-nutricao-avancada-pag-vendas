@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModal.astro';
+import ProgressBar from '../components/ProgressBar.astro';
 import '../styles/theme-green.css';
 
 // Dados do evento
@@ -8,7 +9,8 @@ const EVENT_DATE = '01 de Agosto de 2026';
 const EVENT_TIME = '9h às 18h';
 const EVENT_FORMAT = 'Online via Zoom';
 const LOTE = 'LOTE ZERO';
-const PRICE = 'R$ 19,90';
+const PRICE_BASICO = 'R$ 19,90';
+const PRICE_VIP = 'R$ 147,00';
 ---
 
 <Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="green">
@@ -18,7 +20,7 @@ const PRICE = 'R$ 19,90';
        ══════════════════════════════════════ -->
   <section class="hero5-section" id="imersao">
     <div class="container hero5-grid">
-      <!-- LEFT -->
+      <!-- LEFT (Tudo o que o usuário lê sobre a oferta) -->
       <div class="hero5-left">
         <!-- Badge de evento -->
         <div class="event-badge">
@@ -55,17 +57,17 @@ const PRICE = 'R$ 19,90';
 
         <!-- CTA + Preço no hero (CRO: preço visível antes do clique) -->
         <div class="hero5-cta-block">
-          <button class="btn-hero-cta" data-form="normal" id="hero-cta-btn">
-            GARANTIR INGRESSO LOTE ZERO
+          <a href="#preco" class="btn-hero-cta" id="hero-cta-btn">
+            VER OPÇÕES DE INGRESSO
             <div class="btn-arrow">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </div>
-          </button>
+          </a>
 
           <div class="hero5-price-tag">
             <span class="price-lote">{LOTE}</span>
-            <span class="price-val">{PRICE}</span>
-            <span class="price-pix">ou Pix · Cartão parcelado disponível</span>
+            <span class="price-val">A partir de {PRICE_BASICO}</span>
+            <span class="price-pix">ou Pix · Opção VIP disponível com Gravação</span>
           </div>
 
           <div class="hero5-guarantee-line">
@@ -75,51 +77,15 @@ const PRICE = 'R$ 19,90';
         </div>
       </div>
 
-      <!-- RIGHT — visual / palestrantes -->
-      <div class="hero5-right">
-        <div class="speakers-card">
-          <div class="speakers-label">Seus professores</div>
-          <div class="speakers-grid">
-            <div class="speaker-item">
-              <img
-                src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png"
-                alt="Ney Felipe"
-                class="speaker-photo"
-                loading="eager"
-              />
-              <div class="speaker-name">Ney Felipe</div>
-              <div class="speaker-role">Nutricionista • 19 anos de clínica</div>
-            </div>
-            <div class="speaker-item">
-              <img
-                src="https://nutrineyfelipe.com/wp-content/uploads/2024/02/Frame-4392.svg"
-                alt="Jéssica Wszolek"
-                class="speaker-photo speaker-jessica"
-                loading="eager"
-              />
-              <div class="speaker-name">Jéssica Wszolek</div>
-              <div class="speaker-role">Especialista em GLP-1</div>
-            </div>
-          </div>
-
-          <!-- Mini proof (CRO: prova perto do ponto de decisão) -->
-          <div class="mini-proof">
-            <div class="proof-avatars">
-              <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-02.png" alt="" class="proof-avatar" />
-              <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-04.png" alt="" class="proof-avatar" />
-              <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-06.png" alt="" class="proof-avatar" />
-            </div>
-            <span class="proof-text"><strong>+3.000 nutricionistas</strong> já treinaram com Ney</span>
-          </div>
-        </div>
-      </div>
+      <!-- RIGHT (Vazio para que a foto do Ney no background verde do layout não seja obstruída) -->
+      <div class="hero5-right"></div>
     </div>
 
     <!-- Urgency bar -->
     <div class="container">
       <div class="urgency-strip-hero">
         <div class="strip-dot"></div>
-        <span>Vendas abertas · Lote zero com menor preço · Vagas limitadas</span>
+        <span>Vendas abertas · Lote zero ativo · Vagas limitadas por sala</span>
         <div class="strip-dot"></div>
       </div>
     </div>
@@ -137,27 +103,27 @@ const PRICE = 'R$ 19,90';
 
         <ul class="dor-list">
           <li>
-            <span class="dor-x">✗</span>
+            <span class="dor-x">✓</span>
             <span>Paciente não adere ao plano alimentar e você não sabe por quê</span>
           </li>
           <li>
-            <span class="dor-x">✗</span>
+            <span class="dor-x">✓</span>
             <span>Insegurança para conduzir a consulta além das calorias</span>
           </li>
           <li>
-            <span class="dor-x">✗</span>
+            <span class="dor-x">✓</span>
             <span>Não sabe como periodizar o acompanhamento corretamente</span>
           </li>
           <li>
-            <span class="dor-x">✗</span>
+            <span class="dor-x">✓</span>
             <span>Desatualizado sobre canetas emagrecedoras (GLP-1) e compostos bioativos</span>
           </li>
           <li>
-            <span class="dor-x">✗</span>
+            <span class="dor-x">✓</span>
             <span>Dificuldade para manejar pacientes pós-medicação sem recaída</span>
           </li>
           <li>
-            <span class="dor-x">✗</span>
+            <span class="dor-x">✓</span>
             <span>Falta de ferramentas práticas para a consulta de emagrecimento</span>
           </li>
         </ul>
@@ -174,7 +140,6 @@ const PRICE = 'R$ 19,90';
 
   <!-- ══════════════════════════════════════
        MECANISMO — POR QUE ESSA IMERSÃO FUNCIONA
-       (CRO: explicar o mecanismo, não só benefícios)
        ══════════════════════════════════════ -->
   <section class="section-mecanismo">
     <div class="container mecanismo-inner">
@@ -218,15 +183,49 @@ const PRICE = 'R$ 19,90';
   </section>
 
   <!-- ══════════════════════════════════════
-       GRADE DE CONTEÚDO — SCHEDULE
+       TIME / PALESTRANTES
        ══════════════════════════════════════ -->
-  <section class="section-grade" id="time">
+  <section class="section-professores" id="time">
+    <div class="container">
+      <div class="section-badge badge-center">PALESTRANTES</div>
+      <h2 class="section-title text-center">Quem estará no palco virtual?</h2>
+      <p class="section-sub text-center" style="max-width: 600px; margin: 0 auto 48px;">
+        Aprenda com quem está no campo de batalha clínico diariamente.
+      </p>
+
+      <div class="professores-grid">
+        <!-- Ney -->
+        <div class="professor-card">
+          <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" class="prof-photo" />
+          <div class="prof-info">
+            <h3>NEY FELIPE</h3>
+            <span class="prof-tag">Nutricionista e Mestre em Biol. Molecular</span>
+            <p>Pioneiro da Nutrição Funcional Esportiva no Brasil, atua há 19 anos em consultório ajudando milhares de pacientes e profissionais.</p>
+          </div>
+        </div>
+
+        <!-- Jéssica -->
+        <div class="professor-card">
+          <img src="/images/jessica.webp" alt="Jéssica Wszolek" class="prof-photo" />
+          <div class="prof-info">
+            <h3>JÉSSICA WSZOLEK</h3>
+            <span class="prof-tag">Professora Convidada</span>
+            <p>Especialista e referência em manejo dietético integrado ao uso de análogos de GLP-1 e modulação do emagrecimento.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       GRADE DE CONTEÚDO
+       ══════════════════════════════════════ -->
+  <section class="section-grade">
     <div class="container">
       <div class="section-badge badge-center">PROGRAMAÇÃO</div>
       <h2 class="section-title text-center">O que você vai aprender no dia {EVENT_DATE}</h2>
 
       <div class="grade-timeline">
-
         <div class="grade-block">
           <div class="grade-time">09h</div>
           <div class="grade-line">
@@ -296,13 +295,12 @@ const PRICE = 'R$ 19,90';
             </ul>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       DEPOIMENTOS — próximos ao preço (CRO)
+       DEPOIMENTOS — Próximos ao preço (CRO)
        ══════════════════════════════════════ -->
   <section class="section-depos">
     <div class="container">
@@ -350,83 +348,172 @@ const PRICE = 'R$ 19,90';
   </section>
 
   <!-- ══════════════════════════════════════
-       OFERTA + PREÇO — CRO completo
-       (prova antes do preço, sem susto, Pix visível)
+       OFERTA + PREÇO — Básico vs VIP (CRO)
        ══════════════════════════════════════ -->
   <section class="section-oferta" id="preco">
-    <div class="container oferta-inner">
-
-      <div class="section-badge badge-center">SUA VAGA</div>
-      <h2 class="section-title text-center">Garanta seu ingresso agora</h2>
+    <div class="container">
+      <div class="section-badge badge-center">ESCOLHA SEU INGRESSO</div>
+      <h2 class="section-title text-center">Ingresso Básico vs Ingresso VIP</h2>
       <p class="section-sub text-center" style="max-width:600px;margin:0 auto 48px;">
-        Você está no Lote Zero — o menor preço da edição. Sem pegadinha, sem contador falso.
+        Lote Zero ativo por tempo limitado. Escolha a melhor opção para a sua carreira.
       </p>
 
-      <div class="offer-card-wrapper">
-        <div class="offer-card">
-
-          <!-- Tag de lote -->
-          <div class="offer-lote-tag">{LOTE} · {EVENT_DATE}</div>
-
-          <!-- O que inclui -->
-          <h3 class="offer-includes-title">O que está incluído no seu ingresso</h3>
-          <ul class="offer-includes">
+      <div class="pricing-container-grid">
+        
+        <!-- Ingresso Básico -->
+        <div class="pricing-card">
+          <div class="card-header">
+            <h3>Ingresso Básico</h3>
+            <p>Ideal para assistir ao vivo</p>
+          </div>
+          
+          <div class="card-divider"></div>
+          
+          <ul class="card-features">
             <li>
-              <span class="check-green">✓</span>
-              <span>Acesso ao dia inteiro de Imersão ao vivo via Zoom (9h às 18h)</span>
+              <span class="feat-check">✓</span>
+              <span>Acesso ao dia de Imersão ao vivo via Zoom</span>
             </li>
             <li>
-              <span class="check-green">✓</span>
-              <span>Gravação disponível por 1 ano após o evento</span>
+              <span class="feat-check">✓</span>
+              <span>8 horas de conteúdo intenso</span>
             </li>
             <li>
-              <span class="check-green">✓</span>
-              <span>Certificado de participação (8 horas)</span>
+              <span class="feat-check">✓</span>
+              <span>Grupo exclusivo de participantes</span>
             </li>
             <li>
-              <span class="check-green">✓</span>
-              <span>Materiais e ferramentas práticas compartilhados no evento</span>
+              <span class="feat-check">✓</span>
+              <span>Materiais compartilhados na imersão</span>
             </li>
             <li>
-              <span class="check-green">✓</span>
-              <span>Acesso ao grupo exclusivo de participantes</span>
+              <span class="feat-check">✓</span>
+              <span>Mini Curso Fundamentos do Emagrecimento</span>
             </li>
           </ul>
 
-          <!-- Divider -->
-          <div class="offer-divider"></div>
+          <div class="card-divider"></div>
 
-          <!-- Preço sem susto -->
-          <div class="offer-price-block">
-            <div class="offer-price-label">Valor do ingresso</div>
-            <div class="offer-price-main">{PRICE}</div>
-            <div class="offer-price-detail">Pix • Cartão de crédito • Parcelado</div>
+          <div class="card-price-block">
+            <span class="old-price">De R$ 97,00</span>
+            <div class="current-price">{PRICE_BASICO}</div>
+            <span class="price-method">Pix ou Cartão</span>
           </div>
 
-          <!-- CTA -->
-          <button class="btn-offer-cta" data-form="normal" id="offer-cta-btn">
-            COMPRAR INGRESSO AGORA
-            <div class="btn-arrow">
+          <button class="btn-purchase" data-form="normal">
+            COMPRAR INGRESSO BÁSICO
+            <div class="purchase-arrow">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
             </div>
           </button>
 
-          <!-- Garantia próxima ao CTA (CRO: reduz ansiedade no ponto de decisão) -->
-          <div class="offer-guarantee">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <div>
-              <strong>Garantia incondicional de 7 dias</strong>
-              <p>Se por qualquer motivo não gostar, devolvemos 100% do valor. Sem questionamentos, sem burocracia.</p>
-            </div>
+          <div class="card-progress">
+            <ProgressBar variant="minimal" />
           </div>
 
+          <div class="secure-badge">
+            <span>COMPRA 100% SEGURA</span>
+            <div class="payment-icons">
+              <span class="pay-tag pix">PIX</span>
+              <span class="pay-tag visa">VISA</span>
+              <span class="pay-tag master">MASTER</span>
+              <span class="pay-tag card">BOLETO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ingresso VIP -->
+        <div class="pricing-card pricing-card--vip">
+          <div class="vip-highlight-badge">MAIS VANTAGENS</div>
+          <div class="card-header">
+            <h3>Ingresso VIP</h3>
+            <p class="text-glow">50% DE DESCONTO NO LOTE ZERO</p>
+          </div>
+          
+          <div class="card-divider"></div>
+          
+          <ul class="card-features">
+            <li>
+              <span class="feat-check feat-check--vip">✓</span>
+              <span><strong>Tudo do ingresso básico</strong></span>
+            </li>
+            <li>
+              <span class="feat-check feat-check--vip">✓</span>
+              <span><strong>Gravação do evento por 1 ano</strong></span>
+            </li>
+            <li>
+              <span class="feat-check feat-check--vip">✓</span>
+              <span>Certificado de participação de 8 horas</span>
+            </li>
+            <li>
+              <span class="feat-check feat-check--vip">✓</span>
+              <span>E-book Tópicos Avançados (R$ 99)</span>
+            </li>
+            <li>
+              <span class="feat-check feat-check--vip">✓</span>
+              <span>E-book "Me Formei, e agora?" (R$ 59)</span>
+            </li>
+            <li>
+              <span class="feat-check feat-check--vip">✓</span>
+              <span>E-book Desaprendendo a Dieta (R$ 39)</span>
+            </li>
+            <li>
+              <span class="feat-check feat-check--vip">✓</span>
+              <span>Ressaca do Evento (Encontro Extra no Zoom)</span>
+            </li>
+            <li>
+              <span class="feat-check feat-check--vip">✓</span>
+              <span><strong>Cashback integral</strong> na Formação/Pós</span>
+            </li>
+          </ul>
+
+          <div class="card-divider"></div>
+
+          <div class="card-price-block">
+            <span class="old-price">De R$ 297,00</span>
+            <span class="installment-label">POR 12x DE:</span>
+            <div class="current-price" style="color: var(--green);">R$ 15,20</div>
+            <span class="price-method">ou R$ 147,00 à vista</span>
+          </div>
+
+          <button class="btn-purchase btn-purchase--vip" data-form="vip">
+            COMPRAR INGRESSO VIP
+            <div class="purchase-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </button>
+
+          <div class="card-progress">
+            <ProgressBar variant="minimal" />
+          </div>
+
+          <div class="secure-badge">
+            <span>COMPRA 100% SEGURA</span>
+            <div class="payment-icons">
+              <span class="pay-tag pix">PIX</span>
+              <span class="pay-tag visa">VISA</span>
+              <span class="pay-tag master">MASTER</span>
+              <span class="pay-tag card">BOLETO</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Garantia de 7 dias centralizada (CRO: reduz ansiedade perto do preço) -->
+      <div class="garantia-global-block">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div>
+          <strong>Sua compra está protegida pela Garantia de 7 dias</strong>
+          <p>Você pode garantir sua vaga agora, assistir à imersão e, se sentir que o conteúdo não é prático ou aplicável à sua realidade, basta nos enviar um e-mail para receber 100% do valor de volta. Sem burocracia.</p>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       FAQ — foco em objeções reais (CRO)
+       FAQ
        ══════════════════════════════════════ -->
   <section class="section-faq">
     <div class="container faq-inner">
@@ -446,11 +533,11 @@ const PRICE = 'R$ 19,90';
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            <span>Vou conseguir assistir ao vivo?</span>
+            <span>Vou conseguir assistir ao vivo? Fica gravado?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>O evento é ao vivo no Zoom em {EVENT_DATE}, das {EVENT_TIME}. Se não puder estar ao vivo em algum bloco, a gravação completa fica disponível por 1 ano para assistir no seu ritmo.</p>
+            <p>A Imersão vai acontecer ao vivo no dia {EVENT_DATE} das {EVENT_TIME}. Se você garantir o <strong>Ingresso VIP</strong>, terá acesso completo às gravações da imersão por 1 ano em nossa plataforma para assistir no seu ritmo.</p>
           </div>
         </div>
 
@@ -476,11 +563,11 @@ const PRICE = 'R$ 19,90';
 
         <div class="faq-item">
           <button class="faq-btn" aria-expanded="false">
-            <span>Quais formas de pagamento?</span>
+            <span>Como funciona o Cashback do Ingresso VIP?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>Pix (com aprovação imediata) e cartão de crédito parcelado. O preço {PRICE} é referente ao Lote Zero — pode aumentar conforme os lotes avançam.</p>
+            <p>Ao adquirir o ingresso VIP (R$ 147), você recebe 100% desse valor revertido em desconto caso decida se matricular na Formação Nutrição Avançada completa ou na nossa Pós-Graduação Oficial.</p>
           </div>
         </div>
       </div>
@@ -493,13 +580,13 @@ const PRICE = 'R$ 19,90';
   <section class="section-cta-final">
     <div class="container cta-final-inner">
       <h2 class="cta-final-title">Sua próxima consulta de emagrecimento pode ser diferente.</h2>
-      <p class="cta-final-sub">Garante seu ingresso no Lote Zero antes que o preço suba.</p>
-      <button class="btn-final-cta" data-form="normal" id="final-cta-btn">
-        COMPRAR INGRESSO — {PRICE}
+      <p class="cta-final-sub">Garanta seu ingresso no Lote Zero antes que o preço suba.</p>
+      <a href="#preco" class="btn-final-cta">
+        ESCOLHER MEU INGRESSO
         <div class="btn-arrow">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
         </div>
-      </button>
+      </a>
       <div class="cta-final-guarantee">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Garantia de 7 dias · Pagamento seguro · Acesso imediato
@@ -595,7 +682,6 @@ const PRICE = 'R$ 19,90';
 
   /* ── BOTÕES ── */
   .btn-hero-cta,
-  .btn-offer-cta,
   .btn-final-cta {
     display: inline-flex;
     align-items: center;
@@ -615,9 +701,9 @@ const PRICE = 'R$ 19,90';
     cursor: pointer;
     box-shadow: 0 8px 24px rgba(22,163,74,0.35), inset 3px 3px 6px rgba(100,255,150,0.25);
     transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+    text-align: left;
   }
   .btn-hero-cta:hover,
-  .btn-offer-cta:hover,
   .btn-final-cta:hover {
     background-position: right top;
     transform: translateY(-2px) scale(1.01);
@@ -636,7 +722,6 @@ const PRICE = 'R$ 19,90';
     transition: transform 0.4s;
   }
   .btn-hero-cta:hover .btn-arrow,
-  .btn-offer-cta:hover .btn-arrow,
   .btn-final-cta:hover .btn-arrow { transform: rotate(45deg); }
 
   /* ══════════════════════════
@@ -653,7 +738,7 @@ const PRICE = 'R$ 19,90';
   }
   .hero5-grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 48px;
     align-items: center;
     margin-bottom: 48px;
@@ -760,8 +845,8 @@ const PRICE = 'R$ 19,90';
     letter-spacing: 0.06em;
   }
   .price-val {
-    font-size: 26px;
-    font-weight: 900;
+    font-size: 20px;
+    font-weight: 800;
     color: var(--text);
     letter-spacing: -0.03em;
   }
@@ -777,58 +862,10 @@ const PRICE = 'R$ 19,90';
     color: var(--text-light);
   }
 
-  /* Speakers card */
-  .hero5-right { display: flex; justify-content: center; }
-  .speakers-card {
-    background: white;
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-    border: 1px solid var(--border);
-    width: 100%;
-    max-width: 340px;
+  /* Right column left empty to not cover background face */
+  .hero5-right {
+    min-height: 380px;
   }
-  .speakers-label {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--text-muted);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  .speakers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-  .speaker-item { text-align: center; }
-  .speaker-photo {
-    width: 80px; height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-    border: 2px solid var(--border);
-    background: var(--bg);
-  }
-  .speaker-jessica { object-fit: contain; padding: 8px; }
-  .speaker-name { font-size: 13px; font-weight: 700; color: var(--text); }
-  .speaker-role { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
-
-  /* Mini proof */
-  .mini-proof {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--green-light);
-    border-radius: 12px;
-    padding: 12px 16px;
-  }
-  .proof-avatars { display: flex; }
-  .proof-avatar {
-    width: 28px; height: 28px;
-    border-radius: 50%;
-    border: 2px solid white;
-    margin-right: -8px;
-    object-fit: cover;
-    background: var(--bg);
-  }
-  .proof-text { font-size: 12px; color: #065F46; padding-left: 14px; line-height: 1.4; }
 
   /* Urgency strip */
   .urgency-strip-hero {
@@ -860,7 +897,7 @@ const PRICE = 'R$ 19,90';
   }
   .problema-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 64px;
     align-items: center;
   }
@@ -918,6 +955,7 @@ const PRICE = 'R$ 19,90';
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     text-align: left;
+    margin-top: 40px;
   }
   .mec-card {
     background: white;
@@ -949,11 +987,67 @@ const PRICE = 'R$ 19,90';
   .mec-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
 
   /* ══════════════════════════
+     PALESTRANTES / TIME
+  ══════════════════════════ */
+  .section-professores {
+    padding: 80px 0;
+    background: white;
+  }
+  .professores-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .professor-card {
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    padding: 24px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    align-items: center;
+  }
+  .prof-photo {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--bg);
+    flex-shrink: 0;
+    background: var(--bg);
+  }
+  .professor-card:last-child .prof-photo {
+    object-fit: cover;
+  }
+  .prof-info h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .prof-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+  }
+  .prof-info p {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+
+  /* ══════════════════════════
      GRADE / TIMELINE
   ══════════════════════════ */
   .section-grade {
     padding: 80px 0;
-    background: white;
+    background: var(--bg);
   }
   .grade-timeline {
     display: flex;
@@ -1040,7 +1134,7 @@ const PRICE = 'R$ 19,90';
   ══════════════════════════ */
   .section-depos {
     padding: 80px 0;
-    background: var(--bg);
+    background: white;
   }
   .depos-grid {
     display: grid;
@@ -1049,11 +1143,11 @@ const PRICE = 'R$ 19,90';
     margin-top: 40px;
   }
   .depo-card {
-    background: white;
+    background: #FAFAF9;
     border-radius: var(--radius);
     padding: 28px;
     border: 1px solid var(--border);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.02);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -1073,93 +1167,243 @@ const PRICE = 'R$ 19,90';
   .depo-role { font-size: 12px; color: var(--text-muted); }
 
   /* ══════════════════════════
-     OFERTA
+     OFERTA / PREÇOS
   ══════════════════════════ */
   .section-oferta {
     padding: 80px 0;
-    background: white;
+    background: var(--bg);
   }
-  .oferta-inner { text-align: center; }
-  .offer-card-wrapper { max-width: 540px; margin: 0 auto; }
-  .offer-card {
-    background: white;
-    border: 2px solid var(--green);
-    border-radius: 24px;
-    padding: 36px;
-    box-shadow: 0 12px 48px rgba(22,163,74,0.12);
-    text-align: left;
+  .pricing-container-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto 48px;
+    align-items: stretch;
   }
-  .offer-lote-tag {
-    display: inline-flex;
-    background: #FEF3C7;
-    color: #92400E;
+  .pricing-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px 36px 36px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .pricing-card--vip {
+    border: 2.5px solid var(--green);
+    box-shadow: 0 10px 40px rgba(22, 163, 74, 0.08);
+  }
+  .vip-highlight-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--green);
+    color: white;
+    padding: 5px 18px;
+    border-radius: 99px;
     font-size: 11px;
     font-weight: 800;
-    padding: 5px 14px;
-    border-radius: 999px;
-    margin-bottom: 24px;
     letter-spacing: 0.06em;
   }
-  .offer-includes-title {
-    font-size: 16px;
-    font-weight: 700;
+  .card-header h3 {
+    font-size: 22px;
+    font-weight: 800;
     color: var(--text);
-    margin-bottom: 16px;
+    margin-bottom: 6px;
   }
-  .offer-includes {
+  .card-header p {
+    font-size: 13px;
+    color: var(--text-light);
+  }
+  .text-glow {
+    color: var(--green) !important;
+    font-weight: 700;
+  }
+  .card-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+  .card-features {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 28px;
+    gap: 14px;
+    flex-grow: 1;
+    margin-bottom: 32px;
   }
-  .offer-includes li {
+  .card-features li {
     display: flex;
     gap: 10px;
-    align-items: flex-start;
     font-size: 14px;
     color: var(--text-light);
     line-height: 1.5;
+    align-items: flex-start;
   }
-  .check-green {
-    color: var(--green);
+  .feat-check {
+    color: #9CA3AF;
     font-weight: 800;
     font-size: 15px;
     flex-shrink: 0;
-    margin-top: 1px;
   }
-  .offer-divider { height: 1px; background: var(--border); margin-bottom: 24px; }
-
-  .offer-price-block { margin-bottom: 24px; }
-  .offer-price-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-  .offer-price-main { font-size: 42px; font-weight: 900; color: var(--text); letter-spacing: -0.04em; line-height: 1; margin-bottom: 6px; }
-  .offer-price-detail { font-size: 13px; color: var(--text-muted); }
-
-  .btn-offer-cta { margin-bottom: 20px; }
-
-  .offer-guarantee {
+  .feat-check--vip {
+    color: var(--green);
+  }
+  .card-price-block {
+    margin-bottom: 24px;
     display: flex;
-    gap: 14px;
+    flex-direction: column;
+  }
+  .old-price {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  .installment-label {
+    font-size: 10px;
+    color: var(--text-light);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .current-price {
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--text);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin: 4px 0;
+  }
+  .price-method {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  
+  .btn-purchase {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 54px;
+    border-radius: 999px;
+    padding: 0 10px 0 24px;
+    background: #111827;
+    color: white;
+    font-weight: 800;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .btn-purchase:hover {
+    background: #1f2937;
+    transform: translateY(-2px);
+  }
+  .btn-purchase--vip {
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.25);
+  }
+  .btn-purchase--vip:hover {
+    background: linear-gradient(135deg, #15803d 0%, #16a34a 100%);
+    box-shadow: 0 10px 25px rgba(22, 163, 74, 0.35);
+  }
+  .purchase-arrow {
+    width: 34px;
+    height: 34px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111827;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+  }
+  .btn-purchase--vip .purchase-arrow {
+    color: var(--green);
+  }
+  .btn-purchase:hover .purchase-arrow {
+    transform: rotate(45deg);
+  }
+  
+  .card-progress {
+    margin-top: 24px;
+  }
+
+  .secure-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    opacity: 0.8;
+  }
+  .secure-badge span {
+    font-size: 10px;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .payment-icons {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pay-tag {
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .pix { background: #E8F5E9; color: #16A34A; }
+  .visa { background: #EBF5FB; color: #1D80B8; }
+  .master { background: #FEF9E7; color: #D4AC0D; }
+  .card { background: #FAFAFA; color: var(--text-light); border: 1px solid var(--border); }
+
+  .garantia-global-block {
+    display: flex;
+    gap: 16px;
     align-items: flex-start;
     background: var(--green-light);
-    border-radius: 12px;
-    padding: 16px;
+    border-radius: var(--radius);
+    padding: 24px;
+    max-width: 800px;
+    margin: 40px auto 0;
+    text-align: left;
+    border: 1px solid rgba(22, 163, 74, 0.1);
   }
-  .offer-guarantee svg { flex-shrink: 0; margin-top: 2px; }
-  .offer-guarantee strong { display: block; font-size: 14px; color: #065F46; margin-bottom: 4px; }
-  .offer-guarantee p { font-size: 13px; color: #047857; line-height: 1.5; margin: 0; }
+  .garantia-global-block svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .garantia-global-block strong {
+    font-size: 15px;
+    color: #065F46;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .garantia-global-block p {
+    font-size: 13px;
+    color: #047857;
+    line-height: 1.6;
+    margin: 0;
+  }
 
   /* ══════════════════════════
      FAQ
   ══════════════════════════ */
   .section-faq {
     padding: 80px 0;
-    background: var(--bg);
+    background: white;
   }
   .faq-inner { max-width: 720px; margin: 0 auto; text-align: center; }
   .faq-list { text-align: left; margin-top: 40px; display: flex; flex-direction: column; gap: 10px; }
   .faq-item {
-    background: white;
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
@@ -1245,8 +1489,9 @@ const PRICE = 'R$ 19,90';
     .hero5-right { display: none; }
 
     .problema-grid { grid-template-columns: 1fr; gap: 40px; }
-    .depos-grid { grid-template-columns: 1fr; }
     .mecanismo-grid { grid-template-columns: 1fr; }
+    .professores-grid { grid-template-columns: 1fr; }
+    .pricing-container-grid { grid-template-columns: 1fr; max-width: 500px; }
   }
 
   @media (max-width: 768px) {
@@ -1255,7 +1500,6 @@ const PRICE = 'R$ 19,90';
     .info-sep { display: none; }
     .grade-block { grid-template-columns: 48px 24px 1fr; gap: 0 10px; }
     .grade-time { font-size: 12px; }
-    .offer-card { padding: 24px; }
-    .offer-price-main { font-size: 36px; }
+    .professor-card { flex-direction: column; text-align: center; }
   }
 </style>
