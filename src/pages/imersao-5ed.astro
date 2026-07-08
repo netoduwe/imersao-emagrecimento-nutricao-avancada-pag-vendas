@@ -1,0 +1,1261 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FormModal from '../components/FormModal.astro';
+import '../styles/theme-green.css';
+
+// Dados do evento
+const EVENT_DATE = '01 de Agosto de 2026';
+const EVENT_TIME = '9h às 18h';
+const EVENT_FORMAT = 'Online via Zoom';
+const LOTE = 'LOTE ZERO';
+const PRICE = 'R$ 19,90';
+---
+
+<Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="green">
+
+  <!-- ══════════════════════════════════════
+       HERO — MESSAGE MATCH FNAT9
+       ══════════════════════════════════════ -->
+  <section class="hero5-section" id="imersao">
+    <div class="container hero5-grid">
+      <!-- LEFT -->
+      <div class="hero5-left">
+        <!-- Badge de evento -->
+        <div class="event-badge">
+          <span class="badge-dot"></span>
+          5ª Edição · Imersão em Emagrecimento
+        </div>
+
+        <!-- Info bar -->
+        <div class="info-bar">
+          <div class="info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>{EVENT_DATE}</span>
+          </div>
+          <div class="info-sep"></div>
+          <div class="info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>{EVENT_TIME}</span>
+          </div>
+          <div class="info-sep"></div>
+          <div class="info-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            <span>{EVENT_FORMAT}</span>
+          </div>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero5-headline">
+          Um dia inteiro aprendendo a <span class="h-green">tratar o emagrecimento</span> com o que a ciência mais atual comprova.
+        </h1>
+
+        <p class="hero5-sub">
+          Manejo de canetas emagrecedoras, compostos bioativos e prática clínica além do déficit calórico — com Ney Felipe e Jéssica Wszolek.
+        </p>
+
+        <!-- CTA + Preço no hero (CRO: preço visível antes do clique) -->
+        <div class="hero5-cta-block">
+          <button class="btn-hero-cta" data-form="normal" id="hero-cta-btn">
+            GARANTIR INGRESSO LOTE ZERO
+            <div class="btn-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </button>
+
+          <div class="hero5-price-tag">
+            <span class="price-lote">{LOTE}</span>
+            <span class="price-val">{PRICE}</span>
+            <span class="price-pix">ou Pix · Cartão parcelado disponível</span>
+          </div>
+
+          <div class="hero5-guarantee-line">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Garantia de 7 dias · Sem burocracia
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT — visual / palestrantes -->
+      <div class="hero5-right">
+        <div class="speakers-card">
+          <div class="speakers-label">Seus professores</div>
+          <div class="speakers-grid">
+            <div class="speaker-item">
+              <img
+                src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png"
+                alt="Ney Felipe"
+                class="speaker-photo"
+                loading="eager"
+              />
+              <div class="speaker-name">Ney Felipe</div>
+              <div class="speaker-role">Nutricionista • 19 anos de clínica</div>
+            </div>
+            <div class="speaker-item">
+              <img
+                src="https://nutrineyfelipe.com/wp-content/uploads/2024/02/Frame-4392.svg"
+                alt="Jéssica Wszolek"
+                class="speaker-photo speaker-jessica"
+                loading="eager"
+              />
+              <div class="speaker-name">Jéssica Wszolek</div>
+              <div class="speaker-role">Especialista em GLP-1</div>
+            </div>
+          </div>
+
+          <!-- Mini proof (CRO: prova perto do ponto de decisão) -->
+          <div class="mini-proof">
+            <div class="proof-avatars">
+              <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-02.png" alt="" class="proof-avatar" />
+              <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-04.png" alt="" class="proof-avatar" />
+              <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-06.png" alt="" class="proof-avatar" />
+            </div>
+            <span class="proof-text"><strong>+3.000 nutricionistas</strong> já treinaram com Ney</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Urgency bar -->
+    <div class="container">
+      <div class="urgency-strip-hero">
+        <div class="strip-dot"></div>
+        <span>Vendas abertas · Lote zero com menor preço · Vagas limitadas</span>
+        <div class="strip-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       PROBLEMA — DOR DO NUTRICIONISTA
+       ══════════════════════════════════════ -->
+  <section class="section-problema" id="conteudo">
+    <div class="container problema-grid">
+      <div class="problema-text">
+        <div class="section-badge">O PROBLEMA</div>
+        <h2 class="section-title">Você se sente seguro para tratar um paciente com sobrepeso?</h2>
+        <p class="section-sub">Com certeza você já enfrentou situações como essas no consultório:</p>
+
+        <ul class="dor-list">
+          <li>
+            <span class="dor-x">✗</span>
+            <span>Paciente não adere ao plano alimentar e você não sabe por quê</span>
+          </li>
+          <li>
+            <span class="dor-x">✗</span>
+            <span>Insegurança para conduzir a consulta além das calorias</span>
+          </li>
+          <li>
+            <span class="dor-x">✗</span>
+            <span>Não sabe como periodizar o acompanhamento corretamente</span>
+          </li>
+          <li>
+            <span class="dor-x">✗</span>
+            <span>Desatualizado sobre canetas emagrecedoras (GLP-1) e compostos bioativos</span>
+          </li>
+          <li>
+            <span class="dor-x">✗</span>
+            <span>Dificuldade para manejar pacientes pós-medicação sem recaída</span>
+          </li>
+          <li>
+            <span class="dor-x">✗</span>
+            <span>Falta de ferramentas práticas para a consulta de emagrecimento</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="problema-quote-side">
+        <blockquote class="problema-blockquote">
+          <p>"Embora o déficit calórico seja a condição <em>sine qua non</em> para emagrecer, <strong>a nutrição não se resume a uma simples calculoterapia.</strong>"</p>
+          <footer>— Ney Felipe</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       MECANISMO — POR QUE ESSA IMERSÃO FUNCIONA
+       (CRO: explicar o mecanismo, não só benefícios)
+       ══════════════════════════════════════ -->
+  <section class="section-mecanismo">
+    <div class="container mecanismo-inner">
+      <div class="section-badge badge-center">O MECANISMO</div>
+      <h2 class="section-title text-center">Por que uma imersão de 1 dia muda sua prática clínica?</h2>
+      <p class="section-sub text-center" style="max-width:680px;margin:0 auto 48px;">
+        Não é mais um curso de teoria. É um dia inteiro de imersão aplicada, com casos clínicos reais, ferramentas práticas e os protocolos que o Ney usa depois de 19 anos de consultório.
+      </p>
+
+      <div class="mecanismo-grid">
+        <div class="mec-card">
+          <div class="mec-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3>Imersão, não curso</h3>
+          <p>9h de conteúdo intenso com profundidade real — não aulas gravadas que você esquece na semana seguinte.</p>
+        </div>
+        <div class="mec-card">
+          <div class="mec-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3>Prática clínica aplicada</h3>
+          <p>Cada bloco termina com como aplicar amanhã na consulta — da conduta ao manejo de expectativas do paciente.</p>
+        </div>
+        <div class="mec-card">
+          <div class="mec-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Ciência atualizada</h3>
+          <p>GLP-1, canetas emagrecedoras, compostos bioativos e neurofisiologia do comportamento — o que a literatura mais recente comprova.</p>
+        </div>
+        <div class="mec-card">
+          <div class="mec-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Especialistas de alto nível</h3>
+          <p>Ney Felipe + Jéssica Wszolek — dois especialistas com vivência real nos temas que mais impactam o tratamento do sobrepeso hoje.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       GRADE DE CONTEÚDO — SCHEDULE
+       ══════════════════════════════════════ -->
+  <section class="section-grade" id="time">
+    <div class="container">
+      <div class="section-badge badge-center">PROGRAMAÇÃO</div>
+      <h2 class="section-title text-center">O que você vai aprender no dia {EVENT_DATE}</h2>
+
+      <div class="grade-timeline">
+
+        <div class="grade-block">
+          <div class="grade-time">09h</div>
+          <div class="grade-line">
+            <div class="grade-dot"></div>
+            <div class="grade-connector"></div>
+          </div>
+          <div class="grade-card">
+            <div class="grade-speaker">
+              <div class="speaker-tag green-tag">Ney Felipe</div>
+            </div>
+            <h3>Emagrecimento Além das Calorias</h3>
+            <ul class="grade-bullets">
+              <li>O mito da calculoterapia e o que a ciência diz</li>
+              <li>Periodização do acompanhamento nutricional</li>
+              <li>Conduta prática para diferentes perfis de paciente</li>
+              <li>Como aumentar adesão sem força de vontade</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grade-block">
+          <div class="grade-time">12h</div>
+          <div class="grade-line">
+            <div class="grade-dot grade-dot-break"></div>
+            <div class="grade-connector"></div>
+          </div>
+          <div class="grade-card grade-card-break">
+            <span>Intervalo para almoço</span>
+          </div>
+        </div>
+
+        <div class="grade-block">
+          <div class="grade-time">13h</div>
+          <div class="grade-line">
+            <div class="grade-dot grade-dot-jessica"></div>
+            <div class="grade-connector"></div>
+          </div>
+          <div class="grade-card">
+            <div class="grade-speaker">
+              <div class="speaker-tag purple-tag">Jéssica Wszolek</div>
+            </div>
+            <h3>GLP-1, Canetas Emagrecedoras e Compostos Bioativos</h3>
+            <ul class="grade-bullets">
+              <li>Indicações clínicas e manejo de canetas emagrecedoras</li>
+              <li>Compostos bioativos que ampliam os resultados</li>
+              <li>Como orientar e acompanhar pacientes em uso de GLP-1</li>
+              <li>Prevenção de recaídas pós-medicação</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grade-block">
+          <div class="grade-time">17h</div>
+          <div class="grade-line">
+            <div class="grade-dot grade-dot-both"></div>
+          </div>
+          <div class="grade-card">
+            <div class="grade-speaker">
+              <div class="speaker-tag green-tag">Ney Felipe</div>
+              <div class="speaker-tag purple-tag">Jéssica Wszolek</div>
+            </div>
+            <h3>Casos Clínicos e Perguntas ao Vivo</h3>
+            <ul class="grade-bullets">
+              <li>Análise de casos clínicos reais</li>
+              <li>Respostas às suas maiores dúvidas de consultório</li>
+              <li>Estratégias para o paciente difícil de emagrecer</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       DEPOIMENTOS — próximos ao preço (CRO)
+       ══════════════════════════════════════ -->
+  <section class="section-depos">
+    <div class="container">
+      <div class="section-badge badge-center">RESULTADOS</div>
+      <h2 class="section-title text-center">O que dizem quem já esteve lá</h2>
+
+      <div class="depos-grid">
+        <div class="depo-card">
+          <div class="stars">★★★★★</div>
+          <p class="depo-text">"Me sinto muito mais segura nas abordagens. Pego um paciente e sei o que fazer com ele em todas as fases com segurança."</p>
+          <div class="depo-author">
+            <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-02.png" alt="Nair Cristina" class="depo-avatar" />
+            <div>
+              <div class="depo-name">Nair Cristina</div>
+              <div class="depo-role">Nutricionista há 4 anos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="depo-card">
+          <div class="stars">★★★★★</div>
+          <p class="depo-text">"Nos primeiros atendimentos após o curso pude me notar menos 'calculadora' e mais nutricionista, dando um novo significado às minhas consultas."</p>
+          <div class="depo-author">
+            <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-04.png" alt="Melissa Pinheiro" class="depo-avatar" />
+            <div>
+              <div class="depo-name">Melissa Pinheiro</div>
+              <div class="depo-role">Nutricionista há 10 anos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="depo-card">
+          <div class="stars">★★★★★</div>
+          <p class="depo-text">"Saí com ferramentas para aplicar amanhã. Não é teoria vazia — é clínica real ensinada por quem vive isso todo dia."</p>
+          <div class="depo-author">
+            <img src="https://nutrineyfelipe.com/wp-content/uploads/2023/09/depo-06.png" alt="Ana Paula" class="depo-avatar" />
+            <div>
+              <div class="depo-name">Ana Paula</div>
+              <div class="depo-role">Nutricionista há 7 anos</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       OFERTA + PREÇO — CRO completo
+       (prova antes do preço, sem susto, Pix visível)
+       ══════════════════════════════════════ -->
+  <section class="section-oferta" id="preco">
+    <div class="container oferta-inner">
+
+      <div class="section-badge badge-center">SUA VAGA</div>
+      <h2 class="section-title text-center">Garanta seu ingresso agora</h2>
+      <p class="section-sub text-center" style="max-width:600px;margin:0 auto 48px;">
+        Você está no Lote Zero — o menor preço da edição. Sem pegadinha, sem contador falso.
+      </p>
+
+      <div class="offer-card-wrapper">
+        <div class="offer-card">
+
+          <!-- Tag de lote -->
+          <div class="offer-lote-tag">{LOTE} · {EVENT_DATE}</div>
+
+          <!-- O que inclui -->
+          <h3 class="offer-includes-title">O que está incluído no seu ingresso</h3>
+          <ul class="offer-includes">
+            <li>
+              <span class="check-green">✓</span>
+              <span>Acesso ao dia inteiro de Imersão ao vivo via Zoom (9h às 18h)</span>
+            </li>
+            <li>
+              <span class="check-green">✓</span>
+              <span>Gravação disponível por 1 ano após o evento</span>
+            </li>
+            <li>
+              <span class="check-green">✓</span>
+              <span>Certificado de participação (8 horas)</span>
+            </li>
+            <li>
+              <span class="check-green">✓</span>
+              <span>Materiais e ferramentas práticas compartilhados no evento</span>
+            </li>
+            <li>
+              <span class="check-green">✓</span>
+              <span>Acesso ao grupo exclusivo de participantes</span>
+            </li>
+          </ul>
+
+          <!-- Divider -->
+          <div class="offer-divider"></div>
+
+          <!-- Preço sem susto -->
+          <div class="offer-price-block">
+            <div class="offer-price-label">Valor do ingresso</div>
+            <div class="offer-price-main">{PRICE}</div>
+            <div class="offer-price-detail">Pix • Cartão de crédito • Parcelado</div>
+          </div>
+
+          <!-- CTA -->
+          <button class="btn-offer-cta" data-form="normal" id="offer-cta-btn">
+            COMPRAR INGRESSO AGORA
+            <div class="btn-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </div>
+          </button>
+
+          <!-- Garantia próxima ao CTA (CRO: reduz ansiedade no ponto de decisão) -->
+          <div class="offer-guarantee">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div>
+              <strong>Garantia incondicional de 7 dias</strong>
+              <p>Se por qualquer motivo não gostar, devolvemos 100% do valor. Sem questionamentos, sem burocracia.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FAQ — foco em objeções reais (CRO)
+       ══════════════════════════════════════ -->
+  <section class="section-faq">
+    <div class="container faq-inner">
+      <div class="section-badge badge-center">DÚVIDAS</div>
+      <h2 class="section-title text-center">Perguntas frequentes</h2>
+
+      <div class="faq-list" id="faq-list">
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span>Para quem é essa imersão?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Para nutricionistas formados e estudantes de nutrição que atendem pacientes com sobrepeso e obesidade e querem se atualizar com o que a ciência mais atual comprova — incluindo GLP-1, canetas emagrecedoras e prática clínica avançada.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span>Vou conseguir assistir ao vivo?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>O evento é ao vivo no Zoom em {EVENT_DATE}, das {EVENT_TIME}. Se não puder estar ao vivo em algum bloco, a gravação completa fica disponível por 1 ano para assistir no seu ritmo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span>E se eu não gostar? Tem reembolso?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Sim. Você tem 7 dias de garantia incondicional. Se por qualquer motivo não gostar da imersão, devolvemos 100% do valor investido sem questionamentos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span>Qual é o nível de profundidade do conteúdo?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>O conteúdo é focado em clínica aplicada — não é um overview para iniciantes. Você vai sair com protocolos, ferramentas e condutas que dá para usar na próxima consulta. Indicado para quem já tem base e quer aprofundar.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false">
+            <span>Quais formas de pagamento?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Pix (com aprovação imediata) e cartão de crédito parcelado. O preço {PRICE} é referente ao Lote Zero — pode aumentar conforme os lotes avançam.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CTA FINAL
+       ══════════════════════════════════════ -->
+  <section class="section-cta-final">
+    <div class="container cta-final-inner">
+      <h2 class="cta-final-title">Sua próxima consulta de emagrecimento pode ser diferente.</h2>
+      <p class="cta-final-sub">Garante seu ingresso no Lote Zero antes que o preço suba.</p>
+      <button class="btn-final-cta" data-form="normal" id="final-cta-btn">
+        COMPRAR INGRESSO — {PRICE}
+        <div class="btn-arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </div>
+      </button>
+      <div class="cta-final-guarantee">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Garantia de 7 dias · Pagamento seguro · Acesso imediato
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Formulário GHL -->
+  <FormModal />
+
+</Layout>
+
+<!-- ══════════════════════════════════════
+     SCRIPTS
+     ══════════════════════════════════════ -->
+<script>
+  // FAQ Accordion
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item') as HTMLElement;
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+      // Fechar todos
+      document.querySelectorAll('.faq-item').forEach(i => {
+        const b = i.querySelector('.faq-btn');
+        const a = i.querySelector('.faq-answer') as HTMLElement;
+        const ic = i.querySelector('.faq-icon');
+        if (b) b.setAttribute('aria-expanded', 'false');
+        if (a) a.style.maxHeight = '0';
+        if (ic) ic.textContent = '+';
+      });
+
+      // Abrir o clicado (se estava fechado)
+      if (!isOpen && item) {
+        const answer = item.querySelector('.faq-answer') as HTMLElement;
+        const icon = item.querySelector('.faq-icon');
+        btn.setAttribute('aria-expanded', 'true');
+        if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
+        if (icon) icon.textContent = '−';
+      }
+    });
+  });
+</script>
+
+<!-- ══════════════════════════════════════
+     ESTILOS DA PÁGINA
+     ══════════════════════════════════════ -->
+<style>
+  /* ── TOKENS ── */
+  :root {
+    --green: #16A34A;
+    --green-light: #f0fdf4;
+    --green-glow: rgba(22, 163, 74, 0.15);
+    --text: #111827;
+    --text-light: #4B5563;
+    --text-muted: #9CA3AF;
+    --border: #E5E7EB;
+    --surface: #FFFFFF;
+    --bg: #F7F8F6;
+    --radius: 16px;
+  }
+
+  /* ── SHARED SECTION TOKENS ── */
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(22,163,74,0.15);
+  }
+  .badge-center { display: flex; margin: 0 auto 16px; width: fit-content; }
+
+  .section-title {
+    font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 17px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  /* ── BOTÕES ── */
+  .btn-hero-cta,
+  .btn-offer-cta,
+  .btn-final-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 460px;
+    height: 58px;
+    border-radius: 999px;
+    padding: 0 10px 0 28px;
+    background: linear-gradient(325deg, #0f6e14 0%, #22c55e 55%, #0f6e14 90%);
+    background-size: 280% auto;
+    color: white;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(22,163,74,0.35), inset 3px 3px 6px rgba(100,255,150,0.25);
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+  }
+  .btn-hero-cta:hover,
+  .btn-offer-cta:hover,
+  .btn-final-cta:hover {
+    background-position: right top;
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 14px 36px rgba(22,163,74,0.4);
+  }
+  .btn-arrow {
+    width: 38px;
+    height: 38px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--green);
+    flex-shrink: 0;
+    transition: transform 0.4s;
+  }
+  .btn-hero-cta:hover .btn-arrow,
+  .btn-offer-cta:hover .btn-arrow,
+  .btn-final-cta:hover .btn-arrow { transform: rotate(45deg); }
+
+  /* ══════════════════════════
+     HERO
+  ══════════════════════════ */
+  .hero5-section {
+    background: #F7F8F6;
+    background-image: url('/images/background-pagina-verde-hero.png');
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    padding: 80px 0 48px;
+    min-height: 600px;
+  }
+  .hero5-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+
+  /* Event badge */
+  .event-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .badge-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse-dot 2s infinite;
+  }
+  @keyframes pulse-dot {
+    0%,100% { box-shadow: 0 0 0 0 rgba(22,163,74,0.5); }
+    50% { box-shadow: 0 0 0 5px rgba(22,163,74,0); }
+  }
+
+  /* Info bar */
+  .info-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(0,0,0,0.04);
+    padding: 8px 18px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+  }
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+  }
+  .info-item svg { opacity: 0.6; }
+  .info-sep { width: 1px; height: 16px; background: #D1D5DB; }
+
+  /* Headline */
+  .hero5-headline {
+    font-size: clamp(30px, 4vw, 50px);
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+    margin-bottom: 18px;
+  }
+  .h-green {
+    color: var(--green);
+    position: relative;
+  }
+  .h-green::after {
+    content: '';
+    position: absolute;
+    bottom: 4px; left: 0;
+    width: 100%; height: 5px;
+    background: rgba(22,163,74,0.12);
+    border-radius: 2px;
+    z-index: -1;
+  }
+
+  .hero5-sub {
+    font-size: 17px;
+    color: var(--text-light);
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 32px;
+  }
+
+  /* CTA block */
+  .hero5-cta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .hero5-price-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .price-lote {
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.06em;
+  }
+  .price-val {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--text);
+    letter-spacing: -0.03em;
+  }
+  .price-pix {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .hero5-guarantee-line {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  /* Speakers card */
+  .hero5-right { display: flex; justify-content: center; }
+  .speakers-card {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+    width: 100%;
+    max-width: 340px;
+  }
+  .speakers-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .speakers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+  .speaker-item { text-align: center; }
+  .speaker-photo {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid var(--border);
+    background: var(--bg);
+  }
+  .speaker-jessica { object-fit: contain; padding: 8px; }
+  .speaker-name { font-size: 13px; font-weight: 700; color: var(--text); }
+  .speaker-role { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+
+  /* Mini proof */
+  .mini-proof {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--green-light);
+    border-radius: 12px;
+    padding: 12px 16px;
+  }
+  .proof-avatars { display: flex; }
+  .proof-avatar {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: -8px;
+    object-fit: cover;
+    background: var(--bg);
+  }
+  .proof-text { font-size: 12px; color: #065F46; padding-left: 14px; line-height: 1.4; }
+
+  /* Urgency strip */
+  .urgency-strip-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-light);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .strip-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+  }
+
+  /* ══════════════════════════
+     PROBLEMA
+  ══════════════════════════ */
+  .section-problema {
+    padding: 80px 0;
+    background: white;
+  }
+  .problema-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .dor-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 24px;
+  }
+  .dor-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15px;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+  .dor-x {
+    color: #EF4444;
+    font-weight: 800;
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .problema-blockquote {
+    background: #FAFAF9;
+    border-left: 4px solid var(--green);
+    border-radius: 0 16px 16px 0;
+    padding: 32px 32px 32px 28px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  }
+  .problema-blockquote p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+  .problema-blockquote footer {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--green);
+  }
+
+  /* ══════════════════════════
+     MECANISMO
+  ══════════════════════════ */
+  .section-mecanismo {
+    padding: 80px 0;
+    background: var(--bg);
+  }
+  .mecanismo-inner { text-align: center; }
+  .mecanismo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    text-align: left;
+  }
+  .mec-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 28px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .mec-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  .mec-icon {
+    width: 48px; height: 48px;
+    background: var(--green-light);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .mec-card h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .mec-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+
+  /* ══════════════════════════
+     GRADE / TIMELINE
+  ══════════════════════════ */
+  .section-grade {
+    padding: 80px 0;
+    background: white;
+  }
+  .grade-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .grade-block {
+    display: grid;
+    grid-template-columns: 56px 32px 1fr;
+    gap: 0 16px;
+    align-items: flex-start;
+  }
+  .grade-time {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--green);
+    text-align: right;
+    padding-top: 4px;
+    white-space: nowrap;
+  }
+  .grade-line { display: flex; flex-direction: column; align-items: center; }
+  .grade-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--green);
+    border: 2px solid white;
+    box-shadow: 0 0 0 3px rgba(22,163,74,0.2);
+    flex-shrink: 0;
+    margin-top: 5px;
+  }
+  .grade-dot-break { background: #9CA3AF; box-shadow: 0 0 0 3px rgba(156,163,175,0.2); }
+  .grade-dot-jessica { background: #7C3AED; box-shadow: 0 0 0 3px rgba(124,58,237,0.2); }
+  .grade-dot-both {
+    background: linear-gradient(135deg, var(--green), #7C3AED);
+    box-shadow: 0 0 0 3px rgba(100,100,200,0.2);
+  }
+  .grade-connector { width: 2px; flex-grow: 1; min-height: 40px; background: var(--border); }
+  .grade-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .grade-card-break {
+    background: var(--bg);
+    border-style: dashed;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  .grade-speaker { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .speaker-tag {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+  }
+  .green-tag { background: var(--green-light); color: var(--green); }
+  .purple-tag { background: #EDE9FE; color: #6D28D9; }
+
+  .grade-card h3 { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 12px; }
+  .grade-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .grade-bullets li {
+    font-size: 14px;
+    color: var(--text-light);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+  .grade-bullets li::before { content: '—'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+
+  /* ══════════════════════════
+     DEPOIMENTOS
+  ══════════════════════════ */
+  .section-depos {
+    padding: 80px 0;
+    background: var(--bg);
+  }
+  .depos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .depo-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 28px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .stars { color: #FBBF24; font-size: 16px; letter-spacing: 2px; }
+  .depo-text { font-size: 15px; color: var(--text-light); line-height: 1.65; font-style: italic; flex-grow: 1; }
+  .depo-author { display: flex; gap: 12px; align-items: center; border-top: 1px solid var(--border); padding-top: 16px; }
+  .depo-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+  }
+  .depo-name { font-size: 14px; font-weight: 700; color: var(--text); }
+  .depo-role { font-size: 12px; color: var(--text-muted); }
+
+  /* ══════════════════════════
+     OFERTA
+  ══════════════════════════ */
+  .section-oferta {
+    padding: 80px 0;
+    background: white;
+  }
+  .oferta-inner { text-align: center; }
+  .offer-card-wrapper { max-width: 540px; margin: 0 auto; }
+  .offer-card {
+    background: white;
+    border: 2px solid var(--green);
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 12px 48px rgba(22,163,74,0.12);
+    text-align: left;
+  }
+  .offer-lote-tag {
+    display: inline-flex;
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 24px;
+    letter-spacing: 0.06em;
+  }
+  .offer-includes-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 16px;
+  }
+  .offer-includes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .offer-includes li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.5;
+  }
+  .check-green {
+    color: var(--green);
+    font-weight: 800;
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .offer-divider { height: 1px; background: var(--border); margin-bottom: 24px; }
+
+  .offer-price-block { margin-bottom: 24px; }
+  .offer-price-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .offer-price-main { font-size: 42px; font-weight: 900; color: var(--text); letter-spacing: -0.04em; line-height: 1; margin-bottom: 6px; }
+  .offer-price-detail { font-size: 13px; color: var(--text-muted); }
+
+  .btn-offer-cta { margin-bottom: 20px; }
+
+  .offer-guarantee {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--green-light);
+    border-radius: 12px;
+    padding: 16px;
+  }
+  .offer-guarantee svg { flex-shrink: 0; margin-top: 2px; }
+  .offer-guarantee strong { display: block; font-size: 14px; color: #065F46; margin-bottom: 4px; }
+  .offer-guarantee p { font-size: 13px; color: #047857; line-height: 1.5; margin: 0; }
+
+  /* ══════════════════════════
+     FAQ
+  ══════════════════════════ */
+  .section-faq {
+    padding: 80px 0;
+    background: var(--bg);
+  }
+  .faq-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+  .faq-list { text-align: left; margin-top: 40px; display: flex; flex-direction: column; gap: 10px; }
+  .faq-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .faq-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    gap: 16px;
+    transition: background 0.2s;
+  }
+  .faq-btn:hover { background: var(--green-light); }
+  .faq-icon {
+    color: var(--green);
+    font-size: 22px;
+    font-weight: 300;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .faq-answer p {
+    padding: 0 24px 20px;
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ══════════════════════════
+     CTA FINAL
+  ══════════════════════════ */
+  .section-cta-final {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #052e16 0%, #14532d 100%);
+    text-align: center;
+  }
+  .cta-final-inner { max-width: 680px; margin: 0 auto; }
+  .cta-final-title {
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .cta-final-sub {
+    font-size: 17px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 36px;
+  }
+  .btn-final-cta { margin: 0 auto; }
+  .cta-final-guarantee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 20px;
+  }
+
+  /* ══════════════════════════
+     RESPONSIVO
+  ══════════════════════════ */
+  @media (max-width: 1024px) {
+    .hero5-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+    .hero5-left { align-items: center; display: flex; flex-direction: column; }
+    .hero5-sub { max-width: 100%; }
+    .hero5-cta-block { align-items: center; }
+    .hero5-right { display: none; }
+
+    .problema-grid { grid-template-columns: 1fr; gap: 40px; }
+    .depos-grid { grid-template-columns: 1fr; }
+    .mecanismo-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .hero5-section { padding: 60px 0 32px; min-height: auto; background-image: none; }
+    .info-bar { flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .info-sep { display: none; }
+    .grade-block { grid-template-columns: 48px 24px 1fr; gap: 0 10px; }
+    .grade-time { font-size: 12px; }
+    .offer-card { padding: 24px; }
+    .offer-price-main { font-size: 36px; }
+  }
+</style>

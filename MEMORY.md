@@ -96,6 +96,24 @@
 - **Selo:** Badge "50% DE DESCONTO" no card VIP do v5.
 - **Push:** Commit `5166636` em 05/05/2026 — build OK, push para `main`.
 
+## Nova Página: Imersão 5ª Edição (FNAT9) — 08/07/2026
+- **Rota:** `/imersao-5ed`
+- **Arquivo:** `src/pages/imersao-5ed.astro`
+- **Campanha:** FNAT9 (Formação Nutrição Avançada Turma 9)
+- **Data do evento:** 01/08/2026 (9h às 18h · Online via Zoom)
+- **Preço:** R$ 19,90 (Lote Zero)
+- **Palestrantes:** Ney Felipe + Jéssica Wszolek
+- **Formulário:** Usa `FormModal.astro` existente (links GHL: `Z1AkP8zQTM` Normal, `XuSUwksfyVTSPoPKdMe8` VIP)
+- **CRO aplicado (cro-landing-pages-evidencias.md):**
+  - Message match: headline espelha "imersão em emagrecimento FNAT9"
+  - Preço visível no Hero (antes do clique)
+  - Mecanismo explicado ("por que funciona") — não só benefícios
+  - Depoimentos antes do CTA de compra (prova perto da ansiedade)
+  - Garantia de 7 dias no ponto de decisão (dentro do card de oferta)
+  - FAQ focado em objeções reais (adesão, reembolso, nível, pagamento)
+  - Única ação na página (abrir formulário modal) — sem fricção concorrente
+- **Build:** OK · 12 páginas geradas
+
 ## Página de Check-in Interativa — 12/05/2026
 - **Check-in Virtual:** Criada a rota `/checkin` (`src/pages/checkin.astro`) para gerar um ingresso personalizado estilo neon para compartilhamento.
 - **Funcionalidades:** Upload/Captura de foto de perfil, inserção de nome com limite de caracteres, e geração em client-side utilizando HTML5 Canvas (não requer servidor de imagem).
