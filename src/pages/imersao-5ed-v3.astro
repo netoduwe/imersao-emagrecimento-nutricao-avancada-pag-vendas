@@ -104,7 +104,7 @@ const PRICE_VIP = 'R$ 147,00';
   </section>
 
   <!-- ══════════════════════════════════════
-       SEÇÃO DE CLIENTES NOTÁVEIS (CARROSSEL/GRID DE TESTEMUNHOS)
+       SEÇÃO DE CLIENTES NOTÁVEIS (GRID DE TESTEMUNHOS GRANDES E LEGÍVEIS)
        ══════════════════════════════════════ -->
   <section class="section-notaveis">
     <div class="container">
@@ -156,20 +156,20 @@ const PRICE_VIP = 'R$ 147,00';
   </section>
 
   <!-- ══════════════════════════════════════
-       A GRANDE PERGUNTA (TRANSIÇÃO)
+       A GRANDE PERGUNTA (TRANSIÇÃO E CONTEXTO DE MERCADO LAPIDADO)
        ══════════════════════════════════════ -->
   <section class="section-pergunta">
     <div class="container text-center">
       <h2 class="pergunta-headline">
-        O mercado de nutrição está migrando para tratamentos de alta performance e manejo de novos fármacos, inclusive quem atende apenas ememagrecimento básico. Por quê?
+        Com o uso desenfreado de análogos de GLP-1 (como Ozempic e Mounjaro), o mercado agora exige nutricionistas preparados para tratar os efeitos colaterais e sustentar o emagrecimento a longo prazo. Afinal, a medicação passa, mas a nutrição é a única que mantém o resultado.
       </h2>
     </div>
   </section>
 
   <!-- ══════════════════════════════════════
-       LINHA DO TEMPO DINÂMICA
+       LINHA DO TEMPO DINÂMICA (CRONOGRAMA REAL DO EVENTO)
        ══════════════════════════════════════ -->
-  <section class="section-timeline">
+  <section class="section-timeline" id="cronograma-evento">
     <div class="container timeline-grid">
       <!-- Left side: vertical line and Ney photo (STICKY TRIGGER) -->
       <div class="timeline-visual-side">
@@ -179,30 +179,41 @@ const PRICE_VIP = 'R$ 147,00';
           <div class="timeline-dot dot-1 active"></div>
           <div class="timeline-dot dot-2"></div>
           <div class="timeline-dot dot-3"></div>
+          <div class="timeline-dot dot-4"></div>
         </div>
       </div>
 
       <!-- Right side: Content blocks -->
       <div class="timeline-content-side">
-        <div class="section-badge">LINHA DO TEMPO</div>
-        <h2 class="section-title">Os Três Pilares da Conduta Clínica de Resultado</h2>
+        <div class="section-badge">CRONOGRAMA DA IMERSÃO</div>
+        <h2 class="section-title">Programação do Dia {EVENT_DATE}</h2>
+        <p class="section-sub" style="margin-bottom: 32px;">Um dia inteiro de conteúdo prático e voltado para a sua atuação em consultório:</p>
         
         <div class="timeline-content-block" id="timeline-block-1">
-          <div class="block-num">01</div>
-          <h3>Mapeamento Fisiológico (Anamnese)</h3>
-          <p>Ir além de calcular calorias. Mapear o perfil neuroendócrino, o comportamento do paciente, exames laboratoriais chaves e identificar as verdadeiras barreiras do emagrecimento.</p>
+          <div class="block-num">09h00 às 12h00</div>
+          <h3>Emagrecimento Além das Calorias</h3>
+          <p><strong>Palestrante: Ney Felipe</strong><br/>
+          O mito da calculoterapia e o que a ciência diz. Condutas práticas para diferentes perfis de paciente, periodização do acompanhamento nutricional e como aumentar a adesão sem depender de força de vontade.</p>
         </div>
 
         <div class="timeline-content-block" id="timeline-block-2">
-          <div class="block-num">02</div>
-          <h3>Intervenção Estruturada (O Evento)</h3>
-          <p>Prescrição dietética dinâmica, periodização adaptativa, modulação intestinal e o manejo preciso de canetas emagrecedoras (análogos de GLP-1) integrado à alimentação.</p>
+          <div class="block-num">12h00 às 13h00</div>
+          <h3>Intervalo para Almoço</h3>
+          <p>Momento de pausa para descanso e recarregamento para o conteúdo da tarde.</p>
         </div>
 
         <div class="timeline-content-block" id="timeline-block-3">
-          <div class="block-num">03</div>
-          <h3>Estabilização Metabólica (A Manutenção)</h3>
-          <p>A fase mais crítica: evitar o efeito sanfona, planejar o desmame da medicação de forma segura e construir a autonomia alimentar sustentável do paciente.</p>
+          <div class="block-num">13h00 às 17h00</div>
+          <h3>GLP-1, Canetas Emagrecedoras e Compostos Bioativos</h3>
+          <p><strong>Palestrante: Jéssica Wszolek</strong><br/>
+          Indicações clínicas e manejo dietético de canetas emagrecedoras. Compostos bioativos que ampliam os resultados, como orientar e acompanhar pacientes em uso de GLP-1 e prevenção de recaídas pós-medicação.</p>
+        </div>
+
+        <div class="timeline-content-block" id="timeline-block-4">
+          <div class="block-num">17h00 às 18h00</div>
+          <h3>Casos Clínicos e Perguntas ao Vivo</h3>
+          <p><strong>Palestrantes: Ney Felipe & Jéssica Wszolek</strong><br/>
+          Análise conjunta de casos clínicos reais de consultório e respostas imediatas às maiores dúvidas de atendimento dos alunos ao vivo.</p>
         </div>
 
         <!-- Mas você pode falhar alert block -->
@@ -219,66 +230,12 @@ const PRICE_VIP = 'R$ 147,00';
   </section>
 
   <!-- ══════════════════════════════════════
-       NOSSOS RESULTADOS (SPLIT SCROLL EFFECT FOR TITLE)
-       ══════════════════════════════════════ -->
-  <section class="section-resultados" id="secao-resultados-anchor">
-    <div class="container">
-      <div class="section-badge badge-center">CASOS REAIS</div>
-      
-      <!-- Split-Text Scroll Title Container -->
-      <div class="split-title-container" id="split-title-trigger">
-        <span class="split-left" id="split-text-left">Nossos</span>
-        <span class="split-right" id="split-text-right">Resultados</span>
-      </div>
-      
-      <p class="section-sub text-center" style="max-width: 600px; margin: 0 auto 40px;">
-        Exemplos reais de evolução e sucesso terapêutico no consultório.
-      </p>
-
-      <div class="resultados-grid">
-        <div class="resultado-card">
-          <span class="res-num">Caso 01</span>
-          <h3>Paciente Obeso com Resistência à Insulina</h3>
-          <ul class="res-stats">
-            <li><strong>Fase inicial:</strong> Peso 112kg, Glicemia instável</li>
-            <li><strong>Conduta:</strong> Ciclo carboidrato + Fitoquímicos</li>
-            <li><strong>Evolução:</strong> -18kg mantendo massa magra</li>
-          </ul>
-          <div class="red-bar-mask">CONFIRMADO EM EXAMES</div>
-        </div>
-
-        <div class="resultado-card">
-          <span class="res-num">Caso 02</span>
-          <h3>Transição de Paciente Pós Análogo GLP-1</h3>
-          <ul class="res-stats">
-            <li><strong>Fase inicial:</strong> Desmame de medicação sem suporte</li>
-            <li><strong>Conduta:</strong> Modulação neurovegetativa e fibras solúveis</li>
-            <li><strong>Evolução:</strong> Peso estabilizado sem efeito rebote</li>
-          </ul>
-          <div class="red-bar-mask">MANUTENÇÃO DE 12 MESES</div>
-        </div>
-
-        <div class="resultado-card">
-          <span class="res-num">Caso 03</span>
-          <h3>Atleta com Dificuldade de Definição Extrema</h3>
-          <ul class="res-stats">
-            <li><strong>Fase inicial:</strong> Platô metabólico por déficit crônico</li>
-            <li><strong>Conduta:</strong> Diet re-feed estruturado + Atividade Mitocondrial</li>
-            <li><strong>Evolução:</strong> Redução de 4% de gordura corporal</li>
-          </ul>
-          <div class="red-bar-mask">PROTOCOLO EXCLUSIVO</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
        O QUE VOCÊ VAI APRENDER (MÓDULOS DE MASKING/REVEALING)
        ══════════════════════════════════════ -->
-  <section class="section-modulos">
+  <section class="section-modulos" id="conteudo">
     <div class="container">
-      <div class="section-badge badge-center">CRONOGRAMA</div>
-      <h2 class="section-title text-center">O Que Você Vai Aprender na Imersão</h2>
+      <div class="section-badge badge-center">CONTEÚDO PROGRAMÁTICO</div>
+      <h2 class="section-title text-center">Conteúdo do Treinamento</h2>
       <p class="section-sub text-center" style="max-width: 600px; margin: 0 auto 40px;">
         Os 7 passos estruturados para destravar seu raciocínio de consultório.
       </p>
@@ -626,27 +583,6 @@ const PRICE_VIP = 'R$ 147,00';
         if (idx > 0) dots[idx]?.classList.remove('active');
       }
     });
-  });
-
-  // SPLIT-TEXT SCROLL EFFECT (Nossos Resultados section)
-  const splitTrigger = document.getElementById('split-title-trigger');
-  const splitLeft = document.getElementById('split-text-left');
-  const splitRight = document.getElementById('split-text-right');
-  
-  window.addEventListener('scroll', () => {
-    if (!splitTrigger) return;
-    const rect = splitTrigger.getBoundingClientRect();
-    const viewHeight = window.innerHeight;
-    
-    // Start splitting when trigger enters the viewport
-    if (rect.top < viewHeight && rect.bottom > 0) {
-      const scrollProgress = (viewHeight - rect.top) / (viewHeight + rect.height);
-      const maxTranslate = 140; // max split distance in pixels
-      const currentTranslate = Math.min(scrollProgress * maxTranslate, maxTranslate);
-      
-      if (splitLeft) splitLeft.style.transform = `translateX(-${currentTranslate}px)`;
-      if (splitRight) splitRight.style.transform = `translateX(${currentTranslate}px)`;
-    }
   });
 
   // MASKING / REVEALING OBSERVER (O que você vai aprender modules)
@@ -1008,14 +944,17 @@ const PRICE_VIP = 'R$ 147,00';
   }
 
   .screenshots-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    max-width: 960px;
     margin: 0 auto;
   }
 
   .screenshot-card {
+    flex: 1 1 360px;
+    max-width: 440px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -1074,13 +1013,13 @@ const PRICE_VIP = 'R$ 147,00';
   }
 
   .pergunta-headline {
-    font-size: clamp(24px, 3.5vw, 40px);
-    font-weight: 900;
+    font-size: clamp(24px, 3.2vw, 36px);
+    font-weight: 800;
     color: #ffffff;
-    line-height: 1.3;
-    max-width: 900px;
+    line-height: 1.45;
+    max-width: 960px;
     margin: 0 auto;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
 
   /* ══════════════════════════
@@ -1118,7 +1057,7 @@ const PRICE_VIP = 'R$ 147,00';
 
   .timeline-line-container {
     width: 4px;
-    height: 150px;
+    height: 200px;
     background: rgba(255,255,255,0.08);
     position: relative;
     border-radius: 99px;
@@ -1150,8 +1089,9 @@ const PRICE_VIP = 'R$ 147,00';
   }
 
   .dot-1 { top: 0%; }
-  .dot-2 { top: 50%; }
-  .dot-3 { top: 100%; }
+  .dot-2 { top: 33%; }
+  .dot-3 { top: 66%; }
+  .dot-4 { top: 100%; }
 
   .timeline-content-side {
     display: flex;
@@ -1223,90 +1163,6 @@ const PRICE_VIP = 'R$ 147,00';
     color: #ef4444;
     position: absolute;
     left: 0;
-  }
-
-  /* ══════════════════════════
-     NOSSOS RESULTADOS & SPLIT EFFECT
-  ══════════════════════════ */
-  .section-resultados {
-    padding: 100px 0;
-    background: #0b0c0a;
-    border-bottom: 1px solid var(--border);
-    overflow: hidden;
-  }
-
-  .split-title-container {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    font-size: clamp(32px, 4.5vw, 54px);
-    font-weight: 900;
-    color: #ffffff;
-    position: relative;
-    width: 100%;
-    margin-bottom: 24px;
-    white-space: nowrap;
-    will-change: transform;
-  }
-
-  .split-left, .split-right {
-    display: inline-block;
-    transition: transform 0.1s ease-out;
-    will-change: transform;
-  }
-
-  .resultados-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: 40px;
-  }
-
-  .resultado-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 32px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .res-num {
-    font-size: 11px;
-    font-weight: 800;
-    color: var(--red);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .resultado-card h3 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffffff;
-  }
-
-  .res-stats {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--text-muted);
-    flex-grow: 1;
-  }
-
-  .red-bar-mask {
-    background: var(--red);
-    color: white;
-    font-weight: 800;
-    font-size: 10px;
-    padding: 6px;
-    text-align: center;
-    letter-spacing: 0.1em;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(225, 29, 72, 0.2);
   }
 
   /* ══════════════════════════
@@ -1862,7 +1718,6 @@ const PRICE_VIP = 'R$ 147,00';
     .timeline-visual-side { display: none; }
 
     .modulos-grid { grid-template-columns: 1fr; }
-    .resultados-grid { grid-template-columns: 1fr; }
     .professores-grid { grid-template-columns: 1fr; }
     .pricing-container-grid { grid-template-columns: 1fr; max-width: 500px; }
     .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
