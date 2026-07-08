@@ -114,6 +114,17 @@
   - Única ação na página (abrir formulário modal) — sem fricção concorrente
 - **Build:** OK · 12 páginas geradas
 
+## Variação de Teste: Imersão 5ª Edição V2 (A/B Test) — 08/07/2026
+- **Rota:** `/imersao-5ed-v2`
+- **Arquivo:** `src/pages/imersao-5ed-v2.astro`
+- **Design:** Inspirado na referência com fundo ultra-escuro (dark green/black), sem obstruções na cara do Ney.
+- **Hero V2:**
+  - Headline limpa e direta em Sans-serif branco.
+  - Price Card destacado no Hero: Fundo escuro translúcido com borda verde brilhante, badge de "Lote zero", preço antigo riscado em vermelho e preço atual gigante.
+  - Botão de CTA retangular em gradiente verde limão brilhante com indicação de clique/chevron.
+- **Preços (Básico vs VIP):** Restaurados ambos os ingressos lado a lado no final da página com a ProgressBar de urgência integrada.
+- **Build:** OK · 13 páginas geradas no total.
+
 ## Página de Check-in Interativa — 12/05/2026
 - **Check-in Virtual:** Criada a rota `/checkin` (`src/pages/checkin.astro`) para gerar um ingresso personalizado estilo neon para compartilhamento.
 - **Funcionalidades:** Upload/Captura de foto de perfil, inserção de nome com limite de caracteres, e geração em client-side utilizando HTML5 Canvas (não requer servidor de imagem).
