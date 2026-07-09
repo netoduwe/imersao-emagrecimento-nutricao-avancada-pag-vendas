@@ -30,70 +30,16 @@
 
 .case-hero {
   position: relative;
-  min-height: 760px;
+  min-height: 700px;
   padding: 86px 0 56px;
   isolation: isolate;
 }
 
-.case-hero__paper {
-  position: absolute;
-  inset: 70px auto auto 4vw;
-  display: grid;
-  gap: 12px;
-  color: rgba(255,255,255,0.12);
-  font-size: clamp(54px, 9vw, 132px);
-  font-weight: 900;
-  letter-spacing: -0.08em;
-  line-height: 0.76;
-  text-transform: uppercase;
-  z-index: -1;
-  transform: rotate(-3deg);
-}
-
-.case-hero__paper span:nth-child(2) {
-  margin-left: 18vw;
-  color: rgba(49, 217, 107, 0.12);
-}
-
-.case-hero__paper span:nth-child(3) {
-  font-size: clamp(30px, 4.8vw, 72px);
-  letter-spacing: -0.05em;
-  margin-left: 5vw;
-}
-
 .case-hero__grid {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr) 430px;
-  gap: 44px;
+  grid-template-columns: minmax(0, 1fr) 430px;
+  gap: 72px;
   align-items: center;
-}
-
-.case-index {
-  align-self: stretch;
-  border-left: 1px solid var(--case-line);
-  padding: 12px 0 0 18px;
-  position: sticky;
-  top: 82px;
-}
-
-.case-index__brand {
-  color: var(--case-green);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  margin-bottom: 34px;
-  text-transform: uppercase;
-}
-
-.case-index a {
-  display: block;
-  color: var(--case-muted);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  margin: 0 0 18px;
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
 .case-kicker,
@@ -106,10 +52,10 @@
 }
 
 .case-hero h1 {
-  max-width: 720px;
+  max-width: 790px;
   margin: 18px 0 24px;
   color: #fff;
-  font-size: clamp(45px, 6vw, 86px);
+  font-size: clamp(43px, 5.6vw, 78px);
   font-weight: 920;
   letter-spacing: -0.075em;
   line-height: 0.92;
@@ -662,10 +608,6 @@
   .ticket-board,
   .faq-grid {
     grid-template-columns: 1fr;
-  }
-
-  .case-index {
-    display: none;
   }
 
   .case-hero__grid {
