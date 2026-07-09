@@ -2,6 +2,12 @@
 
 **Última Atualização:** 09/07/2026
 
+## Ajustes Finos na Dobra de Entrada (V4) — 09/07/2026
+- **Ancoragem do Botão do Hero:** Atualizado o link do botão "Garantir minha vaga!" da Hero para `#preco` (retirado `data-form="normal"`).
+- **Preço inline no Hero:** Modificada a exibição de preço para `De R$ 97,00 por apenas R$ 19,90` em uma única linha flex (`.price-box-row`), mantendo o valor final grande. Isso reduz a altura vertical e traz o botão "Garantir minha vaga!" acima da dobra.
+- **Remoção da Navbar (V4):** Adicionada a propriedade condicional `hideHeader` no `Layout.astro` e ativada como `true` na V4 para eliminar completamente o menu superior que poluía o topo.
+- **Substituição do Badge do Hero:** Removido o badge "5ª Edição" e adicionada a `info-bar` de data/hora idêntica à V1 (com ícones de calendário, relógio e câmera dentro de pílula sutil integrada).
+
 ## Correções Visuais V4 + Countdown LOTE ZERO Global — 09/07/2026
 - **Moldura dos Palestrantes:** Trocada de moldura em arco (border-radius 200px) para retângulo arredondado clean (24px) tanto no hero quanto na seção de autoridade. Sem mais clipagem estranha nas fotos.
 - **Caixa de Preço Hero:** Borda aumentada de 1px para 2px com cor verde visível (`rgba(35, 198, 95, 0.35)`) + glow sutil para diferenciar do fundo escuro.
