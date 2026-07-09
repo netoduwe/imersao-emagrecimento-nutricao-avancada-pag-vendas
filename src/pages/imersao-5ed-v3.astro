@@ -158,6 +158,43 @@ const PRICE_VIP = 'R$ 147,00';
       <h2 class="pergunta-headline">
         Com o uso desenfreado de análogos de GLP-1 (como Ozempic e Mounjaro), o mercado agora exige nutricionistas preparados para tratar os efeitos colaterais e sustentar o emagrecimento a longo prazo. Afinal, a medicação passa, mas a nutrição é a única que mantém o resultado.
       </h2>
+      
+      <div class="news-clippings-container">
+        
+        <div class="news-clipping-card card-rotate-left">
+          <div class="news-source">GOOGLE TRENDS & LEVANTAMENTO GLOBAL</div>
+          <div class="news-date">Volume de buscas recorde</div>
+          <h3 class="news-title">
+            Brasil ocupa a <mark class="news-highlight">2ª posição mundial nas buscas por Ozempic e Mounjaro</mark> na internet.
+          </h3>
+          <p class="news-excerpt">
+            A procura massiva por canetas emagrecedoras movimentou mais de R$ 10 bilhões no mercado nacional, gerando uma onda inédita de pacientes necessitando de suporte nutricional no consultório.
+          </p>
+        </div>
+
+        <div class="news-clipping-card card-rotate-right">
+          <div class="news-source">ESTUDOS DE MUNDO REAL (GLP-1)</div>
+          <div class="news-date">Adesão e Efeitos Colaterais</div>
+          <h3 class="news-title">
+            Mais de <mark class="news-highlight">45% dos pacientes abandonam o uso de canetas de GLP-1</mark> no primeiro ano.
+          </h3>
+          <p class="news-excerpt">
+            Os principais motivos de abandono são os efeitos gastrointestinais severos e a perda de massa magra. O nutricionista preparado é indispensável para evitar esses problemas e manter o resultado.
+          </p>
+        </div>
+
+        <div class="news-clipping-card card-rotate-straight">
+          <div class="news-source">ORGANIZAÇÃO MUNDIAL DA SAÚDE</div>
+          <div class="news-date">Projeções Epidemiológicas</div>
+          <h3 class="news-title">
+            Projeções alertam que até 2030, cerca de <mark class="news-highlight">68% dos brasileiros estarão com excesso de peso</mark>.
+          </h3>
+          <p class="news-excerpt">
+            O avanço do sobrepeso exige condutas clínicas modernas. Tratar emagrecimento apenas calculando déficit calórico básico faliu, abrindo espaço para a nutrição baseada em fisiologia real.
+          </p>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -430,16 +467,49 @@ const PRICE_VIP = 'R$ 147,00';
             <p class="text-glow">Gravação + Bônus Exclusivos</p>
           </div>
           <div class="card-divider"></div>
-          <ul class="card-features">
-            <li><strong>✓ Tudo do ingresso básico</strong></li>
-            <li><strong>✓ Gravação do evento por 1 ano</strong></li>
-            <li>✓ Certificado de participação de 8 horas</li>
-            <li>✓ E-book Tópicos Avançados (R$ 99)</li>
-            <li>✓ E-book "Me Formei, e agora?" (R$ 59)</li>
-            <li>✓ E-book Desaprendendo a Dieta (R$ 39)</li>
-            <li>✓ Ressaca do Evento (Encontro Extra no Zoom)</li>
-            <li>✓ <strong>Cashback integral</strong> na Formação/Pós</li>
-          </ul>
+          <div class="card-features-details">
+            
+            <details class="feature-item">
+              <summary>🚀 Tudo do básico + <span class="feature-action">ver o que é</span></summary>
+              <p class="feature-desc">Evento ao vivo, grupo do evento, materiais complementares extras numa plataforma de conteúdos.</p>
+            </details>
+
+            <div class="feature-item--static">
+              <span class="feature-static-icon">🎬</span>
+              <span>Gravação do evento <span class="badge-year">POR 1 ANO</span></span>
+            </div>
+
+            <details class="feature-item">
+              <summary>🎁 Certificado de 8h <span class="feature-action">ver benefício</span></summary>
+              <p class="feature-desc">Para você contabilizar horas na faculdade ou para mostrar para os pacientes que está em constante evolução!</p>
+            </details>
+
+            <details class="feature-item">
+              <summary>🎁 E-book Tópicos Avançados <span class="feature-action">(R$ 99)</span></summary>
+              <p class="feature-desc">Conecta teoria e prática com Nutricosméticos, Crononutrição e Biogênese Mitocondrial, com estratégias de prescrição e referências científicas.</p>
+            </details>
+
+            <details class="feature-item">
+              <summary>🎁 Ebook "Me Formei, e agora?" <span class="feature-action">(R$ 59)</span></summary>
+              <p class="feature-desc">Respostas para as dúvidas mais frequentes de recém-formados: retorno na consulta, precificação, sublocação de sala, fidelização e muito mais.</p>
+            </details>
+
+            <details class="feature-item">
+              <summary>🎁 Ebook Desaprendendo a Dieta <span class="feature-action">(R$ 39)</span></summary>
+              <p class="feature-desc">A Cartilha que envio para meus pacientes combatendo os principais mitos e dando autonomia. Isso é educação Nutricional verdadeira.</p>
+            </details>
+
+            <details class="feature-item">
+              <summary>🎁 Ressaca do Evento (Extra) <span class="feature-action">ver benefício</span></summary>
+              <p class="feature-desc">Na quarta-feira pós evento faremos um encontro extra no zoom para recapitular o conteúdo e tirar dúvidas em uma sala fechada.</p>
+            </details>
+
+            <details class="feature-item">
+              <summary>💰 Cashback integral <span class="feature-action">ver como funciona</span></summary>
+              <p class="feature-desc">O valor investido nesse ingresso é revertido em forma de cashback (desconto) ao se inscrever na Formação Nutrição Avançada ou na Pós Graduação.</p>
+            </details>
+
+          </div>
           <div class="card-divider"></div>
           <div class="card-price-block">
             <span class="old-price">De R$ 297,00</span>
@@ -1804,6 +1874,170 @@ const PRICE_VIP = 'R$ 147,00';
   }
   .red-price {
     color: #ef4444;
+  }
+
+  /* VIP features details style V3 */
+  .card-features-details {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+  .feature-item {
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    padding-bottom: 8px;
+  }
+  .feature-item summary {
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .feature-item summary::-webkit-details-marker {
+    display: none;
+  }
+  .feature-item summary::before {
+    content: '▶';
+    font-size: 9px;
+    color: var(--text-muted);
+    display: inline-block;
+    width: 12px;
+  }
+  .feature-item[open] summary::before {
+    content: '▼';
+  }
+  .feature-action {
+    font-weight: 500;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .feature-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding-left: 20px;
+    margin-top: 6px;
+  }
+  .feature-item--static {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .feature-static-icon {
+    font-size: 14px;
+    width: 12px;
+    display: inline-flex;
+    justify-content: center;
+  }
+  .badge-year {
+    background: var(--red);
+    color: white;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: 6px;
+  }
+
+  /* ══════════════════════════
+     MANCHETES / OPORTUNIDADE (TEMA ESCURO V3)
+  ══════════════════════════ */
+  .news-clippings-container {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 48px auto 0;
+    max-width: 1100px;
+    padding: 10px;
+  }
+  .news-clipping-card {
+    background: #141512;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 32%;
+    min-width: 280px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .news-clipping-card:hover {
+    transform: translateY(-4px) rotate(0deg) !important;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    z-index: 10;
+  }
+  .card-rotate-left { transform: rotate(-1.5deg); }
+  .card-rotate-right { transform: rotate(1.5deg); }
+  .card-rotate-straight { transform: rotate(0.5deg); }
+
+  .news-source {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--red);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .news-date {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .news-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  .news-highlight {
+    background: linear-gradient(120deg, rgba(239, 68, 68, 0.25) 0%, rgba(239, 68, 68, 0.15) 100%);
+    color: inherit;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+  .news-excerpt {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Mobile optimization: swipe slider */
+  @media (max-width: 900px) {
+    .news-clippings-container {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      justify-content: flex-start;
+      padding: 20px;
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .news-clippings-container::-webkit-scrollbar {
+      display: none;
+    }
+    .news-clipping-card {
+      width: 82vw;
+      flex-shrink: 0;
+      scroll-snap-align: center;
+      transform: none !important;
+    }
   }
 
   /* ══════════════════════════

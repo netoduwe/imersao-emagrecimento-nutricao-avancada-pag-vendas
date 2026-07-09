@@ -42,6 +42,22 @@
 
 ---
 
+## 3.1 Seção: Manchetes de Jornal (Oportunidade)
+- **Título:** `O mercado mudou. Quem não se atualizar, ficará para trás.`
+- **Subtítulo:** `As canetas emagrecedoras e a nova realidade da obesidade abriram uma oportunidade sem precedentes para nutricionistas que dominam a clínica avançada:`
+- **Manchetes (Destaques com mark):**
+  1. **GOOGLE TRENDS & LEVANTAMENTO GLOBAL:**
+     - Manchete: "Brasil ocupa a **2ª posição mundial nas buscas por Ozempic e Mounjaro** na internet."
+     - Excerpt: A procura massiva por canetas emagrecedoras movimentou mais de R$ 10 bilhões no mercado nacional, gerando uma onda inédita de pacientes necessitando de suporte nutricional no consultório.
+  2. **ESTUDOS DE MUNDO REAL (GLP-1):**
+     - Manchete: "Mais de **45% dos pacientes abandonam o uso de canetas de GLP-1** no primeiro ano."
+     - Excerpt: Os principais motivos de abandono são os efeitos gastrointestinais severos e a perda de massa magra. O nutricionista preparado é indispensável para evitar esses problemas e manter o resultado.
+  3. **ORGANIZAÇÃO MUNDIAL DA SAÚDE:**
+     - Manchete: "Projeções alertam que até 2030, cerca de **68% dos brasileiros estarão com excesso de peso**."
+     - Excerpt: O avanço do sobrepeso exige condutas clínicas modernas. Tratar emagrecimento apenas calculando déficit calórico básico faliu, abrindo espaço para a nutrição baseada em fisiologia real.
+
+---
+
 ## 4. Seção: O Mecanismo
 - **Título:** `Por que uma imersão de 1 dia muda sua prática clínica?`
 - **Subtítulo:** `Não é mais um curso de teoria. É um dia inteiro de imersão aplicada, com casos clínicos reais, ferramentas práticas e os protocolos que o Ney usa depois de 19 anos de consultório.`
@@ -113,15 +129,15 @@
   - Botão: `COMPRAR INGRESSO BÁSICO`
 - **Ingresso VIP (Mais Vantagens):**
   - Título/Descrição: `50% DE DESCONTO NO LOTE ZERO`
-  - Benefícios:
-    - Tudo do ingresso básico
-    - Gravação do evento por 1 ano
-    - Certificado de participação de 8 horas
-    - E-book Tópicos Avançados (R$ 99)
-    - E-book "Me Formei, e agora?" (R$ 59)
-    - E-book Desaprendendo a Dieta (R$ 39)
-    - Ressaca do Evento (Encontro Extra no Zoom)
-    - Cashback integral na Formação/Pós
+  - Benefícios (Sanfonados/Collapsible):
+    - `▶ Tudo do básico + ver o que é`: Evento ao vivo, grupo do evento, materiais complementares extras numa plataforma de conteúdos.
+    - `🎬 Gravação do evento POR 1 ANO` (Estático)
+    - `▶ Certificado de 8h ver benefício`: Para você contabilizar horas na faculdade ou para mostrar para os pacientes que está em constante evolução!
+    - `▶ E-book Tópicos Avançados (R$ 99)`: Conecta teoria e prática com Nutricosméticos, Crononutrição e Biogênese Mitocondrial, com estratégias de prescrição e referências científicas.
+    - `▶ Ebook "Me Formei, e agora?" (R$ 59)`: Respostas para as dúvidas mais frequentes de recém-formados: retorno na consulta, precificação, sublocação de sala, fidelização e muito mais.
+    - `▶ Ebook Desaprendendo a Dieta (R$ 39)`: A Cartilha que envio para meus pacientes combatendo os principais mitos e dando autonomia. Isso é educação Nutricional verdadeira.
+    - `▶ Ressaca do Evento (Extra) ver benefício`: Na quarta-feira pós evento faremos um encontro extra no zoom para recapitular o conteúdo e tirar dúvidas em uma sala fechada.
+    - `▶ Cashback integral ver como funciona`: O valor investido nesse ingresso é revertido em forma de cashback (desconto) ao se inscrever na Formação Nutrição Avançada ou na Pós Graduação.
   - Preço: `De R$ 297,00 por 12x de R$ 15,20 ou R$ 147,00 à vista`
   - Botão: `COMPRAR INGRESSO VIP`
 - **Texto de Garantia:**

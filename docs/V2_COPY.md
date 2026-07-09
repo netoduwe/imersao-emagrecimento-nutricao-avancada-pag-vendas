@@ -43,6 +43,22 @@
 
 ---
 
+## 3.1 Seção: Manchetes de Jornal (Oportunidade)
+- **Título:** `O mercado mudou. Quem não se atualizar, ficará para trás.`
+- **Subtítulo:** `As canetas emagrecedoras e a nova realidade da obesidade abriram uma oportunidade sem precedentes para nutricionistas que dominam a clínica avançada:`
+- **Manchetes (Destaques com mark):**
+  1. **GOOGLE TRENDS & LEVANTAMENTO GLOBAL:**
+     - Manchete: "Brasil ocupa a **2ª posição mundial nas buscas por Ozempic e Mounjaro** na internet."
+     - Excerpt: A procura massiva por canetas emagrecedoras movimentou mais de R$ 10 bilhões no mercado nacional, gerando uma onda inédita de pacientes necessitando de suporte nutricional no consultório.
+  2. **ESTUDOS DE MUNDO REAL (GLP-1):**
+     - Manchete: "Mais de **45% dos pacientes abandonam o uso de canetas de GLP-1** no primeiro ano."
+     - Excerpt: Os principais motivos de abandono são os efeitos gastrointestinais severos e a perda de massa magra. O nutricionista preparado é indispensável para evitar esses problemas e manter o resultado.
+  3. **ORGANIZAÇÃO MUNDIAL DA SAÚDE:**
+     - Manchete: "Projeções alertam que até 2030, cerca de **68% dos brasileiros estarão com excesso de peso**."
+     - Excerpt: O avanço do sobrepeso exige condutas clínicas modernas. Tratar emagrecimento apenas calculando déficit calórico básico faliu, abrindo espaço para a nutrição baseada em fisiologia real.
+
+---
+
 ## 4. Seção: O Mecanismo
 - *(Observação: O badge "O MECANISMO" foi removido).*
 - **Título:** `Por que uma imersão de 1 dia muda sua prática clínica?`

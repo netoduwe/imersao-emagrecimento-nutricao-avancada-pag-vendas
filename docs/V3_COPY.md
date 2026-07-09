@@ -38,6 +38,16 @@
 ## 4. Seção: A Grande Pergunta (Transição de Mercado)
 - **Headline de Transição:**
   > Com o uso desenfreado de análogos de GLP-1 (como Ozempic e Mounjaro), o mercado agora exige nutricionistas preparados para tratar os efeitos colaterais e sustentar o emagrecimento a longo prazo. Afinal, a medicação passa, mas a nutrição é a única que mantém o resultado.
+- **Manchetes Integradas (Destaques com mark):**
+  1. **GOOGLE TRENDS & LEVANTAMENTO GLOBAL:**
+     - Manchete: "Brasil ocupa a **2ª posição mundial nas buscas por Ozempic e Mounjaro** na internet."
+     - Excerpt: A procura massiva por canetas emagrecedoras movimentou mais de R$ 10 bilhões no mercado nacional, gerando uma onda inédita de pacientes necessitando de suporte nutricional no consultório.
+  2. **ESTUDOS DE MUNDO REAL (GLP-1):**
+     - Manchete: "Mais de **45% dos pacientes abandonam o uso de canetas de GLP-1** no primeiro ano."
+     - Excerpt: Os principais motivos de abandono são os efeitos gastrointestinais severos e a perda de massa magra. O nutricionista preparado é indispensável para evitar esses problemas e manter o resultado.
+  3. **ORGANIZAÇÃO MUNDIAL DA SAÚDE:**
+     - Manchete: "Projeções alertam que até 2030, cerca de **68% dos brasileiros estarão com excesso de peso**."
+     - Excerpt: O avanço do sobrepeso exige condutas clínicas modernas. Tratar emagrecimento apenas calculando déficit calórico básico faliu, abrindo espaço para a nutrição baseada em fisiologia real.
 
 ---
 
