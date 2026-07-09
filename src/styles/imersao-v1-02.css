@@ -19,7 +19,7 @@
     var(--case-bg);
   background-size: 48px 48px, 48px 48px, auto, auto;
   color: var(--case-ink);
-  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-family: Inter, system-ui, sans-serif;
   overflow: hidden;
 }
 
