@@ -2,11 +2,13 @@
 
 **Última Atualização:** 09/07/2026
 
-## Criação da Página V4 (Versão Ultra Enxuta) — 09/07/2026
-- **Nova Rota:** Criada a rota `/imersao-5ed-v4` (`src/pages/imersao-5ed-v4.astro`) baseada no copy fornecido e na referência visual dark green.
-- **Estrutura Modular e Limite de Linhas:** Toda a estilização detalhada foi isolada em `src/styles/imersao-v4.css` para manter o código da página `.astro` leve e com fácil manutenção, ficando com 320 linhas.
+## Criação da Página V4 e Remoção da Integração com Supabase — 09/07/2026
+- **Ajustes Visuais de Contraste na V4:** Envolvido todo o conteúdo da página `imersao-5ed-v4.astro` dentro da classe `.v4-wrapper`, forçando a aplicação do fundo dark-green em todas as seções e corrigindo a ilegibilidade das fontes claras em fundos brancos residuais.
+- **Seção de Preços Simétrica:** Substituída a exibição de oferta única pelo grid simétrico com os 2 tipos de ingressos lado a lado (Básico por R$ 19,90 vs VIP por R$ 147,00 ou 12x de R$ 15,20), no mesmo estilo premium das demais páginas.
+- **Remoção do Supabase (Todas as Versões):** Removidas as consultas de API dinâmicas ao Supabase nos componentes `ProgressBar.astro` e `PriceCard.astro`, além da página `/v5` (`src/pages/v5.astro`).
+- **Escassez Temporal e Countdown Predefinido:** Implementada lógica local de contagem regressiva e escassez baseada em 3 datas de lote predefinidas (Lotes 1, 2 e 3 até 01/08/2026). A barra de preenchimento e a quantidade de ingressos decrescem dinamicamente em tempo real (de 65% a 99%) à medida que o tempo limite do lote se aproxima, gerando o gatilho sem dependências de rede.
+- **Estrutura Modular e Limite de Linhas:** Toda a estilização detalhada da V4 foi isolada em `src/styles/imersao-v4.css` para manter o código da página `.astro` leve e com fácil manutenção, ficando com 320 linhas.
 - **Geração de Assets Visuais:** Criadas e salvas 4 imagens conceituais premium para os pilares na pasta `/public/images/pilares/` (`pilar1.png` a `pilar4.png`) com a ferramenta `generate_image`, eliminando placeholders.
-- **Identidade Visual Dark Green:** Implementados fundos gradientes verdes escuros profundos, ticker animado infinito em verde-claro com o copy atualizado, moldura em arco para a colagem de fotos dos palestrantes, cards translúcidos e acordeões customizados no FAQ. O card VIP contrasta com fundo branco e destaque em verde limão brilhante.
 - **Verificação de Builds:** Build compilado com sucesso, gerando estaticamente a nova página `/imersao-5ed-v4/index.html`.
 
 ## Otimizações Mobile, Lightbox de Vídeo e Simplificação do Cronograma — 09/07/2026
