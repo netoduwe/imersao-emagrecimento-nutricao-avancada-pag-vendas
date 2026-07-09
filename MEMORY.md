@@ -2,6 +2,10 @@
 
 **Última Atualização:** 09/07/2026
 
+## Seção de Transição Emocional (V4) — 09/07/2026
+- **Nova Seção Emocional:** Adicionada uma seção de transição emocional (`.transicao-v4-section`) antes da oferta na V4 com a headline *"Você já sofreu demais por algo que pode ser resolvido em um dia de imersão comigo."*.
+- **Pain Points:** Incluídos badges visuais para os problemas comuns citados (abas abertas caçando artigos, posts de Instagram, batendo cabeça sozinho).
+
 ## Compactação da Seção de Preço + Restauração da Copy (V4) — 09/07/2026
 - **Copy da Hero Restaurada:** Headline voltou para "Aprenda na prática a tratar o emagrecimento com o que a ciência mais atual comprova." e bullets restaurados para os originais do briefing (GLP-1, bioativos, déficit calórico).
 - **Seção de Preço Compactada (Estilo V1):** Cards reestruturados com título + subtítulo no topo, itens compactos em uma linha (sem acordeões), e bloco de preço na parte inferior. Padding reduzido de `3.5rem 2.5rem` para `2.5rem 2rem`. VIP usa bullets de uma linha com emojis (🚀🎁🎓💰) em vez de acordeões expansíveis. Seção inteira agora cabe na viewport.
