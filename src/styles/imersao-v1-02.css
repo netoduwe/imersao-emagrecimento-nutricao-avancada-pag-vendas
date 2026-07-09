@@ -705,52 +705,6 @@
   max-width: 780px;
 }
 
-.ticket-lot-board {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 16px;
-  margin-top: 28px;
-}
-
-.ticket-lot {
-  padding: 22px 20px;
-  border: 1px solid rgba(238, 247, 232, 0.18);
-  background: rgba(255,255,255,0.03);
-  color: var(--case-muted);
-}
-
-.ticket-lot--active {
-  border-color: var(--case-green);
-  background: rgba(49,217,107,0.1);
-  color: #fff;
-  box-shadow: 10px 10px 0 rgba(49,217,107,0.08);
-}
-
-.ticket-lot span,
-.ticket-lot strong,
-.ticket-lot small {
-  display: block;
-}
-
-.ticket-lot span {
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.ticket-lot strong {
-  margin: 10px 0 6px;
-  font-size: clamp(28px, 3.6vw, 42px);
-  font-weight: 950;
-  letter-spacing: -0.06em;
-  color: inherit;
-}
-
-.ticket-lot small {
-  font-size: 14px;
-}
-
 .ticket-board {
   display: grid;
   grid-template-columns: 1fr 1.08fr;
@@ -963,10 +917,6 @@
 
   .case-hero__grid {
     gap: 30px;
-  }
-
-  .ticket-lot-board {
-    grid-template-columns: 1fr;
   }
 
   .case-hero__visual {
