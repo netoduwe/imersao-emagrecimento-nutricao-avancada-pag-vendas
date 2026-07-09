@@ -2,6 +2,15 @@
 
 **Última Atualização:** 09/07/2026
 
+## Correções Visuais V4 + Countdown LOTE ZERO Global — 09/07/2026
+- **Moldura dos Palestrantes:** Trocada de moldura em arco (border-radius 200px) para retângulo arredondado clean (24px) tanto no hero quanto na seção de autoridade. Sem mais clipagem estranha nas fotos.
+- **Caixa de Preço Hero:** Borda aumentada de 1px para 2px com cor verde visível (`rgba(35, 198, 95, 0.35)`) + glow sutil para diferenciar do fundo escuro.
+- **Botão "Garantir minha vaga":** Estilo substituído do shiny pill branco para o gradiente claro da V2 (`linear-gradient(135deg, #86efac 0%, #22c55e 100%)` + texto escuro `#022c0a` + border-radius 12px).
+- **Seção VIP já tinha itens:** Os benefícios (Gravação, Certificado, E-books, Cashback) já estavam no HTML desde a criação — o problema visual era apenas de cor e contraste (corrigido no CSS).
+- **Navbar transparente:** Header principal mudou de fundo branco para `rgba(2, 9, 4, 0.85)` com backdrop-blur, eliminando a faixa branca que poluía a página.
+- **Countdown LOTE ZERO dinâmico (TODAS as versões):** Substituída a lógica de countdown do `Layout.astro` (que apontava para `2026-05-16` e mostrava "VENDAS ABERTAS"), do `ProgressBar.astro`, `PriceCard.astro` e `v5.astro`. Agora todos usam o array com **LOTE ZERO** (até 15/07), LOTE 01 (até 25/07), LOTE 02 (até 30/07), LOTE 03 (até 01/08). A faixa verde do topo mostra dinamicamente "🔥 LOTE ZERO | Virada em: Xd Xh Xm Xs".
+- **Ticker V4:** Texto "LOTE 03 ATIVO" atualizado para "LOTE ZERO ATIVO" no ticker animado.
+
 ## Criação da Página V4 e Remoção da Integração com Supabase — 09/07/2026
 - **Ajustes Visuais de Contraste na V4:** Envolvido todo o conteúdo da página `imersao-5ed-v4.astro` dentro da classe `.v4-wrapper`, forçando a aplicação do fundo dark-green em todas as seções e corrigindo a ilegibilidade das fontes claras em fundos brancos residuais.
 - **Seção de Preços Simétrica:** Substituída a exibição de oferta única pelo grid simétrico com os 2 tipos de ingressos lado a lado (Básico por R$ 19,90 vs VIP por R$ 147,00 ou 12x de R$ 15,20), no mesmo estilo premium das demais páginas.
