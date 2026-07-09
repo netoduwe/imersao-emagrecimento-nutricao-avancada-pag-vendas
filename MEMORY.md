@@ -1,6 +1,13 @@
 # Memória do Projeto: Imersão Nutrição Avançada (Vendas Astro)
 
-**Última Atualização:** 13/05/2026
+**Última Atualização:** 09/07/2026
+
+## Otimizações Mobile, Lightbox de Vídeo e Simplificação do Cronograma — 09/07/2026
+- **Vídeo Lightbox:** Adicionado modal overlay na própria página nas versões V1, V2 e V3. Ao clicar em "🎥 VER CHAMADA" da Jéssica, abre-se o vídeo Shorts do YouTube (`https://www.youtube.com/embed/vPnW2rWVQHY?autoplay=1`) em proporção 9:16 vertical, prevenindo que o lead saia da página de conversão.
+- **Correção da Hero V2:** O botão da Hero na página V2 (`imersao-5ed-v2.astro`) foi alterado de um elemento `<button>` estático para uma âncora `<a>` redirecionando para a seção de preços `#preco`.
+- **Desacoplamento do Cronograma/Módulos:** Removido o detalhamento técnico associado a minutagens de horários específicos. A linha do tempo agora exibe apenas 4 slots logísticos (09h30 — Início, 12h00 — Almoço, 13h30 — Retorno, 17h30 — Encerramento).
+- **Seção "O Que Você Vai Aprender":** Criada seção exclusiva com os módulos divididos em duas colunas (Ney Felipe à esquerda, Jéssica Wszolek à direita), listando os temas técnicos estáticos para V1, V2 e V3.
+- **Otimização de Notícias no Mobile:** Ajustados os estilos da seção de manchetes no celular para evitar que textos cortem ou toquem as bordas da tela. Implementadas margens negativas horizontais, espaçamento interno proporcional (`padding: 20px 16px`), `scroll-padding-left` de 20px e `scroll-snap-align: start` para uma navegação nativa premium de rolagem horizontal por toque. Reduzido o tamanho da fonte do título das manchetes para `15px` para evitar quebras abruptas de linhas no mobile.
 
 ## Integração de Vídeos de Convite — 14/05/2026
 - Criado o componente `VideoRecado.astro` para exibir os convites (YouTube Shorts) das Profas. Cássia e Jéssica em formato vertical (9:16).

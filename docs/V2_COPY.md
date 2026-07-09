@@ -82,11 +82,23 @@
 
 ---
 
-## 6. Seção: Programação / Grade de Conteúdo
-- *(Observação: O badge "PROGRAMAÇÃO" foi removido).*
-- **Título:** `O que você vai aprender no dia 01 de Agosto de 2026`
-- **Linha do Tempo (Cronograma):**
-  - **09h (Ney Felipe) — Emagrecimento Além das Calorias:**
+## 6. Seção: Cronograma da Imersão (Divisão de Horários)
+- *(Observação: O badge "PROGRAMAÇÃO" foi removido e substituído por "CRONOGRAMA").*
+- **Título:** `Cronograma da Imersão`
+- **Subtítulo:** `Ambos os blocos do dia seguirão essa divisão de horários:`
+- **Horários:**
+  - **09h30 — Início do Evento:** Boas-vindas e abertura da transmissão ao vivo via Zoom.
+  - **12h00 — Intervalo para Almoço:** Momento de pausa para almoço e descanso.
+  - **13h30 — Retorno das Palestras:** Reinício dos blocos técnicos de conteúdo prático.
+  - **17h30 — Encerramento das Atividades*:** *(Considere encerrar mais tarde, caso os participantes peçam para nos aprofundarmos em algum ponto. Porém, o conteúdo combinado será entregue dentro do horário programado).*
+
+---
+
+## 6.1 Seção: Conteúdo Detalhado (O Que Você Vai Aprender)
+- **Título:** `O Que Você Vai Aprender`
+- **Subtítulo:** `Todo o raciocínio clínico e as condutas de consultório estruturadas:`
+- **Módulos por Especialista:**
+  - **Prof. Ney Felipe (Conduta Clínica & Emagrecimento):**
     - Como conduzir o paciente durante os períodos críticos do emagrecimento (adesão, platô e reganho).
     - Os alvos moleculares que o nutricionista precisa priorizar no acompanhamento nutricional.
     - Como parar de tratar emagrecimento apenas como “déficit calórico”.
@@ -95,17 +107,12 @@
     - Como aplicar a dieta mediterrânea no emagrecimento de forma prática, estratégica e individualizada.
     - Estudo de caso: como desenhar, passo a passo, uma proposta terapêutica para o paciente que busca emagrecimento.
     - O Método Nutrição Avançada baseado em evidências para acompanhar o paciente em todas as fases do emagrecimento.
-  - **12h — Intervalo para almoço**
-  - **13h (Jéssica Wszolek) — Manejo dietético no uso dos análogos de GLP-1:**
+  - **Profa. Jéssica Wszolek (Manejo Prático de GLP-1):**
     - Por que as “canetas emagrecedoras” não eliminam o nutricionista… elas tornam o nutricionista ainda mais indispensável.
     - O erro silencioso que faz o paciente emagrecer na balança, mas perder massa magra no processo — e como evitar isso na prática clínica.
     - Como ajustar a dieta de um paciente em uso de GLP-1 quando o apetite simplesmente desaparece — sem deixar a proteína e os micronutrientes irem junto.
     - O que NUNCA ignorar em um paciente que usa GLP-1 se você quer evitar fadiga, déficit proteico e queda de desempenho no treino.
     - Por que o desmame da medicação começa muito antes da retirada da caneta — e qual o papel do nutricionista nesse processo.
-  - **17h (Ney & Jéssica) — Casos Clínicos e Perguntas ao Vivo:**
-    - Análise de casos clínicos reais.
-    - Respostas às suas maiores dúvidas de consultório.
-    - Estratégias para o paciente difícil de emagrecer.
 
 ---
 

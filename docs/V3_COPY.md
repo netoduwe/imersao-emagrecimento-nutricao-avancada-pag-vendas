@@ -51,35 +51,15 @@
 
 ---
 
-## 5. Seção: Linha do Tempo Dinâmica (Cronograma Real)
+## 5. Seção: Cronograma da Imersão (Divisão de Horários)
 - *(Observação: O badge "CRONOGRAMA DA IMERSÃO" foi removido).*
-- **Título:** `Programação do Dia 01 de Agosto de 2026`
-- **Subtítulo:** `Um dia inteiro de conteúdo prático e voltado para a sua atuação em consultório:`
-- **Linha do Tempo (Horários Reais):**
-  - **09h00 às 12h00 — Emagrecimento Além das Calorias**
-    - Palestrante: Ney Felipe
-    - Tópicos:
-      - Como conduzir o paciente durante os períodos críticos do emagrecimento (adesão, platô e reganho).
-      - Os alvos moleculares que o nutricionista precisa priorizar no acompanhamento nutricional.
-      - Como parar de tratar emagrecimento apenas como “déficit calórico”.
-      - Como montar uma proposta terapêutica de emagrecimento que vai além das calorias.
-      - Como realmente aplicar os alimentos funcionais e compostos bioativos para emagrecimento (sem shot de cúrcuma e manipulados fakes).
-      - Como aplicar a dieta mediterrânea no emagrecimento de forma prática, estratégica e individualizada.
-      - Estudo de caso: como desenhar, passo a passo, uma proposta terapêutica para o paciente que busca emagrecimento.
-      - O Método Nutrição Avançada baseado em evidências para acompanhar o paciente em todas as fases do emagrecimento.
-  - **12h00 às 13h00 — Intervalo para Almoço**
-    - Copy: Momento de pausa para descanso e recarregamento para o conteúdo da tarde.
-  - **13h00 às 17h00 — Manejo dietético no uso dos análogos de GLP-1**
-    - Palestrante: Jéssica Wszolek
-    - Tópicos:
-      - Por que as “canetas emagrecedoras” não eliminam o nutricionista… elas tornam o nutricionista ainda mais indispensável.
-      - O erro silencioso que faz o paciente emagrecer na balança, mas perder massa magra no processo — e como evitar isso na prática clínica.
-      - Como ajustar a dieta de um paciente em uso de GLP-1 quando o apetite simplesmente desaparece — sem deixar a proteína e os micronutrientes irem junto.
-      - O que NUNCA ignorar em um paciente que usa GLP-1 se você quer evitar fadiga, déficit proteico e queda de desempenho no treino.
-      - Por que o desmame da medicação começa muito antes da retirada da caneta — e qual o papel do nutricionista nesse processo.
-  - **17h00 às 18h00 — Casos Clínicos e Perguntas ao Vivo**
-    - Palestrantes: Ney Felipe & Jéssica Wszolek
-    - Copy: Análise conjunta de casos clínicos reais de consultório e respostas imediatas às maiores dúvidas de atendimento dos alunos ao vivo.
+- **Título:** `Cronograma da Imersão`
+- **Subtítulo:** `Ambos os blocos do dia seguirão essa divisão de horários:`
+- **Horários:**
+  - **09h30 — Início do Evento:** Boas-vindas e abertura da transmissão ao vivo via Zoom.
+  - **12h00 — Intervalo para Almoço:** Momento de pausa para almoço e descanso.
+  - **13h30 — Retorno das Palestras:** Reinício dos blocos técnicos de conteúdo prático.
+  - **17h30 — Encerramento das Atividades*:** *(Considere encerrar mais tarde, caso os participantes peçam para nos aprofundarmos em algum ponto. Porém, o conteúdo combinado será entregue dentro do horário programado).*
 - **Bloco de Alerta de Fracasso:**
   - Cabeçalho: `⚠️ Mas você pode falhar miseravelmente se:`
   - Itens:
@@ -89,26 +69,25 @@
 
 ---
 
-## 6. Seção: Conteúdo do Treinamento (Passo a Passo)
-- *(Observação: O badge "CONTEÚDO PROGRAMÁTICO" foi removido).*
-- **Título:** `Conteúdo do Treinamento`
-- **Subtítulo:** `Os tópicos práticos que serão destravados ao longo de 1 dia de Imersão.`
-- **Módulos (13 Tópicos):**
-  - **Ney Felipe:**
-    1. **Períodos Críticos:** Como conduzir o paciente durante os períodos críticos do emagrecimento (adesão, platô e reganho).
-    2. **Alvos Moleculares:** Os alvos moleculares que o nutricionista precisa priorizar no acompanhamento nutricional.
-    3. **Além das Calorias:** Como parar de tratar emagrecimento apenas como “déficit calórico”.
-    4. **Proposta Terapêutica:** Como montar uma proposta terapêutica de emagrecimento que vai além das calorias.
-    5. **Alimentos Funcionais:** Como realmente aplicar os alimentos funcionais e compostos bioativos para emagrecimento (sem shot de cúrcuma e manipulados fakes).
-    6. **Dieta Mediterrânea:** Como aplicar a dieta mediterrânea no emagrecimento de forma prática, estratégica e individualizada.
-    7. **Estudo de Caso Prático:** Estudo de caso: como desenhar, passo a passo, uma proposta terapêutica para o paciente que busca emagrecimento.
-    8. **Método Nutrição Avançada:** O Método Nutrição Avançada baseado em evidências para acompanhar o paciente em todas as fases do emagrecimento.
-  - **Jéssica Wszolek:**
-    9. **Papel do Nutricionista:** Por que as “canetas emagrecedoras” não eliminam o nutricionista… elas tornam o nutricionista ainda mais indispensável.
-    10. **Erro Silencioso da Massa Magra:** O erro silencioso que faz o paciente emagrecer na balança, mas perder massa magra no processo — e como evitar isso na prática clínica.
-    11. **Ajuste Dietético em Anorexia:** Como ajustar a dieta de um paciente em uso de GLP-1 quando o apetite simplesmente desaparece — sem deixar a proteína e os micronutrientes irem junto.
-    12. **Monitoramento Crítico:** O que NUNCA ignorar em um paciente que usa GLP-1 se você quer evitar fadiga, déficit proteico e queda de desempenho no treino.
-    13. **Desmame da Medicação:** Por que o desmame da medicação começa muito antes da retirada da caneta — e qual o papel do nutricionista nesse processo.
+## 6. Seção: Conteúdo Detalhado (O Que Você Vai Aprender)
+- **Título:** `O Que Você Vai Aprender`
+- **Subtítulo:** `Todo o raciocínio clínico e as condutas de consultório estruturadas:`
+- **Módulos por Especialista:**
+  - **Prof. Ney Felipe (Conduta Clínica & Emagrecimento):**
+    - Como conduzir o paciente durante os períodos críticos do emagrecimento (adesão, platô e reganho).
+    - Os alvos moleculares que o nutricionista precisa priorizar no acompanhamento nutricional.
+    - Como parar de tratar emagrecimento apenas como “déficit calórico”.
+    - Como montar uma proposta terapêutica de emagrecimento que vai além das calorias.
+    - Como realmente aplicar os alimentos funcionais e compostos bioativos para emagrecimento (sem shot de cúrcuma e manipulados fakes).
+    - Como aplicar a dieta mediterrânea no emagrecimento de forma prática, estratégica e individualizada.
+    - Estudo de caso: como desenhar, passo a passo, uma proposta terapêutica para o paciente que busca emagrecimento.
+    - O Método Nutrição Avançada baseado em evidências para acompanhar o paciente em todas as fases do emagrecimento.
+  - **Profa. Jéssica Wszolek (Manejo Prático de GLP-1):**
+    - Por que as “canetas emagrecedoras” não eliminam o nutricionista… elas tornam o nutricionista ainda mais indispensável.
+    - O erro silencioso que faz o paciente emagrecer na balança, mas perder massa magra no processo — e como evitar isso na prática clínica.
+    - Como ajustar a dieta de um paciente em uso de GLP-1 quando o apetite simplesmente desaparece — sem deixar a proteína e os micronutrientes irem junto.
+    - O que NUNCA ignorar em um paciente que usa GLP-1 se você quer evitar fadiga, déficit proteico e queda de desempenho no treino.
+    - Por que o desmame da medicação começa muito antes da retirada da caneta — e qual o papel do nutricionista nesse processo.
 
 ---
 
