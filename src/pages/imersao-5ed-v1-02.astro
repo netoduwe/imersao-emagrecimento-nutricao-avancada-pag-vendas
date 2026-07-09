@@ -27,8 +27,13 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
           </p>
 
           <div class="case-hero__actions">
-            <a href="#ingressos" class="case-action case-action--primary">Ver ingressos</a>
-            <a href="#aula" class="case-action case-action--ghost">Abrir o dossiê</a>
+            <div class="case-hero__ticket" aria-label="Ingresso lote zero">
+              <span class="case-hero__lot">Lote zero</span>
+              <p>De <s>R$ 97,00</s> por apenas</p>
+              <strong>{PRICE_BASICO}</strong>
+              <a href="#ingressos" class="case-hero__buy">Garantir minha vaga! &gt;</a>
+              <small>Garantia incondicional de 7 dias · Sem burocracia</small>
+            </div>
           </div>
 
           <div class="case-hero__facts" aria-label="Dados do evento">

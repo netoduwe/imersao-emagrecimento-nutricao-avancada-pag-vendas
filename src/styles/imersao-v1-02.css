@@ -23,6 +23,12 @@
   overflow: hidden;
 }
 
+.case-page *,
+.case-page *::before,
+.case-page *::after {
+  box-sizing: border-box;
+}
+
 .case-shell {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
@@ -74,10 +80,76 @@
 }
 
 .case-hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
   margin-top: 34px;
+  max-width: 420px;
+}
+
+.case-hero__ticket {
+  position: relative;
+  padding: 26px 28px 22px;
+  border: 1px solid rgba(49,217,107,0.55);
+  background:
+    linear-gradient(135deg, rgba(49,217,107,0.13), transparent 44%),
+    #031307;
+  color: var(--case-ink);
+  box-shadow: 10px 10px 0 rgba(49,217,107,0.11);
+}
+
+.case-hero__lot {
+  position: absolute;
+  left: 22px;
+  top: -17px;
+  padding: 8px 15px;
+  background: var(--case-green);
+  color: #021407;
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.case-hero__ticket p {
+  margin: 0 0 4px;
+  color: var(--case-muted);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.case-hero__ticket s {
+  color: #ff4d4d;
+  text-decoration-thickness: 2px;
+}
+
+.case-hero__ticket strong {
+  display: block;
+  margin-bottom: 18px;
+  color: #fff;
+  font-size: clamp(42px, 4.8vw, 54px);
+  font-weight: 950;
+  letter-spacing: -0.06em;
+  line-height: 0.96;
+}
+
+.case-hero__buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  width: 100%;
+  background: var(--case-green);
+  color: #021407;
+  font-size: 16px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.case-hero__ticket small {
+  display: block;
+  margin-top: 18px;
+  color: var(--case-muted);
+  font-size: 13px;
+  line-height: 1.35;
 }
 
 .case-action {
@@ -99,10 +171,6 @@
   color: #021407;
   border-color: var(--case-green);
   box-shadow: 8px 8px 0 #14381e;
-}
-
-.case-action--ghost {
-  background: rgba(255,255,255,0.03);
 }
 
 .case-hero__facts {
@@ -786,7 +854,26 @@
 
 @media (max-width: 640px) {
   .case-shell {
-    width: min(100% - 28px, 1180px);
+    width: calc(100% - 28px);
+  }
+
+  .case-hero .case-shell {
+    width: 100%;
+  }
+
+  .case-hero__grid,
+  .case-hero__content {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .case-hero__content {
+    padding: 0 14px;
+  }
+
+  .case-hero__visual {
+    width: calc(100% - 28px);
+    margin: 0 auto;
   }
 
   .case-hero {
@@ -795,11 +882,25 @@
   }
 
   .case-hero h1 {
-    font-size: clamp(42px, 15vw, 66px);
+    font-size: clamp(38px, 12vw, 48px);
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+    overflow-wrap: break-word;
+  }
+
+  .case-lead {
+    max-width: 100%;
+    font-size: 18px;
+    overflow-wrap: break-word;
   }
 
   .case-hero__actions,
   .case-hero__facts {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .case-hero__ticket {
     width: 100%;
   }
 
