@@ -122,6 +122,7 @@
   - Headline limpa e direta em Sans-serif branco.
   - Price Card destacado no Hero: Fundo escuro translúcido com borda verde brilhante, badge de "Lote zero", preço antigo riscado em vermelho e preço atual gigante.
   - Botão de CTA retangular em gradiente verde limão brilhante com indicação de clique/chevron.
+  - **Correções (09/07/2026):** Centralizado o container do Hero para não grudar no canto esquerdo da tela em monitores largos, removido a faixa de urgência que flutuava em cima do rosto do Ney, removido todos os badges de seções estilo IA ("O Problema", etc.) e excluído o depoimento Screenshot_2.png.
 - **Preços (Básico vs VIP):** Restaurados ambos os ingressos lado a lado no final da página com a ProgressBar de urgência integrada.
 - **Build:** OK · 13 páginas geradas no total.
 
@@ -133,7 +134,8 @@
 - **Efeitos de Animação e Interação:**
   - **Sticky Bottom Bar:** Barra fixada ao rodapé que desliza de forma suave (`translateY` via CSS + class toggle em JS) quando o scroll do usuário passa de 450px. Mostra a pílula de compra com preço promocional, porcentagem de escassez e barra de progresso.
   - **Linha do Tempo Fisiológica Dinâmica:** Conforme o scroll desce na seção de Timeline, a linha vertical esquerda é "preenchida" de vermelho sutilmente e os pontos correspondentes são ativados.
-  - **Provas com Lightbox Modal:** Grid com os 5 depoimentos reais com efeito hover de ampliação e zoom completo e nítido ao clicar.
+  - **Provas com Lightbox Modal:** Grid com os depoimentos reais com efeito hover de ampliação e zoom completo e nítido ao clicar.
+  - **Correções (09/07/2026):** Centralizado o container do Hero, removido os badges de seções estilo IA ("Programação", etc.) e excluído o depoimento Screenshot_2.png.
 - **Build:** OK · 14 páginas geradas no total.
 
 ## Página de Check-in Interativa — 12/05/2026
