@@ -145,7 +145,7 @@ const PRICE_VIP = 'R$ 147,00';
       </div>
 
       <div class="notaveis-footer-text text-center">
-        <p>"Todos esses profissionais utilizam ou utilizaram nossas estratégias e raciocínio clínico em seus projetos."</p>
+        <p>Mensagens e depoimentos reais de quem participou da última edição da Imersão.</p>
       </div>
     </div>
   </section>
@@ -935,17 +935,23 @@ const PRICE_VIP = 'R$ 147,00';
   }
 
   .screenshots-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
-    max-width: 960px;
+    column-count: 2;
+    column-gap: 20px;
+    max-width: 900px;
     margin: 0 auto;
   }
 
+  @media (max-width: 768px) {
+    .screenshots-grid {
+      column-count: 1;
+    }
+  }
+
   .screenshot-card {
-    flex: 1 1 360px;
-    max-width: 440px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    break-inside: avoid;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -953,8 +959,6 @@ const PRICE_VIP = 'R$ 147,00';
     cursor: pointer;
     position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
-    display: flex;
-    align-items: flex-start;
   }
 
   .screenshot-card:hover {

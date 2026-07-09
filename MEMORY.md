@@ -123,6 +123,7 @@
   - Price Card destacado no Hero: Fundo escuro translúcido com borda verde brilhante, badge de "Lote zero", preço antigo riscado em vermelho e preço atual gigante.
   - Botão de CTA retangular em gradiente verde limão brilhante com indicação de clique/chevron.
   - **Correções (09/07/2026):** Centralizado o container do Hero para não grudar no canto esquerdo da tela em monitores largos, removido a faixa de urgência que flutuava em cima do rosto do Ney, removido todos os badges de seções estilo IA ("O Problema", etc.) e excluído o depoimento Screenshot_2.png.
+  - **Masonry Grid (09/07/2026):** Substituído o CSS da grade de depoimentos por colunas do tipo Masonry flexíveis (alturas nativas sem corte), permitindo leitura perfeita e natural idêntica à referência do Vini.
 - **Preços (Básico vs VIP):** Restaurados ambos os ingressos lado a lado no final da página com a ProgressBar de urgência integrada.
 - **Build:** OK · 13 páginas geradas no total.
 
@@ -136,6 +137,7 @@
   - **Linha do Tempo Fisiológica Dinâmica:** Conforme o scroll desce na seção de Timeline, a linha vertical esquerda é "preenchida" de vermelho sutilmente e os pontos correspondentes são ativados.
   - **Provas com Lightbox Modal:** Grid com os depoimentos reais com efeito hover de ampliação e zoom completo e nítido ao clicar.
   - **Correções (09/07/2026):** Centralizado o container do Hero, removido os badges de seções estilo IA ("Programação", etc.) e excluído o depoimento Screenshot_2.png.
+  - **Masonry Grid & Copy (09/07/2026):** Substituído o CSS da grade de depoimentos por colunas do tipo Masonry (alturas nativas sem corte) e corrigido a legenda de subtexto para indicar que são alunos participantes da imersão (e não "parceiros de projetos").
 - **Build:** OK · 14 páginas geradas no total.
 
 ## Página de Check-in Interativa — 12/05/2026
