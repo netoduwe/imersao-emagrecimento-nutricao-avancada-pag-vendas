@@ -38,21 +38,21 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
           </div>
           
           <h1 class="hero-v4-h1">
-            Caneta, platô e reganho exigem mais do que <span class="highlight">uma dieta calculada.</span>
+            Aprenda na prática a <span class="highlight">tratar o emagrecimento</span> com o que a ciência mais atual comprova.
           </h1>
           
           <ul class="hero-v4-bullets">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Entenda como ajustar a dieta quando o apetite do paciente zera;</span>
+              <span>Entenda o manejo seguro de canetas emagrecedoras (GLP-1);</span>
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Use compostos bioativos com critério clínico, sem modinha;</span>
+              <span>Domine a aplicação de compostos bioativos eficientes;</span>
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Conduza platô, adesão e reganho com raciocínio, não só cálculo;</span>
+              <span>Vá além do déficit calórico básico na sua consulta;</span>
             </li>
           </ul>
  
@@ -212,7 +212,7 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
       </div>
     </section>
 
-    <!-- 5. BLOCO DE OFERTA (FECHAMENTO DE CAIXA COM 2 INGRESSOS LADO A LADO) -->
+    <!-- 5. BLOCO DE OFERTA (FECHAMENTO DE CAIXA COM 2 INGRESSOS LADO A LADO - ESTRUTURA COMPACTA V1) -->
     <section class="oferta-v4-section" id="preco">
       <div class="container">
         <div class="v4-title-center">
@@ -224,92 +224,86 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
           <!-- Card 1: Ingresso Básico -->
           <div class="price-card-basic-v4">
             <span class="badge-lote-basic">Ingresso Básico</span>
-            <div class="price-old">De R$ 97,00 por apenas:</div>
-            <div class="price-main">{PRICE_BASICO}</div>
-            <div class="price-subtext">Ideal para assistir ao vivo</div>
+            <h3 class="card-title-v4">Ingresso Básico</h3>
+            <p class="card-subtitle-v4">Ideal para assistir ao vivo</p>
             
             <ul class="price-benefits">
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Acesso ao dia de Imersão ao vivo (Zoom)</span>
+                <span class="icon-v1">✅</span>
+                <span>Acesso ao dia de Imersão ao vivo via Zoom</span>
               </li>
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Materiais compartilhados na aula</span>
+                <span class="icon-v1">✅</span>
+                <span>8 horas de conteúdo intenso</span>
               </li>
               <li>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span class="icon-v1">✅</span>
                 <span>Grupo exclusivo de participantes</span>
+              </li>
+              <li>
+                <span class="icon-v1">✅</span>
+                <span>Materiais compartilhados na imersão</span>
+              </li>
+              <li>
+                <span class="icon-v1">🎁</span>
+                <span>Mini Curso Fundamentos do Emagrecimento</span>
               </li>
             </ul>
 
+            <div class="price-block-v4">
+              <div class="price-old">De R$ 97,00</div>
+              <div class="price-main">{PRICE_BASICO}</div>
+              <div class="price-subtext">Pix ou Cartão</div>
+            </div>
+ 
             <a href="#" class="btn-v4-shiny" data-form="normal">
-              <span>Pegar Ingresso Básico</span>
+              <span>COMPRAR INGRESSO BÁSICO</span>
               <span class="arrow">&gt;</span>
             </a>
           </div>
 
-          <!-- Card 2: Ingresso VIP -->
+          <!-- Card 2: Ingresso VIP (Destaque Compacto V1) -->
           <div class="price-card-v4">
-            <span class="tag-vip">Lote VIP Ativo</span>
-            <div class="price-old">De R$ 297,00 por apenas:</div>
-            <div class="price-main">{PRICE_VIP_PARCELADO}</div>
-            <div class="price-subtext">ou {PRICE_VIP_AVISTA} à vista</div>
+            <span class="tag-vip">MAIS VANTAGENS</span>
+            <h3 class="card-title-v4">Ingresso VIP</h3>
+            <p class="card-subtitle-v4">50% DE DESCONTO NO LOTE ZERO</p>
             
             <ul class="price-benefits vip-benefits-v4">
               <li>
-                <details class="benefit-v4">
-                  <summary><span>🚀</span> <span><b>Tudo do básico +</b> <small>ver o que é</small></span></summary>
-                  <div class="benefit-desc-v4">Evento ao vivo, grupo do evento, materiais complementares extras numa plataforma de conteúdos.</div>
-                </details>
-              </li>
-              <li class="benefit-inline">
-                <span>🎥</span>
-                <span class="benefit-inline-text">
-                  <b>Gravação do evento</b>
-                  <span class="badge-ano">POR 1 ANO</span>
-                </span>
+                <span class="icon-v1">🚀</span>
+                <span><b>Tudo do básico +</b> gravação por 1 ano + certificado 8h</span>
               </li>
               <li>
-                <details class="benefit-v4">
-                  <summary><span>🎁</span> <span><b>Certificado de 8h</b> <small>ver benefício</small></span></summary>
-                  <div class="benefit-desc-v4">Para você contabilizar horas na faculdade ou para mostrar para os pacientes que está em constante evolução!</div>
-                </details>
+                <span class="icon-v1">🎁</span>
+                <span>E-book Tópicos Avançados <small style="color:#999;">(R$99)</small></span>
               </li>
               <li>
-                <details class="benefit-v4">
-                  <summary><span>🎁</span> <span><b>E-book Tópicos Avançados</b> <small>(R$ 99)</small></span></summary>
-                  <div class="benefit-desc-v4">Conecta teoria e prática com Nutricosméticos, Crononutrição e Biogênese Mitocondrial, com estratégias de prescrição e referências científicas.</div>
-                </details>
+                <span class="icon-v1">🎁</span>
+                <span>E-book "Me Formei, e agora?" <small style="color:#999;">(R$59)</small></span>
               </li>
               <li>
-                <details class="benefit-v4">
-                  <summary><span>🎁</span> <span><b>Ebook "Me Formei, e agora?"</b> <small>(R$ 59)</small></span></summary>
-                  <div class="benefit-desc-v4">Respostas para as dúvidas mais frequentes de recém-formados: retorno na consulta, precificação, sublocação de sala, fidelização e muito mais.</div>
-                </details>
+                <span class="icon-v1">🎁</span>
+                <span>E-book Desaprendendo a Dieta <small style="color:#999;">(R$39)</small></span>
               </li>
               <li>
-                <details class="benefit-v4">
-                  <summary><span>🎁</span> <span><b>Ebook Desaprendendo a Dieta</b> <small>(R$ 39)</small></span></summary>
-                  <div class="benefit-desc-v4">A Cartilha que envio para meus pacientes combatendo os principais mitos e dando autonomia. Isso é educação Nutricional verdadeira.</div>
-                </details>
+                <span class="icon-v1">🎓</span>
+                <span>Ressaca do Evento (encontro extra Zoom)</span>
               </li>
               <li>
-                <details class="benefit-v4">
-                  <summary><span>🎁</span> <span><b>Ressaca do Evento (Extra)</b> <small>ver benefício</small></span></summary>
-                  <div class="benefit-desc-v4">Na quarta-feira pós evento faremos um encontro extra no zoom para recapitular o conteúdo e tirar dúvidas em uma sala fechada.</div>
-                </details>
-              </li>
-              <li>
-                <details class="benefit-v4">
-                  <summary><span>💰</span> <span><b>Cashback integral</b> <small>ver como funciona</small></span></summary>
-                  <div class="benefit-desc-v4">O valor investido nesse ingresso é revertido em forma de cashback (desconto) ao se inscrever na Formação Nutrição Avançada ou na Pós Graduação.</div>
-                </details>
+                <span class="icon-v1">💰</span>
+                <span><b>Cashback integral</b> na Formação ou Pós</span>
               </li>
             </ul>
 
+            <div class="price-block-v4">
+              <div class="price-old">De R$ 297,00</div>
+              <div class="price-desc-vip">POR 12x DE:</div>
+              <div class="price-main">{PRICE_VIP_PARCELADO}</div>
+              <div class="price-subtext">ou {PRICE_VIP_AVISTA} à vista</div>
+            </div>
+ 
             <a href="#" class="btn-v4-shiny" data-form="vip">
-              <span>Pegar Ingresso VIP</span>
+              <span>COMPRAR INGRESSO VIP</span>
               <span class="arrow">&gt;</span>
             </a>
 
