@@ -124,6 +124,7 @@
   - Botão de CTA retangular em gradiente verde limão brilhante com indicação de clique/chevron.
   - **Correções (09/07/2026):** Centralizado o container do Hero para não grudar no canto esquerdo da tela em monitores largos, removido a faixa de urgência que flutuava em cima do rosto do Ney, removido todos os badges de seções estilo IA ("O Problema", etc.) e excluído o depoimento Screenshot_2.png.
   - **Masonry Grid (09/07/2026):** Substituído o CSS da grade de depoimentos por colunas do tipo Masonry flexíveis (alturas nativas sem corte), permitindo leitura perfeita e natural idêntica à referência do Vini.
+  - **Atualização de Conteúdo (09/07/2026):** Atualizado todo o conteúdo programático do Ney (8 tópicos) e Jéssica (Tema + 5 tópicos de GLP-1), além da inclusão do botão discreto "VER CHAMADA" no card da Profa. Jéssica.
 - **Preços (Básico vs VIP):** Restaurados ambos os ingressos lado a lado no final da página com a ProgressBar de urgência integrada.
 - **Build:** OK · 13 páginas geradas no total.
 
@@ -138,6 +139,7 @@
   - **Provas com Lightbox Modal:** Grid com os depoimentos reais com efeito hover de ampliação e zoom completo e nítido ao clicar.
   - **Correções (09/07/2026):** Centralizado o container do Hero, removido os badges de seções estilo IA ("Programação", etc.) e excluído o depoimento Screenshot_2.png.
   - **Masonry Grid & Copy (09/07/2026):** Substituído o CSS da grade de depoimentos por colunas do tipo Masonry (alturas nativas sem corte) e corrigido a legenda de subtexto para indicar que são alunos participantes da imersão (e não "parceiros de projetos").
+  - **Atualização de Conteúdo (09/07/2026):** Mapeado todo o conteúdo programático atualizado na linha do tempo e na grade de tópicos detalhados (13 cards divididos entre Ney e Jéssica), com o botão de vídeo convite integrado de forma compacta.
 - **Build:** OK · 14 páginas geradas no total.
 
 ## Página de Check-in Interativa — 12/05/2026

@@ -48,12 +48,25 @@
 - **Linha do Tempo (Horários Reais):**
   - **09h00 às 12h00 — Emagrecimento Além das Calorias**
     - Palestrante: Ney Felipe
-    - Copy: O mito da calculoterapia e o que a ciência diz. Condutas práticas para diferentes perfis de paciente, periodização do acompanhamento nutricional e como aumentar a adesão sem depender de força de vontade.
+    - Tópicos:
+      - Como conduzir o paciente durante os períodos críticos do emagrecimento (adesão, platô e reganho).
+      - Os alvos moleculares que o nutricionista precisa priorizar no acompanhamento nutricional.
+      - Como parar de tratar emagrecimento apenas como “déficit calórico”.
+      - Como montar uma proposta terapêutica de emagrecimento que vai além das calorias.
+      - Como realmente aplicar os alimentos funcionais e compostos bioativos para emagrecimento (sem shot de cúrcuma e manipulados fakes).
+      - Como aplicar a dieta mediterrânea no emagrecimento de forma prática, estratégica e individualizada.
+      - Estudo de caso: como desenhar, passo a passo, uma proposta terapêutica para o paciente que busca emagrecimento.
+      - O Método Nutrição Avançada baseado em evidências para acompanhar o paciente em todas as fases do emagrecimento.
   - **12h00 às 13h00 — Intervalo para Almoço**
     - Copy: Momento de pausa para descanso e recarregamento para o conteúdo da tarde.
-  - **13h00 às 17h00 — GLP-1, Canetas Emagrecedoras e Compostos Bioativos**
+  - **13h00 às 17h00 — Manejo dietético no uso dos análogos de GLP-1**
     - Palestrante: Jéssica Wszolek
-    - Copy: Indicações clínicas e manejo dietético de canetas emagrecedoras. Compostos bioativos que ampliam os resultados, como orientar e acompanhar pacientes em uso de GLP-1 e prevenção de recaídas pós-medicação.
+    - Tópicos:
+      - Por que as “canetas emagrecedoras” não eliminam o nutricionista… elas tornam o nutricionista ainda mais indispensável.
+      - O erro silencioso que faz o paciente emagrecer na balança, mas perder massa magra no processo — e como evitar isso na prática clínica.
+      - Como ajustar a dieta de um paciente em uso de GLP-1 quando o apetite simplesmente desaparece — sem deixar a proteína e os micronutrientes irem junto.
+      - O que NUNCA ignorar em um paciente que usa GLP-1 se você quer evitar fadiga, déficit proteico e queda de desempenho no treino.
+      - Por que o desmame da medicação começa muito antes da retirada da caneta — e qual o papel do nutricionista nesse processo.
   - **17h00 às 18h00 — Casos Clínicos e Perguntas ao Vivo**
     - Palestrantes: Ney Felipe & Jéssica Wszolek
     - Copy: Análise conjunta de casos clínicos reais de consultório e respostas imediatas às maiores dúvidas de atendimento dos alunos ao vivo.
@@ -69,15 +82,23 @@
 ## 6. Seção: Conteúdo do Treinamento (Passo a Passo)
 - *(Observação: O badge "CONTEÚDO PROGRAMÁTICO" foi removido).*
 - **Título:** `Conteúdo do Treinamento`
-- **Subtítulo:** `Os 7 passos estruturados para destravar seu raciocínio de consultório.`
-- **Módulos (7 Passos):**
-  1. **Planejamento da Conduta Clínica:** Organização da primeira consulta, definição de objetivos realistas e mapeamento metabólico inicial do paciente.
-  2. **Fisiologia do Tecido Adiposo:** Entendendo a inflamação de baixo grau, mitocôndrias, regulação neuroendócrina do apetite e saciedade na prática.
-  3. **Manejo Prático de Canetas Emagrecedoras:** Protocolos dietéticos em conjunto com uso de análogos de GLP-1, controle de efeitos colaterais e prevenção de desnutrição.
-  4. **Compostos Bioativos e Suplementação:** Prescrição científica de fitoquímicos, antioxidantes e nutrientes específicos para acelerar a oxidação de gorduras.
-  5. **Estratégias de Adesão e Sustentabilidade:** Psicologia comportamental, como contornar os furos na dieta e criar planos alimentares sustentáveis.
-  6. **Periodização e Platô de Emagrecimento:** O que fazer quando o paciente para de emagrecer: quebra de platô metabólico e reajustes calóricos estratégicos.
-  7. **Discussão de Casos Clínicos ao Vivo:** Casos práticos de consultório resolvidos passo a passo, abrindo espaço para suas dúvidas de atendimento.
+- **Subtítulo:** `Os tópicos práticos que serão destravados ao longo de 1 dia de Imersão.`
+- **Módulos (13 Tópicos):**
+  - **Ney Felipe:**
+    1. **Períodos Críticos:** Como conduzir o paciente durante os períodos críticos do emagrecimento (adesão, platô e reganho).
+    2. **Alvos Moleculares:** Os alvos moleculares que o nutricionista precisa priorizar no acompanhamento nutricional.
+    3. **Além das Calorias:** Como parar de tratar emagrecimento apenas como “déficit calórico”.
+    4. **Proposta Terapêutica:** Como montar uma proposta terapêutica de emagrecimento que vai além das calorias.
+    5. **Alimentos Funcionais:** Como realmente aplicar os alimentos funcionais e compostos bioativos para emagrecimento (sem shot de cúrcuma e manipulados fakes).
+    6. **Dieta Mediterrânea:** Como aplicar a dieta mediterrânea no emagrecimento de forma prática, estratégica e individualizada.
+    7. **Estudo de Caso Prático:** Estudo de caso: como desenhar, passo a passo, uma proposta terapêutica para o paciente que busca emagrecimento.
+    8. **Método Nutrição Avançada:** O Método Nutrição Avançada baseado em evidências para acompanhar o paciente em todas as fases do emagrecimento.
+  - **Jéssica Wszolek:**
+    9. **Papel do Nutricionista:** Por que as “canetas emagrecedoras” não eliminam o nutricionista… elas tornam o nutricionista ainda mais indispensável.
+    10. **Erro Silencioso da Massa Magra:** O erro silencioso que faz o paciente emagrecer na balança, mas perder massa magra no processo — e como evitar isso na prática clínica.
+    11. **Ajuste Dietético em Anorexia:** Como ajustar a dieta de um paciente em uso de GLP-1 quando o apetite simplesmente desaparece — sem deixar a proteína e os micronutrientes irem junto.
+    12. **Monitoramento Crítico:** O que NUNCA ignorar em um paciente que usa GLP-1 se você quer evitar fadiga, déficit proteico e queda de desempenho no treino.
+    13. **Desmame da Medicação:** Por que o desmame da medicação começa muito antes da retirada da caneta — e qual o papel do nutricionista nesse processo.
 
 ---
 
@@ -87,6 +108,7 @@
 - **Perfis:**
   - **NEY FELIPE (Nutricionista e Mestre em Biol. Molecular):** 19 anos de consultório clínico, pioneiro da Nutrição Funcional Esportiva no Brasil e fundador da Nutrição Avançada.
   - **JÉSSICA WSZOLEK (Professora Convidada):** Referência nacional em manejo dietético integrado ao uso de análogos de GLP-1 e modulação do emagrecimento prático.
+    - *Botão de Vídeo Convite:* `🎥 VER CHAMADA` (Aponta para https://www.youtube.com/shorts/vPnW2rWVQHY)
 
 ---
 
