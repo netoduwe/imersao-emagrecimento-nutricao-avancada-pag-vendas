@@ -117,56 +117,78 @@ const { variant = 'green' } = Astro.props;
 </style>
 
 <script>
-  const SUPABASE_URL = 'https://qjkezuofhunqzbchlhru.supabase.co';
-  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqa2V6dW9maHVucXpiY2hsaHJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAxMzUwNTUsImV4cCI6MjA4NTcxMTA1NX0.wN1mTQtm80Qmla48jpBis9v-erf6xDa6OJgnxbDPe0I';
+  // Datas predefinidas para viradas de lotes (Evento: 01/08/2026)
+  const LOTES = [
+    { nome: 'LOTE 01', inicio: new Date('2026-07-01T00:00:00').getTime(), limite: new Date('2026-07-15T23:59:59').getTime(), preco: 'R$ 19,90' },
+    { nome: 'LOTE 02', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-25T23:59:59').getTime(), preco: 'R$ 24,90' },
+    { nome: 'LOTE 03', inicio: new Date('2026-07-25T00:00:00').getTime(), limite: new Date('2026-08-01T09:00:00').getTime(), preco: 'R$ 29,90' }
+  ];
 
-  async function fetchProgress() {
-    try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_imersao_progress`, {
-        method: 'POST',
-        headers: {
-          'apikey': SUPABASE_ANON,
-          'Authorization': `Bearer ${SUPABASE_ANON}`,
-          'Content-Type': 'application/json'
-        },
-        body: '{}'
-      });
-      const data = await res.json();
-      if (data) {
-        const cards = document.querySelectorAll('[data-price-card]');
-        cards.forEach(card => {
-           const fill = card.querySelector('[data-pc-fill]') as HTMLElement;
-           const pct = card.querySelector('[data-pc-pct]');
-           const rem = card.querySelector('[data-pc-remaining]');
-           const price = card.querySelector('[data-pc-price]');
-
-           const percent = data.percentual;
-           const visualPercent = Math.min(percent, 100);
-
-           if(fill) {
-             fill.style.width = `${Math.max(visualPercent, 5)}%`;
-             
-             // Troca dinâmica de cor (ou força se for red)
-             if (card.getAttribute('data-variant') === 'red') {
-               fill.style.background = '#dc2626'; // Vermelho forçado
-             } else if (visualPercent > 90) {
-               fill.style.background = '#ef4444'; // Vermelho
-             } else if (visualPercent > 70) {
-               fill.style.background = '#f59e0b'; // Laranja
-             } else {
-               fill.style.background = '#16A34A'; // Verde
-             }
-           }
-           if(pct) pct.textContent = `${Math.floor(percent)}% dos ingressos vendidos`;
-           if(rem) rem.textContent = `virada de lote`;
-           if(price) price.textContent = `R$ ${Number(data.preco).toFixed(2).replace('.', ',')}`;
-        });
+  function updatePriceCards() {
+    const now = new Date().getTime();
+    
+    // Identificar lote ativo
+    let lote = LOTES[LOTES.length - 1];
+    for (let i = 0; i < LOTES.length; i++) {
+      if (now < LOTES[i].limite) {
+        lote = LOTES[i];
+        break;
       }
-    } catch (err) {
-      console.error('Erro ao buscar progresso:', err);
     }
+
+    const totalDuration = lote.limite - lote.inicio;
+    const elapsed = now - lote.inicio;
+    
+    // Porcentagem baseada no tempo (mínimo de 65%, máximo 99%)
+    let percent = 65;
+    if (elapsed > 0 && totalDuration > 0) {
+      const calculatedPct = 65 + (34 * (elapsed / totalDuration));
+      percent = Math.min(Math.max(calculatedPct, 65), 99);
+    }
+    
+    const visualPercent = Math.min(percent, 100);
+
+    const cards = document.querySelectorAll('[data-price-card]');
+    cards.forEach(card => {
+       const fill = card.querySelector('[data-pc-fill]') as HTMLElement;
+       const pct = card.querySelector('[data-pc-pct]');
+       const rem = card.querySelector('[data-pc-remaining]');
+       const price = card.querySelector('[data-pc-price]');
+
+       if(fill) {
+         fill.style.width = `${Math.max(visualPercent, 5)}%`;
+         
+         // Troca dinâmica de cor (ou força se for red)
+         if (card.getAttribute('data-variant') === 'red') {
+           fill.style.background = '#dc2626'; // Vermelho forçado
+         } else if (visualPercent > 90) {
+           fill.style.background = '#ef4444'; // Vermelho
+         } else if (visualPercent > 70) {
+           fill.style.background = '#f59e0b'; // Laranja
+         } else {
+           fill.style.background = '#16A34A'; // Verde
+         }
+       }
+       
+       if(pct) pct.textContent = `${Math.floor(percent)}% dos ingressos vendidos`;
+       
+       // Contador regressivo ou virada de lote
+       const diff = lote.limite - now;
+       if(rem) {
+         if (diff > 0) {
+           const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+           const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+           const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+           const s = Math.floor((diff % (1000 * 60)) / 1000);
+           rem.textContent = `virada de lote em: ${d}d ${h}h ${m}m ${s}s`;
+         } else {
+           rem.textContent = `vagas limitadas`;
+         }
+       }
+       if(price) price.textContent = lote.preco;
+    });
   }
 
-  fetchProgress();
-  setInterval(fetchProgress, 30000);
+  updatePriceCards();
+  setInterval(updatePriceCards, 1000);
 </script>

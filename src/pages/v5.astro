@@ -377,24 +377,39 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Supabase Logic
-async function fetchProgress() {
-  const SUPABASE_URL = 'https://qjkezuofhunqzbchlhru.supabase.co';
-  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqa2V6dW9maHVucXpiY2hsaHJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAxMzUwNTUsImV4cCI6MjA4NTcxMTA1NX0.wN1mTQtm80Qmla48jpBis9v-erf6xDa6OJgnxbDPe0I';
-  try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/get_imersao_progress`, {
-      method: 'POST',
-      headers: { 'apikey': SUPABASE_ANON, 'Authorization': `Bearer ${SUPABASE_ANON}`, 'Content-Type': 'application/json' },
-      body: '{}'
-    });
-    const data = await res.json();
-    if (data) {
-      const pct = document.getElementById('sb-pct');
-      const fill = document.getElementById('sb-fill');
-      if (pct) pct.textContent = `${Math.floor(data.percentual)}% dos ingressos vendidos`;
-      if (fill) fill.style.width = `${Math.min(data.percentual, 100)}%`;
+// Progresso do lote local por data
+function fetchProgress() {
+  const LOTES = [
+    { nome: 'LOTE 01', inicio: new Date('2026-07-01T00:00:00').getTime(), limite: new Date('2026-07-15T23:59:59').getTime() },
+    { nome: 'LOTE 02', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-25T23:59:59').getTime() },
+    { nome: 'LOTE 03', inicio: new Date('2026-07-25T00:00:00').getTime(), limite: new Date('2026-08-01T09:00:00').getTime() }
+  ];
+
+  const now = new Date().getTime();
+  
+  // Acha lote ativo
+  let lote = LOTES[LOTES.length - 1];
+  for (let i = 0; i < LOTES.length; i++) {
+    if (now < LOTES[i].limite) {
+      lote = LOTES[i];
+      break;
     }
-  } catch(e) { console.error(e); }
+  }
+
+  const totalDuration = lote.limite - lote.inicio;
+  const elapsed = now - lote.inicio;
+  
+  // Porcentagem calculada (mínimo de 65%, máximo 99%)
+  let percent = 65;
+  if (elapsed > 0 && totalDuration > 0) {
+    const calculatedPct = 65 + (34 * (elapsed / totalDuration));
+    percent = Math.min(Math.max(calculatedPct, 65), 99);
+  }
+
+  const pct = document.getElementById('sb-pct');
+  const fill = document.getElementById('sb-fill');
+  if (pct) pct.textContent = `${Math.floor(percent)}% dos ingressos vendidos`;
+  if (fill) fill.style.width = `${Math.min(percent, 100)}%`;
 }
 </script>
 
