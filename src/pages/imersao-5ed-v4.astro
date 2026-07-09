@@ -12,44 +12,59 @@ const PRICE_VIP_PARCELADO = '12x de R$ 15,20';
 const PRICE_VIP_AVISTA = 'R$ 147,00';
 ---
 
-<Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="green">
+<Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="green" hideHeader={true}>
   <div class="v4-wrapper">
     <!-- 1. DOBRA DE ENTRADA (HERO SECTION) -->
     <section class="hero-v4-section" id="imersao">
       <div class="container hero-v4-grid">
         <!-- Coluna Esquerda -->
         <div class="hero-v4-content">
-          <div class="hero-v4-topbar">
-            <span class="badge-edition">5ª Edição · Imersão em Emagrecimento</span>
-            <span class="badge-date">{EVENT_DATE} | {EVENT_TIME}</span>
+          <!-- Horário do topo igual à V1 (Print 3) -->
+          <div class="info-bar">
+            <div class="info-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="calendar-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>{EVENT_DATE}</span>
+            </div>
+            <div class="info-sep"></div>
+            <div class="info-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <span>9h às 18h</span>
+            </div>
+            <div class="info-sep"></div>
+            <div class="info-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+              <span>Online via Zoom</span>
+            </div>
           </div>
           
           <h1 class="hero-v4-h1">
-            Aprenda na prática a <span class="highlight">tratar o emagrecimento</span> com o que a ciência mais atual comprova.
+            Caneta, platô e reganho exigem mais do que <span class="highlight">uma dieta calculada.</span>
           </h1>
           
           <ul class="hero-v4-bullets">
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Entenda o manejo seguro de canetas emagrecedoras (GLP-1);</span>
+              <span>Entenda como ajustar a dieta quando o apetite do paciente zera;</span>
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Domine a aplicação de compostos bioativos eficientes;</span>
+              <span>Use compostos bioativos com critério clínico, sem modinha;</span>
             </li>
             <li>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Vá além do déficit calórico básico na sua consulta;</span>
+              <span>Conduza platô, adesão e reganho com raciocínio, não só cálculo;</span>
             </li>
           </ul>
-
-          <!-- Price Floating Card -->
+ 
+          <!-- Price Floating Card com preço na mesma linha para primeira dobra -->
           <div class="hero-v4-price-box">
             <span class="badge-lote">{LOTE_ZERO}</span>
-            <div class="price-box-old">De <span class="strikethrough">R$ 97,00</span> por apenas:</div>
-            <div class="price-box-new"><small>R$</small> 19,90</div>
+            <div class="price-box-row">
+              <span class="price-box-old">De <span class="strikethrough">R$ 97,00</span> por apenas</span>
+              <span class="price-box-new"><small>R$</small> 19,90</span>
+            </div>
             
-            <a href="#" class="btn-v4-shiny" data-form="normal">
+            <a href="#preco" class="btn-v4-shiny">
               <span>Garantir minha vaga!</span>
               <span class="arrow">&gt;</span>
             </a>

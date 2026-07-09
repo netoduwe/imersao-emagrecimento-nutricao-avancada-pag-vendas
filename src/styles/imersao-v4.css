@@ -128,11 +128,35 @@
   align-items: flex-start;
 }
 
-.hero-v4-topbar {
+/* Info Bar sutil (igual à V1 - print 3) */
+.info-bar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 1.5rem;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  color: var(--v4-text-light);
+  margin-bottom: 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-item svg {
+  color: var(--v4-green-glow);
+  flex-shrink: 0;
+}
+
+.info-sep {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .badge-edition {
@@ -224,10 +248,20 @@
   box-shadow: 0 4px 10px rgba(26, 168, 36, 0.4);
 }
 
+.price-box-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
 .price-box-old {
   font-size: 0.95rem;
   color: var(--v4-text-muted);
-  margin-bottom: 4px;
+  margin-bottom: 0;
 }
 
 .price-box-old span.strikethrough {
@@ -240,10 +274,10 @@
   font-size: 2.5rem;
   font-weight: 900;
   color: #ffffff;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: 4px;
 }
 
 .price-box-new small {

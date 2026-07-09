@@ -4,9 +4,10 @@ import '../styles/global.css';
 interface Props {
   title: string;
   theme?: 'green' | 'blue';
+  hideHeader?: boolean;
 }
 
-const { title, theme = 'green' } = Astro.props;
+const { title, theme = 'green', hideHeader = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -50,21 +51,23 @@ const { title, theme = 'green' } = Astro.props;
     </div>
 
     <!-- Navegação -->
-    <header class="main-header">
-      <div class="container header-grid">
-        <div class="logo">
-          NUTRIÇÃO <span class="green">AVANÇADA</span>
+    {!hideHeader && (
+      <header class="main-header">
+        <div class="container header-grid">
+          <div class="logo">
+            NUTRIÇÃO <span class="green">AVANÇADA</span>
+          </div>
+          <nav class="desktop-nav">
+            <a href="#imersao">A Imersão</a>
+            <a href="#conteudo">Conteúdo</a>
+            <a href="#time">Time</a>
+          </nav>
+          <div class="header-actions">
+            <a href="#preco" class="btn-nav">GARANTIR VAGA</a>
+          </div>
         </div>
-        <nav class="desktop-nav">
-          <a href="#imersao">A Imersão</a>
-          <a href="#conteudo">Conteúdo</a>
-          <a href="#time">Time</a>
-        </nav>
-        <div class="header-actions">
-          <a href="#preco" class="btn-nav">GARANTIR VAGA</a>
-        </div>
-      </div>
-    </header>
+      </header>
+    )}
 
     <main>
       <slot />
