@@ -152,7 +152,7 @@
       <button class="btn-back" onclick="prev()">← Voltar</button>
       
       <div class="urgency-strip">
-        🔥 LOTE 03 | Faltam: <span id="countdown">00d 00h 00m 00s</span>
+        🔥 <span id="v5-lote-badge">LOTE ZERO</span> | Faltam: <span id="countdown">00d 00h 00m 00s</span>
       </div>
 
       <div class="progress-wrap-offer">
@@ -360,14 +360,33 @@ function toggleVip() {
   }
 }
 
-// Countdown Logic
+// Countdown Logic com lotes dinâmicos
+const V5_LOTES = [
+  { nome: 'LOTE ZERO', inicio: new Date('2026-06-01T00:00:00').getTime(), limite: new Date('2026-07-15T23:59:59').getTime() },
+  { nome: 'LOTE 01', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-25T23:59:59').getTime() },
+  { nome: 'LOTE 02', inicio: new Date('2026-07-25T00:00:00').getTime(), limite: new Date('2026-07-30T23:59:59').getTime() },
+  { nome: 'LOTE 03', inicio: new Date('2026-07-30T00:00:00').getTime(), limite: new Date('2026-08-01T09:00:00').getTime() }
+];
+
 function updateCountdown() {
-  const target = new Date('2026-05-16T09:00:00').getTime();
   const now = new Date().getTime();
-  const diff = target - now;
+  
+  let lote = V5_LOTES[V5_LOTES.length - 1];
+  for (let i = 0; i < V5_LOTES.length; i++) {
+    if (now < V5_LOTES[i].limite) {
+      lote = V5_LOTES[i];
+      break;
+    }
+  }
+  
+  const badge = document.getElementById('v5-lote-badge');
   const el = document.getElementById('countdown');
   if (!el) return;
-  if (diff < 0) { el.textContent = "VENDAS ABERTAS"; return; }
+  
+  if (badge) badge.textContent = lote.nome;
+  
+  const diff = lote.limite - now;
+  if (diff < 0) { el.textContent = "VAGAS LIMITADAS"; return; }
   const d = Math.floor(diff / (1000 * 60 * 60 * 24));
   const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -379,19 +398,12 @@ updateCountdown();
 
 // Progresso do lote local por data
 function fetchProgress() {
-  const LOTES = [
-    { nome: 'LOTE 01', inicio: new Date('2026-07-01T00:00:00').getTime(), limite: new Date('2026-07-15T23:59:59').getTime() },
-    { nome: 'LOTE 02', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-25T23:59:59').getTime() },
-    { nome: 'LOTE 03', inicio: new Date('2026-07-25T00:00:00').getTime(), limite: new Date('2026-08-01T09:00:00').getTime() }
-  ];
-
   const now = new Date().getTime();
   
-  // Acha lote ativo
-  let lote = LOTES[LOTES.length - 1];
-  for (let i = 0; i < LOTES.length; i++) {
-    if (now < LOTES[i].limite) {
-      lote = LOTES[i];
+  let lote = V5_LOTES[V5_LOTES.length - 1];
+  for (let i = 0; i < V5_LOTES.length; i++) {
+    if (now < V5_LOTES[i].limite) {
+      lote = V5_LOTES[i];
       break;
     }
   }

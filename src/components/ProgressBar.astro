@@ -18,11 +18,11 @@ const isMinimal = variant === 'minimal';
       <div class="lote-tracker__top">
         <div class="lote-tracker__badge-wrap">
           <span class="lote-tracker__fire">🔥</span>
-          <span class="lote-tracker__badge" data-lote-badge>LOTE 03</span>
+          <span class="lote-tracker__badge" data-lote-badge>LOTE ZERO</span>
         </div>
         <div class="lote-tracker__price-wrap">
           <span class="lote-tracker__price-label">por apenas</span>
-          <span class="lote-tracker__price" data-lote-price>R$ 29,90</span>
+          <span class="lote-tracker__price" data-lote-price>R$ 19,90</span>
         </div>
       </div>
     )}
@@ -214,9 +214,10 @@ const isMinimal = variant === 'minimal';
 <script>
   // Datas predefinidas para viradas de lotes (Evento: 01/08/2026)
   const LOTES = [
-    { nome: 'LOTE 01', inicio: new Date('2026-07-01T00:00:00').getTime(), limite: new Date('2026-07-15T23:59:59').getTime(), preco: 'R$ 19,90' },
-    { nome: 'LOTE 02', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-25T23:59:59').getTime(), preco: 'R$ 24,90' },
-    { nome: 'LOTE 03', inicio: new Date('2026-07-25T00:00:00').getTime(), limite: new Date('2026-08-01T09:00:00').getTime(), preco: 'R$ 29,90' }
+    { nome: 'LOTE ZERO', inicio: new Date('2026-06-01T00:00:00').getTime(), limite: new Date('2026-07-15T23:59:59').getTime(), preco: 'R$ 19,90' },
+    { nome: 'LOTE 01', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-25T23:59:59').getTime(), preco: 'R$ 24,90' },
+    { nome: 'LOTE 02', inicio: new Date('2026-07-25T00:00:00').getTime(), limite: new Date('2026-07-30T23:59:59').getTime(), preco: 'R$ 29,90' },
+    { nome: 'LOTE 03', inicio: new Date('2026-07-30T00:00:00').getTime(), limite: new Date('2026-08-01T09:00:00').getTime(), preco: 'R$ 39,90' }
   ];
 
   function updateAllTrackers() {
