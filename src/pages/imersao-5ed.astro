@@ -1968,4 +1968,102 @@ const PRICE_VIP = 'R$ 147,00';
     .grade-time { font-size: 12px; }
     .professor-card { flex-direction: column; text-align: center; }
   }
+
+  /* Refinamento visual V1: mantém a base clínica, com menos efeitos decorativos. */
+  .hero5-section {
+    background-position: 62% top;
+  }
+  .event-badge,
+  .info-bar {
+    box-shadow: none;
+  }
+  .event-badge {
+    border-radius: 10px;
+  }
+  .info-bar {
+    border-radius: 10px;
+  }
+  .btn-hero-cta,
+  .btn-final-cta {
+    border-radius: 12px;
+    background: #159447;
+    background-size: auto;
+    box-shadow: 0 10px 22px rgba(22, 163, 74, 0.22);
+  }
+  .btn-hero-cta:hover,
+  .btn-final-cta:hover {
+    background: #0f7a37;
+    box-shadow: 0 12px 26px rgba(22, 163, 74, 0.28);
+  }
+  .btn-arrow {
+    border-radius: 9px;
+  }
+  .btn-hero-cta:hover .btn-arrow,
+  .btn-final-cta:hover .btn-arrow {
+    transform: translateX(2px);
+  }
+  .urgency-strip-hero {
+    box-shadow: none;
+  }
+  .btn-hero-cta:focus-visible,
+  .btn-final-cta:focus-visible {
+    outline: 3px solid rgba(22, 163, 74, 0.32);
+    outline-offset: 4px;
+  }
+  @media (max-width: 768px) {
+    .hero5-section {
+      padding-top: 52px;
+    }
+    .hero5-headline {
+      font-size: clamp(29px, 8.5vw, 38px);
+      line-height: 1.08;
+    }
+    .hero5-sub {
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .hero5-cta-block {
+      width: 100%;
+    }
+    .hero5-price-tag {
+      justify-content: center;
+      row-gap: 6px;
+    }
+    .hero5-guarantee-line {
+      justify-content: center;
+    }
+    .urgency-strip-hero {
+      text-align: left;
+      justify-content: flex-start;
+      padding: 14px 18px;
+    }
+    .urgency-strip-hero .strip-dot:last-child {
+      display: none;
+    }
+    .section-manchetes {
+      overflow: hidden;
+    }
+    .news-clippings-container {
+      box-sizing: border-box;
+      max-width: 100%;
+      width: 100%;
+      padding-inline: 16px;
+    }
+    .depos-grid,
+    .pricing-container-grid {
+      grid-template-columns: minmax(0, 1fr);
+      width: 100%;
+    }
+    .pricing-card {
+      min-width: 0;
+      padding: 42px 24px 28px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .badge-dot,
+    .btn-arrow {
+      animation: none;
+      transition: none;
+    }
+  }
 </style>

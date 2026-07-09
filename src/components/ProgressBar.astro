@@ -145,6 +145,7 @@ const isMinimal = variant === 'minimal';
     border-radius: 100px;
     overflow: hidden;
     position: relative;
+    contain: paint;
   }
 
   .lote-tracker--minimal .lote-tracker__bar-outer {
@@ -207,6 +208,16 @@ const isMinimal = variant === 'minimal';
     }
     .lote-tracker--minimal .lote-tracker__inner {
       padding: 0;
+    }
+    .lote-tracker__bottom {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .lote-tracker__pct,
+    .lote-tracker__remaining {
+      font-size: 0.75rem;
+      white-space: normal;
     }
   }
 </style>

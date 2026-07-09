@@ -2156,4 +2156,102 @@ const PRICE_VIP = 'R$ 147,00';
     .modulo-item { text-align: left; }
     .professor-card { flex-direction: column; text-align: center; }
   }
+
+  /* Refinamento visual V3: tom editorial e técnico, sem excesso de glow. */
+  .hero-v3-section {
+    background-image: linear-gradient(112deg, #0b0c0a 0%, #0b0c0a 66%, #140d0e 100%);
+    min-height: 680px;
+    padding: 104px 0 72px;
+  }
+  .hero-v3-grid {
+    gap: 52px;
+  }
+  .hero-v3-date-pill {
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.035);
+  }
+  .btn-v3-hero {
+    height: 58px;
+    border-radius: 6px;
+    box-shadow: 0 9px 20px rgba(225, 29, 72, 0.22);
+  }
+  .btn-v3-hero:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 24px rgba(225, 29, 72, 0.3);
+  }
+  .progress-glow-dot {
+    box-shadow: none;
+  }
+  .hero-v3-social-proof-grid {
+    gap: 16px;
+  }
+  .btn-v3-hero:focus-visible,
+  .screenshot-card:focus-visible {
+    outline: 3px solid rgba(225, 29, 72, 0.45);
+    outline-offset: 4px;
+  }
+  @media (max-width: 1024px) {
+    .hero-v3-section {
+      padding: 72px 0 44px;
+      min-height: auto;
+      background-image: none;
+    }
+  }
+  @media (max-width: 768px) {
+    .hero-v3-section {
+      padding-top: 52px;
+    }
+    .hero-v3-headline {
+      font-size: clamp(29px, 8.3vw, 38px);
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+    .hero-v3-sub {
+      font-size: 16px;
+      line-height: 1.55;
+      margin-bottom: 28px;
+    }
+    .hero-v3-cta-wrap {
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+    .hero-v3-social-proof-grid {
+      gap: 8px;
+      padding-top: 20px;
+    }
+    .proof-stat-item {
+      gap: 5px;
+    }
+    .stat-details strong {
+      font-size: 18px;
+    }
+    .stat-details span {
+      font-size: 10px;
+      line-height: 1.35;
+    }
+    .section-notaveis,
+    .section-pergunta {
+      overflow: hidden;
+    }
+    .news-clippings-container {
+      box-sizing: border-box;
+      max-width: 100%;
+      width: 100%;
+      padding-inline: 16px;
+    }
+    .pricing-container-grid {
+      grid-template-columns: minmax(0, 1fr);
+      width: 100%;
+    }
+    .pricing-card {
+      min-width: 0;
+      padding: 42px 24px 28px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .btn-v3-hero,
+    .screenshot-card {
+      transition: none;
+    }
+  }
 </style>

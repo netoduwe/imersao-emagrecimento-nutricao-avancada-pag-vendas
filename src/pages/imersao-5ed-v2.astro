@@ -2367,4 +2367,84 @@ const PRICE_VIP = 'R$ 147,00';
     .professor-card { flex-direction: column; text-align: center; }
     .screenshots-grid { grid-template-columns: 1fr; }
   }
+
+  /* Refinamento visual V2: linguagem clínica, direta e menos ornamental. */
+  .hero-v2-section {
+    background-position: 62% top;
+  }
+  .info-bar {
+    border-radius: 10px;
+    box-shadow: none;
+  }
+  .hero-v2-price-card {
+    box-shadow: 0 14px 30px rgba(5, 27, 8, 0.12);
+  }
+  .price-card-badge {
+    border-radius: 6px;
+  }
+  .btn-v2-hero,
+  .btn-final-cta {
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(22, 163, 74, 0.2);
+  }
+  .btn-v2-hero:hover,
+  .btn-final-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 13px 25px rgba(22, 163, 74, 0.26);
+  }
+  .btn-v2-hero:focus-visible,
+  .btn-final-cta:focus-visible,
+  .screenshot-card:focus-visible {
+    outline: 3px solid rgba(22, 163, 74, 0.3);
+    outline-offset: 4px;
+  }
+  @media (max-width: 768px) {
+    .hero-v2-section {
+      padding-top: 52px;
+    }
+    .hero-v2-header-group {
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .hero-v2-headline {
+      font-size: clamp(29px, 8.35vw, 38px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+    .hero-v2-sub {
+      font-size: 16px;
+      line-height: 1.55;
+      margin-bottom: 28px;
+    }
+    .hero-v2-price-container {
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .section-manchetes {
+      overflow: hidden;
+    }
+    .news-clippings-container {
+      box-sizing: border-box;
+      max-width: 100%;
+      width: 100%;
+      padding-inline: 16px;
+    }
+    .depos-grid,
+    .pricing-container-grid {
+      grid-template-columns: minmax(0, 1fr);
+      width: 100%;
+    }
+    .pricing-card {
+      min-width: 0;
+      padding: 42px 24px 28px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .badge-dot,
+    .btn-v2-hero,
+    .btn-final-cta {
+      animation: none;
+      transition: none;
+    }
+  }
 </style>
