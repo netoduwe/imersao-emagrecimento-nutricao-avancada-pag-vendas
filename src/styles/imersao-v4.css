@@ -1,0 +1,812 @@
+/* 
+  imersao-v4.css
+  Estilização dedicada para a página V4 (Versão Ultra Enxuta)
+  Tema: Dark Green Premium (inspirado nos verdes da V1)
+*/
+
+:root {
+  --v4-bg-dark: #020904;
+  --v4-bg-deep: #051608;
+  --v4-bg-card: rgba(255, 255, 255, 0.03);
+  --v4-border-card: rgba(26, 168, 36, 0.15);
+  --v4-border-card-hover: rgba(35, 198, 95, 0.4);
+  --v4-text-light: #F3F4F6;
+  --v4-text-muted: #9CA3AF;
+  --v4-green-v1: #1AA824;
+  --v4-green-glow: #23C65F;
+  --v4-green-light: #dcfce7;
+  --v4-green-text: #4ade80;
+}
+
+body.theme-v4 {
+  background-color: var(--v4-bg-dark);
+  background-image: radial-gradient(circle at 50% 20%, #07230f 0%, var(--v4-bg-dark) 70%);
+  color: var(--v4-text-light);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- REUSABLE SHINY BUTTON --- */
+.btn-v4-shiny {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-full, 999px);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--v4-green-v1) 0%, var(--v4-green-glow) 100%);
+  box-shadow: 0px 8px 30px rgba(35, 198, 95, 0.45);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 1.2rem 3rem;
+  width: 100%;
+  text-align: center;
+}
+
+.btn-v4-shiny:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 12px 40px rgba(35, 198, 95, 0.6);
+  filter: brightness(1.1);
+}
+
+.btn-v4-shiny::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transition: none;
+}
+
+.btn-v4-shiny:hover::after {
+  left: 100%;
+  transition: all 0.8s ease;
+}
+
+.btn-v4-shiny span.arrow {
+  transition: transform 0.2s ease;
+}
+
+.btn-v4-shiny:hover span.arrow {
+  transform: translateX(4px);
+}
+
+/* --- SECTION TITLE & HEADINGS --- */
+.v4-title-center {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.v4-title-center h2 {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.v4-title-center p {
+  font-size: 1.125rem;
+  color: var(--v4-text-muted);
+}
+
+/* --- 1. HERO SECTION --- */
+.hero-v4-section {
+  padding: 80px 0 60px;
+  position: relative;
+}
+
+.hero-v4-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-v4-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-v4-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.badge-edition {
+  background: rgba(35, 198, 95, 0.1);
+  color: var(--v4-green-text);
+  border: 1px solid rgba(35, 198, 95, 0.2);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.825rem;
+  font-weight: 700;
+}
+
+.badge-date {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--v4-text-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.825rem;
+  font-weight: 600;
+}
+
+.hero-v4-h1 {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 850;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
+}
+
+.hero-v4-h1 span.highlight {
+  color: var(--v4-green-glow);
+  background: linear-gradient(135deg, #ffffff 30%, var(--v4-green-glow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-v4-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-v4-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 1.05rem;
+  color: #D1D5DB;
+}
+
+.hero-v4-bullets li svg {
+  color: var(--v4-green-glow);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+/* Price Floating Card */
+.hero-v4-price-box {
+  background: rgba(4, 18, 9, 0.7);
+  border: 1px solid var(--v4-border-card);
+  backdrop-filter: blur(16px);
+  border-radius: var(--radius-lg, 16px);
+  padding: 1.5rem 2rem;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.badge-lote {
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: var(--v4-green-v1);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 10px rgba(26, 168, 36, 0.4);
+}
+
+.price-box-old {
+  font-size: 0.95rem;
+  color: var(--v4-text-muted);
+  margin-bottom: 4px;
+}
+
+.price-box-old span.strikethrough {
+  text-decoration: line-through;
+  color: #EF4444;
+  font-weight: 600;
+}
+
+.price-box-new {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.price-box-new small {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-v4-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-speakers-container {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  height: 480px;
+  border-radius: 200px 200px 24px 24px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(35, 198, 95, 0.15) 0%, rgba(2, 9, 4, 0.5) 100%);
+  border: 2px solid var(--v4-border-card);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Moldura de Arco nos Palestrantes */
+.hero-speakers-collage {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.speaker-half {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.5s ease;
+}
+
+.speaker-half:hover {
+  transform: scale(1.03);
+}
+
+.speaker-half.ney {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- 2. TICKER SECTION --- */
+.ticker-v4-wrap {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: var(--v4-green-light);
+  color: #020904;
+  padding: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(35, 198, 95, 0.15);
+  border-top: 1px solid rgba(35, 198, 95, 0.2);
+  border-bottom: 1px solid rgba(35, 198, 95, 0.2);
+  transform: rotate(-1deg);
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.ticker-v4-track {
+  display: inline-block;
+  animation: ticker-loop 25s linear infinite;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ticker-bullet {
+  margin: 0 30px;
+  color: var(--v4-green-v1);
+  font-size: 1.5rem;
+}
+
+@keyframes ticker-loop {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* --- 3. CONTEÚDO PROGRAMÁTICO (4 PILARES) --- */
+.pilares-v4-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 60px;
+}
+
+.pilar-card {
+  background: var(--v4-bg-card);
+  border: 1px solid var(--v4-border-card);
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pilar-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--v4-border-card-hover);
+  box-shadow: 0 15px 35px rgba(35, 198, 95, 0.1);
+}
+
+.pilar-image-wrap {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pilar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.pilar-card:hover .pilar-image {
+  transform: scale(1.08);
+}
+
+.pilar-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.pilar-tag {
+  color: var(--v4-green-text);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.pilar-body h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.pilar-body p {
+  font-size: 0.925rem;
+  color: var(--v4-text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.pilar-progress-bar {
+  margin-top: auto;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 9px;
+  overflow: hidden;
+  position: relative;
+}
+
+.pilar-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--v4-green-glow);
+  width: 25%;
+  transition: width 0.5s ease;
+}
+
+.pilar-card:hover .pilar-progress-fill {
+  width: 100%;
+}
+
+/* --- 4. TÓPICOS EXTRAS (CHECKLIST) --- */
+.extras-v4-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, var(--v4-bg-dark) 0%, var(--v4-bg-deep) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.extras-v4-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.extras-left h2 {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 850;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.extras-left h2 span.highlight {
+  color: var(--v4-green-glow);
+}
+
+.extras-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.extras-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 1.075rem;
+  font-weight: 500;
+  color: var(--v4-text-light);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.extras-checklist li:hover {
+  background: rgba(35, 198, 95, 0.03);
+  border-color: rgba(35, 198, 95, 0.1);
+  transform: translateX(5px);
+}
+
+.extras-checklist li svg {
+  color: var(--v4-green-glow);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --- 5. BLOCO DE OFERTA (FECHAMENTO) --- */
+.oferta-v4-section {
+  padding: 80px 0;
+}
+
+.oferta-v4-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.oferta-v4-left h2 {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.entregaveis-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.entregaveis-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 1.05rem;
+  color: #D1D5DB;
+}
+
+.entregaveis-list li svg {
+  color: var(--v4-green-glow);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.oferta-v4-right {
+  display: flex;
+  justify-content: center;
+}
+
+/* Premium White Card (Contrast Option) */
+.price-card-v4 {
+  background: #ffffff;
+  color: #111827;
+  border-radius: 20px;
+  border: 3px solid var(--v4-green-glow);
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(35, 198, 95, 0.15), 0 0 40px rgba(35, 198, 95, 0.05);
+}
+
+.price-card-v4 .tag-vip {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--v4-green-glow);
+  color: #ffffff;
+  padding: 6px 20px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 12px rgba(35, 198, 95, 0.3);
+}
+
+.price-card-v4 .price-old {
+  font-size: 1rem;
+  color: #6B7280;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+.price-card-v4 .price-old span.strikethrough {
+  text-decoration: line-through;
+  color: #EF4444;
+}
+
+.price-card-v4 .price-main {
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 0.25rem;
+  line-height: 1;
+}
+
+.price-card-v4 .price-subtext {
+  font-size: 0.95rem;
+  color: #4B5563;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.price-card-v4 .btn-v4-shiny {
+  box-shadow: 0px 8px 25px rgba(26, 168, 36, 0.4);
+}
+
+.price-card-v4 .guarantee-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #4B5563;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+.price-card-v4 .guarantee-label svg {
+  color: var(--v4-green-v1);
+}
+
+/* --- 6. AUTORIDADE SECTION --- */
+.autoridade-v4-section {
+  padding: 80px 0;
+  background: linear-gradient(180deg, var(--v4-bg-deep) 0%, var(--v4-bg-dark) 100%);
+}
+
+.autoridade-v4-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.autoridade-content h2 {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.autoridade-text {
+  color: #D1D5DB;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.autoridade-text p strong {
+  color: #ffffff;
+}
+
+.autoridade-right {
+  display: flex;
+  justify-content: center;
+}
+
+.portal-frame {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  height: 460px;
+  border-radius: 200px 200px 0 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(35, 198, 95, 0.2) 0%, rgba(2, 9, 4, 0.5) 100%);
+  border: 2px solid var(--v4-border-card);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.portal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* --- 7. FAQ (PERGUNTAS FREQUENTES) --- */
+.faq-v4-section {
+  padding: 80px 0 100px;
+}
+
+.faq-v4-list {
+  max-width: 780px;
+  margin: 0 auto 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-v4-list details {
+  background: var(--v4-bg-card);
+  border: 1px solid var(--v4-border-card);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.faq-v4-list details[open] {
+  border-color: var(--v4-border-card-hover);
+  box-shadow: 0 10px 25px rgba(35, 198, 95, 0.05);
+}
+
+.faq-v4-list summary {
+  padding: 1.5rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffffff;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-v4-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-v4-list summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--v4-green-glow);
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+
+.faq-v4-list details[open] summary::after {
+  content: '−';
+  transform: rotate(180deg);
+}
+
+.faq-v4-list p {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--v4-text-muted);
+  line-height: 1.6;
+  font-size: 0.975rem;
+}
+
+.faq-v4-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+  .hero-v4-grid, .pilares-v4-grid, .extras-v4-grid, .oferta-v4-grid, .autoridade-v4-grid {
+    gap: 2.5rem;
+  }
+  .pilares-v4-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-v4-grid, .extras-v4-grid, .oferta-v4-grid, .autoridade-v4-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-v4-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-v4-topbar {
+    justify-content: center;
+  }
+
+  .hero-v4-bullets {
+    align-items: center;
+  }
+
+  .hero-v4-price-box {
+    margin: 0 auto;
+  }
+
+  .hero-speakers-container {
+    margin: 0 auto;
+    max-width: 380px;
+    height: 400px;
+  }
+
+  .extras-left {
+    text-align: center;
+  }
+
+  .oferta-v4-left {
+    text-align: center;
+  }
+
+  .entregaveis-list {
+    align-items: center;
+  }
+
+  .autoridade-content {
+    text-align: center;
+    order: 1;
+  }
+
+  .autoridade-right {
+    order: 2;
+  }
+
+  .portal-frame {
+    margin: 0 auto;
+  }
+  
+  .btn-v4-shiny {
+    padding: 1.2rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pilares-v4-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -2,6 +2,13 @@
 
 **Última Atualização:** 09/07/2026
 
+## Criação da Página V4 (Versão Ultra Enxuta) — 09/07/2026
+- **Nova Rota:** Criada a rota `/imersao-5ed-v4` (`src/pages/imersao-5ed-v4.astro`) baseada no copy fornecido e na referência visual dark green.
+- **Estrutura Modular e Limite de Linhas:** Toda a estilização detalhada foi isolada em `src/styles/imersao-v4.css` para manter o código da página `.astro` leve e com fácil manutenção, ficando com 320 linhas.
+- **Geração de Assets Visuais:** Criadas e salvas 4 imagens conceituais premium para os pilares na pasta `/public/images/pilares/` (`pilar1.png` a `pilar4.png`) com a ferramenta `generate_image`, eliminando placeholders.
+- **Identidade Visual Dark Green:** Implementados fundos gradientes verdes escuros profundos, ticker animado infinito em verde-claro com o copy atualizado, moldura em arco para a colagem de fotos dos palestrantes, cards translúcidos e acordeões customizados no FAQ. O card VIP contrasta com fundo branco e destaque em verde limão brilhante.
+- **Verificação de Builds:** Build compilado com sucesso, gerando estaticamente a nova página `/imersao-5ed-v4/index.html`.
+
 ## Otimizações Mobile, Lightbox de Vídeo e Simplificação do Cronograma — 09/07/2026
 - **Vídeo Lightbox:** Adicionado modal overlay na própria página nas versões V1, V2 e V3. Ao clicar em "🎥 VER CHAMADA" da Jéssica, abre-se o vídeo Shorts do YouTube (`https://www.youtube.com/embed/vPnW2rWVQHY?autoplay=1`) em proporção 9:16 vertical, prevenindo que o lead saia da página de conversão.
 - **Correção da Hero V2:** O botão da Hero na página V2 (`imersao-5ed-v2.astro`) foi alterado de um elemento `<button>` estático para uma âncora `<a>` redirecionando para a seção de preços `#preco`.

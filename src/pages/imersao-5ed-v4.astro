@@ -1,0 +1,338 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FormModal from '../components/FormModal.astro';
+import '../styles/imersao-v4.css';
+
+// Dados do Evento
+const EVENT_DATE = '01 de Agosto de 2026';
+const EVENT_TIME = 'Das 9h às 18h (Online via Zoom)';
+const LOTE_ZERO = 'Lote zero';
+const PRICE_BASICO = 'R$ 19,90';
+const PRICE_VIP_PARCELADO = '12x de R$ 15,20';
+const PRICE_VIP_AVISTA = 'R$ 147,00';
+---
+
+<Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="green">
+
+  <!-- 1. DOBRA DE ENTRADA (HERO SECTION) -->
+  <section class="hero-v4-section" id="imersao">
+    <div class="container hero-v4-grid">
+      <!-- Coluna Esquerda -->
+      <div class="hero-v4-content">
+        <div class="hero-v4-topbar">
+          <span class="badge-edition">5ª Edição · Imersão em Emagrecimento</span>
+          <span class="badge-date">{EVENT_DATE} | {EVENT_TIME}</span>
+        </div>
+        
+        <h1 class="hero-v4-h1">
+          Aprenda na prática a <span class="highlight">tratar o emagrecimento</span> com o que a ciência mais atual comprova.
+        </h1>
+        
+        <ul class="hero-v4-bullets">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Entenda o manejo seguro de canetas emagrecedoras (GLP-1);</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Domine a aplicação de compostos bioativos eficientes;</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Vá além do déficit calórico básico na sua consulta;</span>
+          </li>
+        </ul>
+
+        <!-- Price Floating Card -->
+        <div class="hero-v4-price-box">
+          <span class="badge-lote">{LOTE_ZERO}</span>
+          <div class="price-box-old">De <span class="strikethrough">R$ 97,00</span> por apenas:</div>
+          <div class="price-box-new"><small>R$</small> 19,90</div>
+          
+          <a href="#" class="btn-v4-shiny" data-form="normal">
+            <span>Garantir minha vaga!</span>
+            <span class="arrow">&gt;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna Direita (Palestrantes) -->
+      <div class="hero-v4-right">
+        <div class="hero-speakers-container">
+          <div class="hero-speakers-collage">
+            <img src="/images/ney-clinica-otimizado.webp" alt="Prof. Ney Felipe" class="speaker-half ney" />
+            <img src="/images/jessica.webp" alt="Profa. Jéssica Wszolek" class="speaker-half jessica" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. FAIXA DE TRANSIÇÃO (TICKER) -->
+  <div class="ticker-v4-wrap">
+    <div class="ticker-v4-track">
+      <div class="ticker-item">
+        <span>LOTE 03 ATIVO</span><span class="ticker-bullet">•</span>
+        <span>O EVENTO COMEÇA EM BREVE</span><span class="ticker-bullet">•</span>
+        <span>GARANTIR VAGA</span><span class="ticker-bullet">•</span>
+        <span>LOTE 03 ATIVO</span><span class="ticker-bullet">•</span>
+        <span>O EVENTO COMEÇA EM BREVE</span><span class="ticker-bullet">•</span>
+        <span>GARANTIR VAGA</span><span class="ticker-bullet">•</span>
+        <span>LOTE 03 ATIVO</span><span class="ticker-bullet">•</span>
+        <span>O EVENTO COMEÇA EM BREVE</span><span class="ticker-bullet">•</span>
+        <span>GARANTIR VAGA</span><span class="ticker-bullet">•</span>
+        <span>LOTE 03 ATIVO</span><span class="ticker-bullet">•</span>
+        <span>O EVENTO COMEÇA EM BREVE</span><span class="ticker-bullet">•</span>
+        <span>GARANTIR VAGA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. CONTEÚDO PROGRAMÁTICO (4 PILARES) -->
+  <section class="container" style="padding: 60px var(--space-sm);">
+    <div class="v4-title-center">
+      <h2>O que você vai aprender nessa Imersão?</h2>
+      <p>Vamos passar por cada um dos 4 pilares do Emagrecimento Avançado.</p>
+    </div>
+
+    <div class="pilares-v4-grid">
+      <!-- Pilar 1 -->
+      <div class="pilar-card">
+        <div class="pilar-image-wrap">
+          <img src="/images/pilares/pilar1.png" alt="Pilar 01" class="pilar-image" />
+        </div>
+        <div class="pilar-body">
+          <span class="pilar-tag">Pilar 01</span>
+          <h3>Prática Além do Déficit</h3>
+          <p>Como conduzir a adesão, platô e reganho sem depender apenas de calculadora...</p>
+          <div class="pilar-progress-bar">
+            <div class="pilar-progress-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilar 2 -->
+      <div class="pilar-card">
+        <div class="pilar-image-wrap">
+          <img src="/images/pilares/pilar2.png" alt="Pilar 02" class="pilar-image" />
+        </div>
+        <div class="pilar-body">
+          <span class="pilar-tag">Pilar 02</span>
+          <h3>Manejo de GLP-1</h3>
+          <p>Ajuste da dieta para pacientes em uso de canetas e proteção da massa magra...</p>
+          <div class="pilar-progress-bar">
+            <div class="pilar-progress-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilar 3 -->
+      <div class="pilar-card">
+        <div class="pilar-image-wrap">
+          <img src="/images/pilares/pilar3.png" alt="Pilar 03" class="pilar-image" />
+        </div>
+        <div class="pilar-body">
+          <span class="pilar-tag">Pilar 03</span>
+          <h3>Ativos Estratégicos</h3>
+          <p>Alimentos funcionais e compostos bioativos baseados em fisiologia real...</p>
+          <div class="pilar-progress-bar">
+            <div class="pilar-progress-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pilar 4 -->
+      <div class="pilar-card">
+        <div class="pilar-image-wrap">
+          <img src="/images/pilares/pilar4.png" alt="Pilar 04" class="pilar-image" />
+        </div>
+        <div class="pilar-body">
+          <span class="pilar-tag">Pilar 04</span>
+          <h3>Casos e Desmame</h3>
+          <p>Análise de casos de consultório e a conduta nutricional na retirada da medicação...</p>
+          <div class="pilar-progress-bar">
+            <div class="pilar-progress-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. TÓPICOS EXTRAS (CHECKLIST) -->
+  <section class="extras-v4-section">
+    <div class="container extras-v4-grid">
+      <!-- Esquerda: Chamada -->
+      <div class="extras-left">
+        <h2>Além disso, <br/><span class="highlight">iremos passar por:</span></h2>
+      </div>
+      <!-- Direita: Checklist -->
+      <div>
+        <ul class="extras-checklist">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Alta nas buscas por Ozempic e Mounjaro no Brasil</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Suporte para conter os 45% de abandono de GLP-1 por colaterais</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Protocolos para evitar a perda severa de massa magra</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Manejo dietético quando o apetite zera por completo</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Estratégia de desmame que começa antes da retirada da caneta</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Condutas modernas para a projeção de 68% de sobrepeso até 2030</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. BLOCO DE OFERTA (FECHAMENTO DE CAIXA) -->
+  <section class="oferta-v4-section" id="preco">
+    <div class="container oferta-v4-grid">
+      <!-- Esquerda: Entregáveis -->
+      <div class="oferta-v4-left">
+        <h2>Garanta o seu ingresso agora mesmo!</h2>
+        <ul class="entregaveis-list">
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Acesso ao dia de Imersão ao vivo (Zoom)</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Materiais compartilhados e grupo exclusivo</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Gravação por 1 ano + Certificado de 8h (Inclusos no VIP)</span>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Combo de 3 E-books de bônus (Inclusos no VIP)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Direita: Card de Preço Destacado -->
+      <div class="oferta-v4-right">
+        <div class="price-card-v4">
+          <span class="tag-vip">Lote Zero Ativo</span>
+          <div class="price-old">De R$ 297,00 por apenas:</div>
+          <div class="price-main">{PRICE_VIP_PARCELADO}</div>
+          <div class="price-subtext">ou {PRICE_VIP_AVISTA} à vista (Opção VIP)</div>
+          
+          <a href="#" class="btn-v4-shiny" data-form="vip">
+            <span>Pegar meu ingresso agora mesmo!</span>
+            <span class="arrow">&gt;</span>
+          </a>
+
+          <div class="guarantee-label">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Garantia incondicional de 7 dias.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. SEÇÃO DE AUTORIDADE (SOBRE OS PALESTRANTES) -->
+  <section class="autoridade-v4-section" id="time">
+    <div class="container autoridade-v4-grid">
+      <!-- Coluna Esquerda: Biografia -->
+      <div class="autoridade-content">
+        <h2>Quem estará no palco virtual?</h2>
+        <div class="autoridade-text">
+          <p>
+            <strong>Ney Felipe</strong> é nutricionista, Mestre em Biologia Molecular e pioneiro da Nutrição Funcional Esportiva no Brasil, com 19 anos de consultório. Atua diariamente ajudando milhares de pacientes e profissionais a decifrarem a fisiologia do emagrecimento.
+          </p>
+          <p>
+            Juntamente com <strong>Jéssica Wszolek</strong>, especialista e referência nacional em manejo dietético integrado ao uso de análogos de GLP-1, uniram suas experiências de campo de batalha clínico para criar a Imersão em Emagrecimento.
+          </p>
+        </div>
+
+        <a href="#" class="btn-v4-shiny" data-form="normal" style="max-width: 380px;">
+          <span>Quero a minha vaga!</span>
+          <span class="arrow">&gt;</span>
+        </a>
+      </div>
+
+      <!-- Coluna Direita: Fotos no Portal -->
+      <div class="autoridade-right">
+        <div class="portal-frame">
+          <div class="hero-speakers-collage">
+            <img src="/images/ney-clinica-otimizado.webp" alt="Prof. Ney Felipe" class="speaker-half ney" />
+            <img src="/images/jessica.webp" alt="Profa. Jéssica Wszolek" class="speaker-half jessica" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PERGUNTAS FREQUENTES (FAQ) -->
+  <section class="faq-v4-section">
+    <div class="container">
+      <div class="v4-title-center">
+        <h2>Perguntas frequentes</h2>
+      </div>
+
+      <div class="faq-v4-list">
+        <details>
+          <summary>1. Para quem é essa imersão?</summary>
+          <p>Nutricionistas e estudantes que atendem sobrepeso e obesidade e desejam se atualizar com a melhor evidência científica de manejo prático.</p>
+        </details>
+        <details>
+          <summary>2. O evento fica gravado?</summary>
+          <p>Sim, garantindo o Ingresso VIP você tem 1 ano de acesso completo às gravações do evento na nossa plataforma para assistir quando e onde quiser.</p>
+        </details>
+        <details>
+          <summary>3. Como funciona o Cashback do VIP?</summary>
+          <p>Os R$ 147 investidos no Ingresso VIP viram desconto de cashback na Formação Nutrição Avançada ou em nossa Pós-Graduação Oficial.</p>
+        </details>
+      </div>
+
+      <div class="faq-v4-action">
+        <a href="#" class="btn-v4-shiny" data-form="normal">
+          <span>Pagar meu ingresso!</span>
+          <span class="arrow">&gt;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer style="background: #020904; color: rgba(255,255,255,0.4); padding: 40px var(--space-sm); text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.8rem;">
+    <div class="container">
+      <p style="margin-bottom: 8px;">Ney Felipe Fernandes | © Copyright 2025</p>
+      <p>CNPJ: 38.560.882/0001-12 | cursos@nutrineyfelipe.com</p>
+    </div>
+  </footer>
+
+  <FormModal />
+</Layout>
+
+<script>
+  // Script para animar as barras de progresso dos 4 pilares conforme entram na tela
+  const pilarCards = document.querySelectorAll('.pilar-card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target.querySelector('.pilar-progress-fill');
+        if (bar) {
+          (bar as HTMLElement).style.width = '100%';
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  pilarCards.forEach(card => observer.observe(card));
+</script>
