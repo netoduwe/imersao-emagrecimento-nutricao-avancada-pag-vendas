@@ -181,17 +181,11 @@
 ## Variação de Teste: Imersão 5ª Edição V3 (A/B Test - Dark & Red) — 08/07/2026
 - **Rota:** `/imersao-5ed-v3`
 - **Arquivo:** `src/pages/imersao-5ed-v3.astro`
-- **Tema:** Dark & Red (fundo preto com detalhes e botões em vermelho vivo).
-- **Subheadline Especial:** *"Um dia inteiro destravando o raciocínio clínico que você precisa para atender com segurança e entregar resultados duradouros para seus pacientes."*
-- **Efeitos de Animação e Interação:**
-  - **Sticky Bottom Bar:** Barra fixada ao rodapé que desliza de forma suave (`translateY` via CSS + class toggle em JS) quando o scroll do usuário passa de 450px. Mostra a pílula de compra com preço promocional, porcentagem de escassez e barra de progresso.
-  - **Linha do Tempo Fisiológica Dinâmica:** Conforme o scroll desce na seção de Timeline, a linha vertical esquerda é "preenchida" de vermelho sutilmente e os pontos correspondentes são ativados.
-  - **Provas com Lightbox Modal:** Grid com os depoimentos reais com efeito hover de ampliação e zoom completo e nítido ao clicar.
-  - **Correções (09/07/2026):** Centralizado o container do Hero, removido os badges de seções estilo IA ("Programação", etc.) e excluído o depoimento Screenshot_2.png.
-  - **Masonry Grid & Copy (09/07/2026):** Substituído o CSS da grade de depoimentos por colunas do tipo Masonry (alturas nativas sem corte) e corrigido a legenda de subtexto para indicar que são alunos participantes da imersão (e não "parceiros de projetos").
-  - **Atualização de Conteúdo (09/07/2026):** Mapeado todo o conteúdo programático atualizado na linha do tempo e na grade de tópicos detalhados (13 cards divididos entre Ney e Jéssica), com o botão de vídeo convite integrado de forma compacta.
-  - **Sanfona de Benefícios & Manchetes (09/07/2026):** Implementado menu sanfonado (details/summary) na lista de vantagens do Ingresso VIP (com explicações dos e-books e bônus) e a seção "Manchetes de Jornal" responsiva (slider horizontal no mobile) com realce nos dados de GLP-1/obesidade integrado no bloco de pergunta de mercado.
-- **Build:** OK · 14 páginas geradas no total.
+- **Tema:** Dark & Red (fundo preto blueprint com detalhes, linhas e destaques em vermelho vivo).
+- **Redesign Editorial/Autêntico (09/07/2026):** Redesenhada do zero para adotar a mesma estética blueprint/estudo de caso autêntica e sem "cara de IA" da `v1-02`. Removeu glows artificiais, caixas e sombras volumosas. Introduziu kickers sutis, linhas finas de divisão, marcadores numéricos de seção, representação de abas do PubMed em CSS, notas de caso clínico e visual stack de fotos rotacionadas dos palestrantes.
+- **Modularização de Código (09/07/2026):** O CSS local de mais de 1600 linhas foi totalmente extraído para o arquivo externo `src/styles/imersao-v3.css`, reduzindo o arquivo Astro para apenas ~380 linhas (limpo e sustentável).
+- **Funcionalidades Preservadas:** Mantidos os scripts interativos do FormModal (GHL), o Sticky Bottom Bar customizado no rodapé e o Lightbox de zoom nos depoimentos.
+- **Build:** OK · 16 páginas geradas no total.
 
 ## Página de Check-in Interativa — 12/05/2026
 - **Check-in Virtual:** Criada a rota `/checkin` (`src/pages/checkin.astro`) para gerar um ingresso personalizado estilo neon para compartilhamento.

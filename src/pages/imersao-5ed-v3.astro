@@ -1,471 +1,384 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModal.astro';
-import ProgressBar from '../components/ProgressBar.astro';
+import '../styles/imersao-v3.css';
 
-// Dados do evento
 const EVENT_DATE = '01 de Agosto de 2026';
-const EVENT_DATE_SHORT = '01 Ago 2026';
 const EVENT_TIME = '9h às 18h';
-const EVENT_FORMAT = 'Zoom';
-const LOTE = 'Lote zero';
 const PRICE_BASICO = 'R$ 19,90';
-const PRICE_VIP = 'R$ 147,00';
+const PRICE_VIP_PARCELADO = '12x de R$ 15,20';
+const PRICE_VIP_AVISTA = 'R$ 147,00';
 ---
 
-<Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="green">
+<Layout title={`Imersão em Emagrecimento | ${EVENT_DATE} | Nutrição Avançada`} theme="green" hideHeader={true}>
+  <main class="case-page">
+    
+    <!-- ══════════════════════════════════════
+         HERO — ESTUDO DE CASO PREMIUM (V3 DARK & RED)
+         ══════════════════════════════════════ -->
+    <section class="case-hero" id="imersao">
+      <div class="case-shell case-hero__grid">
+        <div class="case-hero__content">
+          <p class="case-kicker">5ª Edição · Imersão em Emagrecimento</p>
+          <h1>
+            Trate a obesidade e o emagrecimento com base em dados.
+            <span>E fisiologia clínica consolidada.</span>
+          </h1>
+          <p class="case-lead">
+            Um dia inteiro destravando o raciocínio clínico que você precisa para atender com segurança e entregar resultados duradouros para seus pacientes.
+          </p>
 
-  <!-- ══════════════════════════════════════
-       HERO V3 — DARK & RED THEME (REFERENCE STYLE)
-       ══════════════════════════════════════ -->
-  <section class="hero-v3-section" id="imersao">
-    <div class="container hero-v3-grid">
-      <!-- LEFT COLUMN -->
-      <div class="hero-v3-content">
-        
-        <!-- Header Info Group -->
-        <div class="hero-v3-header-group">
-          <!-- Date Pill (Sticky top style) -->
-          <div class="hero-v3-date-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="calendar-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            <span>{EVENT_DATE_SHORT} | {EVENT_TIME} | {EVENT_FORMAT}</span>
+          <div class="case-hero__actions">
+            <div class="case-hero__ticket" aria-label="Ingresso lote zero">
+              <span class="case-hero__lot">Lote zero</span>
+              <p>De <s>R$ 97,00</s> por apenas</p>
+              <strong>{PRICE_BASICO}</strong>
+              <a href="#ingressos" class="case-hero__buy">Garantir minha vaga! &gt;</a>
+              <small>Garantia incondicional de 7 dias · Sem burocracia</small>
+            </div>
+          </div>
+
+          <div class="case-hero__facts" aria-label="Dados do evento">
+            <span>{EVENT_DATE}</span>
+            <span>{EVENT_TIME}</span>
+            <span>Online via Zoom</span>
           </div>
         </div>
 
-        <!-- Headline -->
-        <h1 class="hero-v3-headline">
-          Trate a obesidade e o emagrecimento com base em dados e fisiologia clínica consolidada.
-        </h1>
-
-        <!-- Subheadline (User requested exact text) -->
-        <p class="hero-v3-sub">
-          Um dia inteiro destravando o raciocínio clínico que você precisa para atender com segurança e entregar resultados duradouros para seus pacientes.
-        </p>
-
-        <!-- CTA Button V3 (Red theme highlight) -->
-        <div class="hero-v3-cta-wrap">
-          <a href="#preco" class="btn-v3-hero">
-            Pegar meu ingresso | {LOTE} <span class="btn-v3-icon">🎟</span>
-          </a>
-          
-          <div class="hero-v3-progress-wrap">
-            <div class="hero-v3-progress-bar">
-              <div class="hero-v3-progress-fill" style="width: 78%;">
-                <span class="progress-glow-dot"></span>
-              </div>
-            </div>
-            <div class="hero-v3-progress-labels">
-              <span>78% dos ingressos vendidos</span>
-              <span>de R$ 97,00 por <strong class="highlight-red">{PRICE_BASICO}</strong></span>
-            </div>
+        <div class="case-hero__visual" aria-label="Palestrantes da imersão">
+          <div class="case-photo-stack">
+            <figure class="case-photo case-photo--ney">
+              <img src="/images/ney-clinica-otimizado.webp" alt="Prof. Ney Felipe" />
+              <figcaption>Ney Felipe · conduta clínica</figcaption>
+            </figure>
+            <figure class="case-photo case-photo--jessica">
+              <img src="/images/jessica.webp" alt="Profa. Jéssica Wszolek" />
+              <figcaption>Jéssica Wszolek · GLP-1</figcaption>
+            </figure>
           </div>
-        </div>
-
-        <!-- Social Proof Stats (Reference style) -->
-        <div class="hero-v3-social-proof-grid">
-          <div class="proof-stat-item">
-            <span class="stat-arrow">↗</span>
-            <div class="stat-details">
-              <strong>70.1%</strong>
-              <span>Superou muito as expectativas</span>
-            </div>
-          </div>
-          <div class="proof-stat-item">
-            <span class="stat-arrow">↗</span>
-            <div class="stat-details">
-              <strong>99.4%</strong>
-              <span>Avaliação altamente positiva</span>
-            </div>
-          </div>
-          <div class="proof-stat-item">
-            <span class="stat-arrow">↗</span>
-            <div class="stat-details">
-              <strong>174</strong>
-              <span>Alunos reais avaliados</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- RIGHT COLUMN (Speaker image layered on dark bg) -->
-      <div class="hero-v3-right">
-        <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" class="hero-v3-speaker-img" />
-        <div class="hero-v3-logos-support">
-          <span>Apoio:</span>
-          <strong class="support-brand">NUTRIÇÃO AVANÇADA</strong>
+          <div class="case-stamp" style="background: rgba(227, 75, 63, 0.85); color: #fff; border-color: rgba(227, 75, 63, 0.4);">Ao vivo<br />Zoom</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════
-       SEÇÃO DE CLIENTES NOTÁVEIS (GRID DE TESTEMUNHOS GRANDES E LEGÍVEIS)
-       ══════════════════════════════════════ -->
-  <section class="section-notaveis">
-    <div class="container">
-      <h2 class="section-title text-center">Quem já validou nosso método e esteve com a gente</h2>
-      <p class="section-sub text-center" style="max-width: 600px; margin: 0 auto 40px;">
-        Profissionais que utilizam as estratégias práticas da Nutrição Avançada em seus consultórios.
-      </p>
+    <!-- ══════════════════════════════════════
+         TICKER DE CAMPANHA
+         ══════════════════════════════════════ -->
+    <section class="case-strip" aria-label="Resumo da virada de campanha">
+      <div class="case-strip__track" style="animation: caseScroll 22s linear infinite;">
+        <span>lote zero ativo</span>
+        <span>conduta além da calculadora</span>
+        <span>gravação por 1 ano no VIP</span>
+        <span>01 agosto 2026</span>
+        <span>lote zero ativo</span>
+        <span>conduta além da calculadora</span>
+        <span>gravação por 1 ano no VIP</span>
+        <span>01 agosto 2026</span>
+      </div>
+    </section>
 
-      <!-- Real Screenshots with Lightbox modal zoom -->
-      <div class="real-screenshots-block">
-        <div class="screenshots-grid">
-          <div class="screenshot-card" data-zoom-img="/images/depoimentos/Screenshot_1.png">
-            <img src="/images/depoimentos/Screenshot_1.png" alt="Depoimento 1" class="screenshot-img" loading="lazy" />
-            <div class="screenshot-hover-overlay">
-              <span>🔍 Ampliar Depoimento</span>
-            </div>
-          </div>
-
-          <div class="screenshot-card" data-zoom-img="/images/depoimentos/Screenshot_3.png">
-            <img src="/images/depoimentos/Screenshot_3.png" alt="Depoimento 3" class="screenshot-img" loading="lazy" />
-            <div class="screenshot-hover-overlay">
-              <span>🔍 Ampliar Depoimento</span>
-            </div>
-          </div>
-          <div class="screenshot-card" data-zoom-img="/images/depoimentos/Screenshot_14.png">
-            <img src="/images/depoimentos/Screenshot_14.png" alt="Depoimento 4" class="screenshot-img" loading="lazy" />
-            <div class="screenshot-hover-overlay">
-              <span>🔍 Ampliar Depoimento</span>
-            </div>
-          </div>
-          <div class="screenshot-card" data-zoom-img="/images/depoimentos/Screenshot_23.png">
-            <img src="/images/depoimentos/Screenshot_23.png" alt="Depoimento 5" class="screenshot-img" loading="lazy" />
-            <div class="screenshot-hover-overlay">
-              <span>🔍 Ampliar Depoimento</span>
-            </div>
-          </div>
+    <!-- ══════════════════════════════════════
+         01 / CASO CLÍNICO
+         ══════════════════════════════════════ -->
+    <section class="case-shell case-problem" id="caso">
+      <div class="case-section-mark" style="color: var(--case-red);">01 / caso clínico</div>
+      <div class="case-problem__grid">
+        <div>
+          <h2>O paciente de emagrecimento virou um caso mais complexo:</h2>
+          <p>
+            O paciente não chega mais só perguntando por dieta. Ele chega usando GLP-1 (como Ozempic e Mounjaro), comendo pouco,
+            perdendo massa magra, travando no platô ou com medo de recuperar peso quando retirar a medicação.
+          </p>
+        </div>
+        <div class="case-notes" aria-label="Sintomas clínicos da página" style="border-left-color: var(--case-red);">
+          <p><strong>Queixa 01</strong> "Meu apetite sumiu, mas estou sem força."</p>
+          <p><strong>Queixa 02</strong> "Emagreci, mas perdi massa magra junto."</p>
+          <p><strong>Queixa 03</strong> "Vou parar a caneta. E agora?"</p>
+          <p><strong>Queixa 04</strong> "Doutora, por que eu parei de evoluir?"</p>
         </div>
       </div>
+    </section>
 
-      <div class="notaveis-footer-text text-center">
-        <p>Mensagens e depoimentos reais de quem participou da última edição da Imersão.</p>
+    <!-- ══════════════════════════════════════
+         02 / EVIDÊNCIAS DE MERCADO
+         ══════════════════════════════════════ -->
+    <section class="case-evidence" id="evidencias">
+      <div class="case-shell">
+        <div class="case-section-mark" style="color: var(--case-red);">02 / evidências de mercado</div>
+        <div class="evidence-board">
+          <article class="evidence-item evidence-item--lead" style="border-top-color: var(--case-red);">
+            <span>Google Trends & mercado</span>
+            <h3>O Brasil ocupa a <mark style="background: rgba(227, 75, 63, 0.25); color: #fff;">2ª posição mundial</mark> nas buscas por Ozempic e Mounjaro na internet.</h3>
+            <p>
+              A procura massiva por canetas emagrecedoras movimentou mais de R$ 10 bilhões no mercado nacional, gerando uma onda inédita de pacientes necessitando de suporte nutricional no consultório.
+            </p>
+            <a href="#ingressos" class="evidence-cta" style="color: var(--case-red); border-color: var(--case-red);">Selecionar ingresso</a>
+          </article>
+
+          <article class="evidence-item" style="border-top-color: var(--case-line);">
+            <span>Adesão</span>
+            <h3>Mais de <mark style="background: rgba(227, 75, 63, 0.15); color: #fff;">45% abandonam</mark> GLP-1 no primeiro ano.</h3>
+            <p>Efeitos gastrointestinais severos, perda de massa magra e falta de estratégia nutricional integrada pesam no abandono.</p>
+          </article>
+
+          <article class="evidence-item" style="border-top-color: var(--case-line);">
+            <span>Projeções 2030</span>
+            <h3><mark style="background: rgba(227, 75, 63, 0.15); color: #fff;">68% dos brasileiros</mark> estarão com excesso de peso.</h3>
+            <p>Não é nicho. O avanço do sobrepeso exige condutas clínicas modernas. Tratar emagrecimento apenas calculando déficit calórico faliu.</p>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════
-       A GRANDE PERGUNTA (TRANSIÇÃO E CONTEXTO DE MERCADO LAPIDADO)
-       ══════════════════════════════════════ -->
-  <section class="section-pergunta">
-    <div class="container text-center">
-      <h2 class="pergunta-headline">
-        Com o uso desenfreado de análogos de GLP-1 (como Ozempic e Mounjaro), o mercado agora exige nutricionistas preparados para tratar os efeitos colaterais e sustentar o emagrecimento a longo prazo. Afinal, a medicação passa, mas a nutrição é a única que mantém o resultado.
-      </h2>
-      
-      <div class="news-clippings-container">
-        
-        <div class="news-clipping-card card-rotate-left">
-          <div class="news-source">GOOGLE TRENDS & LEVANTAMENTO GLOBAL</div>
-          <div class="news-date">Volume de buscas recorde</div>
-          <h3 class="news-title">
-            Brasil ocupa a <mark class="news-highlight">2ª posição mundial nas buscas por Ozempic e Mounjaro</mark> na internet.
-          </h3>
-          <p class="news-excerpt">
-            A procura massiva por canetas emagrecedoras movimentou mais de R$ 10 bilhões no mercado nacional, gerando uma onda inédita de pacientes necessitando de suporte nutricional no consultório.
+    <!-- ══════════════════════════════════════
+         03 / ANTES DA IMERSÃO (PUbMED CHAOS)
+         ══════════════════════════════════════ -->
+    <section class="case-overload">
+      <div class="case-shell overload-grid">
+        <div class="overload-copy">
+          <div class="case-section-mark" style="color: var(--case-red);">03 / antes da imersão</div>
+          <h2>Você já perdeu tempo demais tentando montar esse raciocínio sozinho.</h2>
+          <p>
+            Uma aba com artigo. Outra com diretriz. Um post salvo no Instagram. Um print no WhatsApp.
+            No fim, você estudou muito, mas ainda precisa transformar tudo isso em conduta para o paciente real.
+          </p>
+          <p class="overload-callout" style="color: var(--case-red); background: rgba(227, 75, 63, 0.08); border-left-color: var(--case-red);">
+            Isso pode ser organizado em um dia de imersão comigo.
           </p>
         </div>
 
-        <div class="news-clipping-card card-rotate-right">
-          <div class="news-source">ESTUDOS DE MUNDO REAL (GLP-1)</div>
-          <div class="news-date">Adesão e Efeitos Colaterais</div>
-          <h3 class="news-title">
-            Mais de <mark class="news-highlight">45% dos pacientes abandonam o uso de canetas de GLP-1</mark> no primeiro ano.
-          </h3>
-          <p class="news-excerpt">
-            Os principais motivos de abandono são os efeitos gastrointestinais severos e a perda de massa magra. O nutricionista preparado é indispensável para evitar esses problemas e manter o resultado.
-          </p>
-        </div>
-
-        <div class="news-clipping-card card-rotate-straight">
-          <div class="news-source">ORGANIZAÇÃO MUNDIAL DA SAÚDE</div>
-          <div class="news-date">Projeções Epidemiológicas</div>
-          <h3 class="news-title">
-            Projeções alertam que até 2030, cerca de <mark class="news-highlight">68% dos brasileiros estarão com excesso de peso</mark>.
-          </h3>
-          <p class="news-excerpt">
-            O avanço do sobrepeso exige condutas clínicas modernas. Tratar emagrecimento apenas calculando déficit calórico básico faliu, abrindo espaço para a nutrição baseada em fisiologia real.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       LINHA DO TEMPO DINÂMICA (CRONOGRAMA REAL DO EVENTO)
-       ══════════════════════════════════════ -->
-  <section class="section-timeline" id="cronograma-evento">
-    <div class="container timeline-grid">
-      <!-- Left side: vertical line and Ney photo (STICKY TRIGGER) -->
-      <div class="timeline-visual-side">
-        <img src="/images/ney-clinica-otimizado.webp" alt="Ney Felipe" class="timeline-speaker-photo" />
-        <div class="timeline-line-container">
-          <div class="timeline-scroll-line" id="timeline-fill-line"></div>
-          <div class="timeline-dot dot-1 active"></div>
-          <div class="timeline-dot dot-2"></div>
-          <div class="timeline-dot dot-3"></div>
-          <div class="timeline-dot dot-4"></div>
+        <div class="browser-chaos" aria-label="Representação visual de abas, artigos e posts salvos">
+          <div class="browser-window browser-window--main" style="border-color: var(--case-line);">
+            <div class="browser-tabs" style="border-bottom-color: var(--case-line);">
+              <span style="border-right-color: var(--case-line); color: var(--case-red);">PubMed</span>
+              <span style="border-right-color: var(--case-line);">GLP-1</span>
+              <span style="border-right-color: var(--case-line);">proteína</span>
+              <span>diretriz</span>
+            </div>
+            <div class="browser-search" style="border-bottom-color: var(--case-line);">semaglutide nutrition lean mass clinical practice...</div>
+            <div class="article-lines">
+              <i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="browser-window browser-window--post" style="border-color: rgba(227, 75, 63, 0.35); background: #1a0808;">
+            <span class="post-tag" style="background: var(--case-red); color: #140202;">post salvo</span>
+            <strong>"5 dicas para paciente em uso de caneta"</strong>
+            <small>parece simples, mas não fecha a conduta</small>
+          </div>
+          <div class="browser-window browser-window--note" style="border-color: var(--case-line);">
+            <strong>Prontuário</strong>
+            <span>Náusea + baixa proteína + treino fraco</span>
+            <span>Como ajustar sem piorar sintomas?</span>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Right side: Content blocks -->
-      <div class="timeline-content-side">
-        <h2 class="section-title">Programação do Dia {EVENT_DATE}</h2>
-        <p class="section-sub" style="margin-bottom: 32px;">Um dia inteiro de conteúdo prático e voltado para a sua atuação em consultório:</p>
-        
-        <div class="timeline-content-block" id="timeline-block-1">
-          <div class="block-num">09h30</div>
-          <h3>Início do Evento</h3>
-          <p>Boas-vindas e abertura da transmissão ao vivo via Zoom.</p>
-        </div>
+    <!-- ══════════════════════════════════════
+         04 / SALA DE AULA (CONTEÚDO E CRONOGRAMA)
+         ══════════════════════════════════════ -->
+    <section class="case-shell case-method" id="aula">
+      <div class="case-section-mark" style="color: var(--case-red);">04 / sala de aula</div>
+      <div class="case-method__headline">
+        <h2>O que você vai aprender na Imersão</h2>
+        <p>O dia foi organizado para transformar conteúdo técnico em conduta: avaliação, estratégia, prescrição e acompanhamento.</p>
+      </div>
 
-        <div class="timeline-content-block" id="timeline-block-2">
-          <div class="block-num">12h00</div>
-          <h3>Intervalo para Almoço</h3>
-          <p>Momento de pausa para almoço e descanso.</p>
-        </div>
+      <div class="lecture-map">
+        <article style="border-top-color: var(--case-red);">
+          <span style="color: var(--case-red);">Bloco Ney</span>
+          <h3>Períodos críticos</h3>
+          <p>Como conduzir adesão, platô e reganho de peso sem reduzir o acompanhamento ao déficit calórico.</p>
+        </article>
+        <article style="border-top-color: var(--case-line);">
+          <span style="color: var(--case-red);">Bloco Ney</span>
+          <h3>Alvos moleculares</h3>
+          <p>Quais prioridades fisiológicas entram na dietoterapia para emagrecimento e como organizar a proposta terapêutica.</p>
+        </article>
+        <article style="border-top-color: var(--case-line);">
+          <span style="color: var(--case-red);">Bloco Jéssica</span>
+          <h3>GLP-1 e massa magra</h3>
+          <p>Como ajustar proteína, suplementação, sintomas gastrointestinais e monitoramento clínico quando o apetite despenca.</p>
+        </article>
+        <article style="border-top-color: var(--case-line);">
+          <span style="color: var(--case-red);">Conduta integrada</span>
+          <h3>Bioativos e mediterrânea</h3>
+          <p>Como aplicar alimentos funcionais, compostos bioativos e dieta mediterrânea de forma prática e individualizada.</p>
+        </article>
+      </div>
 
-        <div class="timeline-content-block" id="timeline-block-3">
-          <div class="block-num">13h30</div>
-          <h3>Retorno das Palestras</h3>
-          <p>Reinício dos blocos técnicos de conteúdo prático.</p>
-        </div>
+      <div class="case-schedule" aria-label="Cronograma" style="border-top-color: var(--case-line); border-bottom-color: var(--case-line);">
+        <div><time style="color: var(--case-red);">09h30</time><span>Abertura e raciocínio inicial (Zoom ao vivo)</span></div>
+        <div style="border-left-color: var(--case-line);"><time style="color: var(--case-red);">12h00</time><span>Intervalo de almoço</span></div>
+        <div style="border-left-color: var(--case-line);"><time style="color: var(--case-red);">13h30</time><span>Blocos técnicos e estudos de casos</span></div>
+        <div style="border-left-color: var(--case-line);"><time style="color: var(--case-red);">17h30</time><span>Encerramento previsto</span></div>
+      </div>
+    </section>
 
-        <div class="timeline-content-block" id="timeline-block-4">
-          <div class="block-num">17h30</div>
-          <h3>Encerramento das Atividades*</h3>
-          <p style="font-size: 12px; color: var(--text-muted); font-style: italic; margin-top: 4px;">
-            *Considere encerrar mais tarde, caso os participantes peçam para nos aprofundarmos em algum ponto. Porém, o conteúdo combinado será entregue dentro do horário programado.
+    <!-- ══════════════════════════════════════
+         05 / PROVA REAL
+         ══════════════════════════════════════ -->
+    <section class="case-proof">
+      <div class="case-shell proof-grid">
+        <div class="case-section-mark" style="color: var(--case-red);">05 / prova real</div>
+        <div class="proof-copy">
+          <h2>Quem participou saiu com mais clareza para atender.</h2>
+          <p>
+            A edição anterior deixou um sinal importante: o valor percebido veio da aplicação.
+            Nutricionistas relataram mais segurança para raciocinar, explicar e conduzir o paciente.
           </p>
         </div>
 
-        <!-- Mas você pode falhar alert block -->
-        <div class="timeline-alert-block">
-          <div class="alert-header">⚠️ Mas você pode falhar miseravelmente se:</div>
-          <ul class="alert-list">
-            <li>Apenas repetir "é só fechar a boca e fazer déficit calórico" no papel...</li>
-            <li>Não souber orientar o manejo de efeitos colaterais de canetas de GLP-1...</li>
-            <li>Tentar aplicar estratégias restritivas para pacientes altamente inflamados...</li>
+        <div class="proof-wall">
+          <div class="screenshot-card" data-zoom-img="/images/depoimentos/Screenshot_1.png" style="cursor: pointer;">
+            <img src="/images/depoimentos/Screenshot_1.png" alt="Depoimento real de participante" style="border: 1px solid var(--case-line); transition: transform 0.2s;" />
+          </div>
+          <div class="screenshot-card" data-zoom-img="/images/depoimentos/Screenshot_3.png" style="cursor: pointer;">
+            <img src="/images/depoimentos/Screenshot_3.png" alt="Depoimento real de participante" style="border: 1px solid var(--case-line); transition: transform 0.2s;" />
+          </div>
+          <div class="screenshot-card" data-zoom-img="/images/depoimentos/Screenshot_14.png" style="cursor: pointer;">
+            <img src="/images/depoimentos/Screenshot_14.png" alt="Depoimento real de participante" style="border: 1px solid var(--case-line); transition: transform 0.2s;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         05.1 / MID CTA
+         ══════════════════════════════════════ -->
+    <section class="case-mid-cta">
+      <div class="case-shell case-mid-cta__grid">
+        <div class="case-mid-cta__copy">
+          <div class="case-section-mark" style="color: var(--case-red);">05.1 / garantir vaga</div>
+          <h2>Se a decisão já faz sentido, aqui está o lote que está valendo agora.</h2>
+          <p>
+            Você não precisa esperar chegar no final da página para travar esse preço.
+            O lote zero ainda está ativo, com garantia de 7 dias e acesso imediato à confirmação da vaga.
+          </p>
+        </div>
+
+        <div class="case-mid-cta__card">
+          <div class="case-hero__ticket" aria-label="Ingresso lote zero" style="border-color: rgba(227, 75, 63, 0.55); background: linear-gradient(135deg, rgba(227, 75, 63, 0.13), transparent 44%), #130303; box-shadow: 10px 10px 0 rgba(227, 75, 63, 0.11);">
+            <span class="case-hero__lot" style="background: var(--case-red); color: #140202;">Lote zero</span>
+            <p>De <s>R$ 97,00</s> por apenas</p>
+            <strong>{PRICE_BASICO}</strong>
+            <a href="#ingressos" class="case-hero__buy" style="background: var(--case-red); color: #140202;">Garantir minha vaga! &gt;</a>
+            <small>Garantia incondicional de 7 dias · Sem burocracia</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         06 / INGRESSOS / COMPARAÇÃO
+         ══════════════════════════════════════ -->
+    <section class="case-shell case-tickets" id="ingressos">
+      <div class="case-section-mark" style="color: var(--case-red);">06 / acesso</div>
+      <div class="ticket-intro">
+        <h2>Escolha seu formato de ingresso</h2>
+      </div>
+
+      <div class="ticket-board">
+        <!-- BÁSICO -->
+        <article class="ticket ticket--basic" style="border-color: var(--case-line); background: #0c0505;">
+          <div class="ticket__edge" style="background: var(--case-line); color: var(--case-muted);">Básico</div>
+          <h3>Ingresso ao vivo</h3>
+          <p class="ticket__old">De R$ 97,00 por</p>
+          <p class="ticket__price">{PRICE_BASICO}</p>
+          <ul>
+            <li>Acesso ao dia de imersão ao vivo via Zoom</li>
+            <li>Grupo exclusivo de participantes</li>
+            <li>Materiais compartilhados na aula</li>
+            <li>Mini Curso Fundamentos do Emagrecimento</li>
           </ul>
+          <a href="#" data-form="normal" class="ticket__button" style="border-color: var(--case-line); color: #fff; background: transparent;">Comprar básico</a>
+        </article>
+
+        <!-- VIP -->
+        <article class="ticket ticket--vip" style="border-color: rgba(227, 75, 63, 0.55); background: linear-gradient(135deg, rgba(227, 75, 63, 0.08), transparent 45%), #130303; box-shadow: 10px 10px 0 rgba(227, 75, 63, 0.09);">
+          <div class="ticket__edge" style="background: var(--case-red); color: #140202;">VIP</div>
+          <h3>Acesso completo</h3>
+          <p class="ticket__old">De R$ 297,00 por</p>
+          <p class="ticket__price">{PRICE_VIP_PARCELADO}</p>
+          <p class="ticket__cash">ou {PRICE_VIP_AVISTA} à vista</p>
+          <div class="ticket-details">
+            <details class="ticket-feature">
+              <summary>&gt; Tudo do básico + <span>ver o que é</span></summary>
+              <p>Evento ao vivo, grupo do evento, materiais compartilhados e base para acompanhar a imersão com aplicação imediata.</p>
+            </details>
+            <details class="ticket-feature ticket-feature--static" open>
+              <summary>Gravação do evento <span style="background: var(--case-red); color: #140202;">por 1 ano</span></summary>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; Certificado de 8h <span>ver benefício</span></summary>
+              <p>Para contabilizar horas na faculdade ou sinalizar ao paciente que sua conduta continua em evolução.</p>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; E-book Tópicos Avançados <span style="color: var(--case-red); font-weight: 700;">(R$ 99)</span></summary>
+              <p>Nutricosméticos, crononutrição e biogênese mitocondrial com ligação entre teoria, prescrição e prática.</p>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; Ebook "Me Formei, e agora?" <span style="color: var(--case-red); font-weight: 700;">(R$ 59)</span></summary>
+              <p>Respostas para precificação, retorno, fidelização, sublocação de sala e outras dúvidas da rotina profissional.</p>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; Ebook Desaprendendo a Dieta <span style="color: var(--case-red); font-weight: 700;">(R$ 39)</span></summary>
+              <p>Material de educação nutricional para o paciente sair da dependência de mito, regra rasa e mentalidade de dieta.</p>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; Ressaca do Evento <span>ver benefício</span></summary>
+              <p>Encontro extra no Zoom para revisar a aula, recapitular os pontos principais e abrir espaço para dúvidas pós-imersão.</p>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; Cashback integral <span>ver como funciona</span></summary>
+              <p>O valor investido no VIP volta como desconto se você entrar depois na Formação Nutrição Avançada ou na Pós-Graduação.</p>
+            </details>
+          </div>
+          <a href="#" data-form="vip" class="ticket__button" style="background: var(--case-red); color: #140202;">Comprar VIP</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FAQ / ACCORDION CLEAN
+         ══════════════════════════════════════ -->
+    <section class="case-faq">
+      <div class="case-shell faq-grid">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-list">
+          <details style="border-bottom-color: var(--case-line);">
+            <summary style="color: #fff;">Para quem é essa imersão?</summary>
+            <p style="color: var(--case-muted);">Nutricionistas formados e estudantes que querem atender emagrecimento com mais raciocínio clínico, especialmente em casos com GLP-1, platô, adesão e reganho.</p>
+          </details>
+          <details style="border-bottom-color: var(--case-line);">
+            <summary style="color: #fff;">Vai ficar gravado?</summary>
+            <p style="color: var(--case-muted);">O ingresso VIP dá acesso completo às gravações por 1 ano. O básico é para acompanhar ao vivo.</p>
+          </details>
+          <details style="border-bottom-color: var(--case-line);">
+            <summary style="color: #fff;">Tem garantia?</summary>
+            <p style="color: var(--case-muted);">Sim. Você tem 7 dias de garantia incondicional, sem burocracia.</p>
+          </details>
+          <details style="border-bottom-color: var(--case-line);">
+            <summary style="color: #fff;">Como funciona o Cashback?</summary>
+            <p style="color: var(--case-muted);">O valor integral investido no Ingresso VIP (R$ 147) é revertido em desconto ao se matricular na Formação completa de Nutrição Avançada ou na Pós-Graduação Oficial.</p>
+          </details>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════
-       O QUE VOCÊ VAI APRENDER (MÓDULOS DE MASKING/REVEALING)
-       ══════════════════════════════════════ -->
-  <section class="section-modulos" id="conteudo">
-    <div class="container">
-        <div class="modulo-item">
-          <div class="modulo-header">
-            <span class="mod-num">12</span>
-            <h3>Monitoramento Crítico</h3>
-          </div>
-          <p>O que NUNCA ignorar em um paciente que usa GLP-1 se você quer evitar fadiga, déficit proteico e queda de desempenho no treino.</p>
-        </div>
-
-        <div class="modulo-item">
-          <div class="modulo-header">
-            <span class="mod-num">13</span>
-            <h3>Desmame da Medicação</h3>
-          </div>
-          <p>Por que o desmame da medicação começa muito antes da retirada da caneta — e qual o papel do nutricionista nesse processo.</p>
-        </div>
+    <!-- ══════════════════════════════════════
+         FINAL CTA
+         ══════════════════════════════════════ -->
+    <section class="case-final" style="background: linear-gradient(180deg, transparent, rgba(227, 75, 63, 0.08)), #070202; border-top-color: var(--case-line);">
+      <div class="case-shell">
+        <p style="color: var(--case-red); font-weight: 700;">01 de Agosto · Online via Zoom · Lote zero ativo</p>
+        <h2>A próxima consulta de emagrecimento pode ter mais raciocínio e menos improviso.</h2>
+        <a href="#ingressos" class="case-action case-action--primary" style="background: var(--case-red); color: #140202; border-color: var(--case-red); box-shadow: 8px 8px 0 #381414;">Escolher ingresso</a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══════════════════════════════════════
-       TIME / PALESTRANTES
-       ══════════════════════════════════════ -->
-  <section class="section-professores" id="time">
-    <div class="container">
-      <h2 class="section-title text-center">Aprenda Com Quem Vive a Prática</h2>
-      
-      <div class="professores-grid">
-        <div class="professor-card">
-          <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" class="prof-photo" />
-          <div class="prof-info">
-            <h3>NEY FELIPE</h3>
-            <span class="prof-tag">Nutricionista e Mestre em Biol. Molecular</span>
-            <p>19 anos de consultório clínico, pioneiro da Nutrição Funcional Esportiva no Brasil e fundador da Nutrição Avançada.</p>
-          </div>
-        </div>
+  </main>
 
-        <div class="professor-card">
-          <img src="/images/jessica.webp" alt="Jéssica Wszolek" class="prof-photo" />
-          <div class="prof-info">
-            <h3>JÉSSICA WSZOLEK</h3>
-            <span class="prof-tag">Professora Convidada</span>
-            <p>Referência nacional em manejo dietético integrado ao uso de análogos de GLP-1 e modulação do emagrecimento prático.</p>
-            <a href="https://www.youtube.com/shorts/vPnW2rWVQHY" target="_blank" class="btn-ver-chamada">
-              🎥 VER CHAMADA
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       OFERTA E ANCORAGEM DE PREÇO (COMPARAÇÃO ESCURA E VERMELHA)
-       ══════════════════════════════════════ -->
-  <section class="section-oferta" id="preco">
-    <div class="container">
-      <h2 class="section-title text-center">Garanta Sua Vaga no Lote Zero</h2>
-      
-      <div class="pricing-container-grid">
-        <!-- Ingresso Básico -->
-        <div class="pricing-card">
-          <div class="card-header">
-            <h3>Ingresso Básico</h3>
-            <p>Ideal para assistir ao vivo</p>
-          </div>
-          <div class="card-divider"></div>
-          <ul class="card-features">
-            <li>✓ Acesso ao dia de Imersão ao vivo via Zoom</li>
-            <li>✓ 8 horas de conteúdo intenso e aplicável</li>
-            <li>✓ Grupo exclusivo de participantes</li>
-            <li>✓ Materiais compartilhados no evento</li>
-            <li>✓ Mini Curso Fundamentos do Emagrecimento</li>
-          </ul>
-          <div class="card-divider"></div>
-          <div class="card-price-block">
-            <span class="old-price">De R$ 97,00</span>
-            <div class="current-price">{PRICE_BASICO}</div>
-          </div>
-          <button class="btn-purchase" data-form="normal">
-            COMPRAR INGRESSO BÁSICO 🎟
-          </button>
-        </div>
-
-        <!-- Ingresso VIP -->
-        <div class="pricing-card pricing-card--vip">
-          <div class="vip-highlight-badge">RECOMENDADO</div>
-          <div class="card-header">
-            <h3>Ingresso VIP</h3>
-            <p class="text-glow">Gravação + Bônus Exclusivos</p>
-          </div>
-          <div class="card-divider"></div>
-          <div class="card-features-details">
-            
-            <details class="feature-item">
-              <summary>🚀 Tudo do básico + <span class="feature-action">ver o que é</span></summary>
-              <p class="feature-desc">Evento ao vivo, grupo do evento, materiais complementares extras numa plataforma de conteúdos.</p>
-            </details>
-
-            <div class="feature-item--static">
-              <span class="feature-static-icon">🎬</span>
-              <span>Gravação do evento <span class="badge-year">POR 1 ANO</span></span>
-            </div>
-
-            <details class="feature-item">
-              <summary>🎁 Certificado de 8h <span class="feature-action">ver benefício</span></summary>
-              <p class="feature-desc">Para você contabilizar horas na faculdade ou para mostrar para os pacientes que está em constante evolução!</p>
-            </details>
-
-            <details class="feature-item">
-              <summary>🎁 E-book Tópicos Avançados <span class="feature-action">(R$ 99)</span></summary>
-              <p class="feature-desc">Conecta teoria e prática com Nutricosméticos, Crononutrição e Biogênese Mitocondrial, com estratégias de prescrição e referências científicas.</p>
-            </details>
-
-            <details class="feature-item">
-              <summary>🎁 Ebook "Me Formei, e agora?" <span class="feature-action">(R$ 59)</span></summary>
-              <p class="feature-desc">Respostas para as dúvidas mais frequentes de recém-formados: retorno na consulta, precificação, sublocação de sala, fidelização e muito mais.</p>
-            </details>
-
-            <details class="feature-item">
-              <summary>🎁 Ebook Desaprendendo a Dieta <span class="feature-action">(R$ 39)</span></summary>
-              <p class="feature-desc">A Cartilha que envio para meus pacientes combatendo os principais mitos e dando autonomia. Isso é educação Nutricional verdadeira.</p>
-            </details>
-
-            <details class="feature-item">
-              <summary>🎁 Ressaca do Evento (Extra) <span class="feature-action">ver benefício</span></summary>
-              <p class="feature-desc">Na quarta-feira pós evento faremos um encontro extra no zoom para recapitular o conteúdo e tirar dúvidas em uma sala fechada.</p>
-            </details>
-
-            <details class="feature-item">
-              <summary>💰 Cashback integral <span class="feature-action">ver como funciona</span></summary>
-              <p class="feature-desc">O valor investido nesse ingresso é revertido em forma de cashback (desconto) ao se inscrever na Formação Nutrição Avançada ou na Pós Graduação.</p>
-            </details>
-
-          </div>
-          <div class="card-divider"></div>
-          <div class="card-price-block">
-            <span class="old-price">De R$ 297,00</span>
-            <span class="installment-label">POR APENAS:</span>
-            <div class="current-price text-red">{PRICE_VIP}</div>
-          </div>
-          <button class="btn-purchase btn-purchase--vip" data-form="vip">
-            COMPRAR INGRESSO VIP 🚀
-          </button>
-        </div>
-      </div>
-
-      <!-- Garantia -->
-      <div class="garantia-global-block">
-        <strong>🛡 Garantia Incondicional de 7 Dias</strong>
-        <p>Você pode garantir sua vaga, assistir à imersão e, se sentir que o conteúdo não agregou para a sua prática, devolvemos 100% do seu dinheiro sem burocracia ou ressentimentos.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════════
-       FAQ Accordion
-       ══════════════════════════════════════ -->
-  <section class="section-faq">
-    <div class="container faq-inner">
-      <h2 class="section-title text-center">Perguntas Frequentes</h2>
-
-      <div class="faq-list" id="faq-list">
-        <div class="faq-item">
-          <button class="faq-btn" aria-expanded="false">
-            <span>Para quem é a imersão?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Para nutricionistas e estudantes de nutrição que querem se diferenciar no tratamento do sobrepeso e obesidade, utilizando a ciência prática e o manejo farmacológico integrado.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-btn" aria-expanded="false">
-            <span>Vai ficar gravado?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Apenas o Ingresso VIP dá acesso completo às gravações do evento por 1 ano. O ingresso Básico permite assistir somente ao vivo via Zoom no dia do evento.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-btn" aria-expanded="false">
-            <span>Qual a política de cancelamento?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Você tem reembolso total assegurado por lei em até 7 dias após a compra, sem qualquer questionamento.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-btn" aria-expanded="false">
-            <span>Como funciona o Cashback?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>O valor integral investido no Ingresso VIP (R$ 147) é revertido em desconto ao se matricular em nossa Formação completa de Nutrição Avançada ou em nossa Pós-Graduação Oficial.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modal de Formulário GHL -->
   <FormModal />
 
   <!-- Lightbox Modal Container for screenshots zoom -->
@@ -474,1805 +387,65 @@ const PRICE_VIP = 'R$ 147,00';
     <img id="lightbox-img" src="" alt="Depoimento Ampliado" class="lightbox-content-img" />
   </div>
 
-  <!-- ══════════════════════════════════════
-       STICKY BOTTOM BAR (FADES IN SMOOTHLY ON SCROLL)
-       ══════════════════════════════════════ -->
+  <!-- STICKY BOTTOM BAR (FADES IN SMOOTHLY ON SCROLL) -->
   <div class="sticky-bottom-bar" id="sticky-bar">
     <div class="container sticky-bar-inner">
       <div class="sticky-left">
-        <a href="#preco" class="btn-sticky-action">
-          Comprar ingresso | {LOTE} 🎟
+        <a href="#ingressos" class="btn-sticky-action">
+          Comprar ingresso | Lote zero 🎟
         </a>
       </div>
       <div class="sticky-right">
         <div class="sticky-progress-container">
-          <div class="sticky-progress-track">
-            <div class="sticky-progress-fill" style="width: 78%;">
-              <span class="sticky-progress-dot"></span>
-            </div>
-          </div>
           <span class="sticky-progress-label">
-            78% dos ingressos vendidos · de R$ 97,00 por <strong class="red-price">{PRICE_BASICO}</strong>
+            Garantia de 7 dias · Acesso imediato · Ingresso a partir de <strong class="red-price">{PRICE_BASICO}</strong>
           </span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Video Modal Overlay -->
-  <div id="video-modal" class="video-modal">
-    <div class="video-modal-content">
-      <button class="video-modal-close" id="close-modal-btn">&times;</button>
-      <div class="video-iframe-container">
-        <iframe 
-          id="video-iframe"
-          src="" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-  </div>
+  <!-- Lightbox e Sticky Bar Script -->
+  <script>
+    // Lightbox Modal Logic for Screenshots
+    const lightbox = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+    const lightboxClose = document.getElementById('lightbox-close');
 
-  <!-- Video Modal Script -->
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.getElementById('video-modal');
-      const iframe = document.getElementById('video-iframe');
-      const closeBtn = document.getElementById('close-modal-btn');
-      const playBtns = document.querySelectorAll('.btn-ver-chamada');
-
-      playBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          const embedUrl = 'https://www.youtube.com/embed/vPnW2rWVQHY?autoplay=1';
-          iframe.src = embedUrl;
-          modal.classList.add('active');
-        });
-      });
-
-      const closeModal = () => {
-        modal.classList.remove('active');
-        iframe.src = '';
-      };
-
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal();
+    document.querySelectorAll('[data-zoom-img]').forEach(card => {
+      card.addEventListener('click', () => {
+        const src = (card as HTMLElement).dataset.zoomImg;
+        if (src && lightbox && lightboxImg) {
+          lightboxImg.src = src;
+          lightbox.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
         }
       });
+    });
+
+    function closeLightbox() {
+      if (lightbox) lightbox.style.display = 'none';
+      if (lightboxImg) lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // STICKY BOTTOM BAR SCROLL LOGIC
+    const stickyBar = document.getElementById('sticky-bar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 450) {
+        stickyBar?.classList.add('sticky-bottom-bar--visible');
+      } else {
+        stickyBar?.classList.remove('sticky-bottom-bar--visible');
+      }
     });
   </script>
 
 </Layout>
-
-<!-- ══════════════════════════════════════
-     SCRIPTS
-     ══════════════════════════════════════ -->
-<script>
-  // FAQ Accordion (Rotate 45 deg added)
-  document.querySelectorAll('.faq-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item') as HTMLElement;
-      const isOpen = btn.getAttribute('aria-expanded') === 'true';
-
-      // Fechar todos
-      document.querySelectorAll('.faq-item').forEach(i => {
-        i.classList.remove('active');
-        const b = i.querySelector('.faq-btn');
-        const a = i.querySelector('.faq-answer') as HTMLElement;
-        const ic = i.querySelector('.faq-icon');
-        if (b) b.setAttribute('aria-expanded', 'false');
-        if (a) a.style.maxHeight = '0';
-        if (ic) ic.textContent = '+';
-      });
-
-      // Abrir o clicado
-      if (!isOpen && item) {
-        item.classList.add('active');
-        const answer = item.querySelector('.faq-answer') as HTMLElement;
-        const icon = item.querySelector('.faq-icon');
-        btn.setAttribute('aria-expanded', 'true');
-        if (answer) answer.style.maxHeight = answer.scrollHeight + 'px';
-        if (icon) icon.textContent = '+'; // Keep "+" because rotate (45deg) transforms it to "x"
-      }
-    });
-  });
-
-  // Lightbox Modal Logic for Screenshots
-  const lightbox = document.getElementById('lightbox-modal');
-  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
-  const lightboxClose = document.getElementById('lightbox-close');
-
-  document.querySelectorAll('[data-zoom-img]').forEach(card => {
-    card.addEventListener('click', () => {
-      const src = (card as HTMLElement).dataset.zoomImg;
-      if (src && lightbox && lightboxImg) {
-        lightboxImg.src = src;
-        lightbox.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  });
-
-  function closeLightbox() {
-    if (lightbox) lightbox.style.display = 'none';
-    if (lightboxImg) lightboxImg.src = '';
-    document.body.style.overflow = '';
-  }
-
-  lightboxClose?.addEventListener('click', closeLightbox);
-  lightbox?.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
-  });
-
-  // STICKY BOTTOM BAR SCROLL LOGIC
-  const stickyBar = document.getElementById('sticky-bar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 450) {
-      stickyBar?.classList.add('sticky-bottom-bar--visible');
-    } else {
-      stickyBar?.classList.remove('sticky-bottom-bar--visible');
-    }
-  });
-
-  // TIMELINE SCROLL LOGIC
-  const fillLine = document.getElementById('timeline-fill-line');
-  const dots = document.querySelectorAll('.timeline-dot');
-  const blocks = document.querySelectorAll('.timeline-content-block');
-  
-  window.addEventListener('scroll', () => {
-    const triggerPoint = window.innerHeight * 0.7;
-    blocks.forEach((block, idx) => {
-      const rect = block.getBoundingClientRect();
-      if (rect.top < triggerPoint) {
-        block.classList.add('active');
-        dots[idx]?.classList.add('active');
-        
-        // Progress fill calculation
-        const percent = ((idx + 1) / blocks.length) * 100;
-        if (fillLine) fillLine.style.height = `${percent}%`;
-      } else {
-        block.classList.remove('active');
-        if (idx > 0) dots[idx]?.classList.remove('active');
-      }
-    });
-  });
-
-  // MASKING / REVEALING OBSERVER (O que você vai aprender modules)
-  const moduleObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  document.querySelectorAll('.modulo-item').forEach(item => {
-    moduleObserver.observe(item);
-  });
-</script>
-
-<!-- ══════════════════════════════════════
-     ESTILOS DA PÁGINA (MODO ESCURO COM DESTAQUES VERMELHOS)
-     ══════════════════════════════════════ -->
-<style>
-  /* ── TOKENS (DARK & RED THEME FOR V3) ── */
-  :root {
-    --red: #e11d48;
-    --red-hover: #be123c;
-    --red-glow: rgba(225, 29, 72, 0.25);
-    --bg-dark: #0b0c0a;
-    --bg-card: #121410;
-    --text-white: #ffffff;
-    --text-muted: #9ca3af;
-    --border: rgba(255, 255, 255, 0.08);
-    --green: #22c55e;
-  }
-
-  /* Override basic theme values to force premium dark theme on V3 and add protective padding bottom */
-  :global(body) {
-    background-color: var(--bg-dark) !important;
-    color: var(--text-white) !important;
-    font-family: 'Inter', sans-serif;
-    padding-bottom: 120px !important;
-  }
-  @media (max-width: 1024px) {
-    :global(body) {
-      padding-bottom: 160px !important;
-    }
-  }
-
-  /* Override Layout Header and Urgency Strip for V3 theme (Dark & Red) */
-  :global(.urgency-strip) {
-    background: #000000 !important;
-    border-bottom: 1.5px solid var(--red) !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-  }
-  :global(#countdown) {
-    color: var(--red) !important;
-  }
-  :global(.main-header) {
-    background-color: #0b0c0a !important;
-    border-bottom: 1px solid var(--border) !important;
-  }
-  :global(.main-header .logo) {
-    color: #ffffff !important;
-  }
-  :global(.main-header .logo .green) {
-    color: var(--red) !important;
-  }
-  :global(.main-header .desktop-nav a) {
-    color: var(--text-muted) !important;
-  }
-  :global(.main-header .desktop-nav a:hover) {
-    color: var(--red) !important;
-  }
-  :global(.main-header .btn-nav) {
-    background: var(--red) !important;
-    color: #ffffff !important;
-    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3) !important;
-    border-radius: 4px !important;
-    transition: all 0.3s ease !important;
-  }
-  :global(.main-header .btn-nav:hover) {
-    background: var(--red-hover) !important;
-    transform: translateY(-1px) !important;
-  }
-
-  .section-title {
-    font-size: clamp(28px, 4vw, 42px);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.2;
-    letter-spacing: -0.03em;
-    margin-bottom: 16px;
-  }
-  .section-sub {
-    font-size: 17px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin-bottom: 40px;
-  }
-
-  /* ══════════════════════════
-     HERO V3 (MODO ESCURO / DETALHES VERMELHOS)
-  ══════════════════════════ */
-  .hero-v3-section {
-    background-color: #0b0c0a;
-    background-image: radial-gradient(circle at 80% 40%, rgba(225, 29, 72, 0.1) 0%, transparent 60%);
-    padding: 120px 0 80px;
-    min-height: 750px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .hero-v3-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 64px;
-    align-items: center;
-  }
-
-  .hero-v3-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .hero-v3-header-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-
-  .hero-v3-date-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 8px 16px;
-    font-size: 13px;
-    font-weight: 700;
-    color: #ffffff;
-  }
-
-  .calendar-icon {
-    color: var(--red);
-  }
-
-  .hero-v3-headline {
-    font-size: clamp(32px, 4.5vw, 54px);
-    font-weight: 900;
-    color: #ffffff;
-    line-height: 1.1;
-    letter-spacing: -0.04em;
-    margin-bottom: 24px;
-  }
-
-  .h-green {
-    color: var(--red);
-  }
-
-  .hero-v3-sub {
-    font-size: 18px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    max-width: 580px;
-    margin-bottom: 36px;
-  }
-
-  /* Hero CTA Wrap with progress bar stack */
-  .hero-v3-cta-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    width: 100%;
-    max-width: 380px;
-    margin-bottom: 32px;
-  }
-
-  .btn-v3-hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    height: 60px;
-    background: var(--red);
-    color: #ffffff;
-    border-radius: 8px;
-    font-weight: 800;
-    font-size: 18px;
-    text-decoration: none;
-    box-shadow: 0 10px 25px rgba(225, 29, 72, 0.35);
-    transition: all 0.3s;
-    border: none;
-    cursor: pointer;
-  }
-
-  .btn-v3-hero:hover {
-    background-color: var(--red-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(225, 29, 72, 0.5);
-  }
-
-  .btn-v3-icon {
-    font-size: 20px;
-  }
-
-  /* Progress Bar Stack */
-  .hero-v3-progress-wrap {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .hero-v3-progress-bar {
-    width: 100%;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 99px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid var(--border);
-  }
-
-  .hero-v3-progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #ef4444 0%, #e11d48 100%);
-    border-radius: 99px;
-    position: relative;
-  }
-
-  .progress-glow-dot {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(50%, -50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ffffff;
-    box-shadow: 0 0 10px #ffffff;
-  }
-
-  .hero-v3-progress-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: var(--text-muted);
-    font-weight: 600;
-  }
-  .highlight-red {
-    color: #ef4444;
-  }
-
-  /* Social proof stats below hero */
-  .hero-v3-social-proof-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    border-top: 1px solid var(--border);
-    padding-top: 24px;
-    width: 100%;
-  }
-
-  .proof-stat-item {
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-  }
-
-  .stat-arrow {
-    color: var(--red);
-    font-weight: 900;
-    font-size: 16px;
-  }
-
-  .stat-details strong {
-    font-size: 20px;
-    color: #ffffff;
-    display: block;
-    line-height: 1.1;
-  }
-
-  .stat-details span {
-    font-size: 11px;
-    color: var(--text-muted);
-  }
-
-  /* Speaker Column V3 */
-  .hero-v3-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-
-  .hero-v3-speaker-img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
-    border-bottom: 2px solid var(--border);
-  }
-
-  .hero-v3-logos-support {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-    font-size: 12px;
-    color: var(--text-muted);
-  }
-
-  .support-brand {
-    color: #ffffff;
-    letter-spacing: 0.1em;
-    font-weight: 800;
-  }
-
-  /* ══════════════════════════
-     SEÇÃO CLIENTES NOTÁVEIS (TESTEMUNHOS SCREENSHOTS)
-  ══════════════════════════ */
-  .section-notaveis {
-    padding: 80px 0;
-    background: #0d0e0c;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .real-screenshots-block {
-    margin-bottom: 40px;
-  }
-
-  .screenshots-grid {
-    column-count: 2;
-    column-gap: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  @media (max-width: 768px) {
-    .screenshots-grid {
-      column-count: 1;
-    }
-  }
-
-  .screenshot-card {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 20px;
-    break-inside: avoid;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .screenshot-card:hover {
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(225, 29, 72, 0.15);
-    border-color: rgba(225, 29, 72, 0.3);
-  }
-
-  .screenshot-img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .screenshot-hover-overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s;
-    color: white;
-    font-weight: 700;
-    font-size: 13px;
-    backdrop-filter: blur(2px);
-  }
-
-  .screenshot-card:hover .screenshot-hover-overlay {
-    opacity: 1;
-  }
-
-  .notaveis-footer-text p {
-    font-size: 14px;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-
-  /* ══════════════════════════
-     A GRANDE PERGUNTA
-  ══════════════════════════ */
-  .section-pergunta {
-    padding: 120px 0;
-    background: #0b0c0a;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .pergunta-headline {
-    font-size: clamp(24px, 3.2vw, 36px);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.45;
-    max-width: 960px;
-    margin: 0 auto;
-    letter-spacing: -0.01em;
-  }
-
-  /* ══════════════════════════
-     LINHA DO TEMPO DINÂMICA
-  ══════════════════════════ */
-  .section-timeline {
-    padding: 100px 0;
-    background: #0d0e0c;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .timeline-grid {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 64px;
-    align-items: flex-start;
-  }
-
-  .timeline-visual-side {
-    position: sticky;
-    top: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .timeline-speaker-photo {
-    width: 100%;
-    max-width: 320px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border);
-    margin-bottom: 32px;
-  }
-
-  .timeline-line-container {
-    width: 4px;
-    height: 200px;
-    background: rgba(255,255,255,0.08);
-    position: relative;
-    border-radius: 99px;
-  }
-
-  .timeline-scroll-line {
-    position: absolute;
-    top: 0; left: 0; width: 100%;
-    height: 0%;
-    background: var(--red);
-    border-radius: 99px;
-    transition: height 0.4s ease;
-  }
-
-  .timeline-dot {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #27272a;
-    border: 2px solid #0d0e0c;
-    transition: background 0.3s;
-  }
-  .timeline-dot.active {
-    background: var(--red);
-    box-shadow: 0 0 10px var(--red);
-  }
-
-  .dot-1 { top: 0%; }
-  .dot-2 { top: 33%; }
-  .dot-3 { top: 66%; }
-  .dot-4 { top: 100%; }
-
-  .timeline-content-side {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .timeline-content-block {
-    margin-bottom: 40px;
-    opacity: 0.3;
-    transition: opacity 0.5s ease;
-  }
-  .timeline-content-block.active {
-    opacity: 1;
-  }
-
-  .block-num {
-    font-size: 14px;
-    font-weight: 800;
-    color: var(--red);
-    margin-bottom: 8px;
-  }
-
-  .timeline-content-block h3 {
-    font-size: 20px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 12px;
-  }
-
-  .timeline-content-block p {
-    font-size: 15px;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-  .timeline-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 12px;
-  }
-  .timeline-bullets li {
-    font-size: 14px;
-    color: var(--text-muted);
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-    line-height: 1.5;
-  }
-  .timeline-bullets li::before {
-    content: '—';
-    color: var(--red);
-    font-weight: 700;
-    flex-shrink: 0;
-  }
-
-  .timeline-alert-block {
-    background: rgba(239, 68, 68, 0.05);
-    border: 1px solid rgba(239, 68, 68, 0.15);
-    border-radius: 8px;
-    padding: 24px;
-    width: 100%;
-    margin-top: 24px;
-  }
-
-  .alert-header {
-    color: #ef4444;
-    font-weight: 800;
-    font-size: 15px;
-    margin-bottom: 12px;
-  }
-
-  .alert-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .alert-list li {
-    font-size: 13px;
-    color: var(--text-muted);
-    position: relative;
-    padding-left: 14px;
-  }
-
-  .alert-list li::before {
-    content: '•';
-    color: #ef4444;
-    position: absolute;
-    left: 0;
-  }
-
-  /* ══════════════════════════
-     O QUE VOCÊ VAI APRENDER (MASKING / REVEALING)
-  ══════════════════════════ */
-  .section-modulos {
-    padding: 80px 0;
-    background: #0d0e0c;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .modulos-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 40px;
-  }
-
-  .modulo-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 24px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: opacity, transform;
-  }
-
-  .modulo-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .modulo-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
-  .mod-num {
-    width: 28px;
-    height: 28px;
-    background: rgba(225, 29, 72, 0.1);
-    color: var(--red);
-    font-size: 13px;
-    font-weight: 800;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(225, 29, 72, 0.2);
-  }
-
-  .modulo-header h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #ffffff;
-  }
-
-  .modulo-item p {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  /* ══════════════════════════
-     PALESTRANTES / TIME
-  ══════════════════════════ */
-  .section-professores {
-    padding: 80px 0;
-    background: #0b0c0a;
-    border-bottom: 1px solid var(--border);
-  }
-  .professores-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-top: 40px;
-  }
-  .professor-card {
-    background: var(--bg-card);
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    padding: 24px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  .prof-photo {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(255,255,255,0.05);
-    flex-shrink: 0;
-    background: rgba(255, 255, 255, 0.02);
-  }
-  .prof-info h3 {
-    font-size: 18px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 4px;
-  }
-  .prof-tag {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--red);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 10px;
-  }
-  .prof-info p {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-  .btn-ver-chamada {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 12px;
-    padding: 6px 14px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    border: 1px solid var(--red);
-    color: var(--red);
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    width: fit-content;
-  }
-  .btn-ver-chamada:hover {
-    background: rgba(225, 29, 72, 0.1);
-    transform: translateY(-1px);
-  }
-
-  /* ══════════════════════════
-     OFERTA E PREÇOS
-  ══════════════════════════ */
-  .section-oferta {
-    padding: 80px 0;
-    background: #0d0e0c;
-    border-bottom: 1px solid var(--border);
-  }
-  .pricing-container-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    max-width: 1000px;
-    margin: 0 auto 48px;
-    align-items: stretch;
-  }
-  .pricing-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 48px 36px 36px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-  .pricing-card--vip {
-    border: 2px solid var(--red);
-    box-shadow: 0 10px 40px rgba(225, 29, 72, 0.1);
-  }
-  .vip-highlight-badge {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--red);
-    color: #ffffff;
-    padding: 5px 18px;
-    border-radius: 4px;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-  }
-  .card-header h3 {
-    font-size: 22px;
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 6px;
-  }
-  .card-header p {
-    font-size: 13px;
-    color: var(--text-muted);
-  }
-  .text-glow {
-    color: var(--red) !important;
-    font-weight: 700;
-  }
-  .card-divider {
-    height: 1px;
-    background: var(--border);
-    margin: 24px 0;
-  }
-  .card-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    flex-grow: 1;
-    margin-bottom: 32px;
-  }
-  .card-features li {
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-  .card-price-block {
-    margin-bottom: 24px;
-    display: flex;
-    flex-direction: column;
-  }
-  .old-price {
-    text-decoration: line-through;
-    color: #ef4444;
-    font-size: 13px;
-    margin-bottom: 4px;
-    font-weight: 700;
-  }
-  .installment-label {
-    font-size: 10px;
-    color: var(--text-muted);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-  .current-price {
-    font-size: 38px;
-    font-weight: 900;
-    color: #ffffff;
-    letter-spacing: -0.04em;
-    line-height: 1.1;
-    margin: 4px 0;
-  }
-  .text-red {
-    color: var(--red) !important;
-  }
-  
-  .btn-purchase {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 54px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    font-weight: 800;
-    font-size: 14px;
-    border: 1px solid var(--border);
-    cursor: pointer;
-    transition: all 0.3s;
-  }
-  .btn-purchase:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-2px);
-  }
-  .btn-purchase--vip {
-    background: var(--red);
-    color: #ffffff;
-    border: none;
-    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.25);
-  }
-  .btn-purchase--vip:hover {
-    background: var(--red-hover);
-    box-shadow: 0 10px 25px rgba(225, 29, 72, 0.35);
-  }
-  
-  .card-progress {
-    margin-top: 24px;
-  }
-
-  .secure-badge {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    opacity: 0.8;
-  }
-  .secure-badge span {
-    font-size: 10px;
-    color: var(--text-muted);
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .payment-icons {
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .pay-tag {
-    font-size: 9px;
-    font-weight: 800;
-    padding: 2px 8px;
-    border-radius: 4px;
-  }
-  .pix { background: rgba(34, 197, 94, 0.1); color: var(--green); }
-  .visa { background: rgba(29, 128, 184, 0.1); color: #1D80B8; }
-  .master { background: rgba(212, 172, 13, 0.1); color: #D4AC0D; }
-  .card { background: rgba(255, 255, 255, 0.05); color: var(--text-muted); }
-
-  .garantia-global-block {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 8px;
-    padding: 24px;
-    max-width: 800px;
-    margin: 40px auto 0;
-    text-align: center;
-    border: 1px solid var(--border);
-  }
-  .garantia-global-block strong {
-    font-size: 15px;
-    color: #ffffff;
-  }
-  .garantia-global-block p {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  /* ══════════════════════════
-     FAQ Sanfona (Accordion + Smooth Rotate Icon)
-  ══════════════════════════ */
-  .section-faq {
-    padding: 80px 0;
-    background: #0b0c0a;
-    border-bottom: 1px solid var(--border);
-  }
-  .faq-inner { max-width: 720px; margin: 0 auto; text-align: center; }
-  .faq-list { text-align: left; margin-top: 40px; display: flex; flex-direction: column; gap: 10px; }
-  .faq-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-    transition: border-color 0.3s;
-  }
-  .faq-item.active {
-    border-color: var(--red);
-  }
-  .faq-btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 20px 24px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    font-size: 15px;
-    font-weight: 600;
-    color: #ffffff;
-    gap: 16px;
-    transition: background 0.2s;
-  }
-  .faq-btn:hover { background: rgba(255, 255, 255, 0.02); }
-  .faq-icon {
-    color: var(--red);
-    font-size: 22px;
-    font-weight: 300;
-    flex-shrink: 0;
-    line-height: 1;
-    transition: transform 0.3s ease;
-    display: inline-block;
-  }
-  .faq-item.active .faq-icon {
-    transform: rotate(45deg);
-  }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.35s ease;
-  }
-  .faq-answer p {
-    padding: 0 24px 20px;
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.7;
-    margin: 0;
-  }
-
-  /* ══════════════════════════
-     DEPOIMENTOS MODAL LIGHTBOX
-  ══════════════════════════ */
-  .lightbox-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(8px);
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: fadeIn 0.2s ease;
-    padding: 24px;
-  }
-  
-  .lightbox-content-img {
-    max-width: 95%;
-    max-height: 85vh;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 10px 45px rgba(0,0,0,0.8);
-    border: 1px solid rgba(255,255,255,0.1);
-    animation: scaleUp 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .lightbox-close {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    font-size: 36px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-    z-index: 10001;
-  }
-  
-  .lightbox-close:hover {
-    background: white;
-    color: black;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes scaleUp {
-    from { transform: scale(0.95); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
-
-  /* ══════════════════════════
-     STICKY BOTTOM BAR (Fades in on scroll)
-  ══════════════════════════ */
-  .sticky-bottom-bar {
-    position: fixed;
-    bottom: 0; left: 0; right: 0;
-    background: rgba(18, 20, 16, 0.95);
-    backdrop-filter: blur(10px);
-    border-top: 1.5px solid var(--red);
-    padding: 16px 0;
-    z-index: 9999;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  
-  .sticky-bottom-bar--visible {
-    transform: translateY(0);
-  }
-
-  .sticky-bar-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .sticky-left {
-    flex-shrink: 0;
-  }
-
-  .btn-sticky-action {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 28px;
-    height: 48px;
-    background: var(--red);
-    color: #ffffff;
-    border-radius: 4px;
-    font-weight: 800;
-    font-size: 15px;
-    text-decoration: none;
-    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
-    transition: all 0.3s;
-    border: none;
-  }
-  .btn-sticky-action:hover {
-    background-color: var(--red-hover);
-    transform: translateY(-1px);
-  }
-
-  .sticky-right {
-    flex-grow: 1;
-    max-width: 500px;
-  }
-
-  .sticky-progress-container {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .sticky-progress-track {
-    width: 100%;
-    height: 6px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 99px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .sticky-progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #ef4444 0%, #e11d48 100%);
-    border-radius: 99px;
-    position: relative;
-  }
-
-  .sticky-progress-dot {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(50%, -50%);
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ffffff;
-    box-shadow: 0 0 8px #ffffff;
-  }
-
-  .sticky-progress-label {
-    font-size: 11px;
-    color: var(--text-muted);
-    font-weight: 600;
-    text-align: right;
-    display: block;
-  }
-  .red-price {
-    color: #ef4444;
-  }
-
-  /* VIP features details style V3 */
-  .card-features-details {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 32px;
-    text-align: left;
-  }
-  .feature-item {
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    padding-bottom: 8px;
-  }
-  .feature-item summary {
-    list-style: none;
-    outline: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #ffffff;
-  }
-  .feature-item summary::-webkit-details-marker {
-    display: none;
-  }
-  .feature-item summary::before {
-    content: '▶';
-    font-size: 9px;
-    color: var(--text-muted);
-    display: inline-block;
-    width: 12px;
-  }
-  .feature-item[open] summary::before {
-    content: '▼';
-  }
-  .feature-action {
-    font-weight: 500;
-    color: var(--text-muted);
-    font-size: 13px;
-    margin-left: 4px;
-  }
-  .feature-desc {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.5;
-    padding-left: 20px;
-    margin-top: 6px;
-  }
-  .feature-item--static {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #ffffff;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-  }
-  .feature-static-icon {
-    font-size: 14px;
-    width: 12px;
-    display: inline-flex;
-    justify-content: center;
-  }
-  .badge-year {
-    background: var(--red);
-    color: white;
-    font-size: 9px;
-    font-weight: 800;
-    padding: 2px 6px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-left: 6px;
-  }
-
-  /* ══════════════════════════
-     MANCHETES / OPORTUNIDADE (TEMA ESCURO V3)
-  ══════════════════════════ */
-  .news-clippings-container {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin: 48px auto 0;
-    max-width: 1100px;
-    padding: 10px;
-  }
-  .news-clipping-card {
-    background: #141512;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    width: 32%;
-    min-width: 280px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .news-clipping-card:hover {
-    transform: translateY(-4px) rotate(0deg) !important;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    z-index: 10;
-  }
-  .card-rotate-left { transform: rotate(-1.5deg); }
-  .card-rotate-right { transform: rotate(1.5deg); }
-  .card-rotate-straight { transform: rotate(0.5deg); }
-
-  .news-source {
-    font-size: 10px;
-    font-weight: 800;
-    color: var(--red);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 4px;
-  }
-  .news-date {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-  }
-  .news-title {
-    font-size: 16px;
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.4;
-    margin-bottom: 12px;
-    letter-spacing: -0.02em;
-  }
-  .news-highlight {
-    background: linear-gradient(120deg, rgba(239, 68, 68, 0.25) 0%, rgba(239, 68, 68, 0.15) 100%);
-    color: inherit;
-    padding: 2px 4px;
-    border-radius: 4px;
-  }
-  .news-excerpt {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  /* Mobile optimization: swipe slider and pregunta padding */
-  @media (max-width: 900px) {
-    .news-clippings-container {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-      justify-content: flex-start;
-      padding: 16px 20px;
-      gap: 16px;
-      margin-top: 24px;
-      margin-left: -20px;
-      margin-right: -20px;
-      width: calc(100% + 40px);
-      scroll-padding-left: 20px;
-    }
-    .news-clippings-container::-webkit-scrollbar {
-      display: none;
-    }
-    .news-clipping-card {
-      width: 290px;
-      padding: 20px 16px;
-      flex-shrink: 0;
-      scroll-snap-align: start;
-      transform: none !important;
-    }
-    .news-title {
-      font-size: 15px;
-    }
-    .pergunta-headline {
-      padding: 0 20px;
-    }
-  }
-
-  /* MODULOS SPLIT AND VIDEO MODAL CSS V3 */
-  .section-modulos {
-    padding: 80px 0;
-    background: #0d0e0c;
-    border-bottom: 1px solid var(--border);
-  }
-  .modulos-grid-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-top: 40px;
-  }
-  .modulo-col {
-    background: #141512;
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    padding: 32px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  }
-  .modulo-col-header {
-    border-bottom: 2px solid rgba(255,255,255,0.04);
-    padding-bottom: 16px;
-    margin-bottom: 20px;
-  }
-  .modulo-col-header h3 {
-    font-size: 20px;
-    font-weight: 800;
-    color: #ffffff;
-    margin: 0 0 4px 0;
-  }
-  .green-header {
-    border-color: var(--red);
-  }
-  .purple-header {
-    border-color: #8b5cf6;
-  }
-  .prof-name {
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-  }
-  .modulo-col-bullets {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .modulo-col-bullets li {
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.5;
-    position: relative;
-    padding-left: 20px;
-  }
-  .modulo-col-bullets li::before {
-    content: '✓';
-    color: var(--red);
-    position: absolute;
-    left: 0;
-    font-weight: 800;
-  }
-  .purple-header + .modulo-col-bullets li::before {
-    color: #8b5cf6;
-  }
-
-  /* Video Modal Styles */
-  .video-modal {
-    display: none;
-    position: fixed;
-    z-index: 10000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    align-items: center;
-    justify-content: center;
-  }
-  .video-modal.active {
-    display: flex;
-  }
-  .video-modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 360px;
-    aspect-ratio: 9/16;
-    background: #000;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-  }
-  .video-iframe-container {
-    width: 100%;
-    height: 100%;
-  }
-  .video-iframe-container iframe {
-    width: 100%;
-    height: 100%;
-  }
-  .video-modal-close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    font-size: 24px;
-    font-weight: 300;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10001;
-    transition: all 0.2s;
-    line-height: 1;
-    padding: 0;
-    outline: none;
-    border: none;
-  }
-  .video-modal-close:hover {
-    background: #ef4444;
-    border-color: transparent;
-  }
-
-  @media (max-width: 768px) {
-    .modulos-grid-split {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-  }
-
-  /* ══════════════════════════
-     RESPONSIVO
-  ══════════════════════════ */
-  @media (max-width: 1024px) {
-    .hero-v3-grid { grid-template-columns: 1fr; gap: 48px; text-align: center; }
-    .hero-v3-content { align-items: center; text-align: center; }
-    .hero-v3-header-group { align-items: center; }
-    .hero-v3-sub { max-width: 100%; }
-    .hero-v3-right { display: none; }
-    .hero-v3-cta-wrap { align-items: center; }
-    .hero-v3-social-proof-grid { justify-content: center; }
-    
-    .timeline-grid { grid-template-columns: 1fr; }
-    .timeline-visual-side { display: none; }
-
-    .modulos-grid { grid-template-columns: 1fr; }
-    .professores-grid { grid-template-columns: 1fr; }
-    .pricing-container-grid { grid-template-columns: 1fr; max-width: 500px; }
-    .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
-    
-    .sticky-bar-inner { flex-direction: column; gap: 12px; text-align: center; }
-    .btn-sticky-action { width: 100%; }
-    .sticky-right { width: 100%; max-width: 100%; }
-  }
-
-  @media (max-width: 768px) {
-    .hero-v3-section { padding: 60px 0 32px; min-height: auto; }
-    .screenshots-grid { grid-template-columns: 1fr; }
-    .modulo-item { text-align: left; }
-    .professor-card { flex-direction: column; text-align: center; }
-  }
-
-  /* Refinamento visual V3: tom editorial e técnico, sem excesso de glow. */
-  .hero-v3-section {
-    background-image: linear-gradient(112deg, #0b0c0a 0%, #0b0c0a 66%, #140d0e 100%);
-    min-height: 680px;
-    padding: 104px 0 72px;
-  }
-  .hero-v3-grid {
-    gap: 52px;
-  }
-  .hero-v3-date-pill {
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.035);
-  }
-  .btn-v3-hero {
-    height: 58px;
-    border-radius: 6px;
-    box-shadow: 0 9px 20px rgba(225, 29, 72, 0.22);
-  }
-  .btn-v3-hero:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 12px 24px rgba(225, 29, 72, 0.3);
-  }
-  .progress-glow-dot {
-    box-shadow: none;
-  }
-  .hero-v3-social-proof-grid {
-    gap: 16px;
-  }
-  .btn-v3-hero:focus-visible,
-  .screenshot-card:focus-visible {
-    outline: 3px solid rgba(225, 29, 72, 0.45);
-    outline-offset: 4px;
-  }
-  @media (max-width: 1024px) {
-    .hero-v3-section {
-      padding: 72px 0 44px;
-      min-height: auto;
-      background-image: none;
-    }
-  }
-  @media (max-width: 768px) {
-    .hero-v3-section {
-      padding-top: 52px;
-    }
-    .hero-v3-header-group {
-      margin-bottom: 22px;
-    }
-    .hero-v3-date-pill {
-      max-width: 100%;
-      padding: 10px 12px;
-      white-space: nowrap;
-    }
-    .hero-v3-date-pill span {
-      font-size: 12px;
-      white-space: nowrap;
-    }
-    .hero-v3-date-pill svg {
-      width: 14px;
-      height: 14px;
-      flex: 0 0 auto;
-    }
-    .hero-v3-content {
-      width: 100%;
-      padding-inline: 18px;
-      box-sizing: border-box;
-    }
-    .hero-v3-headline {
-      font-size: clamp(29px, 8.3vw, 38px);
-      line-height: 1.08;
-      margin-bottom: 20px;
-    }
-    .hero-v3-sub {
-      font-size: 16px;
-      line-height: 1.55;
-      margin-bottom: 28px;
-    }
-    .hero-v3-cta-wrap {
-      width: 100%;
-      max-width: 100%;
-      gap: 14px;
-      margin-bottom: 28px;
-    }
-    .btn-v3-hero {
-      width: 100%;
-    }
-    .hero-v3-progress-labels {
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      text-align: center;
-      line-height: 1.4;
-    }
-    .hero-v3-social-proof-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      width: 100%;
-      gap: 8px;
-      padding-top: 20px;
-    }
-    .proof-stat-item {
-      min-width: 0;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 5px;
-    }
-    .stat-details {
-      min-width: 0;
-    }
-    .stat-details strong {
-      font-size: 18px;
-    }
-    .stat-details span {
-      font-size: 10px;
-      line-height: 1.35;
-    }
-    .sticky-progress-label {
-      display: block;
-      text-align: center;
-      line-height: 1.45;
-    }
-    .section-notaveis,
-    .section-pergunta {
-      overflow: hidden;
-    }
-    .news-clippings-container {
-      box-sizing: border-box;
-      max-width: 100%;
-      width: 100%;
-      padding-inline: 16px;
-    }
-    .pricing-container-grid {
-      grid-template-columns: minmax(0, 1fr);
-      width: 100%;
-    }
-    .pricing-card {
-      min-width: 0;
-      padding: 42px 24px 28px;
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .btn-v3-hero,
-    .screenshot-card {
-      transition: none;
-    }
-  }
-</style>
