@@ -41,16 +41,16 @@
 }
 
 /* ── URGENCY STRIP OVERRIDE (force dark+red on V3) ── */
-.v3-page :global(.urgency-strip) {
+:global(.urgency-strip) {
   background: #0a0a0a !important;
   border-bottom: 1px solid var(--v3-red) !important;
   color: #fff !important;
   font-weight: 600 !important;
 }
-.v3-page :global(#countdown) {
+:global(#countdown) {
   color: var(--v3-red-soft) !important;
 }
-.v3-page :global(#lote-strip-badge) {
+:global(#lote-strip-badge) {
   background: var(--v3-red) !important;
   color: #fff !important;
   padding: 2px 8px;
