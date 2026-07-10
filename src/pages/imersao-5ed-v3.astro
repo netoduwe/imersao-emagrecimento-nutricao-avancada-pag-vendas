@@ -13,6 +13,23 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
 ---
 
 <Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="blue" hideHeader={true}>
+  
+  <style is:global>
+    /* Forçar faixa preta e vermelha da urgência, vencendo qualquer CSS de layout global */
+    .urgency-strip {
+      background: #0a0a0a !important;
+      color: #ffffff !important;
+      border-bottom: 1.5px solid #dc2626 !important;
+    }
+    #lote-strip-badge {
+      background: #dc2626 !important;
+      color: #ffffff !important;
+    }
+    #countdown {
+      color: #ef4444 !important;
+    }
+  </style>
+
   <div class="v3-page">
 
     <!-- ══════════════════════════════════════
