@@ -1,0 +1,337 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FormModal from '../components/FormModal.astro';
+import '../styles/imersao-v1-02.css';
+
+const EVENT_DATE = '01 de Agosto de 2026';
+const EVENT_TIME = '9h às 18h';
+const PRICE_BASICO = 'R$ 19,90';
+const PRICE_VIP_PARCELADO = '12x de R$ 15,20';
+const PRICE_VIP_AVISTA = 'R$ 147,00';
+---
+
+<Layout title={`Imersão em Emagrecimento | ${EVENT_DATE} | Nutrição Avançada`} theme="green" hideHeader={true}>
+  <main class="case-page">
+    <section class="case-hero" id="imersao">
+      <div class="case-shell case-hero__grid">
+        <div class="case-hero__content">
+          <p class="case-kicker">5ª Edição · Imersão em Emagrecimento</p>
+          <h1>
+            Seu paciente chegou com Mounjaro.
+            <span>Você sabe o que fazer?</span>
+          </h1>
+          <p class="case-lead">
+            A imersão que vai te preparar para o manejo clínico dos análogos GLP-1 e do emagrecimento moderno — com protocolos práticos que você aplica na consulta seguinte.
+          </p>
+
+          <div class="case-hero__actions">
+            <div class="case-hero__ticket" aria-label="Ingresso lote zero">
+              <span class="case-hero__lot">Lote zero</span>
+              <p>De <s>R$ 97,00</s> por apenas</p>
+              <strong>{PRICE_BASICO}</strong>
+              <a href="#ingressos" class="case-hero__buy">Garantir minha vaga! &gt;</a>
+              <small>Garantia incondicional de 7 dias · Sem burocracia</small>
+            </div>
+          </div>
+
+          <div class="case-hero__facts" aria-label="Dados do evento">
+            <span>{EVENT_DATE}</span>
+            <span>{EVENT_TIME}</span>
+            <span>Online via Zoom</span>
+          </div>
+        </div>
+
+        <div class="case-hero__visual" aria-label="Palestrantes da imersão">
+          <div class="case-photo-stack">
+            <figure class="case-photo case-photo--ney">
+              <img src="/images/ney-clinica-otimizado.webp" alt="Prof. Ney Felipe" />
+              <figcaption>Ney Felipe · conduta clínica</figcaption>
+            </figure>
+            <figure class="case-photo case-photo--jessica">
+              <img src="/images/jessica.webp" alt="Profa. Jéssica Wszolek" />
+              <figcaption>Jéssica Wszolek · GLP-1</figcaption>
+            </figure>
+          </div>
+          <div class="case-stamp">Ao vivo<br />Zoom</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-strip" aria-label="Resumo da virada de campanha">
+      <div class="case-strip__track">
+        <span>lote zero ativo</span>
+        <span>conduta além da calculadora</span>
+        <span>gravação por 1 ano no VIP</span>
+        <span>01 agosto 2026</span>
+        <span>lote zero ativo</span>
+        <span>conduta além da calculadora</span>
+        <span>gravação por 1 ano no VIP</span>
+        <span>01 agosto 2026</span>
+      </div>
+    </section>
+
+    <section class="case-shell case-problem" id="caso">
+      <div class="case-section-mark">01 / caso clínico</div>
+      <div class="case-problem__grid">
+        <div>
+          <h2>O paciente de emagrecimento virou um caso mais complexo:</h2>
+          <p>
+            O paciente não chega mais só perguntando por dieta. Ele chega usando GLP-1, comendo pouco,
+            perdendo massa magra, travando no platô ou com medo de recuperar peso quando retirar a medicação.
+          </p>
+        </div>
+        <div class="case-notes" aria-label="Sintomas clínicos da página">
+          <p><strong>Queixa 01</strong> "Meu apetite sumiu, mas estou sem força."</p>
+          <p><strong>Queixa 02</strong> "Emagreci, mas perdi massa magra junto."</p>
+          <p><strong>Queixa 03</strong> "Vou parar a caneta. E agora?"</p>
+          <p><strong>Queixa 04</strong> "Doutora, por que eu parei de evoluir?"</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-evidence" id="evidencias">
+      <div class="case-shell">
+        <div class="case-section-mark">02 / evidências de mercado</div>
+        <div class="evidence-board">
+          <article class="evidence-item evidence-item--lead">
+            <span>Google Trends & mercado</span>
+            <h3><mark>Ozempic e Mounjaro</mark> deixaram de ser conversa de internet. Viraram demanda de consultório.</h3>
+            <p>
+              O Brasil aparece entre os maiores volumes de busca por canetas emagrecedoras.
+              A dúvida do paciente já está na sala antes da anamnese começar.
+            </p>
+            <a href="#ingressos" class="evidence-cta">Selecionar ingresso</a>
+          </article>
+
+          <article class="evidence-item">
+            <span>Adesão</span>
+            <h3>Mais de <mark>45%</mark> abandonam GLP-1 no primeiro ano.</h3>
+            <p>Colaterais, hipofagia, perda de massa magra e falta de estratégia nutricional pesam na continuidade.</p>
+          </article>
+
+          <article class="evidence-item">
+            <span>Brasil 2030</span>
+            <h3><mark>68% dos brasileiros</mark> podem estar com excesso de peso.</h3>
+            <p>Não é nicho. É cenário epidemiológico batendo na porta da prática clínica.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-overload">
+      <div class="case-shell overload-grid">
+        <div class="overload-copy">
+          <div class="case-section-mark">03 / antes da imersão</div>
+          <h2>Você já perdeu tempo demais tentando montar esse raciocínio sozinho.</h2>
+          <p>
+            Uma aba com artigo. Outra com diretriz. Um post salvo no Instagram. Um print no WhatsApp.
+            No fim, você estudou muito, mas ainda precisa transformar tudo isso em conduta para o paciente real.
+          </p>
+          <p class="overload-callout">
+            Isso pode ser organizado em um dia de imersão comigo.
+          </p>
+        </div>
+
+        <div class="browser-chaos" aria-label="Representação visual de abas, artigos e posts salvos">
+          <div class="browser-window browser-window--main">
+            <div class="browser-tabs">
+              <span>PubMed</span>
+              <span>GLP-1</span>
+              <span>proteína</span>
+              <span>diretriz</span>
+            </div>
+            <div class="browser-search">semaglutide nutrition lean mass clinical practice...</div>
+            <div class="article-lines">
+              <i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="browser-window browser-window--post">
+            <span class="post-tag">post salvo</span>
+            <strong>"5 dicas para paciente em uso de caneta"</strong>
+            <small>parece simples, mas não fecha a conduta</small>
+          </div>
+          <div class="browser-window browser-window--note">
+            <strong>Prontuário</strong>
+            <span>Náusea + baixa proteína + treino fraco</span>
+            <span>Como ajustar sem piorar sintomas?</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-shell case-method" id="aula">
+      <div class="case-section-mark">04 / sala de aula</div>
+      <div class="case-method__headline">
+        <h2>O que você vai aprender na Imersão</h2>
+        <p>O dia foi organizado para transformar conteúdo técnico em conduta: avaliação, estratégia, prescrição e acompanhamento.</p>
+      </div>
+
+      <div class="lecture-map">
+        <article>
+          <span>Bloco Ney</span>
+          <h3>Períodos críticos</h3>
+          <p>Como conduzir adesão, platô e reganho sem reduzir o acompanhamento ao déficit calórico.</p>
+        </article>
+        <article>
+          <span>Bloco Ney</span>
+          <h3>Alvos moleculares</h3>
+          <p>Quais prioridades fisiológicas entram na dietoterapia para emagrecimento e como organizar a proposta terapêutica.</p>
+        </article>
+        <article>
+          <span>Bloco Jéssica</span>
+          <h3>GLP-1 e massa magra</h3>
+          <p>Como ajustar proteína, suplementação, sintomas gastrointestinais e monitoramento clínico quando o apetite despenca.</p>
+        </article>
+        <article>
+          <span>Conduta integrada</span>
+          <h3>Bioativos e mediterrânea</h3>
+          <p>Como aplicar alimentos funcionais, compostos bioativos e dieta mediterrânea de forma prática e individualizada.</p>
+        </article>
+      </div>
+
+      <div class="case-schedule" aria-label="Cronograma">
+        <div><time>09h30</time><span>Abertura e raciocínio inicial</span></div>
+        <div><time>12h00</time><span>Intervalo</span></div>
+        <div><time>13h30</time><span>Blocos técnicos e casos</span></div>
+        <div><time>17h30</time><span>Encerramento previsto</span></div>
+      </div>
+    </section>
+
+    <section class="case-proof">
+      <div class="case-shell proof-grid">
+        <div class="case-section-mark">05 / prova real</div>
+        <div class="proof-copy">
+          <h2>Quem participou saiu com mais clareza para atender.</h2>
+          <p>
+            A edição anterior deixou um sinal importante: o valor percebido veio da aplicação.
+            Nutricionistas relataram mais segurança para raciocinar, explicar e conduzir o paciente.
+          </p>
+        </div>
+
+        <div class="proof-wall">
+          <img src="/images/depoimentos/Screenshot_1.png" alt="Depoimento real de participante" />
+          <img src="/images/depoimentos/Screenshot_3.png" alt="Depoimento real de participante" />
+          <img src="/images/depoimentos/Screenshot_14.png" alt="Depoimento real de participante" />
+        </div>
+      </div>
+    </section>
+
+    <section class="case-mid-cta">
+      <div class="case-shell case-mid-cta__grid">
+        <div class="case-mid-cta__copy">
+          <div class="case-section-mark">05.1 / garantir vaga</div>
+          <h2>Se a decisão já faz sentido, aqui está o lote que está valendo agora.</h2>
+          <p>
+            Você não precisa esperar chegar no final da página para travar esse preço.
+            O lote zero ainda está ativo, com garantia de 7 dias e acesso imediato à confirmação da vaga.
+          </p>
+        </div>
+
+        <div class="case-mid-cta__card">
+          <div class="case-hero__ticket" aria-label="Ingresso lote zero">
+            <span class="case-hero__lot">Lote zero</span>
+            <p>De <s>R$ 97,00</s> por apenas</p>
+            <strong>{PRICE_BASICO}</strong>
+            <a href="#ingressos" class="case-hero__buy">Garantir minha vaga! &gt;</a>
+            <small>Garantia incondicional de 7 dias · Sem burocracia</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-shell case-tickets" id="ingressos">
+      <div class="case-section-mark">06 / acesso</div>
+      <div class="ticket-intro">
+        <h2>Escolha seu formato de ingresso</h2>
+      </div>
+
+      <div class="ticket-board">
+        <article class="ticket ticket--basic">
+          <div class="ticket__edge">Básico</div>
+          <h3>Ingresso ao vivo</h3>
+          <p class="ticket__old">De R$ 97,00 por</p>
+          <p class="ticket__price">{PRICE_BASICO}</p>
+          <ul>
+            <li>Acesso ao dia de imersão ao vivo via Zoom</li>
+            <li>Grupo exclusivo de participantes</li>
+            <li>Materiais compartilhados na aula</li>
+            <li>Mini Curso Fundamentos do Emagrecimento</li>
+          </ul>
+          <a href="#" data-form="normal" class="ticket__button">Comprar básico</a>
+        </article>
+
+        <article class="ticket ticket--vip">
+          <div class="ticket__edge">VIP</div>
+          <h3>Acesso completo</h3>
+          <p class="ticket__old">De R$ 297,00 por</p>
+          <p class="ticket__price">{PRICE_VIP_PARCELADO}</p>
+          <p class="ticket__cash">ou {PRICE_VIP_AVISTA} à vista</p>
+          <div class="ticket-details">
+            <details class="ticket-feature">
+              <summary>&gt; Tudo do básico + <span>ver o que é</span></summary>
+              <p>Evento ao vivo, grupo do evento, materiais compartilhados e base para acompanhar a imersão com aplicação imediata.</p>
+            </details>
+            <details class="ticket-feature ticket-feature--static" open>
+              <summary>Gravação do evento <span>por 1 ano</span></summary>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; Certificado de 8h <span>ver benefício</span></summary>
+              <p>Para contabilizar horas na faculdade ou sinalizar ao paciente que sua conduta continua em evolução.</p>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; E-book Tópicos Avançados <span>(R$ 99)</span></summary>
+              <p>Nutricosméticos, crononutrição e biogênese mitocondrial com ligação entre teoria, prescrição e prática.</p>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; Ebook "Me Formei, e agora?" <span>(R$ 59)</span></summary>
+              <p>Respostas para precificação, retorno, fidelização, sublocação de sala e outras dúvidas da rotina profissional.</p>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; Ebook Desaprendendo a Dieta <span>(R$ 39)</span></summary>
+              <p>Material de educação nutricional para o paciente sair da dependência de mito, regra rasa e mentalidade de dieta.</p>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; Ressaca do Evento <span>ver benefício</span></summary>
+              <p>Encontro extra no Zoom para revisar a aula, recapitular os pontos principais e abrir espaço para dúvidas pós-imersão.</p>
+            </details>
+            <details class="ticket-feature">
+              <summary>&gt; Cashback integral <span>ver como funciona</span></summary>
+              <p>O valor investido no VIP volta como desconto se você entrar depois na Formação Nutrição Avançada ou na Pós-Graduação.</p>
+            </details>
+          </div>
+          <a href="#" data-form="vip" class="ticket__button">Comprar VIP</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="case-faq">
+      <div class="case-shell faq-grid">
+        <h2>Perguntas frequentes</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Para quem é essa imersão?</summary>
+            <p>Nutricionistas formados e estudantes que querem atender emagrecimento com mais raciocínio clínico, especialmente em casos com GLP-1, platô, adesão e reganho.</p>
+          </details>
+          <details>
+            <summary>Vai ficar gravado?</summary>
+            <p>O ingresso VIP dá acesso completo às gravações por 1 ano. O básico é para acompanhar ao vivo.</p>
+          </details>
+          <details>
+            <summary>Tem garantia?</summary>
+            <p>Sim. Você tem 7 dias de garantia incondicional, sem burocracia.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-final">
+      <div class="case-shell">
+        <p>01 de Agosto · Online via Zoom · Lote zero ativo</p>
+        <h2>A próxima consulta de emagrecimento pode ter mais raciocínio e menos improviso.</h2>
+        <a href="#ingressos" class="case-action case-action--primary">Escolher ingresso</a>
+      </div>
+    </section>
+  </main>
+
+  <FormModal />
+</Layout>
