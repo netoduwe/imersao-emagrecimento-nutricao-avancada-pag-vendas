@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/imersao-v1-02.css';
+
+const EVENT_DATE = '01 de Agosto de 2026';
+const EVENT_TIME = '9h às 18h';
+const PRE_SALE_DATE = 'Terça-feira, 14 de Julho de 2026';
+const WHATSAPP_LINK = 'https://chat.whatsapp.com/GzQW3V91456'; // Link padrão/exemplo do grupo VIP
+---
+
+<Layout title={`Pré-Venda | Imersão em Emagrecimento | Nutrição Avançada`} theme="green" hideHeader={true}>
+  <main class="case-page">
+    
+    <!-- ══════════════════════════════════════
+         HERO PRE-VENDA
+         ══════════════════════════════════════ -->
+    <section class="case-hero" id="pre-venda" style="min-height: auto; padding: 100px 0 80px;">
+      <div class="case-shell case-hero__grid">
+        <div class="case-hero__content">
+          <p class="case-kicker" style="background: rgba(49, 217, 107, 0.15); color: var(--case-green); border: 1px solid rgba(49, 217, 107, 0.2); padding: 4px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px;">
+            Pré-Venda Exclusiva · Grupo VIP do WhatsApp
+          </p>
+          <h1>
+            Garanta o menor preço do Lote Zero e bônus exclusivos.
+            <span>Abertura na terça-feira, 14/07.</span>
+          </h1>
+          <p class="case-lead">
+            A Imersão 5ª Edição vai trazer o manejo seguro de canetas de GLP-1, alvos moleculares e compostos bioativos aplicados na prática de consultório. 
+            O link de inscrição com preço promocional exclusivo de pré-venda será enviado <strong>apenas dentro do grupo silencioso de WhatsApp</strong>.
+          </p>
+
+          <div class="case-hero__actions" style="margin-top: 32px;">
+            <div class="case-hero__ticket" style="border: 2px solid var(--case-green); background: rgba(3, 19, 7, 0.7); max-width: 480px; box-shadow: 0 10px 30px rgba(49, 217, 107, 0.1);">
+              <span class="case-hero__lot" style="background: var(--case-green); color: #020703;">GRUPO VIP</span>
+              <p style="font-size: 14px; margin-bottom: 8px; color: var(--case-muted);">Vagas limitadas para a pré-venda:</p>
+              <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin: 0 0 16px;">Venda liberada em 14/07</h3>
+              <a href={WHATSAPP_LINK} target="_blank" class="case-hero__buy" style="background: var(--case-green); color: #020703; text-align: center; display: block; font-weight: 800;">
+                ENTRAR NO GRUPO VIP DO WHATSAPP &gt;
+              </a>
+              <small style="display: block; margin-top: 10px; color: var(--case-muted);">
+                Grupo fechado e silencioso. Apenas administradores enviam mensagens.
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-hero__visual" aria-label="Palestrantes da imersão">
+          <div class="case-photo-stack">
+            <figure class="case-photo case-photo--ney">
+              <img src="/images/ney-clinica-otimizado.webp" alt="Prof. Ney Felipe" />
+              <figcaption>Ney Felipe · conduta clínica</figcaption>
+            </figure>
+            <figure class="case-photo case-photo--jessica">
+              <img src="/images/jessica.webp" alt="Profa. Jéssica Wszolek" />
+              <figcaption>Jéssica Wszolek · GLP-1</figcaption>
+            </figure>
+          </div>
+          <div class="case-stamp">14/07<br />Preço VIP</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         TICKER DE AVISO
+         ══════════════════════════════════════ -->
+    <section class="case-strip" aria-label="Avisos importantes da pré-venda">
+      <div class="case-strip__track">
+        <span>liberação 14 de julho</span>
+        <span>desconto exclusivo lote zero</span>
+        <span>bônus especiais de pré-venda</span>
+        <span>apenas no grupo vip</span>
+        <span>liberação 14 de julho</span>
+        <span>desconto exclusivo lote zero</span>
+        <span>bônus especiais de pré-venda</span>
+        <span>apenas no grupo vip</span>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         O QUE VOCÊ VAI RECEBER NA PRÉ-VENDA
+         ══════════════════════════════════════ -->
+    <section class="case-shell case-problem" id="vantagens" style="padding: 80px 0;">
+      <div class="case-section-mark">01 / vantagens da pré-venda</div>
+      <div class="case-problem__grid">
+        <div>
+          <h2>Por que entrar no Grupo VIP do WhatsApp agora?</h2>
+          <p>
+            Quem estiver no grupo de pré-venda terá acesso prioritário aos ingressos na terça-feira (14/07), garantindo a vaga antes que o preço suba nas redes sociais.
+          </p>
+        </div>
+        <div class="case-notes" aria-label="Benefícios exclusivos" style="border-left-color: var(--case-green);">
+          <p><strong>Menor Valor Histórico</strong> Acesso ao Lote Zero promocional da Imersão.</p>
+          <p><strong>Bônus Extras</strong> Pacote de e-books e materiais especiais liberados na pré-venda VIP.</p>
+          <p><strong>Transmissão Garantida</strong> Link direto para o Zoom no dia 01/08.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         RESUMO DOS PALESTRANTES
+         ══════════════════════════════════════ -->
+    <section class="case-shell case-method" id="palestrantes" style="padding: 60px 0 100px;">
+      <div class="case-section-mark">02 / palestrantes</div>
+      <div class="case-method__headline">
+        <h2>Aprenda com quem vive o consultório diariamente</h2>
+        <p>A Imersão conecta fisiologia clínica, protocolos práticos e a experiência real dos palestrantes:</p>
+      </div>
+
+      <div class="lecture-map">
+        <article style="border-top-color: var(--case-green);">
+          <span style="color: var(--case-green);">Prof. Ney Felipe</span>
+          <h3>19 anos de conduta clínica</h3>
+          <p>Mestre em Biol. Molecular e pioneiro da Nutrição Funcional Esportiva no Brasil, focado em trazer condutas que vão além de calorias.</p>
+        </article>
+        <article style="border-top-color: var(--case-line);">
+          <span style="color: var(--case-green);">Profa. Jéssica Wszolek</span>
+          <h3>Manejo Prático de GLP-1</h3>
+          <p>Referência em ajustar a dieta e a nutrição de pacientes em uso de canetas emagrecedoras (Ozempic/Mounjaro) quando o apetite some e o risco de perda de massa magra aumenta.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CTA FINAL
+         ══════════════════════════════════════ -->
+    <section class="case-final" style="padding: 80px 0; background: linear-gradient(180deg, transparent, rgba(49, 217, 107, 0.05)), #020703;">
+      <div class="case-shell">
+        <p style="color: var(--case-green); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">
+          Lançamento oficial VIP: 14 de Julho de 2026
+        </p>
+        <h2>Não fique de fora do Lote Zero. Entre no grupo VIP do WhatsApp.</h2>
+        <a href={WHATSAPP_LINK} target="_blank" class="case-action case-action--primary" style="background: var(--case-green); color: #020703; border-color: var(--case-green); font-weight: 800; text-decoration: none; padding: 16px 32px; display: inline-block;">
+          QUERO ENTRAR NO GRUPO VIP DO WHATSAPP
+        </a>
+      </div>
+    </section>
+
+  </main>
+</Layout>
