@@ -1147,24 +1147,77 @@
     padding: 52px 0 44px;
   }
 
+  .hero-v4-grid {
+    gap: 1.75rem;
+  }
+
+  .hero-v4-content {
+    width: 100%;
+    padding-inline: 18px;
+    box-sizing: border-box;
+  }
+
+  .info-bar {
+    width: 100%;
+    flex-wrap: nowrap;
+    gap: 7px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+
+  .info-item {
+    min-width: 0;
+    gap: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .info-item svg {
+    width: 14px;
+    height: 14px;
+    flex: 0 0 auto;
+  }
+
+  .info-sep {
+    display: block;
+    flex: 0 0 1px;
+  }
+
   .hero-v4-h1 {
-    font-size: clamp(29px, 8.3vw, 38px);
+    font-size: clamp(26px, 7.6vw, 36px);
     line-height: 1.08;
+    letter-spacing: -0.03em;
     margin-bottom: 1.25rem;
+    max-width: 11.5ch;
+    margin-inline: auto;
+    text-wrap: balance;
   }
 
   .hero-v4-bullets {
+    width: 100%;
     gap: 0.65rem;
     margin-bottom: 2rem;
+    padding-inline: 6px;
+    box-sizing: border-box;
   }
 
   .hero-v4-bullets li {
     font-size: 1rem;
     line-height: 1.45;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .hero-v4-bullets li span {
+    min-width: 0;
   }
 
   .hero-v4-price-box {
+    width: 100%;
+    max-width: 100%;
     padding: 1.35rem 1.5rem 1.5rem;
+    box-sizing: border-box;
   }
 
   .price-box-row {
@@ -1175,6 +1228,10 @@
 
   .price-box-new {
     font-size: 2.35rem;
+  }
+
+  .btn-v4-shiny {
+    width: 100%;
   }
 }
 

@@ -6,8 +6,9 @@ import '../styles/theme-green.css';
 
 // Dados do evento
 const EVENT_DATE = '01 de Agosto de 2026';
+const EVENT_DATE_SHORT = '01 Ago 2026';
 const EVENT_TIME = '9h às 18h';
-const EVENT_FORMAT = 'Online via Zoom';
+const EVENT_FORMAT = 'Zoom';
 const LOTE = 'LOTE ZERO';
 const PRICE_BASICO = 'R$ 19,90';
 const PRICE_VIP = 'R$ 147,00';
@@ -22,17 +23,11 @@ const PRICE_VIP = 'R$ 147,00';
     <div class="container hero5-grid">
       <!-- LEFT (Tudo o que o usuário lê sobre a oferta) -->
       <div class="hero5-left">
-        <!-- Badge de evento -->
-        <div class="event-badge">
-          <span class="badge-dot"></span>
-          5ª Edição · Imersão em Emagrecimento
-        </div>
-
         <!-- Info bar -->
         <div class="info-bar">
           <div class="info-item">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            <span>{EVENT_DATE}</span>
+            <span>{EVENT_DATE_SHORT}</span>
           </div>
           <div class="info-sep"></div>
           <div class="info-item">
@@ -67,12 +62,6 @@ const PRICE_VIP = 'R$ 147,00';
           <div class="hero5-price-tag">
             <span class="price-lote">{LOTE}</span>
             <span class="price-val">A partir de {PRICE_BASICO}</span>
-            <span class="price-pix">ou Pix · Opção VIP disponível com Gravação</span>
-          </div>
-
-          <div class="hero5-guarantee-line">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Garantia de 7 dias · Sem burocracia
           </div>
         </div>
       </div>
@@ -97,7 +86,6 @@ const PRICE_VIP = 'R$ 147,00';
   <section class="section-problema" id="conteudo">
     <div class="container problema-grid">
       <div class="problema-text">
-        <div class="section-badge">O PROBLEMA</div>
         <h2 class="section-title">Você se sente seguro para tratar um paciente com sobrepeso?</h2>
         <p class="section-sub">Com certeza você já enfrentou situações como essas no consultório:</p>
 
@@ -192,7 +180,6 @@ const PRICE_VIP = 'R$ 147,00';
        ══════════════════════════════════════ -->
   <section class="section-mecanismo">
     <div class="container mecanismo-inner">
-      <div class="section-badge badge-center">O MECANISMO</div>
       <h2 class="section-title text-center">Por que uma imersão de 1 dia muda sua prática clínica?</h2>
       <p class="section-sub text-center" style="max-width:680px;margin:0 auto 48px;">
         Não é mais um curso de teoria. É um dia inteiro de imersão aplicada, com casos clínicos reais, ferramentas práticas e os protocolos que o Ney usa depois de 19 anos de consultório.
@@ -236,7 +223,6 @@ const PRICE_VIP = 'R$ 147,00';
        ══════════════════════════════════════ -->
   <section class="section-professores" id="time">
     <div class="container">
-      <div class="section-badge badge-center">PALESTRANTES</div>
       <h2 class="section-title text-center">Quem estará no palco virtual?</h2>
       <p class="section-sub text-center" style="max-width: 600px; margin: 0 auto 48px;">
         Aprenda com quem está no campo de batalha clínico diariamente.
@@ -274,7 +260,6 @@ const PRICE_VIP = 'R$ 147,00';
        ══════════════════════════════════════ -->
   <section class="section-grade">
     <div class="container">
-      <div class="section-badge badge-center">CRONOGRAMA</div>
       <h2 class="section-title text-center">Cronograma da Imersão</h2>
       <p class="section-sub text-center" style="max-width: 500px; margin: 0 auto 32px;"> Ambos os blocos do dia seguirão essa divisão de horários:</p>
 
@@ -336,7 +321,6 @@ const PRICE_VIP = 'R$ 147,00';
        ══════════════════════════════════════ -->
   <section class="section-modulos-detalhes" id="grade-conteudo">
     <div class="container">
-      <div class="section-badge badge-center">CONTEÚDO</div>
       <h2 class="section-title text-center">O Que Você Vai Aprender</h2>
       <p class="section-sub text-center" style="max-width: 600px; margin: 0 auto 40px;">
         Todo o raciocínio clínico e as condutas de consultório estruturadas:
@@ -386,7 +370,6 @@ const PRICE_VIP = 'R$ 147,00';
        ══════════════════════════════════════ -->
   <section class="section-depos">
     <div class="container">
-      <div class="section-badge badge-center">RESULTADOS</div>
       <h2 class="section-title text-center">O que dizem quem já esteve lá</h2>
 
       <div class="depos-grid">
@@ -434,7 +417,6 @@ const PRICE_VIP = 'R$ 147,00';
        ══════════════════════════════════════ -->
   <section class="section-oferta" id="preco">
     <div class="container">
-      <div class="section-badge badge-center">ESCOLHA SEU INGRESSO</div>
       <h2 class="section-title text-center">Ingresso Básico vs Ingresso VIP</h2>
       <p class="section-sub text-center" style="max-width:600px;margin:0 auto 48px;">
         Lote Zero ativo por tempo limitado. Escolha a melhor opção para a sua carreira.
@@ -608,7 +590,6 @@ const PRICE_VIP = 'R$ 147,00';
        ══════════════════════════════════════ -->
   <section class="section-faq">
     <div class="container faq-inner">
-      <div class="section-badge badge-center">DÚVIDAS</div>
       <h2 class="section-title text-center">Perguntas frequentes</h2>
 
       <div class="faq-list" id="faq-list">
@@ -788,22 +769,6 @@ const PRICE_VIP = 'R$ 147,00';
     --radius: 16px;
   }
 
-  /* ── SHARED SECTION TOKENS ── */
-  .section-badge {
-    display: inline-flex;
-    align-items: center;
-    background: var(--green-light);
-    color: var(--green);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    padding: 5px 14px;
-    border-radius: 999px;
-    margin-bottom: 16px;
-    border: 1px solid rgba(22,163,74,0.15);
-  }
-  .badge-center { display: flex; margin: 0 auto 16px; width: fit-content; }
-
   .section-title {
     font-size: clamp(26px, 3.5vw, 40px);
     font-weight: 800;
@@ -881,32 +846,6 @@ const PRICE_VIP = 'R$ 147,00';
     gap: 48px;
     align-items: center;
     margin-bottom: 48px;
-  }
-
-  /* Event badge */
-  .event-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 6px 16px;
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--text-light);
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-  .badge-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--green);
-    animation: pulse-dot 2s infinite;
-  }
-  @keyframes pulse-dot {
-    0%,100% { box-shadow: 0 0 0 0 rgba(22,163,74,0.5); }
-    50% { box-shadow: 0 0 0 5px rgba(22,163,74,0); }
   }
 
   /* Info bar */
@@ -989,18 +928,6 @@ const PRICE_VIP = 'R$ 147,00';
     color: var(--text);
     letter-spacing: -0.03em;
   }
-  .price-pix {
-    font-size: 12px;
-    color: var(--text-muted);
-  }
-  .hero5-guarantee-line {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 12px;
-    color: var(--text-light);
-  }
-
   /* Right column left empty to not cover background face */
   .hero5-right {
     min-height: 380px;
@@ -1973,12 +1900,8 @@ const PRICE_VIP = 'R$ 147,00';
   .hero5-section {
     background-position: 62% top;
   }
-  .event-badge,
   .info-bar {
     box-shadow: none;
-  }
-  .event-badge {
-    border-radius: 10px;
   }
   .info-bar {
     border-radius: 10px;
@@ -2014,6 +1937,27 @@ const PRICE_VIP = 'R$ 147,00';
     .hero5-section {
       padding-top: 52px;
     }
+    .info-bar {
+      flex-wrap: nowrap;
+      gap: 7px;
+      max-width: 100%;
+      padding: 10px 12px;
+      white-space: nowrap;
+    }
+    .info-item {
+      gap: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .info-item svg {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+    }
+    .info-sep {
+      display: block;
+      flex: 0 0 1px;
+    }
     .hero5-headline {
       font-size: clamp(29px, 8.5vw, 38px);
       line-height: 1.08;
@@ -2028,9 +1972,6 @@ const PRICE_VIP = 'R$ 147,00';
     .hero5-price-tag {
       justify-content: center;
       row-gap: 6px;
-    }
-    .hero5-guarantee-line {
-      justify-content: center;
     }
     .urgency-strip-hero {
       text-align: left;
@@ -2060,7 +2001,6 @@ const PRICE_VIP = 'R$ 147,00';
     }
   }
   @media (prefers-reduced-motion: reduce) {
-    .badge-dot,
     .btn-arrow {
       animation: none;
       transition: none;

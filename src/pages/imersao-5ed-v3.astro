@@ -5,8 +5,9 @@ import ProgressBar from '../components/ProgressBar.astro';
 
 // Dados do evento
 const EVENT_DATE = '01 de Agosto de 2026';
+const EVENT_DATE_SHORT = '01 Ago 2026';
 const EVENT_TIME = '9h às 18h';
-const EVENT_FORMAT = 'Online via Zoom';
+const EVENT_FORMAT = 'Zoom';
 const LOTE = 'Lote zero';
 const PRICE_BASICO = 'R$ 19,90';
 const PRICE_VIP = 'R$ 147,00';
@@ -24,15 +25,10 @@ const PRICE_VIP = 'R$ 147,00';
         
         <!-- Header Info Group -->
         <div class="hero-v3-header-group">
-          <!-- Event Label -->
-          <div class="hero-v3-event-label">
-            ★ Imersão em Emagrecimento | 5ª Edição
-          </div>
-          
           <!-- Date Pill (Sticky top style) -->
           <div class="hero-v3-date-pill">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="calendar-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-            <span>{EVENT_DATE} | {EVENT_TIME}</span>
+            <span>{EVENT_DATE_SHORT} | {EVENT_TIME} | {EVENT_FORMAT}</span>
           </div>
         </div>
 
@@ -731,21 +727,6 @@ const PRICE_VIP = 'R$ 147,00';
     transform: translateY(-1px) !important;
   }
 
-  .section-badge {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(225, 29, 72, 0.1);
-    color: var(--red);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    padding: 5px 14px;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    border: 1px solid rgba(225, 29, 72, 0.2);
-  }
-  .badge-center { display: flex; margin: 0 auto 16px; width: fit-content; }
-
   .section-title {
     font-size: clamp(28px, 4vw, 42px);
     font-weight: 800;
@@ -796,14 +777,6 @@ const PRICE_VIP = 'R$ 147,00';
     align-items: flex-start;
     gap: 12px;
     margin-bottom: 28px;
-  }
-
-  .hero-v3-event-label {
-    font-size: 12px;
-    font-weight: 800;
-    color: var(--red);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
   }
 
   .hero-v3-date-pill {
@@ -2201,6 +2174,28 @@ const PRICE_VIP = 'R$ 147,00';
     .hero-v3-section {
       padding-top: 52px;
     }
+    .hero-v3-header-group {
+      margin-bottom: 22px;
+    }
+    .hero-v3-date-pill {
+      max-width: 100%;
+      padding: 10px 12px;
+      white-space: nowrap;
+    }
+    .hero-v3-date-pill span {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .hero-v3-date-pill svg {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+    }
+    .hero-v3-content {
+      width: 100%;
+      padding-inline: 18px;
+      box-sizing: border-box;
+    }
     .hero-v3-headline {
       font-size: clamp(29px, 8.3vw, 38px);
       line-height: 1.08;
@@ -2212,15 +2207,36 @@ const PRICE_VIP = 'R$ 147,00';
       margin-bottom: 28px;
     }
     .hero-v3-cta-wrap {
+      width: 100%;
+      max-width: 100%;
       gap: 14px;
       margin-bottom: 28px;
     }
+    .btn-v3-hero {
+      width: 100%;
+    }
+    .hero-v3-progress-labels {
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      text-align: center;
+      line-height: 1.4;
+    }
     .hero-v3-social-proof-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      width: 100%;
       gap: 8px;
       padding-top: 20px;
     }
     .proof-stat-item {
+      min-width: 0;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 5px;
+    }
+    .stat-details {
+      min-width: 0;
     }
     .stat-details strong {
       font-size: 18px;
@@ -2228,6 +2244,11 @@ const PRICE_VIP = 'R$ 147,00';
     .stat-details span {
       font-size: 10px;
       line-height: 1.35;
+    }
+    .sticky-progress-label {
+      display: block;
+      text-align: center;
+      line-height: 1.45;
     }
     .section-notaveis,
     .section-pergunta {

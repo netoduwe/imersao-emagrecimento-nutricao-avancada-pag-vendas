@@ -6,8 +6,9 @@ import '../styles/theme-green.css';
 
 // Dados do evento
 const EVENT_DATE = '01 de Agosto de 2026';
+const EVENT_DATE_SHORT = '01 Ago 2026';
 const EVENT_TIME = '9h às 18h';
-const EVENT_FORMAT = 'Online via Zoom';
+const EVENT_FORMAT = 'Zoom';
 const LOTE = 'Lote zero';
 const PRICE_BASICO = 'R$ 19,90';
 const PRICE_VIP = 'R$ 147,00';
@@ -25,17 +26,11 @@ const PRICE_VIP = 'R$ 147,00';
         
         <!-- Header Info Group (Date pill style from print 01 with border) -->
         <div class="hero-v2-header-group">
-          <!-- Event Label -->
-          <div class="hero-v2-event-label">
-            <span class="badge-dot"></span>
-            5ª Edição · Imersão em Emagrecimento
-          </div>
-          
           <!-- Date Pill (From print 01 style - High contrast on light background) -->
           <div class="info-bar">
             <div class="info-item">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="calendar-icon"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              <span>{EVENT_DATE}</span>
+              <span>{EVENT_DATE_SHORT}</span>
             </div>
             <div class="info-sep"></div>
             <div class="info-item">
@@ -75,12 +70,6 @@ const PRICE_VIP = 'R$ 147,00';
           <a href="#preco" class="btn-v2-hero">
             Pegar meu ingresso! <span class="btn-v2-arrow">&lt;</span>
           </a>
-        </div>
-
-        <!-- Guarantee Text -->
-        <div class="hero-v2-guarantee">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-          Garantia incondicional de 7 dias · Sem burocracia
         </div>
 
       </div>
@@ -272,7 +261,6 @@ const PRICE_VIP = 'R$ 147,00';
        ══════════════════════════════════════ -->
   <section class="section-grade">
     <div class="container">
-      <div class="section-badge badge-center">CRONOGRAMA</div>
       <h2 class="section-title text-center">Cronograma da Imersão</h2>
       <p class="section-sub text-center" style="max-width: 500px; margin: 0 auto 32px;"> Ambos os blocos do dia seguirão essa divisão de horários:</p>
 
@@ -334,7 +322,6 @@ const PRICE_VIP = 'R$ 147,00';
        ══════════════════════════════════════ -->
   <section class="section-modulos-detalhes" id="grade-conteudo">
     <div class="container">
-      <div class="section-badge badge-center">CONTEÚDO</div>
       <h2 class="section-title text-center">O Que Você Vai Aprender</h2>
       <p class="section-sub text-center" style="max-width: 600px; margin: 0 auto 40px;">
         Todo o raciocínio clínico e as condutas de consultório estruturadas:
@@ -897,22 +884,6 @@ const PRICE_VIP = 'R$ 147,00';
     color: var(--text-light) !important;
   }
 
-  /* ── SHARED SECTION TOKENS ── */
-  .section-badge {
-    display: inline-flex;
-    align-items: center;
-    background: var(--green-light);
-    color: var(--green-dark);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    padding: 5px 14px;
-    border-radius: 999px;
-    margin-bottom: 16px;
-    border: 1px solid rgba(26,168,36,0.15);
-  }
-  .badge-center { display: flex; margin: 0 auto 16px; width: fit-content; }
-
   .section-title {
     font-size: clamp(26px, 3.5vw, 40px);
     font-weight: 800;
@@ -1007,30 +978,6 @@ const PRICE_VIP = 'R$ 147,00';
     align-items: flex-start;
     gap: 14px;
     margin-bottom: 28px;
-  }
-
-  .hero-v2-event-label {
-    font-size: 12px;
-    font-weight: 800;
-    color: var(--green-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .badge-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--green);
-    display: inline-block;
-    animation: pulse-dot 2s infinite;
-  }
-  @keyframes pulse-dot {
-    0%,100% { box-shadow: 0 0 0 0 rgba(26,168,36,0.4); }
-    50% { box-shadow: 0 0 0 6px rgba(26,168,36,0); }
   }
 
   /* Date Pill (Print 01 Style with dark text for high contrast on light background) */
@@ -1162,14 +1109,6 @@ const PRICE_VIP = 'R$ 147,00';
   .btn-v2-arrow {
     margin-left: 8px;
     font-weight: 900;
-  }
-
-  .hero-v2-guarantee {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    color: var(--text-muted);
   }
 
   .hero-v2-right {
@@ -2406,6 +2345,27 @@ const PRICE_VIP = 'R$ 147,00';
       gap: 12px;
       margin-bottom: 24px;
     }
+    .info-bar {
+      flex-wrap: nowrap;
+      gap: 7px;
+      max-width: 100%;
+      padding: 10px 12px;
+      white-space: nowrap;
+    }
+    .info-item {
+      gap: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .info-item svg {
+      width: 14px;
+      height: 14px;
+      flex: 0 0 auto;
+    }
+    .info-sep {
+      display: block;
+      flex: 0 0 1px;
+    }
     .hero-v2-headline {
       font-size: clamp(29px, 8.35vw, 38px);
       line-height: 1.1;
@@ -2440,7 +2400,6 @@ const PRICE_VIP = 'R$ 147,00';
     }
   }
   @media (prefers-reduced-motion: reduce) {
-    .badge-dot,
     .btn-v2-hero,
     .btn-final-cta {
       animation: none;

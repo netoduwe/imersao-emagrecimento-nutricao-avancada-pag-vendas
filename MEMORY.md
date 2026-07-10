@@ -2,6 +2,14 @@
 
 **Última Atualização:** 09/07/2026
 
+## Limpeza de Ruídos e Otimização da Dobra Mobile (V1 a V4) — 09/07/2026
+- **Remoção de Badges de IA:** Excluídos eyebrows decorativos (ex: "O Problema", "O Mecanismo", "Palestrantes", "Cronograma", "Conteúdo", "Resultados", "Escolha seu Ingresso", "Dúvidas") em todas as versões (V1 a V4) para remover o aspecto artificial e focar na copy limpa.
+- **Data e Horário Compactos:** Unificada a informação do evento no mobile em uma única linha (`01 Ago 2026 | 9h às 18h | Zoom`), evitando quebras de linha que prejudicam a conversão.
+- **Primeira Dobra sem Fricção:** Removidos selos redundantes como "5ª Edição" e menções prematuras de garantia e opções de Pix/VIP da dobra do Hero.
+- **Ajustes de Margem na V4:** Correção do padding lateral no mobile para evitar que o título `h1` toque as bordas.
+- **Correção de Legendas na V3:** Ajustada a sobreposição e compressão do contador de ingressos e marcas de prova social no mobile.
+- **Imagens Otimizadas:** Concluída a substituição dos ativos dos pilares de `.png` para `.webp` para melhorar o carregamento.
+
 ## Seção de Transição Emocional (V4) — 09/07/2026
 - **Nova Seção Emocional:** Adicionada uma seção de transição emocional (`.transicao-v4-section`) antes da oferta na V4 com a headline *"Você já sofreu demais por algo que pode ser resolvido em um dia de imersão comigo."*.
 - **Pain Points:** Incluídos badges visuais para os problemas comuns citados (abas abertas caçando artigos, posts de Instagram, batendo cabeça sozinho).
