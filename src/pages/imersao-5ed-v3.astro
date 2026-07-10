@@ -4,410 +4,464 @@ import FormModal from '../components/FormModal.astro';
 import '../styles/imersao-v3.css';
 
 const EVENT_DATE = '01 de Agosto de 2026';
+const EVENT_DATE_SHORT = '01 Ago 2026';
 const EVENT_TIME = '9h às 18h';
+const LOTE = 'Lote zero';
 const PRICE_BASICO = 'R$ 19,90';
 const PRICE_VIP_PARCELADO = '12x de R$ 15,20';
 const PRICE_VIP_AVISTA = 'R$ 147,00';
 ---
 
-<Layout title={`Imersão em Emagrecimento | ${EVENT_DATE} | Nutrição Avançada`} theme="green" hideHeader={true}>
-  <main class="case-page">
-    
-    <!-- ══════════════════════════════════════
-         HERO — ESTUDO DE CASO PREMIUM (V3 DARK & RED)
-         ══════════════════════════════════════ -->
-    <section class="case-hero" id="imersao">
-      <div class="case-shell case-hero__grid">
-        <div class="case-hero__content">
-          <p class="case-kicker">5ª Edição · Imersão em Emagrecimento</p>
-          <h1>
-            Trate a obesidade e o emagrecimento com base em dados.
-            <span>E fisiologia clínica consolidada.</span>
-          </h1>
-          <p class="case-lead">
-            Um dia inteiro destravando o raciocínio clínico que você precisa para atender com segurança e entregar resultados duradouros para seus pacientes.
-          </p>
-
-          <div class="case-hero__actions">
-            <div class="case-hero__ticket" aria-label="Ingresso lote zero">
-              <span class="case-hero__lot">Lote zero</span>
-              <p>De <s>R$ 97,00</s> por apenas</p>
-              <strong>{PRICE_BASICO}</strong>
-              <a href="#ingressos" class="case-hero__buy">Garantir minha vaga! &gt;</a>
-              <small>Garantia incondicional de 7 dias · Sem burocracia</small>
-            </div>
-          </div>
-
-          <div class="case-hero__facts" aria-label="Dados do evento">
-            <span>{EVENT_DATE}</span>
-            <span>{EVENT_TIME}</span>
-            <span>Online via Zoom</span>
-          </div>
-        </div>
-
-        <div class="case-hero__visual" aria-label="Palestrantes da imersão">
-          <div class="case-photo-stack">
-            <figure class="case-photo case-photo--ney">
-              <img src="/images/ney-clinica-otimizado.webp" alt="Prof. Ney Felipe" />
-              <figcaption>Ney Felipe · conduta clínica</figcaption>
-            </figure>
-            <figure class="case-photo case-photo--jessica">
-              <img src="/images/jessica.webp" alt="Profa. Jéssica Wszolek" />
-              <figcaption>Jéssica Wszolek · GLP-1</figcaption>
-            </figure>
-          </div>
-          <div class="case-stamp" style="background: rgba(227, 75, 63, 0.85); color: #fff; border-color: rgba(227, 75, 63, 0.4);">Ao vivo<br />Zoom</div>
-        </div>
-      </div>
-    </section>
+<Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="green">
+  <div class="v3-page">
 
     <!-- ══════════════════════════════════════
-         TICKER DE CAMPANHA
+         HERO
          ══════════════════════════════════════ -->
-    <section class="case-strip" aria-label="Resumo da virada de campanha">
-      <div class="case-strip__track" style="animation: caseScroll 22s linear infinite;">
-        <span>lote zero ativo</span>
-        <span>conduta além da calculadora</span>
-        <span>gravação por 1 ano no VIP</span>
-        <span>01 agosto 2026</span>
-        <span>lote zero ativo</span>
-        <span>conduta além da calculadora</span>
-        <span>gravação por 1 ano no VIP</span>
-        <span>01 agosto 2026</span>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         01 / CASO CLÍNICO
-         ══════════════════════════════════════ -->
-    <section class="case-shell case-problem" id="caso">
-      <div class="case-section-mark" style="color: var(--case-red);">01 / caso clínico</div>
-      <div class="case-problem__grid">
+    <section class="v3-hero" id="imersao">
+      <div class="v3-wrap v3-hero__grid">
         <div>
-          <h2>O paciente de emagrecimento virou um caso mais complexo:</h2>
-          <p>
-            O paciente não chega mais só perguntando por dieta. Ele chega usando GLP-1 (como Ozempic e Mounjaro), comendo pouco,
-            perdendo massa magra, travando no platô ou com medo de recuperar peso quando retirar a medicação.
-          </p>
-        </div>
-        <div class="case-notes" aria-label="Sintomas clínicos da página" style="border-left-color: var(--case-red);">
-          <p><strong>Queixa 01</strong> "Meu apetite sumiu, mas estou sem força."</p>
-          <p><strong>Queixa 02</strong> "Emagreci, mas perdi massa magra junto."</p>
-          <p><strong>Queixa 03</strong> "Vou parar a caneta. E agora?"</p>
-          <p><strong>Queixa 04</strong> "Doutora, por que eu parei de evoluir?"</p>
-        </div>
-      </div>
-    </section>
+          <span class="v3-hero__edition">5ª Edição · Imersão em Emagrecimento</span>
 
-    <!-- ══════════════════════════════════════
-         02 / EVIDÊNCIAS DE MERCADO
-         ══════════════════════════════════════ -->
-    <section class="case-evidence" id="evidencias">
-      <div class="case-shell">
-        <div class="case-section-mark" style="color: var(--case-red);">02 / evidências de mercado</div>
-        <div class="evidence-board">
-          <article class="evidence-item evidence-item--lead" style="border-top-color: var(--case-red);">
-            <span>Google Trends & mercado</span>
-            <h3>O Brasil ocupa a <mark style="background: rgba(227, 75, 63, 0.25); color: #fff;">2ª posição mundial</mark> nas buscas por Ozempic e Mounjaro na internet.</h3>
-            <p>
-              A procura massiva por canetas emagrecedoras movimentou mais de R$ 10 bilhões no mercado nacional, gerando uma onda inédita de pacientes necessitando de suporte nutricional no consultório.
+          <h1 class="v3-hero__headline">
+            Um dia inteiro aprendendo a <em>tratar o emagrecimento</em> com o que a ciência mais atual comprova.
+          </h1>
+
+          <p class="v3-hero__sub">
+            Manejo de canetas emagrecedoras, compostos bioativos e prática clínica além do déficit calórico — com Ney Felipe e Jéssica Wszolek.
+          </p>
+
+          <div class="v3-hero__meta">
+            <span>📅 {EVENT_DATE_SHORT}</span>
+            <span>🕘 {EVENT_TIME}</span>
+            <span>💻 Online via Zoom</span>
+          </div>
+
+          <div class="v3-hero__cta-group">
+            <a href="#ingressos" class="v3-btn-primary">Ver opções de ingresso</a>
+            <p class="v3-hero__price-hint">
+              A partir de <strong>{PRICE_BASICO}</strong> · Garantia de 7 dias
             </p>
-            <a href="#ingressos" class="evidence-cta" style="color: var(--case-red); border-color: var(--case-red);">Selecionar ingresso</a>
-          </article>
+          </div>
+        </div>
 
-          <article class="evidence-item" style="border-top-color: var(--case-line);">
-            <span>Adesão</span>
-            <h3>Mais de <mark style="background: rgba(227, 75, 63, 0.15); color: #fff;">45% abandonam</mark> GLP-1 no primeiro ano.</h3>
-            <p>Efeitos gastrointestinais severos, perda de massa magra e falta de estratégia nutricional integrada pesam no abandono.</p>
-          </article>
-
-          <article class="evidence-item" style="border-top-color: var(--case-line);">
-            <span>Projeções 2030</span>
-            <h3><mark style="background: rgba(227, 75, 63, 0.15); color: #fff;">68% dos brasileiros</mark> estarão com excesso de peso.</h3>
-            <p>Não é nicho. O avanço do sobrepeso exige condutas clínicas modernas. Tratar emagrecimento apenas calculando déficit calórico faliu.</p>
-          </article>
+        <div class="v3-hero__visual">
+          <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" class="v3-hero__speaker-img" />
+          <div class="v3-hero__speaker-badge"><strong>Ney Felipe</strong> · 19 anos de clínica</div>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         03 / ANTES DA IMERSÃO (PUbMED CHAOS)
+         SOCIAL PROOF STRIP
          ══════════════════════════════════════ -->
-    <section class="case-overload">
-      <div class="case-shell overload-grid">
-        <div class="overload-copy">
-          <div class="case-section-mark" style="color: var(--case-red);">03 / antes da imersão</div>
-          <h2>Você já perdeu tempo demais tentando montar esse raciocínio sozinho.</h2>
-          <p>
-            Uma aba com artigo. Outra com diretriz. Um post salvo no Instagram. Um print no WhatsApp.
-            No fim, você estudou muito, mas ainda precisa transformar tudo isso em conduta para o paciente real.
-          </p>
-          <p class="overload-callout" style="color: var(--case-red); background: rgba(227, 75, 63, 0.08); border-left-color: var(--case-red);">
-            Isso pode ser organizado em um dia de imersão comigo.
-          </p>
+    <section class="v3-proof-strip">
+      <div class="v3-wrap v3-proof-strip__grid">
+        <div class="v3-proof-stat">
+          <span class="v3-proof-stat__number">70.1%</span>
+          <span class="v3-proof-stat__label">superou as expectativas</span>
+        </div>
+        <div class="v3-proof-stat">
+          <span class="v3-proof-stat__number">99.4%</span>
+          <span class="v3-proof-stat__label">avaliação positiva</span>
+        </div>
+        <div class="v3-proof-stat">
+          <span class="v3-proof-stat__number">174</span>
+          <span class="v3-proof-stat__label">alunos avaliaram</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         O PROBLEMA
+         ══════════════════════════════════════ -->
+    <section class="v3-section" id="problema">
+      <div class="v3-wrap">
+        <h2 class="v3-section__title">Você se sente seguro para tratar um paciente com sobrepeso?</h2>
+        <p class="v3-section__sub">Com certeza você já enfrentou situações como essas no consultório:</p>
+
+        <div class="v3-problem-grid">
+          <div class="v3-problem-item">Paciente não adere ao plano alimentar e você não sabe por quê.</div>
+          <div class="v3-problem-item">Insegurança para conduzir a consulta além das calorias.</div>
+          <div class="v3-problem-item">Desatualizado sobre canetas emagrecedoras (GLP-1) e compostos bioativos.</div>
+          <div class="v3-problem-item">Dificuldade para manejar pacientes pós-medicação sem recaída.</div>
+          <div class="v3-problem-item">Não sabe como periodizar o acompanhamento corretamente.</div>
+          <div class="v3-problem-item">Falta de ferramentas práticas para a consulta de emagrecimento.</div>
         </div>
 
-        <div class="browser-chaos" aria-label="Representação visual de abas, artigos e posts salvos">
-          <div class="browser-window browser-window--main" style="border-color: var(--case-line);">
-            <div class="browser-tabs" style="border-bottom-color: var(--case-line);">
-              <span style="border-right-color: var(--case-line); color: var(--case-red);">PubMed</span>
-              <span style="border-right-color: var(--case-line);">GLP-1</span>
-              <span style="border-right-color: var(--case-line);">proteína</span>
-              <span>diretriz</span>
+        <blockquote class="v3-quote">
+          "Embora o déficit calórico seja a condição <em>sine qua non</em> para emagrecer, <strong>a nutrição não se resume a uma simples calculoterapia.</strong>"
+          <cite>— Ney Felipe</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         MANCHETES / MERCADO
+         ══════════════════════════════════════ -->
+    <section class="v3-section">
+      <div class="v3-wrap">
+        <h2 class="v3-section__title">O mercado mudou. Quem não se atualizar, ficará para trás.</h2>
+        <p class="v3-section__sub">As canetas emagrecedoras e a nova realidade da obesidade abriram uma oportunidade sem precedentes para nutricionistas que dominam a clínica avançada:</p>
+
+        <div class="v3-market-grid">
+          <div class="v3-market-card">
+            <div class="v3-market-card__source">Google Trends & Levantamento Global</div>
+            <h3 class="v3-market-card__title">
+              Brasil ocupa a <mark>2ª posição mundial nas buscas por Ozempic e Mounjaro</mark> na internet.
+            </h3>
+            <p class="v3-market-card__desc">A procura massiva por canetas emagrecedoras movimentou mais de R$ 10 bilhões no mercado nacional.</p>
+          </div>
+
+          <div class="v3-market-card">
+            <div class="v3-market-card__source">Estudos de Mundo Real (GLP-1)</div>
+            <h3 class="v3-market-card__title">
+              Mais de <mark>45% dos pacientes abandonam o uso de canetas de GLP-1</mark> no primeiro ano.
+            </h3>
+            <p class="v3-market-card__desc">Efeitos gastrointestinais severos e perda de massa magra são os principais motivos de abandono.</p>
+          </div>
+
+          <div class="v3-market-card">
+            <div class="v3-market-card__source">Organização Mundial da Saúde</div>
+            <h3 class="v3-market-card__title">
+              Projeções alertam que até 2030, <mark>68% dos brasileiros estarão com excesso de peso</mark>.
+            </h3>
+            <p class="v3-market-card__desc">Tratar emagrecimento apenas calculando déficit calórico básico faliu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         POR QUE UMA IMERSÃO
+         ══════════════════════════════════════ -->
+    <section class="v3-section">
+      <div class="v3-wrap">
+        <h2 class="v3-section__title">Por que uma imersão de 1 dia muda sua prática clínica?</h2>
+        <p class="v3-section__sub">Não é mais um curso de teoria. É um dia inteiro de imersão aplicada, com casos clínicos reais e os protocolos que o Ney usa depois de 19 anos de consultório.</p>
+
+        <div class="v3-mechanism-grid">
+          <div class="v3-mechanism-card">
+            <div class="v3-mechanism-card__num">01</div>
+            <h3>Imersão, não curso</h3>
+            <p>9h de conteúdo intenso com profundidade real — não aulas gravadas que você esquece na semana seguinte.</p>
+          </div>
+          <div class="v3-mechanism-card">
+            <div class="v3-mechanism-card__num">02</div>
+            <h3>Prática clínica aplicada</h3>
+            <p>Cada bloco termina com como aplicar amanhã na consulta — da conduta ao manejo de expectativas do paciente.</p>
+          </div>
+          <div class="v3-mechanism-card">
+            <div class="v3-mechanism-card__num">03</div>
+            <h3>Ciência atualizada</h3>
+            <p>GLP-1, canetas emagrecedoras, compostos bioativos e neurofisiologia do comportamento — o que a literatura mais recente comprova.</p>
+          </div>
+          <div class="v3-mechanism-card">
+            <div class="v3-mechanism-card__num">04</div>
+            <h3>Especialistas de alto nível</h3>
+            <p>Ney Felipe + Jéssica Wszolek — dois especialistas com vivência real nos temas que mais impactam o tratamento do sobrepeso hoje.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PALESTRANTES
+         ══════════════════════════════════════ -->
+    <section class="v3-section" id="time">
+      <div class="v3-wrap">
+        <h2 class="v3-section__title">Quem estará no palco virtual?</h2>
+        <p class="v3-section__sub">Aprenda com quem está no campo de batalha clínico diariamente.</p>
+
+        <div class="v3-speakers-grid">
+          <div class="v3-speaker-card">
+            <img src="https://nutrineyfelipe.com/wp-content/uploads/2024/06/ney-felipe-nutricionista.png" alt="Ney Felipe" class="v3-speaker-card__photo" />
+            <div class="v3-speaker-card__info">
+              <h3>Ney Felipe</h3>
+              <span class="v3-speaker-card__tag">Nutricionista · Mestre em Biol. Molecular</span>
+              <p>19 anos de consultório clínico, pioneiro da Nutrição Funcional Esportiva no Brasil e fundador da Nutrição Avançada.</p>
             </div>
-            <div class="browser-search" style="border-bottom-color: var(--case-line);">semaglutide nutrition lean mass clinical practice...</div>
-            <div class="article-lines">
-              <i></i><i></i><i></i><i></i>
+          </div>
+
+          <div class="v3-speaker-card">
+            <img src="/images/jessica.webp" alt="Jéssica Wszolek" class="v3-speaker-card__photo" />
+            <div class="v3-speaker-card__info">
+              <h3>Jéssica Wszolek</h3>
+              <span class="v3-speaker-card__tag">Professora Convidada</span>
+              <p>Referência nacional em manejo dietético integrado ao uso de análogos de GLP-1 e modulação do emagrecimento prático.</p>
+              <a href="https://www.youtube.com/shorts/vPnW2rWVQHY" target="_blank" class="v3-btn-secondary btn-ver-chamada">🎥 Ver chamada</a>
             </div>
           </div>
-          <div class="browser-window browser-window--post" style="border-color: rgba(227, 75, 63, 0.35); background: #1a0808;">
-            <span class="post-tag" style="background: var(--case-red); color: #140202;">post salvo</span>
-            <strong>"5 dicas para paciente em uso de caneta"</strong>
-            <small>parece simples, mas não fecha a conduta</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CRONOGRAMA
+         ══════════════════════════════════════ -->
+    <section class="v3-section" id="cronograma">
+      <div class="v3-wrap">
+        <h2 class="v3-section__title">Cronograma da Imersão</h2>
+        <p class="v3-section__sub">Ambos os blocos do dia seguirão essa divisão de horários:</p>
+
+        <div class="v3-schedule-list">
+          <div class="v3-schedule-item">
+            <span class="v3-schedule-time">09h30</span>
+            <div class="v3-schedule-desc">
+              <h3>Início do Evento</h3>
+              <p>Boas-vindas e abertura da transmissão ao vivo via Zoom.</p>
+            </div>
           </div>
-          <div class="browser-window browser-window--note" style="border-color: var(--case-line);">
-            <strong>Prontuário</strong>
-            <span>Náusea + baixa proteína + treino fraco</span>
-            <span>Como ajustar sem piorar sintomas?</span>
+          <div class="v3-schedule-item">
+            <span class="v3-schedule-time">12h00</span>
+            <div class="v3-schedule-desc">
+              <h3>Intervalo para Almoço</h3>
+              <p>Momento de pausa para almoço e descanso.</p>
+            </div>
+          </div>
+          <div class="v3-schedule-item">
+            <span class="v3-schedule-time">13h30</span>
+            <div class="v3-schedule-desc">
+              <h3>Retorno das Palestras</h3>
+              <p>Reinício dos blocos técnicos de conteúdo prático.</p>
+            </div>
+          </div>
+          <div class="v3-schedule-item">
+            <span class="v3-schedule-time">17h30</span>
+            <div class="v3-schedule-desc">
+              <h3>Encerramento das Atividades*</h3>
+              <p>*Pode encerrar mais tarde caso os participantes peçam aprofundamento.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         04 / SALA DE AULA (CONTEÚDO E CRONOGRAMA)
+         O QUE VOCÊ VAI APRENDER
          ══════════════════════════════════════ -->
-    <section class="case-shell case-method" id="aula">
-      <div class="case-section-mark" style="color: var(--case-red);">04 / sala de aula</div>
-      <div class="case-method__headline">
-        <h2>O que você vai aprender na Imersão</h2>
-        <p>O dia foi organizado para transformar conteúdo técnico em conduta: avaliação, estratégia, prescrição e acompanhamento.</p>
-      </div>
+    <section class="v3-section" id="conteudo">
+      <div class="v3-wrap">
+        <h2 class="v3-section__title">O Que Você Vai Aprender</h2>
+        <p class="v3-section__sub">Todo o raciocínio clínico e as condutas de consultório estruturadas:</p>
 
-      <div class="lecture-map">
-        <article style="border-top-color: var(--case-red);">
-          <span style="color: var(--case-red);">Bloco Ney</span>
-          <h3>Períodos críticos</h3>
-          <p>Como conduzir adesão, platô e reganho de peso sem reduzir o acompanhamento ao déficit calórico.</p>
-        </article>
-        <article style="border-top-color: var(--case-line);">
-          <span style="color: var(--case-red);">Bloco Ney</span>
-          <h3>Alvos moleculares</h3>
-          <p>Quais prioridades fisiológicas entram na dietoterapia para emagrecimento e como organizar a proposta terapêutica.</p>
-        </article>
-        <article style="border-top-color: var(--case-line);">
-          <span style="color: var(--case-red);">Bloco Jéssica</span>
-          <h3>GLP-1 e massa magra</h3>
-          <p>Como ajustar proteína, suplementação, sintomas gastrointestinais e monitoramento clínico quando o apetite despenca.</p>
-        </article>
-        <article style="border-top-color: var(--case-line);">
-          <span style="color: var(--case-red);">Conduta integrada</span>
-          <h3>Bioativos e mediterrânea</h3>
-          <p>Como aplicar alimentos funcionais, compostos bioativos e dieta mediterrânea de forma prática e individualizada.</p>
-        </article>
-      </div>
-
-      <div class="case-schedule" aria-label="Cronograma" style="border-top-color: var(--case-line); border-bottom-color: var(--case-line);">
-        <div><time style="color: var(--case-red);">09h30</time><span>Abertura e raciocínio inicial (Zoom ao vivo)</span></div>
-        <div style="border-left-color: var(--case-line);"><time style="color: var(--case-red);">12h00</time><span>Intervalo de almoço</span></div>
-        <div style="border-left-color: var(--case-line);"><time style="color: var(--case-red);">13h30</time><span>Blocos técnicos e estudos de casos</span></div>
-        <div style="border-left-color: var(--case-line);"><time style="color: var(--case-red);">17h30</time><span>Encerramento previsto</span></div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         05 / PROVA REAL
-         ══════════════════════════════════════ -->
-    <section class="case-proof">
-      <div class="case-shell proof-grid">
-        <div class="case-section-mark" style="color: var(--case-red);">05 / prova real</div>
-        <div class="proof-copy">
-          <h2>Quem participou saiu com mais clareza para atender.</h2>
-          <p>
-            A edição anterior deixou um sinal importante: o valor percebido veio da aplicação.
-            Nutricionistas relataram mais segurança para raciocinar, explicar e conduzir o paciente.
-          </p>
-        </div>
-
-        <div class="proof-wall">
-          <div class="screenshot-card" data-zoom-img="/images/depoimentos/Screenshot_1.png" style="cursor: pointer;">
-            <img src="/images/depoimentos/Screenshot_1.png" alt="Depoimento real de participante" style="border: 1px solid var(--case-line); transition: transform 0.2s;" />
+        <div class="v3-content-grid">
+          <div class="v3-content-column">
+            <div class="v3-content-column__speaker">Conduta Clínica & Emagrecimento</div>
+            <div class="v3-content-column__name">Prof. Ney Felipe</div>
+            <ul class="v3-content-list">
+              <li>Como conduzir o paciente durante os períodos críticos do emagrecimento (adesão, platô e reganho).</li>
+              <li>Os alvos moleculares que o nutricionista precisa priorizar no acompanhamento nutricional.</li>
+              <li>Como parar de tratar emagrecimento apenas como "déficit calórico".</li>
+              <li>Como montar uma proposta terapêutica que vai além das calorias.</li>
+              <li>Como aplicar alimentos funcionais e compostos bioativos para emagrecimento.</li>
+              <li>Como aplicar a dieta mediterrânea no emagrecimento de forma prática e individualizada.</li>
+              <li>Estudo de caso: como desenhar uma proposta terapêutica passo a passo.</li>
+              <li>O Método Nutrição Avançada baseado em evidências para todas as fases do emagrecimento.</li>
+            </ul>
           </div>
-          <div class="screenshot-card" data-zoom-img="/images/depoimentos/Screenshot_3.png" style="cursor: pointer;">
-            <img src="/images/depoimentos/Screenshot_3.png" alt="Depoimento real de participante" style="border: 1px solid var(--case-line); transition: transform 0.2s;" />
-          </div>
-          <div class="screenshot-card" data-zoom-img="/images/depoimentos/Screenshot_14.png" style="cursor: pointer;">
-            <img src="/images/depoimentos/Screenshot_14.png" alt="Depoimento real de participante" style="border: 1px solid var(--case-line); transition: transform 0.2s;" />
+          <div class="v3-content-column">
+            <div class="v3-content-column__speaker">Manejo Prático de GLP-1</div>
+            <div class="v3-content-column__name">Profa. Jéssica Wszolek</div>
+            <ul class="v3-content-list">
+              <li>Por que as canetas emagrecedoras tornam o nutricionista ainda mais indispensável.</li>
+              <li>O erro silencioso que faz o paciente perder massa magra — e como evitar na prática clínica.</li>
+              <li>Como ajustar a dieta quando o apetite simplesmente desaparece com GLP-1.</li>
+              <li>O que NUNCA ignorar em um paciente que usa GLP-1 para evitar fadiga e déficit proteico.</li>
+              <li>Por que o desmame da medicação começa muito antes da retirada da caneta.</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         05.1 / MID CTA
+         DEPOIMENTOS
          ══════════════════════════════════════ -->
-    <section class="case-mid-cta">
-      <div class="case-shell case-mid-cta__grid">
-        <div class="case-mid-cta__copy">
-          <div class="case-section-mark" style="color: var(--case-red);">05.1 / garantir vaga</div>
-          <h2>Se a decisão já faz sentido, aqui está o lote que está valendo agora.</h2>
-          <p>
-            Você não precisa esperar chegar no final da página para travar esse preço.
-            O lote zero ainda está ativo, com garantia de 7 dias e acesso imediato à confirmação da vaga.
-          </p>
+    <section class="v3-section">
+      <div class="v3-wrap">
+        <h2 class="v3-section__title">Resultados e Avaliação da Última Edição</h2>
+        <p class="v3-section__sub">Veja a opinião real de quem participou da edição anterior:</p>
+
+        <div class="v3-testimonials-grid">
+          <div class="v3-testimonial-card" data-zoom-img="/images/depoimentos/Screenshot_1.png">
+            <img src="/images/depoimentos/Screenshot_1.png" alt="Depoimento de participante" loading="lazy" />
+          </div>
+          <div class="v3-testimonial-card" data-zoom-img="/images/depoimentos/Screenshot_3.png">
+            <img src="/images/depoimentos/Screenshot_3.png" alt="Depoimento de participante" loading="lazy" />
+          </div>
+          <div class="v3-testimonial-card" data-zoom-img="/images/depoimentos/Screenshot_14.png">
+            <img src="/images/depoimentos/Screenshot_14.png" alt="Depoimento de participante" loading="lazy" />
+          </div>
+          <div class="v3-testimonial-card" data-zoom-img="/images/depoimentos/Screenshot_23.png">
+            <img src="/images/depoimentos/Screenshot_23.png" alt="Depoimento de participante" loading="lazy" />
+          </div>
+        </div>
+        <p class="v3-testimonials-footer">Mensagens reais de quem participou da última edição da Imersão.</p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         INGRESSOS
+         ══════════════════════════════════════ -->
+    <section class="v3-section" id="ingressos">
+      <div class="v3-wrap">
+        <h2 class="v3-section__title">Ingresso Básico vs Ingresso VIP</h2>
+        <p class="v3-section__sub">Lote Zero ativo por tempo limitado. Escolha a melhor opção para a sua carreira.</p>
+
+        <div class="v3-tickets-grid">
+          <!-- Básico -->
+          <div class="v3-ticket">
+            <span class="v3-ticket__type">Básico</span>
+            <h3>Ingresso ao vivo</h3>
+            <ul class="v3-ticket__features">
+              <li>Acesso ao dia de Imersão ao vivo via Zoom</li>
+              <li>8 horas de conteúdo intenso</li>
+              <li>Grupo exclusivo de participantes</li>
+              <li>Materiais compartilhados na imersão</li>
+              <li>Mini Curso Fundamentos do Emagrecimento</li>
+            </ul>
+            <div class="v3-ticket__divider"></div>
+            <p class="v3-ticket__old-price">De R$ 97,00</p>
+            <p class="v3-ticket__price">{PRICE_BASICO}</p>
+            <button class="v3-ticket__buy v3-ticket__buy--basic" data-form="normal">Comprar ingresso básico</button>
+          </div>
+
+          <!-- VIP -->
+          <div class="v3-ticket v3-ticket--vip">
+            <div class="v3-ticket__badge">Recomendado</div>
+            <span class="v3-ticket__type">VIP</span>
+            <h3>Acesso completo</h3>
+            
+            <details class="v3-ticket-detail">
+              <summary>Tudo do básico + <span>ver o que é</span></summary>
+              <p>Evento ao vivo, grupo do evento, materiais complementares extras numa plataforma de conteúdos.</p>
+            </details>
+
+            <div class="v3-ticket-detail--static">
+              🎬 Gravação do evento <span class="v3-tag-year">POR 1 ANO</span>
+            </div>
+
+            <details class="v3-ticket-detail">
+              <summary>Certificado de 8h <span>ver benefício</span></summary>
+              <p>Para contabilizar horas na faculdade ou sinalizar ao paciente que você está em constante evolução.</p>
+            </details>
+
+            <details class="v3-ticket-detail">
+              <summary>E-book Tópicos Avançados <span>R$ 99</span></summary>
+              <p>Nutricosméticos, crononutrição e biogênese mitocondrial com ligação entre teoria e prática clínica.</p>
+            </details>
+
+            <details class="v3-ticket-detail">
+              <summary>Ebook "Me Formei, e agora?" <span>R$ 59</span></summary>
+              <p>Respostas para precificação, retorno, fidelização, sublocação e mais dúvidas de recém-formados.</p>
+            </details>
+
+            <details class="v3-ticket-detail">
+              <summary>Ebook Desaprendendo a Dieta <span>R$ 39</span></summary>
+              <p>Cartilha para o paciente sair da mentalidade de dieta. Educação nutricional verdadeira.</p>
+            </details>
+
+            <details class="v3-ticket-detail">
+              <summary>Ressaca do Evento (Extra) <span>ver benefício</span></summary>
+              <p>Encontro extra no Zoom para recapitular conteúdo e tirar dúvidas pós-imersão.</p>
+            </details>
+
+            <details class="v3-ticket-detail">
+              <summary>Cashback integral <span>ver como funciona</span></summary>
+              <p>O valor investido no VIP volta como desconto na Formação Nutrição Avançada ou na Pós-Graduação.</p>
+            </details>
+
+            <div class="v3-ticket__divider"></div>
+            <p class="v3-ticket__old-price">De R$ 297,00</p>
+            <p class="v3-ticket__price">{PRICE_VIP_PARCELADO}</p>
+            <p class="v3-ticket__price-alt">ou {PRICE_VIP_AVISTA} à vista</p>
+            <button class="v3-ticket__buy v3-ticket__buy--vip" data-form="vip">Comprar ingresso VIP</button>
+          </div>
         </div>
 
-        <div class="case-mid-cta__card">
-          <div class="case-hero__ticket" aria-label="Ingresso lote zero" style="border-color: rgba(227, 75, 63, 0.55); background: linear-gradient(135deg, rgba(227, 75, 63, 0.13), transparent 44%), #130303; box-shadow: 10px 10px 0 rgba(227, 75, 63, 0.11);">
-            <span class="case-hero__lot" style="background: var(--case-red); color: #140202;">Lote zero</span>
-            <p>De <s>R$ 97,00</s> por apenas</p>
-            <strong>{PRICE_BASICO}</strong>
-            <a href="#ingressos" class="case-hero__buy" style="background: var(--case-red); color: #140202;">Garantir minha vaga! &gt;</a>
-            <small>Garantia incondicional de 7 dias · Sem burocracia</small>
-          </div>
+        <div class="v3-guarantee">
+          <strong>🛡 Sua compra está protegida pela Garantia de 7 dias</strong>
+          <p>Você pode garantir sua vaga, assistir à imersão e, se sentir que o conteúdo não é prático ou aplicável, basta enviar um e-mail para receber 100% de volta. Sem burocracia.</p>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         06 / INGRESSOS / COMPARAÇÃO
+         FAQ
          ══════════════════════════════════════ -->
-    <section class="case-shell case-tickets" id="ingressos">
-      <div class="case-section-mark" style="color: var(--case-red);">06 / acesso</div>
-      <div class="ticket-intro">
-        <h2>Escolha seu formato de ingresso</h2>
-      </div>
-
-      <div class="ticket-board">
-        <!-- BÁSICO -->
-        <article class="ticket ticket--basic" style="border-color: var(--case-line); background: #0c0505;">
-          <div class="ticket__edge" style="background: var(--case-line); color: var(--case-muted);">Básico</div>
-          <h3>Ingresso ao vivo</h3>
-          <p class="ticket__old">De R$ 97,00 por</p>
-          <p class="ticket__price">{PRICE_BASICO}</p>
-          <ul>
-            <li>Acesso ao dia de imersão ao vivo via Zoom</li>
-            <li>Grupo exclusivo de participantes</li>
-            <li>Materiais compartilhados na aula</li>
-            <li>Mini Curso Fundamentos do Emagrecimento</li>
-          </ul>
-          <a href="#" data-form="normal" class="ticket__button" style="border-color: var(--case-line); color: #fff; background: transparent;">Comprar básico</a>
-        </article>
-
-        <!-- VIP -->
-        <article class="ticket ticket--vip" style="border-color: rgba(227, 75, 63, 0.55); background: linear-gradient(135deg, rgba(227, 75, 63, 0.08), transparent 45%), #130303; box-shadow: 10px 10px 0 rgba(227, 75, 63, 0.09);">
-          <div class="ticket__edge" style="background: var(--case-red); color: #140202;">VIP</div>
-          <h3>Acesso completo</h3>
-          <p class="ticket__old">De R$ 297,00 por</p>
-          <p class="ticket__price">{PRICE_VIP_PARCELADO}</p>
-          <p class="ticket__cash">ou {PRICE_VIP_AVISTA} à vista</p>
-          <div class="ticket-details">
-            <details class="ticket-feature">
-              <summary>&gt; Tudo do básico + <span>ver o que é</span></summary>
-              <p>Evento ao vivo, grupo do evento, materiais compartilhados e base para acompanhar a imersão com aplicação imediata.</p>
-            </details>
-            <details class="ticket-feature ticket-feature--static" open>
-              <summary>Gravação do evento <span style="background: var(--case-red); color: #140202;">por 1 ano</span></summary>
-            </details>
-            <details class="ticket-feature">
-              <summary>&gt; Certificado de 8h <span>ver benefício</span></summary>
-              <p>Para contabilizar horas na faculdade ou sinalizar ao paciente que sua conduta continua em evolução.</p>
-            </details>
-            <details class="ticket-feature">
-              <summary>&gt; E-book Tópicos Avançados <span style="color: var(--case-red); font-weight: 700;">(R$ 99)</span></summary>
-              <p>Nutricosméticos, crononutrição e biogênese mitocondrial com ligação entre teoria, prescrição e prática.</p>
-            </details>
-            <details class="ticket-feature">
-              <summary>&gt; Ebook "Me Formei, e agora?" <span style="color: var(--case-red); font-weight: 700;">(R$ 59)</span></summary>
-              <p>Respostas para precificação, retorno, fidelização, sublocação de sala e outras dúvidas da rotina profissional.</p>
-            </details>
-            <details class="ticket-feature">
-              <summary>&gt; Ebook Desaprendendo a Dieta <span style="color: var(--case-red); font-weight: 700;">(R$ 39)</span></summary>
-              <p>Material de educação nutricional para o paciente sair da dependência de mito, regra rasa e mentalidade de dieta.</p>
-            </details>
-            <details class="ticket-feature">
-              <summary>&gt; Ressaca do Evento <span>ver benefício</span></summary>
-              <p>Encontro extra no Zoom para revisar a aula, recapitular os pontos principais e abrir espaço para dúvidas pós-imersão.</p>
-            </details>
-            <details class="ticket-feature">
-              <summary>&gt; Cashback integral <span>ver como funciona</span></summary>
-              <p>O valor investido no VIP volta como desconto se você entrar depois na Formação Nutrição Avançada ou na Pós-Graduação.</p>
-            </details>
-          </div>
-          <a href="#" data-form="vip" class="ticket__button" style="background: var(--case-red); color: #140202;">Comprar VIP</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         FAQ / ACCORDION CLEAN
-         ══════════════════════════════════════ -->
-    <section class="case-faq">
-      <div class="case-shell faq-grid">
-        <h2>Perguntas frequentes</h2>
-        <div class="faq-list">
-          <details style="border-bottom-color: var(--case-line);">
-            <summary style="color: #fff;">Para quem é essa imersão?</summary>
-            <p style="color: var(--case-muted);">Nutricionistas formados e estudantes que querem atender emagrecimento com mais raciocínio clínico, especialmente em casos com GLP-1, platô, adesão e reganho.</p>
+    <section class="v3-section v3-section--no-border">
+      <div class="v3-wrap">
+        <h2 class="v3-section__title">Perguntas frequentes</h2>
+        <div class="v3-faq-list">
+          <details class="v3-faq-item">
+            <summary>Para quem é essa imersão?</summary>
+            <p>Para nutricionistas formados e estudantes de nutrição que atendem pacientes com sobrepeso e querem se atualizar com GLP-1, canetas emagrecedoras e prática clínica avançada.</p>
           </details>
-          <details style="border-bottom-color: var(--case-line);">
-            <summary style="color: #fff;">Vai ficar gravado?</summary>
-            <p style="color: var(--case-muted);">O ingresso VIP dá acesso completo às gravações por 1 ano. O básico é para acompanhar ao vivo.</p>
+          <details class="v3-faq-item">
+            <summary>Vai ficar gravado?</summary>
+            <p>A imersão acontece ao vivo no dia 01 de Agosto das 9h às 18h. O Ingresso VIP dá acesso completo às gravações por 1 ano.</p>
           </details>
-          <details style="border-bottom-color: var(--case-line);">
-            <summary style="color: #fff;">Tem garantia?</summary>
-            <p style="color: var(--case-muted);">Sim. Você tem 7 dias de garantia incondicional, sem burocracia.</p>
+          <details class="v3-faq-item">
+            <summary>E se eu não gostar? Tem reembolso?</summary>
+            <p>Sim. Você tem 7 dias de garantia incondicional. Devolvemos 100% do valor sem questionamentos.</p>
           </details>
-          <details style="border-bottom-color: var(--case-line);">
-            <summary style="color: #fff;">Como funciona o Cashback?</summary>
-            <p style="color: var(--case-muted);">O valor integral investido no Ingresso VIP (R$ 147) é revertido em desconto ao se matricular na Formação completa de Nutrição Avançada ou na Pós-Graduação Oficial.</p>
+          <details class="v3-faq-item">
+            <summary>Qual é o nível de profundidade?</summary>
+            <p>Conteúdo focado em clínica aplicada. Você sai com protocolos e condutas que dá para usar na próxima consulta.</p>
+          </details>
+          <details class="v3-faq-item">
+            <summary>Como funciona o Cashback do VIP?</summary>
+            <p>Ao adquirir o ingresso VIP (R$ 147), você recebe 100% do valor como desconto ao se matricular na Formação Nutrição Avançada ou na Pós-Graduação.</p>
           </details>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         FINAL CTA
+         CTA FINAL
          ══════════════════════════════════════ -->
-    <section class="case-final" style="background: linear-gradient(180deg, transparent, rgba(227, 75, 63, 0.08)), #070202; border-top-color: var(--case-line);">
-      <div class="case-shell">
-        <p style="color: var(--case-red); font-weight: 700;">01 de Agosto · Online via Zoom · Lote zero ativo</p>
-        <h2>A próxima consulta de emagrecimento pode ter mais raciocínio e menos improviso.</h2>
-        <a href="#ingressos" class="case-action case-action--primary" style="background: var(--case-red); color: #140202; border-color: var(--case-red); box-shadow: 8px 8px 0 #381414;">Escolher ingresso</a>
+    <section class="v3-final-cta">
+      <div class="v3-wrap">
+        <h2 class="v3-final-cta__headline">Sua próxima consulta de emagrecimento pode ser diferente.</h2>
+        <p class="v3-final-cta__sub">Garanta seu ingresso no Lote Zero antes que o preço suba.</p>
+        <a href="#ingressos" class="v3-btn-primary">Escolher meu ingresso</a>
+        <p class="v3-final-cta__security">Garantia de 7 dias · Pagamento seguro · Acesso imediato</p>
       </div>
     </section>
 
-  </main>
+  </div>
 
   <FormModal />
 
-  <!-- Lightbox Modal Container for screenshots zoom -->
+  <!-- Lightbox Modal -->
   <div id="lightbox-modal" class="lightbox-overlay" style="display:none;">
     <button class="lightbox-close" id="lightbox-close" aria-label="Fechar">&times;</button>
     <img id="lightbox-img" src="" alt="Depoimento Ampliado" class="lightbox-content-img" />
   </div>
 
-  <!-- STICKY BOTTOM BAR (FADES IN SMOOTHLY ON SCROLL) -->
+  <!-- Sticky Bottom Bar -->
   <div class="sticky-bottom-bar" id="sticky-bar">
-    <div class="container sticky-bar-inner">
-      <div class="sticky-left">
-        <a href="#ingressos" class="btn-sticky-action">
-          Comprar ingresso | Lote zero 🎟
-        </a>
-      </div>
-      <div class="sticky-right">
-        <div class="sticky-progress-container">
-          <span class="sticky-progress-label">
-            Garantia de 7 dias · Acesso imediato · Ingresso a partir de <strong class="red-price">{PRICE_BASICO}</strong>
-          </span>
-        </div>
+    <div class="sticky-bar-inner">
+      <a href="#ingressos" class="btn-sticky-action">Comprar ingresso | {LOTE} 🎟</a>
+      <span class="sticky-progress-label">
+        Garantia de 7 dias · Ingresso a partir de <strong class="red-price">{PRICE_BASICO}</strong>
+      </span>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div id="video-modal" class="video-modal">
+    <div class="video-modal-content">
+      <button class="video-modal-close" id="close-modal-btn">&times;</button>
+      <div class="video-iframe-container">
+        <iframe id="video-iframe" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 
-  <!-- Lightbox e Sticky Bar Script -->
   <script>
-    // Lightbox Modal Logic for Screenshots
+    // Lightbox
     const lightbox = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
     const lightboxClose = document.getElementById('lightbox-close');
@@ -430,14 +484,10 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
     }
 
     lightboxClose?.addEventListener('click', closeLightbox);
-    lightbox?.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
-    });
+    lightbox?.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-    // STICKY BOTTOM BAR SCROLL LOGIC
+    // Sticky Bar
     const stickyBar = document.getElementById('sticky-bar');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 450) {
@@ -446,6 +496,21 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
         stickyBar?.classList.remove('sticky-bottom-bar--visible');
       }
     });
+
+    // Video Modal
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('video-iframe') as HTMLIFrameElement;
+    const closeBtn = document.getElementById('close-modal-btn');
+    document.querySelectorAll('.btn-ver-chamada').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (iframe) iframe.src = 'https://www.youtube.com/embed/vPnW2rWVQHY?autoplay=1';
+        modal?.classList.add('active');
+      });
+    });
+    const closeModal = () => { modal?.classList.remove('active'); if (iframe) iframe.src = ''; };
+    closeBtn?.addEventListener('click', closeModal);
+    modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
   </script>
 
 </Layout>
