@@ -3,6 +3,7 @@
 **Última Atualização:** 09/07/2026
 
 ## Limpeza de Ruídos e Otimização da Dobra Mobile (V1 a V4) — 09/07/2026
+- **Espaçamento e Prevenção de Overflow Global:** Configurado padding lateral mínimo de `16px` (`!important`) em `.container` e adicionado `overflow-x: hidden` no `html` e `body` dentro de `src/styles/global.css` para viewport mobile. Isso impede que os conteúdos fiquem colados ou espremidos nas bordas laterais e elimina qualquer vazamento horizontal no celular.
 - **Remoção de Badges de IA:** Excluídos eyebrows decorativos (ex: "O Problema", "O Mecanismo", "Palestrantes", "Cronograma", "Conteúdo", "Resultados", "Escolha seu Ingresso", "Dúvidas") em todas as versões (V1 a V4) para remover o aspecto artificial e focar na copy limpa.
 - **Data e Horário Compactos:** Unificada a informação do evento no mobile em uma única linha (`01 Ago 2026 | 9h às 18h | Zoom`), evitando quebras de linha que prejudicam a conversão.
 - **Primeira Dobra sem Fricção:** Removidos selos redundantes como "5ª Edição" e menções prematuras de garantia e opções de Pix/VIP da dobra do Hero.
