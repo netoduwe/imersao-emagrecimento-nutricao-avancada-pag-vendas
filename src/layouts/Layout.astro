@@ -5,9 +5,10 @@ interface Props {
   title: string;
   theme?: 'green' | 'blue';
   hideHeader?: boolean;
+  hideChatbase?: boolean;
 }
 
-const { title, theme = 'green', hideHeader = false } = Astro.props;
+const { title, theme = 'green', hideHeader = false, hideChatbase = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -124,9 +125,11 @@ const { title, theme = 'green', hideHeader = false } = Astro.props;
     <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     <!-- Chatbase Script -->
-    <script is:inline>
-    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="ShXsE03mgHQfu82jgWPoZ";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-    </script>
+    {!hideChatbase && (
+      <script is:inline>
+      (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="ShXsE03mgHQfu82jgWPoZ";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+      </script>
+    )}
   </body>
 </html>
 

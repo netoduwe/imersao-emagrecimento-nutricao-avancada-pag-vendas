@@ -8,7 +8,69 @@ const PRE_SALE_DATE = 'Terça-feira, 14 de Julho de 2026';
 const WHATSAPP_LINK = 'https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4'; // Link VIP Atualizado
 ---
 
-<Layout title={`Pré-Venda | Imersão em Emagrecimento | Nutrição Avançada`} theme="green" hideHeader={true}>
+<Layout title={`Pré-Venda | Imersão em Emagrecimento | Nutrição Avançada`} theme="green" hideHeader={true} hideChatbase={true}>
+  
+  <style is:global>
+    /* Ocultar a urgency-strip verde do topo nesta página específica */
+    .urgency-strip {
+      display: none !important;
+    }
+    
+    /* Chamar muita atenção para o botão de pré-venda (Laranja/Coral vibrante contra o fundo verde/escuro) */
+    .case-hero__buy.lead-trigger-btn, 
+    .case-action.case-action--primary.lead-trigger-btn {
+      background: #ff5a1f !important;
+      color: #ffffff !important;
+      box-shadow: 0px 4px 20px rgba(255, 90, 31, 0.45) !important;
+      border: 1px solid #ff7744 !important;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      transition: all 0.2s ease-in-out !important;
+    }
+    .case-hero__buy.lead-trigger-btn:hover,
+    .case-action.case-action--primary.lead-trigger-btn:hover {
+      background: #ff6c37 !important;
+      transform: translateY(-2px);
+      box-shadow: 0px 6px 24px rgba(255, 90, 31, 0.6) !important;
+    }
+
+    /* Correção do Grid dos Palestrantes para não ter quadrados soltos/estranhos */
+    .case-page #palestrantes .lecture-map {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .case-page #palestrantes .lecture-map article {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 32px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .case-page #palestrantes .lecture-map article h3 {
+      font-size: 20px;
+      margin: 12px 0 8px;
+      color: #fff;
+    }
+    .case-page #palestrantes .lecture-map article p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--case-muted);
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .case-page #palestrantes .lecture-map {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+  </style>
+
   <main class="case-page">
     
     <!-- ══════════════════════════════════════
@@ -30,7 +92,7 @@ const WHATSAPP_LINK = 'https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4'; // Lin
           </p>
 
           <div class="case-hero__actions" style="margin-top: 32px;">
-            <div class="case-hero__ticket" style="border: 2px solid var(--case-green); background: rgba(3, 19, 7, 0.7); max-width: 480px; box-shadow: 0 10px 30px rgba(49, 217, 107, 0.1);">
+            <div class="case-hero__ticket" style="border: 2px solid rgba(255, 255, 255, 0.1); background: rgba(10, 10, 10, 0.8); max-width: 480px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); border-radius: 8px; padding: 24px;">
               <span class="case-hero__lot" style="background: var(--case-green); color: #020703;">GRUPO VIP</span>
               <p style="font-size: 14px; margin-bottom: 8px; color: var(--case-muted);">Vagas limitadas para a pré-venda:</p>
               <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin: 0 0 16px;">Venda liberada em 14/07</h3>
