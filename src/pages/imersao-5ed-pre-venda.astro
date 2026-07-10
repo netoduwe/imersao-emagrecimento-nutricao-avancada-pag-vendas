@@ -5,7 +5,7 @@ import '../styles/imersao-v1-02.css';
 const EVENT_DATE = '01 de Agosto de 2026';
 const EVENT_TIME = '9h às 18h';
 const PRE_SALE_DATE = 'Terça-feira, 14 de Julho de 2026';
-const WHATSAPP_LINK = 'https://chat.whatsapp.com/GzQW3V91456'; // Link padrão/exemplo do grupo VIP
+const WHATSAPP_LINK = 'https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4'; // Link VIP Atualizado
 ---
 
 <Layout title={`Pré-Venda | Imersão em Emagrecimento | Nutrição Avançada`} theme="green" hideHeader={true}>
@@ -34,7 +34,7 @@ const WHATSAPP_LINK = 'https://chat.whatsapp.com/GzQW3V91456'; // Link padrão/e
               <span class="case-hero__lot" style="background: var(--case-green); color: #020703;">GRUPO VIP</span>
               <p style="font-size: 14px; margin-bottom: 8px; color: var(--case-muted);">Vagas limitadas para a pré-venda:</p>
               <h3 style="font-size: 20px; font-weight: 800; color: #fff; margin: 0 0 16px;">Venda liberada em 14/07</h3>
-              <a href={WHATSAPP_LINK} target="_blank" class="case-hero__buy" style="background: var(--case-green); color: #020703; text-align: center; display: block; font-weight: 800;">
+              <a href={WHATSAPP_LINK} target="_blank" class="case-hero__buy lead-trigger-btn" style="background: var(--case-green); color: #020703; text-align: center; display: block; font-weight: 800;">
                 ENTRAR NO GRUPO VIP DO WHATSAPP &gt;
               </a>
               <small style="display: block; margin-top: 10px; color: var(--case-muted);">
@@ -129,11 +129,23 @@ const WHATSAPP_LINK = 'https://chat.whatsapp.com/GzQW3V91456'; // Link padrão/e
           Lançamento oficial VIP: 14 de Julho de 2026
         </p>
         <h2>Não fique de fora do Lote Zero. Entre no grupo VIP do WhatsApp.</h2>
-        <a href={WHATSAPP_LINK} target="_blank" class="case-action case-action--primary" style="background: var(--case-green); color: #020703; border-color: var(--case-green); font-weight: 800; text-decoration: none; padding: 16px 32px; display: inline-block;">
+        <a href={WHATSAPP_LINK} target="_blank" class="case-action case-action--primary lead-trigger-btn" style="background: var(--case-green); color: #020703; border-color: var(--case-green); font-weight: 800; text-decoration: none; padding: 16px 32px; display: inline-block;">
           QUERO ENTRAR NO GRUPO VIP DO WHATSAPP
         </a>
       </div>
     </section>
 
   </main>
+
+  <script>
+    // Evento de pixel de Lead do Facebook disparado antes de abrir o link
+    document.querySelectorAll('.lead-trigger-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (typeof window !== 'undefined' && (window as any).fbq) {
+          (window as any).fbq('track', 'Lead');
+        }
+      });
+    });
+  </script>
+
 </Layout>
