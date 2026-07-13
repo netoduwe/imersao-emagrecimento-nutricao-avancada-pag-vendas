@@ -48,34 +48,13 @@ const WHATSAPP_LINK = 'https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4'; // Lin
       max-width: 100%;
       min-height: 42px;
       padding: 0 16px !important;
-      margin-bottom: 18px !important;
+      margin-bottom: 14px !important;
       white-space: nowrap;
       font-size: 11px !important;
       letter-spacing: 0.08em !important;
       line-height: 1 !important;
     }
 
-    .pre-sale-audience {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0 0 14px;
-      color: #f7c8c2;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    .pre-sale-audience::before {
-      content: '';
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #ff7b6b;
-      flex: 0 0 auto;
-    }
-    
     /* Botão de Ação Laranja Premium - Visual Moderno de Botão Real */
     .case-hero__buy.lead-trigger-btn, 
     .case-action.case-action--primary.lead-trigger-btn {
@@ -153,11 +132,25 @@ const WHATSAPP_LINK = 'https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4'; // Lin
         font-size: 10px !important;
         letter-spacing: 0.06em !important;
         padding: 0 14px !important;
+        min-height: 38px;
+        margin-bottom: 10px !important;
       }
 
-      .pre-sale-audience {
-        font-size: 11px;
-        margin-bottom: 12px;
+      .case-page .pre-sale-hero {
+        padding: 42px 0 52px !important;
+      }
+
+      .case-page .pre-sale-hero h1 {
+        margin-top: 10px;
+        margin-bottom: 16px;
+      }
+
+      .case-page .pre-sale-hero .case-hero__actions {
+        margin-top: 20px !important;
+      }
+
+      .case-page .pre-sale-hero .case-hero__ticket {
+        padding: 20px !important;
       }
     }
   </style>
@@ -172,13 +165,12 @@ const WHATSAPP_LINK = 'https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4'; // Lin
     <!-- ══════════════════════════════════════
          HERO PRE-VENDA
          ══════════════════════════════════════ -->
-    <section class="case-hero" id="pre-venda" style="min-height: auto; padding: 100px 0 80px;">
+    <section class="case-hero pre-sale-hero" id="pre-venda" style="min-height: auto; padding: 100px 0 80px;">
       <div class="case-shell case-hero__grid">
         <div class="case-hero__content">
           <p class="case-kicker pre-sale-kicker" style="background: rgba(49, 217, 107, 0.15); color: var(--case-green); border: 1px solid rgba(49, 217, 107, 0.2); border-radius: 4px;">
             Pré-Venda Exclusiva · Grupo VIP WhatsApp
           </p>
-          <p class="pre-sale-audience">Evento pensado para nutricionistas</p>
           <h1>
             Garanta o menor preço do Lote Zero e bônus exclusivos.
             <span>Abertura na terça-feira, 14/07.</span>
