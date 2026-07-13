@@ -15,6 +15,66 @@ const WHATSAPP_LINK = 'https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4'; // Lin
     .urgency-strip {
       display: none !important;
     }
+
+    .pre-sale-alert {
+      background: #b42318;
+      color: #fff7f5;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .pre-sale-alert__inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pre-sale-alert__inner strong {
+      color: #ffffff;
+      font-weight: 900;
+    }
+
+    .pre-sale-kicker {
+      display: inline-flex !important;
+      align-items: center !important;
+      max-width: 100%;
+      min-height: 42px;
+      padding: 0 16px !important;
+      margin-bottom: 18px !important;
+      white-space: nowrap;
+      font-size: 11px !important;
+      letter-spacing: 0.08em !important;
+      line-height: 1 !important;
+    }
+
+    .pre-sale-audience {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      color: #f7c8c2;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .pre-sale-audience::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #ff7b6b;
+      flex: 0 0 auto;
+    }
     
     /* Botão de Ação Laranja Premium - Visual Moderno de Botão Real */
     .case-hero__buy.lead-trigger-btn, 
@@ -82,10 +142,32 @@ const WHATSAPP_LINK = 'https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4'; // Lin
         grid-template-columns: 1fr;
         gap: 16px;
       }
+
+      .pre-sale-alert__inner {
+        min-height: 34px;
+        font-size: 10px;
+        letter-spacing: 0.03em;
+      }
+
+      .pre-sale-kicker {
+        font-size: 10px !important;
+        letter-spacing: 0.06em !important;
+        padding: 0 14px !important;
+      }
+
+      .pre-sale-audience {
+        font-size: 11px;
+        margin-bottom: 12px;
+      }
     }
   </style>
 
   <main class="case-page">
+    <div class="pre-sale-alert" role="note" aria-label="Aviso de público">
+      <div class="pre-sale-alert__inner">
+        Exclusivo para <strong>&nbsp;nutricionistas</strong>
+      </div>
+    </div>
     
     <!-- ══════════════════════════════════════
          HERO PRE-VENDA
@@ -93,15 +175,16 @@ const WHATSAPP_LINK = 'https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4'; // Lin
     <section class="case-hero" id="pre-venda" style="min-height: auto; padding: 100px 0 80px;">
       <div class="case-shell case-hero__grid">
         <div class="case-hero__content">
-          <p class="case-kicker" style="background: rgba(49, 217, 107, 0.15); color: var(--case-green); border: 1px solid rgba(49, 217, 107, 0.2); padding: 4px 12px; border-radius: 4px; display: inline-block; margin-bottom: 20px;">
-            Pré-Venda Exclusiva · Grupo VIP do WhatsApp
+          <p class="case-kicker pre-sale-kicker" style="background: rgba(49, 217, 107, 0.15); color: var(--case-green); border: 1px solid rgba(49, 217, 107, 0.2); border-radius: 4px;">
+            Pré-Venda Exclusiva · Grupo VIP WhatsApp
           </p>
+          <p class="pre-sale-audience">Evento pensado para nutricionistas</p>
           <h1>
             Garanta o menor preço do Lote Zero e bônus exclusivos.
             <span>Abertura na terça-feira, 14/07.</span>
           </h1>
           <p class="case-lead">
-            A Imersão 5ª Edição vai trazer o manejo seguro de canetas de GLP-1, alvos moleculares e compostos bioativos aplicados na prática de consultório. 
+            Exclusiva para nutricionistas e estudantes de Nutrição, a Imersão 5ª Edição vai trazer o manejo seguro de canetas de GLP-1, alvos moleculares e compostos bioativos aplicados na prática de consultório.
             O link de inscrição com preço promocional exclusivo de pré-venda será enviado <strong>apenas dentro do grupo silencioso de WhatsApp</strong>.
           </p>
 
@@ -214,12 +297,22 @@ const WHATSAPP_LINK = 'https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4'; // Lin
   </main>
 
   <script>
-    // Evento de pixel de Lead do Facebook disparado antes de abrir o link
+    // Evento de pixel de Lead do Facebook disparado antes de redirecionar
     document.querySelectorAll('.lead-trigger-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = e.currentTarget as HTMLAnchorElement;
+        const url = target.href;
+
+        // Dispara o Pixel de Lead se o fbq estiver disponível
         if (typeof window !== 'undefined' && (window as any).fbq) {
           (window as any).fbq('track', 'Lead');
         }
+
+        // Aguarda 150ms para garantir que a chamada de rede do Pixel foi iniciada/concluída
+        setTimeout(() => {
+          window.open(url, '_blank');
+        }, 150);
       });
     });
   </script>
