@@ -1,6 +1,10 @@
 # Memória do Projeto: Imersão Nutrição Avançada (Vendas Astro)
 
-**Última Atualização:** 09/07/2026
+**Última Atualização:** 14/07/2026
+
+## Redirecionamento da Pré-Venda para Vendas V6 — 14/07/2026
+- **Configuração de Redirecionamento:** Adicionado redirecionamento oficial da rota `/imersao-5ed-pre-venda` para `/imersao-5ed-v6` em `astro.config.mjs`.
+- **Desativação de Rota Física:** O arquivo original `src/pages/imersao-5ed-pre-venda.astro` foi renomeado para `src/pages/_imersao-5ed-pre-venda.astro` para evitar colisões de rotas no roteador do Astro e manter o histórico do código fonte intacto no repositório.
 
 ## Limpeza de Ruídos e Otimização da Dobra Mobile (V1 a V4) — 09/07/2026
 - **Espaçamento e Prevenção de Overflow Global:** Configurado padding lateral mínimo de `16px` (`!important`) em `.container` e adicionado `overflow-x: hidden` no `html` e `body` dentro de `src/styles/global.css` para viewport mobile. Isso impede que os conteúdos fiquem colados ou espremidos nas bordas laterais e elimina qualquer vazamento horizontal no celular.
