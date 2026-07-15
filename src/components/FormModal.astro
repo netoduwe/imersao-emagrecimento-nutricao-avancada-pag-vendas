@@ -94,13 +94,26 @@
   const iframe = document.getElementById('modal-iframe') as HTMLIFrameElement;
   const closeBtn = document.getElementById('modal-close');
 
+  function buildTrackedFormUrl(baseUrl: string) {
+    const formUrl = new URL(baseUrl);
+    const currentParams = new URLSearchParams(window.location.search);
+
+    currentParams.forEach((value, key) => {
+      if (value) formUrl.searchParams.set(key, value);
+    });
+
+    return formUrl.toString();
+  }
+
   // Abrir modal
   document.querySelectorAll('[data-form]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const type = (btn as HTMLElement).dataset.form;
-      if (type && FORMS[type]) {
-        iframe.src = FORMS[type];
+      const formUrl = type ? FORMS[type as keyof typeof FORMS] : undefined;
+
+      if (formUrl) {
+        iframe.src = buildTrackedFormUrl(formUrl);
         modal!.style.display = 'flex';
         document.body.style.overflow = 'hidden';
       }
