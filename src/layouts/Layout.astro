@@ -1,5 +1,10 @@
 ---
 import '../styles/global.css';
+import {
+  IMERSAO_5ED_CURRENT_LOT_ID,
+  IMERSAO_5ED_LOTS,
+  type Imersao5edLotId,
+} from '../config/imersao-5ed';
 
 interface Props {
   title: string;
@@ -8,9 +13,19 @@ interface Props {
   hideUrgency?: boolean;
   hideChatbase?: boolean;
   urgencyMessage?: string;
+  urgencyLotId?: Imersao5edLotId;
 }
 
-const { title, theme = 'green', hideHeader = false, hideUrgency = false, hideChatbase = false, urgencyMessage } = Astro.props;
+const {
+  title,
+  theme = 'green',
+  hideHeader = false,
+  hideUrgency = false,
+  hideChatbase = false,
+  urgencyMessage,
+  urgencyLotId = IMERSAO_5ED_CURRENT_LOT_ID,
+} = Astro.props;
+const urgencyLot = IMERSAO_5ED_LOTS[urgencyLotId];
 ---
 
 <!doctype html>
@@ -55,9 +70,15 @@ const { title, theme = 'green', hideHeader = false, hideUrgency = false, hideCha
           <span class="urgency-strip__inner">⚠ {urgencyMessage}</span>
         </div>
       ) : (
-        <div class="urgency-strip" aria-label="Contador de virada do lote">
+        <div
+          class="urgency-strip"
+          aria-label="Contador de virada do lote"
+          data-urgency-lot
+          data-lot-name={urgencyLot.labelUpper}
+          data-lot-end={urgencyLot.endsAt}
+        >
           <span class="urgency-strip__inner">
-            <span class="urgency-strip__badge" id="lote-strip-badge">LOTE 01</span>
+            <span class="urgency-strip__badge" id="lote-strip-badge">{urgencyLot.labelUpper}</span>
             <span class="urgency-strip__divider" aria-hidden="true"></span>
             <span class="urgency-strip__label" id="lote-strip-label">Virada em</span>
             <span class="urgency-strip__timer" id="countdown"></span>
@@ -90,34 +111,22 @@ const { title, theme = 'green', hideHeader = false, hideUrgency = false, hideCha
     </main>
 
     <script>
-      // Datas predefinidas para viradas de lotes (Evento: 01/08/2026)
-      const LAYOUT_LOTES = [
-        { nome: 'LOTE ZERO', inicio: new Date('2026-06-01T00:00:00').getTime(), limite: new Date('2026-07-15T23:59:59').getTime() },
-        { nome: 'LOTE 01', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-21T23:59:59').getTime() },
-        { nome: 'LOTE 02', inicio: new Date('2026-07-21T00:00:00').getTime(), limite: new Date('2026-07-30T23:59:59').getTime() },
-        { nome: 'LOTE 03', inicio: new Date('2026-07-30T00:00:00').getTime(), limite: new Date('2026-08-01T09:00:00').getTime() }
-      ];
-
       function updateLayoutCountdown() {
+        const strip = document.querySelector('[data-urgency-lot]') as HTMLElement | null;
+        if (!strip) return;
+
         const now = new Date().getTime();
-        
-        // Identificar lote ativo
-        let lote = LAYOUT_LOTES[LAYOUT_LOTES.length - 1];
-        for (let i = 0; i < LAYOUT_LOTES.length; i++) {
-          if (now < LAYOUT_LOTES[i].limite) {
-            lote = LAYOUT_LOTES[i];
-            break;
-          }
-        }
+        const lotName = strip.dataset.lotName || 'LOTE ATUAL';
+        const lotEnd = new Date(strip.dataset.lotEnd || '').getTime();
 
         const badge = document.getElementById('lote-strip-badge');
         const label = document.getElementById('lote-strip-label');
         const el = document.getElementById('countdown');
         if (!el) return;
 
-        if (badge) badge.textContent = lote.nome;
+        if (badge) badge.textContent = lotName;
 
-        const diff = lote.limite - now;
+        const diff = lotEnd - now;
         if (diff < 0) {
           if (label) label.textContent = '';
           el.textContent = 'VAGAS LIMITADAS';

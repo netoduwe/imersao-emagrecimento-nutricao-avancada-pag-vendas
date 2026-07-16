@@ -1,16 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModal.astro';
+import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/imersao-v4.css';
 
 // Dados do Evento
 const EVENT_DATE = '01 de Agosto de 2026';
 const EVENT_DATE_SHORT = '01 Ago 2026';
 const EVENT_TIME = 'Das 9h às 18h (Online via Zoom)';
-const LOTE_ZERO = 'Lote zero';
-const PRICE_BASICO = 'R$ 19,90';
-const PRICE_VIP_PARCELADO = '12x de R$ 15,20';
-const PRICE_VIP_AVISTA = 'R$ 147,00';
+const LOTE_ATUAL = IMERSAO_5ED_CURRENT_LOT.label;
+const LOTE_ATUAL_UPPER = IMERSAO_5ED_CURRENT_LOT.labelUpper;
+const PRICE_BASICO = IMERSAO_5ED_CURRENT_LOT.basicPrice;
+const PRICE_BASICO_VALUE = IMERSAO_5ED_CURRENT_LOT.basicPriceValue;
+const PRICE_VIP_PARCELADO = IMERSAO_5ED_PRICING.vipInstallments;
+const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
 ---
 
 <Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="green" hideHeader={true}>
@@ -59,10 +62,10 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
  
           <!-- Price Floating Card com preço na mesma linha para primeira dobra -->
           <div class="hero-v4-price-box">
-            <span class="badge-lote">{LOTE_ZERO}</span>
+            <span class="badge-lote">{LOTE_ATUAL}</span>
             <div class="price-box-row">
               <span class="price-box-old">De <span class="strikethrough">R$ 97,00</span> por apenas</span>
-              <span class="price-box-new"><small>R$</small> 19,90</span>
+              <span class="price-box-new"><small>R$</small> {PRICE_BASICO_VALUE}</span>
             </div>
             
             <a href="#preco" class="btn-v4-shiny">
@@ -88,16 +91,16 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
     <div class="ticker-v4-wrap">
       <div class="ticker-v4-track">
         <div class="ticker-item">
-          <span>LOTE ZERO ATIVO</span><span class="ticker-bullet">•</span>
+          <span>{LOTE_ATUAL_UPPER} ATIVO</span><span class="ticker-bullet">•</span>
           <span>O EVENTO COMEÇA EM BREVE</span><span class="ticker-bullet">•</span>
           <span>GARANTIR VAGA</span><span class="ticker-bullet">•</span>
-          <span>LOTE ZERO ATIVO</span><span class="ticker-bullet">•</span>
+          <span>{LOTE_ATUAL_UPPER} ATIVO</span><span class="ticker-bullet">•</span>
           <span>O EVENTO COMEÇA EM BREVE</span><span class="ticker-bullet">•</span>
           <span>GARANTIR VAGA</span><span class="ticker-bullet">•</span>
-          <span>LOTE ZERO ATIVO</span><span class="ticker-bullet">•</span>
+          <span>{LOTE_ATUAL_UPPER} ATIVO</span><span class="ticker-bullet">•</span>
           <span>O EVENTO COMEÇA EM BREVE</span><span class="ticker-bullet">•</span>
           <span>GARANTIR VAGA</span><span class="ticker-bullet">•</span>
-          <span>LOTE ZERO ATIVO</span><span class="ticker-bullet">•</span>
+          <span>{LOTE_ATUAL_UPPER} ATIVO</span><span class="ticker-bullet">•</span>
           <span>O EVENTO COMEÇA EM BREVE</span><span class="ticker-bullet">•</span>
           <span>GARANTIR VAGA</span>
         </div>
@@ -296,7 +299,7 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
           <div class="price-card-v4">
             <span class="tag-vip">MAIS VANTAGENS</span>
             <h3 class="card-title-v4">Ingresso VIP</h3>
-            <p class="card-subtitle-v4">50% DE DESCONTO NO LOTE ZERO</p>
+            <p class="card-subtitle-v4">OFERTA DO {LOTE_ATUAL_UPPER}</p>
             
             <ul class="price-benefits vip-benefits-v4">
               <li>

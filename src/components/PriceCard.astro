@@ -1,17 +1,28 @@
 ---
+import { IMERSAO_5ED_CURRENT_LOT } from '../config/imersao-5ed';
+
 interface Props {
   variant?: 'green' | 'red';
 }
 
 const { variant = 'green' } = Astro.props;
+const currentLot = IMERSAO_5ED_CURRENT_LOT;
 ---
 
-<div class="price-card-v3" data-price-card data-variant={variant}>
+<div
+  class="price-card-v3"
+  data-price-card
+  data-variant={variant}
+  data-lot-name={currentLot.labelUpper}
+  data-lot-price={currentLot.basicPrice}
+  data-lot-start={currentLot.startsAt}
+  data-lot-end={currentLot.endsAt}
+>
   <div class="pc-top">
-    <div class="pc-badge" style={variant === 'red' ? 'background: #dc2626;' : ''}>🔥 LOTE 01</div>
+    <div class="pc-badge" data-pc-badge style={variant === 'red' ? 'background: #dc2626;' : ''}>🔥 {currentLot.labelUpper}</div>
     <div class="pc-price">
       <span class="pc-label">POR APENAS</span>
-      <span class="pc-value" data-pc-price>R$ 29,90</span>
+      <span class="pc-value" data-pc-price>{currentLot.basicPrice}</span>
     </div>
   </div>
   
@@ -117,44 +128,31 @@ const { variant = 'green' } = Astro.props;
 </style>
 
 <script>
-  // Datas predefinidas para viradas de lotes (Evento: 01/08/2026)
-  const LOTES = [
-    { nome: 'LOTE ZERO', inicio: new Date('2026-06-01T00:00:00').getTime(), limite: new Date('2026-07-15T23:59:59').getTime(), preco: 'R$ 19,90' },
-    { nome: 'LOTE 01', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-21T23:59:59').getTime(), preco: 'R$ 24,90' },
-    { nome: 'LOTE 02', inicio: new Date('2026-07-21T00:00:00').getTime(), limite: new Date('2026-07-30T23:59:59').getTime(), preco: 'R$ 29,90' },
-    { nome: 'LOTE 03', inicio: new Date('2026-07-30T00:00:00').getTime(), limite: new Date('2026-08-01T09:00:00').getTime(), preco: 'R$ 39,90' }
-  ];
-
   function updatePriceCards() {
     const now = new Date().getTime();
-    
-    // Identificar lote ativo
-    let lote = LOTES[LOTES.length - 1];
-    for (let i = 0; i < LOTES.length; i++) {
-      if (now < LOTES[i].limite) {
-        lote = LOTES[i];
-        break;
-      }
-    }
-
-    const totalDuration = lote.limite - lote.inicio;
-    const elapsed = now - lote.inicio;
-    
-    // Porcentagem baseada no tempo (mínimo de 65%, máximo 99%)
-    let percent = 65;
-    if (elapsed > 0 && totalDuration > 0) {
-      const calculatedPct = 65 + (34 * (elapsed / totalDuration));
-      percent = Math.min(Math.max(calculatedPct, 65), 99);
-    }
-    
-    const visualPercent = Math.min(percent, 100);
 
     const cards = document.querySelectorAll('[data-price-card]');
     cards.forEach(card => {
+       const element = card as HTMLElement;
+       const lotName = element.dataset.lotName || 'LOTE ATUAL';
+       const lotPrice = element.dataset.lotPrice || '';
+       const lotStart = new Date(element.dataset.lotStart || '').getTime();
+       const lotEnd = new Date(element.dataset.lotEnd || '').getTime();
+       const totalDuration = lotEnd - lotStart;
+       const elapsed = now - lotStart;
+
+       let percent = 65;
+       if (elapsed > 0 && totalDuration > 0) {
+         const calculatedPct = 65 + (34 * (elapsed / totalDuration));
+         percent = Math.min(Math.max(calculatedPct, 65), 99);
+       }
+
+       const visualPercent = Math.min(percent, 100);
        const fill = card.querySelector('[data-pc-fill]') as HTMLElement;
        const pct = card.querySelector('[data-pc-pct]');
        const rem = card.querySelector('[data-pc-remaining]');
        const price = card.querySelector('[data-pc-price]');
+       const badge = card.querySelector('[data-pc-badge]');
 
        if(fill) {
          fill.style.width = `${Math.max(visualPercent, 5)}%`;
@@ -174,7 +172,7 @@ const { variant = 'green' } = Astro.props;
        if(pct) pct.textContent = `${Math.floor(percent)}% dos ingressos vendidos`;
        
        // Contador regressivo ou virada de lote
-       const diff = lote.limite - now;
+       const diff = lotEnd - now;
        if(rem) {
          if (diff > 0) {
            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -186,7 +184,8 @@ const { variant = 'green' } = Astro.props;
            rem.textContent = `vagas limitadas`;
          }
        }
-       if(price) price.textContent = lote.preco;
+       if(price) price.textContent = lotPrice;
+       if(badge) badge.textContent = `🔥 ${lotName}`;
     });
   }
 

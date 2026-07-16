@@ -1,13 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModalV7.astro';
+import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/imersao-v8.css';
 
 const EVENT_DATE = '01 de Agosto de 2026';
 const EVENT_TIME = '9h às 18h';
-const PRICE_BASIC = 'R$ 24,90';
-const PRICE_VIP_INSTALLMENTS = '12x de R$ 15,20';
-const PRICE_VIP_CASH = 'R$ 147,00';
+const LOTE = IMERSAO_5ED_CURRENT_LOT.label;
+const LOTE_UPPER = IMERSAO_5ED_CURRENT_LOT.labelUpper;
+const PRICE_BASIC = IMERSAO_5ED_CURRENT_LOT.basicPrice;
+const PRICE_VIP_INSTALLMENTS = IMERSAO_5ED_PRICING.vipInstallments;
+const PRICE_VIP_CASH = IMERSAO_5ED_PRICING.vipCash;
 ---
 
 <Layout
@@ -47,8 +50,8 @@ const PRICE_VIP_CASH = 'R$ 147,00';
           Comprar ingresso do lote atual
         </a>
 
-        <div class="lot-status" aria-label="Disponibilidade do lote 01">
-          <div class="lot-status__bar"><span></span><strong>Ingressos do lote 01</strong></div>
+        <div class="lot-status" aria-label={`Disponibilidade do ${LOTE}`}>
+          <div class="lot-status__bar"><span></span><strong>Ingressos do {LOTE}</strong></div>
           <p><span aria-hidden="true">⚠</span> Últimos ingressos do lote atual</p>
         </div>
 
@@ -266,7 +269,7 @@ const PRICE_VIP_CASH = 'R$ 147,00';
     <section class="white-section tickets-section" id="ingressos">
       <div class="white-shell">
         <div class="white-section-heading white-section-heading--center">
-          <p class="white-kicker">Lote 01</p>
+          <p class="white-kicker">{LOTE}</p>
           <h2>Escolha seu ingresso</h2>
           <p>A Imersão é um evento ao vivo e online para nutricionistas e estudantes de Nutrição que desejam elevar seus resultados no mercado do emagrecimento.</p>
         </div>
@@ -409,7 +412,7 @@ const PRICE_VIP_CASH = 'R$ 147,00';
     </footer>
 
     <aside class="white-mobile-cta" aria-label="Comprar ingresso">
-      <div><small>Lote 01</small><strong>A partir de {PRICE_BASIC}</strong></div>
+      <div><small>{LOTE_UPPER}</small><strong>A partir de {PRICE_BASIC}</strong></div>
       <a href="#ingressos">Escolher ingresso</a>
     </aside>
   </div>

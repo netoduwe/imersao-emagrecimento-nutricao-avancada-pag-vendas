@@ -7,22 +7,33 @@
  *   variant: 'hero' | 'pricing' | 'minimal' (default: 'pricing')
  *   theme: 'green' | 'red' (default: 'green')
  */
+import { IMERSAO_5ED_CURRENT_LOT } from '../config/imersao-5ed';
+
 const { variant = 'pricing', theme = 'green' } = Astro.props;
 const isHero = variant === 'hero';
 const isMinimal = variant === 'minimal';
+const currentLot = IMERSAO_5ED_CURRENT_LOT;
 ---
 
-<div class={`lote-tracker ${isHero ? 'lote-tracker--hero' : ''} ${isMinimal ? 'lote-tracker--minimal' : 'lote-tracker--pricing'}`} data-lote-tracker data-theme={theme}>
+<div
+  class={`lote-tracker ${isHero ? 'lote-tracker--hero' : ''} ${isMinimal ? 'lote-tracker--minimal' : 'lote-tracker--pricing'}`}
+  data-lote-tracker
+  data-theme={theme}
+  data-lot-name={currentLot.labelUpper}
+  data-lot-price={currentLot.basicPrice}
+  data-lot-start={currentLot.startsAt}
+  data-lot-end={currentLot.endsAt}
+>
   <div class="lote-tracker__inner">
     {!isMinimal && (
       <div class="lote-tracker__top">
         <div class="lote-tracker__badge-wrap">
           <span class="lote-tracker__fire">🔥</span>
-          <span class="lote-tracker__badge" data-lote-badge>LOTE 01</span>
+          <span class="lote-tracker__badge" data-lote-badge>{currentLot.labelUpper}</span>
         </div>
         <div class="lote-tracker__price-wrap">
           <span class="lote-tracker__price-label">por apenas</span>
-          <span class="lote-tracker__price" data-lote-price>R$ 19,90</span>
+          <span class="lote-tracker__price" data-lote-price>{currentLot.basicPrice}</span>
         </div>
       </div>
     )}
@@ -223,48 +234,34 @@ const isMinimal = variant === 'minimal';
 </style>
 
 <script>
-  // Datas predefinidas para viradas de lotes (Evento: 01/08/2026)
-  const LOTES = [
-    { nome: 'LOTE ZERO', inicio: new Date('2026-06-01T00:00:00').getTime(), limite: new Date('2026-07-15T23:59:59').getTime(), preco: 'R$ 19,90' },
-    { nome: 'LOTE 01', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-21T23:59:59').getTime(), preco: 'R$ 24,90' },
-    { nome: 'LOTE 02', inicio: new Date('2026-07-21T00:00:00').getTime(), limite: new Date('2026-07-30T23:59:59').getTime(), preco: 'R$ 29,90' },
-    { nome: 'LOTE 03', inicio: new Date('2026-07-30T00:00:00').getTime(), limite: new Date('2026-08-01T09:00:00').getTime(), preco: 'R$ 39,90' }
-  ];
-
   function updateAllTrackers() {
     const now = new Date().getTime();
-    
-    // Identificar lote ativo
-    let lote = LOTES[LOTES.length - 1];
-    for (let i = 0; i < LOTES.length; i++) {
-      if (now < LOTES[i].limite) {
-        lote = LOTES[i];
-        break;
-      }
-    }
-
-    const totalDuration = lote.limite - lote.inicio;
-    const elapsed = now - lote.inicio;
-    
-    // Porcentagem calculada com base no tempo (começa em 65%, cresce até 99%)
-    let percent = 65;
-    if (elapsed > 0 && totalDuration > 0) {
-      const calculatedPct = 65 + (34 * (elapsed / totalDuration));
-      percent = Math.min(Math.max(calculatedPct, 65), 99);
-    }
-    
-    const visualPercent = Math.min(percent, 100);
 
     const trackers = document.querySelectorAll('[data-lote-tracker]');
     trackers.forEach(tracker => {
+      const element = tracker as HTMLElement;
+      const lotName = element.dataset.lotName || 'LOTE ATUAL';
+      const lotPrice = element.dataset.lotPrice || '';
+      const lotStart = new Date(element.dataset.lotStart || '').getTime();
+      const lotEnd = new Date(element.dataset.lotEnd || '').getTime();
+      const totalDuration = lotEnd - lotStart;
+      const elapsed = now - lotStart;
+
+      let percent = 65;
+      if (elapsed > 0 && totalDuration > 0) {
+        const calculatedPct = 65 + (34 * (elapsed / totalDuration));
+        percent = Math.min(Math.max(calculatedPct, 65), 99);
+      }
+
+      const visualPercent = Math.min(percent, 100);
       const badge = tracker.querySelector('[data-lote-badge]');
       const price = tracker.querySelector('[data-lote-price]');
       const fill = tracker.querySelector('[data-lote-fill]') as HTMLElement;
       const pct = tracker.querySelector('[data-lote-pct]');
       const remaining = tracker.querySelector('[data-lote-remaining]');
 
-      if (badge && lote.nome) badge.textContent = lote.nome.toUpperCase();
-      if (price) price.textContent = lote.preco;
+      if (badge) badge.textContent = lotName;
+      if (price) price.textContent = lotPrice;
       if (fill) {
         fill.style.width = `${Math.max(visualPercent, 5)}%`;
         
@@ -283,7 +280,7 @@ const isMinimal = variant === 'minimal';
       if (pct) pct.textContent = `${Math.floor(percent)}% dos ingressos vendidos`;
 
       // Contador regressivo para virada do lote
-      const diff = lote.limite - now;
+      const diff = lotEnd - now;
       if (remaining) {
         if (diff > 0) {
           const d = Math.floor(diff / (1000 * 60 * 60 * 24));

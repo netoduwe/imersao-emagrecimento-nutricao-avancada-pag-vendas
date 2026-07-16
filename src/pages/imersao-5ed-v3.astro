@@ -1,15 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModal.astro';
+import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/imersao-v3.css';
 
 const EVENT_DATE = '01 de Agosto de 2026';
 const EVENT_DATE_SHORT = '01 Ago 2026';
 const EVENT_TIME = '9h às 18h';
-const LOTE = 'Lote zero';
-const PRICE_BASICO = 'R$ 19,90';
-const PRICE_VIP_PARCELADO = '12x de R$ 15,20';
-const PRICE_VIP_AVISTA = 'R$ 147,00';
+const LOTE = IMERSAO_5ED_CURRENT_LOT.label;
+const PRICE_BASICO = IMERSAO_5ED_CURRENT_LOT.basicPrice;
+const PRICE_VIP_PARCELADO = IMERSAO_5ED_PRICING.vipInstallments;
+const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
 ---
 
 <Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="blue" hideHeader={true}>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModal.astro';
 import ProgressBar from '../components/ProgressBar.astro';
+import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/theme-green.css';
 
 // Dados do evento
@@ -9,9 +10,10 @@ const EVENT_DATE = '01 de Agosto de 2026';
 const EVENT_DATE_SHORT = '01 Ago 2026';
 const EVENT_TIME = '9h às 18h';
 const EVENT_FORMAT = 'Zoom';
-const LOTE = 'Lote zero';
-const PRICE_BASICO = 'R$ 19,90';
-const PRICE_VIP = 'R$ 147,00';
+const LOTE = IMERSAO_5ED_CURRENT_LOT.label;
+const LOTE_UPPER = IMERSAO_5ED_CURRENT_LOT.labelUpper;
+const PRICE_BASICO = IMERSAO_5ED_CURRENT_LOT.basicPrice;
+const PRICE_VIP = IMERSAO_5ED_PRICING.vipCash;
 ---
 
 <Layout title={`Imersão em Emagrecimento — 5ª Edição | ${EVENT_DATE} | Nutrição Avançada`} theme="green">
@@ -554,7 +556,7 @@ const PRICE_VIP = 'R$ 147,00';
           <div class="vip-highlight-badge">MAIS VANTAGENS</div>
           <div class="card-header">
             <h3>Ingresso VIP</h3>
-            <p class="text-glow">50% DE DESCONTO NO LOTE ZERO</p>
+            <p class="text-glow">OFERTA DO {LOTE_UPPER}</p>
           </div>
           
           <div class="card-divider"></div>
@@ -608,8 +610,8 @@ const PRICE_VIP = 'R$ 147,00';
           <div class="card-price-block">
             <span class="old-price">De R$ 297,00</span>
             <span class="installment-label">POR 12x DE:</span>
-            <div class="current-price" style="color: var(--color-primary);">R$ 15,20</div>
-            <span class="price-method">ou R$ 147,00 à vista</span>
+            <div class="current-price" style="color: var(--color-primary);">{IMERSAO_5ED_PRICING.vipInstallmentValue}</div>
+            <span class="price-method">ou {PRICE_VIP} à vista</span>
           </div>
 
           <button class="btn-purchase btn-purchase--vip" data-form="vip">
