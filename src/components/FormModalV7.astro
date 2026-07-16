@@ -5,9 +5,14 @@
  */
 ---
 
-<div id="form-modal" class="modal-overlay" style="display:none;">
+<div id="form-modal" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
   <div class="modal-content">
     <button class="modal-close" id="modal-close" aria-label="Fechar">&times;</button>
+    <div class="modal-head">
+      <span>Último passo</span>
+      <h2 id="checkout-title">Garanta sua vaga</h2>
+      <p>Preencha seus dados para continuar no checkout seguro.</p>
+    </div>
     <iframe
       id="modal-iframe"
       src=""
@@ -24,7 +29,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(1, 7, 3, 0.88);
     backdrop-filter: blur(10px);
     z-index: 9999;
     display: flex;
@@ -34,20 +39,27 @@
   }
 
   .modal-content {
-    background: var(--color-surface);
-    border-radius: 12px;
-    width: 90%;
-    max-width: 450px;
+    background: #f5f4ed;
+    border-radius: 22px;
+    width: min(94%, 480px);
+    max-height: 92dvh;
+    overflow: auto;
     position: relative;
-    padding: 1.5rem;
+    padding: 1.25rem;
     box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
     animation: slideUp 0.3s ease;
     border: 1px solid rgba(255,255,255,0.05);
   }
 
   .modal-content iframe {
-    border-radius: 8px;
+    border-radius: 12px;
+    background: #fff;
   }
+
+  .modal-head { padding: 6px 8px 14px; color: #071209; }
+  .modal-head span { color:#087c36; font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+  .modal-head h2 { margin:5px 0 3px; font-size:28px; letter-spacing:-.04em; }
+  .modal-head p { margin:0; color:#5c675e; font-size:14px; }
 
   .modal-close {
     position: absolute;
@@ -56,9 +68,9 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--color-primary);
-    color: white;
-    border: 2px solid var(--color-surface);
+    background: #20df73;
+    color: #041108;
+    border: 3px solid #071209;
     font-size: 1.25rem;
     cursor: pointer;
     display: flex;
@@ -81,6 +93,13 @@
   @keyframes slideUp {
     from { transform: translateY(30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+  }
+
+  @media (max-width: 520px) {
+    .modal-overlay { align-items: flex-end; }
+    .modal-content { width:100%; max-height:94dvh; border-radius:22px 22px 0 0; padding:14px; }
+    .modal-close { top:12px; right:12px; }
+    .modal-content iframe { height:410px !important; }
   }
 
 </style>

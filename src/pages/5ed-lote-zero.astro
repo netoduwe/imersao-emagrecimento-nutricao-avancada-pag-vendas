@@ -1,23 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import FormModal from '../components/FormModalV7.astro';
-import '../styles/imersao-v7.css';
-import '../styles/imersao-v7-typography.css';
+import FormModal from '../components/FormModal.astro';
+import '../styles/imersao-v1-02.css';
 
 const EVENT_DATE = '01 de Agosto de 2026';
 const EVENT_TIME = '9h às 18h';
-const PRICE_BASICO = 'R$ 24,90';
+const PRICE_BASICO = 'R$ 19,90';
 const PRICE_VIP_PARCELADO = '12x de R$ 15,20';
 const PRICE_VIP_AVISTA = 'R$ 147,00';
 ---
 
-<Layout title={`Imersão em Emagrecimento | ${EVENT_DATE} | Nutrição Avançada`} theme="green" hideHeader={true}>
+<Layout title={`Imersão em Emagrecimento | ${EVENT_DATE} | Nutrição Avançada`} theme="green" hideHeader={true} urgencyMessage="Essa página sai do ar em breve">
   <main class="case-page">
     <section class="case-hero" id="imersao">
       <div class="case-shell case-hero__grid">
         <div class="case-hero__content">
-          <div class="case-brand"><span>NA</span><strong>NUTRIÇÃO<br/>AVANÇADA</strong></div>
-          <p class="case-kicker">5ª edição · aula ao vivo · para nutricionistas</p>
+          <p class="case-kicker">5ª Edição · Imersão em Emagrecimento</p>
           <h1>
             Seu paciente chegou com Mounjaro.
             <span>Você sabe o que fazer?</span>
@@ -27,19 +25,19 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
           </p>
 
           <div class="case-hero__actions">
-            <div class="case-hero__ticket" aria-label="Ingresso lote 01">
-              <span class="case-hero__lot">Lote 01</span>
+            <div class="case-hero__ticket" aria-label="Ingresso lote zero">
+              <span class="case-hero__lot">Lote zero</span>
               <p>De <s>R$ 97,00</s> por apenas</p>
               <strong>{PRICE_BASICO}</strong>
-              <a href="#" data-form="normal" class="case-hero__buy">Quero garantir minha vaga <span>→</span></a>
-              <small>Compra segura · Garantia incondicional de 7 dias</small>
+              <a href="#ingressos" class="case-hero__buy">Garantir minha vaga! &gt;</a>
+              <small>Garantia incondicional de 7 dias · Sem burocracia</small>
             </div>
           </div>
 
           <div class="case-hero__facts" aria-label="Dados do evento">
-            <span><b>01 AGO</b>{EVENT_DATE}</span>
-            <span><b>AO VIVO</b>{EVENT_TIME}</span>
-            <span><b>ONLINE</b>via Zoom</span>
+            <span>{EVENT_DATE}</span>
+            <span>{EVENT_TIME}</span>
+            <span>Online via Zoom</span>
           </div>
         </div>
 
@@ -54,19 +52,18 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
               <figcaption>Jéssica Wszolek · GLP-1</figcaption>
             </figure>
           </div>
-          <div class="case-stamp">8 horas<br />de imersão</div>
-          <div class="case-visual-note"><b>Conduta, não conteúdo solto.</b><span>Saia sabendo o que avaliar, ajustar e acompanhar.</span></div>
+          <div class="case-stamp">Ao vivo<br />Zoom</div>
         </div>
       </div>
     </section>
 
     <section class="case-strip" aria-label="Resumo da virada de campanha">
       <div class="case-strip__track">
-        <span>lote 01 ativo</span>
+        <span>lote zero ativo</span>
         <span>conduta além da calculadora</span>
         <span>gravação por 1 ano no VIP</span>
         <span>01 agosto 2026</span>
-        <span>lote 01 ativo</span>
+        <span>lote zero ativo</span>
         <span>conduta além da calculadora</span>
         <span>gravação por 1 ano no VIP</span>
         <span>01 agosto 2026</span>
@@ -226,13 +223,13 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
           <h2>Se a decisão já faz sentido, aqui está o lote que está valendo agora.</h2>
           <p>
             Você não precisa esperar chegar no final da página para travar esse preço.
-            O lote 01 ainda está ativo, com garantia de 7 dias e acesso imediato à confirmação da vaga.
+            O lote zero ainda está ativo, com garantia de 7 dias e acesso imediato à confirmação da vaga.
           </p>
         </div>
 
         <div class="case-mid-cta__card">
-          <div class="case-hero__ticket" aria-label="Ingresso lote 01">
-            <span class="case-hero__lot">Lote 01</span>
+          <div class="case-hero__ticket" aria-label="Ingresso lote zero">
+            <span class="case-hero__lot">Lote zero</span>
             <p>De <s>R$ 97,00</s> por apenas</p>
             <strong>{PRICE_BASICO}</strong>
             <a href="#ingressos" class="case-hero__buy">Garantir minha vaga! &gt;</a>
@@ -329,17 +326,12 @@ const PRICE_VIP_AVISTA = 'R$ 147,00';
 
     <section class="case-final">
       <div class="case-shell">
-        <p>01 de Agosto · Online via Zoom · Lote 01 ativo</p>
+        <p>01 de Agosto · Online via Zoom · Lote zero ativo</p>
         <h2>A próxima consulta de emagrecimento pode ter mais raciocínio e menos improviso.</h2>
         <a href="#ingressos" class="case-action case-action--primary">Escolher ingresso</a>
       </div>
     </section>
   </main>
-
-  <aside class="mobile-conversion" aria-label="Comprar ingresso">
-    <div><small>Lote atual</small><strong>{PRICE_BASICO}</strong></div>
-    <a href="#" data-form="normal">Garantir vaga <span>→</span></a>
-  </aside>
 
   <FormModal />
 </Layout>

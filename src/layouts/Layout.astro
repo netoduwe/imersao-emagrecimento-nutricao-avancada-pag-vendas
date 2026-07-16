@@ -6,9 +6,10 @@ interface Props {
   theme?: 'green' | 'blue';
   hideHeader?: boolean;
   hideChatbase?: boolean;
+  urgencyMessage?: string;
 }
 
-const { title, theme = 'green', hideHeader = false, hideChatbase = false } = Astro.props;
+const { title, theme = 'green', hideHeader = false, hideChatbase = false, urgencyMessage } = Astro.props;
 ---
 
 <!doctype html>
@@ -47,14 +48,20 @@ const { title, theme = 'green', hideHeader = false, hideChatbase = false } = Ast
   </head>
   <body>
     <!-- Header Sticky -->
-    <div class="urgency-strip" aria-label="Contador de virada do lote">
-      <span class="urgency-strip__inner">
-        <span class="urgency-strip__badge" id="lote-strip-badge">LOTE ZERO</span>
-        <span class="urgency-strip__divider" aria-hidden="true"></span>
-        <span class="urgency-strip__label" id="lote-strip-label">Virada em</span>
-        <span class="urgency-strip__timer" id="countdown"></span>
-      </span>
-    </div>
+    {urgencyMessage ? (
+      <div class="urgency-strip urgency-strip--critical" role="status">
+        <span class="urgency-strip__inner">⚠ {urgencyMessage}</span>
+      </div>
+    ) : (
+      <div class="urgency-strip" aria-label="Contador de virada do lote">
+        <span class="urgency-strip__inner">
+          <span class="urgency-strip__badge" id="lote-strip-badge">LOTE 01</span>
+          <span class="urgency-strip__divider" aria-hidden="true"></span>
+          <span class="urgency-strip__label" id="lote-strip-label">Virada em</span>
+          <span class="urgency-strip__timer" id="countdown"></span>
+        </span>
+      </div>
+    )}
 
     <!-- Navegação -->
     {!hideHeader && (
@@ -83,8 +90,8 @@ const { title, theme = 'green', hideHeader = false, hideChatbase = false } = Ast
       // Datas predefinidas para viradas de lotes (Evento: 01/08/2026)
       const LAYOUT_LOTES = [
         { nome: 'LOTE ZERO', inicio: new Date('2026-06-01T00:00:00').getTime(), limite: new Date('2026-07-15T23:59:59').getTime() },
-        { nome: 'LOTE 01', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-25T23:59:59').getTime() },
-        { nome: 'LOTE 02', inicio: new Date('2026-07-25T00:00:00').getTime(), limite: new Date('2026-07-30T23:59:59').getTime() },
+        { nome: 'LOTE 01', inicio: new Date('2026-07-15T00:00:00').getTime(), limite: new Date('2026-07-21T23:59:59').getTime() },
+        { nome: 'LOTE 02', inicio: new Date('2026-07-21T00:00:00').getTime(), limite: new Date('2026-07-30T23:59:59').getTime() },
         { nome: 'LOTE 03', inicio: new Date('2026-07-30T00:00:00').getTime(), limite: new Date('2026-08-01T09:00:00').getTime() }
       ];
 
@@ -160,6 +167,15 @@ const { title, theme = 'green', hideHeader = false, hideChatbase = false } = Ast
     font-size: 13px;
     line-height: 1;
     font-weight: 800;
+  }
+
+  .urgency-strip--critical {
+    background: #c91414;
+  }
+
+  .urgency-strip--critical .urgency-strip__inner {
+    letter-spacing: 0.035em;
+    text-transform: uppercase;
   }
 
   .urgency-strip__badge {
