@@ -5,11 +5,12 @@ interface Props {
   title: string;
   theme?: 'green' | 'blue';
   hideHeader?: boolean;
+  hideUrgency?: boolean;
   hideChatbase?: boolean;
   urgencyMessage?: string;
 }
 
-const { title, theme = 'green', hideHeader = false, hideChatbase = false, urgencyMessage } = Astro.props;
+const { title, theme = 'green', hideHeader = false, hideUrgency = false, hideChatbase = false, urgencyMessage } = Astro.props;
 ---
 
 <!doctype html>
@@ -48,19 +49,21 @@ const { title, theme = 'green', hideHeader = false, hideChatbase = false, urgenc
   </head>
   <body>
     <!-- Header Sticky -->
-    {urgencyMessage ? (
-      <div class="urgency-strip urgency-strip--critical" role="status">
-        <span class="urgency-strip__inner">⚠ {urgencyMessage}</span>
-      </div>
-    ) : (
-      <div class="urgency-strip" aria-label="Contador de virada do lote">
-        <span class="urgency-strip__inner">
-          <span class="urgency-strip__badge" id="lote-strip-badge">LOTE 01</span>
-          <span class="urgency-strip__divider" aria-hidden="true"></span>
-          <span class="urgency-strip__label" id="lote-strip-label">Virada em</span>
-          <span class="urgency-strip__timer" id="countdown"></span>
-        </span>
-      </div>
+    {!hideUrgency && (
+      urgencyMessage ? (
+        <div class="urgency-strip urgency-strip--critical" role="status">
+          <span class="urgency-strip__inner">⚠ {urgencyMessage}</span>
+        </div>
+      ) : (
+        <div class="urgency-strip" aria-label="Contador de virada do lote">
+          <span class="urgency-strip__inner">
+            <span class="urgency-strip__badge" id="lote-strip-badge">LOTE 01</span>
+            <span class="urgency-strip__divider" aria-hidden="true"></span>
+            <span class="urgency-strip__label" id="lote-strip-label">Virada em</span>
+            <span class="urgency-strip__timer" id="countdown"></span>
+          </span>
+        </div>
+      )
     )}
 
     <!-- Navegação -->

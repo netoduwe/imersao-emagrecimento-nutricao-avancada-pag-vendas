@@ -1,0 +1,444 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FormModal from '../components/FormModalV7.astro';
+import '../styles/imersao-v8.css';
+
+const EVENT_DATE = '01 de Agosto de 2026';
+const EVENT_TIME = '9h às 18h';
+const PRICE_BASIC = 'R$ 24,90';
+const PRICE_VIP_INSTALLMENTS = '12x de R$ 15,20';
+const PRICE_VIP_CASH = 'R$ 147,00';
+---
+
+<Layout
+  title={`Imersão em Emagrecimento e GLP-1 | ${EVENT_DATE}`}
+  theme="green"
+  hideHeader={true}
+  hideUrgency={true}
+  hideChatbase={true}
+>
+  <div class="white-page">
+    <div class="event-countdown" aria-label="Contagem regressiva para a imersão">
+      <div class="white-shell event-countdown__inner">
+        <div class="event-countdown__title">
+          <span class="event-countdown__clock" aria-hidden="true"></span>
+          <strong><span class="event-countdown__desktop-label">Imersão começa em:</span><span class="event-countdown__mobile-label">Começa em</span></strong>
+        </div>
+        <div class="event-countdown__units" aria-live="polite">
+          <span><b id="v8-days">00</b><small>Dias</small></span>
+          <span><b id="v8-hours">00</b><small>Horas</small></span>
+          <span><b id="v8-minutes">00</b><small>Minutos</small></span>
+          <span><b id="v8-seconds">00</b><small>Segundos</small></span>
+        </div>
+        <a href="#ingressos" class="event-countdown__button">Escolher ingresso <span>→</span></a>
+      </div>
+    </div>
+
+    <section class="white-hero" id="inicio">
+      <div class="white-shell white-hero__inner">
+        <p class="white-hero__date">
+          <span aria-hidden="true">▣</span>
+          01 de Agosto de 2026 <i></i> {EVENT_TIME} <i></i> Online via Zoom
+        </p>
+        <h1>1 dia de atualização no tratamento do sobrepeso e obesidade</h1>
+        <p class="white-hero__lead">Domine as evidências mais atuais da nutrição com foco em emagrecimento e no manejo dos análogos de GLP-1.</p>
+        <a href="#ingressos" class="white-primary-button">
+          <span class="white-primary-button__icon" aria-hidden="true">▱</span>
+          Comprar ingresso do lote atual
+        </a>
+
+        <div class="lot-status" aria-label="Disponibilidade do lote 01">
+          <div class="lot-status__bar"><span></span><strong>Ingressos do lote 01</strong></div>
+          <p><span aria-hidden="true">⚠</span> Últimos ingressos do lote atual</p>
+        </div>
+
+        <p class="white-hero__spoiler">
+          <strong>Spoiler:</strong> essa não é apenas uma imersão de teoria. Você também vai aprender sobre prática clínica e como ir além do déficit calórico quando o assunto é emagrecimento.
+        </p>
+      </div>
+    </section>
+
+    <nav class="white-section-nav" aria-label="Navegação da página">
+      <div class="white-shell">
+        <a href="#cronograma">Cronograma</a>
+        <a href="#conteudo">Conteúdo</a>
+        <a href="#faq">Perguntas frequentes</a>
+      </div>
+    </nav>
+
+    <section class="white-section problem-section">
+      <div class="white-shell problem-section__grid">
+        <div class="problem-section__intro">
+          <p class="white-kicker">Prática clínica</p>
+          <h2>Você se sente seguro para transformar vidas?</h2>
+          <p>Com certeza você já atendeu um paciente com sobrepeso que desejava emagrecer e talvez tenha tido dificuldades como:</p>
+        </div>
+        <ul class="problem-list">
+          <li>Não conseguiu fazer o paciente aderir ao plano alimentar.</li>
+          <li>Teve insegurança para conduzir a consulta.</li>
+          <li>Não soube calcular ou ajustar o cardápio para o caso real.</li>
+          <li>Não soube como ir além das calorias.</li>
+          <li>Se sentiu desatualizado cientificamente.</li>
+          <li>Não soube periodizar seu acompanhamento.</li>
+          <li>Faltaram ferramentas de prática clínica.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="white-section faculty-section">
+      <div class="white-shell">
+        <div class="faculty-section__heading">
+          <p class="white-kicker">Quem conduz a imersão</p>
+          <h2>Aprenda com a experiência de quem está no campo de batalha.</h2>
+        </div>
+
+        <div class="faculty-grid">
+          <article class="faculty-card faculty-card--ney">
+            <div class="faculty-card__photo">
+              <img src="/images/ney-clinica-otimizado.webp" alt="Ney Felipe" loading="lazy" />
+            </div>
+            <div class="faculty-card__copy">
+              <h3>Ney Felipe</h3>
+              <p>Nutricionista pioneiro da Nutrição Funcional Esportiva no Brasil, tem como missão ajudar nutricionistas a viverem de consultório praticando uma Nutrição que vai além das calorias.</p>
+              <p>Começou sua carreira em 2006 e já atendeu milhares de pacientes. Fundador da Nutrição Avançada, escritor, professor, palestrante e mentor de nutricionistas.</p>
+              <ul>
+                <li>Nutricionista desde 2006</li>
+                <li>Mestre em Biologia Molecular</li>
+                <li>Doutorando em Saúde Pública</li>
+                <li>Fundador da Nutrição Avançada</li>
+                <li>Mais de 3 mil alunos</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="faculty-card faculty-card--jessica">
+            <div class="faculty-card__photo">
+              <img src="/images/jessica.webp" alt="Jéssica Wszolek" loading="lazy" />
+            </div>
+            <div class="faculty-card__copy">
+              <h3>Jéssica Wszolek</h3>
+              <p>Participação no bloco dedicado ao manejo nutricional de pacientes em uso de análogos de GLP-1, com foco em aplicação prática na consulta.</p>
+              <ul>
+                <li>GLP-1 e massa magra</li>
+                <li>Ajuste de proteína e suplementação</li>
+                <li>Sintomas gastrointestinais</li>
+                <li>Monitoramento e conduta clínica</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-quote">
+      <div class="white-shell">
+        <blockquote>
+          “Embora o déficit calórico seja condição essencial para emagrecer, a nutrição não se resume a uma simples calculoterapia. É importante considerar a qualidade dos alimentos e o contexto clínico.”
+          <cite>— Ney Felipe</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="white-section schedule-section" id="cronograma">
+      <div class="white-shell">
+        <div class="white-section-heading white-section-heading--center">
+          <p class="white-kicker">01 de Agosto</p>
+          <h2>Cronograma de 1 dia de imersão</h2>
+          <p>Uma programação intensiva, ao vivo e online, organizada para entregar todo o conteúdo dentro do horário previsto.</p>
+        </div>
+        <div class="schedule-line">
+          <div><time>9h</time><span>Início</span></div>
+          <div><time>12h</time><span>Intervalo</span></div>
+          <div><time>13h</time><span>Retorno</span></div>
+          <div><time>18h</time><span>Encerramento*</span></div>
+        </div>
+        <p class="schedule-section__note">*O encerramento pode avançar alguns minutos caso seja necessário aprofundar dúvidas dos participantes.</p>
+      </div>
+    </section>
+
+    <section class="white-section content-section" id="conteudo">
+      <div class="white-shell">
+        <div class="white-section-heading white-section-heading--center">
+          <p class="white-kicker">Conteúdo da imersão</p>
+          <h2>Isso é parte do que você vai aprender</h2>
+        </div>
+        <div class="content-grid">
+          <article>
+            <span>01</span>
+            <h3>Conteúdo técnico</h3>
+            <ul>
+              <li>O que temos de mais atual na ciência sobre emagrecimento.</li>
+              <li>Nutrição funcional no emagrecimento.</li>
+              <li>Um novo olhar sobre obesidade e inflamação.</li>
+            </ul>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Estratégias práticas</h3>
+            <ul>
+              <li>Discussão de caso clínico e estratégias de intervenção.</li>
+              <li>Adesão e progressão dietética.</li>
+              <li>Como ir além do déficit calórico.</li>
+            </ul>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Experiência clínica</h3>
+            <ul>
+              <li>Manejo nutricional dos análogos de GLP-1.</li>
+              <li>Como conduzir sua consulta do jeito certo.</li>
+              <li>O método de acompanhamento da Nutrição Avançada.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section decision-section">
+      <div class="white-shell">
+        <div class="white-section-heading white-section-heading--center">
+          <p class="white-kicker">Sua decisão</p>
+          <h2>A escolha para avançar de nível é toda sua</h2>
+        </div>
+        <div class="decision-grid">
+          <article class="decision-card decision-card--without">
+            <h3>Sem essa imersão, você pode...</h3>
+            <ul>
+              <li>Continuar repetindo que “tem que fazer déficit”.</li>
+              <li>Ser apenas mais um nutricionista da fila.</li>
+              <li>Basear sua prática em achismos e dicas de Instagram.</li>
+            </ul>
+          </article>
+          <article class="decision-card decision-card--with">
+            <h3>Com a imersão, você pode...</h3>
+            <ul>
+              <li>Ir além de discursos reducionistas e enxergar uma nutrição além das calorias.</li>
+              <li>Ser o último nutricionista da vida do seu paciente.</li>
+              <li>Ter segurança e referências robustas para sua prática clínica.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="when-card">
+          <div>
+            <p class="white-kicker">Quando e como?</p>
+            <h3>01 de Agosto de 2026</h3>
+            <p>Experiência ao vivo e online, das 9h às 18h, através do Zoom.</p>
+          </div>
+          <a href="#ingressos" class="white-secondary-button">Quero meu ingresso</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section manifesto-section">
+      <div class="white-shell manifesto-section__grid">
+        <div>
+          <p class="white-kicker">Uma abordagem mais profunda</p>
+          <h2>Cansou de ouvir discursos rasos sobre emagrecimento?</h2>
+          <p class="manifesto-section__highlight">“Para emagrecer basta fazer déficit calórico.”</p>
+        </div>
+        <div class="manifesto-section__copy">
+          <p>Nutricionistas ainda repetem a ideia simplista de que emagrecer é apenas “fechar a boca e comer menos”. Isso ignora a complexidade do processo de emagrecimento.</p>
+          <p><strong>O verdadeiro desafio não é apenas o que fazer, mas como fazer.</strong></p>
+          <p>Nutrição vai além do cálculo de calorias. Requer compreensão profunda do processo, estratégias eficazes e habilidade para ajudar o paciente a se conectar com a alimentação.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section authority-section">
+      <div class="white-shell authority-section__grid">
+        <div>
+          <p class="white-kicker">Atualização intensiva</p>
+          <h2>Chegou sua hora de se tornar autoridade em emagrecimento.</h2>
+          <p>Uma imersão prática para você se atualizar e aprender:</p>
+        </div>
+        <ul>
+          <li>Como ter propriedade e segurança para falar sobre emagrecimento.</li>
+          <li>O que há de mais atual na ciência do emagrecimento.</li>
+          <li>O que só a experiência de anos de prática pode ensinar.</li>
+        </ul>
+      </div>
+      <div class="white-shell authority-section__action">
+        <a href="#ingressos" class="white-primary-button">Sim, quero acessar agora</a>
+      </div>
+    </section>
+
+    <section class="white-section tickets-section" id="ingressos">
+      <div class="white-shell">
+        <div class="white-section-heading white-section-heading--center">
+          <p class="white-kicker">Lote 01</p>
+          <h2>Escolha seu ingresso</h2>
+          <p>A Imersão é um evento ao vivo e online para nutricionistas e estudantes de Nutrição que desejam elevar seus resultados no mercado do emagrecimento.</p>
+        </div>
+
+        <div class="tickets-grid">
+          <article class="ticket-card">
+            <div class="ticket-card__heading">
+              <p>Ingresso</p>
+              <h3>Básico</h3>
+            </div>
+            <ul>
+              <li>Acesso ao dia de imersão ao vivo.</li>
+              <li>Grupo exclusivo do evento.</li>
+              <li>Materiais compartilhados na aula.</li>
+              <li>Mini Curso Fundamentos do Emagrecimento.</li>
+            </ul>
+            <div class="ticket-card__price">
+              <small>De <s>R$ 97,00</s> por</small>
+              <strong>{PRICE_BASIC}</strong>
+            </div>
+            <a href="#" data-form="normal" class="ticket-card__button">Comprar básico</a>
+            <small class="ticket-card__safe">Compra segura · 7 dias de garantia</small>
+          </article>
+
+          <article class="ticket-card ticket-card--vip">
+            <div class="ticket-card__heading">
+              <p>Ingresso</p>
+              <h3>VIP</h3>
+            </div>
+            <ul>
+              <li>Tudo do ingresso Básico.</li>
+              <li>Gravação do evento por 1 ano.</li>
+              <li>Certificado de 8 horas.</li>
+              <li>E-book Tópicos Avançados.</li>
+              <li>E-book “Me formei, e agora?”.</li>
+              <li>E-book Desaprendendo a Dieta.</li>
+              <li>Encontro extra de revisão pós-evento.</li>
+              <li>Cashback integral em formações selecionadas.</li>
+            </ul>
+            <div class="ticket-card__price">
+              <small>De <s>R$ 297,00</s> por</small>
+              <strong>{PRICE_VIP_INSTALLMENTS}</strong>
+              <span>ou {PRICE_VIP_CASH} à vista</span>
+            </div>
+            <a href="#" data-form="vip" class="ticket-card__button">Comprar VIP</a>
+            <small class="ticket-card__safe">Compra segura · 7 dias de garantia</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section testimonials-section">
+      <div class="white-shell">
+        <div class="white-section-heading white-section-heading--center">
+          <p class="white-kicker">Resultados reais</p>
+          <h2>Mais segurança para atender na prática</h2>
+        </div>
+        <div class="testimonials-grid">
+          <figure><img src="/images/depoimentos/Screenshot_1.png" alt="Depoimento de participante" loading="lazy" /></figure>
+          <figure><img src="/images/depoimentos/Screenshot_3.png" alt="Depoimento de participante" loading="lazy" /></figure>
+          <figure><img src="/images/depoimentos/Screenshot_14.png" alt="Depoimento de participante" loading="lazy" /></figure>
+          <figure><img src="/images/depoimentos/Screenshot_23.png" alt="Depoimento de participante" loading="lazy" /></figure>
+        </div>
+        <p class="testimonials-section__closing">Você não precisa gastar anos pesquisando sozinho. Garanta seu ingresso antes da próxima virada de lote.</p>
+        <a href="#ingressos" class="white-primary-button">Sim, quero meu ingresso</a>
+      </div>
+    </section>
+
+    <section class="white-section trust-section">
+      <div class="white-shell trust-section__grid">
+        <div>
+          <p class="white-kicker">Trajetória</p>
+          <h2>Por que você pode confiar?</h2>
+          <p>Você está prestes a embarcar em uma jornada de atualização. Conheça alguns pontos da trajetória de Ney Felipe.</p>
+        </div>
+        <div class="white-accordion">
+          <details open>
+            <summary>Formação e especialização</summary>
+            <p>Ney Felipe Fernandes é nutricionista desde 2006, mestre em Biologia Molecular e doutorando em Saúde Pública. Sua abordagem combina nutrição funcional, esportiva e comportamental.</p>
+          </details>
+          <details>
+            <summary>Publicações e reconhecimento</summary>
+            <p>Fundador da Nutrição Avançada, professor, palestrante, mentor e autor de livros e materiais voltados à prática clínica.</p>
+          </details>
+          <details>
+            <summary>Experiência com nutricionistas</summary>
+            <p>Mais de 3 mil alunos já participaram de seus treinamentos e formações ao longo dos últimos anos.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="white-section faq-section" id="faq">
+      <div class="white-shell faq-section__grid">
+        <div>
+          <p class="white-kicker">Dúvidas</p>
+          <h2>Perguntas frequentes</h2>
+        </div>
+        <div class="white-accordion">
+          <details open>
+            <summary>É ao vivo? Qual a duração?</summary>
+            <p>Sim. A Imersão acontece ao vivo no dia 01 de Agosto de 2026, das 9h às 18h, através do Zoom.</p>
+          </details>
+          <details>
+            <summary>Fica gravado?</summary>
+            <p>O ingresso VIP inclui a gravação do evento por 1 ano. O ingresso Básico é destinado à participação ao vivo.</p>
+          </details>
+          <details>
+            <summary>Sou estudante. Vale a pena?</summary>
+            <p>Sim. Estudantes de Nutrição podem participar e antecipar conhecimentos importantes para a prática clínica.</p>
+          </details>
+          <details>
+            <summary>O evento é exclusivo para nutricionistas?</summary>
+            <p>O conteúdo foi pensado para nutricionistas formados e estudantes de Nutrição.</p>
+          </details>
+          <details>
+            <summary>Tem garantia?</summary>
+            <p>Sim. A inscrição conta com garantia incondicional de 7 dias.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="support-section">
+      <div class="white-shell support-section__inner">
+        <div>
+          <p class="white-kicker">Suporte no WhatsApp</p>
+          <h2>Ainda ficou com alguma dúvida?</h2>
+          <p>Nossa equipe está à disposição para ajudar.</p>
+        </div>
+        <a href="https://links.nutrineyfelipe.com/suporte-whatsapp" target="_blank" rel="noopener noreferrer" class="white-secondary-button">Falar com atendente</a>
+      </div>
+    </section>
+
+    <footer class="white-footer">
+      <div class="white-shell">
+        <p>Ney Felipe Fernandes · © 2026 · CNPJ 38.560.882/0001-12</p>
+        <p>Este site não é afiliado ao Facebook ou à Meta. Todas as informações apresentadas são de responsabilidade da Nutrição Avançada.</p>
+      </div>
+    </footer>
+
+    <aside class="white-mobile-cta" aria-label="Comprar ingresso">
+      <div><small>Lote 01</small><strong>A partir de {PRICE_BASIC}</strong></div>
+      <a href="#ingressos">Escolher ingresso</a>
+    </aside>
+  </div>
+
+  <FormModal />
+
+  <script>
+    const target = new Date('2026-08-01T09:00:00-03:00').getTime();
+    const fields = {
+      days: document.getElementById('v8-days'),
+      hours: document.getElementById('v8-hours'),
+      minutes: document.getElementById('v8-minutes'),
+      seconds: document.getElementById('v8-seconds')
+    };
+
+    function updateV8Countdown() {
+      const distance = Math.max(0, target - Date.now());
+      const days = Math.floor(distance / 86400000);
+      const hours = Math.floor((distance % 86400000) / 3600000);
+      const minutes = Math.floor((distance % 3600000) / 60000);
+      const seconds = Math.floor((distance % 60000) / 1000);
+
+      if (fields.days) fields.days.textContent = String(days).padStart(2, '0');
+      if (fields.hours) fields.hours.textContent = String(hours).padStart(2, '0');
+      if (fields.minutes) fields.minutes.textContent = String(minutes).padStart(2, '0');
+      if (fields.seconds) fields.seconds.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateV8Countdown();
+    window.setInterval(updateV8Countdown, 1000);
+  </script>
+</Layout>
