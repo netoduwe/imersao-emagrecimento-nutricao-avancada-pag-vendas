@@ -5,6 +5,7 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
 <script is:inline define:vars={{ endpoint }}>
   (() => {
     const SESSION_KEY = 't9_session_id';
+    const ATTRIBUTION_KEY = 't9_attribution';
     const EVENT_NAMES = new Set([
       'page_view', 'view_content', 'ticket_section_view', 'ticket_cta_click',
       'form_open', 'form_start', 'form_submit', 'checkout_view'
@@ -23,18 +24,27 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
       .slice(1)
       .join('=') || null;
 
-    const attribution = {
+    let savedAttribution = {};
+    try { savedAttribution = JSON.parse(localStorage.getItem(ATTRIBUTION_KEY) || '{}'); } catch {}
+    const currentAttribution = {
       utm_source: params.get('utm_source'),
+      utm_medium: params.get('utm_medium'),
       utm_campaign: params.get('utm_campaign'),
       utm_content: params.get('utm_content'),
       utm_term: params.get('utm_term'),
       campaign_id: params.get('campaign_id') || params.get('campaign'),
       adset_id: params.get('adset_id') || params.get('adset'),
       ad_id: params.get('ad_id') || params.get('ad'),
-      placement: params.get('placement'),
+      placement: params.get('placement') || params.get('utm_medium'),
       fbp: cookie('_fbp'),
       fbc: cookie('_fbc')
     };
+    const attribution = Object.fromEntries(Object.entries({ ...savedAttribution, ...currentAttribution })
+      .filter(([, value]) => value !== null && value !== undefined && value !== ''));
+    localStorage.setItem(ATTRIBUTION_KEY, JSON.stringify(attribution));
+    const deviceType = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)
+      ? (/iPad|Tablet/i.test(navigator.userAgent) ? 'tablet' : 'mobile')
+      : 'desktop';
 
     const track = (eventName, details = {}) => {
       if (!EVENT_NAMES.has(eventName)) return;
@@ -44,6 +54,7 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
         session_id: sessionId,
         occurred_at: new Date().toISOString(),
         ticket_type: details.ticket_type || null,
+        device_type: deviceType,
         ...attribution,
         page_url: location.href,
         metadata: details.metadata || {}
@@ -56,7 +67,7 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
       window.dataLayer.push({ event: `t9_${eventName}`, ...payload });
     };
 
-    window.T9Tracking = { sessionId, track };
+    window.T9Tracking = { sessionId, attribution, track };
     track('page_view');
     track('view_content');
 

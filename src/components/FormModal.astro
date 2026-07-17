@@ -102,6 +102,11 @@
       if (value) formUrl.searchParams.set(key, value);
     });
 
+    const savedAttribution = (window as any).T9Tracking?.attribution || {};
+    Object.entries(savedAttribution).forEach(([key, value]) => {
+      if (value && !formUrl.searchParams.has(key)) formUrl.searchParams.set(key, String(value));
+    });
+
     const sessionId = (window as any).T9Tracking?.sessionId;
     if (sessionId) formUrl.searchParams.set('t9_session_id', sessionId);
 
