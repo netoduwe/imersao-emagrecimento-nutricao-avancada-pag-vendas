@@ -2,17 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModal.astro';
 import T9Tracking from '../components/T9Tracking.astro';
-import { IMERSAO_5ED_LOTS, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
+import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_CURRENT_LOT_ID, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/imersao-v1-02.css';
 
 const EVENT_DATE = '01 de Agosto de 2026';
 const EVENT_TIME = '9h às 18h';
-const PRICE_BASICO = IMERSAO_5ED_LOTS['lote-zero'].basicPrice;
+const LOTE = IMERSAO_5ED_CURRENT_LOT.label;
+const LOTE_STATUS = IMERSAO_5ED_CURRENT_LOT.status;
+const PRICE_BASICO = IMERSAO_5ED_CURRENT_LOT.basicPrice;
 const PRICE_VIP_PARCELADO = IMERSAO_5ED_PRICING.vipInstallments;
 const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
 ---
 
-<Layout title={`Imersão em Emagrecimento | ${EVENT_DATE} | Nutrição Avançada`} theme="green" hideHeader={true} urgencyMessage="Essa página sai do ar em breve" urgencyLotId="lote-zero">
+<Layout title={`Imersão em Emagrecimento | ${EVENT_DATE} | Nutrição Avançada`} theme="green" hideHeader={true} urgencyMessage="O preço deste lote muda em breve" urgencyLotId={IMERSAO_5ED_CURRENT_LOT_ID}>
   <main class="case-page">
     <section class="case-hero" id="imersao">
       <div class="case-shell case-hero__grid">
@@ -27,8 +29,8 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
           </p>
 
           <div class="case-hero__actions">
-            <div class="case-hero__ticket" aria-label="Ingresso lote zero">
-              <span class="case-hero__lot">Lote zero</span>
+            <div class="case-hero__ticket" aria-label={`Ingresso ${LOTE}`}>
+              <span class="case-hero__lot">{LOTE}</span>
               <p>De <s>R$ 97,00</s> por apenas</p>
               <strong>{PRICE_BASICO}</strong>
               <a href="#ingressos" class="case-hero__buy">Garantir minha vaga! &gt;</a>
@@ -61,11 +63,11 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
 
     <section class="case-strip" aria-label="Resumo da virada de campanha">
       <div class="case-strip__track">
-        <span>lote zero ativo</span>
+        <span>{LOTE_STATUS}</span>
         <span>conduta além da calculadora</span>
         <span>gravação por 1 ano no VIP</span>
         <span>01 agosto 2026</span>
-        <span>lote zero ativo</span>
+        <span>{LOTE_STATUS}</span>
         <span>conduta além da calculadora</span>
         <span>gravação por 1 ano no VIP</span>
         <span>01 agosto 2026</span>
@@ -225,13 +227,13 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
           <h2>Se a decisão já faz sentido, aqui está o lote que está valendo agora.</h2>
           <p>
             Você não precisa esperar chegar no final da página para travar esse preço.
-            O lote zero ainda está ativo, com garantia de 7 dias e acesso imediato à confirmação da vaga.
+            O {LOTE} está ativo, com garantia de 7 dias e acesso imediato à confirmação da vaga.
           </p>
         </div>
 
         <div class="case-mid-cta__card">
-          <div class="case-hero__ticket" aria-label="Ingresso lote zero">
-            <span class="case-hero__lot">Lote zero</span>
+          <div class="case-hero__ticket" aria-label={`Ingresso ${LOTE}`}>
+            <span class="case-hero__lot">{LOTE}</span>
             <p>De <s>R$ 97,00</s> por apenas</p>
             <strong>{PRICE_BASICO}</strong>
             <a href="#ingressos" class="case-hero__buy">Garantir minha vaga! &gt;</a>
@@ -259,7 +261,7 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
             <li>Materiais compartilhados na aula</li>
             <li>Mini Curso Fundamentos do Emagrecimento</li>
           </ul>
-          <a href="https://pay.hotmart.com/Y105539078H?off=pmj8n94c&amp;checkoutMode=10" class="ticket__button">Comprar básico</a>
+          <a href="#" data-form="normal" class="ticket__button">Comprar básico</a>
         </article>
 
         <article class="ticket ticket--vip">
@@ -328,7 +330,7 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
 
     <section class="case-final">
       <div class="case-shell">
-        <p>01 de Agosto · Online via Zoom · Lote zero ativo</p>
+        <p>01 de Agosto · Online via Zoom · {LOTE_STATUS}</p>
         <h2>A próxima consulta de emagrecimento pode ter mais raciocínio e menos improviso.</h2>
         <a href="#ingressos" class="case-action case-action--primary">Escolher ingresso</a>
       </div>
