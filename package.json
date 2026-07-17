@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "t9:sync-lot": "node scripts/sync-current-lot.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },

@@ -26,7 +26,7 @@ export const IMERSAO_5ED_LOTS = {
     status: 'Lote 02 ativo',
     basicPrice: 'R$ 29,90',
     basicPriceValue: '29,90',
-    startsAt: '2026-07-21T00:00:00-03:00',
+    startsAt: '2026-07-22T00:00:00-03:00',
     endsAt: '2026-07-30T23:59:59-03:00',
   },
   'lote-03': {
@@ -36,7 +36,7 @@ export const IMERSAO_5ED_LOTS = {
     status: 'Lote 03 ativo',
     basicPrice: 'R$ 39,90',
     basicPriceValue: '39,90',
-    startsAt: '2026-07-30T00:00:00-03:00',
+    startsAt: '2026-07-31T00:00:00-03:00',
     endsAt: '2026-08-01T09:00:00-03:00',
   },
 } as const;

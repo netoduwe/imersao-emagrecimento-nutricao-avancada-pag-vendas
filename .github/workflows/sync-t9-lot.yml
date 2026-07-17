@@ -1,0 +1,38 @@
+name: Sync T9 current lot
+
+on:
+  schedule:
+    # 00h05 em São Paulo, logo após cada virada prevista.
+    - cron: '5 3 22 7 *'
+    - cron: '5 3 31 7 *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-current-lot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.12.0'
+          cache: npm
+      - run: npm ci
+      - name: Synchronize current lot and validate every T9 page
+        run: node scripts/sync-current-lot.mjs --execute
+      - name: Build production pages
+        run: npm run build
+      - name: Commit lot transition when needed
+        shell: bash
+        run: |
+          if git diff --quiet -- src/config/imersao-5ed.ts; then
+            echo "Current lot is already synchronized."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/config/imersao-5ed.ts
+          git commit -m "chore: advance T9 current lot"
+          git push
