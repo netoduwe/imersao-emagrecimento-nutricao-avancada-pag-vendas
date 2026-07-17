@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModal.astro';
+import T9Tracking from '../components/T9Tracking.astro';
 import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/imersao-v3.css';
 
@@ -451,6 +452,7 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
   </div>
 
   <FormModal />
+  <T9Tracking />
 
   <!-- Lightbox Modal -->
   <div id="lightbox-modal" class="lightbox-overlay" style="display:none;">

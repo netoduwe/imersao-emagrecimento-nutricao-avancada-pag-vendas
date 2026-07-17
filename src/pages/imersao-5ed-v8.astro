@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModalV7.astro';
+import T9Tracking from '../components/T9Tracking.astro';
 import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/imersao-v8.css';
 
@@ -418,6 +419,7 @@ const PRICE_VIP_CASH = IMERSAO_5ED_PRICING.vipCash;
   </div>
 
   <FormModal />
+  <T9Tracking />
 
   <script>
     const target = new Date('2026-08-01T09:00:00-03:00').getTime();

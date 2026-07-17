@@ -60,7 +60,7 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
     track('page_view');
     track('view_content');
 
-    const ticketSection = document.getElementById('ingressos');
+    const ticketSection = document.getElementById('ingressos') || document.querySelector('[data-form]')?.closest('section');
     if (ticketSection && 'IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
         if (entries.some((entry) => entry.isIntersecting)) {

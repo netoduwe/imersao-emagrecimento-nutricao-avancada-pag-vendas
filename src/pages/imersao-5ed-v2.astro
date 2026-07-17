@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModal.astro';
+import T9Tracking from '../components/T9Tracking.astro';
 import ProgressBar from '../components/ProgressBar.astro';
 import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/theme-green.css';
@@ -733,6 +734,7 @@ const PRICE_VIP = IMERSAO_5ED_PRICING.vipCash;
 
   <!-- Modal de Formulário GHL -->
   <FormModal />
+  <T9Tracking />
 
   <!-- Lightbox Modal Container for screenshots zoom -->
   <div id="lightbox-modal" class="lightbox-overlay" style="display:none;">
