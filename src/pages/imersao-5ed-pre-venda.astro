@@ -1,0 +1,21 @@
+---
+const destination = '/imersao-5ed-v6/';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://ingressos.institutonutricaoavancada.com/imersao-5ed-v6/" />
+    <title>Redirecionando para a Imersão</title>
+    <script is:inline define:vars={{ destination }}>
+      const target = `${destination}${window.location.search}${window.location.hash}`;
+      window.location.replace(target);
+    </script>
+  </head>
+  <body>
+    <p>Redirecionando para a página da Imersão…</p>
+    <a href={destination}>Continuar</a>
+  </body>
+</html>
