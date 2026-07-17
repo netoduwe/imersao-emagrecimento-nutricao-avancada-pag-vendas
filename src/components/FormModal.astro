@@ -102,6 +102,9 @@
       if (value) formUrl.searchParams.set(key, value);
     });
 
+    const sessionId = (window as any).T9Tracking?.sessionId;
+    if (sessionId) formUrl.searchParams.set('t9_session_id', sessionId);
+
     return formUrl.toString();
   }
 
@@ -116,6 +119,9 @@
         iframe.src = buildTrackedFormUrl(formUrl);
         modal!.style.display = 'flex';
         document.body.style.overflow = 'hidden';
+        window.dispatchEvent(new CustomEvent('t9:form-open', {
+          detail: { ticket_type: type === 'vip' ? 'vip' : 'basic' }
+        }));
       }
     });
   });

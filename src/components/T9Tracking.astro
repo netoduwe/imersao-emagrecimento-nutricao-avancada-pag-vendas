@@ -1,0 +1,90 @@
+---
+const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track-event';
+---
+
+<script is:inline define:vars={{ endpoint }}>
+  (() => {
+    const SESSION_KEY = 't9_session_id';
+    const EVENT_NAMES = new Set([
+      'page_view', 'view_content', 'ticket_section_view', 'ticket_cta_click',
+      'form_open', 'form_start', 'form_submit', 'checkout_view'
+    ]);
+    const params = new URLSearchParams(location.search);
+    let sessionId = localStorage.getItem(SESSION_KEY);
+    if (!sessionId) {
+      sessionId = crypto.randomUUID();
+      localStorage.setItem(SESSION_KEY, sessionId);
+    }
+
+    const cookie = (name) => document.cookie
+      .split('; ')
+      .find((row) => row.startsWith(`${name}=`))
+      ?.split('=')
+      .slice(1)
+      .join('=') || null;
+
+    const attribution = {
+      utm_source: params.get('utm_source'),
+      utm_campaign: params.get('utm_campaign'),
+      utm_content: params.get('utm_content'),
+      utm_term: params.get('utm_term'),
+      campaign_id: params.get('campaign_id') || params.get('campaign'),
+      adset_id: params.get('adset_id') || params.get('adset'),
+      ad_id: params.get('ad_id') || params.get('ad'),
+      placement: params.get('placement'),
+      fbp: cookie('_fbp'),
+      fbc: cookie('_fbc')
+    };
+
+    const track = (eventName, details = {}) => {
+      if (!EVENT_NAMES.has(eventName)) return;
+      const payload = {
+        event_name: eventName,
+        event_id: crypto.randomUUID(),
+        session_id: sessionId,
+        occurred_at: new Date().toISOString(),
+        ticket_type: details.ticket_type || null,
+        ...attribution,
+        page_url: location.href,
+        metadata: details.metadata || {}
+      };
+      const body = JSON.stringify(payload);
+      if (!navigator.sendBeacon(endpoint, new Blob([body], { type: 'text/plain' }))) {
+        fetch(endpoint, { method: 'POST', headers: { 'content-type': 'text/plain' }, body, keepalive: true }).catch(() => {});
+      }
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: `t9_${eventName}`, ...payload });
+    };
+
+    window.T9Tracking = { sessionId, track };
+    track('page_view');
+    track('view_content');
+
+    const ticketSection = document.getElementById('ingressos');
+    if (ticketSection && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          track('ticket_section_view');
+          observer.disconnect();
+        }
+      }, { threshold: 0.25 });
+      observer.observe(ticketSection);
+    }
+
+    document.querySelectorAll('[data-form]').forEach((button) => {
+      button.addEventListener('click', () => track('ticket_cta_click', {
+        ticket_type: button.dataset.form === 'vip' ? 'vip' : 'basic'
+      }));
+    });
+
+    addEventListener('t9:form-open', (event) => track('form_open', event.detail || {}));
+    addEventListener('message', (event) => {
+      if (!event.origin.endsWith('fullfunnel.app')) return;
+      const data = typeof event.data === 'string' ? (() => { try { return JSON.parse(event.data); } catch { return {}; } })() : event.data || {};
+      const eventName = data.event_name || data.event;
+      if (['form_start', 'form_submit', 'checkout_view'].includes(eventName)) {
+        track(eventName, { ticket_type: data.ticket_type, metadata: { source: 'fullfunnel_message' } });
+      }
+    });
+  })();
+</script>
