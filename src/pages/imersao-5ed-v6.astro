@@ -15,6 +15,33 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
 ---
 
 <Layout title={`Imersão em Emagrecimento | ${EVENT_DATE} | Nutrição Avançada`} theme="green" hideHeader={true}>
+  <script is:inline>
+    (() => {
+      const TEST_ID = 't9-lp-20260719';
+      const STORAGE_KEY = `${TEST_ID}:variant`;
+      const variants = [
+        { id: 'v6', path: '/imersao-5ed-v6/' },
+        { id: 'v8', path: '/imersao-5ed-v8/' },
+        { id: 'v4', path: '/imersao-5ed-v4/' },
+        { id: 'v2', path: '/imersao-5ed-v2/' },
+      ];
+      const params = new URLSearchParams(location.search);
+      let variant = params.get('t9_variant') || localStorage.getItem(STORAGE_KEY);
+      if (!variants.some((item) => item.id === variant)) {
+        variant = variants[Math.floor(Math.random() * variants.length)].id;
+        localStorage.setItem(STORAGE_KEY, variant);
+      }
+      params.set('t9_ab_test', TEST_ID);
+      params.set('t9_variant', variant);
+      params.set('t9_router', 'v6');
+      const destination = variants.find((item) => item.id === variant);
+      if (variant !== 'v6') {
+        location.replace(`${destination.path}?${params.toString()}`);
+        return;
+      }
+      history.replaceState(null, '', `${location.pathname}?${params.toString()}${location.hash}`);
+    })();
+  </script>
   <main class="case-page">
     <section class="case-hero" id="imersao">
       <div class="case-shell case-hero__grid">
