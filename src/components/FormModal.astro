@@ -14,6 +14,10 @@
       style="width:100%;height:380px;border:none;display:block;"
       title="Formulário de Ingresso"
     ></iframe>
+    <div id="form-loading" class="form-loading" role="status" aria-live="polite">
+      <span class="form-loading-spinner" aria-hidden="true"></span>
+      <span>Carregando inscrição...</span>
+    </div>
   </div>
 </div>
 
@@ -48,6 +52,38 @@
   .modal-content iframe {
     border-radius: 8px;
   }
+
+  .modal-content iframe.is-hydrating {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .form-loading {
+    position: absolute;
+    inset: 1.5rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    min-height: 380px;
+    color: var(--color-text, #17201c);
+    font-size: .95rem;
+    background: var(--color-surface, #fff);
+    border-radius: 8px;
+  }
+
+  .form-loading.is-visible { display: flex; }
+
+  .form-loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, .14);
+    border-top-color: var(--color-primary, #15966a);
+    border-radius: 50%;
+    animation: formSpin .8s linear infinite;
+  }
+
+  @keyframes formSpin { to { transform: rotate(360deg); } }
 
   .modal-close {
     position: absolute;
@@ -92,7 +128,28 @@
 
   const modal = document.getElementById('form-modal');
   const iframe = document.getElementById('modal-iframe') as HTMLIFrameElement;
+  const loading = document.getElementById('form-loading');
   const closeBtn = document.getElementById('modal-close');
+  let hydrationTimer: number | undefined;
+
+  function beginHydration() {
+    if (hydrationTimer) window.clearTimeout(hydrationTimer);
+    iframe.classList.add('is-hydrating');
+    loading?.classList.add('is-visible');
+    modal?.setAttribute('aria-busy', 'true');
+  }
+
+  function finishHydration() {
+    iframe.classList.remove('is-hydrating');
+    loading?.classList.remove('is-visible');
+    modal?.setAttribute('aria-busy', 'false');
+  }
+
+  iframe.addEventListener('load', () => {
+    if (!iframe.src) return;
+    // O FullFunnels hidrata campos recebidos pela query string de forma assíncrona.
+    hydrationTimer = window.setTimeout(finishHydration, 4500);
+  });
 
   function buildTrackedFormUrl(baseUrl: string) {
     const formUrl = new URL(baseUrl);
@@ -121,6 +178,7 @@
       const formUrl = type ? FORMS[type as keyof typeof FORMS] : undefined;
 
       if (formUrl) {
+        beginHydration();
         iframe.src = buildTrackedFormUrl(formUrl);
         modal!.style.display = 'flex';
         document.body.style.overflow = 'hidden';
@@ -133,8 +191,10 @@
 
   // Fechar modal
   function closeModal() {
+    if (hydrationTimer) window.clearTimeout(hydrationTimer);
     modal!.style.display = 'none';
     iframe.src = '';
+    finishHydration();
     document.body.style.overflow = '';
   }
 

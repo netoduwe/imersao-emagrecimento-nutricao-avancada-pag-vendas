@@ -19,6 +19,10 @@
       style="width:100%;height:380px;border:none;display:block;"
       title="Formulário de Ingresso"
     ></iframe>
+    <div id="form-loading" class="form-loading" role="status" aria-live="polite">
+      <span class="form-loading-spinner" aria-hidden="true"></span>
+      <span>Carregando inscrição...</span>
+    </div>
   </div>
 </div>
 
@@ -55,6 +59,28 @@
     border-radius: 12px;
     background: #fff;
   }
+
+  .modal-content iframe.is-hydrating { opacity: 0; pointer-events: none; }
+  .form-loading {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    min-height: 380px;
+    color: #17201c;
+    background: #fff;
+    border-radius: 12px;
+  }
+  .form-loading.is-visible { display: flex; }
+  .form-loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 0, 0, .14);
+    border-top-color: #15966a;
+    border-radius: 50%;
+    animation: formSpin .8s linear infinite;
+  }
+  @keyframes formSpin { to { transform: rotate(360deg); } }
 
   .modal-head { padding: 6px 8px 14px; color: #071209; }
   .modal-head span { color:#087c36; font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
@@ -112,7 +138,27 @@
 
   const modal = document.getElementById('form-modal');
   const iframe = document.getElementById('modal-iframe') as HTMLIFrameElement;
+  const loading = document.getElementById('form-loading');
   const closeBtn = document.getElementById('modal-close');
+  let hydrationTimer: number | undefined;
+
+  function beginHydration() {
+    if (hydrationTimer) window.clearTimeout(hydrationTimer);
+    iframe.classList.add('is-hydrating');
+    loading?.classList.add('is-visible');
+    modal?.setAttribute('aria-busy', 'true');
+  }
+
+  function finishHydration() {
+    iframe.classList.remove('is-hydrating');
+    loading?.classList.remove('is-visible');
+    modal?.setAttribute('aria-busy', 'false');
+  }
+
+  iframe.addEventListener('load', () => {
+    if (!iframe.src) return;
+    hydrationTimer = window.setTimeout(finishHydration, 4500);
+  });
 
   function buildTrackedFormUrl(baseUrl: string) {
     const formUrl = new URL(baseUrl);
@@ -141,6 +187,7 @@
       const formUrl = type ? FORMS[type as keyof typeof FORMS] : undefined;
 
       if (formUrl) {
+        beginHydration();
         iframe.src = buildTrackedFormUrl(formUrl);
         modal!.style.display = 'flex';
         document.body.style.overflow = 'hidden';
@@ -153,8 +200,10 @@
 
   // Fechar modal
   function closeModal() {
+    if (hydrationTimer) window.clearTimeout(hydrationTimer);
     modal!.style.display = 'none';
     iframe.src = '';
+    finishHydration();
     document.body.style.overflow = '';
   }
 
