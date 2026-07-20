@@ -11,6 +11,7 @@ const LOTE = IMERSAO_5ED_CURRENT_LOT.label;
 const LOTE_UPPER = IMERSAO_5ED_CURRENT_LOT.labelUpper;
 const PRICE_BASIC = IMERSAO_5ED_CURRENT_LOT.basicPrice;
 const PRICE_VIP_INSTALLMENTS = IMERSAO_5ED_PRICING.vipInstallments;
+const PRICE_VIP_INSTALLMENT_VALUE = IMERSAO_5ED_PRICING.vipInstallmentValue;
 const PRICE_VIP_CASH = IMERSAO_5ED_PRICING.vipCash;
 ---
 
@@ -272,7 +273,6 @@ const PRICE_VIP_CASH = IMERSAO_5ED_PRICING.vipCash;
         <div class="white-section-heading white-section-heading--center">
           <p class="white-kicker">{LOTE}</p>
           <h2>Escolha seu ingresso sem perder o VIP de vista</h2>
-          <p>Os dois formatos aparecem juntos logo abaixo. Você bate o olho no básico e no VIP ao mesmo tempo, sem depender de swipe nem de card escondido.</p>
         </div>
 
         <div class="v9-ticket-glance" aria-label="Comparação rápida entre ingresso básico e VIP">
@@ -301,7 +301,10 @@ const PRICE_VIP_CASH = IMERSAO_5ED_PRICING.vipCash;
             </div>
             <div class="v9-glance-card__price">
               <small>De <s>R$ 297,00</s> por</small>
-              <strong>{PRICE_VIP_INSTALLMENTS}</strong>
+              <strong class="v9-installment-price">
+                <span>12x de</span>
+                <b>{PRICE_VIP_INSTALLMENT_VALUE}</b>
+              </strong>
               <span>ou {PRICE_VIP_CASH} à vista</span>
             </div>
             <ul>
@@ -314,40 +317,90 @@ const PRICE_VIP_CASH = IMERSAO_5ED_PRICING.vipCash;
 
         <div class="v9-compare-board" aria-label="Quadro comparativo dos ingressos">
           <div class="v9-compare-board__head">
-            <span>O que muda</span>
+            <span>Compare os benefícios</span>
             <span>Básico</span>
             <span>VIP</span>
           </div>
 
           <div class="v9-compare-row">
-            <strong>Formato</strong>
-            <span>Ao vivo</span>
-            <span>Ao vivo + gravação</span>
+            <div class="v9-compare-row__benefit">
+              <strong>Evento ao vivo</strong>
+              <small>Um dia completo de imersão online via Zoom.</small>
+            </div>
+            <span class="is-included">Incluído</span>
+            <span class="is-included">Incluído</span>
           </div>
           <div class="v9-compare-row">
-            <strong>Grupo do evento</strong>
-            <span>Incluído</span>
-            <span>Incluído</span>
+            <div class="v9-compare-row__benefit">
+              <strong>Grupo e materiais da aula</strong>
+              <small>Avisos, suporte do evento e materiais compartilhados pelos professores.</small>
+            </div>
+            <span class="is-included">Incluído</span>
+            <span class="is-included">Incluído</span>
           </div>
           <div class="v9-compare-row">
-            <strong>Materiais da aula</strong>
-            <span>Incluído</span>
-            <span>Incluído</span>
+            <div class="v9-compare-row__benefit">
+              <strong>Mini Curso Fundamentos do Emagrecimento</strong>
+              <small>Base para acompanhar a imersão e aplicar os conceitos com mais segurança.</small>
+            </div>
+            <span class="is-included">Incluído</span>
+            <span class="is-included">Incluído</span>
           </div>
           <div class="v9-compare-row">
-            <strong>Certificado de 8h</strong>
-            <span>—</span>
-            <span>Incluído</span>
+            <div class="v9-compare-row__benefit">
+              <strong>Gravação do evento por 1 ano</strong>
+              <small>Reveja as aulas e consulte novamente os protocolos quando precisar.</small>
+            </div>
+            <span class="is-not-included">Não incluso</span>
+            <span class="is-included">Incluído</span>
           </div>
           <div class="v9-compare-row">
-            <strong>Bônus extras</strong>
-            <span>Mini curso</span>
-            <span>Ebooks + revisão</span>
+            <div class="v9-compare-row__benefit">
+              <strong>Certificado de 8 horas</strong>
+              <small>Comprovação de atualização profissional e carga horária.</small>
+            </div>
+            <span class="is-not-included">Não incluso</span>
+            <span class="is-included">Incluído</span>
           </div>
           <div class="v9-compare-row">
-            <strong>Melhor para</strong>
-            <span>Quem quer entrar ao vivo no menor valor</span>
-            <span>Quem quer rever, aprofundar e aproveitar os bônus</span>
+            <div class="v9-compare-row__benefit">
+              <strong>E-book #1 · Tópicos Avançados</strong>
+              <small>Nutricosméticos, crononutrição e biogênese mitocondrial aplicados à prática.</small>
+            </div>
+            <span class="is-not-included">Não incluso</span>
+            <span class="is-included">Incluído</span>
+          </div>
+          <div class="v9-compare-row">
+            <div class="v9-compare-row__benefit">
+              <strong>E-book #2 · “Me Formei, e agora?”</strong>
+              <small>Precificação, retorno, fidelização e rotina profissional no consultório.</small>
+            </div>
+            <span class="is-not-included">Não incluso</span>
+            <span class="is-included">Incluído</span>
+          </div>
+          <div class="v9-compare-row">
+            <div class="v9-compare-row__benefit">
+              <strong>E-book #3 · Desaprendendo a Dieta</strong>
+              <small>Educação nutricional para combater mitos e a mentalidade de dieta.</small>
+            </div>
+            <span class="is-not-included">Não incluso</span>
+            <span class="is-included">Incluído</span>
+          </div>
+          <div class="v9-compare-row">
+            <div class="v9-compare-row__benefit">
+              <strong>Ressaca do Evento</strong>
+              <small>Encontro extra no Zoom para revisar a aula e tirar dúvidas após a imersão.</small>
+            </div>
+            <span class="is-not-included">Não incluso</span>
+            <span class="is-included">Incluído</span>
+          </div>
+          <div class="v9-compare-row">
+            <div class="v9-compare-row__benefit">
+              <strong>Cashback integral</strong>
+              <small>O valor do VIP vira desconto em formações selecionadas do Instituto.</small>
+            </div>
+            <span class="is-not-included">Não incluso</span>
+            <span class="is-included">Incluído</span>
           </div>
         </div>
       </div>
@@ -444,7 +497,7 @@ const PRICE_VIP_CASH = IMERSAO_5ED_PRICING.vipCash;
     </footer>
 
     <aside class="white-mobile-cta v9-mobile-cta" aria-label="Comprar ingresso">
-      <div><small>{LOTE_UPPER}</small><strong>Básico e VIP visíveis</strong></div>
+      <div><small>{LOTE_UPPER}</small><strong>Selecione seu ingresso</strong></div>
       <a href="#ingressos">Ver opções</a>
     </aside>
   </div>
@@ -476,5 +529,20 @@ const PRICE_VIP_CASH = IMERSAO_5ED_PRICING.vipCash;
 
     updateV9Countdown();
     window.setInterval(updateV9Countdown, 1000);
+
+    const mobileCta = document.querySelector('.v9-mobile-cta');
+    const ticketsSection = document.querySelector('#ingressos');
+
+    function updateV9MobileCta() {
+      if (!mobileCta) return;
+      const ticketsRect = ticketsSection?.getBoundingClientRect();
+      const ticketsInView = ticketsRect ? ticketsRect.top < window.innerHeight * 0.8 && ticketsRect.bottom > 80 : false;
+      const shouldShow = window.scrollY > window.innerHeight * 0.9 && !ticketsInView;
+      mobileCta.classList.toggle('is-visible', shouldShow);
+    }
+
+    updateV9MobileCta();
+    window.addEventListener('scroll', updateV9MobileCta, { passive: true });
+    window.addEventListener('hashchange', updateV9MobileCta);
   </script>
 </Layout>
