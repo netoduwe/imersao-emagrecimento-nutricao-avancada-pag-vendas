@@ -44,7 +44,7 @@ export const IMERSAO_5ED_LOTS = {
 export type Imersao5edLotId = keyof typeof IMERSAO_5ED_LOTS;
 
 // Altere apenas este ID quando houver uma virada de lote.
-export const IMERSAO_5ED_CURRENT_LOT_ID: Imersao5edLotId = 'lote-01';
+export const IMERSAO_5ED_CURRENT_LOT_ID: Imersao5edLotId = 'lote-02';
 export const IMERSAO_5ED_CURRENT_LOT = IMERSAO_5ED_LOTS[IMERSAO_5ED_CURRENT_LOT_ID];
 
 export const IMERSAO_5ED_PRICING = {
