@@ -135,15 +135,16 @@
     normal: 'https://links.fullfunnel.app/widget/form/Z1AkP8zQTM494tXR8loP',
     vip: 'https://links.fullfunnel.app/widget/form/XuSUwksfyVTSPoPKdMe8'
   };
+  const CHECKOUTS = {
+    normal: 'https://pay.hotmart.com/Y105539078H?off=rzzgx17r&checkoutMode=10',
+    vip: 'https://pay.hotmart.com/W93818806I?off=l3p9qwc8&checkoutMode=10'
+  };
 
   const modal = document.getElementById('form-modal');
   const iframe = document.getElementById('modal-iframe') as HTMLIFrameElement;
   const loading = document.getElementById('form-loading');
   const closeBtn = document.getElementById('modal-close');
-  let hydrationTimer: number | undefined;
-
   function beginHydration() {
-    if (hydrationTimer) window.clearTimeout(hydrationTimer);
     iframe.classList.add('is-hydrating');
     loading?.classList.add('is-visible');
     modal?.setAttribute('aria-busy', 'true');
@@ -157,7 +158,8 @@
 
   iframe.addEventListener('load', () => {
     if (!iframe.src) return;
-    hydrationTimer = window.setTimeout(finishHydration, 4500);
+    // A atribuição e o session id já seguem na URL antes deste carregamento.
+    finishHydration();
   });
 
   function buildTrackedFormUrl(baseUrl: string) {
@@ -179,12 +181,52 @@
     return formUrl.toString();
   }
 
+  function buildTrackedCheckoutUrl(baseUrl: string, type: 'normal' | 'vip') {
+    const checkoutUrl = new URL(baseUrl);
+    const currentParams = new URLSearchParams(window.location.search);
+    currentParams.delete('t9_checkout_flow');
+    currentParams.forEach((value, key) => {
+      if (value) checkoutUrl.searchParams.set(key, value);
+    });
+
+    const tracking = (window as any).T9Tracking;
+    Object.entries(tracking?.attribution || {}).forEach(([key, value]) => {
+      if (value && !checkoutUrl.searchParams.has(key)) checkoutUrl.searchParams.set(key, String(value));
+    });
+    const token = String(tracking?.sessionToken || tracking?.sessionId || '')
+      .replace(/[^a-zA-Z0-9]/g, '')
+      .slice(0, 12)
+      .toLowerCase();
+    checkoutUrl.searchParams.set('sck', `t9d-${type === 'vip' ? 'v' : 'b'}-${token || 'semid'}`);
+    return checkoutUrl.toString();
+  }
+
   // Abrir modal
   document.querySelectorAll('[data-form]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const type = (btn as HTMLElement).dataset.form;
       const formUrl = type ? FORMS[type as keyof typeof FORMS] : undefined;
+      const checkoutUrl = type ? CHECKOUTS[type as keyof typeof CHECKOUTS] : undefined;
+      const tracking = (window as any).T9Tracking;
+      const ticketType = type === 'vip' ? 'vip' : 'basic';
+
+      if (tracking?.checkoutFlow === 'direct' && checkoutUrl && (type === 'normal' || type === 'vip')) {
+        const destination = buildTrackedCheckoutUrl(checkoutUrl, type);
+        const sck = new URL(destination).searchParams.get('sck');
+        tracking.track?.('checkout_view', {
+          ticket_type: ticketType,
+          metadata: {
+            checkout_flow: 'direct',
+            experiment_id: tracking.checkoutExperimentId,
+            session_token: tracking.sessionToken,
+            destination: 'hotmart',
+            sck
+          }
+        });
+        window.location.assign(destination);
+        return;
+      }
 
       if (formUrl) {
         beginHydration();
@@ -192,7 +234,14 @@
         modal!.style.display = 'flex';
         document.body.style.overflow = 'hidden';
         window.dispatchEvent(new CustomEvent('t9:form-open', {
-          detail: { ticket_type: type === 'vip' ? 'vip' : 'basic' }
+          detail: {
+            ticket_type: ticketType,
+            metadata: {
+              checkout_flow: 'form',
+              experiment_id: tracking?.checkoutExperimentId,
+              session_token: tracking?.sessionToken
+            }
+          }
         }));
       }
     });
@@ -200,7 +249,6 @@
 
   // Fechar modal
   function closeModal() {
-    if (hydrationTimer) window.clearTimeout(hydrationTimer);
     modal!.style.display = 'none';
     iframe.src = '';
     finishHydration();

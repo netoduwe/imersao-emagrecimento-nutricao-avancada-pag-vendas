@@ -6,6 +6,9 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
   (() => {
     const SESSION_KEY = 't9_session_id';
     const ATTRIBUTION_KEY = 't9_attribution';
+    const CHECKOUT_FLOW_KEY = 't9_checkout_flow_v1';
+    const CHECKOUT_EXPERIMENT_ID = 't9-checkout-flow-20260722';
+    const CHECKOUT_EXPERIMENT_PATHS = new Set(['/imersao-5ed-v2', '/imersao-5ed-v8']);
     const EVENT_NAMES = new Set([
       'page_view', 'view_content', 'ticket_section_view', 'ticket_cta_click',
       'form_open', 'form_start', 'form_submit', 'checkout_view'
@@ -15,6 +18,23 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
     if (!sessionId) {
       sessionId = crypto.randomUUID();
       localStorage.setItem(SESSION_KEY, sessionId);
+    }
+    const sessionToken = sessionId.replace(/[^a-zA-Z0-9]/g, '').slice(0, 12).toLowerCase();
+    const currentPath = location.pathname.replace(/\/+$/, '') || '/';
+    const forcedCheckoutFlow = params.get('t9_checkout_flow');
+    let checkoutFlow = null;
+    if (CHECKOUT_EXPERIMENT_PATHS.has(currentPath)) {
+      if (forcedCheckoutFlow === 'form' || forcedCheckoutFlow === 'direct') {
+        checkoutFlow = forcedCheckoutFlow;
+      } else {
+        const savedCheckoutFlow = localStorage.getItem(CHECKOUT_FLOW_KEY);
+        if (savedCheckoutFlow === 'form' || savedCheckoutFlow === 'direct') {
+          checkoutFlow = savedCheckoutFlow;
+        } else {
+          checkoutFlow = crypto.getRandomValues(new Uint32Array(1))[0] % 2 === 0 ? 'form' : 'direct';
+          localStorage.setItem(CHECKOUT_FLOW_KEY, checkoutFlow);
+        }
+      }
     }
 
     const cookie = (name) => document.cookie
@@ -67,8 +87,22 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
       window.dataLayer.push({ event: `t9_${eventName}`, ...payload });
     };
 
-    window.T9Tracking = { sessionId, attribution, track };
-    track('page_view');
+    const checkoutExperimentMetadata = checkoutFlow ? {
+      checkout_flow: checkoutFlow,
+      experiment_id: CHECKOUT_EXPERIMENT_ID,
+      session_token: sessionToken,
+      forced_variant: forcedCheckoutFlow === 'form' || forcedCheckoutFlow === 'direct'
+    } : {};
+
+    window.T9Tracking = {
+      sessionId,
+      sessionToken,
+      attribution,
+      track,
+      checkoutFlow,
+      checkoutExperimentId: CHECKOUT_EXPERIMENT_ID
+    };
+    track('page_view', { metadata: checkoutExperimentMetadata });
     track('view_content');
 
     const ticketSection = document.getElementById('ingressos') || document.querySelector('[data-form]')?.closest('section');
@@ -84,7 +118,8 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
 
     document.querySelectorAll('[data-form]').forEach((button) => {
       button.addEventListener('click', () => track('ticket_cta_click', {
-        ticket_type: button.dataset.form === 'vip' ? 'vip' : 'basic'
+        ticket_type: button.dataset.form === 'vip' ? 'vip' : 'basic',
+        metadata: checkoutExperimentMetadata
       }));
     });
 
@@ -94,7 +129,10 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
       const data = typeof event.data === 'string' ? (() => { try { return JSON.parse(event.data); } catch { return {}; } })() : event.data || {};
       const eventName = data.event_name || data.event;
       if (['form_start', 'form_submit', 'checkout_view'].includes(eventName)) {
-        track(eventName, { ticket_type: data.ticket_type, metadata: { source: 'fullfunnel_message' } });
+        track(eventName, {
+          ticket_type: data.ticket_type,
+          metadata: { source: 'fullfunnel_message', ...checkoutExperimentMetadata }
+        });
       }
     });
   })();
