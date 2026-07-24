@@ -24,16 +24,11 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
     const forcedCheckoutFlow = params.get('t9_checkout_flow');
     let checkoutFlow = null;
     if (CHECKOUT_EXPERIMENT_PATHS.has(currentPath)) {
-      if (forcedCheckoutFlow === 'form' || forcedCheckoutFlow === 'direct') {
-        checkoutFlow = forcedCheckoutFlow;
+      if (forcedCheckoutFlow === 'form') {
+        checkoutFlow = 'form';
       } else {
-        const savedCheckoutFlow = localStorage.getItem(CHECKOUT_FLOW_KEY);
-        if (savedCheckoutFlow === 'form' || savedCheckoutFlow === 'direct') {
-          checkoutFlow = savedCheckoutFlow;
-        } else {
-          checkoutFlow = crypto.getRandomValues(new Uint32Array(1))[0] % 2 === 0 ? 'form' : 'direct';
-          localStorage.setItem(CHECKOUT_FLOW_KEY, checkoutFlow);
-        }
+        checkoutFlow = 'direct';
+        localStorage.setItem(CHECKOUT_FLOW_KEY, 'direct');
       }
     }
 
