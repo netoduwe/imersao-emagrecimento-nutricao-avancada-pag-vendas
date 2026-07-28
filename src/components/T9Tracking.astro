@@ -22,15 +22,8 @@ const endpoint = 'https://qjkezuofhunqzbchlhru.supabase.co/functions/v1/t9-track
     const sessionToken = sessionId.replace(/[^a-zA-Z0-9]/g, '').slice(0, 12).toLowerCase();
     const currentPath = location.pathname.replace(/\/+$/, '') || '/';
     const forcedCheckoutFlow = params.get('t9_checkout_flow');
-    let checkoutFlow = null;
-    if (CHECKOUT_EXPERIMENT_PATHS.has(currentPath)) {
-      if (forcedCheckoutFlow === 'form') {
-        checkoutFlow = 'form';
-      } else {
-        checkoutFlow = 'direct';
-        localStorage.setItem(CHECKOUT_FLOW_KEY, 'direct');
-      }
-    }
+    let checkoutFlow = forcedCheckoutFlow === 'form' ? 'form' : 'direct';
+    localStorage.setItem(CHECKOUT_FLOW_KEY, 'direct');
 
     const cookie = (name) => document.cookie
       .split('; ')

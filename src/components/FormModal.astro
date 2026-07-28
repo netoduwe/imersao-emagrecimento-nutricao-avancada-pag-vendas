@@ -201,7 +201,7 @@
       const tracking = (window as any).T9Tracking;
       const ticketType = type === 'vip' ? 'vip' : 'basic';
 
-      if (tracking?.checkoutFlow === 'direct' && checkoutUrl && (type === 'normal' || type === 'vip')) {
+      if (tracking?.checkoutFlow !== 'form' && checkoutUrl && (type === 'normal' || type === 'vip')) {
         const destination = buildTrackedCheckoutUrl(checkoutUrl, type);
         const sck = new URL(destination).searchParams.get('sck');
         tracking.track?.('checkout_view', {
