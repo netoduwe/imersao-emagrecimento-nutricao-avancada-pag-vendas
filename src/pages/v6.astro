@@ -190,7 +190,7 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
   <!-- PROFESSORES MINI SECTION -->
   <section class="container" style="padding: var(--space-xl) var(--space-sm); border-top: 1px solid rgba(0,0,0,0.05);">
     <h2 class="text-center" style="margin-bottom: var(--space-xl);">Aprenda com quem domina a prática:</h2>
-    <div class="grid-3">
+    <div class="grid-2">
       <div style="background: white; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 1rem;">
         <div style="display: flex; gap: 1rem; align-items: center;">
           <img src="/images/ney-clinica-otimizado.webp" alt="Ney Felipe" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;" />
@@ -211,25 +211,10 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
         </div>
         <p style="font-size: 0.875rem; color: var(--color-text-light);">Especialista no manejo prático dos análogos de GLP-1 (Ozempic, Mounjaro) e condutas para perda de peso com preservação de massa magra.</p>
       </div>
-      <div style="background: white; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 1rem;">
-        <div style="display: flex; gap: 1rem; align-items: center;">
-          <img src="/images/cassia.webp" alt="Cássia Helena" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;" />
-          <div>
-            <h4 style="font-size: 1.125rem;">CÁSSIA HELENA</h4>
-            <p style="font-size: 0.75rem; color: #dc2626; font-weight: 800;">ADESÃO COMPORTAMENTAL</p>
-          </div>
-        </div>
-        <ul style="list-style: none; padding: 0; font-size: 0.8125rem; color: var(--color-text-light); line-height: 1.4; display: flex; flex-direction: column; gap: 0.35rem;">
-          <li>✅ Reduzir abandono precoce do paciente</li>
-          <li>✅ Ajustar expectativas irreais sem desmotivá-lo</li>
-          <li>✅ Preparar para autonomia pós medicação</li>
-          <li>✅ Evitar recaídas após suspensão</li>
-        </ul>
-      </div>
     </div>
   </section>
 
-  <VideoRecado />
+  <VideoRecado showCassia={false} />
 
   <!-- PREÇOS SECTION -->
   <section id="preco" style="background: var(--color-bg); padding: var(--space-xl) var(--space-sm); border-top: 1px solid rgba(255,255,255,0.05);">

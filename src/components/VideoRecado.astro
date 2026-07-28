@@ -1,27 +1,32 @@
 ---
 interface Props {
   variant?: 'light' | 'dark';
+  showCassia?: boolean;
 }
-const { variant = 'light' } = Astro.props;
+const { variant = 'light', showCassia = true } = Astro.props;
 ---
 
 <section class="video-section">
   <div class="container">
-    <h2 class="section-title">Assista o convite das professoras:</h2>
-    <div class="video-grid">
-      <!-- Video Cássia -->
-      <div class="video-card">
-        <div class="video-wrapper">
-          <iframe 
-            src="https://www.youtube.com/embed/M5NVmTIQgWI" 
-            title="Convite Prof. Cássia Helena"
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-          </iframe>
+    <h2 class="section-title">
+      {showCassia ? 'Assista o convite das professoras:' : 'Assista o convite da professora:'}
+    </h2>
+    <div class="video-grid" style={!showCassia ? 'grid-template-columns: 1fr; max-width: 380px;' : ''}>
+      {showCassia && (
+        <!-- Video Cássia -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube.com/embed/M5NVmTIQgWI" 
+              title="Convite Prof. Cássia Helena"
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="video-caption">Prof. Cássia Helena</p>
         </div>
-        <p class="video-caption">Prof. Cássia Helena</p>
-      </div>
+      )}
 
       <!-- Video Jéssica -->
       <div class="video-card">
