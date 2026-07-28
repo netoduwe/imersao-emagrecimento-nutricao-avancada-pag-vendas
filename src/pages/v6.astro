@@ -5,6 +5,7 @@ import FormModal from '../components/FormModal.astro';
 import Hero from '../components/Hero.astro';
 import Schedule from '../components/Schedule.astro';
 import VideoRecado from '../components/VideoRecado.astro';
+import OfferUrgencyBar from '../components/OfferUrgencyBar.astro';
 import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_CURRENT_LOT_ID, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/theme-green.css';
 
@@ -24,21 +25,8 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
   </div>
 
   <Hero variant="red" hidePriceCard={true} minimal={true} eventDate="01 de Agosto">
-    <div slot="after-cta" class="offer-bar-fidelity">
-      <div class="ob-left">
-        <div class="ob-badge">O {LOTE_UPPER} VIRA HOJE</div>
-        <div class="ob-title" id="offerDate">SOMENTE HOJE</div>
-        <div class="ob-price">
-          De <span class="ob-old">{IMERSAO_5ED_PRICING.basicOriginal}</span> por <span class="ob-new">{PRICE_BASICO}</span>
-        </div>
-      </div>
-      <div class="ob-right">
-        <div class="ob-timer-wrap">
-          <span class="ob-label">ENCERRA EM</span>
-          <div class="ob-timer" id="midnight-timer">00:00:00</div>
-        </div>
-        <a href="#preco" class="ob-cta">GARANTIR AGORA</a>
-      </div>
+    <div slot="after-cta">
+      <OfferUrgencyBar ctaUrl="#preco" />
     </div>
   </Hero>
 
@@ -236,7 +224,7 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
             <span style="text-decoration: line-through; color: #999; font-size: 1.125rem;">De {IMERSAO_5ED_PRICING.basicOriginal}</span>
             <div style="font-size: 2.5rem; font-weight: 800; color: var(--color-text);">{PRICE_BASICO}</div>
           </div>
-          <a href="#" class="btn-shiny" style="width: 100%;" data-form="normal">
+          <a href="https://pay.hotmart.com/Y105539078H?off=rzzgx17r&checkoutMode=10" class="btn-shiny" style="width: 100%;" data-form="normal">
             <span class="btn-text">COMPRAR INGRESSO BÁSICO</span>
             <div class="btn-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
@@ -266,7 +254,7 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
             <div style="font-size: 2.5rem; font-weight: 800; color: #dc2626;">{PRICE_VIP_PARCELADO}</div>
             <div style="font-size: 1rem; color: var(--color-text-light);">ou {PRICE_VIP_AVISTA} à vista</div>
           </div>
-          <a href="#" class="btn-shiny" style="width: 100%;" data-form="vip">
+          <a href="https://pay.hotmart.com/W93818806I?off=l3p9qwc8&checkoutMode=10" class="btn-shiny" style="width: 100%;" data-form="vip">
             <span class="btn-text">COMPRAR INGRESSO VIP</span>
             <div class="btn-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>

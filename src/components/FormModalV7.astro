@@ -212,18 +212,23 @@
       const ticketType = type === 'vip' ? 'vip' : 'basic';
 
       if (tracking?.checkoutFlow !== 'form' && checkoutUrl && (type === 'normal' || type === 'vip')) {
-        const destination = buildTrackedCheckoutUrl(checkoutUrl, type);
-        const sck = new URL(destination).searchParams.get('sck');
-        tracking.track?.('checkout_view', {
-          ticket_type: ticketType,
-          metadata: {
-            checkout_flow: 'direct',
-            experiment_id: tracking.checkoutExperimentId,
-            session_token: tracking.sessionToken,
-            destination: 'hotmart',
-            sck
-          }
-        });
+        let destination = checkoutUrl;
+        try {
+          destination = buildTrackedCheckoutUrl(checkoutUrl, type);
+          const sck = new URL(destination).searchParams.get('sck');
+          tracking?.track?.('checkout_view', {
+            ticket_type: ticketType,
+            metadata: {
+              checkout_flow: 'direct',
+              experiment_id: tracking?.checkoutExperimentId || null,
+              session_token: tracking?.sessionToken || null,
+              destination: 'hotmart',
+              sck
+            }
+          });
+        } catch (err) {
+          console.warn('[T9Tracking] Error building tracked checkout URL:', err);
+        }
         window.location.assign(destination);
         return;
       }

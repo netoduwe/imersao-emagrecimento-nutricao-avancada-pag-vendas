@@ -1,0 +1,220 @@
+---
+import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
+
+interface Props {
+  loteText?: string;
+  oldPrice?: string;
+  newPrice?: string;
+  ctaUrl?: string;
+  ctaText?: string;
+  theme?: 'red' | 'green' | 'dark';
+}
+
+const {
+  loteText = `O ${IMERSAO_5ED_CURRENT_LOT.labelUpper} VIRA HOJE`,
+  oldPrice = IMERSAO_5ED_PRICING.basicOriginal || 'R$ 97,00',
+  newPrice = IMERSAO_5ED_CURRENT_LOT.basicPrice || 'R$ 29,90',
+  ctaUrl = '#preco',
+  ctaText = 'GARANTIR AGORA',
+  theme = 'red'
+} = Astro.props;
+---
+
+<div class={`offer-urgency-bar theme-${theme}`}>
+  <div class="oub-left">
+    <div class="oub-badge">{loteText}</div>
+    <div class="oub-title oub-offer-date">SOMENTE HOJE</div>
+    <div class="oub-price">
+      De <span class="oub-old">{oldPrice}</span> por <span class="oub-new">{newPrice}</span>
+    </div>
+  </div>
+  <div class="oub-right">
+    <div class="oub-timer-wrap">
+      <span class="oub-label">ENCERRA EM</span>
+      <div class="oub-timer oub-midnight-timer">00:00:00</div>
+    </div>
+    <a href={ctaUrl} class="oub-cta">{ctaText}</a>
+  </div>
+</div>
+
+<script>
+  function initOfferUrgencyBar() {
+    const diasSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+
+    function updateTimer() {
+      const agora = new Date();
+      const midnight = new Date();
+      midnight.setHours(24, 0, 0, 0);
+      const diff = midnight.getTime() - agora.getTime();
+
+      if (diff > 0) {
+        const mh = Math.floor(diff / (1000 * 60 * 60));
+        const mm = Math.floor((diff / (1000 * 60)) % 60);
+        const ms = Math.floor((diff / 1000) % 60);
+
+        const timeStr = `${String(mh).padStart(2, '0')}:${String(mm).padStart(2, '0')}:${String(ms).padStart(2, '0')}`;
+        document.querySelectorAll('.oub-midnight-timer, #midnight-timer').forEach(el => {
+          el.textContent = timeStr;
+        });
+      }
+
+      const diaSemana = diasSemana[agora.getDay()];
+      const dia = String(agora.getDate()).padStart(2, '0');
+      const mes = String(agora.getMonth() + 1).padStart(2, '0');
+
+      document.querySelectorAll('.oub-offer-date, #offerDate').forEach(el => {
+        el.innerHTML = `SOMENTE HOJE ${diaSemana}, ${dia}/${mes}`;
+      });
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initOfferUrgencyBar);
+  } else {
+    initOfferUrgencyBar();
+  }
+</script>
+
+<style>
+  .offer-urgency-bar {
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: 1px solid rgba(220, 38, 38, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    margin: 1.25rem 0;
+  }
+
+  .oub-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .oub-badge {
+    background: #fef2f2;
+    color: #dc2626;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 10px;
+    font-weight: 800;
+    width: max-content;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .oub-title {
+    font-size: 15px;
+    font-weight: 900;
+    color: #111111;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .oub-price {
+    font-size: 13px;
+    color: #444444;
+    font-weight: 600;
+  }
+
+  .oub-old {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+
+  .oub-new {
+    color: #dc2626;
+    font-weight: 800;
+  }
+
+  .oub-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .oub-timer-wrap {
+    text-align: right;
+  }
+
+  .oub-label {
+    display: block;
+    font-size: 9px;
+    font-weight: 800;
+    color: #888888;
+    letter-spacing: 0.06em;
+  }
+
+  .oub-timer {
+    font-size: 20px;
+    font-weight: 900;
+    color: #111111;
+    font-variant-numeric: tabular-nums;
+    font-family: inherit;
+    line-height: 1;
+  }
+
+  .oub-cta {
+    background: #dc2626;
+    color: #ffffff !important;
+    padding: 9px 16px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 12px;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .oub-cta:hover {
+    transform: translateY(-1px);
+    background: #b91c1c;
+  }
+
+  /* Responsive Mobile Styling */
+  @media (max-width: 640px) {
+    .offer-urgency-bar {
+      padding: 12px 14px;
+      gap: 10px;
+      border-radius: 14px;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
+    .oub-title {
+      font-size: 13px;
+    }
+
+    .oub-price {
+      font-size: 12px;
+    }
+
+    .oub-timer {
+      font-size: 17px;
+    }
+
+    .oub-cta {
+      padding: 7px 12px;
+      font-size: 11px;
+    }
+  }
+</style>

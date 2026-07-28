@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModal.astro';
 import T9Tracking from '../components/T9Tracking.astro';
+import OfferUrgencyBar from '../components/OfferUrgencyBar.astro';
 import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/imersao-v1-02.css';
 
@@ -38,6 +39,7 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
               <a href="#ingressos" class="case-hero__buy">Garantir minha vaga! &gt;</a>
               <small>Garantia incondicional de 7 dias · Sem burocracia</small>
             </div>
+            <OfferUrgencyBar ctaUrl="#ingressos" />
           </div>
 
           <div class="case-hero__facts" aria-label="Dados do evento">

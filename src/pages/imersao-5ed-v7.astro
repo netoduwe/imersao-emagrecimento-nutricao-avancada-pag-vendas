@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModalV7.astro';
 import T9Tracking from '../components/T9Tracking.astro';
+import OfferUrgencyBar from '../components/OfferUrgencyBar.astro';
 import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/imersao-v7.css';
 import '../styles/imersao-v7-typography.css';
@@ -35,9 +36,10 @@ const PRICE_VIP_AVISTA = IMERSAO_5ED_PRICING.vipCash;
               <span class="case-hero__lot">{LOTE}</span>
               <p>De <s>R$ 97,00</s> por apenas</p>
               <strong>{PRICE_BASICO}</strong>
-              <a href="#" data-form="normal" class="case-hero__buy">Quero garantir minha vaga <span>→</span></a>
+              <a href="https://pay.hotmart.com/Y105539078H?off=rzzgx17r&checkoutMode=10" data-form="normal" class="case-hero__buy">Quero garantir minha vaga <span>→</span></a>
               <small>Compra segura · Garantia incondicional de 7 dias</small>
             </div>
+            <OfferUrgencyBar ctaUrl="https://pay.hotmart.com/Y105539078H?off=rzzgx17r&checkoutMode=10" />
           </div>
 
           <div class="case-hero__facts" aria-label="Dados do evento">

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import FormModal from '../components/FormModalV7.astro';
 import T9Tracking from '../components/T9Tracking.astro';
+import OfferUrgencyBar from '../components/OfferUrgencyBar.astro';
 import { IMERSAO_5ED_CURRENT_LOT, IMERSAO_5ED_PRICING } from '../config/imersao-5ed';
 import '../styles/imersao-v8.css';
 
@@ -60,6 +61,8 @@ const PRICE_VIP_CASH = IMERSAO_5ED_PRICING.vipCash;
           <div class="lot-status__bar"><span></span><strong>Ingressos do {LOTE}</strong></div>
           <p><span aria-hidden="true">⚠</span> Últimos ingressos do lote atual</p>
         </div>
+
+        <OfferUrgencyBar ctaUrl="#ingressos" />
 
         <p class="white-hero__spoiler">
           <strong>Spoiler:</strong> essa não é apenas uma imersão de teoria. Você também vai aprender sobre prática clínica e como ir além do déficit calórico quando o assunto é emagrecimento.
