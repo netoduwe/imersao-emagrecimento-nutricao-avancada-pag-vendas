@@ -4,7 +4,8 @@
 
 ## Atualização da Página V6 (Última Semana) para 5ª Edição FNA-T9 — 28/07/2026
 - **Atualização de Datas e Edição:** A rota `/v6` (`src/pages/v6.astro`) teve seu conteúdo legado da 4ª Edição atualizado para a **5ª Edição FNA-T9** (data do evento: 01/08/2026, 9h às 18h via Zoom).
-- **Preços e Lotes Dinâmicos:** Integrado com a configuração central `IMERSAO_5ED_CURRENT_LOT` e `IMERSAO_5ED_PRICING`. Preços e badges do lote atual são exibidos dinamicamente no Hero e nos cards de oferta (Básico por R$ 24,90 / R$ 29,90 e VIP por 12x de R$ 15,20 ou R$ 147 à vista).
+- **Remoção da Prof. Cássia Helena:** Removido o card e o vídeo de convite da Prof. Cássia Helena na V6 (`showCassia={false}` em `VideoRecado.astro`). A página agora destaca exclusivamente o Prof. Ney Felipe e a Profa. Jéssica Wszolek.
+- **Preços e Lotes Dinâmicos:** Integrado com a configuração central `IMERSAO_5ED_CURRENT_LOT` e `IMERSAO_5ED_PRICING`. Preços e badges do lote atual são exibidos dinamicamente no Hero e nos cards de oferta.
 - **Formulários e Checkouts:** Mantida a abertura do modal de formulários GHL com rastreamento T9 (`data-form="normal"` e `data-form="vip"`).
 - **Palestrantes e FAQ:** Incluídos os 3 palestrantes da 5ª edição (Ney Felipe, Profa. Jéssica Wszolek e Profa. Cássia Helena) e FAQ corrigido com as datas oficiais da 5ª edição.
 
