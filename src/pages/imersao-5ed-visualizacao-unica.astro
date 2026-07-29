@@ -115,7 +115,8 @@ const HOTMART_CHECKOUT_URL = 'https://pay.hotmart.com/Y105539078H?off=up3gt1xx&c
 </Layout>
 
 <script is:inline>
-  (function initTimer() {
+  (function initTimerAndTracking() {
+    // 1. Cronômetro Regressivo de 15 minutos com auto-redirecionamento
     const TIMER_DURATION_MS = 15 * 60 * 1000;
     const STORAGE_KEY = 'fna_v8_unica_vez_timer_expires';
     const REDIRECT_URL = 'https://ingressos.institutonutricaoavancada.com/imersao-5ed-v8/';
@@ -161,6 +162,46 @@ const HOTMART_CHECKOUT_URL = 'https://pay.hotmart.com/Y105539078H?off=up3gt1xx&c
 
     update();
     setInterval(update, 1000);
+
+    // 2. Repasse de UTMs, Atribuição de Sessão e Tracking no Botão de Checkout
+    const ctaBtn = document.querySelector('a.v8-btn-primary');
+    if (ctaBtn) {
+      const currentParams = new URLSearchParams(window.location.search);
+      let savedAttribution = {};
+      try {
+        savedAttribution = JSON.parse(localStorage.getItem('t9_attribution') || '{}');
+      } catch (e) {}
+
+      try {
+        const checkoutUrl = new URL(ctaBtn.href);
+        const keysToPass = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'src', 'sck', 'fbclid', 'gclid'];
+
+        keysToPass.forEach((key) => {
+          const val = currentParams.get(key) || savedAttribution[key];
+          if (val) {
+            checkoutUrl.searchParams.set(key, val);
+          }
+        });
+
+        // Passa a sessão T9 como parâmetro sck de Hotmart
+        const sessionId = localStorage.getItem('t9_session_id');
+        if (sessionId && !checkoutUrl.searchParams.has('sck')) {
+          checkoutUrl.searchParams.set('sck', sessionId.slice(0, 16));
+        }
+
+        ctaBtn.href = checkoutUrl.toString();
+      } catch (err) {}
+
+      // Dispara o evento de clique no CTA para o Supabase
+      ctaBtn.addEventListener('click', () => {
+        if (window.T9Tracking && typeof window.T9Tracking.track === 'function') {
+          window.T9Tracking.track('ticket_cta_click', {
+            ticket_type: 'normal_1990',
+            metadata: { checkout_url: ctaBtn.href }
+          });
+        }
+      });
+    }
   })();
 </script>
 
