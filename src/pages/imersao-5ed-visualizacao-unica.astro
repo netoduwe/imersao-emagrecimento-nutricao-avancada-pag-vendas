@@ -1,11 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import FormModal from '../components/FormModalV7.astro';
 import T9Tracking from '../components/T9Tracking.astro';
 import '../styles/imersao-v8.css';
 
-const EVENT_DATE = '01 de Agosto de 2026';
-const EVENT_TIME = '9h às 18h';
+const HOTMART_CHECKOUT_URL = 'https://pay.hotmart.com/Y105539078H?off=up3gt1xx&checkoutMode=10';
 ---
 
 <Layout
@@ -16,16 +14,11 @@ const EVENT_TIME = '9h às 18h';
   hideChatbase={true}
 >
   <T9Tracking />
-  <FormModal />
 
   <main class="v8-viewport-wrapper">
     <!-- Barra Superior de Urgência Versão V8 -->
     <div class="v8-urgency-bar">
       <div class="v8-urgency-left">
-        <span class="v8-badge-red">
-          <span class="v8-pulse-dot"></span>
-          VISUALIZAÇÃO ÚNICA
-        </span>
         <span class="v8-urgency-text">Esta página expira em <strong id="alert-timer-text">15:00</strong> e não reaparecerá.</span>
       </div>
     </div>
@@ -34,11 +27,6 @@ const EVENT_TIME = '9h às 18h';
     <div class="v8-hero-container">
       <div class="v8-glass-card">
         
-        <!-- Tag Superior -->
-        <div class="v8-pill-tag">
-          <span>OFERTA EXCLUSIVA DE RETARGETING • 5ª EDIÇÃO</span>
-        </div>
-
         <!-- Título Estilo V8 (Playfair Display + Inter) -->
         <h1 class="v8-title">
           Garanta sua vaga na Imersão Nutrição Avançada no <span class="v8-serif-highlight">Emagrecimento</span>
@@ -76,16 +64,14 @@ const EVENT_TIME = '9h às 18h';
           <span class="v8-price-sub">ou 2x de R$ 10,40 no cartão</span>
         </div>
 
-        <!-- Botão CTA Estilo V8 (Verde Esmeralda Arredondado) -->
+        <!-- Botão CTA Estilo V8 -->
         <div class="v8-cta-wrapper">
-          <button 
-            type="button"
+          <a 
+            href={HOTMART_CHECKOUT_URL}
             class="v8-btn-primary"
-            data-form="normal"
           >
             <span>GARANTIR MEU INGRESSO POR R$ 19,90</span>
-          </button>
-          <span class="v8-cta-guarantee">✓ Acesso ao vivo no Zoom + 1 ano de gravação liberada</span>
+          </a>
         </div>
 
         <!-- Rodapé de Confiança V8 -->
@@ -102,13 +88,6 @@ const EVENT_TIME = '9h às 18h';
               <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
             </svg>
             <span>Garantia de 7 Dias</span>
-          </div>
-          <div class="v8-trust-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            <span>Certificado Incluso</span>
           </div>
         </div>
 
@@ -213,33 +192,11 @@ const EVENT_TIME = '9h às 18h';
     justify-content: center;
     gap: 10px;
   }
-  .v8-badge-red {
-    background: var(--v8-red-bg);
-    color: var(--v8-red);
-    font-size: 10px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    padding: 3px 10px;
-    border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .v8-pulse-dot {
-    width: 6px;
-    height: 6px;
-    background-color: var(--v8-red);
-    border-radius: 50%;
-    animation: v8Pulse 1.5s infinite;
-  }
-  @keyframes v8Pulse {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.4); opacity: 0.5; }
-  }
   .v8-urgency-text {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--v8-text-light);
     font-weight: 500;
+    text-align: center;
   }
   .v8-urgency-text strong {
     color: var(--v8-red);
@@ -260,24 +217,12 @@ const EVENT_TIME = '9h às 18h';
     background: var(--v8-card-bg);
     border: 1px solid var(--v8-border);
     border-radius: 24px;
-    padding: 32px 28px;
+    padding: 36px 28px;
     box-shadow: 0 16px 50px rgba(0, 0, 0, 0.06);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-
-  /* Tag Pill */
-  .v8-pill-tag {
-    background: rgba(21, 150, 106, 0.08);
-    color: var(--v8-primary);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    padding: 5px 14px;
-    border-radius: 999px;
-    margin-bottom: 16px;
   }
 
   /* Título V8 (Playfair Display) */
@@ -425,7 +370,6 @@ const EVENT_TIME = '9h às 18h';
     text-decoration: none;
     border-radius: 999px;
     border: none;
-    cursor: pointer;
     box-shadow: 0 8px 24px rgba(21, 150, 106, 0.3);
     transition: all 0.25s ease;
   }
@@ -433,12 +377,6 @@ const EVENT_TIME = '9h às 18h';
     background-color: var(--v8-primary-hover);
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(21, 150, 106, 0.45);
-  }
-  .v8-cta-guarantee {
-    font-size: 11px;
-    color: var(--v8-text-light);
-    margin-top: 8px;
-    font-weight: 500;
   }
 
   /* Trust Bar V8 */
