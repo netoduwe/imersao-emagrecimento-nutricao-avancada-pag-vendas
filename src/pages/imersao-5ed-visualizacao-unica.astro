@@ -27,6 +27,24 @@ const HOTMART_CHECKOUT_URL = 'https://pay.hotmart.com/Y105539078H?off=up3gt1xx&c
     <div class="v8-hero-container">
       <div class="v8-glass-card">
         
+        <!-- Event Date/Time/Location Pill Tag -->
+        <div class="v8-event-info-pill">
+          <span class="v8-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            01 Ago 2026
+          </span>
+          <span class="v8-pill-divider">|</span>
+          <span class="v8-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            9h às 18h
+          </span>
+          <span class="v8-pill-divider">|</span>
+          <span class="v8-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            Zoom
+          </span>
+        </div>
+
         <!-- Título Estilo V8 (Playfair Display + Inter) -->
         <h1 class="v8-title">
           Garanta sua vaga na Imersão Nutrição Avançada no <span class="v8-serif-highlight">Emagrecimento</span>
@@ -223,6 +241,35 @@ const HOTMART_CHECKOUT_URL = 'https://pay.hotmart.com/Y105539078H?off=up3gt1xx&c
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  /* Event Info Pill Tag */
+  .v8-event-info-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .v8-info-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1E293B;
+  }
+  .v8-info-item svg {
+    width: 14px;
+    height: 14px;
+    color: var(--v8-primary);
+  }
+  .v8-pill-divider {
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 12px;
   }
 
   /* Título V8 (Playfair Display) */
