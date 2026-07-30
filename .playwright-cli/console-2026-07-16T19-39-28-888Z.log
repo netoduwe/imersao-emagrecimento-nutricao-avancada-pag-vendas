@@ -1,0 +1,5 @@
+[    1112ms] [LOG] load fbq @ https://storage.googleapis.com/builder-preview/iframe/pixel.js:1
+[    1296ms] [LOG] load fbq @ https://storage.googleapis.com/builder-preview/iframe/pixel.js:1
+[    1421ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://nutrineyfelipe.com/favicon.ico:0
+[    1788ms] [WARNING] Deprecated API for given entry type. @ https://stcdn.leadconnectorhq.com/_preview/B3YGevbU.js:33
+[    1795ms] [WARNING] Deprecated API for given entry type. @ https://stcdn.leadconnectorhq.com/_preview/B3YGevbU.js:33

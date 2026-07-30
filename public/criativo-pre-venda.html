@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criativo Pré-Venda 1x1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+    .ad-card {
+      width: 600px;
+      height: 600px;
+      background: #020703;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 48px;
+    }
+    /* Grid de fundo */
+    .ad-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(90deg, rgba(49, 217, 107, 0.04) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(49, 217, 107, 0.04) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+    }
+    .ad-header {
+      z-index: 2;
+    }
+    .kicker {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #31d96b;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border: 1.5px solid rgba(49, 217, 107, 0.3);
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+    .title {
+      font-size: 42px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .title span {
+      display: block;
+      color: #31d96b;
+      font-weight: 900;
+    }
+    .ad-center {
+      z-index: 2;
+      margin: 20px 0;
+    }
+    .desc {
+      font-size: 17px;
+      line-height: 1.6;
+      color: #aab9a7;
+      max-width: 90%;
+    }
+    .ad-footer {
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .btn-vip {
+      background: #ff5a1f;
+      color: #ffffff;
+      text-align: center;
+      padding: 18px;
+      font-size: 18px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(255, 90, 31, 0.4);
+      border: 1px solid #ff7744;
+    }
+    .date-info {
+      text-align: center;
+      font-size: 13px;
+      color: #aab9a7;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ad-card">
+    <div class="ad-header">
+      <span class="kicker">Pré-Venda Exclusiva</span>
+      <h1 class="title">
+        Seu paciente chegou com Mounjaro.
+        <span>Você sabe o que fazer?</span>
+      </h1>
+    </div>
+    
+    <div class="ad-center">
+      <p class="desc">
+        Aprenda o manejo prático de canetas de GLP-1 e compostos bioativos na Imersão 5ª Edição. Entre no grupo VIP para receber o menor valor do Lote Zero.
+      </p>
+    </div>
+
+    <div class="ad-footer">
+      <a href="https://chat.whatsapp.com/BU1XnZnOS9a1JYcU90Sip4" class="btn-vip" target="_blank">
+        Entrar no Grupo VIP do WhatsApp
+      </a>
+      <div class="date-info">
+        Abertura na Terça-Feira, 14/07
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

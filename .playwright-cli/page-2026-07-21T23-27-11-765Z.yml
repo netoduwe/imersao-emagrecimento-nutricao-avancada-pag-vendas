@@ -1,0 +1,276 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - generic "Contagem regressiva para a imersão" [ref=e4]:
+      - generic [ref=e5]:
+        - strong [ref=e8]: "Imersão começa em:"
+        - generic [ref=e9]:
+          - generic [ref=e10]:
+            - generic [ref=e11]: "10"
+            - generic [ref=e12]: Dias
+          - generic [ref=e13]:
+            - generic [ref=e14]: "12"
+            - generic [ref=e15]: Horas
+          - generic [ref=e16]:
+            - generic [ref=e17]: "32"
+            - generic [ref=e18]: Minutos
+          - generic [ref=e19]:
+            - generic [ref=e20]: "48"
+            - generic [ref=e21]: Segundos
+        - link "Escolher ingresso →" [ref=e22] [cursor=pointer]:
+          - /url: "#ingressos"
+          - text: Escolher ingresso
+          - generic [ref=e23]: →
+    - generic [ref=e25]:
+      - paragraph [ref=e26]:
+        - generic [ref=e27]: ▣
+        - text: 01 de Agosto de 2026 9h às 18h Online via Zoom
+      - heading "1 dia de atualização no tratamento do sobrepeso e obesidade" [level=1] [ref=e30]
+      - paragraph [ref=e31]: Domine as evidências mais atuais da nutrição com foco em emagrecimento e no manejo dos análogos de GLP-1.
+      - link "Comprar ingresso do lote atual" [ref=e32] [cursor=pointer]:
+        - /url: "#ingressos"
+      - generic "Disponibilidade do Lote 01" [ref=e36]:
+        - strong [ref=e39]: Ingressos do Lote 01
+        - paragraph [ref=e40]:
+          - generic [ref=e41]: ⚠
+          - text: Últimos ingressos do lote atual
+      - paragraph [ref=e42]:
+        - strong [ref=e43]: "Spoiler:"
+        - text: essa não é apenas uma imersão de teoria. Você também vai aprender sobre prática clínica e como ir além do déficit calórico quando o assunto é emagrecimento.
+    - navigation "Navegação da página" [ref=e44]:
+      - generic [ref=e45]:
+        - link "Cronograma" [ref=e46] [cursor=pointer]:
+          - /url: "#cronograma"
+        - link "Conteúdo" [ref=e47] [cursor=pointer]:
+          - /url: "#conteudo"
+        - link "Perguntas frequentes" [ref=e48] [cursor=pointer]:
+          - /url: "#faq"
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - paragraph [ref=e52]: Prática clínica
+        - heading "Você se sente seguro para transformar vidas?" [level=2] [ref=e53]
+        - paragraph [ref=e54]: "Com certeza você já atendeu um paciente com sobrepeso que desejava emagrecer e talvez tenha tido dificuldades como:"
+      - list [ref=e55]:
+        - listitem [ref=e56]: ✓ Não conseguiu fazer o paciente aderir ao plano alimentar.
+        - listitem [ref=e57]: ✓ Teve insegurança para conduzir a consulta.
+        - listitem [ref=e58]: ✓ Não soube calcular ou ajustar o cardápio para o caso real.
+        - listitem [ref=e59]: ✓ Não soube como ir além das calorias.
+        - listitem [ref=e60]: ✓ Se sentiu desatualizado cientificamente.
+        - listitem [ref=e61]: ✓ Não soube periodizar seu acompanhamento.
+        - listitem [ref=e62]: ✓ Faltaram ferramentas de prática clínica.
+    - generic [ref=e64]:
+      - generic [ref=e65]:
+        - paragraph [ref=e66]: Quem conduz a imersão
+        - heading "Aprenda com a experiência de quem está no campo de batalha." [level=2] [ref=e67]
+      - generic [ref=e68]:
+        - article [ref=e69]:
+          - img "Ney Felipe" [ref=e71]
+          - generic [ref=e72]:
+            - heading "Ney Felipe" [level=3] [ref=e73]
+            - paragraph [ref=e74]: Nutricionista pioneiro da Nutrição Funcional Esportiva no Brasil, tem como missão ajudar nutricionistas a viverem de consultório praticando uma Nutrição que vai além das calorias.
+            - paragraph [ref=e75]: Começou sua carreira em 2006 e já atendeu milhares de pacientes. Fundador da Nutrição Avançada, escritor, professor, palestrante e mentor de nutricionistas.
+            - list [ref=e76]:
+              - listitem [ref=e77]: Nutricionista desde 2006
+              - listitem [ref=e78]: Mestre em Biologia Molecular
+              - listitem [ref=e79]: Doutorando em Saúde Pública
+              - listitem [ref=e80]: Fundador da Nutrição Avançada
+              - listitem [ref=e81]: Mais de 3 mil alunos
+        - article [ref=e82]:
+          - img "Jéssica Wszolek" [ref=e84]
+          - generic [ref=e85]:
+            - heading "Jéssica Wszolek" [level=3] [ref=e86]
+            - paragraph [ref=e87]: Participação no bloco dedicado ao manejo nutricional de pacientes em uso de análogos de GLP-1, com foco em aplicação prática na consulta.
+            - list [ref=e88]:
+              - listitem [ref=e89]: GLP-1 e massa magra
+              - listitem [ref=e90]: Ajuste de proteína e suplementação
+              - listitem [ref=e91]: Sintomas gastrointestinais
+              - listitem [ref=e92]: Monitoramento e conduta clínica
+    - blockquote [ref=e95]:
+      - text: “Embora o déficit calórico seja condição essencial para emagrecer, a nutrição não se resume a uma simples calculoterapia. É importante considerar a qualidade dos alimentos e o contexto clínico.”
+      - generic [ref=e96]: — Ney Felipe
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - paragraph [ref=e100]: 01 de Agosto
+        - heading "Cronograma de 1 dia de imersão" [level=2] [ref=e101]
+        - paragraph [ref=e102]: Uma programação intensiva, ao vivo e online, organizada para entregar todo o conteúdo dentro do horário previsto.
+      - generic [ref=e103]:
+        - generic [ref=e104]:
+          - time [ref=e105]: 9h
+          - generic [ref=e106]: Início
+        - generic [ref=e107]:
+          - time [ref=e108]: 12h
+          - generic [ref=e109]: Intervalo
+        - generic [ref=e110]:
+          - time [ref=e111]: 13h
+          - generic [ref=e112]: Retorno
+        - generic [ref=e113]:
+          - time [ref=e114]: 18h
+          - generic [ref=e115]: Encerramento*
+      - paragraph [ref=e116]: "*O encerramento pode avançar alguns minutos caso seja necessário aprofundar dúvidas dos participantes."
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - paragraph [ref=e120]: Conteúdo da imersão
+        - heading "Isso é parte do que você vai aprender" [level=2] [ref=e121]
+      - generic [ref=e122]:
+        - article [ref=e123]:
+          - text: "01"
+          - heading "Conteúdo técnico" [level=3] [ref=e124]
+          - list [ref=e125]:
+            - listitem [ref=e126]: + O que temos de mais atual na ciência sobre emagrecimento.
+            - listitem [ref=e127]: + Nutrição funcional no emagrecimento.
+            - listitem [ref=e128]: + Um novo olhar sobre obesidade e inflamação.
+        - article [ref=e129]:
+          - text: "02"
+          - heading "Estratégias práticas" [level=3] [ref=e130]
+          - list [ref=e131]:
+            - listitem [ref=e132]: + Discussão de caso clínico e estratégias de intervenção.
+            - listitem [ref=e133]: + Adesão e progressão dietética.
+            - listitem [ref=e134]: + Como ir além do déficit calórico.
+        - article [ref=e135]:
+          - text: "03"
+          - heading "Experiência clínica" [level=3] [ref=e136]
+          - list [ref=e137]:
+            - listitem [ref=e138]: + Manejo nutricional dos análogos de GLP-1.
+            - listitem [ref=e139]: + Como conduzir sua consulta do jeito certo.
+            - listitem [ref=e140]: + O método de acompanhamento da Nutrição Avançada.
+    - generic [ref=e142]:
+      - generic [ref=e143]:
+        - paragraph [ref=e144]: Sua decisão
+        - heading "A escolha para avançar de nível é toda sua" [level=2] [ref=e145]
+      - generic [ref=e146]:
+        - article [ref=e147]:
+          - heading "Sem essa imersão, você pode..." [level=3] [ref=e148]
+          - list [ref=e149]:
+            - listitem [ref=e150]: × Continuar repetindo que “tem que fazer déficit”.
+            - listitem [ref=e151]: × Ser apenas mais um nutricionista da fila.
+            - listitem [ref=e152]: × Basear sua prática em achismos e dicas de Instagram.
+        - article [ref=e153]:
+          - heading "Com a imersão, você pode..." [level=3] [ref=e154]
+          - list [ref=e155]:
+            - listitem [ref=e156]: ✓ Ir além de discursos reducionistas e enxergar uma nutrição além das calorias.
+            - listitem [ref=e157]: ✓ Ser o último nutricionista da vida do seu paciente.
+            - listitem [ref=e158]: ✓ Ter segurança e referências robustas para sua prática clínica.
+      - generic [ref=e159]:
+        - generic [ref=e160]:
+          - paragraph [ref=e161]: Quando e como?
+          - heading "01 de Agosto de 2026" [level=3] [ref=e162]
+          - paragraph [ref=e163]: Experiência ao vivo e online, das 9h às 18h, através do Zoom.
+        - link "Quero meu ingresso" [ref=e164] [cursor=pointer]:
+          - /url: "#ingressos"
+    - generic [ref=e166]:
+      - generic [ref=e167]:
+        - paragraph [ref=e168]: Uma abordagem mais profunda
+        - heading "Cansou de ouvir discursos rasos sobre emagrecimento?" [level=2] [ref=e169]
+        - paragraph [ref=e170]: “Para emagrecer basta fazer déficit calórico.”
+      - generic [ref=e171]:
+        - paragraph [ref=e172]: Nutricionistas ainda repetem a ideia simplista de que emagrecer é apenas “fechar a boca e comer menos”. Isso ignora a complexidade do processo de emagrecimento.
+        - paragraph [ref=e173]:
+          - strong [ref=e174]: O verdadeiro desafio não é apenas o que fazer, mas como fazer.
+        - paragraph [ref=e175]: Nutrição vai além do cálculo de calorias. Requer compreensão profunda do processo, estratégias eficazes e habilidade para ajudar o paciente a se conectar com a alimentação.
+    - generic [ref=e176]:
+      - generic [ref=e177]:
+        - generic [ref=e178]:
+          - paragraph [ref=e179]: Atualização intensiva
+          - heading "Chegou sua hora de se tornar autoridade em emagrecimento." [level=2] [ref=e180]
+          - paragraph [ref=e181]: "Uma imersão prática para você se atualizar e aprender:"
+        - list [ref=e182]:
+          - listitem [ref=e183]: → Como ter propriedade e segurança para falar sobre emagrecimento.
+          - listitem [ref=e184]: → O que há de mais atual na ciência do emagrecimento.
+          - listitem [ref=e185]: → O que só a experiência de anos de prática pode ensinar.
+      - link "Sim, quero acessar agora" [ref=e187] [cursor=pointer]:
+        - /url: "#ingressos"
+    - generic [ref=e189]:
+      - generic [ref=e190]:
+        - paragraph [ref=e191]: Lote 01
+        - heading "Escolha seu ingresso" [level=2] [ref=e192]
+        - paragraph [ref=e193]: A Imersão é um evento ao vivo e online para nutricionistas e estudantes de Nutrição que desejam elevar seus resultados no mercado do emagrecimento.
+      - generic [ref=e194]:
+        - article [ref=e195]:
+          - generic [ref=e196]:
+            - paragraph [ref=e197]: Ingresso
+            - heading "Básico" [level=3] [ref=e198]
+          - list [ref=e199]:
+            - listitem [ref=e200]: ✓ Acesso ao dia de imersão ao vivo.
+            - listitem [ref=e201]: ✓ Grupo exclusivo do evento.
+            - listitem [ref=e202]: ✓ Materiais compartilhados na aula.
+            - listitem [ref=e203]: ✓ Mini Curso Fundamentos do Emagrecimento.
+          - generic [ref=e204]:
+            - generic [ref=e205]: De R$ 97,00 por
+            - strong [ref=e206]: R$ 24,90
+          - link "Comprar básico" [ref=e207] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e208]: Compra segura · 7 dias de garantia
+        - article [ref=e209]:
+          - generic [ref=e210]:
+            - paragraph [ref=e211]: Ingresso
+            - heading "VIP" [level=3] [ref=e212]
+          - list [ref=e213]:
+            - listitem [ref=e214]: ✓ Tudo do ingresso Básico.
+            - listitem [ref=e215]: ✓ Gravação do evento por 1 ano.
+            - listitem [ref=e216]: ✓ Certificado de 8 horas.
+            - listitem [ref=e217]: ✓ E-book Tópicos Avançados.
+            - listitem [ref=e218]: ✓ E-book “Me formei, e agora?”.
+            - listitem [ref=e219]: ✓ E-book Desaprendendo a Dieta.
+            - listitem [ref=e220]: ✓ Encontro extra de revisão pós-evento.
+            - listitem [ref=e221]: ✓ Cashback integral em formações selecionadas.
+          - generic [ref=e222]:
+            - generic [ref=e223]: De R$ 297,00 por
+            - strong [ref=e224]: 12x de R$ 15,20
+            - generic [ref=e225]: ou R$ 147,00 à vista
+          - link "Comprar VIP" [ref=e226] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e227]: Compra segura · 7 dias de garantia
+    - generic [ref=e229]:
+      - generic [ref=e230]:
+        - paragraph [ref=e231]: Resultados reais
+        - heading "Mais segurança para atender na prática" [level=2] [ref=e232]
+      - generic [ref=e233]:
+        - figure [ref=e234]:
+          - img "Depoimento de participante"
+        - figure [ref=e235]:
+          - img "Depoimento de participante"
+        - figure [ref=e236]:
+          - img "Depoimento de participante"
+        - figure [ref=e237]:
+          - img "Depoimento de participante"
+      - paragraph [ref=e238]: Você não precisa gastar anos pesquisando sozinho. Garanta seu ingresso antes da próxima virada de lote.
+      - link "Sim, quero meu ingresso" [ref=e239] [cursor=pointer]:
+        - /url: "#ingressos"
+    - generic [ref=e241]:
+      - generic [ref=e242]:
+        - paragraph [ref=e243]: Trajetória
+        - heading "Por que você pode confiar?" [level=2] [ref=e244]
+        - paragraph [ref=e245]: Você está prestes a embarcar em uma jornada de atualização. Conheça alguns pontos da trajetória de Ney Felipe.
+      - generic [ref=e246]:
+        - group [ref=e247]:
+          - generic "Formação e especialização −" [ref=e248] [cursor=pointer]
+          - paragraph [ref=e249]: Ney Felipe Fernandes é nutricionista desde 2006, mestre em Biologia Molecular e doutorando em Saúde Pública. Sua abordagem combina nutrição funcional, esportiva e comportamental.
+        - group [ref=e250]:
+          - generic "Publicações e reconhecimento +" [ref=e251] [cursor=pointer]
+        - group [ref=e252]:
+          - generic "Experiência com nutricionistas +" [ref=e253] [cursor=pointer]
+    - generic [ref=e255]:
+      - generic [ref=e256]:
+        - paragraph [ref=e257]: Dúvidas
+        - heading "Perguntas frequentes" [level=2] [ref=e258]
+      - generic [ref=e259]:
+        - group [ref=e260]:
+          - generic "É ao vivo? Qual a duração? −" [ref=e261] [cursor=pointer]
+          - paragraph [ref=e262]: Sim. A Imersão acontece ao vivo no dia 01 de Agosto de 2026, das 9h às 18h, através do Zoom.
+        - group [ref=e263]:
+          - generic "Fica gravado? +" [ref=e264] [cursor=pointer]
+        - group [ref=e265]:
+          - generic "Sou estudante. Vale a pena? +" [ref=e266] [cursor=pointer]
+        - group [ref=e267]:
+          - generic "O evento é exclusivo para nutricionistas? +" [ref=e268] [cursor=pointer]
+        - group [ref=e269]:
+          - generic "Tem garantia? +" [ref=e270] [cursor=pointer]
+    - generic [ref=e272]:
+      - generic [ref=e273]:
+        - paragraph [ref=e274]: Suporte no WhatsApp
+        - heading "Ainda ficou com alguma dúvida?" [level=2] [ref=e275]
+        - paragraph [ref=e276]: Nossa equipe está à disposição para ajudar.
+      - link "Falar com atendente" [ref=e277] [cursor=pointer]:
+        - /url: https://links.nutrineyfelipe.com/suporte-whatsapp
+    - generic [ref=e279]:
+      - paragraph [ref=e280]: Ney Felipe Fernandes · © 2026 · CNPJ 38.560.882/0001-12
+      - paragraph [ref=e281]: Este site não é afiliado ao Facebook ou à Meta. Todas as informações apresentadas são de responsabilidade da Nutrição Avançada.

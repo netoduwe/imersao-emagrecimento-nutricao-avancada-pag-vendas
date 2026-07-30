@@ -80,7 +80,7 @@ const urgencyLot = IMERSAO_5ED_LOTS[urgencyLotId];
           <span class="urgency-strip__inner">
             <span class="urgency-strip__badge" id="lote-strip-badge">{urgencyLot.labelUpper}</span>
             <span class="urgency-strip__divider" aria-hidden="true"></span>
-            <span class="urgency-strip__label" id="lote-strip-label">Virada em</span>
+            <span class="urgency-strip__label" id="lote-strip-label">Encerra em</span>
             <span class="urgency-strip__timer" id="countdown"></span>
           </span>
         </div>
@@ -133,7 +133,7 @@ const urgencyLot = IMERSAO_5ED_LOTS[urgencyLotId];
           return;
         }
 
-        if (label) label.textContent = 'Virada em:';
+        if (label) label.textContent = 'Encerra em:';
         const d = Math.floor(diff / (1000 * 60 * 60 * 24));
         const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));

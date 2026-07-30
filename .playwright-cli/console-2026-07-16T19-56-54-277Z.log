@@ -1,0 +1,8 @@
+[   37458ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://127.0.0.1:4321/_astro/Layout.C0khQfnA.css:0
+[   37479ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://127.0.0.1:4321/_astro/imersao-5ed-v8@_@astro.CarZdeYy.css:0
+[   77868ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://127.0.0.1:4321/images/depoimentos/Screenshot_1.png:0
+[   77868ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://127.0.0.1:4321/images/depoimentos/Screenshot_3.png:0
+[   77868ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://127.0.0.1:4321/images/depoimentos/Screenshot_14.png:0
+[   77869ms] [ERROR] Failed to load resource: net::ERR_EMPTY_RESPONSE @ http://127.0.0.1:4321/images/depoimentos/Screenshot_23.png:0
+[   78826ms] [LOG] load fbq @ https://storage.googleapis.com/builder-preview/iframe/pixel.js:1
+[   79362ms] [WARNING] Deprecated API for given entry type. @ https://stcdn.leadconnectorhq.com/_preview/B3YGevbU.js:33

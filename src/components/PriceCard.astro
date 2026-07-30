@@ -174,13 +174,13 @@ const currentLot = IMERSAO_5ED_CURRENT_LOT;
        // Contador regressivo ou virada de lote
        const diff = lotEnd - now;
        if(rem) {
-         if (diff > 0) {
-           const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-           const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-           const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-           const s = Math.floor((diff % (1000 * 60)) / 1000);
-           rem.textContent = `virada de lote em: ${d}d ${h}h ${m}m ${s}s`;
-         } else {
+          if (diff > 0) {
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            rem.textContent = `encerra em: ${d}d ${h}h ${m}m ${s}s`;
+          } else {
            rem.textContent = `vagas limitadas`;
          }
        }

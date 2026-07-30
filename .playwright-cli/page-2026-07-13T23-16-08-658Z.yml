@@ -1,0 +1,236 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]: "🔥 LOTE ZERO | Virada em: 2d 3h 43m 50s"
+  - main [ref=e3]:
+    - main [ref=e4]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - paragraph [ref=e8]: 5ª Edição · Imersão em Emagrecimento
+          - heading "Um dia para aprofundar sua conduta clínica no emagrecimento. Além da dieta calculada." [level=1] [ref=e9]:
+            - text: Um dia para aprofundar sua conduta clínica no emagrecimento.
+            - generic [ref=e10]: Além da dieta calculada.
+          - paragraph [ref=e11]: Com Ney Felipe e Jéssica Wszolek, você vai estudar adesão, platô, reganho, alvos moleculares, alimentos funcionais, dieta mediterrânea e manejo nutricional de pacientes em uso de canetas emagrecedoras como Ozempic, Wegovy e Mounjaro.
+          - generic "Ingresso lote zero" [ref=e13]:
+            - generic [ref=e14]: Lote zero
+            - paragraph [ref=e15]: De R$ 97,00 por apenas
+            - strong [ref=e16]: R$ 19,90
+            - link "Garantir minha vaga! >" [ref=e17] [cursor=pointer]:
+              - /url: "#ingressos"
+            - generic [ref=e18]: Garantia incondicional de 7 dias · Sem burocracia
+          - generic "Dados do evento" [ref=e19]:
+            - generic [ref=e20]: 01 de Agosto de 2026
+            - generic [ref=e21]: 9h às 18h
+            - generic [ref=e22]: Online via Zoom
+        - generic "Palestrantes da imersão" [ref=e23]:
+          - generic [ref=e24]:
+            - figure "Ney Felipe · conduta clínica" [ref=e25]:
+              - img "Prof. Ney Felipe" [ref=e26]
+            - figure "Jéssica Wszolek · GLP-1" [ref=e28]:
+              - img "Profa. Jéssica Wszolek" [ref=e29]
+          - generic [ref=e31]: Ao vivoZoom
+      - region "Resumo da virada de campanha" [ref=e33]:
+        - generic [ref=e34]:
+          - generic [ref=e35]: lote zero ativo
+          - generic [ref=e36]: conduta além da calculadora
+          - generic [ref=e37]: gravação por 1 ano no VIP
+          - generic [ref=e38]: 01 agosto 2026
+          - generic [ref=e39]: lote zero ativo
+          - generic [ref=e40]: conduta além da calculadora
+          - generic [ref=e41]: gravação por 1 ano no VIP
+          - generic [ref=e42]: 01 agosto 2026
+      - generic [ref=e43]:
+        - generic [ref=e44]: 01 / caso clínico
+        - generic [ref=e45]:
+          - generic [ref=e46]:
+            - heading "O paciente de emagrecimento virou um caso mais complexo:" [level=2] [ref=e47]
+            - paragraph [ref=e48]: O paciente não chega mais só perguntando por dieta. Ele chega usando GLP-1, comendo pouco, perdendo massa magra, travando no platô ou com medo de recuperar peso quando retirar a medicação.
+          - generic "Sintomas clínicos da página" [ref=e49]:
+            - paragraph [ref=e50]:
+              - strong [ref=e51]: Queixa 01
+              - text: "\"Meu apetite sumiu, mas estou sem força.\""
+            - paragraph [ref=e52]:
+              - strong [ref=e53]: Queixa 02
+              - text: "\"Emagreci, mas perdi massa magra junto.\""
+            - paragraph [ref=e54]:
+              - strong [ref=e55]: Queixa 03
+              - text: "\"Vou parar a caneta. E agora?\""
+            - paragraph [ref=e56]:
+              - strong [ref=e57]: Queixa 04
+              - text: "\"Doutora, por que eu parei de evoluir?\""
+      - generic [ref=e59]:
+        - generic [ref=e60]: 02 / evidências de mercado
+        - generic [ref=e61]:
+          - article [ref=e62]:
+            - text: Google Trends & mercado
+            - heading [level=3] [ref=e63]:
+              - mark [ref=e64]: Ozempic e Mounjaro
+              - text: deixaram de ser conversa de internet. Viraram demanda de consultório.
+            - paragraph [ref=e65]: O Brasil aparece entre os maiores volumes de busca por canetas emagrecedoras. A dúvida do paciente já está na sala antes da anamnese começar.
+            - link "Selecionar ingresso" [ref=e66] [cursor=pointer]:
+              - /url: "#ingressos"
+          - article [ref=e67]:
+            - text: Adesão
+            - heading [level=3] [ref=e68]:
+              - text: Mais de
+              - mark [ref=e69]: 45%
+              - text: abandonam GLP-1 no primeiro ano.
+            - paragraph [ref=e70]: Colaterais, hipofagia, perda de massa magra e falta de estratégia nutricional pesam na continuidade.
+          - article [ref=e71]:
+            - text: Brasil 2030
+            - heading [level=3] [ref=e72]:
+              - mark [ref=e73]: 68% dos brasileiros
+              - text: podem estar com excesso de peso.
+            - paragraph [ref=e74]: Não é nicho. É cenário epidemiológico batendo na porta da prática clínica.
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]: 03 / antes da imersão
+          - heading "Você já perdeu tempo demais tentando montar esse raciocínio sozinho." [level=2] [ref=e79]
+          - paragraph [ref=e80]: Uma aba com artigo. Outra com diretriz. Um post salvo no Instagram. Um print no WhatsApp. No fim, você estudou muito, mas ainda precisa transformar tudo isso em conduta para o paciente real.
+          - paragraph [ref=e81]: Isso pode ser organizado em um dia de imersão comigo.
+        - generic "Representação visual de abas, artigos e posts salvos" [ref=e82]:
+          - generic [ref=e83]:
+            - generic [ref=e84]:
+              - generic [ref=e85]: PubMed
+              - generic [ref=e86]: GLP-1
+              - generic [ref=e87]: proteína
+              - generic [ref=e88]: diretriz
+            - generic [ref=e89]: semaglutide nutrition lean mass clinical practice...
+          - generic [ref=e95]:
+            - text: post salvo
+            - strong [ref=e96]: "\"5 dicas para paciente em uso de caneta\""
+            - generic [ref=e97]: parece simples, mas não fecha a conduta
+          - generic [ref=e98]:
+            - strong [ref=e99]: Prontuário
+            - generic [ref=e100]: Náusea + baixa proteína + treino fraco
+            - generic [ref=e101]: Como ajustar sem piorar sintomas?
+      - generic [ref=e102]:
+        - generic [ref=e103]: 04 / sala de aula
+        - generic [ref=e104]:
+          - heading "O que você vai aprender na Imersão" [level=2] [ref=e105]
+          - paragraph [ref=e106]: "O dia foi organizado para transformar conteúdo técnico em conduta: avaliação, estratégia, prescrição e acompanhamento."
+        - generic [ref=e107]:
+          - article [ref=e108]:
+            - text: Bloco Ney
+            - heading "Períodos críticos" [level=3] [ref=e109]
+            - paragraph [ref=e110]: Como conduzir adesão, platô e reganho sem reduzir o acompanhamento ao déficit calórico.
+          - article [ref=e111]:
+            - text: Bloco Ney
+            - heading "Alvos moleculares" [level=3] [ref=e112]
+            - paragraph [ref=e113]: Quais prioridades fisiológicas entram na dietoterapia para emagrecimento e como organizar a proposta terapêutica.
+          - article [ref=e114]:
+            - text: Bloco Jéssica
+            - heading "GLP-1 e massa magra" [level=3] [ref=e115]
+            - paragraph [ref=e116]: Como ajustar proteína, suplementação, sintomas gastrointestinais e monitoramento clínico quando o apetite despenca.
+          - article [ref=e117]:
+            - text: Conduta integrada
+            - heading "Bioativos e mediterrânea" [level=3] [ref=e118]
+            - paragraph [ref=e119]: Como aplicar alimentos funcionais, compostos bioativos e dieta mediterrânea de forma prática e individualizada.
+        - generic "Cronograma" [ref=e120]:
+          - generic [ref=e121]:
+            - time [ref=e122]: 09h30
+            - text: Abertura e raciocínio inicial
+          - generic [ref=e123]:
+            - time [ref=e124]: 12h00
+            - text: Intervalo
+          - generic [ref=e125]:
+            - time [ref=e126]: 13h30
+            - text: Blocos técnicos e casos
+          - generic [ref=e127]:
+            - time [ref=e128]: 17h30
+            - text: Encerramento previsto
+      - generic [ref=e130]:
+        - generic [ref=e131]: 05 / prova real
+        - generic [ref=e132]:
+          - heading "Quem participou saiu com mais clareza para atender." [level=2] [ref=e133]
+          - paragraph [ref=e134]: "A edição anterior deixou um sinal importante: o valor percebido veio da aplicação. Nutricionistas relataram mais segurança para raciocinar, explicar e conduzir o paciente."
+        - generic [ref=e135]:
+          - img "Depoimento real de participante" [ref=e136]
+          - img "Depoimento real de participante" [ref=e137]
+          - img "Depoimento real de participante" [ref=e138]
+      - generic [ref=e140]:
+        - generic [ref=e141]:
+          - generic [ref=e142]: 05.1 / garantir vaga
+          - heading "Se a decisão já faz sentido, aqui está o lote que está valendo agora." [level=2] [ref=e143]
+          - paragraph [ref=e144]: Você não precisa esperar chegar no final da página para travar esse preço. O lote zero ainda está ativo, com garantia de 7 dias e acesso imediato à confirmação da vaga.
+        - generic "Ingresso lote zero" [ref=e146]:
+          - generic [ref=e147]: Lote zero
+          - paragraph [ref=e148]: De R$ 97,00 por apenas
+          - strong [ref=e149]: R$ 19,90
+          - link "Garantir minha vaga! >" [ref=e150] [cursor=pointer]:
+            - /url: "#ingressos"
+          - generic [ref=e151]: Garantia incondicional de 7 dias · Sem burocracia
+      - generic [ref=e152]:
+        - generic [ref=e153]: 06 / acesso
+        - heading "Escolha seu formato de ingresso" [level=2] [ref=e155]
+        - generic [ref=e156]:
+          - article [ref=e157]:
+            - generic [ref=e158]: Básico
+            - heading "Ingresso ao vivo" [level=3] [ref=e159]
+            - paragraph [ref=e160]: De R$ 97,00 por
+            - paragraph [ref=e161]: R$ 19,90
+            - list [ref=e162]:
+              - listitem [ref=e163]: Acesso ao dia de imersão ao vivo via Zoom
+              - listitem [ref=e164]: Grupo exclusivo de participantes
+              - listitem [ref=e165]: Materiais compartilhados na aula
+              - listitem [ref=e166]: Mini Curso Fundamentos do Emagrecimento
+            - link "Comprar básico" [ref=e167] [cursor=pointer]:
+              - /url: "#"
+          - article [ref=e168]:
+            - generic [ref=e169]: VIP
+            - heading "Acesso completo" [level=3] [ref=e170]
+            - paragraph [ref=e171]: De R$ 297,00 por
+            - paragraph [ref=e172]: 12x de R$ 15,20
+            - paragraph [ref=e173]: ou R$ 147,00 à vista
+            - generic [ref=e174]:
+              - group [ref=e175]:
+                - generic "> Tudo do básico + ver o que é" [ref=e176] [cursor=pointer]:
+                  - text: "> Tudo do básico +"
+                  - generic [ref=e177]: ver o que é
+              - group [ref=e178]:
+                - generic "Gravação do evento por 1 ano" [ref=e179]:
+                  - text: Gravação do evento
+                  - generic [ref=e180]: por 1 ano
+              - group [ref=e181]:
+                - generic "> Certificado de 8h ver benefício" [ref=e182] [cursor=pointer]:
+                  - text: "> Certificado de 8h"
+                  - generic [ref=e183]: ver benefício
+              - group [ref=e184]:
+                - generic "> E-book Tópicos Avançados (R$ 99)" [ref=e185] [cursor=pointer]:
+                  - text: "> E-book Tópicos Avançados"
+                  - generic [ref=e186]: (R$ 99)
+              - group [ref=e187]:
+                - generic "> Ebook \"Me Formei, e agora?\" (R$ 59)" [ref=e188] [cursor=pointer]:
+                  - text: "> Ebook \"Me Formei, e agora?\""
+                  - generic [ref=e189]: (R$ 59)
+              - group [ref=e190]:
+                - generic "> Ebook Desaprendendo a Dieta (R$ 39)" [ref=e191] [cursor=pointer]:
+                  - text: "> Ebook Desaprendendo a Dieta"
+                  - generic [ref=e192]: (R$ 39)
+              - group [ref=e193]:
+                - generic "> Ressaca do Evento ver benefício" [ref=e194] [cursor=pointer]:
+                  - text: "> Ressaca do Evento"
+                  - generic [ref=e195]: ver benefício
+              - group [ref=e196]:
+                - generic "> Cashback integral ver como funciona" [ref=e197] [cursor=pointer]:
+                  - text: "> Cashback integral"
+                  - generic [ref=e198]: ver como funciona
+            - link "Comprar VIP" [ref=e199] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e201]:
+        - heading "Perguntas frequentes" [level=2] [ref=e202]
+        - generic [ref=e203]:
+          - group [ref=e204]:
+            - generic "Para quem é essa imersão?" [ref=e205] [cursor=pointer]
+          - group [ref=e206]:
+            - generic "Vai ficar gravado?" [ref=e207] [cursor=pointer]
+          - group [ref=e208]:
+            - generic "Tem garantia?" [ref=e209] [cursor=pointer]
+      - generic [ref=e211]:
+        - paragraph [ref=e212]: 01 de Agosto · Online via Zoom · Lote zero ativo
+        - heading "A próxima consulta de emagrecimento pode ter mais raciocínio e menos improviso." [level=2] [ref=e213]
+        - link "Escolher ingresso" [ref=e214] [cursor=pointer]:
+          - /url: "#ingressos"
+  - generic [ref=e217]:
+    - button [ref=e218]
+    - button [ref=e224]
+    - button [ref=e228]
+    - button [ref=e236]

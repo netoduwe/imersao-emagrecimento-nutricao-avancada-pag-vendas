@@ -1,0 +1,282 @@
+- main [ref=f13e2]:
+  - generic [ref=f13e3]:
+    - generic "Contagem regressiva para a imersão" [ref=f13e4]:
+      - generic [ref=f13e5]:
+        - strong [ref=f13e8]: "Imersão começa em:"
+        - generic [ref=f13e9]:
+          - generic [ref=f13e10]:
+            - generic [ref=f13e11]: "15"
+            - generic [ref=f13e12]: Dias
+          - generic [ref=f13e13]:
+            - generic [ref=f13e14]: "16"
+            - generic [ref=f13e15]: Horas
+          - generic [ref=f13e16]:
+            - generic [ref=f13e17]: "04"
+            - generic [ref=f13e18]: Minutos
+          - generic [ref=f13e19]:
+            - generic [ref=f13e20]: "12"
+            - generic [ref=f13e21]: Segundos
+        - link "Escolher ingresso" [ref=f13e22] [cursor=pointer]:
+          - /url: "#ingressos"
+    - generic [ref=f13e24]:
+      - paragraph [ref=f13e25]:
+        - generic [ref=f13e26]: ▣
+        - text: 01 de Agosto de 2026 9h às 18h Online via Zoom
+      - heading "1 dia de atualização no tratamento do sobrepeso e obesidade" [level=1] [ref=f13e29]
+      - paragraph [ref=f13e30]: Domine as evidências mais atuais da nutrição com foco em emagrecimento e no manejo dos análogos de GLP-1.
+      - link "Comprar ingresso do lote atual" [ref=f13e31] [cursor=pointer]:
+        - /url: "#ingressos"
+        - generic [ref=f13e32]: ▱
+        - text: Comprar ingresso do lote atual
+      - generic "Disponibilidade do lote 01" [ref=f13e33]:
+        - strong [ref=f13e36]: Ingressos do lote 01
+        - paragraph [ref=f13e37]:
+          - generic [ref=f13e38]: ⚠
+          - text: Últimos ingressos do lote atual
+      - paragraph [ref=f13e39]:
+        - strong [ref=f13e40]: "Spoiler:"
+        - text: essa não é apenas uma imersão de teoria. Você também vai aprender sobre prática clínica e como ir além do déficit calórico quando o assunto é emagrecimento.
+    - navigation "Navegação da página" [ref=f13e41]:
+      - generic [ref=f13e42]:
+        - link "Cronograma" [ref=f13e43] [cursor=pointer]:
+          - /url: "#cronograma"
+        - link "Conteúdo" [ref=f13e44] [cursor=pointer]:
+          - /url: "#conteudo"
+        - link "Perguntas frequentes" [ref=f13e45] [cursor=pointer]:
+          - /url: "#faq"
+    - generic [ref=f13e47]:
+      - generic [ref=f13e48]:
+        - paragraph [ref=f13e49]: Prática clínica
+        - heading "Você se sente seguro para transformar vidas?" [level=2] [ref=f13e50]
+        - paragraph [ref=f13e51]: "Com certeza você já atendeu um paciente com sobrepeso que desejava emagrecer e talvez tenha tido dificuldades como:"
+      - list [ref=f13e52]:
+        - listitem [ref=f13e53]: ✓ Não conseguiu fazer o paciente aderir ao plano alimentar.
+        - listitem [ref=f13e54]: ✓ Teve insegurança para conduzir a consulta.
+        - listitem [ref=f13e55]: ✓ Não soube calcular ou ajustar o cardápio para o caso real.
+        - listitem [ref=f13e56]: ✓ Não soube como ir além das calorias.
+        - listitem [ref=f13e57]: ✓ Se sentiu desatualizado cientificamente.
+        - listitem [ref=f13e58]: ✓ Não soube periodizar seu acompanhamento.
+        - listitem [ref=f13e59]: ✓ Faltaram ferramentas de prática clínica.
+    - generic [ref=f13e61]:
+      - generic [ref=f13e62]:
+        - paragraph [ref=f13e63]: Quem conduz a imersão
+        - heading "Aprenda com a experiência de quem está no campo de batalha." [level=2] [ref=f13e64]
+      - generic [ref=f13e65]:
+        - article [ref=f13e66]:
+          - img "Ney Felipe" [ref=f13e68]
+          - generic [ref=f13e69]:
+            - heading "Ney Felipe" [level=3] [ref=f13e70]
+            - paragraph [ref=f13e71]: Nutricionista pioneiro da Nutrição Funcional Esportiva no Brasil, tem como missão ajudar nutricionistas a viverem de consultório praticando uma Nutrição que vai além das calorias.
+            - paragraph [ref=f13e72]: Começou sua carreira em 2006 e já atendeu milhares de pacientes. Fundador da Nutrição Avançada, escritor, professor, palestrante e mentor de nutricionistas.
+            - list [ref=f13e73]:
+              - listitem [ref=f13e74]: Nutricionista desde 2006
+              - listitem [ref=f13e75]: Mestre em Biologia Molecular
+              - listitem [ref=f13e76]: Doutorando em Saúde Pública
+              - listitem [ref=f13e77]: Fundador da Nutrição Avançada
+              - listitem [ref=f13e78]: Mais de 3 mil alunos
+        - article [ref=f13e79]:
+          - img "Jéssica Wszolek" [ref=f13e81]
+          - generic [ref=f13e82]:
+            - heading "Jéssica Wszolek" [level=3] [ref=f13e83]
+            - paragraph [ref=f13e84]: Participação no bloco dedicado ao manejo nutricional de pacientes em uso de análogos de GLP-1, com foco em aplicação prática na consulta.
+            - list [ref=f13e85]:
+              - listitem [ref=f13e86]: GLP-1 e massa magra
+              - listitem [ref=f13e87]: Ajuste de proteína e suplementação
+              - listitem [ref=f13e88]: Sintomas gastrointestinais
+              - listitem [ref=f13e89]: Monitoramento e conduta clínica
+    - blockquote [ref=f13e92]:
+      - text: “Embora o déficit calórico seja condição essencial para emagrecer, a nutrição não se resume a uma simples calculoterapia. É importante considerar a qualidade dos alimentos e o contexto clínico.”
+      - generic [ref=f13e93]: — Ney Felipe
+    - generic [ref=f13e95]:
+      - generic [ref=f13e96]:
+        - paragraph [ref=f13e97]: 01 de Agosto
+        - heading "Cronograma de 1 dia de imersão" [level=2] [ref=f13e98]
+        - paragraph [ref=f13e99]: Uma programação intensiva, ao vivo e online, organizada para entregar todo o conteúdo dentro do horário previsto.
+      - generic [ref=f13e100]:
+        - generic [ref=f13e101]:
+          - time [ref=f13e102]: 9h
+          - generic [ref=f13e103]: Início
+        - generic [ref=f13e104]:
+          - time [ref=f13e105]: 12h
+          - generic [ref=f13e106]: Intervalo
+        - generic [ref=f13e107]:
+          - time [ref=f13e108]: 13h
+          - generic [ref=f13e109]: Retorno
+        - generic [ref=f13e110]:
+          - time [ref=f13e111]: 18h
+          - generic [ref=f13e112]: Encerramento*
+      - paragraph [ref=f13e113]: "*O encerramento pode avançar alguns minutos caso seja necessário aprofundar dúvidas dos participantes."
+    - generic [ref=f13e115]:
+      - generic [ref=f13e116]:
+        - paragraph [ref=f13e117]: Conteúdo da imersão
+        - heading "Isso é parte do que você vai aprender" [level=2] [ref=f13e118]
+      - generic [ref=f13e119]:
+        - article [ref=f13e120]:
+          - text: "01"
+          - heading "Conteúdo técnico" [level=3] [ref=f13e121]
+          - list [ref=f13e122]:
+            - listitem [ref=f13e123]: + O que temos de mais atual na ciência sobre emagrecimento.
+            - listitem [ref=f13e124]: + Nutrição funcional no emagrecimento.
+            - listitem [ref=f13e125]: + Um novo olhar sobre obesidade e inflamação.
+        - article [ref=f13e126]:
+          - text: "02"
+          - heading "Estratégias práticas" [level=3] [ref=f13e127]
+          - list [ref=f13e128]:
+            - listitem [ref=f13e129]: + Discussão de caso clínico e estratégias de intervenção.
+            - listitem [ref=f13e130]: + Adesão e progressão dietética.
+            - listitem [ref=f13e131]: + Como ir além do déficit calórico.
+        - article [ref=f13e132]:
+          - text: "03"
+          - heading "Experiência clínica" [level=3] [ref=f13e133]
+          - list [ref=f13e134]:
+            - listitem [ref=f13e135]: + Manejo nutricional dos análogos de GLP-1.
+            - listitem [ref=f13e136]: + Como conduzir sua consulta do jeito certo.
+            - listitem [ref=f13e137]: + O método de acompanhamento da Nutrição Avançada.
+    - generic [ref=f13e139]:
+      - generic [ref=f13e140]:
+        - paragraph [ref=f13e141]: Sua decisão
+        - heading "A escolha para avançar de nível é toda sua" [level=2] [ref=f13e142]
+      - generic [ref=f13e143]:
+        - article [ref=f13e144]:
+          - heading "Sem essa imersão, você pode..." [level=3] [ref=f13e145]
+          - list [ref=f13e146]:
+            - listitem [ref=f13e147]: × Continuar repetindo que “tem que fazer déficit”.
+            - listitem [ref=f13e148]: × Ser apenas mais um nutricionista da fila.
+            - listitem [ref=f13e149]: × Basear sua prática em achismos e dicas de Instagram.
+        - article [ref=f13e150]:
+          - heading "Com a imersão, você pode..." [level=3] [ref=f13e151]
+          - list [ref=f13e152]:
+            - listitem [ref=f13e153]: ✓ Ir além de discursos reducionistas e enxergar uma nutrição além das calorias.
+            - listitem [ref=f13e154]: ✓ Ser o último nutricionista da vida do seu paciente.
+            - listitem [ref=f13e155]: ✓ Ter segurança e referências robustas para sua prática clínica.
+      - generic [ref=f13e156]:
+        - generic [ref=f13e157]:
+          - paragraph [ref=f13e158]: Quando e como?
+          - heading "01 de Agosto de 2026" [level=3] [ref=f13e159]
+          - paragraph [ref=f13e160]: Experiência ao vivo e online, das 9h às 18h, através do Zoom.
+        - link "Quero meu ingresso" [ref=f13e161] [cursor=pointer]:
+          - /url: "#ingressos"
+    - generic [ref=f13e163]:
+      - generic [ref=f13e164]:
+        - paragraph [ref=f13e165]: Uma abordagem mais profunda
+        - heading "Cansou de ouvir discursos rasos sobre emagrecimento?" [level=2] [ref=f13e166]
+        - paragraph [ref=f13e167]: “Para emagrecer basta fazer déficit calórico.”
+      - generic [ref=f13e168]:
+        - paragraph [ref=f13e169]: Nutricionistas ainda repetem a ideia simplista de que emagrecer é apenas “fechar a boca e comer menos”. Isso ignora a complexidade do processo de emagrecimento.
+        - paragraph [ref=f13e170]:
+          - strong [ref=f13e171]: O verdadeiro desafio não é apenas o que fazer, mas como fazer.
+        - paragraph [ref=f13e172]: Nutrição vai além do cálculo de calorias. Requer compreensão profunda do processo, estratégias eficazes e habilidade para ajudar o paciente a se conectar com a alimentação.
+    - generic [ref=f13e173]:
+      - generic [ref=f13e174]:
+        - generic [ref=f13e175]:
+          - paragraph [ref=f13e176]: Atualização intensiva
+          - heading "Chegou sua hora de se tornar autoridade em emagrecimento." [level=2] [ref=f13e177]
+          - paragraph [ref=f13e178]: "Uma imersão prática para você se atualizar e aprender:"
+        - list [ref=f13e179]:
+          - listitem [ref=f13e180]: → Como ter propriedade e segurança para falar sobre emagrecimento.
+          - listitem [ref=f13e181]: → O que há de mais atual na ciência do emagrecimento.
+          - listitem [ref=f13e182]: → O que só a experiência de anos de prática pode ensinar.
+      - link "Sim, quero acessar agora" [ref=f13e184] [cursor=pointer]:
+        - /url: "#ingressos"
+    - generic [ref=f13e186]:
+      - generic [ref=f13e187]:
+        - paragraph [ref=f13e188]: Lote 01
+        - heading "Escolha seu ingresso" [level=2] [ref=f13e189]
+        - paragraph [ref=f13e190]: A Imersão é um evento ao vivo e online para nutricionistas e estudantes de Nutrição que desejam elevar seus resultados no mercado do emagrecimento.
+      - generic [ref=f13e191]:
+        - article [ref=f13e192]:
+          - generic [ref=f13e193]:
+            - paragraph [ref=f13e194]: Ingresso
+            - heading "Básico" [level=3] [ref=f13e195]
+          - list [ref=f13e196]:
+            - listitem [ref=f13e197]: ✓ Acesso ao dia de imersão ao vivo.
+            - listitem [ref=f13e198]: ✓ Grupo exclusivo do evento.
+            - listitem [ref=f13e199]: ✓ Materiais compartilhados na aula.
+            - listitem [ref=f13e200]: ✓ Mini Curso Fundamentos do Emagrecimento.
+          - generic [ref=f13e201]:
+            - generic [ref=f13e202]: De R$ 97,00 por
+            - strong [ref=f13e203]: R$ 24,90
+          - link "Comprar básico" [ref=f13e204] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=f13e205]: Compra segura · 7 dias de garantia
+        - article [ref=f13e206]:
+          - generic [ref=f13e207]:
+            - paragraph [ref=f13e208]: Ingresso
+            - heading "VIP" [level=3] [ref=f13e209]
+          - list [ref=f13e210]:
+            - listitem [ref=f13e211]: ✓ Tudo do ingresso Básico.
+            - listitem [ref=f13e212]: ✓ Gravação do evento por 1 ano.
+            - listitem [ref=f13e213]: ✓ Certificado de 8 horas.
+            - listitem [ref=f13e214]: ✓ E-book Tópicos Avançados.
+            - listitem [ref=f13e215]: ✓ E-book “Me formei, e agora?”.
+            - listitem [ref=f13e216]: ✓ E-book Desaprendendo a Dieta.
+            - listitem [ref=f13e217]: ✓ Encontro extra de revisão pós-evento.
+            - listitem [ref=f13e218]: ✓ Cashback integral em formações selecionadas.
+          - generic [ref=f13e219]:
+            - generic [ref=f13e220]: De R$ 297,00 por
+            - strong [ref=f13e221]: 12x de R$ 15,20
+            - generic [ref=f13e222]: ou R$ 147,00 à vista
+          - link "Comprar VIP" [ref=f13e223] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=f13e224]: Compra segura · 7 dias de garantia
+    - generic [ref=f13e226]:
+      - generic [ref=f13e227]:
+        - paragraph [ref=f13e228]: Resultados reais
+        - heading "Mais segurança para atender na prática" [level=2] [ref=f13e229]
+      - generic [ref=f13e230]:
+        - figure [ref=f13e231]:
+          - img "Depoimento de participante"
+        - figure [ref=f13e232]:
+          - img "Depoimento de participante"
+        - figure [ref=f13e233]:
+          - img "Depoimento de participante"
+        - figure [ref=f13e234]:
+          - img "Depoimento de participante"
+      - paragraph [ref=f13e235]: Você não precisa gastar anos pesquisando sozinho. Garanta seu ingresso antes da próxima virada de lote.
+      - link "Sim, quero meu ingresso" [ref=f13e236] [cursor=pointer]:
+        - /url: "#ingressos"
+    - generic [ref=f13e238]:
+      - generic [ref=f13e239]:
+        - paragraph [ref=f13e240]: Trajetória
+        - heading "Por que você pode confiar?" [level=2] [ref=f13e241]
+        - paragraph [ref=f13e242]: Você está prestes a embarcar em uma jornada de atualização. Conheça alguns pontos da trajetória de Ney Felipe.
+      - generic [ref=f13e243]:
+        - group [ref=f13e244]:
+          - generic "Formação e especialização −" [ref=f13e245] [cursor=pointer]
+          - paragraph [ref=f13e246]: Ney Felipe Fernandes é nutricionista desde 2006, mestre em Biologia Molecular e doutorando em Saúde Pública. Sua abordagem combina nutrição funcional, esportiva e comportamental.
+        - group [ref=f13e247]:
+          - generic "Publicações e reconhecimento +" [ref=f13e248] [cursor=pointer]
+        - group [ref=f13e249]:
+          - generic "Experiência com nutricionistas +" [ref=f13e250] [cursor=pointer]
+    - generic [ref=f13e252]:
+      - generic [ref=f13e253]:
+        - paragraph [ref=f13e254]: Dúvidas
+        - heading "Perguntas frequentes" [level=2] [ref=f13e255]
+      - generic [ref=f13e256]:
+        - group [ref=f13e257]:
+          - generic "É ao vivo? Qual a duração? −" [ref=f13e258] [cursor=pointer]
+          - paragraph [ref=f13e259]: Sim. A Imersão acontece ao vivo no dia 01 de Agosto de 2026, das 9h às 18h, através do Zoom.
+        - group [ref=f13e260]:
+          - generic "Fica gravado? +" [ref=f13e261] [cursor=pointer]
+        - group [ref=f13e262]:
+          - generic "Sou estudante. Vale a pena? +" [ref=f13e263] [cursor=pointer]
+        - group [ref=f13e264]:
+          - generic "O evento é exclusivo para nutricionistas? +" [ref=f13e265] [cursor=pointer]
+        - group [ref=f13e266]:
+          - generic "Tem garantia? +" [ref=f13e267] [cursor=pointer]
+    - generic [ref=f13e269]:
+      - generic [ref=f13e270]:
+        - paragraph [ref=f13e271]: Suporte no WhatsApp
+        - heading "Ainda ficou com alguma dúvida?" [level=2] [ref=f13e272]
+        - paragraph [ref=f13e273]: Nossa equipe está à disposição para ajudar.
+      - link "Falar com atendente" [ref=f13e274] [cursor=pointer]:
+        - /url: https://links.nutrineyfelipe.com/suporte-whatsapp
+    - generic [ref=f13e276]:
+      - paragraph [ref=f13e277]: Ney Felipe Fernandes · © 2026 · CNPJ 38.560.882/0001-12
+      - paragraph [ref=f13e278]: Este site não é afiliado ao Facebook ou à Meta. Todas as informações apresentadas são de responsabilidade da Nutrição Avançada.
+    - complementary "Comprar ingresso" [ref=f13e279]:
+      - generic [ref=f13e280]:
+        - generic [ref=f13e281]: Lote 01
+        - strong [ref=f13e282]: A partir de R$ 24,90
+      - link "Escolher ingresso" [ref=f13e283] [cursor=pointer]:
+        - /url: "#ingressos"
